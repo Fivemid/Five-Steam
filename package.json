@@ -1,6 +1,6 @@
 {
   "name": "com.fivemid.fivesteam",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Five Steam",
   "description": "A packaged and up to date version of Facepunch.Steamworks.",
   "unity": "2021.3",

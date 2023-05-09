@@ -25,7 +25,7 @@ namespace Steamworks
 
 			return true;
 		}
-	
+
 		internal static void InstallEvents( bool server )
 		{
 			if ( !server )
@@ -121,7 +121,7 @@ namespace Steamworks
 			if ( _defMap == null )
 				return null;
 
-			if ( _defMap.TryGetValue( defId, out var val  ) )
+			if ( _defMap.TryGetValue( defId, out var val ) )
 				return val;
 
 			return null;
@@ -365,5 +365,15 @@ namespace Steamworks
 			};
 		}
 
+		public static async Task<InventoryDefId[]> GetEligiblePromoItemDefinitionIDs()
+		{
+			var resultOpt = await Internal.RequestEligiblePromoItemDefinitionsIDs( SteamClient.SteamId );
+			if ( resultOpt is not { } result ) return null;
+			var results = new InventoryDefId[result.UmEligiblePromoItemDefs];
+			var size = (uint)results.Length;
+			return Internal.GetEligiblePromoItemDefinitionIDs( result.SteamID, results, ref size )
+				? results
+				: null;
+		}
 	}
 }
