@@ -48,7 +48,7 @@ namespace Steamworks
 					}
 
 					i.DefinitionId = int.Parse( part );
-					i.Definition = SteamInventory.FindDefinition( i.DefinitionId );
+					i.Definition = SteamInventory.GetDefinition( i.DefinitionId );
 
 				}
 				catch ( System.Exception )

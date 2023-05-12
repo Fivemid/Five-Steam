@@ -1,23 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Steamworks.Data;
 
 namespace Steamworks
 {
-	public struct InventoryResult : IDisposable
+	public class InventoryResult
 	{
 		internal SteamInventoryResult_t _id;
 		
-		public bool Expired { get; internal set; }
+		public Result          Result  { get; }
+		public bool            Success => Result == Result.OK;
+		public bool            Expired => Result == Result.Expired;
+        public InventoryItem[] Items   { get; }
 
-		internal InventoryResult( SteamInventoryResult_t id, bool expired )
+		internal InventoryResult( SteamInventoryResult_t id, Result result )
 		{
-			_id = id;
-			Expired = expired;
+			_id    = id;
+			Result = result;
+			if ( Success || Expired )
+				Items = GetItems();
+			else
+				Items = Array.Empty<InventoryItem>();
 		}
 
-		public int ItemCount
+		internal int ItemCount
 		{
 			get
 			{
@@ -30,6 +35,10 @@ namespace Steamworks
 			}
 		}
 
+        ~InventoryResult() {
+            SteamInventory.Internal.DestroyResult( _id );
+        }
+
 		/// <summary>
 		/// Checks whether an inventory result handle belongs to the specified Steam ID.
 		/// This is important when using Deserialize, to verify that a remote player is not pretending to have a different user's inventory
@@ -39,7 +48,7 @@ namespace Steamworks
 			return SteamInventory.Internal.CheckResultSteamID( _id, steamId );
 		}
 
-		public InventoryItem[] GetItems( bool includeProperties = false )
+        internal InventoryItem[] GetItems( bool includeProperties = false )
 		{
 			uint cnt = (uint) ItemCount;
 			if ( cnt <= 0 ) return null;
@@ -65,29 +74,7 @@ namespace Steamworks
 			return items;			
 		}
 
-		public void Dispose()
-		{
-			if ( _id.Value == -1 ) return;
-
-			SteamInventory.Internal.DestroyResult( _id );
-		}
-
-		internal static async Task<InventoryResult?> GetAsync( SteamInventoryResult_t sresult )
-		{
-			var _result = Result.Pending;
-			while ( _result == Result.Pending )
-			{
-				_result = SteamInventory.Internal.GetResultStatus( sresult );
-				await Task.Delay( 10 );
-			}
-
-			if ( _result != Result.OK && _result != Result.Expired )
-				return null;
-
-			return new InventoryResult( sresult, _result == Result.Expired );
-		}
-
-		/// <summary>
+        /// <summary>
 		/// Serialized result sets contain a short signature which can't be forged or replayed across different game sessions.
 		/// A result set can be serialized on the local client, transmitted to other players via your game networking, and 
 		/// deserialized by the remote players.This is a secure way of preventing hackers from lying about posessing 

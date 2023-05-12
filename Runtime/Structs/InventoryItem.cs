@@ -7,10 +7,10 @@ namespace Steamworks
 {
 	public struct InventoryItem : IEquatable<InventoryItem>
 	{
-		internal InventoryItemId _id;
-		internal InventoryDefId _def;
-		internal SteamItemFlags _flags;
-		internal ushort _quantity;
+		internal InventoryItemId            _id;
+		internal InventoryDefId             _def;
+		internal SteamItemFlags             _flags;
+		internal ushort                     _quantity;
 		internal Dictionary<string, string> _properties;
 
 		public InventoryItemId Id => _id;
@@ -19,7 +19,7 @@ namespace Steamworks
 
 		public int Quantity => _quantity;
 
-		public InventoryDef Def => SteamInventory.FindDefinition( DefId );
+		public InventoryDef Def => SteamInventory.GetDefinition( DefId );
 
 
 		/// <summary>
@@ -51,37 +51,37 @@ namespace Steamworks
 		/// a high-friction UI confirmation process is highly recommended.ConsumeItem can be restricted to certain item definitions or fully
 		/// blocked via the Steamworks website to minimize support/abuse issues such as the classic "my brother borrowed my laptop and deleted all of my rare items".
 		/// </summary>
-		public async Task<InventoryResult?> ConsumeAsync( int amount = 1 )
+		public async Task<InventoryResult> ConsumeAsync( int amount = 1 )
 		{
-			var sresult = Defines.k_SteamInventoryResultInvalid;
-			if ( !SteamInventory.Internal.ConsumeItem( ref sresult, Id, (uint)amount ) )
+			var handle = Defines.k_SteamInventoryResultInvalid;
+			if ( !SteamInventory.Internal.ConsumeItem( ref handle, Id, (uint)amount ) )
 				return null;
 
-			return await InventoryResult.GetAsync( sresult );
+			return await SteamInventory.GetAsync( handle );
 		}
 
 		/// <summary>
 		/// Split stack into two items
 		/// </summary>
-		public async Task<InventoryResult?> SplitStackAsync( int quantity = 1 )
+		public async Task<InventoryResult> SplitStackAsync( int quantity = 1 )
 		{
-			var sresult = Defines.k_SteamInventoryResultInvalid;
-			if ( !SteamInventory.Internal.TransferItemQuantity( ref sresult, Id, (uint)quantity, ulong.MaxValue ) )
+			var handle = Defines.k_SteamInventoryResultInvalid;
+			if ( !SteamInventory.Internal.TransferItemQuantity( ref handle, Id, (uint)quantity, ulong.MaxValue ) )
 				return null;
 
-			return await InventoryResult.GetAsync( sresult );
+			return await SteamInventory.GetAsync( handle );
 		}
 
 		/// <summary>
 		/// Add x units of the target item to this item
 		/// </summary>
-		public async Task<InventoryResult?> AddAsync( InventoryItem add, int quantity = 1 )
+		public async Task<InventoryResult> AddAsync( InventoryItem add, int quantity = 1 )
 		{
-			var sresult = Defines.k_SteamInventoryResultInvalid;
-			if ( !SteamInventory.Internal.TransferItemQuantity( ref sresult, add.Id, (uint)quantity, Id ) )
+			var handle = Defines.k_SteamInventoryResultInvalid;
+			if ( !SteamInventory.Internal.TransferItemQuantity( ref handle, add.Id, (uint)quantity, Id ) )
 				return null;
 
-			return await InventoryResult.GetAsync( sresult );
+			return await SteamInventory.GetAsync( handle );
 		}
 
 
@@ -89,9 +89,9 @@ namespace Steamworks
 		{
 			var i = new InventoryItem
 			{
-				_id = details.ItemId,
-				_def = details.Definition,
-				_flags = (SteamItemFlags) details.Flags,
+				_id       = details.ItemId,
+				_def      = details.Definition,
+				_flags    = (SteamItemFlags)details.Flags,
 				_quantity = details.Quantity
 			};
 
@@ -100,9 +100,10 @@ namespace Steamworks
 
 		internal static Dictionary<string, string> GetProperties( SteamInventoryResult_t result, int index )
 		{
-			var strlen = (uint) Helpers.MemoryBufferSize;
+			var strlen = (uint)Helpers.MemoryBufferSize;
 
-			if ( !SteamInventory.Internal.GetResultItemProperty( result, (uint)index, null, out var propNames, ref strlen ) )
+			if ( !SteamInventory.Internal.GetResultItemProperty( result, (uint)index, null, out var propNames,
+			                                                     ref strlen ) )
 				return null;
 
 			var props = new Dictionary<string, string>();
@@ -111,7 +112,8 @@ namespace Steamworks
 			{
 				strlen = (uint)Helpers.MemoryBufferSize;
 
-				if ( SteamInventory.Internal.GetResultItemProperty( result, (uint)index, propertyName, out var strVal, ref strlen ) )
+				if ( SteamInventory.Internal.GetResultItemProperty( result, (uint)index, propertyName, out var strVal,
+				                                                    ref strlen ) )
 				{
 					props.Add( propertyName, strVal );
 				}
@@ -121,7 +123,7 @@ namespace Steamworks
 		}
 
 		/// <summary>
-		/// Will try to return the date that this item was aquired. You need to have for the items
+		/// Will try to return the date that this item was acquired. You need to have for the items
 		/// with their properties for this to work.
 		/// </summary>
 		public DateTime Acquired
@@ -136,9 +138,9 @@ namespace Steamworks
 					var m = int.Parse( str.Substring( 4, 2 ) );
 					var d = int.Parse( str.Substring( 6, 2 ) );
 
-					var h = int.Parse( str.Substring( 9, 2 ) );
+					var h  = int.Parse( str.Substring( 9,  2 ) );
 					var mn = int.Parse( str.Substring( 11, 2 ) );
-					var s = int.Parse( str.Substring( 13, 2 ) );
+					var s  = int.Parse( str.Substring( 13, 2 ) );
 
 					return new DateTime( y, m, d, h, mn, s, DateTimeKind.Utc );
 				}
@@ -156,7 +158,7 @@ namespace Steamworks
 			get
 			{
 				if ( Properties == null ) return null;
-				
+
 				if ( Properties.TryGetValue( "origin", out var str ) )
 					return str;
 
@@ -170,13 +172,13 @@ namespace Steamworks
 		public struct Amount
 		{
 			public InventoryItem Item;
-			public int Quantity;
+			public int           Quantity;
 		}
 
-		public static bool operator ==( InventoryItem a, InventoryItem b ) => a._id == b._id;
-		public static bool operator !=( InventoryItem a, InventoryItem b ) => a._id != b._id;
-		public override bool Equals( object p ) => this.Equals( (InventoryItem)p );
-		public override int GetHashCode() => _id.GetHashCode();
-		public bool Equals( InventoryItem p ) => p._id == _id;
+		public static   bool operator ==( InventoryItem a, InventoryItem b ) => a._id == b._id;
+		public static   bool operator !=( InventoryItem a, InventoryItem b ) => a._id != b._id;
+		public override bool Equals( object             p ) => this.Equals( (InventoryItem)p );
+		public override int  GetHashCode()                  => _id.GetHashCode();
+		public          bool Equals( InventoryItem p )      => p._id == _id;
 	}
 }
