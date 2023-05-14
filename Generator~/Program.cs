@@ -20,7 +20,7 @@ namespace Generator
 
 			var generator = new CodeWriter( def );
 
-            generator.ToFolder( "../Runtime/Generated/" );
+            generator.ToFolder( "../Fivemid.FiveSteam/Generated/" );
         }
     }
 }
