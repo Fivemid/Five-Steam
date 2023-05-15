@@ -21,8 +21,17 @@ namespace Steamworks
 
 			InstallEvents( server );
 			ResetState();
+			if ( !server )
+				SteamUser.OnMicroTxnAuthorizationResponse += OnTransactionConfirm;
 
 			return true;
+		}
+
+		internal override void DestroyInterface( bool server )
+		{
+			base.DestroyInterface( server );
+			if ( !server )
+				SteamUser.OnMicroTxnAuthorizationResponse -= OnTransactionConfirm;
 		}
 
 		internal static void InstallEvents( bool server )
@@ -39,15 +48,6 @@ namespace Steamworks
 			definitionsCallback = null;
 		}
 
-		// private static void InventoryFullUpdated( SteamInventoryFullUpdate_t x )
-		// {
-		// 	// TODO not sure
-		// 	var r = new InventoryResult( x.Handle, false );
-		// 	Items = r.GetItems( false );
-		//
-		// 	OnInventoryUpdated?.Invoke( r );
-		// }
-
 		private static void OnInventoryResultReady( SteamInventoryResultReady_t x )
 		{
 			InventoryResult result = new(x.Handle, x.Result);
@@ -63,6 +63,12 @@ namespace Steamworks
 			SetDefinitions();
 			definitionsCallback?.Invoke();
 			OnDefinitionsUpdated?.Invoke();
+		}
+
+		private static async void OnTransactionConfirm( AppId appId, ulong orderId, bool confirm )
+		{
+			if ( appId == SteamClient.AppId )
+				await GetAllItemsAsync();
 		}
 
 		/// <summary>
@@ -341,7 +347,7 @@ namespace Steamworks
 		/// </summary>
 		public static async Task<InventoryPurchaseResult?> StartPurchaseAsync( InventoryDef[] items )
 		{
-			var d      = items.GroupBy( x => x._id ).ToDictionary( x => x.Key, x => (uint)x.Count() );
+			var d = items.GroupBy( x => x._id ).ToDictionary( x => x.Key, x => (uint)x.Count() );
 			var item_i = d.Keys.ToArray();
 			var item_q = d.Values.ToArray();
 
