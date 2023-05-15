@@ -113,7 +113,7 @@ namespace Steamworks
 		private static void SetDefinitions()
 		{
 			Definitions.Clear();
-			foreach ( InventoryDef definition in GetDefinitions() )
+			foreach ( InventoryDef definition in GetDefinitions() ?? Array.Empty<InventoryDef>() )
 			{
 				Definitions.Add( definition.Id, definition );
 			}
@@ -347,7 +347,7 @@ namespace Steamworks
 		/// </summary>
 		public static async Task<InventoryPurchaseResult?> StartPurchaseAsync( InventoryDef[] items )
 		{
-			var d = items.GroupBy( x => x._id ).ToDictionary( x => x.Key, x => (uint)x.Count() );
+			var d      = items.GroupBy( x => x._id ).ToDictionary( x => x.Key, x => (uint)x.Count() );
 			var item_i = d.Keys.ToArray();
 			var item_q = d.Values.ToArray();
 
