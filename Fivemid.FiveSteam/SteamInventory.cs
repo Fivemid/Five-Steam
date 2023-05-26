@@ -170,15 +170,14 @@ namespace Steamworks
 		internal static Task<InventoryResult> GetAsync( SteamInventoryResult_t handle, bool updateSelfInventory = true )
 		{
 			var promise = new TaskCompletionSource<InventoryResult>();
-			RegisterCallback( handle, result =>
-			{
+			RegisterCallback( handle, result => {
+                if ( updateSelfInventory )
+                    UpdateSelfInventoryCallback( result );
 				if ( result.Success )
 					promise.TrySetResult( result );
 				else
 					promise.TrySetException( new Exception( $"Inventory Operation failed: {result.Result}" ) );
 			} );
-			if ( updateSelfInventory )
-				RegisterCallback( handle, UpdateSelfInventoryCallback );
 			return promise.Task;
 		}
 
