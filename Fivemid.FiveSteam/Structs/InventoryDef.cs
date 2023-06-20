@@ -53,6 +53,8 @@ namespace Steamworks
 		/// </summary>
 		public bool IsGenerator => Type == "generator";
 
+		public bool IsBundle => Type == "bundle";
+
 		/// <summary>
 		/// Shortcut to call GetProperty( "exchange" )
 		/// </summary>
@@ -220,6 +222,36 @@ namespace Steamworks
 
 			_recContaining = allRec.Where( x => x.ContainsIngredient( this ) ).ToArray();
 			return _recContaining;
+		}
+
+		public InventoryRecipe.Ingredient[] ResolveBundle()
+		{
+			if ( IsGenerator ) throw new Exception( "Generator is not supported." );
+			if ( IsBundle )
+			{
+				string bundleString = GetProperty( "bundle" );
+				if ( string.IsNullOrEmpty( bundleString ) ) throw new Exception( "Empty bundle" );
+				List<InventoryRecipe.Ingredient> results = new();
+				foreach ( InventoryRecipe.Ingredient bundleContent in bundleString.Split( ';' )
+					        .Select( InventoryRecipe.Ingredient.FromString ) )
+				{
+					foreach ( InventoryRecipe.Ingredient result in bundleContent.Definition.ResolveBundle() )
+					{
+						results.Add( new InventoryRecipe.Ingredient
+						{
+							DefinitionId = result.DefinitionId,
+							Definition   = result.Definition,
+							Count        = bundleContent.Count * result.Count
+						} );
+					}
+				}
+
+				return results.ToArray();
+			}
+			else
+			{
+				return new[] { new InventoryRecipe.Ingredient { DefinitionId = Id, Definition = this, Count = 1 } };
+			}
 		}
 
 		public static bool operator ==( InventoryDef a, InventoryDef b )
