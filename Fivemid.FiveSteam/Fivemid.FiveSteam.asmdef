@@ -1,7 +1,9 @@
 {
     "name": "Fivemid.FiveSteam",
     "rootNamespace": "Fivemid.FiveSteam",
-    "references": [],
+    "references": [
+        "Unity.Burst"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
