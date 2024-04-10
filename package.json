@@ -1,9 +1,9 @@
 {
   "name": "com.fivemid.fivesteam",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "displayName": "Five Steam",
-  "description": "A packaged and up to date version of Facepunch.Steamworks.",
-  "unity": "2021.3",
+  "description": "Steamworks SDK for Unity DOTS.",
+  "unity": "2023.3",
   "dependencies": {
   },
   "author": {

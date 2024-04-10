@@ -1,392 +1,150 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamController : SteamInterface
-	{
-		
-		internal ISteamController( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamController_v008", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamController_v008();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamController_v008();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_Init", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _Init( IntPtr self );
-		
-		#endregion
-		internal bool Init()
-		{
-			var returnValue = _Init( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_Shutdown", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _Shutdown( IntPtr self );
-		
-		#endregion
-		internal bool Shutdown()
-		{
-			var returnValue = _Shutdown( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_RunFrame", CallingConvention = Platform.CC)]
-		private static extern void _RunFrame( IntPtr self );
-		
-		#endregion
-		internal void RunFrame()
-		{
-			_RunFrame( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetConnectedControllers", CallingConvention = Platform.CC)]
-		private static extern int _GetConnectedControllers( IntPtr self, [In,Out] ControllerHandle_t[]  handlesOut );
-		
-		#endregion
-		internal int GetConnectedControllers( [In,Out] ControllerHandle_t[]  handlesOut )
-		{
-			var returnValue = _GetConnectedControllers( Self, handlesOut );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActionSetHandle", CallingConvention = Platform.CC)]
-		private static extern ControllerActionSetHandle_t _GetActionSetHandle( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionSetName );
-		
-		#endregion
-		internal ControllerActionSetHandle_t GetActionSetHandle( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionSetName )
-		{
-			var returnValue = _GetActionSetHandle( Self, pszActionSetName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ActivateActionSet", CallingConvention = Platform.CC)]
-		private static extern void _ActivateActionSet( IntPtr self, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle );
-		
-		#endregion
-		internal void ActivateActionSet( ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle )
-		{
-			_ActivateActionSet( Self, controllerHandle, actionSetHandle );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetCurrentActionSet", CallingConvention = Platform.CC)]
-		private static extern ControllerActionSetHandle_t _GetCurrentActionSet( IntPtr self, ControllerHandle_t controllerHandle );
-		
-		#endregion
-		internal ControllerActionSetHandle_t GetCurrentActionSet( ControllerHandle_t controllerHandle )
-		{
-			var returnValue = _GetCurrentActionSet( Self, controllerHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ActivateActionSetLayer", CallingConvention = Platform.CC)]
-		private static extern void _ActivateActionSetLayer( IntPtr self, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle );
-		
-		#endregion
-		internal void ActivateActionSetLayer( ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle )
-		{
-			_ActivateActionSetLayer( Self, controllerHandle, actionSetLayerHandle );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_DeactivateActionSetLayer", CallingConvention = Platform.CC)]
-		private static extern void _DeactivateActionSetLayer( IntPtr self, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle );
-		
-		#endregion
-		internal void DeactivateActionSetLayer( ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle )
-		{
-			_DeactivateActionSetLayer( Self, controllerHandle, actionSetLayerHandle );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_DeactivateAllActionSetLayers", CallingConvention = Platform.CC)]
-		private static extern void _DeactivateAllActionSetLayers( IntPtr self, ControllerHandle_t controllerHandle );
-		
-		#endregion
-		internal void DeactivateAllActionSetLayers( ControllerHandle_t controllerHandle )
-		{
-			_DeactivateAllActionSetLayers( Self, controllerHandle );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActiveActionSetLayers", CallingConvention = Platform.CC)]
-		private static extern int _GetActiveActionSetLayers( IntPtr self, ControllerHandle_t controllerHandle, [In,Out] ControllerActionSetHandle_t[]  handlesOut );
-		
-		#endregion
-		internal int GetActiveActionSetLayers( ControllerHandle_t controllerHandle, [In,Out] ControllerActionSetHandle_t[]  handlesOut )
-		{
-			var returnValue = _GetActiveActionSetLayers( Self, controllerHandle, handlesOut );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionHandle", CallingConvention = Platform.CC)]
-		private static extern ControllerDigitalActionHandle_t _GetDigitalActionHandle( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionName );
-		
-		#endregion
-		internal ControllerDigitalActionHandle_t GetDigitalActionHandle( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionName )
-		{
-			var returnValue = _GetDigitalActionHandle( Self, pszActionName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionData", CallingConvention = Platform.CC)]
-		private static extern DigitalState _GetDigitalActionData( IntPtr self, ControllerHandle_t controllerHandle, ControllerDigitalActionHandle_t digitalActionHandle );
-		
-		#endregion
-		internal DigitalState GetDigitalActionData( ControllerHandle_t controllerHandle, ControllerDigitalActionHandle_t digitalActionHandle )
-		{
-			var returnValue = _GetDigitalActionData( Self, controllerHandle, digitalActionHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionOrigins", CallingConvention = Platform.CC)]
-		private static extern int _GetDigitalActionOrigins( IntPtr self, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerDigitalActionHandle_t digitalActionHandle, ref ControllerActionOrigin originsOut );
-		
-		#endregion
-		internal int GetDigitalActionOrigins( ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerDigitalActionHandle_t digitalActionHandle, ref ControllerActionOrigin originsOut )
-		{
-			var returnValue = _GetDigitalActionOrigins( Self, controllerHandle, actionSetHandle, digitalActionHandle, ref originsOut );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionHandle", CallingConvention = Platform.CC)]
-		private static extern ControllerAnalogActionHandle_t _GetAnalogActionHandle( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionName );
-		
-		#endregion
-		internal ControllerAnalogActionHandle_t GetAnalogActionHandle( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszActionName )
-		{
-			var returnValue = _GetAnalogActionHandle( Self, pszActionName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionData", CallingConvention = Platform.CC)]
-		private static extern AnalogState _GetAnalogActionData( IntPtr self, ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t analogActionHandle );
-		
-		#endregion
-		internal AnalogState GetAnalogActionData( ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t analogActionHandle )
-		{
-			var returnValue = _GetAnalogActionData( Self, controllerHandle, analogActionHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionOrigins", CallingConvention = Platform.CC)]
-		private static extern int _GetAnalogActionOrigins( IntPtr self, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerAnalogActionHandle_t analogActionHandle, ref ControllerActionOrigin originsOut );
-		
-		#endregion
-		internal int GetAnalogActionOrigins( ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerAnalogActionHandle_t analogActionHandle, ref ControllerActionOrigin originsOut )
-		{
-			var returnValue = _GetAnalogActionOrigins( Self, controllerHandle, actionSetHandle, analogActionHandle, ref originsOut );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGlyphForActionOrigin", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetGlyphForActionOrigin( IntPtr self, ControllerActionOrigin eOrigin );
-		
-		#endregion
-		internal string GetGlyphForActionOrigin( ControllerActionOrigin eOrigin )
-		{
-			var returnValue = _GetGlyphForActionOrigin( Self, eOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetStringForActionOrigin", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetStringForActionOrigin( IntPtr self, ControllerActionOrigin eOrigin );
-		
-		#endregion
-		internal string GetStringForActionOrigin( ControllerActionOrigin eOrigin )
-		{
-			var returnValue = _GetStringForActionOrigin( Self, eOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_StopAnalogActionMomentum", CallingConvention = Platform.CC)]
-		private static extern void _StopAnalogActionMomentum( IntPtr self, ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t eAction );
-		
-		#endregion
-		internal void StopAnalogActionMomentum( ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t eAction )
-		{
-			_StopAnalogActionMomentum( Self, controllerHandle, eAction );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetMotionData", CallingConvention = Platform.CC)]
-		private static extern MotionState _GetMotionData( IntPtr self, ControllerHandle_t controllerHandle );
-		
-		#endregion
-		internal MotionState GetMotionData( ControllerHandle_t controllerHandle )
-		{
-			var returnValue = _GetMotionData( Self, controllerHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerHapticPulse", CallingConvention = Platform.CC)]
-		private static extern void _TriggerHapticPulse( IntPtr self, ControllerHandle_t controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec );
-		
-		#endregion
-		internal void TriggerHapticPulse( ControllerHandle_t controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec )
-		{
-			_TriggerHapticPulse( Self, controllerHandle, eTargetPad, usDurationMicroSec );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerRepeatedHapticPulse", CallingConvention = Platform.CC)]
-		private static extern void _TriggerRepeatedHapticPulse( IntPtr self, ControllerHandle_t controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags );
-		
-		#endregion
-		internal void TriggerRepeatedHapticPulse( ControllerHandle_t controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags )
-		{
-			_TriggerRepeatedHapticPulse( Self, controllerHandle, eTargetPad, usDurationMicroSec, usOffMicroSec, unRepeat, nFlags );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerVibration", CallingConvention = Platform.CC)]
-		private static extern void _TriggerVibration( IntPtr self, ControllerHandle_t controllerHandle, ushort usLeftSpeed, ushort usRightSpeed );
-		
-		#endregion
-		internal void TriggerVibration( ControllerHandle_t controllerHandle, ushort usLeftSpeed, ushort usRightSpeed )
-		{
-			_TriggerVibration( Self, controllerHandle, usLeftSpeed, usRightSpeed );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_SetLEDColor", CallingConvention = Platform.CC)]
-		private static extern void _SetLEDColor( IntPtr self, ControllerHandle_t controllerHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags );
-		
-		#endregion
-		internal void SetLEDColor( ControllerHandle_t controllerHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags )
-		{
-			_SetLEDColor( Self, controllerHandle, nColorR, nColorG, nColorB, nFlags );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ShowBindingPanel", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ShowBindingPanel( IntPtr self, ControllerHandle_t controllerHandle );
-		
-		#endregion
-		internal bool ShowBindingPanel( ControllerHandle_t controllerHandle )
-		{
-			var returnValue = _ShowBindingPanel( Self, controllerHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetInputTypeForHandle", CallingConvention = Platform.CC)]
-		private static extern InputType _GetInputTypeForHandle( IntPtr self, ControllerHandle_t controllerHandle );
-		
-		#endregion
-		internal InputType GetInputTypeForHandle( ControllerHandle_t controllerHandle )
-		{
-			var returnValue = _GetInputTypeForHandle( Self, controllerHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetControllerForGamepadIndex", CallingConvention = Platform.CC)]
-		private static extern ControllerHandle_t _GetControllerForGamepadIndex( IntPtr self, int nIndex );
-		
-		#endregion
-		internal ControllerHandle_t GetControllerForGamepadIndex( int nIndex )
-		{
-			var returnValue = _GetControllerForGamepadIndex( Self, nIndex );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGamepadIndexForController", CallingConvention = Platform.CC)]
-		private static extern int _GetGamepadIndexForController( IntPtr self, ControllerHandle_t ulControllerHandle );
-		
-		#endregion
-		internal int GetGamepadIndexForController( ControllerHandle_t ulControllerHandle )
-		{
-			var returnValue = _GetGamepadIndexForController( Self, ulControllerHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetStringForXboxOrigin", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetStringForXboxOrigin( IntPtr self, XboxOrigin eOrigin );
-		
-		#endregion
-		internal string GetStringForXboxOrigin( XboxOrigin eOrigin )
-		{
-			var returnValue = _GetStringForXboxOrigin( Self, eOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGlyphForXboxOrigin", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetGlyphForXboxOrigin( IntPtr self, XboxOrigin eOrigin );
-		
-		#endregion
-		internal string GetGlyphForXboxOrigin( XboxOrigin eOrigin )
-		{
-			var returnValue = _GetGlyphForXboxOrigin( Self, eOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActionOriginFromXboxOrigin", CallingConvention = Platform.CC)]
-		private static extern ControllerActionOrigin _GetActionOriginFromXboxOrigin( IntPtr self, ControllerHandle_t controllerHandle, XboxOrigin eOrigin );
-		
-		#endregion
-		internal ControllerActionOrigin GetActionOriginFromXboxOrigin( ControllerHandle_t controllerHandle, XboxOrigin eOrigin )
-		{
-			var returnValue = _GetActionOriginFromXboxOrigin( Self, controllerHandle, eOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TranslateActionOrigin", CallingConvention = Platform.CC)]
-		private static extern ControllerActionOrigin _TranslateActionOrigin( IntPtr self, InputType eDestinationInputType, ControllerActionOrigin eSourceOrigin );
-		
-		#endregion
-		internal ControllerActionOrigin TranslateActionOrigin( InputType eDestinationInputType, ControllerActionOrigin eSourceOrigin )
-		{
-			var returnValue = _TranslateActionOrigin( Self, eDestinationInputType, eSourceOrigin );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetControllerBindingRevision", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetControllerBindingRevision( IntPtr self, ControllerHandle_t controllerHandle, ref int pMajor, ref int pMinor );
-		
-		#endregion
-		internal bool GetControllerBindingRevision( ControllerHandle_t controllerHandle, ref int pMajor, ref int pMinor )
-		{
-			var returnValue = _GetControllerBindingRevision( Self, controllerHandle, ref pMajor, ref pMinor );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamController</summary>
+    public unsafe interface ISteamController
+    {
+        public bool Init();
+        public bool Shutdown();
+        public void RunFrame();
+        public int GetConnectedControllers(ControllerHandle* handlesOut);
+        public ControllerActionSetHandle GetActionSetHandle(UTF8StringPtr pszActionSetName);
+        public void ActivateActionSet(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle);
+        public ControllerActionSetHandle GetCurrentActionSet(ControllerHandle controllerHandle);
+        public void ActivateActionSetLayer(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle);
+        public void DeactivateActionSetLayer(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle);
+        public void DeactivateAllActionSetLayers(ControllerHandle controllerHandle);
+        public int GetActiveActionSetLayers(ControllerHandle controllerHandle, ControllerActionSetHandle* handlesOut);
+        public ControllerDigitalActionHandle GetDigitalActionHandle(UTF8StringPtr pszActionName);
+        public InputDigitalActionData GetDigitalActionData(ControllerHandle controllerHandle, ControllerDigitalActionHandle digitalActionHandle);
+        public int GetDigitalActionOrigins(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerDigitalActionHandle digitalActionHandle, ControllerActionOrigin* originsOut);
+        public ControllerAnalogActionHandle GetAnalogActionHandle(UTF8StringPtr pszActionName);
+        public InputAnalogActionData GetAnalogActionData(ControllerHandle controllerHandle, ControllerAnalogActionHandle analogActionHandle);
+        public int GetAnalogActionOrigins(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerAnalogActionHandle analogActionHandle, ControllerActionOrigin* originsOut);
+        public UTF8StringPtr GetGlyphForActionOrigin(ControllerActionOrigin eOrigin);
+        public UTF8StringPtr GetStringForActionOrigin(ControllerActionOrigin eOrigin);
+        public void StopAnalogActionMomentum(ControllerHandle controllerHandle, ControllerAnalogActionHandle eAction);
+        public InputMotionData GetMotionData(ControllerHandle controllerHandle);
+        public void TriggerHapticPulse(ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec);
+        public void TriggerRepeatedHapticPulse(ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags);
+        public void TriggerVibration(ControllerHandle controllerHandle, ushort usLeftSpeed, ushort usRightSpeed);
+        public void SetLEDColor(ControllerHandle controllerHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags);
+        public bool ShowBindingPanel(ControllerHandle controllerHandle);
+        public SteamInputType GetInputTypeForHandle(ControllerHandle controllerHandle);
+        public ControllerHandle GetControllerForGamepadIndex(int nIndex);
+        public int GetGamepadIndexForController(ControllerHandle ulControllerHandle);
+        public UTF8StringPtr GetStringForXboxOrigin(XboxOrigin eOrigin);
+        public UTF8StringPtr GetGlyphForXboxOrigin(XboxOrigin eOrigin);
+        public ControllerActionOrigin GetActionOriginFromXboxOrigin(ControllerHandle controllerHandle, XboxOrigin eOrigin);
+        public ControllerActionOrigin TranslateActionOrigin(SteamInputType eDestinationInputType, ControllerActionOrigin eSourceOrigin);
+        public bool GetControllerBindingRevision(ControllerHandle controllerHandle, int* pMajor, int* pMinor);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_Init", CallingConvention = Platform.CC)]
+        internal static extern bool Init(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_Shutdown", CallingConvention = Platform.CC)]
+        internal static extern bool Shutdown(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_RunFrame", CallingConvention = Platform.CC)]
+        internal static extern void RunFrame(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetConnectedControllers", CallingConvention = Platform.CC)]
+        internal static extern int GetConnectedControllers(void* self, ControllerHandle* handlesOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActionSetHandle", CallingConvention = Platform.CC)]
+        internal static extern ControllerActionSetHandle GetActionSetHandle(void* self, UTF8StringPtr pszActionSetName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ActivateActionSet", CallingConvention = Platform.CC)]
+        internal static extern void ActivateActionSet(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetCurrentActionSet", CallingConvention = Platform.CC)]
+        internal static extern ControllerActionSetHandle GetCurrentActionSet(void* self, ControllerHandle controllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ActivateActionSetLayer", CallingConvention = Platform.CC)]
+        internal static extern void ActivateActionSetLayer(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_DeactivateActionSetLayer", CallingConvention = Platform.CC)]
+        internal static extern void DeactivateActionSetLayer(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_DeactivateAllActionSetLayers", CallingConvention = Platform.CC)]
+        internal static extern void DeactivateAllActionSetLayers(void* self, ControllerHandle controllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActiveActionSetLayers", CallingConvention = Platform.CC)]
+        internal static extern int GetActiveActionSetLayers(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle* handlesOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionHandle", CallingConvention = Platform.CC)]
+        internal static extern ControllerDigitalActionHandle GetDigitalActionHandle(void* self, UTF8StringPtr pszActionName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionData", CallingConvention = Platform.CC)]
+        internal static extern InputDigitalActionData GetDigitalActionData(void* self, ControllerHandle controllerHandle, ControllerDigitalActionHandle digitalActionHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetDigitalActionOrigins", CallingConvention = Platform.CC)]
+        internal static extern int GetDigitalActionOrigins(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerDigitalActionHandle digitalActionHandle, ControllerActionOrigin* originsOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionHandle", CallingConvention = Platform.CC)]
+        internal static extern ControllerAnalogActionHandle GetAnalogActionHandle(void* self, UTF8StringPtr pszActionName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionData", CallingConvention = Platform.CC)]
+        internal static extern InputAnalogActionData GetAnalogActionData(void* self, ControllerHandle controllerHandle, ControllerAnalogActionHandle analogActionHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetAnalogActionOrigins", CallingConvention = Platform.CC)]
+        internal static extern int GetAnalogActionOrigins(void* self, ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerAnalogActionHandle analogActionHandle, ControllerActionOrigin* originsOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGlyphForActionOrigin", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetGlyphForActionOrigin(void* self, ControllerActionOrigin eOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetStringForActionOrigin", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetStringForActionOrigin(void* self, ControllerActionOrigin eOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_StopAnalogActionMomentum", CallingConvention = Platform.CC)]
+        internal static extern void StopAnalogActionMomentum(void* self, ControllerHandle controllerHandle, ControllerAnalogActionHandle eAction);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetMotionData", CallingConvention = Platform.CC)]
+        internal static extern InputMotionData GetMotionData(void* self, ControllerHandle controllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerHapticPulse", CallingConvention = Platform.CC)]
+        internal static extern void TriggerHapticPulse(void* self, ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerRepeatedHapticPulse", CallingConvention = Platform.CC)]
+        internal static extern void TriggerRepeatedHapticPulse(void* self, ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TriggerVibration", CallingConvention = Platform.CC)]
+        internal static extern void TriggerVibration(void* self, ControllerHandle controllerHandle, ushort usLeftSpeed, ushort usRightSpeed);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_SetLEDColor", CallingConvention = Platform.CC)]
+        internal static extern void SetLEDColor(void* self, ControllerHandle controllerHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_ShowBindingPanel", CallingConvention = Platform.CC)]
+        internal static extern bool ShowBindingPanel(void* self, ControllerHandle controllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetInputTypeForHandle", CallingConvention = Platform.CC)]
+        internal static extern SteamInputType GetInputTypeForHandle(void* self, ControllerHandle controllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetControllerForGamepadIndex", CallingConvention = Platform.CC)]
+        internal static extern ControllerHandle GetControllerForGamepadIndex(void* self, int nIndex);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGamepadIndexForController", CallingConvention = Platform.CC)]
+        internal static extern int GetGamepadIndexForController(void* self, ControllerHandle ulControllerHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetStringForXboxOrigin", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetStringForXboxOrigin(void* self, XboxOrigin eOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetGlyphForXboxOrigin", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetGlyphForXboxOrigin(void* self, XboxOrigin eOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetActionOriginFromXboxOrigin", CallingConvention = Platform.CC)]
+        internal static extern ControllerActionOrigin GetActionOriginFromXboxOrigin(void* self, ControllerHandle controllerHandle, XboxOrigin eOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_TranslateActionOrigin", CallingConvention = Platform.CC)]
+        internal static extern ControllerActionOrigin TranslateActionOrigin(void* self, SteamInputType eDestinationInputType, ControllerActionOrigin eSourceOrigin);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamController_GetControllerBindingRevision", CallingConvention = Platform.CC)]
+        internal static extern bool GetControllerBindingRevision(void* self, ControllerHandle controllerHandle, int* pMajor, int* pMinor);
+        public struct Instance : ISteamController
+        {
+            public void* self;
+            public bool Init() => ISteamController.Init(self);
+            public bool Shutdown() => ISteamController.Shutdown(self);
+            public void RunFrame() => ISteamController.RunFrame(self);
+            public int GetConnectedControllers(ControllerHandle* handlesOut) => ISteamController.GetConnectedControllers(self, handlesOut);
+            public ControllerActionSetHandle GetActionSetHandle(UTF8StringPtr pszActionSetName) => ISteamController.GetActionSetHandle(self, pszActionSetName);
+            public void ActivateActionSet(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle) => ISteamController.ActivateActionSet(self, controllerHandle, actionSetHandle);
+            public ControllerActionSetHandle GetCurrentActionSet(ControllerHandle controllerHandle) => ISteamController.GetCurrentActionSet(self, controllerHandle);
+            public void ActivateActionSetLayer(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle) => ISteamController.ActivateActionSetLayer(self, controllerHandle, actionSetLayerHandle);
+            public void DeactivateActionSetLayer(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetLayerHandle) => ISteamController.DeactivateActionSetLayer(self, controllerHandle, actionSetLayerHandle);
+            public void DeactivateAllActionSetLayers(ControllerHandle controllerHandle) => ISteamController.DeactivateAllActionSetLayers(self, controllerHandle);
+            public int GetActiveActionSetLayers(ControllerHandle controllerHandle, ControllerActionSetHandle* handlesOut) => ISteamController.GetActiveActionSetLayers(self, controllerHandle, handlesOut);
+            public ControllerDigitalActionHandle GetDigitalActionHandle(UTF8StringPtr pszActionName) => ISteamController.GetDigitalActionHandle(self, pszActionName);
+            public InputDigitalActionData GetDigitalActionData(ControllerHandle controllerHandle, ControllerDigitalActionHandle digitalActionHandle) => ISteamController.GetDigitalActionData(self, controllerHandle, digitalActionHandle);
+            public int GetDigitalActionOrigins(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerDigitalActionHandle digitalActionHandle, ControllerActionOrigin* originsOut) => ISteamController.GetDigitalActionOrigins(self, controllerHandle, actionSetHandle, digitalActionHandle, originsOut);
+            public ControllerAnalogActionHandle GetAnalogActionHandle(UTF8StringPtr pszActionName) => ISteamController.GetAnalogActionHandle(self, pszActionName);
+            public InputAnalogActionData GetAnalogActionData(ControllerHandle controllerHandle, ControllerAnalogActionHandle analogActionHandle) => ISteamController.GetAnalogActionData(self, controllerHandle, analogActionHandle);
+            public int GetAnalogActionOrigins(ControllerHandle controllerHandle, ControllerActionSetHandle actionSetHandle, ControllerAnalogActionHandle analogActionHandle, ControllerActionOrigin* originsOut) => ISteamController.GetAnalogActionOrigins(self, controllerHandle, actionSetHandle, analogActionHandle, originsOut);
+            public UTF8StringPtr GetGlyphForActionOrigin(ControllerActionOrigin eOrigin) => ISteamController.GetGlyphForActionOrigin(self, eOrigin);
+            public UTF8StringPtr GetStringForActionOrigin(ControllerActionOrigin eOrigin) => ISteamController.GetStringForActionOrigin(self, eOrigin);
+            public void StopAnalogActionMomentum(ControllerHandle controllerHandle, ControllerAnalogActionHandle eAction) => ISteamController.StopAnalogActionMomentum(self, controllerHandle, eAction);
+            public InputMotionData GetMotionData(ControllerHandle controllerHandle) => ISteamController.GetMotionData(self, controllerHandle);
+            public void TriggerHapticPulse(ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec) => ISteamController.TriggerHapticPulse(self, controllerHandle, eTargetPad, usDurationMicroSec);
+            public void TriggerRepeatedHapticPulse(ControllerHandle controllerHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags) => ISteamController.TriggerRepeatedHapticPulse(self, controllerHandle, eTargetPad, usDurationMicroSec, usOffMicroSec, unRepeat, nFlags);
+            public void TriggerVibration(ControllerHandle controllerHandle, ushort usLeftSpeed, ushort usRightSpeed) => ISteamController.TriggerVibration(self, controllerHandle, usLeftSpeed, usRightSpeed);
+            public void SetLEDColor(ControllerHandle controllerHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags) => ISteamController.SetLEDColor(self, controllerHandle, nColorR, nColorG, nColorB, nFlags);
+            public bool ShowBindingPanel(ControllerHandle controllerHandle) => ISteamController.ShowBindingPanel(self, controllerHandle);
+            public SteamInputType GetInputTypeForHandle(ControllerHandle controllerHandle) => ISteamController.GetInputTypeForHandle(self, controllerHandle);
+            public ControllerHandle GetControllerForGamepadIndex(int nIndex) => ISteamController.GetControllerForGamepadIndex(self, nIndex);
+            public int GetGamepadIndexForController(ControllerHandle ulControllerHandle) => ISteamController.GetGamepadIndexForController(self, ulControllerHandle);
+            public UTF8StringPtr GetStringForXboxOrigin(XboxOrigin eOrigin) => ISteamController.GetStringForXboxOrigin(self, eOrigin);
+            public UTF8StringPtr GetGlyphForXboxOrigin(XboxOrigin eOrigin) => ISteamController.GetGlyphForXboxOrigin(self, eOrigin);
+            public ControllerActionOrigin GetActionOriginFromXboxOrigin(ControllerHandle controllerHandle, XboxOrigin eOrigin) => ISteamController.GetActionOriginFromXboxOrigin(self, controllerHandle, eOrigin);
+            public ControllerActionOrigin TranslateActionOrigin(SteamInputType eDestinationInputType, ControllerActionOrigin eSourceOrigin) => ISteamController.TranslateActionOrigin(self, eDestinationInputType, eSourceOrigin);
+            public bool GetControllerBindingRevision(ControllerHandle controllerHandle, int* pMajor, int* pMinor) => ISteamController.GetControllerBindingRevision(self, controllerHandle, pMajor, pMinor);
+        }
+    }
 }

@@ -1,408 +1,142 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMusicRemote : SteamInterface
-	{
-		
-		internal ISteamMusicRemote( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamMusicRemote_v001", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamMusicRemote_v001();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamMusicRemote_v001();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_RegisterSteamMusicRemote", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _RegisterSteamMusicRemote( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchName );
-		
-		#endregion
-		internal bool RegisterSteamMusicRemote( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchName )
-		{
-			var returnValue = _RegisterSteamMusicRemote( Self, pchName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_DeregisterSteamMusicRemote", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _DeregisterSteamMusicRemote( IntPtr self );
-		
-		#endregion
-		internal bool DeregisterSteamMusicRemote()
-		{
-			var returnValue = _DeregisterSteamMusicRemote( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_BIsCurrentMusicRemote", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsCurrentMusicRemote( IntPtr self );
-		
-		#endregion
-		internal bool BIsCurrentMusicRemote()
-		{
-			var returnValue = _BIsCurrentMusicRemote( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_BActivationSuccess", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BActivationSuccess( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool BActivationSuccess( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _BActivationSuccess( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetDisplayName", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetDisplayName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDisplayName );
-		
-		#endregion
-		internal bool SetDisplayName( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDisplayName )
-		{
-			var returnValue = _SetDisplayName( Self, pchDisplayName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetPNGIcon_64x64", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetPNGIcon_64x64( IntPtr self, IntPtr pvBuffer, uint cbBufferLength );
-		
-		#endregion
-		internal bool SetPNGIcon_64x64( IntPtr pvBuffer, uint cbBufferLength )
-		{
-			var returnValue = _SetPNGIcon_64x64( Self, pvBuffer, cbBufferLength );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlayPrevious", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnablePlayPrevious( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnablePlayPrevious( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnablePlayPrevious( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlayNext", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnablePlayNext( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnablePlayNext( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnablePlayNext( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableShuffled", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnableShuffled( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnableShuffled( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnableShuffled( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableLooped", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnableLooped( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnableLooped( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnableLooped( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableQueue", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnableQueue( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnableQueue( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnableQueue( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlaylists", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _EnablePlaylists( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool EnablePlaylists( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _EnablePlaylists( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdatePlaybackStatus", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdatePlaybackStatus( IntPtr self, MusicStatus nStatus );
-		
-		#endregion
-		internal bool UpdatePlaybackStatus( MusicStatus nStatus )
-		{
-			var returnValue = _UpdatePlaybackStatus( Self, nStatus );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateShuffled", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateShuffled( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool UpdateShuffled( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _UpdateShuffled( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateLooped", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateLooped( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bValue );
-		
-		#endregion
-		internal bool UpdateLooped( [MarshalAs( UnmanagedType.U1 )] bool bValue )
-		{
-			var returnValue = _UpdateLooped( Self, bValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateVolume", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateVolume( IntPtr self, float flValue );
-		
-		#endregion
-		internal bool UpdateVolume( float flValue )
-		{
-			var returnValue = _UpdateVolume( Self, flValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryWillChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _CurrentEntryWillChange( IntPtr self );
-		
-		#endregion
-		internal bool CurrentEntryWillChange()
-		{
-			var returnValue = _CurrentEntryWillChange( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryIsAvailable", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _CurrentEntryIsAvailable( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bAvailable );
-		
-		#endregion
-		internal bool CurrentEntryIsAvailable( [MarshalAs( UnmanagedType.U1 )] bool bAvailable )
-		{
-			var returnValue = _CurrentEntryIsAvailable( Self, bAvailable );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryText", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateCurrentEntryText( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchText );
-		
-		#endregion
-		internal bool UpdateCurrentEntryText( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchText )
-		{
-			var returnValue = _UpdateCurrentEntryText( Self, pchText );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryElapsedSeconds", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateCurrentEntryElapsedSeconds( IntPtr self, int nValue );
-		
-		#endregion
-		internal bool UpdateCurrentEntryElapsedSeconds( int nValue )
-		{
-			var returnValue = _UpdateCurrentEntryElapsedSeconds( Self, nValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryCoverArt", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _UpdateCurrentEntryCoverArt( IntPtr self, IntPtr pvBuffer, uint cbBufferLength );
-		
-		#endregion
-		internal bool UpdateCurrentEntryCoverArt( IntPtr pvBuffer, uint cbBufferLength )
-		{
-			var returnValue = _UpdateCurrentEntryCoverArt( Self, pvBuffer, cbBufferLength );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryDidChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _CurrentEntryDidChange( IntPtr self );
-		
-		#endregion
-		internal bool CurrentEntryDidChange()
-		{
-			var returnValue = _CurrentEntryDidChange( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_QueueWillChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _QueueWillChange( IntPtr self );
-		
-		#endregion
-		internal bool QueueWillChange()
-		{
-			var returnValue = _QueueWillChange( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_ResetQueueEntries", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ResetQueueEntries( IntPtr self );
-		
-		#endregion
-		internal bool ResetQueueEntries()
-		{
-			var returnValue = _ResetQueueEntries( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetQueueEntry", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetQueueEntry( IntPtr self, int nID, int nPosition, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchEntryText );
-		
-		#endregion
-		internal bool SetQueueEntry( int nID, int nPosition, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchEntryText )
-		{
-			var returnValue = _SetQueueEntry( Self, nID, nPosition, pchEntryText );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetCurrentQueueEntry", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetCurrentQueueEntry( IntPtr self, int nID );
-		
-		#endregion
-		internal bool SetCurrentQueueEntry( int nID )
-		{
-			var returnValue = _SetCurrentQueueEntry( Self, nID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_QueueDidChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _QueueDidChange( IntPtr self );
-		
-		#endregion
-		internal bool QueueDidChange()
-		{
-			var returnValue = _QueueDidChange( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_PlaylistWillChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _PlaylistWillChange( IntPtr self );
-		
-		#endregion
-		internal bool PlaylistWillChange()
-		{
-			var returnValue = _PlaylistWillChange( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_ResetPlaylistEntries", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ResetPlaylistEntries( IntPtr self );
-		
-		#endregion
-		internal bool ResetPlaylistEntries()
-		{
-			var returnValue = _ResetPlaylistEntries( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetPlaylistEntry", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetPlaylistEntry( IntPtr self, int nID, int nPosition, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchEntryText );
-		
-		#endregion
-		internal bool SetPlaylistEntry( int nID, int nPosition, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchEntryText )
-		{
-			var returnValue = _SetPlaylistEntry( Self, nID, nPosition, pchEntryText );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetCurrentPlaylistEntry", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetCurrentPlaylistEntry( IntPtr self, int nID );
-		
-		#endregion
-		internal bool SetCurrentPlaylistEntry( int nID )
-		{
-			var returnValue = _SetCurrentPlaylistEntry( Self, nID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_PlaylistDidChange", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _PlaylistDidChange( IntPtr self );
-		
-		#endregion
-		internal bool PlaylistDidChange()
-		{
-			var returnValue = _PlaylistDidChange( Self );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamMusicRemote</summary>
+    public unsafe interface ISteamMusicRemote
+    {
+        public bool RegisterSteamMusicRemote(UTF8StringPtr pchName);
+        public bool DeregisterSteamMusicRemote();
+        public bool BIsCurrentMusicRemote();
+        public bool BActivationSuccess(bool bValue);
+        public bool SetDisplayName(UTF8StringPtr pchDisplayName);
+        public bool SetPNGIcon_64x64(void* pvBuffer, uint cbBufferLength);
+        public bool EnablePlayPrevious(bool bValue);
+        public bool EnablePlayNext(bool bValue);
+        public bool EnableShuffled(bool bValue);
+        public bool EnableLooped(bool bValue);
+        public bool EnableQueue(bool bValue);
+        public bool EnablePlaylists(bool bValue);
+        public bool UpdatePlaybackStatus(AudioPlayback_Status nStatus);
+        public bool UpdateShuffled(bool bValue);
+        public bool UpdateLooped(bool bValue);
+        public bool UpdateVolume(float flValue);
+        public bool CurrentEntryWillChange();
+        public bool CurrentEntryIsAvailable(bool bAvailable);
+        public bool UpdateCurrentEntryText(UTF8StringPtr pchText);
+        public bool UpdateCurrentEntryElapsedSeconds(int nValue);
+        public bool UpdateCurrentEntryCoverArt(void* pvBuffer, uint cbBufferLength);
+        public bool CurrentEntryDidChange();
+        public bool QueueWillChange();
+        public bool ResetQueueEntries();
+        public bool SetQueueEntry(int nID, int nPosition, UTF8StringPtr pchEntryText);
+        public bool SetCurrentQueueEntry(int nID);
+        public bool QueueDidChange();
+        public bool PlaylistWillChange();
+        public bool ResetPlaylistEntries();
+        public bool SetPlaylistEntry(int nID, int nPosition, UTF8StringPtr pchEntryText);
+        public bool SetCurrentPlaylistEntry(int nID);
+        public bool PlaylistDidChange();
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_RegisterSteamMusicRemote", CallingConvention = Platform.CC)]
+        internal static extern bool RegisterSteamMusicRemote(void* self, UTF8StringPtr pchName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_DeregisterSteamMusicRemote", CallingConvention = Platform.CC)]
+        internal static extern bool DeregisterSteamMusicRemote(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_BIsCurrentMusicRemote", CallingConvention = Platform.CC)]
+        internal static extern bool BIsCurrentMusicRemote(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_BActivationSuccess", CallingConvention = Platform.CC)]
+        internal static extern bool BActivationSuccess(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetDisplayName", CallingConvention = Platform.CC)]
+        internal static extern bool SetDisplayName(void* self, UTF8StringPtr pchDisplayName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetPNGIcon_64x64", CallingConvention = Platform.CC)]
+        internal static extern bool SetPNGIcon_64x64(void* self, void* pvBuffer, uint cbBufferLength);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlayPrevious", CallingConvention = Platform.CC)]
+        internal static extern bool EnablePlayPrevious(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlayNext", CallingConvention = Platform.CC)]
+        internal static extern bool EnablePlayNext(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableShuffled", CallingConvention = Platform.CC)]
+        internal static extern bool EnableShuffled(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableLooped", CallingConvention = Platform.CC)]
+        internal static extern bool EnableLooped(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnableQueue", CallingConvention = Platform.CC)]
+        internal static extern bool EnableQueue(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_EnablePlaylists", CallingConvention = Platform.CC)]
+        internal static extern bool EnablePlaylists(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdatePlaybackStatus", CallingConvention = Platform.CC)]
+        internal static extern bool UpdatePlaybackStatus(void* self, AudioPlayback_Status nStatus);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateShuffled", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateShuffled(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateLooped", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateLooped(void* self, bool bValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateVolume", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateVolume(void* self, float flValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryWillChange", CallingConvention = Platform.CC)]
+        internal static extern bool CurrentEntryWillChange(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryIsAvailable", CallingConvention = Platform.CC)]
+        internal static extern bool CurrentEntryIsAvailable(void* self, bool bAvailable);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryText", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateCurrentEntryText(void* self, UTF8StringPtr pchText);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryElapsedSeconds", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateCurrentEntryElapsedSeconds(void* self, int nValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_UpdateCurrentEntryCoverArt", CallingConvention = Platform.CC)]
+        internal static extern bool UpdateCurrentEntryCoverArt(void* self, void* pvBuffer, uint cbBufferLength);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_CurrentEntryDidChange", CallingConvention = Platform.CC)]
+        internal static extern bool CurrentEntryDidChange(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_QueueWillChange", CallingConvention = Platform.CC)]
+        internal static extern bool QueueWillChange(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_ResetQueueEntries", CallingConvention = Platform.CC)]
+        internal static extern bool ResetQueueEntries(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetQueueEntry", CallingConvention = Platform.CC)]
+        internal static extern bool SetQueueEntry(void* self, int nID, int nPosition, UTF8StringPtr pchEntryText);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetCurrentQueueEntry", CallingConvention = Platform.CC)]
+        internal static extern bool SetCurrentQueueEntry(void* self, int nID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_QueueDidChange", CallingConvention = Platform.CC)]
+        internal static extern bool QueueDidChange(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_PlaylistWillChange", CallingConvention = Platform.CC)]
+        internal static extern bool PlaylistWillChange(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_ResetPlaylistEntries", CallingConvention = Platform.CC)]
+        internal static extern bool ResetPlaylistEntries(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetPlaylistEntry", CallingConvention = Platform.CC)]
+        internal static extern bool SetPlaylistEntry(void* self, int nID, int nPosition, UTF8StringPtr pchEntryText);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_SetCurrentPlaylistEntry", CallingConvention = Platform.CC)]
+        internal static extern bool SetCurrentPlaylistEntry(void* self, int nID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusicRemote_PlaylistDidChange", CallingConvention = Platform.CC)]
+        internal static extern bool PlaylistDidChange(void* self);
+        public struct Instance : ISteamMusicRemote
+        {
+            public void* self;
+            public bool RegisterSteamMusicRemote(UTF8StringPtr pchName) => ISteamMusicRemote.RegisterSteamMusicRemote(self, pchName);
+            public bool DeregisterSteamMusicRemote() => ISteamMusicRemote.DeregisterSteamMusicRemote(self);
+            public bool BIsCurrentMusicRemote() => ISteamMusicRemote.BIsCurrentMusicRemote(self);
+            public bool BActivationSuccess(bool bValue) => ISteamMusicRemote.BActivationSuccess(self, bValue);
+            public bool SetDisplayName(UTF8StringPtr pchDisplayName) => ISteamMusicRemote.SetDisplayName(self, pchDisplayName);
+            public bool SetPNGIcon_64x64(void* pvBuffer, uint cbBufferLength) => ISteamMusicRemote.SetPNGIcon_64x64(self, pvBuffer, cbBufferLength);
+            public bool EnablePlayPrevious(bool bValue) => ISteamMusicRemote.EnablePlayPrevious(self, bValue);
+            public bool EnablePlayNext(bool bValue) => ISteamMusicRemote.EnablePlayNext(self, bValue);
+            public bool EnableShuffled(bool bValue) => ISteamMusicRemote.EnableShuffled(self, bValue);
+            public bool EnableLooped(bool bValue) => ISteamMusicRemote.EnableLooped(self, bValue);
+            public bool EnableQueue(bool bValue) => ISteamMusicRemote.EnableQueue(self, bValue);
+            public bool EnablePlaylists(bool bValue) => ISteamMusicRemote.EnablePlaylists(self, bValue);
+            public bool UpdatePlaybackStatus(AudioPlayback_Status nStatus) => ISteamMusicRemote.UpdatePlaybackStatus(self, nStatus);
+            public bool UpdateShuffled(bool bValue) => ISteamMusicRemote.UpdateShuffled(self, bValue);
+            public bool UpdateLooped(bool bValue) => ISteamMusicRemote.UpdateLooped(self, bValue);
+            public bool UpdateVolume(float flValue) => ISteamMusicRemote.UpdateVolume(self, flValue);
+            public bool CurrentEntryWillChange() => ISteamMusicRemote.CurrentEntryWillChange(self);
+            public bool CurrentEntryIsAvailable(bool bAvailable) => ISteamMusicRemote.CurrentEntryIsAvailable(self, bAvailable);
+            public bool UpdateCurrentEntryText(UTF8StringPtr pchText) => ISteamMusicRemote.UpdateCurrentEntryText(self, pchText);
+            public bool UpdateCurrentEntryElapsedSeconds(int nValue) => ISteamMusicRemote.UpdateCurrentEntryElapsedSeconds(self, nValue);
+            public bool UpdateCurrentEntryCoverArt(void* pvBuffer, uint cbBufferLength) => ISteamMusicRemote.UpdateCurrentEntryCoverArt(self, pvBuffer, cbBufferLength);
+            public bool CurrentEntryDidChange() => ISteamMusicRemote.CurrentEntryDidChange(self);
+            public bool QueueWillChange() => ISteamMusicRemote.QueueWillChange(self);
+            public bool ResetQueueEntries() => ISteamMusicRemote.ResetQueueEntries(self);
+            public bool SetQueueEntry(int nID, int nPosition, UTF8StringPtr pchEntryText) => ISteamMusicRemote.SetQueueEntry(self, nID, nPosition, pchEntryText);
+            public bool SetCurrentQueueEntry(int nID) => ISteamMusicRemote.SetCurrentQueueEntry(self, nID);
+            public bool QueueDidChange() => ISteamMusicRemote.QueueDidChange(self);
+            public bool PlaylistWillChange() => ISteamMusicRemote.PlaylistWillChange(self);
+            public bool ResetPlaylistEntries() => ISteamMusicRemote.ResetPlaylistEntries(self);
+            public bool SetPlaylistEntry(int nID, int nPosition, UTF8StringPtr pchEntryText) => ISteamMusicRemote.SetPlaylistEntry(self, nID, nPosition, pchEntryText);
+            public bool SetCurrentPlaylistEntry(int nID) => ISteamMusicRemote.SetCurrentPlaylistEntry(self, nID);
+            public bool PlaylistDidChange() => ISteamMusicRemote.PlaylistDidChange(self);
+        }
+    }
 }

@@ -1,458 +1,178 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamGameServer : SteamInterface
-	{
-		
-		internal ISteamGameServer( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServer_v015", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamGameServer_v015();
-		public override IntPtr GetServerInterfacePointer() => SteamAPI_SteamGameServer_v015();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetProduct", CallingConvention = Platform.CC)]
-		private static extern void _SetProduct( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszProduct );
-		
-		#endregion
-		internal void SetProduct( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszProduct )
-		{
-			_SetProduct( Self, pszProduct );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameDescription", CallingConvention = Platform.CC)]
-		private static extern void _SetGameDescription( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszGameDescription );
-		
-		#endregion
-		internal void SetGameDescription( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszGameDescription )
-		{
-			_SetGameDescription( Self, pszGameDescription );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetModDir", CallingConvention = Platform.CC)]
-		private static extern void _SetModDir( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszModDir );
-		
-		#endregion
-		internal void SetModDir( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszModDir )
-		{
-			_SetModDir( Self, pszModDir );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetDedicatedServer", CallingConvention = Platform.CC)]
-		private static extern void _SetDedicatedServer( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bDedicated );
-		
-		#endregion
-		internal void SetDedicatedServer( [MarshalAs( UnmanagedType.U1 )] bool bDedicated )
-		{
-			_SetDedicatedServer( Self, bDedicated );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOn", CallingConvention = Platform.CC)]
-		private static extern void _LogOn( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszToken );
-		
-		#endregion
-		internal void LogOn( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszToken )
-		{
-			_LogOn( Self, pszToken );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOnAnonymous", CallingConvention = Platform.CC)]
-		private static extern void _LogOnAnonymous( IntPtr self );
-		
-		#endregion
-		internal void LogOnAnonymous()
-		{
-			_LogOnAnonymous( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOff", CallingConvention = Platform.CC)]
-		private static extern void _LogOff( IntPtr self );
-		
-		#endregion
-		internal void LogOff()
-		{
-			_LogOff( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BLoggedOn", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BLoggedOn( IntPtr self );
-		
-		#endregion
-		internal bool BLoggedOn()
-		{
-			var returnValue = _BLoggedOn( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BSecure", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BSecure( IntPtr self );
-		
-		#endregion
-		internal bool BSecure()
-		{
-			var returnValue = _BSecure( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetSteamID", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetSteamID( IntPtr self );
-		
-		#endregion
-		internal SteamId GetSteamID()
-		{
-			var returnValue = _GetSteamID( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_WasRestartRequested", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _WasRestartRequested( IntPtr self );
-		
-		#endregion
-		internal bool WasRestartRequested()
-		{
-			var returnValue = _WasRestartRequested( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetMaxPlayerCount", CallingConvention = Platform.CC)]
-		private static extern void _SetMaxPlayerCount( IntPtr self, int cPlayersMax );
-		
-		#endregion
-		internal void SetMaxPlayerCount( int cPlayersMax )
-		{
-			_SetMaxPlayerCount( Self, cPlayersMax );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetBotPlayerCount", CallingConvention = Platform.CC)]
-		private static extern void _SetBotPlayerCount( IntPtr self, int cBotplayers );
-		
-		#endregion
-		internal void SetBotPlayerCount( int cBotplayers )
-		{
-			_SetBotPlayerCount( Self, cBotplayers );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetServerName", CallingConvention = Platform.CC)]
-		private static extern void _SetServerName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszServerName );
-		
-		#endregion
-		internal void SetServerName( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszServerName )
-		{
-			_SetServerName( Self, pszServerName );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetMapName", CallingConvention = Platform.CC)]
-		private static extern void _SetMapName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszMapName );
-		
-		#endregion
-		internal void SetMapName( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszMapName )
-		{
-			_SetMapName( Self, pszMapName );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetPasswordProtected", CallingConvention = Platform.CC)]
-		private static extern void _SetPasswordProtected( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bPasswordProtected );
-		
-		#endregion
-		internal void SetPasswordProtected( [MarshalAs( UnmanagedType.U1 )] bool bPasswordProtected )
-		{
-			_SetPasswordProtected( Self, bPasswordProtected );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetSpectatorPort", CallingConvention = Platform.CC)]
-		private static extern void _SetSpectatorPort( IntPtr self, ushort unSpectatorPort );
-		
-		#endregion
-		internal void SetSpectatorPort( ushort unSpectatorPort )
-		{
-			_SetSpectatorPort( Self, unSpectatorPort );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetSpectatorServerName", CallingConvention = Platform.CC)]
-		private static extern void _SetSpectatorServerName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszSpectatorServerName );
-		
-		#endregion
-		internal void SetSpectatorServerName( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszSpectatorServerName )
-		{
-			_SetSpectatorServerName( Self, pszSpectatorServerName );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_ClearAllKeyValues", CallingConvention = Platform.CC)]
-		private static extern void _ClearAllKeyValues( IntPtr self );
-		
-		#endregion
-		internal void ClearAllKeyValues()
-		{
-			_ClearAllKeyValues( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetKeyValue", CallingConvention = Platform.CC)]
-		private static extern void _SetKeyValue( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pValue );
-		
-		#endregion
-		internal void SetKeyValue( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pValue )
-		{
-			_SetKeyValue( Self, pKey, pValue );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameTags", CallingConvention = Platform.CC)]
-		private static extern void _SetGameTags( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameTags );
-		
-		#endregion
-		internal void SetGameTags( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameTags )
-		{
-			_SetGameTags( Self, pchGameTags );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameData", CallingConvention = Platform.CC)]
-		private static extern void _SetGameData( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameData );
-		
-		#endregion
-		internal void SetGameData( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameData )
-		{
-			_SetGameData( Self, pchGameData );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetRegion", CallingConvention = Platform.CC)]
-		private static extern void _SetRegion( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszRegion );
-		
-		#endregion
-		internal void SetRegion( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszRegion )
-		{
-			_SetRegion( Self, pszRegion );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetAdvertiseServerActive", CallingConvention = Platform.CC)]
-		private static extern void _SetAdvertiseServerActive( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bActive );
-		
-		#endregion
-		internal void SetAdvertiseServerActive( [MarshalAs( UnmanagedType.U1 )] bool bActive )
-		{
-			_SetAdvertiseServerActive( Self, bActive );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetAuthSessionTicket", CallingConvention = Platform.CC)]
-		private static extern HAuthTicket _GetAuthSessionTicket( IntPtr self, IntPtr pTicket, int cbMaxTicket, ref uint pcbTicket, ref NetIdentity pSnid );
-		
-		#endregion
-		internal HAuthTicket GetAuthSessionTicket( IntPtr pTicket, int cbMaxTicket, ref uint pcbTicket, ref NetIdentity pSnid )
-		{
-			var returnValue = _GetAuthSessionTicket( Self, pTicket, cbMaxTicket, ref pcbTicket, ref pSnid );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BeginAuthSession", CallingConvention = Platform.CC)]
-		private static extern BeginAuthResult _BeginAuthSession( IntPtr self, IntPtr pAuthTicket, int cbAuthTicket, SteamId steamID );
-		
-		#endregion
-		internal BeginAuthResult BeginAuthSession( IntPtr pAuthTicket, int cbAuthTicket, SteamId steamID )
-		{
-			var returnValue = _BeginAuthSession( Self, pAuthTicket, cbAuthTicket, steamID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_EndAuthSession", CallingConvention = Platform.CC)]
-		private static extern void _EndAuthSession( IntPtr self, SteamId steamID );
-		
-		#endregion
-		internal void EndAuthSession( SteamId steamID )
-		{
-			_EndAuthSession( Self, steamID );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_CancelAuthTicket", CallingConvention = Platform.CC)]
-		private static extern void _CancelAuthTicket( IntPtr self, HAuthTicket hAuthTicket );
-		
-		#endregion
-		internal void CancelAuthTicket( HAuthTicket hAuthTicket )
-		{
-			_CancelAuthTicket( Self, hAuthTicket );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_UserHasLicenseForApp", CallingConvention = Platform.CC)]
-		private static extern UserHasLicenseForAppResult _UserHasLicenseForApp( IntPtr self, SteamId steamID, AppId appID );
-		
-		#endregion
-		internal UserHasLicenseForAppResult UserHasLicenseForApp( SteamId steamID, AppId appID )
-		{
-			var returnValue = _UserHasLicenseForApp( Self, steamID, appID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_RequestUserGroupStatus", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _RequestUserGroupStatus( IntPtr self, SteamId steamIDUser, SteamId steamIDGroup );
-		
-		#endregion
-		internal bool RequestUserGroupStatus( SteamId steamIDUser, SteamId steamIDGroup )
-		{
-			var returnValue = _RequestUserGroupStatus( Self, steamIDUser, steamIDGroup );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetGameplayStats", CallingConvention = Platform.CC)]
-		private static extern void _GetGameplayStats( IntPtr self );
-		
-		#endregion
-		internal void GetGameplayStats()
-		{
-			_GetGameplayStats( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetServerReputation", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _GetServerReputation( IntPtr self );
-		
-		#endregion
-		internal CallResult<GSReputation_t> GetServerReputation()
-		{
-			var returnValue = _GetServerReputation( Self );
-			return new CallResult<GSReputation_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetPublicIP", CallingConvention = Platform.CC)]
-		private static extern SteamIPAddress _GetPublicIP( IntPtr self );
-		
-		#endregion
-		internal SteamIPAddress GetPublicIP()
-		{
-			var returnValue = _GetPublicIP( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_HandleIncomingPacket", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _HandleIncomingPacket( IntPtr self, IntPtr pData, int cbData, uint srcIP, ushort srcPort );
-		
-		#endregion
-		internal bool HandleIncomingPacket( IntPtr pData, int cbData, uint srcIP, ushort srcPort )
-		{
-			var returnValue = _HandleIncomingPacket( Self, pData, cbData, srcIP, srcPort );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetNextOutgoingPacket", CallingConvention = Platform.CC)]
-		private static extern int _GetNextOutgoingPacket( IntPtr self, IntPtr pOut, int cbMaxOut, ref uint pNetAdr, ref ushort pPort );
-		
-		#endregion
-		internal int GetNextOutgoingPacket( IntPtr pOut, int cbMaxOut, ref uint pNetAdr, ref ushort pPort )
-		{
-			var returnValue = _GetNextOutgoingPacket( Self, pOut, cbMaxOut, ref pNetAdr, ref pPort );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_AssociateWithClan", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _AssociateWithClan( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal CallResult<AssociateWithClanResult_t> AssociateWithClan( SteamId steamIDClan )
-		{
-			var returnValue = _AssociateWithClan( Self, steamIDClan );
-			return new CallResult<AssociateWithClanResult_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_ComputeNewPlayerCompatibility", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _ComputeNewPlayerCompatibility( IntPtr self, SteamId steamIDNewPlayer );
-		
-		#endregion
-		internal CallResult<ComputeNewPlayerCompatibilityResult_t> ComputeNewPlayerCompatibility( SteamId steamIDNewPlayer )
-		{
-			var returnValue = _ComputeNewPlayerCompatibility( Self, steamIDNewPlayer );
-			return new CallResult<ComputeNewPlayerCompatibilityResult_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SendUserConnectAndAuthenticate_DEPRECATED", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SendUserConnectAndAuthenticate_DEPRECATED( IntPtr self, uint unIPClient, IntPtr pvAuthBlob, uint cubAuthBlobSize, ref SteamId pSteamIDUser );
-		
-		#endregion
-		internal bool SendUserConnectAndAuthenticate_DEPRECATED( uint unIPClient, IntPtr pvAuthBlob, uint cubAuthBlobSize, ref SteamId pSteamIDUser )
-		{
-			var returnValue = _SendUserConnectAndAuthenticate_DEPRECATED( Self, unIPClient, pvAuthBlob, cubAuthBlobSize, ref pSteamIDUser );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_CreateUnauthenticatedUserConnection", CallingConvention = Platform.CC)]
-		private static extern SteamId _CreateUnauthenticatedUserConnection( IntPtr self );
-		
-		#endregion
-		internal SteamId CreateUnauthenticatedUserConnection()
-		{
-			var returnValue = _CreateUnauthenticatedUserConnection( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SendUserDisconnect_DEPRECATED", CallingConvention = Platform.CC)]
-		private static extern void _SendUserDisconnect_DEPRECATED( IntPtr self, SteamId steamIDUser );
-		
-		#endregion
-		internal void SendUserDisconnect_DEPRECATED( SteamId steamIDUser )
-		{
-			_SendUserDisconnect_DEPRECATED( Self, steamIDUser );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BUpdateUserData", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BUpdateUserData( IntPtr self, SteamId steamIDUser, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchPlayerName, uint uScore );
-		
-		#endregion
-		internal bool BUpdateUserData( SteamId steamIDUser, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchPlayerName, uint uScore )
-		{
-			var returnValue = _BUpdateUserData( Self, steamIDUser, pchPlayerName, uScore );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamGameServer</summary>
+    public unsafe interface ISteamGameServer
+    {
+        public void SetProduct(UTF8StringPtr pszProduct);
+        public void SetGameDescription(UTF8StringPtr pszGameDescription);
+        public void SetModDir(UTF8StringPtr pszModDir);
+        public void SetDedicatedServer(bool bDedicated);
+        public void LogOn(UTF8StringPtr pszToken);
+        public void LogOnAnonymous();
+        public void LogOff();
+        public bool BLoggedOn();
+        public bool BSecure();
+        public SteamId GetSteamID();
+        public bool WasRestartRequested();
+        public void SetMaxPlayerCount(int cPlayersMax);
+        public void SetBotPlayerCount(int cBotplayers);
+        public void SetServerName(UTF8StringPtr pszServerName);
+        public void SetMapName(UTF8StringPtr pszMapName);
+        public void SetPasswordProtected(bool bPasswordProtected);
+        public void SetSpectatorPort(ushort unSpectatorPort);
+        public void SetSpectatorServerName(UTF8StringPtr pszSpectatorServerName);
+        public void ClearAllKeyValues();
+        public void SetKeyValue(UTF8StringPtr pKey, UTF8StringPtr pValue);
+        public void SetGameTags(UTF8StringPtr pchGameTags);
+        public void SetGameData(UTF8StringPtr pchGameData);
+        public void SetRegion(UTF8StringPtr pszRegion);
+        public void SetAdvertiseServerActive(bool bActive);
+        public HAuthTicket GetAuthSessionTicket(void* pTicket, int cbMaxTicket, uint* pcbTicket, SteamNetworkingIdentity* pSnid);
+        public BeginAuthSessionResult BeginAuthSession(void* pAuthTicket, int cbAuthTicket, SteamId steamID);
+        public void EndAuthSession(SteamId steamID);
+        public void CancelAuthTicket(HAuthTicket hAuthTicket);
+        public UserHasLicenseForAppResult UserHasLicenseForApp(SteamId steamID, AppId appID);
+        public bool RequestUserGroupStatus(SteamId steamIDUser, SteamId steamIDGroup);
+        public void GetGameplayStats();
+        public SteamAPICall GetServerReputation();
+        public SteamIPAddress GetPublicIP();
+        public bool HandleIncomingPacket(void* pData, int cbData, uint srcIP, ushort srcPort);
+        public int GetNextOutgoingPacket(void* pOut, int cbMaxOut, uint* pNetAdr, ushort* pPort);
+        public SteamAPICall AssociateWithClan(SteamId steamIDClan);
+        public SteamAPICall ComputeNewPlayerCompatibility(SteamId steamIDNewPlayer);
+        public bool SendUserConnectAndAuthenticate_DEPRECATED(uint unIPClient, void* pvAuthBlob, uint cubAuthBlobSize, SteamId* pSteamIDUser);
+        public SteamId CreateUnauthenticatedUserConnection();
+        public void SendUserDisconnect_DEPRECATED(SteamId steamIDUser);
+        public bool BUpdateUserData(SteamId steamIDUser, UTF8StringPtr pchPlayerName, uint uScore);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetProduct", CallingConvention = Platform.CC)]
+        internal static extern void SetProduct(void* self, UTF8StringPtr pszProduct);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameDescription", CallingConvention = Platform.CC)]
+        internal static extern void SetGameDescription(void* self, UTF8StringPtr pszGameDescription);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetModDir", CallingConvention = Platform.CC)]
+        internal static extern void SetModDir(void* self, UTF8StringPtr pszModDir);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetDedicatedServer", CallingConvention = Platform.CC)]
+        internal static extern void SetDedicatedServer(void* self, bool bDedicated);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOn", CallingConvention = Platform.CC)]
+        internal static extern void LogOn(void* self, UTF8StringPtr pszToken);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOnAnonymous", CallingConvention = Platform.CC)]
+        internal static extern void LogOnAnonymous(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_LogOff", CallingConvention = Platform.CC)]
+        internal static extern void LogOff(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BLoggedOn", CallingConvention = Platform.CC)]
+        internal static extern bool BLoggedOn(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BSecure", CallingConvention = Platform.CC)]
+        internal static extern bool BSecure(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetSteamID", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetSteamID(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_WasRestartRequested", CallingConvention = Platform.CC)]
+        internal static extern bool WasRestartRequested(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetMaxPlayerCount", CallingConvention = Platform.CC)]
+        internal static extern void SetMaxPlayerCount(void* self, int cPlayersMax);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetBotPlayerCount", CallingConvention = Platform.CC)]
+        internal static extern void SetBotPlayerCount(void* self, int cBotplayers);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetServerName", CallingConvention = Platform.CC)]
+        internal static extern void SetServerName(void* self, UTF8StringPtr pszServerName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetMapName", CallingConvention = Platform.CC)]
+        internal static extern void SetMapName(void* self, UTF8StringPtr pszMapName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetPasswordProtected", CallingConvention = Platform.CC)]
+        internal static extern void SetPasswordProtected(void* self, bool bPasswordProtected);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetSpectatorPort", CallingConvention = Platform.CC)]
+        internal static extern void SetSpectatorPort(void* self, ushort unSpectatorPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetSpectatorServerName", CallingConvention = Platform.CC)]
+        internal static extern void SetSpectatorServerName(void* self, UTF8StringPtr pszSpectatorServerName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_ClearAllKeyValues", CallingConvention = Platform.CC)]
+        internal static extern void ClearAllKeyValues(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetKeyValue", CallingConvention = Platform.CC)]
+        internal static extern void SetKeyValue(void* self, UTF8StringPtr pKey, UTF8StringPtr pValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameTags", CallingConvention = Platform.CC)]
+        internal static extern void SetGameTags(void* self, UTF8StringPtr pchGameTags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetGameData", CallingConvention = Platform.CC)]
+        internal static extern void SetGameData(void* self, UTF8StringPtr pchGameData);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetRegion", CallingConvention = Platform.CC)]
+        internal static extern void SetRegion(void* self, UTF8StringPtr pszRegion);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SetAdvertiseServerActive", CallingConvention = Platform.CC)]
+        internal static extern void SetAdvertiseServerActive(void* self, bool bActive);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetAuthSessionTicket", CallingConvention = Platform.CC)]
+        internal static extern HAuthTicket GetAuthSessionTicket(void* self, void* pTicket, int cbMaxTicket, uint* pcbTicket, SteamNetworkingIdentity* pSnid);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BeginAuthSession", CallingConvention = Platform.CC)]
+        internal static extern BeginAuthSessionResult BeginAuthSession(void* self, void* pAuthTicket, int cbAuthTicket, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_EndAuthSession", CallingConvention = Platform.CC)]
+        internal static extern void EndAuthSession(void* self, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_CancelAuthTicket", CallingConvention = Platform.CC)]
+        internal static extern void CancelAuthTicket(void* self, HAuthTicket hAuthTicket);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_UserHasLicenseForApp", CallingConvention = Platform.CC)]
+        internal static extern UserHasLicenseForAppResult UserHasLicenseForApp(void* self, SteamId steamID, AppId appID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_RequestUserGroupStatus", CallingConvention = Platform.CC)]
+        internal static extern bool RequestUserGroupStatus(void* self, SteamId steamIDUser, SteamId steamIDGroup);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetGameplayStats", CallingConvention = Platform.CC)]
+        internal static extern void GetGameplayStats(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetServerReputation", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall GetServerReputation(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetPublicIP", CallingConvention = Platform.CC)]
+        internal static extern SteamIPAddress GetPublicIP(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_HandleIncomingPacket", CallingConvention = Platform.CC)]
+        internal static extern bool HandleIncomingPacket(void* self, void* pData, int cbData, uint srcIP, ushort srcPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_GetNextOutgoingPacket", CallingConvention = Platform.CC)]
+        internal static extern int GetNextOutgoingPacket(void* self, void* pOut, int cbMaxOut, uint* pNetAdr, ushort* pPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_AssociateWithClan", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall AssociateWithClan(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_ComputeNewPlayerCompatibility", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall ComputeNewPlayerCompatibility(void* self, SteamId steamIDNewPlayer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SendUserConnectAndAuthenticate_DEPRECATED", CallingConvention = Platform.CC)]
+        internal static extern bool SendUserConnectAndAuthenticate_DEPRECATED(void* self, uint unIPClient, void* pvAuthBlob, uint cubAuthBlobSize, SteamId* pSteamIDUser);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_CreateUnauthenticatedUserConnection", CallingConvention = Platform.CC)]
+        internal static extern SteamId CreateUnauthenticatedUserConnection(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_SendUserDisconnect_DEPRECATED", CallingConvention = Platform.CC)]
+        internal static extern void SendUserDisconnect_DEPRECATED(void* self, SteamId steamIDUser);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServer_BUpdateUserData", CallingConvention = Platform.CC)]
+        internal static extern bool BUpdateUserData(void* self, SteamId steamIDUser, UTF8StringPtr pchPlayerName, uint uScore);
+        public struct Instance : ISteamGameServer
+        {
+            public void* self;
+            public void SetProduct(UTF8StringPtr pszProduct) => ISteamGameServer.SetProduct(self, pszProduct);
+            public void SetGameDescription(UTF8StringPtr pszGameDescription) => ISteamGameServer.SetGameDescription(self, pszGameDescription);
+            public void SetModDir(UTF8StringPtr pszModDir) => ISteamGameServer.SetModDir(self, pszModDir);
+            public void SetDedicatedServer(bool bDedicated) => ISteamGameServer.SetDedicatedServer(self, bDedicated);
+            public void LogOn(UTF8StringPtr pszToken) => ISteamGameServer.LogOn(self, pszToken);
+            public void LogOnAnonymous() => ISteamGameServer.LogOnAnonymous(self);
+            public void LogOff() => ISteamGameServer.LogOff(self);
+            public bool BLoggedOn() => ISteamGameServer.BLoggedOn(self);
+            public bool BSecure() => ISteamGameServer.BSecure(self);
+            public SteamId GetSteamID() => ISteamGameServer.GetSteamID(self);
+            public bool WasRestartRequested() => ISteamGameServer.WasRestartRequested(self);
+            public void SetMaxPlayerCount(int cPlayersMax) => ISteamGameServer.SetMaxPlayerCount(self, cPlayersMax);
+            public void SetBotPlayerCount(int cBotplayers) => ISteamGameServer.SetBotPlayerCount(self, cBotplayers);
+            public void SetServerName(UTF8StringPtr pszServerName) => ISteamGameServer.SetServerName(self, pszServerName);
+            public void SetMapName(UTF8StringPtr pszMapName) => ISteamGameServer.SetMapName(self, pszMapName);
+            public void SetPasswordProtected(bool bPasswordProtected) => ISteamGameServer.SetPasswordProtected(self, bPasswordProtected);
+            public void SetSpectatorPort(ushort unSpectatorPort) => ISteamGameServer.SetSpectatorPort(self, unSpectatorPort);
+            public void SetSpectatorServerName(UTF8StringPtr pszSpectatorServerName) => ISteamGameServer.SetSpectatorServerName(self, pszSpectatorServerName);
+            public void ClearAllKeyValues() => ISteamGameServer.ClearAllKeyValues(self);
+            public void SetKeyValue(UTF8StringPtr pKey, UTF8StringPtr pValue) => ISteamGameServer.SetKeyValue(self, pKey, pValue);
+            public void SetGameTags(UTF8StringPtr pchGameTags) => ISteamGameServer.SetGameTags(self, pchGameTags);
+            public void SetGameData(UTF8StringPtr pchGameData) => ISteamGameServer.SetGameData(self, pchGameData);
+            public void SetRegion(UTF8StringPtr pszRegion) => ISteamGameServer.SetRegion(self, pszRegion);
+            public void SetAdvertiseServerActive(bool bActive) => ISteamGameServer.SetAdvertiseServerActive(self, bActive);
+            public HAuthTicket GetAuthSessionTicket(void* pTicket, int cbMaxTicket, uint* pcbTicket, SteamNetworkingIdentity* pSnid) => ISteamGameServer.GetAuthSessionTicket(self, pTicket, cbMaxTicket, pcbTicket, pSnid);
+            public BeginAuthSessionResult BeginAuthSession(void* pAuthTicket, int cbAuthTicket, SteamId steamID) => ISteamGameServer.BeginAuthSession(self, pAuthTicket, cbAuthTicket, steamID);
+            public void EndAuthSession(SteamId steamID) => ISteamGameServer.EndAuthSession(self, steamID);
+            public void CancelAuthTicket(HAuthTicket hAuthTicket) => ISteamGameServer.CancelAuthTicket(self, hAuthTicket);
+            public UserHasLicenseForAppResult UserHasLicenseForApp(SteamId steamID, AppId appID) => ISteamGameServer.UserHasLicenseForApp(self, steamID, appID);
+            public bool RequestUserGroupStatus(SteamId steamIDUser, SteamId steamIDGroup) => ISteamGameServer.RequestUserGroupStatus(self, steamIDUser, steamIDGroup);
+            public void GetGameplayStats() => ISteamGameServer.GetGameplayStats(self);
+            public SteamAPICall GetServerReputation() => ISteamGameServer.GetServerReputation(self);
+            public SteamIPAddress GetPublicIP() => ISteamGameServer.GetPublicIP(self);
+            public bool HandleIncomingPacket(void* pData, int cbData, uint srcIP, ushort srcPort) => ISteamGameServer.HandleIncomingPacket(self, pData, cbData, srcIP, srcPort);
+            public int GetNextOutgoingPacket(void* pOut, int cbMaxOut, uint* pNetAdr, ushort* pPort) => ISteamGameServer.GetNextOutgoingPacket(self, pOut, cbMaxOut, pNetAdr, pPort);
+            public SteamAPICall AssociateWithClan(SteamId steamIDClan) => ISteamGameServer.AssociateWithClan(self, steamIDClan);
+            public SteamAPICall ComputeNewPlayerCompatibility(SteamId steamIDNewPlayer) => ISteamGameServer.ComputeNewPlayerCompatibility(self, steamIDNewPlayer);
+            public bool SendUserConnectAndAuthenticate_DEPRECATED(uint unIPClient, void* pvAuthBlob, uint cubAuthBlobSize, SteamId* pSteamIDUser) => ISteamGameServer.SendUserConnectAndAuthenticate_DEPRECATED(self, unIPClient, pvAuthBlob, cubAuthBlobSize, pSteamIDUser);
+            public SteamId CreateUnauthenticatedUserConnection() => ISteamGameServer.CreateUnauthenticatedUserConnection(self);
+            public void SendUserDisconnect_DEPRECATED(SteamId steamIDUser) => ISteamGameServer.SendUserDisconnect_DEPRECATED(self, steamIDUser);
+            public bool BUpdateUserData(SteamId steamIDUser, UTF8StringPtr pchPlayerName, uint uScore) => ISteamGameServer.BUpdateUserData(self, steamIDUser, pchPlayerName, uScore);
+        }
+    }
 }

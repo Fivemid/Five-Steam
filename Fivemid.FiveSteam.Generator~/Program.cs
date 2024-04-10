@@ -1,3 +1,3 @@
 ﻿using Fivemid.FiveSteam.Generator;
 
-new CodeWriter("../../../../Fivemid.FiveSteam/Generated_new").Write(SteamApiDefinition.VALUE);
+new CodeWriter("../../../../Fivemid.FiveSteam/Generated").Write(SteamApiDefinition.VALUE);

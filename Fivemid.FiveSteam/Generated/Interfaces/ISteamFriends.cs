@@ -1,911 +1,334 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamFriends : SteamInterface
-	{
-		
-		internal ISteamFriends( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamFriends_v017", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamFriends_v017();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamFriends_v017();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPersonaName", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetPersonaName( IntPtr self );
-		
-		#endregion
-		internal string GetPersonaName()
-		{
-			var returnValue = _GetPersonaName( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetPersonaName", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _SetPersonaName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchPersonaName );
-		
-		#endregion
-		internal CallResult<SetPersonaNameResponse_t> SetPersonaName( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchPersonaName )
-		{
-			var returnValue = _SetPersonaName( Self, pchPersonaName );
-			return new CallResult<SetPersonaNameResponse_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPersonaState", CallingConvention = Platform.CC)]
-		private static extern FriendState _GetPersonaState( IntPtr self );
-		
-		#endregion
-		internal FriendState GetPersonaState()
-		{
-			var returnValue = _GetPersonaState( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCount", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendCount( IntPtr self, int iFriendFlags );
-		
-		#endregion
-		internal int GetFriendCount( int iFriendFlags )
-		{
-			var returnValue = _GetFriendCount( Self, iFriendFlags );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendByIndex", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetFriendByIndex( IntPtr self, int iFriend, int iFriendFlags );
-		
-		#endregion
-		internal SteamId GetFriendByIndex( int iFriend, int iFriendFlags )
-		{
-			var returnValue = _GetFriendByIndex( Self, iFriend, iFriendFlags );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRelationship", CallingConvention = Platform.CC)]
-		private static extern Relationship _GetFriendRelationship( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal Relationship GetFriendRelationship( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendRelationship( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaState", CallingConvention = Platform.CC)]
-		private static extern FriendState _GetFriendPersonaState( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal FriendState GetFriendPersonaState( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendPersonaState( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaName", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetFriendPersonaName( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal string GetFriendPersonaName( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendPersonaName( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendGamePlayed", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetFriendGamePlayed( IntPtr self, SteamId steamIDFriend, ref FriendGameInfo_t pFriendGameInfo );
-		
-		#endregion
-		internal bool GetFriendGamePlayed( SteamId steamIDFriend, ref FriendGameInfo_t pFriendGameInfo )
-		{
-			var returnValue = _GetFriendGamePlayed( Self, steamIDFriend, ref pFriendGameInfo );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaNameHistory", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetFriendPersonaNameHistory( IntPtr self, SteamId steamIDFriend, int iPersonaName );
-		
-		#endregion
-		internal string GetFriendPersonaNameHistory( SteamId steamIDFriend, int iPersonaName )
-		{
-			var returnValue = _GetFriendPersonaNameHistory( Self, steamIDFriend, iPersonaName );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendSteamLevel", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendSteamLevel( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetFriendSteamLevel( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendSteamLevel( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPlayerNickname", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetPlayerNickname( IntPtr self, SteamId steamIDPlayer );
-		
-		#endregion
-		internal string GetPlayerNickname( SteamId steamIDPlayer )
-		{
-			var returnValue = _GetPlayerNickname( Self, steamIDPlayer );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupCount", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendsGroupCount( IntPtr self );
-		
-		#endregion
-		internal int GetFriendsGroupCount()
-		{
-			var returnValue = _GetFriendsGroupCount( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupIDByIndex", CallingConvention = Platform.CC)]
-		private static extern FriendsGroupID_t _GetFriendsGroupIDByIndex( IntPtr self, int iFG );
-		
-		#endregion
-		internal FriendsGroupID_t GetFriendsGroupIDByIndex( int iFG )
-		{
-			var returnValue = _GetFriendsGroupIDByIndex( Self, iFG );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupName", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetFriendsGroupName( IntPtr self, FriendsGroupID_t friendsGroupID );
-		
-		#endregion
-		internal string GetFriendsGroupName( FriendsGroupID_t friendsGroupID )
-		{
-			var returnValue = _GetFriendsGroupName( Self, friendsGroupID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupMembersCount", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendsGroupMembersCount( IntPtr self, FriendsGroupID_t friendsGroupID );
-		
-		#endregion
-		internal int GetFriendsGroupMembersCount( FriendsGroupID_t friendsGroupID )
-		{
-			var returnValue = _GetFriendsGroupMembersCount( Self, friendsGroupID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupMembersList", CallingConvention = Platform.CC)]
-		private static extern void _GetFriendsGroupMembersList( IntPtr self, FriendsGroupID_t friendsGroupID, [In,Out] SteamId[]  pOutSteamIDMembers, int nMembersCount );
-		
-		#endregion
-		internal void GetFriendsGroupMembersList( FriendsGroupID_t friendsGroupID, [In,Out] SteamId[]  pOutSteamIDMembers, int nMembersCount )
-		{
-			_GetFriendsGroupMembersList( Self, friendsGroupID, pOutSteamIDMembers, nMembersCount );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_HasFriend", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _HasFriend( IntPtr self, SteamId steamIDFriend, int iFriendFlags );
-		
-		#endregion
-		internal bool HasFriend( SteamId steamIDFriend, int iFriendFlags )
-		{
-			var returnValue = _HasFriend( Self, steamIDFriend, iFriendFlags );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanCount", CallingConvention = Platform.CC)]
-		private static extern int _GetClanCount( IntPtr self );
-		
-		#endregion
-		internal int GetClanCount()
-		{
-			var returnValue = _GetClanCount( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanByIndex", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetClanByIndex( IntPtr self, int iClan );
-		
-		#endregion
-		internal SteamId GetClanByIndex( int iClan )
-		{
-			var returnValue = _GetClanByIndex( Self, iClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanName", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetClanName( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal string GetClanName( SteamId steamIDClan )
-		{
-			var returnValue = _GetClanName( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanTag", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetClanTag( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal string GetClanTag( SteamId steamIDClan )
-		{
-			var returnValue = _GetClanTag( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanActivityCounts", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetClanActivityCounts( IntPtr self, SteamId steamIDClan, ref int pnOnline, ref int pnInGame, ref int pnChatting );
-		
-		#endregion
-		internal bool GetClanActivityCounts( SteamId steamIDClan, ref int pnOnline, ref int pnInGame, ref int pnChatting )
-		{
-			var returnValue = _GetClanActivityCounts( Self, steamIDClan, ref pnOnline, ref pnInGame, ref pnChatting );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_DownloadClanActivityCounts", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _DownloadClanActivityCounts( IntPtr self, [In,Out] SteamId[]  psteamIDClans, int cClansToRequest );
-		
-		#endregion
-		internal CallResult<DownloadClanActivityCountsResult_t> DownloadClanActivityCounts( [In,Out] SteamId[]  psteamIDClans, int cClansToRequest )
-		{
-			var returnValue = _DownloadClanActivityCounts( Self, psteamIDClans, cClansToRequest );
-			return new CallResult<DownloadClanActivityCountsResult_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCountFromSource", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendCountFromSource( IntPtr self, SteamId steamIDSource );
-		
-		#endregion
-		internal int GetFriendCountFromSource( SteamId steamIDSource )
-		{
-			var returnValue = _GetFriendCountFromSource( Self, steamIDSource );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendFromSourceByIndex", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetFriendFromSourceByIndex( IntPtr self, SteamId steamIDSource, int iFriend );
-		
-		#endregion
-		internal SteamId GetFriendFromSourceByIndex( SteamId steamIDSource, int iFriend )
-		{
-			var returnValue = _GetFriendFromSourceByIndex( Self, steamIDSource, iFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsUserInSource", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsUserInSource( IntPtr self, SteamId steamIDUser, SteamId steamIDSource );
-		
-		#endregion
-		internal bool IsUserInSource( SteamId steamIDUser, SteamId steamIDSource )
-		{
-			var returnValue = _IsUserInSource( Self, steamIDUser, steamIDSource );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetInGameVoiceSpeaking", CallingConvention = Platform.CC)]
-		private static extern void _SetInGameVoiceSpeaking( IntPtr self, SteamId steamIDUser, [MarshalAs( UnmanagedType.U1 )] bool bSpeaking );
-		
-		#endregion
-		internal void SetInGameVoiceSpeaking( SteamId steamIDUser, [MarshalAs( UnmanagedType.U1 )] bool bSpeaking )
-		{
-			_SetInGameVoiceSpeaking( Self, steamIDUser, bSpeaking );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlay", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlay( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDialog );
-		
-		#endregion
-		internal void ActivateGameOverlay( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDialog )
-		{
-			_ActivateGameOverlay( Self, pchDialog );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToUser", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayToUser( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDialog, SteamId steamID );
-		
-		#endregion
-		internal void ActivateGameOverlayToUser( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDialog, SteamId steamID )
-		{
-			_ActivateGameOverlayToUser( Self, pchDialog, steamID );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToWebPage", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayToWebPage( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchURL, ActivateGameOverlayToWebPageMode eMode );
-		
-		#endregion
-		internal void ActivateGameOverlayToWebPage( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchURL, ActivateGameOverlayToWebPageMode eMode )
-		{
-			_ActivateGameOverlayToWebPage( Self, pchURL, eMode );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToStore", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayToStore( IntPtr self, AppId nAppID, OverlayToStoreFlag eFlag );
-		
-		#endregion
-		internal void ActivateGameOverlayToStore( AppId nAppID, OverlayToStoreFlag eFlag )
-		{
-			_ActivateGameOverlayToStore( Self, nAppID, eFlag );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetPlayedWith", CallingConvention = Platform.CC)]
-		private static extern void _SetPlayedWith( IntPtr self, SteamId steamIDUserPlayedWith );
-		
-		#endregion
-		internal void SetPlayedWith( SteamId steamIDUserPlayedWith )
-		{
-			_SetPlayedWith( Self, steamIDUserPlayedWith );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialog", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayInviteDialog( IntPtr self, SteamId steamIDLobby );
-		
-		#endregion
-		internal void ActivateGameOverlayInviteDialog( SteamId steamIDLobby )
-		{
-			_ActivateGameOverlayInviteDialog( Self, steamIDLobby );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetSmallFriendAvatar", CallingConvention = Platform.CC)]
-		private static extern int _GetSmallFriendAvatar( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetSmallFriendAvatar( SteamId steamIDFriend )
-		{
-			var returnValue = _GetSmallFriendAvatar( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetMediumFriendAvatar", CallingConvention = Platform.CC)]
-		private static extern int _GetMediumFriendAvatar( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetMediumFriendAvatar( SteamId steamIDFriend )
-		{
-			var returnValue = _GetMediumFriendAvatar( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetLargeFriendAvatar", CallingConvention = Platform.CC)]
-		private static extern int _GetLargeFriendAvatar( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetLargeFriendAvatar( SteamId steamIDFriend )
-		{
-			var returnValue = _GetLargeFriendAvatar( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestUserInformation", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _RequestUserInformation( IntPtr self, SteamId steamIDUser, [MarshalAs( UnmanagedType.U1 )] bool bRequireNameOnly );
-		
-		#endregion
-		internal bool RequestUserInformation( SteamId steamIDUser, [MarshalAs( UnmanagedType.U1 )] bool bRequireNameOnly )
-		{
-			var returnValue = _RequestUserInformation( Self, steamIDUser, bRequireNameOnly );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestClanOfficerList", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _RequestClanOfficerList( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal CallResult<ClanOfficerListResponse_t> RequestClanOfficerList( SteamId steamIDClan )
-		{
-			var returnValue = _RequestClanOfficerList( Self, steamIDClan );
-			return new CallResult<ClanOfficerListResponse_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOwner", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetClanOwner( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal SteamId GetClanOwner( SteamId steamIDClan )
-		{
-			var returnValue = _GetClanOwner( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOfficerCount", CallingConvention = Platform.CC)]
-		private static extern int _GetClanOfficerCount( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal int GetClanOfficerCount( SteamId steamIDClan )
-		{
-			var returnValue = _GetClanOfficerCount( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOfficerByIndex", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetClanOfficerByIndex( IntPtr self, SteamId steamIDClan, int iOfficer );
-		
-		#endregion
-		internal SteamId GetClanOfficerByIndex( SteamId steamIDClan, int iOfficer )
-		{
-			var returnValue = _GetClanOfficerByIndex( Self, steamIDClan, iOfficer );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetUserRestrictions", CallingConvention = Platform.CC)]
-		private static extern uint _GetUserRestrictions( IntPtr self );
-		
-		#endregion
-		internal uint GetUserRestrictions()
-		{
-			var returnValue = _GetUserRestrictions( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetRichPresence", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetRichPresence( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue );
-		
-		#endregion
-		internal bool SetRichPresence( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue )
-		{
-			var returnValue = _SetRichPresence( Self, pchKey, pchValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ClearRichPresence", CallingConvention = Platform.CC)]
-		private static extern void _ClearRichPresence( IntPtr self );
-		
-		#endregion
-		internal void ClearRichPresence()
-		{
-			_ClearRichPresence( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresence", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetFriendRichPresence( IntPtr self, SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
-		
-		#endregion
-		internal string GetFriendRichPresence( SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey )
-		{
-			var returnValue = _GetFriendRichPresence( Self, steamIDFriend, pchKey );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresenceKeyCount", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendRichPresenceKeyCount( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetFriendRichPresenceKeyCount( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendRichPresenceKeyCount( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresenceKeyByIndex", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetFriendRichPresenceKeyByIndex( IntPtr self, SteamId steamIDFriend, int iKey );
-		
-		#endregion
-		internal string GetFriendRichPresenceKeyByIndex( SteamId steamIDFriend, int iKey )
-		{
-			var returnValue = _GetFriendRichPresenceKeyByIndex( Self, steamIDFriend, iKey );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestFriendRichPresence", CallingConvention = Platform.CC)]
-		private static extern void _RequestFriendRichPresence( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal void RequestFriendRichPresence( SteamId steamIDFriend )
-		{
-			_RequestFriendRichPresence( Self, steamIDFriend );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_InviteUserToGame", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _InviteUserToGame( IntPtr self, SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchConnectString );
-		
-		#endregion
-		internal bool InviteUserToGame( SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchConnectString )
-		{
-			var returnValue = _InviteUserToGame( Self, steamIDFriend, pchConnectString );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetCoplayFriendCount", CallingConvention = Platform.CC)]
-		private static extern int _GetCoplayFriendCount( IntPtr self );
-		
-		#endregion
-		internal int GetCoplayFriendCount()
-		{
-			var returnValue = _GetCoplayFriendCount( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetCoplayFriend", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetCoplayFriend( IntPtr self, int iCoplayFriend );
-		
-		#endregion
-		internal SteamId GetCoplayFriend( int iCoplayFriend )
-		{
-			var returnValue = _GetCoplayFriend( Self, iCoplayFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCoplayTime", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendCoplayTime( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal int GetFriendCoplayTime( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendCoplayTime( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCoplayGame", CallingConvention = Platform.CC)]
-		private static extern AppId _GetFriendCoplayGame( IntPtr self, SteamId steamIDFriend );
-		
-		#endregion
-		internal AppId GetFriendCoplayGame( SteamId steamIDFriend )
-		{
-			var returnValue = _GetFriendCoplayGame( Self, steamIDFriend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_JoinClanChatRoom", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _JoinClanChatRoom( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal CallResult<JoinClanChatRoomCompletionResult_t> JoinClanChatRoom( SteamId steamIDClan )
-		{
-			var returnValue = _JoinClanChatRoom( Self, steamIDClan );
-			return new CallResult<JoinClanChatRoomCompletionResult_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_LeaveClanChatRoom", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _LeaveClanChatRoom( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal bool LeaveClanChatRoom( SteamId steamIDClan )
-		{
-			var returnValue = _LeaveClanChatRoom( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanChatMemberCount", CallingConvention = Platform.CC)]
-		private static extern int _GetClanChatMemberCount( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal int GetClanChatMemberCount( SteamId steamIDClan )
-		{
-			var returnValue = _GetClanChatMemberCount( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetChatMemberByIndex", CallingConvention = Platform.CC)]
-		private static extern SteamId _GetChatMemberByIndex( IntPtr self, SteamId steamIDClan, int iUser );
-		
-		#endregion
-		internal SteamId GetChatMemberByIndex( SteamId steamIDClan, int iUser )
-		{
-			var returnValue = _GetChatMemberByIndex( Self, steamIDClan, iUser );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SendClanChatMessage", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SendClanChatMessage( IntPtr self, SteamId steamIDClanChat, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchText );
-		
-		#endregion
-		internal bool SendClanChatMessage( SteamId steamIDClanChat, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchText )
-		{
-			var returnValue = _SendClanChatMessage( Self, steamIDClanChat, pchText );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanChatMessage", CallingConvention = Platform.CC)]
-		private static extern int _GetClanChatMessage( IntPtr self, SteamId steamIDClanChat, int iMessage, IntPtr prgchText, int cchTextMax, ref ChatEntryType peChatEntryType, ref SteamId psteamidChatter );
-		
-		#endregion
-		internal int GetClanChatMessage( SteamId steamIDClanChat, int iMessage, IntPtr prgchText, int cchTextMax, ref ChatEntryType peChatEntryType, ref SteamId psteamidChatter )
-		{
-			var returnValue = _GetClanChatMessage( Self, steamIDClanChat, iMessage, prgchText, cchTextMax, ref peChatEntryType, ref psteamidChatter );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanChatAdmin", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsClanChatAdmin( IntPtr self, SteamId steamIDClanChat, SteamId steamIDUser );
-		
-		#endregion
-		internal bool IsClanChatAdmin( SteamId steamIDClanChat, SteamId steamIDUser )
-		{
-			var returnValue = _IsClanChatAdmin( Self, steamIDClanChat, steamIDUser );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanChatWindowOpenInSteam", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsClanChatWindowOpenInSteam( IntPtr self, SteamId steamIDClanChat );
-		
-		#endregion
-		internal bool IsClanChatWindowOpenInSteam( SteamId steamIDClanChat )
-		{
-			var returnValue = _IsClanChatWindowOpenInSteam( Self, steamIDClanChat );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_OpenClanChatWindowInSteam", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _OpenClanChatWindowInSteam( IntPtr self, SteamId steamIDClanChat );
-		
-		#endregion
-		internal bool OpenClanChatWindowInSteam( SteamId steamIDClanChat )
-		{
-			var returnValue = _OpenClanChatWindowInSteam( Self, steamIDClanChat );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_CloseClanChatWindowInSteam", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _CloseClanChatWindowInSteam( IntPtr self, SteamId steamIDClanChat );
-		
-		#endregion
-		internal bool CloseClanChatWindowInSteam( SteamId steamIDClanChat )
-		{
-			var returnValue = _CloseClanChatWindowInSteam( Self, steamIDClanChat );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetListenForFriendsMessages", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetListenForFriendsMessages( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bInterceptEnabled );
-		
-		#endregion
-		internal bool SetListenForFriendsMessages( [MarshalAs( UnmanagedType.U1 )] bool bInterceptEnabled )
-		{
-			var returnValue = _SetListenForFriendsMessages( Self, bInterceptEnabled );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ReplyToFriendMessage", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ReplyToFriendMessage( IntPtr self, SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchMsgToSend );
-		
-		#endregion
-		internal bool ReplyToFriendMessage( SteamId steamIDFriend, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchMsgToSend )
-		{
-			var returnValue = _ReplyToFriendMessage( Self, steamIDFriend, pchMsgToSend );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendMessage", CallingConvention = Platform.CC)]
-		private static extern int _GetFriendMessage( IntPtr self, SteamId steamIDFriend, int iMessageID, IntPtr pvData, int cubData, ref ChatEntryType peChatEntryType );
-		
-		#endregion
-		internal int GetFriendMessage( SteamId steamIDFriend, int iMessageID, IntPtr pvData, int cubData, ref ChatEntryType peChatEntryType )
-		{
-			var returnValue = _GetFriendMessage( Self, steamIDFriend, iMessageID, pvData, cubData, ref peChatEntryType );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFollowerCount", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _GetFollowerCount( IntPtr self, SteamId steamID );
-		
-		#endregion
-		internal CallResult<FriendsGetFollowerCount_t> GetFollowerCount( SteamId steamID )
-		{
-			var returnValue = _GetFollowerCount( Self, steamID );
-			return new CallResult<FriendsGetFollowerCount_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsFollowing", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _IsFollowing( IntPtr self, SteamId steamID );
-		
-		#endregion
-		internal CallResult<FriendsIsFollowing_t> IsFollowing( SteamId steamID )
-		{
-			var returnValue = _IsFollowing( Self, steamID );
-			return new CallResult<FriendsIsFollowing_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_EnumerateFollowingList", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _EnumerateFollowingList( IntPtr self, uint unStartIndex );
-		
-		#endregion
-		internal CallResult<FriendsEnumerateFollowingList_t> EnumerateFollowingList( uint unStartIndex )
-		{
-			var returnValue = _EnumerateFollowingList( Self, unStartIndex );
-			return new CallResult<FriendsEnumerateFollowingList_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanPublic", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsClanPublic( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal bool IsClanPublic( SteamId steamIDClan )
-		{
-			var returnValue = _IsClanPublic( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanOfficialGameGroup", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsClanOfficialGameGroup( IntPtr self, SteamId steamIDClan );
-		
-		#endregion
-		internal bool IsClanOfficialGameGroup( SteamId steamIDClan )
-		{
-			var returnValue = _IsClanOfficialGameGroup( Self, steamIDClan );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetNumChatsWithUnreadPriorityMessages", CallingConvention = Platform.CC)]
-		private static extern int _GetNumChatsWithUnreadPriorityMessages( IntPtr self );
-		
-		#endregion
-		internal int GetNumChatsWithUnreadPriorityMessages()
-		{
-			var returnValue = _GetNumChatsWithUnreadPriorityMessages( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayRemotePlayTogetherInviteDialog", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayRemotePlayTogetherInviteDialog( IntPtr self, SteamId steamIDLobby );
-		
-		#endregion
-		internal void ActivateGameOverlayRemotePlayTogetherInviteDialog( SteamId steamIDLobby )
-		{
-			_ActivateGameOverlayRemotePlayTogetherInviteDialog( Self, steamIDLobby );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RegisterProtocolInOverlayBrowser", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _RegisterProtocolInOverlayBrowser( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchProtocol );
-		
-		#endregion
-		internal bool RegisterProtocolInOverlayBrowser( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchProtocol )
-		{
-			var returnValue = _RegisterProtocolInOverlayBrowser( Self, pchProtocol );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialogConnectString", CallingConvention = Platform.CC)]
-		private static extern void _ActivateGameOverlayInviteDialogConnectString( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchConnectString );
-		
-		#endregion
-		internal void ActivateGameOverlayInviteDialogConnectString( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchConnectString )
-		{
-			_ActivateGameOverlayInviteDialogConnectString( Self, pchConnectString );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestEquippedProfileItems", CallingConvention = Platform.CC)]
-		private static extern SteamAPICall_t _RequestEquippedProfileItems( IntPtr self, SteamId steamID );
-		
-		#endregion
-		internal CallResult<EquippedProfileItems_t> RequestEquippedProfileItems( SteamId steamID )
-		{
-			var returnValue = _RequestEquippedProfileItems( Self, steamID );
-			return new CallResult<EquippedProfileItems_t>( returnValue, IsServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_BHasEquippedProfileItem", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BHasEquippedProfileItem( IntPtr self, SteamId steamID, CommunityProfileItemType itemType );
-		
-		#endregion
-		internal bool BHasEquippedProfileItem( SteamId steamID, CommunityProfileItemType itemType )
-		{
-			var returnValue = _BHasEquippedProfileItem( Self, steamID, itemType );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetProfileItemPropertyString", CallingConvention = Platform.CC)]
-		private static extern Utf8StringPointer _GetProfileItemPropertyString( IntPtr self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop );
-		
-		#endregion
-		internal string GetProfileItemPropertyString( SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop )
-		{
-			var returnValue = _GetProfileItemPropertyString( Self, steamID, itemType, prop );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetProfileItemPropertyUint", CallingConvention = Platform.CC)]
-		private static extern uint _GetProfileItemPropertyUint( IntPtr self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop );
-		
-		#endregion
-		internal uint GetProfileItemPropertyUint( SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop )
-		{
-			var returnValue = _GetProfileItemPropertyUint( Self, steamID, itemType, prop );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamFriends</summary>
+    public unsafe interface ISteamFriends
+    {
+        public UTF8StringPtr GetPersonaName();
+        public SteamAPICall SetPersonaName(UTF8StringPtr pchPersonaName);
+        public PersonaState GetPersonaState();
+        public int GetFriendCount(int iFriendFlags);
+        public SteamId GetFriendByIndex(int iFriend, int iFriendFlags);
+        public FriendRelationship GetFriendRelationship(SteamId steamIDFriend);
+        public PersonaState GetFriendPersonaState(SteamId steamIDFriend);
+        public UTF8StringPtr GetFriendPersonaName(SteamId steamIDFriend);
+        public bool GetFriendGamePlayed(SteamId steamIDFriend, FriendGameInfo* pFriendGameInfo);
+        public UTF8StringPtr GetFriendPersonaNameHistory(SteamId steamIDFriend, int iPersonaName);
+        public int GetFriendSteamLevel(SteamId steamIDFriend);
+        public UTF8StringPtr GetPlayerNickname(SteamId steamIDPlayer);
+        public int GetFriendsGroupCount();
+        public FriendsGroupID GetFriendsGroupIDByIndex(int iFG);
+        public UTF8StringPtr GetFriendsGroupName(FriendsGroupID friendsGroupID);
+        public int GetFriendsGroupMembersCount(FriendsGroupID friendsGroupID);
+        public void GetFriendsGroupMembersList(FriendsGroupID friendsGroupID, SteamId* pOutSteamIDMembers, int nMembersCount);
+        public bool HasFriend(SteamId steamIDFriend, int iFriendFlags);
+        public int GetClanCount();
+        public SteamId GetClanByIndex(int iClan);
+        public UTF8StringPtr GetClanName(SteamId steamIDClan);
+        public UTF8StringPtr GetClanTag(SteamId steamIDClan);
+        public bool GetClanActivityCounts(SteamId steamIDClan, int* pnOnline, int* pnInGame, int* pnChatting);
+        public SteamAPICall DownloadClanActivityCounts(SteamId* psteamIDClans, int cClansToRequest);
+        public int GetFriendCountFromSource(SteamId steamIDSource);
+        public SteamId GetFriendFromSourceByIndex(SteamId steamIDSource, int iFriend);
+        public bool IsUserInSource(SteamId steamIDUser, SteamId steamIDSource);
+        public void SetInGameVoiceSpeaking(SteamId steamIDUser, bool bSpeaking);
+        public void ActivateGameOverlay(UTF8StringPtr pchDialog);
+        public void ActivateGameOverlayToUser(UTF8StringPtr pchDialog, SteamId steamID);
+        public void ActivateGameOverlayToWebPage(UTF8StringPtr pchURL, ActivateGameOverlayToWebPageMode eMode);
+        public void ActivateGameOverlayToStore(AppId nAppID, OverlayToStoreFlag eFlag);
+        public void SetPlayedWith(SteamId steamIDUserPlayedWith);
+        public void ActivateGameOverlayInviteDialog(SteamId steamIDLobby);
+        public int GetSmallFriendAvatar(SteamId steamIDFriend);
+        public int GetMediumFriendAvatar(SteamId steamIDFriend);
+        public int GetLargeFriendAvatar(SteamId steamIDFriend);
+        public bool RequestUserInformation(SteamId steamIDUser, bool bRequireNameOnly);
+        public SteamAPICall RequestClanOfficerList(SteamId steamIDClan);
+        public SteamId GetClanOwner(SteamId steamIDClan);
+        public int GetClanOfficerCount(SteamId steamIDClan);
+        public SteamId GetClanOfficerByIndex(SteamId steamIDClan, int iOfficer);
+        public uint GetUserRestrictions();
+        public bool SetRichPresence(UTF8StringPtr pchKey, UTF8StringPtr pchValue);
+        public void ClearRichPresence();
+        public UTF8StringPtr GetFriendRichPresence(SteamId steamIDFriend, UTF8StringPtr pchKey);
+        public int GetFriendRichPresenceKeyCount(SteamId steamIDFriend);
+        public UTF8StringPtr GetFriendRichPresenceKeyByIndex(SteamId steamIDFriend, int iKey);
+        public void RequestFriendRichPresence(SteamId steamIDFriend);
+        public bool InviteUserToGame(SteamId steamIDFriend, UTF8StringPtr pchConnectString);
+        public int GetCoplayFriendCount();
+        public SteamId GetCoplayFriend(int iCoplayFriend);
+        public int GetFriendCoplayTime(SteamId steamIDFriend);
+        public AppId GetFriendCoplayGame(SteamId steamIDFriend);
+        public SteamAPICall JoinClanChatRoom(SteamId steamIDClan);
+        public bool LeaveClanChatRoom(SteamId steamIDClan);
+        public int GetClanChatMemberCount(SteamId steamIDClan);
+        public SteamId GetChatMemberByIndex(SteamId steamIDClan, int iUser);
+        public bool SendClanChatMessage(SteamId steamIDClanChat, UTF8StringPtr pchText);
+        public int GetClanChatMessage(SteamId steamIDClanChat, int iMessage, void* prgchText, int cchTextMax, ChatEntryType* peChatEntryType, SteamId* psteamidChatter);
+        public bool IsClanChatAdmin(SteamId steamIDClanChat, SteamId steamIDUser);
+        public bool IsClanChatWindowOpenInSteam(SteamId steamIDClanChat);
+        public bool OpenClanChatWindowInSteam(SteamId steamIDClanChat);
+        public bool CloseClanChatWindowInSteam(SteamId steamIDClanChat);
+        public bool SetListenForFriendsMessages(bool bInterceptEnabled);
+        public bool ReplyToFriendMessage(SteamId steamIDFriend, UTF8StringPtr pchMsgToSend);
+        public int GetFriendMessage(SteamId steamIDFriend, int iMessageID, void* pvData, int cubData, ChatEntryType* peChatEntryType);
+        public SteamAPICall GetFollowerCount(SteamId steamID);
+        public SteamAPICall IsFollowing(SteamId steamID);
+        public SteamAPICall EnumerateFollowingList(uint unStartIndex);
+        public bool IsClanPublic(SteamId steamIDClan);
+        public bool IsClanOfficialGameGroup(SteamId steamIDClan);
+        public int GetNumChatsWithUnreadPriorityMessages();
+        public void ActivateGameOverlayRemotePlayTogetherInviteDialog(SteamId steamIDLobby);
+        public bool RegisterProtocolInOverlayBrowser(UTF8StringPtr pchProtocol);
+        public void ActivateGameOverlayInviteDialogConnectString(UTF8StringPtr pchConnectString);
+        public SteamAPICall RequestEquippedProfileItems(SteamId steamID);
+        public bool BHasEquippedProfileItem(SteamId steamID, CommunityProfileItemType itemType);
+        public UTF8StringPtr GetProfileItemPropertyString(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
+        public uint GetProfileItemPropertyUint(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPersonaName", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetPersonaName(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetPersonaName", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall SetPersonaName(void* self, UTF8StringPtr pchPersonaName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPersonaState", CallingConvention = Platform.CC)]
+        internal static extern PersonaState GetPersonaState(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCount", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendCount(void* self, int iFriendFlags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendByIndex", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetFriendByIndex(void* self, int iFriend, int iFriendFlags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRelationship", CallingConvention = Platform.CC)]
+        internal static extern FriendRelationship GetFriendRelationship(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaState", CallingConvention = Platform.CC)]
+        internal static extern PersonaState GetFriendPersonaState(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaName", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetFriendPersonaName(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendGamePlayed", CallingConvention = Platform.CC)]
+        internal static extern bool GetFriendGamePlayed(void* self, SteamId steamIDFriend, FriendGameInfo* pFriendGameInfo);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendPersonaNameHistory", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetFriendPersonaNameHistory(void* self, SteamId steamIDFriend, int iPersonaName);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendSteamLevel", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendSteamLevel(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetPlayerNickname", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetPlayerNickname(void* self, SteamId steamIDPlayer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupCount", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendsGroupCount(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupIDByIndex", CallingConvention = Platform.CC)]
+        internal static extern FriendsGroupID GetFriendsGroupIDByIndex(void* self, int iFG);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupName", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetFriendsGroupName(void* self, FriendsGroupID friendsGroupID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupMembersCount", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendsGroupMembersCount(void* self, FriendsGroupID friendsGroupID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendsGroupMembersList", CallingConvention = Platform.CC)]
+        internal static extern void GetFriendsGroupMembersList(void* self, FriendsGroupID friendsGroupID, SteamId* pOutSteamIDMembers, int nMembersCount);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_HasFriend", CallingConvention = Platform.CC)]
+        internal static extern bool HasFriend(void* self, SteamId steamIDFriend, int iFriendFlags);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanCount", CallingConvention = Platform.CC)]
+        internal static extern int GetClanCount(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanByIndex", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetClanByIndex(void* self, int iClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanName", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetClanName(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanTag", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetClanTag(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanActivityCounts", CallingConvention = Platform.CC)]
+        internal static extern bool GetClanActivityCounts(void* self, SteamId steamIDClan, int* pnOnline, int* pnInGame, int* pnChatting);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_DownloadClanActivityCounts", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall DownloadClanActivityCounts(void* self, SteamId* psteamIDClans, int cClansToRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCountFromSource", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendCountFromSource(void* self, SteamId steamIDSource);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendFromSourceByIndex", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetFriendFromSourceByIndex(void* self, SteamId steamIDSource, int iFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsUserInSource", CallingConvention = Platform.CC)]
+        internal static extern bool IsUserInSource(void* self, SteamId steamIDUser, SteamId steamIDSource);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetInGameVoiceSpeaking", CallingConvention = Platform.CC)]
+        internal static extern void SetInGameVoiceSpeaking(void* self, SteamId steamIDUser, bool bSpeaking);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlay", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlay(void* self, UTF8StringPtr pchDialog);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToUser", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayToUser(void* self, UTF8StringPtr pchDialog, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToWebPage", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayToWebPage(void* self, UTF8StringPtr pchURL, ActivateGameOverlayToWebPageMode eMode);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayToStore", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayToStore(void* self, AppId nAppID, OverlayToStoreFlag eFlag);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetPlayedWith", CallingConvention = Platform.CC)]
+        internal static extern void SetPlayedWith(void* self, SteamId steamIDUserPlayedWith);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialog", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayInviteDialog(void* self, SteamId steamIDLobby);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetSmallFriendAvatar", CallingConvention = Platform.CC)]
+        internal static extern int GetSmallFriendAvatar(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetMediumFriendAvatar", CallingConvention = Platform.CC)]
+        internal static extern int GetMediumFriendAvatar(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetLargeFriendAvatar", CallingConvention = Platform.CC)]
+        internal static extern int GetLargeFriendAvatar(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestUserInformation", CallingConvention = Platform.CC)]
+        internal static extern bool RequestUserInformation(void* self, SteamId steamIDUser, bool bRequireNameOnly);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestClanOfficerList", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall RequestClanOfficerList(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOwner", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetClanOwner(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOfficerCount", CallingConvention = Platform.CC)]
+        internal static extern int GetClanOfficerCount(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanOfficerByIndex", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetClanOfficerByIndex(void* self, SteamId steamIDClan, int iOfficer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetUserRestrictions", CallingConvention = Platform.CC)]
+        internal static extern uint GetUserRestrictions(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetRichPresence", CallingConvention = Platform.CC)]
+        internal static extern bool SetRichPresence(void* self, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ClearRichPresence", CallingConvention = Platform.CC)]
+        internal static extern void ClearRichPresence(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresence", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetFriendRichPresence(void* self, SteamId steamIDFriend, UTF8StringPtr pchKey);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresenceKeyCount", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendRichPresenceKeyCount(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendRichPresenceKeyByIndex", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetFriendRichPresenceKeyByIndex(void* self, SteamId steamIDFriend, int iKey);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestFriendRichPresence", CallingConvention = Platform.CC)]
+        internal static extern void RequestFriendRichPresence(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_InviteUserToGame", CallingConvention = Platform.CC)]
+        internal static extern bool InviteUserToGame(void* self, SteamId steamIDFriend, UTF8StringPtr pchConnectString);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetCoplayFriendCount", CallingConvention = Platform.CC)]
+        internal static extern int GetCoplayFriendCount(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetCoplayFriend", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetCoplayFriend(void* self, int iCoplayFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCoplayTime", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendCoplayTime(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendCoplayGame", CallingConvention = Platform.CC)]
+        internal static extern AppId GetFriendCoplayGame(void* self, SteamId steamIDFriend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_JoinClanChatRoom", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall JoinClanChatRoom(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_LeaveClanChatRoom", CallingConvention = Platform.CC)]
+        internal static extern bool LeaveClanChatRoom(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanChatMemberCount", CallingConvention = Platform.CC)]
+        internal static extern int GetClanChatMemberCount(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetChatMemberByIndex", CallingConvention = Platform.CC)]
+        internal static extern SteamId GetChatMemberByIndex(void* self, SteamId steamIDClan, int iUser);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SendClanChatMessage", CallingConvention = Platform.CC)]
+        internal static extern bool SendClanChatMessage(void* self, SteamId steamIDClanChat, UTF8StringPtr pchText);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetClanChatMessage", CallingConvention = Platform.CC)]
+        internal static extern int GetClanChatMessage(void* self, SteamId steamIDClanChat, int iMessage, void* prgchText, int cchTextMax, ChatEntryType* peChatEntryType, SteamId* psteamidChatter);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanChatAdmin", CallingConvention = Platform.CC)]
+        internal static extern bool IsClanChatAdmin(void* self, SteamId steamIDClanChat, SteamId steamIDUser);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanChatWindowOpenInSteam", CallingConvention = Platform.CC)]
+        internal static extern bool IsClanChatWindowOpenInSteam(void* self, SteamId steamIDClanChat);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_OpenClanChatWindowInSteam", CallingConvention = Platform.CC)]
+        internal static extern bool OpenClanChatWindowInSteam(void* self, SteamId steamIDClanChat);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_CloseClanChatWindowInSteam", CallingConvention = Platform.CC)]
+        internal static extern bool CloseClanChatWindowInSteam(void* self, SteamId steamIDClanChat);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_SetListenForFriendsMessages", CallingConvention = Platform.CC)]
+        internal static extern bool SetListenForFriendsMessages(void* self, bool bInterceptEnabled);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ReplyToFriendMessage", CallingConvention = Platform.CC)]
+        internal static extern bool ReplyToFriendMessage(void* self, SteamId steamIDFriend, UTF8StringPtr pchMsgToSend);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFriendMessage", CallingConvention = Platform.CC)]
+        internal static extern int GetFriendMessage(void* self, SteamId steamIDFriend, int iMessageID, void* pvData, int cubData, ChatEntryType* peChatEntryType);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetFollowerCount", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall GetFollowerCount(void* self, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsFollowing", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall IsFollowing(void* self, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_EnumerateFollowingList", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall EnumerateFollowingList(void* self, uint unStartIndex);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanPublic", CallingConvention = Platform.CC)]
+        internal static extern bool IsClanPublic(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_IsClanOfficialGameGroup", CallingConvention = Platform.CC)]
+        internal static extern bool IsClanOfficialGameGroup(void* self, SteamId steamIDClan);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetNumChatsWithUnreadPriorityMessages", CallingConvention = Platform.CC)]
+        internal static extern int GetNumChatsWithUnreadPriorityMessages(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayRemotePlayTogetherInviteDialog", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayRemotePlayTogetherInviteDialog(void* self, SteamId steamIDLobby);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RegisterProtocolInOverlayBrowser", CallingConvention = Platform.CC)]
+        internal static extern bool RegisterProtocolInOverlayBrowser(void* self, UTF8StringPtr pchProtocol);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialogConnectString", CallingConvention = Platform.CC)]
+        internal static extern void ActivateGameOverlayInviteDialogConnectString(void* self, UTF8StringPtr pchConnectString);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_RequestEquippedProfileItems", CallingConvention = Platform.CC)]
+        internal static extern SteamAPICall RequestEquippedProfileItems(void* self, SteamId steamID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_BHasEquippedProfileItem", CallingConvention = Platform.CC)]
+        internal static extern bool BHasEquippedProfileItem(void* self, SteamId steamID, CommunityProfileItemType itemType);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetProfileItemPropertyString", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetProfileItemPropertyString(void* self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamFriends_GetProfileItemPropertyUint", CallingConvention = Platform.CC)]
+        internal static extern uint GetProfileItemPropertyUint(void* self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
+        public struct Instance : ISteamFriends
+        {
+            public void* self;
+            public UTF8StringPtr GetPersonaName() => ISteamFriends.GetPersonaName(self);
+            public SteamAPICall SetPersonaName(UTF8StringPtr pchPersonaName) => ISteamFriends.SetPersonaName(self, pchPersonaName);
+            public PersonaState GetPersonaState() => ISteamFriends.GetPersonaState(self);
+            public int GetFriendCount(int iFriendFlags) => ISteamFriends.GetFriendCount(self, iFriendFlags);
+            public SteamId GetFriendByIndex(int iFriend, int iFriendFlags) => ISteamFriends.GetFriendByIndex(self, iFriend, iFriendFlags);
+            public FriendRelationship GetFriendRelationship(SteamId steamIDFriend) => ISteamFriends.GetFriendRelationship(self, steamIDFriend);
+            public PersonaState GetFriendPersonaState(SteamId steamIDFriend) => ISteamFriends.GetFriendPersonaState(self, steamIDFriend);
+            public UTF8StringPtr GetFriendPersonaName(SteamId steamIDFriend) => ISteamFriends.GetFriendPersonaName(self, steamIDFriend);
+            public bool GetFriendGamePlayed(SteamId steamIDFriend, FriendGameInfo* pFriendGameInfo) => ISteamFriends.GetFriendGamePlayed(self, steamIDFriend, pFriendGameInfo);
+            public UTF8StringPtr GetFriendPersonaNameHistory(SteamId steamIDFriend, int iPersonaName) => ISteamFriends.GetFriendPersonaNameHistory(self, steamIDFriend, iPersonaName);
+            public int GetFriendSteamLevel(SteamId steamIDFriend) => ISteamFriends.GetFriendSteamLevel(self, steamIDFriend);
+            public UTF8StringPtr GetPlayerNickname(SteamId steamIDPlayer) => ISteamFriends.GetPlayerNickname(self, steamIDPlayer);
+            public int GetFriendsGroupCount() => ISteamFriends.GetFriendsGroupCount(self);
+            public FriendsGroupID GetFriendsGroupIDByIndex(int iFG) => ISteamFriends.GetFriendsGroupIDByIndex(self, iFG);
+            public UTF8StringPtr GetFriendsGroupName(FriendsGroupID friendsGroupID) => ISteamFriends.GetFriendsGroupName(self, friendsGroupID);
+            public int GetFriendsGroupMembersCount(FriendsGroupID friendsGroupID) => ISteamFriends.GetFriendsGroupMembersCount(self, friendsGroupID);
+            public void GetFriendsGroupMembersList(FriendsGroupID friendsGroupID, SteamId* pOutSteamIDMembers, int nMembersCount) => ISteamFriends.GetFriendsGroupMembersList(self, friendsGroupID, pOutSteamIDMembers, nMembersCount);
+            public bool HasFriend(SteamId steamIDFriend, int iFriendFlags) => ISteamFriends.HasFriend(self, steamIDFriend, iFriendFlags);
+            public int GetClanCount() => ISteamFriends.GetClanCount(self);
+            public SteamId GetClanByIndex(int iClan) => ISteamFriends.GetClanByIndex(self, iClan);
+            public UTF8StringPtr GetClanName(SteamId steamIDClan) => ISteamFriends.GetClanName(self, steamIDClan);
+            public UTF8StringPtr GetClanTag(SteamId steamIDClan) => ISteamFriends.GetClanTag(self, steamIDClan);
+            public bool GetClanActivityCounts(SteamId steamIDClan, int* pnOnline, int* pnInGame, int* pnChatting) => ISteamFriends.GetClanActivityCounts(self, steamIDClan, pnOnline, pnInGame, pnChatting);
+            public SteamAPICall DownloadClanActivityCounts(SteamId* psteamIDClans, int cClansToRequest) => ISteamFriends.DownloadClanActivityCounts(self, psteamIDClans, cClansToRequest);
+            public int GetFriendCountFromSource(SteamId steamIDSource) => ISteamFriends.GetFriendCountFromSource(self, steamIDSource);
+            public SteamId GetFriendFromSourceByIndex(SteamId steamIDSource, int iFriend) => ISteamFriends.GetFriendFromSourceByIndex(self, steamIDSource, iFriend);
+            public bool IsUserInSource(SteamId steamIDUser, SteamId steamIDSource) => ISteamFriends.IsUserInSource(self, steamIDUser, steamIDSource);
+            public void SetInGameVoiceSpeaking(SteamId steamIDUser, bool bSpeaking) => ISteamFriends.SetInGameVoiceSpeaking(self, steamIDUser, bSpeaking);
+            public void ActivateGameOverlay(UTF8StringPtr pchDialog) => ISteamFriends.ActivateGameOverlay(self, pchDialog);
+            public void ActivateGameOverlayToUser(UTF8StringPtr pchDialog, SteamId steamID) => ISteamFriends.ActivateGameOverlayToUser(self, pchDialog, steamID);
+            public void ActivateGameOverlayToWebPage(UTF8StringPtr pchURL, ActivateGameOverlayToWebPageMode eMode) => ISteamFriends.ActivateGameOverlayToWebPage(self, pchURL, eMode);
+            public void ActivateGameOverlayToStore(AppId nAppID, OverlayToStoreFlag eFlag) => ISteamFriends.ActivateGameOverlayToStore(self, nAppID, eFlag);
+            public void SetPlayedWith(SteamId steamIDUserPlayedWith) => ISteamFriends.SetPlayedWith(self, steamIDUserPlayedWith);
+            public void ActivateGameOverlayInviteDialog(SteamId steamIDLobby) => ISteamFriends.ActivateGameOverlayInviteDialog(self, steamIDLobby);
+            public int GetSmallFriendAvatar(SteamId steamIDFriend) => ISteamFriends.GetSmallFriendAvatar(self, steamIDFriend);
+            public int GetMediumFriendAvatar(SteamId steamIDFriend) => ISteamFriends.GetMediumFriendAvatar(self, steamIDFriend);
+            public int GetLargeFriendAvatar(SteamId steamIDFriend) => ISteamFriends.GetLargeFriendAvatar(self, steamIDFriend);
+            public bool RequestUserInformation(SteamId steamIDUser, bool bRequireNameOnly) => ISteamFriends.RequestUserInformation(self, steamIDUser, bRequireNameOnly);
+            public SteamAPICall RequestClanOfficerList(SteamId steamIDClan) => ISteamFriends.RequestClanOfficerList(self, steamIDClan);
+            public SteamId GetClanOwner(SteamId steamIDClan) => ISteamFriends.GetClanOwner(self, steamIDClan);
+            public int GetClanOfficerCount(SteamId steamIDClan) => ISteamFriends.GetClanOfficerCount(self, steamIDClan);
+            public SteamId GetClanOfficerByIndex(SteamId steamIDClan, int iOfficer) => ISteamFriends.GetClanOfficerByIndex(self, steamIDClan, iOfficer);
+            public uint GetUserRestrictions() => ISteamFriends.GetUserRestrictions(self);
+            public bool SetRichPresence(UTF8StringPtr pchKey, UTF8StringPtr pchValue) => ISteamFriends.SetRichPresence(self, pchKey, pchValue);
+            public void ClearRichPresence() => ISteamFriends.ClearRichPresence(self);
+            public UTF8StringPtr GetFriendRichPresence(SteamId steamIDFriend, UTF8StringPtr pchKey) => ISteamFriends.GetFriendRichPresence(self, steamIDFriend, pchKey);
+            public int GetFriendRichPresenceKeyCount(SteamId steamIDFriend) => ISteamFriends.GetFriendRichPresenceKeyCount(self, steamIDFriend);
+            public UTF8StringPtr GetFriendRichPresenceKeyByIndex(SteamId steamIDFriend, int iKey) => ISteamFriends.GetFriendRichPresenceKeyByIndex(self, steamIDFriend, iKey);
+            public void RequestFriendRichPresence(SteamId steamIDFriend) => ISteamFriends.RequestFriendRichPresence(self, steamIDFriend);
+            public bool InviteUserToGame(SteamId steamIDFriend, UTF8StringPtr pchConnectString) => ISteamFriends.InviteUserToGame(self, steamIDFriend, pchConnectString);
+            public int GetCoplayFriendCount() => ISteamFriends.GetCoplayFriendCount(self);
+            public SteamId GetCoplayFriend(int iCoplayFriend) => ISteamFriends.GetCoplayFriend(self, iCoplayFriend);
+            public int GetFriendCoplayTime(SteamId steamIDFriend) => ISteamFriends.GetFriendCoplayTime(self, steamIDFriend);
+            public AppId GetFriendCoplayGame(SteamId steamIDFriend) => ISteamFriends.GetFriendCoplayGame(self, steamIDFriend);
+            public SteamAPICall JoinClanChatRoom(SteamId steamIDClan) => ISteamFriends.JoinClanChatRoom(self, steamIDClan);
+            public bool LeaveClanChatRoom(SteamId steamIDClan) => ISteamFriends.LeaveClanChatRoom(self, steamIDClan);
+            public int GetClanChatMemberCount(SteamId steamIDClan) => ISteamFriends.GetClanChatMemberCount(self, steamIDClan);
+            public SteamId GetChatMemberByIndex(SteamId steamIDClan, int iUser) => ISteamFriends.GetChatMemberByIndex(self, steamIDClan, iUser);
+            public bool SendClanChatMessage(SteamId steamIDClanChat, UTF8StringPtr pchText) => ISteamFriends.SendClanChatMessage(self, steamIDClanChat, pchText);
+            public int GetClanChatMessage(SteamId steamIDClanChat, int iMessage, void* prgchText, int cchTextMax, ChatEntryType* peChatEntryType, SteamId* psteamidChatter) => ISteamFriends.GetClanChatMessage(self, steamIDClanChat, iMessage, prgchText, cchTextMax, peChatEntryType, psteamidChatter);
+            public bool IsClanChatAdmin(SteamId steamIDClanChat, SteamId steamIDUser) => ISteamFriends.IsClanChatAdmin(self, steamIDClanChat, steamIDUser);
+            public bool IsClanChatWindowOpenInSteam(SteamId steamIDClanChat) => ISteamFriends.IsClanChatWindowOpenInSteam(self, steamIDClanChat);
+            public bool OpenClanChatWindowInSteam(SteamId steamIDClanChat) => ISteamFriends.OpenClanChatWindowInSteam(self, steamIDClanChat);
+            public bool CloseClanChatWindowInSteam(SteamId steamIDClanChat) => ISteamFriends.CloseClanChatWindowInSteam(self, steamIDClanChat);
+            public bool SetListenForFriendsMessages(bool bInterceptEnabled) => ISteamFriends.SetListenForFriendsMessages(self, bInterceptEnabled);
+            public bool ReplyToFriendMessage(SteamId steamIDFriend, UTF8StringPtr pchMsgToSend) => ISteamFriends.ReplyToFriendMessage(self, steamIDFriend, pchMsgToSend);
+            public int GetFriendMessage(SteamId steamIDFriend, int iMessageID, void* pvData, int cubData, ChatEntryType* peChatEntryType) => ISteamFriends.GetFriendMessage(self, steamIDFriend, iMessageID, pvData, cubData, peChatEntryType);
+            public SteamAPICall GetFollowerCount(SteamId steamID) => ISteamFriends.GetFollowerCount(self, steamID);
+            public SteamAPICall IsFollowing(SteamId steamID) => ISteamFriends.IsFollowing(self, steamID);
+            public SteamAPICall EnumerateFollowingList(uint unStartIndex) => ISteamFriends.EnumerateFollowingList(self, unStartIndex);
+            public bool IsClanPublic(SteamId steamIDClan) => ISteamFriends.IsClanPublic(self, steamIDClan);
+            public bool IsClanOfficialGameGroup(SteamId steamIDClan) => ISteamFriends.IsClanOfficialGameGroup(self, steamIDClan);
+            public int GetNumChatsWithUnreadPriorityMessages() => ISteamFriends.GetNumChatsWithUnreadPriorityMessages(self);
+            public void ActivateGameOverlayRemotePlayTogetherInviteDialog(SteamId steamIDLobby) => ISteamFriends.ActivateGameOverlayRemotePlayTogetherInviteDialog(self, steamIDLobby);
+            public bool RegisterProtocolInOverlayBrowser(UTF8StringPtr pchProtocol) => ISteamFriends.RegisterProtocolInOverlayBrowser(self, pchProtocol);
+            public void ActivateGameOverlayInviteDialogConnectString(UTF8StringPtr pchConnectString) => ISteamFriends.ActivateGameOverlayInviteDialogConnectString(self, pchConnectString);
+            public SteamAPICall RequestEquippedProfileItems(SteamId steamID) => ISteamFriends.RequestEquippedProfileItems(self, steamID);
+            public bool BHasEquippedProfileItem(SteamId steamID, CommunityProfileItemType itemType) => ISteamFriends.BHasEquippedProfileItem(self, steamID, itemType);
+            public UTF8StringPtr GetProfileItemPropertyString(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop) => ISteamFriends.GetProfileItemPropertyString(self, steamID, itemType, prop);
+            public uint GetProfileItemPropertyUint(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop) => ISteamFriends.GetProfileItemPropertyUint(self, steamID, itemType, prop);
+        }
+    }
 }

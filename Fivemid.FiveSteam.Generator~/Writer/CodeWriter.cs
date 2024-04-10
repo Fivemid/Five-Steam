@@ -5,33 +5,49 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Fivemid.FiveSteam.Generator;
 
 public partial class CodeWriter(string baseFolder) {
+    private readonly HashSet<string> wroteFiles = [];
+    
     public void Write(SteamApiDefinition apiDefinition) {
-        ClearBaseFolder();
         Register(apiDefinition);
-
+        
         Write(Path.Combine(baseFolder, "Enums"),      Enums(apiDefinition.Enums));
         Write(Path.Combine(baseFolder, "TypeDefs"),   TypeDefs(apiDefinition.TypeDefs));
         Write(Path.Combine(baseFolder, "Structs"),    Structs(apiDefinition.Structs));
         Write(Path.Combine(baseFolder, "Callbacks"),  CallbackStructs(apiDefinition.CallbackStructs));
         Write(Path.Combine(baseFolder, "Interfaces"), Interfaces(apiDefinition.Interfaces));
-
+        
         Write(baseFolder, Constants(apiDefinition.Constants));
-
+        
         Write(Path.Combine(baseFolder, "Utility"), UTF8Strings(Convert.seenUTF8StringTypes));
         Write(Path.Combine(baseFolder, "Utility"), FixedArrays(Convert.seenFixedArrayTypes));
         Write(Path.Combine(baseFolder, "Utility"), FunctionPointers(Convert.seenFunctionPointerTypes));
+        
+        ClearOldFiles();
     }
-
-    private void ClearBaseFolder() {
-        foreach (string existingFile in Directory.EnumerateFiles(baseFolder, "*", SearchOption.AllDirectories)) {
-            File.Delete(existingFile);
+    
+    private void ClearOldFiles() {
+        foreach (string existingFile in Directory.EnumerateFiles(baseFolder, "*.cs", SearchOption.AllDirectories)) {
+            if (!wroteFiles.Contains(existingFile)) {
+                File.Delete(existingFile);
+                string metaFile = existingFile.StripPrefix(".cs") + ".meta";
+                if (File.Exists(metaFile))
+                    File.Delete(metaFile);
+            }
         }
-
-        foreach (var existingDirectory in Directory.EnumerateDirectories(baseFolder)) {
-            Directory.Delete(existingDirectory, true);
+        
+        ClearEmptyDirectories(baseFolder);
+        
+        return;
+        
+        void ClearEmptyDirectories(string directory) {
+            foreach (string subDirectory in Directory.EnumerateDirectories(directory)) {
+                ClearEmptyDirectories(subDirectory);
+                if (!Directory.EnumerateFileSystemEntries(subDirectory).Any())
+                    Directory.Delete(subDirectory);
+            }
         }
     }
-
+    
     private void Register(SteamApiDefinition apiDefinition) {
         Register(apiDefinition.Enums);
         Register(apiDefinition.TypeDefs);
@@ -39,14 +55,14 @@ public partial class CodeWriter(string baseFolder) {
         Register(apiDefinition.CallbackStructs);
         Register(apiDefinition.Interfaces);
     }
-
+    
     private void Write(string folder, BaseTypeDeclarationSyntax[] declarations) {
         if (!Directory.Exists(folder))
             Directory.CreateDirectory(folder);
         foreach (BaseTypeDeclarationSyntax declaration in declarations)
             Write(folder, declaration);
     }
-
+    
     private void Write(string folder, BaseTypeDeclarationSyntax declaration) {
         string sourceText = CompilationUnit()
                            .AddUsings(
@@ -61,12 +77,14 @@ public partial class CodeWriter(string baseFolder) {
                            .NormalizeWhitespace()
                            .GetText()
                            .ToString();
+        string file = Path.Combine(folder, $"{declaration.Identifier}.cs");
         File.WriteAllText(
-            Path.Combine(folder, $"{declaration.Identifier}.cs"),
+            file,
             sourceText
         );
+        wroteFiles.Add(file);
     }
-
+    
     private SyntaxTrivia[] DocComment(string text) =>
         text.Split("\n")
             .Select(line => Comment($"/// {line}"))

@@ -1,325 +1,114 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamHTTP : SteamInterface
-	{
-		
-		internal ISteamHTTP( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamHTTP_v003", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamHTTP_v003();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamHTTP_v003();
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServerHTTP_v003", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamGameServerHTTP_v003();
-		public override IntPtr GetServerInterfacePointer() => SteamAPI_SteamGameServerHTTP_v003();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_CreateHTTPRequest", CallingConvention = Platform.CC)]
-		private static extern HTTPRequestHandle _CreateHTTPRequest( IntPtr self, HTTPMethod eHTTPRequestMethod, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchAbsoluteURL );
-		
-		#endregion
-		internal HTTPRequestHandle CreateHTTPRequest( HTTPMethod eHTTPRequestMethod, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchAbsoluteURL )
-		{
-			var returnValue = _CreateHTTPRequest( Self, eHTTPRequestMethod, pchAbsoluteURL );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestContextValue", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestContextValue( IntPtr self, HTTPRequestHandle hRequest, ulong ulContextValue );
-		
-		#endregion
-		internal bool SetHTTPRequestContextValue( HTTPRequestHandle hRequest, ulong ulContextValue )
-		{
-			var returnValue = _SetHTTPRequestContextValue( Self, hRequest, ulContextValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestNetworkActivityTimeout", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestNetworkActivityTimeout( IntPtr self, HTTPRequestHandle hRequest, uint unTimeoutSeconds );
-		
-		#endregion
-		internal bool SetHTTPRequestNetworkActivityTimeout( HTTPRequestHandle hRequest, uint unTimeoutSeconds )
-		{
-			var returnValue = _SetHTTPRequestNetworkActivityTimeout( Self, hRequest, unTimeoutSeconds );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestHeaderValue", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestHeaderValue( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderValue );
-		
-		#endregion
-		internal bool SetHTTPRequestHeaderValue( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderValue )
-		{
-			var returnValue = _SetHTTPRequestHeaderValue( Self, hRequest, pchHeaderName, pchHeaderValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestGetOrPostParameter", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestGetOrPostParameter( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchParamName, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchParamValue );
-		
-		#endregion
-		internal bool SetHTTPRequestGetOrPostParameter( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchParamName, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchParamValue )
-		{
-			var returnValue = _SetHTTPRequestGetOrPostParameter( Self, hRequest, pchParamName, pchParamValue );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SendHTTPRequest", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SendHTTPRequest( IntPtr self, HTTPRequestHandle hRequest, ref SteamAPICall_t pCallHandle );
-		
-		#endregion
-		internal bool SendHTTPRequest( HTTPRequestHandle hRequest, ref SteamAPICall_t pCallHandle )
-		{
-			var returnValue = _SendHTTPRequest( Self, hRequest, ref pCallHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SendHTTPRequestAndStreamResponse", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SendHTTPRequestAndStreamResponse( IntPtr self, HTTPRequestHandle hRequest, ref SteamAPICall_t pCallHandle );
-		
-		#endregion
-		internal bool SendHTTPRequestAndStreamResponse( HTTPRequestHandle hRequest, ref SteamAPICall_t pCallHandle )
-		{
-			var returnValue = _SendHTTPRequestAndStreamResponse( Self, hRequest, ref pCallHandle );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_DeferHTTPRequest", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _DeferHTTPRequest( IntPtr self, HTTPRequestHandle hRequest );
-		
-		#endregion
-		internal bool DeferHTTPRequest( HTTPRequestHandle hRequest )
-		{
-			var returnValue = _DeferHTTPRequest( Self, hRequest );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_PrioritizeHTTPRequest", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _PrioritizeHTTPRequest( IntPtr self, HTTPRequestHandle hRequest );
-		
-		#endregion
-		internal bool PrioritizeHTTPRequest( HTTPRequestHandle hRequest )
-		{
-			var returnValue = _PrioritizeHTTPRequest( Self, hRequest );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderSize", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPResponseHeaderSize( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, ref uint unResponseHeaderSize );
-		
-		#endregion
-		internal bool GetHTTPResponseHeaderSize( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, ref uint unResponseHeaderSize )
-		{
-			var returnValue = _GetHTTPResponseHeaderSize( Self, hRequest, pchHeaderName, ref unResponseHeaderSize );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderValue", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPResponseHeaderValue( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, ref byte pHeaderValueBuffer, uint unBufferSize );
-		
-		#endregion
-		internal bool GetHTTPResponseHeaderValue( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHeaderName, ref byte pHeaderValueBuffer, uint unBufferSize )
-		{
-			var returnValue = _GetHTTPResponseHeaderValue( Self, hRequest, pchHeaderName, ref pHeaderValueBuffer, unBufferSize );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseBodySize", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPResponseBodySize( IntPtr self, HTTPRequestHandle hRequest, ref uint unBodySize );
-		
-		#endregion
-		internal bool GetHTTPResponseBodySize( HTTPRequestHandle hRequest, ref uint unBodySize )
-		{
-			var returnValue = _GetHTTPResponseBodySize( Self, hRequest, ref unBodySize );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseBodyData", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPResponseBodyData( IntPtr self, HTTPRequestHandle hRequest, ref byte pBodyDataBuffer, uint unBufferSize );
-		
-		#endregion
-		internal bool GetHTTPResponseBodyData( HTTPRequestHandle hRequest, ref byte pBodyDataBuffer, uint unBufferSize )
-		{
-			var returnValue = _GetHTTPResponseBodyData( Self, hRequest, ref pBodyDataBuffer, unBufferSize );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPStreamingResponseBodyData", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPStreamingResponseBodyData( IntPtr self, HTTPRequestHandle hRequest, uint cOffset, ref byte pBodyDataBuffer, uint unBufferSize );
-		
-		#endregion
-		internal bool GetHTTPStreamingResponseBodyData( HTTPRequestHandle hRequest, uint cOffset, ref byte pBodyDataBuffer, uint unBufferSize )
-		{
-			var returnValue = _GetHTTPStreamingResponseBodyData( Self, hRequest, cOffset, ref pBodyDataBuffer, unBufferSize );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_ReleaseHTTPRequest", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ReleaseHTTPRequest( IntPtr self, HTTPRequestHandle hRequest );
-		
-		#endregion
-		internal bool ReleaseHTTPRequest( HTTPRequestHandle hRequest )
-		{
-			var returnValue = _ReleaseHTTPRequest( Self, hRequest );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPDownloadProgressPct", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPDownloadProgressPct( IntPtr self, HTTPRequestHandle hRequest, ref float pflPercentOut );
-		
-		#endregion
-		internal bool GetHTTPDownloadProgressPct( HTTPRequestHandle hRequest, ref float pflPercentOut )
-		{
-			var returnValue = _GetHTTPDownloadProgressPct( Self, hRequest, ref pflPercentOut );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestRawPostBody", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestRawPostBody( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchContentType, [In,Out] byte[]  pubBody, uint unBodyLen );
-		
-		#endregion
-		internal bool SetHTTPRequestRawPostBody( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchContentType, [In,Out] byte[]  pubBody, uint unBodyLen )
-		{
-			var returnValue = _SetHTTPRequestRawPostBody( Self, hRequest, pchContentType, pubBody, unBodyLen );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_CreateCookieContainer", CallingConvention = Platform.CC)]
-		private static extern HTTPCookieContainerHandle _CreateCookieContainer( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bAllowResponsesToModify );
-		
-		#endregion
-		internal HTTPCookieContainerHandle CreateCookieContainer( [MarshalAs( UnmanagedType.U1 )] bool bAllowResponsesToModify )
-		{
-			var returnValue = _CreateCookieContainer( Self, bAllowResponsesToModify );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_ReleaseCookieContainer", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _ReleaseCookieContainer( IntPtr self, HTTPCookieContainerHandle hCookieContainer );
-		
-		#endregion
-		internal bool ReleaseCookieContainer( HTTPCookieContainerHandle hCookieContainer )
-		{
-			var returnValue = _ReleaseCookieContainer( Self, hCookieContainer );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetCookie", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetCookie( IntPtr self, HTTPCookieContainerHandle hCookieContainer, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHost, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchUrl, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchCookie );
-		
-		#endregion
-		internal bool SetCookie( HTTPCookieContainerHandle hCookieContainer, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchHost, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchUrl, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchCookie )
-		{
-			var returnValue = _SetCookie( Self, hCookieContainer, pchHost, pchUrl, pchCookie );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestCookieContainer", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestCookieContainer( IntPtr self, HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer );
-		
-		#endregion
-		internal bool SetHTTPRequestCookieContainer( HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer )
-		{
-			var returnValue = _SetHTTPRequestCookieContainer( Self, hRequest, hCookieContainer );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestUserAgentInfo", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestUserAgentInfo( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchUserAgentInfo );
-		
-		#endregion
-		internal bool SetHTTPRequestUserAgentInfo( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchUserAgentInfo )
-		{
-			var returnValue = _SetHTTPRequestUserAgentInfo( Self, hRequest, pchUserAgentInfo );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestRequiresVerifiedCertificate", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestRequiresVerifiedCertificate( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.U1 )] bool bRequireVerifiedCertificate );
-		
-		#endregion
-		internal bool SetHTTPRequestRequiresVerifiedCertificate( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.U1 )] bool bRequireVerifiedCertificate )
-		{
-			var returnValue = _SetHTTPRequestRequiresVerifiedCertificate( Self, hRequest, bRequireVerifiedCertificate );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestAbsoluteTimeoutMS", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _SetHTTPRequestAbsoluteTimeoutMS( IntPtr self, HTTPRequestHandle hRequest, uint unMilliseconds );
-		
-		#endregion
-		internal bool SetHTTPRequestAbsoluteTimeoutMS( HTTPRequestHandle hRequest, uint unMilliseconds )
-		{
-			var returnValue = _SetHTTPRequestAbsoluteTimeoutMS( Self, hRequest, unMilliseconds );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPRequestWasTimedOut", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _GetHTTPRequestWasTimedOut( IntPtr self, HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.U1 )] ref bool pbWasTimedOut );
-		
-		#endregion
-		internal bool GetHTTPRequestWasTimedOut( HTTPRequestHandle hRequest, [MarshalAs( UnmanagedType.U1 )] ref bool pbWasTimedOut )
-		{
-			var returnValue = _GetHTTPRequestWasTimedOut( Self, hRequest, ref pbWasTimedOut );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamHTTP</summary>
+    public unsafe interface ISteamHTTP
+    {
+        public HTTPRequestHandle CreateHTTPRequest(HTTPMethod eHTTPRequestMethod, UTF8StringPtr pchAbsoluteURL);
+        public bool SetHTTPRequestContextValue(HTTPRequestHandle hRequest, ulong ulContextValue);
+        public bool SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hRequest, uint unTimeoutSeconds);
+        public bool SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, UTF8StringPtr pchHeaderValue);
+        public bool SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, UTF8StringPtr pchParamName, UTF8StringPtr pchParamValue);
+        public bool SendHTTPRequest(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle);
+        public bool SendHTTPRequestAndStreamResponse(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle);
+        public bool DeferHTTPRequest(HTTPRequestHandle hRequest);
+        public bool PrioritizeHTTPRequest(HTTPRequestHandle hRequest);
+        public bool GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, uint* unResponseHeaderSize);
+        public bool GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, byte* pHeaderValueBuffer, uint unBufferSize);
+        public bool GetHTTPResponseBodySize(HTTPRequestHandle hRequest, uint* unBodySize);
+        public bool GetHTTPResponseBodyData(HTTPRequestHandle hRequest, byte* pBodyDataBuffer, uint unBufferSize);
+        public bool GetHTTPStreamingResponseBodyData(HTTPRequestHandle hRequest, uint cOffset, byte* pBodyDataBuffer, uint unBufferSize);
+        public bool ReleaseHTTPRequest(HTTPRequestHandle hRequest);
+        public bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, float* pflPercentOut);
+        public bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, UTF8StringPtr pchContentType, byte* pubBody, uint unBodyLen);
+        public HTTPCookieContainerHandle CreateCookieContainer(bool bAllowResponsesToModify);
+        public bool ReleaseCookieContainer(HTTPCookieContainerHandle hCookieContainer);
+        public bool SetCookie(HTTPCookieContainerHandle hCookieContainer, UTF8StringPtr pchHost, UTF8StringPtr pchUrl, UTF8StringPtr pchCookie);
+        public bool SetHTTPRequestCookieContainer(HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer);
+        public bool SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, UTF8StringPtr pchUserAgentInfo);
+        public bool SetHTTPRequestRequiresVerifiedCertificate(HTTPRequestHandle hRequest, bool bRequireVerifiedCertificate);
+        public bool SetHTTPRequestAbsoluteTimeoutMS(HTTPRequestHandle hRequest, uint unMilliseconds);
+        public bool GetHTTPRequestWasTimedOut(HTTPRequestHandle hRequest, bool* pbWasTimedOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_CreateHTTPRequest", CallingConvention = Platform.CC)]
+        internal static extern HTTPRequestHandle CreateHTTPRequest(void* self, HTTPMethod eHTTPRequestMethod, UTF8StringPtr pchAbsoluteURL);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestContextValue", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestContextValue(void* self, HTTPRequestHandle hRequest, ulong ulContextValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestNetworkActivityTimeout", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestNetworkActivityTimeout(void* self, HTTPRequestHandle hRequest, uint unTimeoutSeconds);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestHeaderValue", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestHeaderValue(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, UTF8StringPtr pchHeaderValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestGetOrPostParameter", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestGetOrPostParameter(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchParamName, UTF8StringPtr pchParamValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SendHTTPRequest", CallingConvention = Platform.CC)]
+        internal static extern bool SendHTTPRequest(void* self, HTTPRequestHandle hRequest, SteamAPICall* pCallHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SendHTTPRequestAndStreamResponse", CallingConvention = Platform.CC)]
+        internal static extern bool SendHTTPRequestAndStreamResponse(void* self, HTTPRequestHandle hRequest, SteamAPICall* pCallHandle);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_DeferHTTPRequest", CallingConvention = Platform.CC)]
+        internal static extern bool DeferHTTPRequest(void* self, HTTPRequestHandle hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_PrioritizeHTTPRequest", CallingConvention = Platform.CC)]
+        internal static extern bool PrioritizeHTTPRequest(void* self, HTTPRequestHandle hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderSize", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPResponseHeaderSize(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, uint* unResponseHeaderSize);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderValue", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPResponseHeaderValue(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, byte* pHeaderValueBuffer, uint unBufferSize);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseBodySize", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPResponseBodySize(void* self, HTTPRequestHandle hRequest, uint* unBodySize);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPResponseBodyData", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPResponseBodyData(void* self, HTTPRequestHandle hRequest, byte* pBodyDataBuffer, uint unBufferSize);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPStreamingResponseBodyData", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPStreamingResponseBodyData(void* self, HTTPRequestHandle hRequest, uint cOffset, byte* pBodyDataBuffer, uint unBufferSize);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_ReleaseHTTPRequest", CallingConvention = Platform.CC)]
+        internal static extern bool ReleaseHTTPRequest(void* self, HTTPRequestHandle hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPDownloadProgressPct", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPDownloadProgressPct(void* self, HTTPRequestHandle hRequest, float* pflPercentOut);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestRawPostBody", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestRawPostBody(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchContentType, byte* pubBody, uint unBodyLen);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_CreateCookieContainer", CallingConvention = Platform.CC)]
+        internal static extern HTTPCookieContainerHandle CreateCookieContainer(void* self, bool bAllowResponsesToModify);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_ReleaseCookieContainer", CallingConvention = Platform.CC)]
+        internal static extern bool ReleaseCookieContainer(void* self, HTTPCookieContainerHandle hCookieContainer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetCookie", CallingConvention = Platform.CC)]
+        internal static extern bool SetCookie(void* self, HTTPCookieContainerHandle hCookieContainer, UTF8StringPtr pchHost, UTF8StringPtr pchUrl, UTF8StringPtr pchCookie);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestCookieContainer", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestCookieContainer(void* self, HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestUserAgentInfo", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestUserAgentInfo(void* self, HTTPRequestHandle hRequest, UTF8StringPtr pchUserAgentInfo);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestRequiresVerifiedCertificate", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestRequiresVerifiedCertificate(void* self, HTTPRequestHandle hRequest, bool bRequireVerifiedCertificate);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_SetHTTPRequestAbsoluteTimeoutMS", CallingConvention = Platform.CC)]
+        internal static extern bool SetHTTPRequestAbsoluteTimeoutMS(void* self, HTTPRequestHandle hRequest, uint unMilliseconds);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPRequestWasTimedOut", CallingConvention = Platform.CC)]
+        internal static extern bool GetHTTPRequestWasTimedOut(void* self, HTTPRequestHandle hRequest, bool* pbWasTimedOut);
+        public struct Instance : ISteamHTTP
+        {
+            public void* self;
+            public HTTPRequestHandle CreateHTTPRequest(HTTPMethod eHTTPRequestMethod, UTF8StringPtr pchAbsoluteURL) => ISteamHTTP.CreateHTTPRequest(self, eHTTPRequestMethod, pchAbsoluteURL);
+            public bool SetHTTPRequestContextValue(HTTPRequestHandle hRequest, ulong ulContextValue) => ISteamHTTP.SetHTTPRequestContextValue(self, hRequest, ulContextValue);
+            public bool SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hRequest, uint unTimeoutSeconds) => ISteamHTTP.SetHTTPRequestNetworkActivityTimeout(self, hRequest, unTimeoutSeconds);
+            public bool SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, UTF8StringPtr pchHeaderValue) => ISteamHTTP.SetHTTPRequestHeaderValue(self, hRequest, pchHeaderName, pchHeaderValue);
+            public bool SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, UTF8StringPtr pchParamName, UTF8StringPtr pchParamValue) => ISteamHTTP.SetHTTPRequestGetOrPostParameter(self, hRequest, pchParamName, pchParamValue);
+            public bool SendHTTPRequest(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle) => ISteamHTTP.SendHTTPRequest(self, hRequest, pCallHandle);
+            public bool SendHTTPRequestAndStreamResponse(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle) => ISteamHTTP.SendHTTPRequestAndStreamResponse(self, hRequest, pCallHandle);
+            public bool DeferHTTPRequest(HTTPRequestHandle hRequest) => ISteamHTTP.DeferHTTPRequest(self, hRequest);
+            public bool PrioritizeHTTPRequest(HTTPRequestHandle hRequest) => ISteamHTTP.PrioritizeHTTPRequest(self, hRequest);
+            public bool GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, uint* unResponseHeaderSize) => ISteamHTTP.GetHTTPResponseHeaderSize(self, hRequest, pchHeaderName, unResponseHeaderSize);
+            public bool GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, byte* pHeaderValueBuffer, uint unBufferSize) => ISteamHTTP.GetHTTPResponseHeaderValue(self, hRequest, pchHeaderName, pHeaderValueBuffer, unBufferSize);
+            public bool GetHTTPResponseBodySize(HTTPRequestHandle hRequest, uint* unBodySize) => ISteamHTTP.GetHTTPResponseBodySize(self, hRequest, unBodySize);
+            public bool GetHTTPResponseBodyData(HTTPRequestHandle hRequest, byte* pBodyDataBuffer, uint unBufferSize) => ISteamHTTP.GetHTTPResponseBodyData(self, hRequest, pBodyDataBuffer, unBufferSize);
+            public bool GetHTTPStreamingResponseBodyData(HTTPRequestHandle hRequest, uint cOffset, byte* pBodyDataBuffer, uint unBufferSize) => ISteamHTTP.GetHTTPStreamingResponseBodyData(self, hRequest, cOffset, pBodyDataBuffer, unBufferSize);
+            public bool ReleaseHTTPRequest(HTTPRequestHandle hRequest) => ISteamHTTP.ReleaseHTTPRequest(self, hRequest);
+            public bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, float* pflPercentOut) => ISteamHTTP.GetHTTPDownloadProgressPct(self, hRequest, pflPercentOut);
+            public bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, UTF8StringPtr pchContentType, byte* pubBody, uint unBodyLen) => ISteamHTTP.SetHTTPRequestRawPostBody(self, hRequest, pchContentType, pubBody, unBodyLen);
+            public HTTPCookieContainerHandle CreateCookieContainer(bool bAllowResponsesToModify) => ISteamHTTP.CreateCookieContainer(self, bAllowResponsesToModify);
+            public bool ReleaseCookieContainer(HTTPCookieContainerHandle hCookieContainer) => ISteamHTTP.ReleaseCookieContainer(self, hCookieContainer);
+            public bool SetCookie(HTTPCookieContainerHandle hCookieContainer, UTF8StringPtr pchHost, UTF8StringPtr pchUrl, UTF8StringPtr pchCookie) => ISteamHTTP.SetCookie(self, hCookieContainer, pchHost, pchUrl, pchCookie);
+            public bool SetHTTPRequestCookieContainer(HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer) => ISteamHTTP.SetHTTPRequestCookieContainer(self, hRequest, hCookieContainer);
+            public bool SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, UTF8StringPtr pchUserAgentInfo) => ISteamHTTP.SetHTTPRequestUserAgentInfo(self, hRequest, pchUserAgentInfo);
+            public bool SetHTTPRequestRequiresVerifiedCertificate(HTTPRequestHandle hRequest, bool bRequireVerifiedCertificate) => ISteamHTTP.SetHTTPRequestRequiresVerifiedCertificate(self, hRequest, bRequireVerifiedCertificate);
+            public bool SetHTTPRequestAbsoluteTimeoutMS(HTTPRequestHandle hRequest, uint unMilliseconds) => ISteamHTTP.SetHTTPRequestAbsoluteTimeoutMS(self, hRequest, unMilliseconds);
+            public bool GetHTTPRequestWasTimedOut(HTTPRequestHandle hRequest, bool* pbWasTimedOut) => ISteamHTTP.GetHTTPRequestWasTimedOut(self, hRequest, pbWasTimedOut);
+        }
+    }
 }

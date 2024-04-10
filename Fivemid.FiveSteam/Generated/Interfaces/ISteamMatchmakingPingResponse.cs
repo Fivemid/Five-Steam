@@ -1,39 +1,22 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMatchmakingPingResponse : SteamInterface
-	{
-		
-		internal ISteamMatchmakingPingResponse( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerResponded", CallingConvention = Platform.CC)]
-		private static extern void _ServerResponded( IntPtr self, ref gameserveritem_t server );
-		
-		#endregion
-		internal void ServerResponded( ref gameserveritem_t server )
-		{
-			_ServerResponded( Self, ref server );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
-		private static extern void _ServerFailedToRespond( IntPtr self );
-		
-		#endregion
-		internal void ServerFailedToRespond()
-		{
-			_ServerFailedToRespond( Self );
-		}
-		
-	}
+    /// <summary>ISteamMatchmakingPingResponse</summary>
+    public unsafe interface ISteamMatchmakingPingResponse
+    {
+        public void ServerResponded(ref gameserveritem server);
+        public void ServerFailedToRespond();
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerResponded", CallingConvention = Platform.CC)]
+        internal static extern void ServerResponded(void* self, ref gameserveritem server);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
+        internal static extern void ServerFailedToRespond(void* self);
+        public struct Instance : ISteamMatchmakingPingResponse
+        {
+            public void* self;
+            public void ServerResponded(ref gameserveritem server) => ISteamMatchmakingPingResponse.ServerResponded(self, ref server);
+            public void ServerFailedToRespond() => ISteamMatchmakingPingResponse.ServerFailedToRespond(self);
+        }
+    }
 }

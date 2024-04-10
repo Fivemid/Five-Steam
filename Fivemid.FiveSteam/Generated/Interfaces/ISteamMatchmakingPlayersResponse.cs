@@ -1,49 +1,26 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMatchmakingPlayersResponse : SteamInterface
-	{
-		
-		internal ISteamMatchmakingPlayersResponse( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_AddPlayerToList", CallingConvention = Platform.CC)]
-		private static extern void _AddPlayerToList( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchName, int nScore, float flTimePlayed );
-		
-		#endregion
-		internal void AddPlayerToList( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchName, int nScore, float flTimePlayed )
-		{
-			_AddPlayerToList( Self, pchName, nScore, flTimePlayed );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_PlayersFailedToRespond", CallingConvention = Platform.CC)]
-		private static extern void _PlayersFailedToRespond( IntPtr self );
-		
-		#endregion
-		internal void PlayersFailedToRespond()
-		{
-			_PlayersFailedToRespond( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_PlayersRefreshComplete", CallingConvention = Platform.CC)]
-		private static extern void _PlayersRefreshComplete( IntPtr self );
-		
-		#endregion
-		internal void PlayersRefreshComplete()
-		{
-			_PlayersRefreshComplete( Self );
-		}
-		
-	}
+    /// <summary>ISteamMatchmakingPlayersResponse</summary>
+    public unsafe interface ISteamMatchmakingPlayersResponse
+    {
+        public void AddPlayerToList(UTF8StringPtr pchName, int nScore, float flTimePlayed);
+        public void PlayersFailedToRespond();
+        public void PlayersRefreshComplete();
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_AddPlayerToList", CallingConvention = Platform.CC)]
+        internal static extern void AddPlayerToList(void* self, UTF8StringPtr pchName, int nScore, float flTimePlayed);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_PlayersFailedToRespond", CallingConvention = Platform.CC)]
+        internal static extern void PlayersFailedToRespond(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_PlayersRefreshComplete", CallingConvention = Platform.CC)]
+        internal static extern void PlayersRefreshComplete(void* self);
+        public struct Instance : ISteamMatchmakingPlayersResponse
+        {
+            public void* self;
+            public void AddPlayerToList(UTF8StringPtr pchName, int nScore, float flTimePlayed) => ISteamMatchmakingPlayersResponse.AddPlayerToList(self, pchName, nScore, flTimePlayed);
+            public void PlayersFailedToRespond() => ISteamMatchmakingPlayersResponse.PlayersFailedToRespond(self);
+            public void PlayersRefreshComplete() => ISteamMatchmakingPlayersResponse.PlayersRefreshComplete(self);
+        }
+    }
 }

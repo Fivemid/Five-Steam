@@ -1,207 +1,82 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMatchmakingServers : SteamInterface
-	{
-		
-		internal ISteamMatchmakingServers( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamMatchmakingServers_v002", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamMatchmakingServers_v002();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamMatchmakingServers_v002();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestInternetServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestInternetServerList( IntPtr self, AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestInternetServerList( AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestInternetServerList( Self, iApp, ref ppchFilters, nFilters, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestLANServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestLANServerList( IntPtr self, AppId iApp, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestLANServerList( AppId iApp, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestLANServerList( Self, iApp, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestFriendsServerList( IntPtr self, AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestFriendsServerList( AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestFriendsServerList( Self, iApp, ref ppchFilters, nFilters, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestFavoritesServerList( IntPtr self, AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestFavoritesServerList( AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestFavoritesServerList( Self, iApp, ref ppchFilters, nFilters, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestHistoryServerList( IntPtr self, AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestHistoryServerList( AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestHistoryServerList( Self, iApp, ref ppchFilters, nFilters, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList", CallingConvention = Platform.CC)]
-		private static extern HServerListRequest _RequestSpectatorServerList( IntPtr self, AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerListRequest RequestSpectatorServerList( AppId iApp, [In,Out] ref MatchMakingKeyValuePair[]  ppchFilters, uint nFilters, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _RequestSpectatorServerList( Self, iApp, ref ppchFilters, nFilters, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ReleaseRequest", CallingConvention = Platform.CC)]
-		private static extern void _ReleaseRequest( IntPtr self, HServerListRequest hServerListRequest );
-		
-		#endregion
-		internal void ReleaseRequest( HServerListRequest hServerListRequest )
-		{
-			_ReleaseRequest( Self, hServerListRequest );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerDetails", CallingConvention = Platform.CC)]
-		private static extern IntPtr _GetServerDetails( IntPtr self, HServerListRequest hRequest, int iServer );
-		
-		#endregion
-		internal gameserveritem_t GetServerDetails( HServerListRequest hRequest, int iServer )
-		{
-			var returnValue = _GetServerDetails( Self, hRequest, iServer );
-			return returnValue.ToType<gameserveritem_t>();
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelQuery", CallingConvention = Platform.CC)]
-		private static extern void _CancelQuery( IntPtr self, HServerListRequest hRequest );
-		
-		#endregion
-		internal void CancelQuery( HServerListRequest hRequest )
-		{
-			_CancelQuery( Self, hRequest );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshQuery", CallingConvention = Platform.CC)]
-		private static extern void _RefreshQuery( IntPtr self, HServerListRequest hRequest );
-		
-		#endregion
-		internal void RefreshQuery( HServerListRequest hRequest )
-		{
-			_RefreshQuery( Self, hRequest );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_IsRefreshing", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _IsRefreshing( IntPtr self, HServerListRequest hRequest );
-		
-		#endregion
-		internal bool IsRefreshing( HServerListRequest hRequest )
-		{
-			var returnValue = _IsRefreshing( Self, hRequest );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerCount", CallingConvention = Platform.CC)]
-		private static extern int _GetServerCount( IntPtr self, HServerListRequest hRequest );
-		
-		#endregion
-		internal int GetServerCount( HServerListRequest hRequest )
-		{
-			var returnValue = _GetServerCount( Self, hRequest );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshServer", CallingConvention = Platform.CC)]
-		private static extern void _RefreshServer( IntPtr self, HServerListRequest hRequest, int iServer );
-		
-		#endregion
-		internal void RefreshServer( HServerListRequest hRequest, int iServer )
-		{
-			_RefreshServer( Self, hRequest, iServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PingServer", CallingConvention = Platform.CC)]
-		private static extern HServerQuery _PingServer( IntPtr self, uint unIP, ushort usPort, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerQuery PingServer( uint unIP, ushort usPort, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _PingServer( Self, unIP, usPort, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PlayerDetails", CallingConvention = Platform.CC)]
-		private static extern HServerQuery _PlayerDetails( IntPtr self, uint unIP, ushort usPort, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerQuery PlayerDetails( uint unIP, ushort usPort, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _PlayerDetails( Self, unIP, usPort, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ServerRules", CallingConvention = Platform.CC)]
-		private static extern HServerQuery _ServerRules( IntPtr self, uint unIP, ushort usPort, IntPtr pRequestServersResponse );
-		
-		#endregion
-		internal HServerQuery ServerRules( uint unIP, ushort usPort, IntPtr pRequestServersResponse )
-		{
-			var returnValue = _ServerRules( Self, unIP, usPort, pRequestServersResponse );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelServerQuery", CallingConvention = Platform.CC)]
-		private static extern void _CancelServerQuery( IntPtr self, HServerQuery hServerQuery );
-		
-		#endregion
-		internal void CancelServerQuery( HServerQuery hServerQuery )
-		{
-			_CancelServerQuery( Self, hServerQuery );
-		}
-		
-	}
+    /// <summary>ISteamMatchmakingServers</summary>
+    public unsafe interface ISteamMatchmakingServers
+    {
+        public HServerListRequest RequestInternetServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public HServerListRequest RequestLANServerList(AppId iApp, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public HServerListRequest RequestFriendsServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public HServerListRequest RequestFavoritesServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public HServerListRequest RequestHistoryServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public HServerListRequest RequestSpectatorServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        public void ReleaseRequest(HServerListRequest hServerListRequest);
+        public gameserveritem* GetServerDetails(HServerListRequest hRequest, int iServer);
+        public void CancelQuery(HServerListRequest hRequest);
+        public void RefreshQuery(HServerListRequest hRequest);
+        public bool IsRefreshing(HServerListRequest hRequest);
+        public int GetServerCount(HServerListRequest hRequest);
+        public void RefreshServer(HServerListRequest hRequest, int iServer);
+        public HServerQuery PingServer(uint unIP, ushort usPort, ISteamMatchmakingPingResponse.Instance* pRequestServersResponse);
+        public HServerQuery PlayerDetails(uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse);
+        public HServerQuery ServerRules(uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse);
+        public void CancelServerQuery(HServerQuery hServerQuery);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestInternetServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestInternetServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestLANServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestLANServerList(void* self, AppId iApp, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestFriendsServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestFavoritesServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestHistoryServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList", CallingConvention = Platform.CC)]
+        internal static extern HServerListRequest RequestSpectatorServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ReleaseRequest", CallingConvention = Platform.CC)]
+        internal static extern void ReleaseRequest(void* self, HServerListRequest hServerListRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerDetails", CallingConvention = Platform.CC)]
+        internal static extern gameserveritem* GetServerDetails(void* self, HServerListRequest hRequest, int iServer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelQuery", CallingConvention = Platform.CC)]
+        internal static extern void CancelQuery(void* self, HServerListRequest hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshQuery", CallingConvention = Platform.CC)]
+        internal static extern void RefreshQuery(void* self, HServerListRequest hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_IsRefreshing", CallingConvention = Platform.CC)]
+        internal static extern bool IsRefreshing(void* self, HServerListRequest hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerCount", CallingConvention = Platform.CC)]
+        internal static extern int GetServerCount(void* self, HServerListRequest hRequest);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshServer", CallingConvention = Platform.CC)]
+        internal static extern void RefreshServer(void* self, HServerListRequest hRequest, int iServer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PingServer", CallingConvention = Platform.CC)]
+        internal static extern HServerQuery PingServer(void* self, uint unIP, ushort usPort, ISteamMatchmakingPingResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PlayerDetails", CallingConvention = Platform.CC)]
+        internal static extern HServerQuery PlayerDetails(void* self, uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ServerRules", CallingConvention = Platform.CC)]
+        internal static extern HServerQuery ServerRules(void* self, uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelServerQuery", CallingConvention = Platform.CC)]
+        internal static extern void CancelServerQuery(void* self, HServerQuery hServerQuery);
+        public struct Instance : ISteamMatchmakingServers
+        {
+            public void* self;
+            public HServerListRequest RequestInternetServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestInternetServerList(self, iApp, ppchFilters, nFilters, pRequestServersResponse);
+            public HServerListRequest RequestLANServerList(AppId iApp, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestLANServerList(self, iApp, pRequestServersResponse);
+            public HServerListRequest RequestFriendsServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestFriendsServerList(self, iApp, ppchFilters, nFilters, pRequestServersResponse);
+            public HServerListRequest RequestFavoritesServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestFavoritesServerList(self, iApp, ppchFilters, nFilters, pRequestServersResponse);
+            public HServerListRequest RequestHistoryServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestHistoryServerList(self, iApp, ppchFilters, nFilters, pRequestServersResponse);
+            public HServerListRequest RequestSpectatorServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.RequestSpectatorServerList(self, iApp, ppchFilters, nFilters, pRequestServersResponse);
+            public void ReleaseRequest(HServerListRequest hServerListRequest) => ISteamMatchmakingServers.ReleaseRequest(self, hServerListRequest);
+            public gameserveritem* GetServerDetails(HServerListRequest hRequest, int iServer) => ISteamMatchmakingServers.GetServerDetails(self, hRequest, iServer);
+            public void CancelQuery(HServerListRequest hRequest) => ISteamMatchmakingServers.CancelQuery(self, hRequest);
+            public void RefreshQuery(HServerListRequest hRequest) => ISteamMatchmakingServers.RefreshQuery(self, hRequest);
+            public bool IsRefreshing(HServerListRequest hRequest) => ISteamMatchmakingServers.IsRefreshing(self, hRequest);
+            public int GetServerCount(HServerListRequest hRequest) => ISteamMatchmakingServers.GetServerCount(self, hRequest);
+            public void RefreshServer(HServerListRequest hRequest, int iServer) => ISteamMatchmakingServers.RefreshServer(self, hRequest, iServer);
+            public HServerQuery PingServer(uint unIP, ushort usPort, ISteamMatchmakingPingResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.PingServer(self, unIP, usPort, pRequestServersResponse);
+            public HServerQuery PlayerDetails(uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.PlayerDetails(self, unIP, usPort, pRequestServersResponse);
+            public HServerQuery ServerRules(uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse) => ISteamMatchmakingServers.ServerRules(self, unIP, usPort, pRequestServersResponse);
+            public void CancelServerQuery(HServerQuery hServerQuery) => ISteamMatchmakingServers.CancelServerQuery(self, hServerQuery);
+        }
+    }
 }

@@ -18,20 +18,11 @@ public class Documentation {
     }
 
     private void Parse(string file) {
-        Console.WriteLine($"Parsing {file}");
-
         HtmlDocument doc = new();
         doc.Load(file);
 
         Interface @interface = ParseInterface(doc);
-        Console.WriteLine(@interface);
         interfaces.Add(@interface.Name, @interface);
-        foreach (Method method in @interface.Methods) {
-            Console.WriteLine($"  {method}");
-            foreach (Parameter parameter in method.Parameters) {
-                Console.WriteLine($"    {parameter}");
-            }
-        }
     }
 
     private Interface ParseInterface(HtmlDocument doc) {

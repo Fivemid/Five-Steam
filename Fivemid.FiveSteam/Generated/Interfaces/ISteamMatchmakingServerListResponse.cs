@@ -1,49 +1,26 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMatchmakingServerListResponse : SteamInterface
-	{
-		
-		internal ISteamMatchmakingServerListResponse( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_ServerResponded", CallingConvention = Platform.CC)]
-		private static extern void _ServerResponded( IntPtr self, HServerListRequest hRequest, int iServer );
-		
-		#endregion
-		internal void ServerResponded( HServerListRequest hRequest, int iServer )
-		{
-			_ServerResponded( Self, hRequest, iServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
-		private static extern void _ServerFailedToRespond( IntPtr self, HServerListRequest hRequest, int iServer );
-		
-		#endregion
-		internal void ServerFailedToRespond( HServerListRequest hRequest, int iServer )
-		{
-			_ServerFailedToRespond( Self, hRequest, iServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_RefreshComplete", CallingConvention = Platform.CC)]
-		private static extern void _RefreshComplete( IntPtr self, HServerListRequest hRequest, MatchMakingServerResponse response );
-		
-		#endregion
-		internal void RefreshComplete( HServerListRequest hRequest, MatchMakingServerResponse response )
-		{
-			_RefreshComplete( Self, hRequest, response );
-		}
-		
-	}
+    /// <summary>ISteamMatchmakingServerListResponse</summary>
+    public unsafe interface ISteamMatchmakingServerListResponse
+    {
+        public void ServerResponded(HServerListRequest hRequest, int iServer);
+        public void ServerFailedToRespond(HServerListRequest hRequest, int iServer);
+        public void RefreshComplete(HServerListRequest hRequest, MatchMakingServerResponse response);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_ServerResponded", CallingConvention = Platform.CC)]
+        internal static extern void ServerResponded(void* self, HServerListRequest hRequest, int iServer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
+        internal static extern void ServerFailedToRespond(void* self, HServerListRequest hRequest, int iServer);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_RefreshComplete", CallingConvention = Platform.CC)]
+        internal static extern void RefreshComplete(void* self, HServerListRequest hRequest, MatchMakingServerResponse response);
+        public struct Instance : ISteamMatchmakingServerListResponse
+        {
+            public void* self;
+            public void ServerResponded(HServerListRequest hRequest, int iServer) => ISteamMatchmakingServerListResponse.ServerResponded(self, hRequest, iServer);
+            public void ServerFailedToRespond(HServerListRequest hRequest, int iServer) => ISteamMatchmakingServerListResponse.ServerFailedToRespond(self, hRequest, iServer);
+            public void RefreshComplete(HServerListRequest hRequest, MatchMakingServerResponse response) => ISteamMatchmakingServerListResponse.RefreshComplete(self, hRequest, response);
+        }
+    }
 }

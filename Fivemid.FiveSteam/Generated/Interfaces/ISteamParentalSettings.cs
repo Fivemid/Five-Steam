@@ -1,96 +1,38 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamParentalSettings : SteamInterface
-	{
-		
-		internal ISteamParentalSettings( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamParentalSettings_v001", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamParentalSettings_v001();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamParentalSettings_v001();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsParentalLockEnabled", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsParentalLockEnabled( IntPtr self );
-		
-		#endregion
-		internal bool BIsParentalLockEnabled()
-		{
-			var returnValue = _BIsParentalLockEnabled( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsParentalLockLocked", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsParentalLockLocked( IntPtr self );
-		
-		#endregion
-		internal bool BIsParentalLockLocked()
-		{
-			var returnValue = _BIsParentalLockLocked( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsAppBlocked", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsAppBlocked( IntPtr self, AppId nAppID );
-		
-		#endregion
-		internal bool BIsAppBlocked( AppId nAppID )
-		{
-			var returnValue = _BIsAppBlocked( Self, nAppID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsAppInBlockList", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsAppInBlockList( IntPtr self, AppId nAppID );
-		
-		#endregion
-		internal bool BIsAppInBlockList( AppId nAppID )
-		{
-			var returnValue = _BIsAppInBlockList( Self, nAppID );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsFeatureBlocked", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsFeatureBlocked( IntPtr self, ParentalFeature eFeature );
-		
-		#endregion
-		internal bool BIsFeatureBlocked( ParentalFeature eFeature )
-		{
-			var returnValue = _BIsFeatureBlocked( Self, eFeature );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsFeatureInBlockList", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsFeatureInBlockList( IntPtr self, ParentalFeature eFeature );
-		
-		#endregion
-		internal bool BIsFeatureInBlockList( ParentalFeature eFeature )
-		{
-			var returnValue = _BIsFeatureInBlockList( Self, eFeature );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamParentalSettings</summary>
+    public unsafe interface ISteamParentalSettings
+    {
+        public bool BIsParentalLockEnabled();
+        public bool BIsParentalLockLocked();
+        public bool BIsAppBlocked(AppId nAppID);
+        public bool BIsAppInBlockList(AppId nAppID);
+        public bool BIsFeatureBlocked(ParentalFeature eFeature);
+        public bool BIsFeatureInBlockList(ParentalFeature eFeature);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsParentalLockEnabled", CallingConvention = Platform.CC)]
+        internal static extern bool BIsParentalLockEnabled(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsParentalLockLocked", CallingConvention = Platform.CC)]
+        internal static extern bool BIsParentalLockLocked(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsAppBlocked", CallingConvention = Platform.CC)]
+        internal static extern bool BIsAppBlocked(void* self, AppId nAppID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsAppInBlockList", CallingConvention = Platform.CC)]
+        internal static extern bool BIsAppInBlockList(void* self, AppId nAppID);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsFeatureBlocked", CallingConvention = Platform.CC)]
+        internal static extern bool BIsFeatureBlocked(void* self, ParentalFeature eFeature);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamParentalSettings_BIsFeatureInBlockList", CallingConvention = Platform.CC)]
+        internal static extern bool BIsFeatureInBlockList(void* self, ParentalFeature eFeature);
+        public struct Instance : ISteamParentalSettings
+        {
+            public void* self;
+            public bool BIsParentalLockEnabled() => ISteamParentalSettings.BIsParentalLockEnabled(self);
+            public bool BIsParentalLockLocked() => ISteamParentalSettings.BIsParentalLockLocked(self);
+            public bool BIsAppBlocked(AppId nAppID) => ISteamParentalSettings.BIsAppBlocked(self, nAppID);
+            public bool BIsAppInBlockList(AppId nAppID) => ISteamParentalSettings.BIsAppInBlockList(self, nAppID);
+            public bool BIsFeatureBlocked(ParentalFeature eFeature) => ISteamParentalSettings.BIsFeatureBlocked(self, eFeature);
+            public bool BIsFeatureInBlockList(ParentalFeature eFeature) => ISteamParentalSettings.BIsFeatureInBlockList(self, eFeature);
+        }
+    }
 }

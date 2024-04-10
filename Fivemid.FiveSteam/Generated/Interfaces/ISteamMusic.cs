@@ -1,120 +1,50 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMusic : SteamInterface
-	{
-		
-		internal ISteamMusic( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_SteamMusic_v001", CallingConvention = Platform.CC)]
-		internal static extern IntPtr SteamAPI_SteamMusic_v001();
-		public override IntPtr GetUserInterfacePointer() => SteamAPI_SteamMusic_v001();
-		
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_BIsEnabled", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsEnabled( IntPtr self );
-		
-		#endregion
-		internal bool BIsEnabled()
-		{
-			var returnValue = _BIsEnabled( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_BIsPlaying", CallingConvention = Platform.CC)]
-		[return: MarshalAs( UnmanagedType.I1 )]
-		private static extern bool _BIsPlaying( IntPtr self );
-		
-		#endregion
-		internal bool BIsPlaying()
-		{
-			var returnValue = _BIsPlaying( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_GetPlaybackStatus", CallingConvention = Platform.CC)]
-		private static extern MusicStatus _GetPlaybackStatus( IntPtr self );
-		
-		#endregion
-		internal MusicStatus GetPlaybackStatus()
-		{
-			var returnValue = _GetPlaybackStatus( Self );
-			return returnValue;
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_Play", CallingConvention = Platform.CC)]
-		private static extern void _Play( IntPtr self );
-		
-		#endregion
-		internal void Play()
-		{
-			_Play( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_Pause", CallingConvention = Platform.CC)]
-		private static extern void _Pause( IntPtr self );
-		
-		#endregion
-		internal void Pause()
-		{
-			_Pause( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_PlayPrevious", CallingConvention = Platform.CC)]
-		private static extern void _PlayPrevious( IntPtr self );
-		
-		#endregion
-		internal void PlayPrevious()
-		{
-			_PlayPrevious( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_PlayNext", CallingConvention = Platform.CC)]
-		private static extern void _PlayNext( IntPtr self );
-		
-		#endregion
-		internal void PlayNext()
-		{
-			_PlayNext( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_SetVolume", CallingConvention = Platform.CC)]
-		private static extern void _SetVolume( IntPtr self, float flVolume );
-		
-		#endregion
-		internal void SetVolume( float flVolume )
-		{
-			_SetVolume( Self, flVolume );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_GetVolume", CallingConvention = Platform.CC)]
-		private static extern float _GetVolume( IntPtr self );
-		
-		#endregion
-		internal float GetVolume()
-		{
-			var returnValue = _GetVolume( Self );
-			return returnValue;
-		}
-		
-	}
+    /// <summary>ISteamMusic</summary>
+    public unsafe interface ISteamMusic
+    {
+        public bool BIsEnabled();
+        public bool BIsPlaying();
+        public AudioPlayback_Status GetPlaybackStatus();
+        public void Play();
+        public void Pause();
+        public void PlayPrevious();
+        public void PlayNext();
+        public void SetVolume(float flVolume);
+        public float GetVolume();
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_BIsEnabled", CallingConvention = Platform.CC)]
+        internal static extern bool BIsEnabled(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_BIsPlaying", CallingConvention = Platform.CC)]
+        internal static extern bool BIsPlaying(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_GetPlaybackStatus", CallingConvention = Platform.CC)]
+        internal static extern AudioPlayback_Status GetPlaybackStatus(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_Play", CallingConvention = Platform.CC)]
+        internal static extern void Play(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_Pause", CallingConvention = Platform.CC)]
+        internal static extern void Pause(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_PlayPrevious", CallingConvention = Platform.CC)]
+        internal static extern void PlayPrevious(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_PlayNext", CallingConvention = Platform.CC)]
+        internal static extern void PlayNext(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_SetVolume", CallingConvention = Platform.CC)]
+        internal static extern void SetVolume(void* self, float flVolume);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMusic_GetVolume", CallingConvention = Platform.CC)]
+        internal static extern float GetVolume(void* self);
+        public struct Instance : ISteamMusic
+        {
+            public void* self;
+            public bool BIsEnabled() => ISteamMusic.BIsEnabled(self);
+            public bool BIsPlaying() => ISteamMusic.BIsPlaying(self);
+            public AudioPlayback_Status GetPlaybackStatus() => ISteamMusic.GetPlaybackStatus(self);
+            public void Play() => ISteamMusic.Play(self);
+            public void Pause() => ISteamMusic.Pause(self);
+            public void PlayPrevious() => ISteamMusic.PlayPrevious(self);
+            public void PlayNext() => ISteamMusic.PlayNext(self);
+            public void SetVolume(float flVolume) => ISteamMusic.SetVolume(self, flVolume);
+            public float GetVolume() => ISteamMusic.GetVolume(self);
+        }
+    }
 }

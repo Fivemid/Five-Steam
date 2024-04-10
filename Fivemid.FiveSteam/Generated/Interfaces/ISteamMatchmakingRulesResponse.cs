@@ -1,49 +1,26 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Steamworks.Data;
 
-
-namespace Steamworks
+namespace Fivemid.FiveSteam
 {
-	internal unsafe class ISteamMatchmakingRulesResponse : SteamInterface
-	{
-		
-		internal ISteamMatchmakingRulesResponse( bool IsGameServer )
-		{
-			SetupInterface( IsGameServer );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded", CallingConvention = Platform.CC)]
-		private static extern void _RulesResponded( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchRule, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue );
-		
-		#endregion
-		internal void RulesResponded( [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchRule, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue )
-		{
-			_RulesResponded( Self, pchRule, pchValue );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond", CallingConvention = Platform.CC)]
-		private static extern void _RulesFailedToRespond( IntPtr self );
-		
-		#endregion
-		internal void RulesFailedToRespond()
-		{
-			_RulesFailedToRespond( Self );
-		}
-		
-		#region FunctionMeta
-		[DllImport( Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete", CallingConvention = Platform.CC)]
-		private static extern void _RulesRefreshComplete( IntPtr self );
-		
-		#endregion
-		internal void RulesRefreshComplete()
-		{
-			_RulesRefreshComplete( Self );
-		}
-		
-	}
+    /// <summary>ISteamMatchmakingRulesResponse</summary>
+    public unsafe interface ISteamMatchmakingRulesResponse
+    {
+        public void RulesResponded(UTF8StringPtr pchRule, UTF8StringPtr pchValue);
+        public void RulesFailedToRespond();
+        public void RulesRefreshComplete();
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded", CallingConvention = Platform.CC)]
+        internal static extern void RulesResponded(void* self, UTF8StringPtr pchRule, UTF8StringPtr pchValue);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond", CallingConvention = Platform.CC)]
+        internal static extern void RulesFailedToRespond(void* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete", CallingConvention = Platform.CC)]
+        internal static extern void RulesRefreshComplete(void* self);
+        public struct Instance : ISteamMatchmakingRulesResponse
+        {
+            public void* self;
+            public void RulesResponded(UTF8StringPtr pchRule, UTF8StringPtr pchValue) => ISteamMatchmakingRulesResponse.RulesResponded(self, pchRule, pchValue);
+            public void RulesFailedToRespond() => ISteamMatchmakingRulesResponse.RulesFailedToRespond(self);
+            public void RulesRefreshComplete() => ISteamMatchmakingRulesResponse.RulesRefreshComplete(self);
+        }
+    }
 }
