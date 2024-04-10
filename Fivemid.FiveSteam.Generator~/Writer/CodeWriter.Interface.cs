@@ -125,11 +125,25 @@ public partial class CodeWriter {
                                                    )
                                                )
                                               .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                                              .WithLeadingTrivia(Comment($"/// <summary>{method.Description ?? ""}</summary>"))
+                                              .WithLeadingTrivia(
+                                                   InterfaceMethodDocumentation(definition, method))
                                    ).ToArray<MemberDeclarationSyntax>())
             );
 
         return accessorDeclarations.Append(interfaceDeclaration);
+    }
+
+    private SyntaxTrivia[] InterfaceMethodDocumentation(
+        SteamApiDefinition.InterfaceDefinition        @interface,
+        SteamApiDefinition.InterfaceDefinition.Method method
+    ) {
+        if (Documentation.VALUE.GetInterface(@interface.Name)?.GetMethod(method.Name) is { } documentation)
+            return DocComment($"""
+                               <summary>{documentation.Description}</summary>
+                               {string.Join('\n', documentation.Parameters.Select(p => $"""<param name="{p.Name}">{p.Type}: {p.Description}</param>"""))}
+                               """);
+
+        return DocComment("missing documentation");
     }
 
     private AttributeListSyntax DllImportAttribute(string entryPoint) =>

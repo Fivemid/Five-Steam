@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam.Generator;
 
 public class SteamApiDefinition {
     public static readonly SteamApiDefinition VALUE =
-        JsonSerializer.Deserialize<SteamApiDefinition>(File.ReadAllText("steam_api/steam_api.json"))!;
+        JsonSerializer.Deserialize<SteamApiDefinition>(File.ReadAllText("Data/steam_api/steam_api.json"))!;
 
     public class InterfaceDefinition {
         [JsonPropertyName("classname")]

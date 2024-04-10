@@ -9,69 +9,317 @@ namespace Fivemid.FiveSteam
 
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamMusicRemote_v001", CallingConvention = Platform.CC)]
         private static extern ISteamMusicRemote.Instance Accessor();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool RegisterSteamMusicRemote( const char *pchName );</code>
+        /// 
+        /// <br />
+        /// Service Definition<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="pchName">const char *: </param>
         public static bool RegisterSteamMusicRemote(UTF8StringPtr pchName) => Instance.RegisterSteamMusicRemote(pchName);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool DeregisterSteamMusicRemote();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool DeregisterSteamMusicRemote() => Instance.DeregisterSteamMusicRemote();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool BIsCurrentMusicRemote();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool BIsCurrentMusicRemote() => Instance.BIsCurrentMusicRemote();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool BActivationSuccess( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool BActivationSuccess(bool bValue) => Instance.BActivationSuccess(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool SetDisplayName( const char *pchDisplayName );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="pchDisplayName">const char *: </param>
         public static bool SetDisplayName(UTF8StringPtr pchDisplayName) => Instance.SetDisplayName(pchDisplayName);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool SetPNGIcon_64x64( void *pvBuffer, uint32 cbBufferLength );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="pvBuffer">void *: </param>
+        /// <param name="cbBufferLength">uint32: </param>
         public static bool SetPNGIcon_64x64(void* pvBuffer, uint cbBufferLength) => Instance.SetPNGIcon_64x64(pvBuffer, cbBufferLength);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnablePlayPrevious( bool bValue );</code>
+        /// 
+        /// <br />
+        /// Abilities for the user interface<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnablePlayPrevious(bool bValue) => Instance.EnablePlayPrevious(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnablePlayNext( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnablePlayNext(bool bValue) => Instance.EnablePlayNext(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnableShuffled( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnableShuffled(bool bValue) => Instance.EnableShuffled(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnableLooped( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnableLooped(bool bValue) => Instance.EnableLooped(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnableQueue( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnableQueue(bool bValue) => Instance.EnableQueue(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool EnablePlaylists( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool EnablePlaylists(bool bValue) => Instance.EnablePlaylists(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdatePlaybackStatus( AudioPlayback_Status nStatus );</code>
+        /// 
+        /// <br />
+        /// Status<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nStatus">AudioPlayback_Status: </param>
         public static bool UpdatePlaybackStatus(AudioPlayback_Status nStatus) => Instance.UpdatePlaybackStatus(nStatus);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdateShuffled( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool UpdateShuffled(bool bValue) => Instance.UpdateShuffled(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdateLooped( bool bValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bValue">bool: </param>
         public static bool UpdateLooped(bool bValue) => Instance.UpdateLooped(bValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdateVolume( float flValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="flValue">float: </param>
         public static bool UpdateVolume(float flValue) => Instance.UpdateVolume(flValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool CurrentEntryWillChange();</code>
+        /// Current Entry<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool CurrentEntryWillChange() => Instance.CurrentEntryWillChange();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool CurrentEntryIsAvailable( bool bAvailable );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="bAvailable">bool: </param>
         public static bool CurrentEntryIsAvailable(bool bAvailable) => Instance.CurrentEntryIsAvailable(bAvailable);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdateCurrentEntryText( const char *pchText );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="pchText">const char *: </param>
         public static bool UpdateCurrentEntryText(UTF8StringPtr pchText) => Instance.UpdateCurrentEntryText(pchText);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool UpdateCurrentEntryElapsedSeconds( int nValue );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nValue">int: </param>
         public static bool UpdateCurrentEntryElapsedSeconds(int nValue) => Instance.UpdateCurrentEntryElapsedSeconds(nValue);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>
+        ///     bool UpdateCurrentEntryCoverArt( void *pvBuffer, uint32 cbBufferLength );
+        /// </code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="pvBuffer">void *: </param>
+        /// <param name="cbBufferLength">uint32: </param>
         public static bool UpdateCurrentEntryCoverArt(void* pvBuffer, uint cbBufferLength) => Instance.UpdateCurrentEntryCoverArt(pvBuffer, cbBufferLength);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool CurrentEntryDidChange();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool CurrentEntryDidChange() => Instance.CurrentEntryDidChange();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool QueueWillChange();</code>
+        /// Queue<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool QueueWillChange() => Instance.QueueWillChange();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool ResetQueueEntries();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool ResetQueueEntries() => Instance.ResetQueueEntries();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>
+        ///     bool SetQueueEntry( int nID, int nPosition, const char *pchEntryText );
+        /// </code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nID">int: </param>
+        /// <param name="nPosition">int: </param>
+        /// <param name="pchEntryText">const char *: </param>
         public static bool SetQueueEntry(int nID, int nPosition, UTF8StringPtr pchEntryText) => Instance.SetQueueEntry(nID, nPosition, pchEntryText);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool SetCurrentQueueEntry( int nID );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nID">int: </param>
         public static bool SetCurrentQueueEntry(int nID) => Instance.SetCurrentQueueEntry(nID);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool QueueDidChange();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool QueueDidChange() => Instance.QueueDidChange();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool PlaylistWillChange();</code>
+        /// Playlist<br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool PlaylistWillChange() => Instance.PlaylistWillChange();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool ResetPlaylistEntries();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool ResetPlaylistEntries() => Instance.ResetPlaylistEntries();
-        /// <summary></summary>
+        /// <summary>
+        /// <code>
+        ///     bool SetPlaylistEntry( int nID, int nPosition, const char *pchEntryText );
+        /// </code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nID">int: </param>
+        /// <param name="nPosition">int: </param>
+        /// <param name="pchEntryText">const char *: </param>
         public static bool SetPlaylistEntry(int nID, int nPosition, UTF8StringPtr pchEntryText) => Instance.SetPlaylistEntry(nID, nPosition, pchEntryText);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool SetCurrentPlaylistEntry( int nID );</code>
+        /// 
+        /// <br />
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// <param name="nID">int: </param>
         public static bool SetCurrentPlaylistEntry(int nID) => Instance.SetCurrentPlaylistEntry(nID);
-        /// <summary></summary>
+        /// <summary>
+        /// <code>bool PlaylistDidChange();</code>
+        /// <br />
+        /// <br />
+        /// <b>Returns:</b> bool
+        /// </summary>
+        /// 
         public static bool PlaylistDidChange() => Instance.PlaylistDidChange();
     }
 }

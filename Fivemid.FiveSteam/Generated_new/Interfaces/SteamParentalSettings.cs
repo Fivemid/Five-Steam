@@ -9,17 +9,17 @@ namespace Fivemid.FiveSteam
 
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamParentalSettings_v001", CallingConvention = Platform.CC)]
         private static extern ISteamParentalSettings.Instance Accessor();
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsParentalLockEnabled() => Instance.BIsParentalLockEnabled();
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsParentalLockLocked() => Instance.BIsParentalLockLocked();
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsAppBlocked(AppId nAppID) => Instance.BIsAppBlocked(nAppID);
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsAppInBlockList(AppId nAppID) => Instance.BIsAppInBlockList(nAppID);
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsFeatureBlocked(ParentalFeature eFeature) => Instance.BIsFeatureBlocked(eFeature);
-        /// <summary></summary>
+        /// missing documentation
         public static bool BIsFeatureInBlockList(ParentalFeature eFeature) => Instance.BIsFeatureInBlockList(eFeature);
     }
 }

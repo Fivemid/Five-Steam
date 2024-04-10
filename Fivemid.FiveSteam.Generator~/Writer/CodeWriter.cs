@@ -66,4 +66,9 @@ public partial class CodeWriter(string baseFolder) {
             sourceText
         );
     }
+
+    private SyntaxTrivia[] DocComment(string text) =>
+        text.Split("\n")
+            .Select(line => Comment($"/// {line}"))
+            .ToArray();
 }
