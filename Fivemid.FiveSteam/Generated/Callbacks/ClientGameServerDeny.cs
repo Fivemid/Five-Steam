@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>ClientGameServerDeny_t</summary>
-    public unsafe struct ClientGameServerDeny
+    public unsafe struct ClientGameServerDeny : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ClientGameServerDeny;
         /// <summary>uint32 m_uAppID</summary>
         public uint uAppID;
         /// <summary>uint32 m_unGameServerIP</summary>

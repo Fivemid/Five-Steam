@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamRelayNetworkStatus_t</summary>
-    public unsafe struct SteamRelayNetworkStatus
+    public unsafe struct SteamRelayNetworkStatus : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamRelayNetworkStatus;
         /// <summary>ESteamNetworkingAvailability m_eAvail</summary>
         public SteamNetworkingAvailability eAvail;
         /// <summary>int m_bPingMeasurementInProgress</summary>

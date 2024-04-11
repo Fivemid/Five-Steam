@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTML_NeedsPaint_t</summary>
-    public unsafe struct HTML_NeedsPaint
+    public unsafe struct HTML_NeedsPaint : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_NeedsPaint;
         /// <summary>HHTMLBrowser unBrowserHandle</summary>
         public HHTMLBrowser unBrowserHandle;
         /// <summary>const char * pBGRA</summary>

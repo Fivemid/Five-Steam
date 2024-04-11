@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GSReputation_t</summary>
-    public unsafe struct GSReputation
+    public unsafe struct GSReputation : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSReputation;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>uint32 m_unReputationScore</summary>

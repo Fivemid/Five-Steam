@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamNetworkingFakeIPResult_t</summary>
-    public unsafe struct SteamNetworkingFakeIPResult
+    public unsafe struct SteamNetworkingFakeIPResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingFakeIPResult;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>SteamNetworkingIdentity m_identity</summary>

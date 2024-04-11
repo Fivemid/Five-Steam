@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>ComputeNewPlayerCompatibilityResult_t</summary>
-    public unsafe struct ComputeNewPlayerCompatibilityResult
+    public unsafe struct ComputeNewPlayerCompatibilityResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ComputeNewPlayerCompatibilityResult;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>int m_cPlayersThatDontLikeCandidate</summary>

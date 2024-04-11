@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>AppProofOfPurchaseKeyResponse_t</summary>
-    public unsafe struct AppProofOfPurchaseKeyResponse
+    public unsafe struct AppProofOfPurchaseKeyResponse : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AppProofOfPurchaseKeyResponse;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>uint32 m_nAppID</summary>

@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GSClientGroupStatus_t</summary>
-    public unsafe struct GSClientGroupStatus
+    public unsafe struct GSClientGroupStatus : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientGroupStatus;
         /// <summary>CSteamID m_SteamIDUser</summary>
         public SteamId SteamIDUser;
         /// <summary>CSteamID m_SteamIDGroup</summary>

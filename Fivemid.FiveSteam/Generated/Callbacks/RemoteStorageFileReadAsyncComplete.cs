@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>RemoteStorageFileReadAsyncComplete_t</summary>
-    public unsafe struct RemoteStorageFileReadAsyncComplete
+    public unsafe struct RemoteStorageFileReadAsyncComplete : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageFileReadAsyncComplete;
         /// <summary>SteamAPICall_t m_hFileReadAsync</summary>
         public SteamAPICall hFileReadAsync;
         /// <summary>EResult m_eResult</summary>

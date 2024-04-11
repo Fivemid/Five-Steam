@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>EquippedProfileItems_t</summary>
-    public unsafe struct EquippedProfileItems
+    public unsafe struct EquippedProfileItems : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.EquippedProfileItems;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>CSteamID m_steamID</summary>

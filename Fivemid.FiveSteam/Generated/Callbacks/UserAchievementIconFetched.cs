@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>UserAchievementIconFetched_t</summary>
-    public unsafe struct UserAchievementIconFetched
+    public unsafe struct UserAchievementIconFetched : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementIconFetched;
         /// <summary>CGameID m_nGameID</summary>
         public GameId nGameID;
         /// <summary>char [128] m_rgchAchievementName</summary>

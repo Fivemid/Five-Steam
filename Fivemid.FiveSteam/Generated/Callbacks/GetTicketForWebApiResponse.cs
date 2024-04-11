@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GetTicketForWebApiResponse_t</summary>
-    public unsafe struct GetTicketForWebApiResponse
+    public unsafe struct GetTicketForWebApiResponse : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GetTicketForWebApiResponse;
         /// <summary>HAuthTicket m_hAuthTicket</summary>
         public HAuthTicket hAuthTicket;
         /// <summary>EResult m_eResult</summary>

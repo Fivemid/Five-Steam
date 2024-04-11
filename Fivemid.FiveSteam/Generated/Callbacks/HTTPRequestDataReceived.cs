@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTTPRequestDataReceived_t</summary>
-    public unsafe struct HTTPRequestDataReceived
+    public unsafe struct HTTPRequestDataReceived : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTTPRequestDataReceived;
         /// <summary>HTTPRequestHandle m_hRequest</summary>
         public HTTPRequestHandle hRequest;
         /// <summary>uint64 m_ulContextValue</summary>

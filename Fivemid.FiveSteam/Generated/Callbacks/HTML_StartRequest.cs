@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTML_StartRequest_t</summary>
-    public unsafe struct HTML_StartRequest
+    public unsafe struct HTML_StartRequest : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_StartRequest;
         /// <summary>HHTMLBrowser unBrowserHandle</summary>
         public HHTMLBrowser unBrowserHandle;
         /// <summary>const char * pchURL</summary>

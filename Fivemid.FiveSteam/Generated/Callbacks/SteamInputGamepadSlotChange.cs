@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamInputGamepadSlotChange_t</summary>
-    public unsafe struct SteamInputGamepadSlotChange
+    public unsafe struct SteamInputGamepadSlotChange : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInputGamepadSlotChange;
         /// <summary>AppId_t m_unAppID</summary>
         public AppId unAppID;
         /// <summary>InputHandle_t m_ulDeviceHandle</summary>

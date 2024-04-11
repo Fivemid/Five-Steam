@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>TimedTrialStatus_t</summary>
-    public unsafe struct TimedTrialStatus
+    public unsafe struct TimedTrialStatus : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.TimedTrialStatus;
         /// <summary>AppId_t m_unAppID</summary>
         public AppId unAppID;
         /// <summary>bool m_bIsOffline</summary>

@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTTPRequestCompleted_t</summary>
-    public unsafe struct HTTPRequestCompleted
+    public unsafe struct HTTPRequestCompleted : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTTPRequestCompleted;
         /// <summary>HTTPRequestHandle m_hRequest</summary>
         public HTTPRequestHandle hRequest;
         /// <summary>uint64 m_ulContextValue</summary>

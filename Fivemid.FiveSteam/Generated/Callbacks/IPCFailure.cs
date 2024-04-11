@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>IPCFailure_t</summary>
-    public unsafe struct IPCFailure
+    public unsafe struct IPCFailure : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.IPCFailure;
         /// <summary>uint8 m_eFailureType</summary>
         public byte eFailureType;
         /// <summary>EFailureType</summary>

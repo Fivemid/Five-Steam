@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>UserAchievementStored_t</summary>
-    public unsafe struct UserAchievementStored
+    public unsafe struct UserAchievementStored : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementStored;
         /// <summary>uint64 m_nGameID</summary>
         public ulong nGameID;
         /// <summary>bool m_bGroupAchievement</summary>

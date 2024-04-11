@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>DurationControl_t</summary>
-    public unsafe struct DurationControl
+    public unsafe struct DurationControl : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.DurationControl;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>AppId_t m_appid</summary>

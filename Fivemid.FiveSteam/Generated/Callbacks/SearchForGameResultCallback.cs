@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SearchForGameResultCallback_t</summary>
-    public unsafe struct SearchForGameResultCallback
+    public unsafe struct SearchForGameResultCallback : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SearchForGameResultCallback;
         /// <summary>uint64 m_ullSearchID</summary>
         public ulong ullSearchID;
         /// <summary>EResult m_eResult</summary>

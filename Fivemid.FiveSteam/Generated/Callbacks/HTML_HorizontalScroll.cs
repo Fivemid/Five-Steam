@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTML_HorizontalScroll_t</summary>
-    public unsafe struct HTML_HorizontalScroll
+    public unsafe struct HTML_HorizontalScroll : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_HorizontalScroll;
         /// <summary>HHTMLBrowser unBrowserHandle</summary>
         public HHTMLBrowser unBrowserHandle;
         /// <summary>uint32 unScrollMax</summary>

@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>LobbyKicked_t</summary>
-    public unsafe struct LobbyKicked
+    public unsafe struct LobbyKicked : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyKicked;
         /// <summary>uint64 m_ulSteamIDLobby</summary>
         public ulong ulSteamIDLobby;
         /// <summary>uint64 m_ulSteamIDAdmin</summary>

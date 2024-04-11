@@ -42,8 +42,12 @@ public partial class CodeWriter(string baseFolder) {
         void ClearEmptyDirectories(string directory) {
             foreach (string subDirectory in Directory.EnumerateDirectories(directory)) {
                 ClearEmptyDirectories(subDirectory);
-                if (!Directory.EnumerateFileSystemEntries(subDirectory).Any())
+                if (!Directory.EnumerateFileSystemEntries(subDirectory).Any()) {
                     Directory.Delete(subDirectory);
+                    string metaFile = subDirectory + ".meta";
+                    if (File.Exists(metaFile))
+                        File.Delete(metaFile);
+                }
             }
         }
     }

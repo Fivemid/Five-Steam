@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GSClientDeny_t</summary>
-    public unsafe struct GSClientDeny
+    public unsafe struct GSClientDeny : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientDeny;
         /// <summary>CSteamID m_SteamID</summary>
         public SteamId SteamID;
         /// <summary>EDenyReason m_eDenyReason</summary>

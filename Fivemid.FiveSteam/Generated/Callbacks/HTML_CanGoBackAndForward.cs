@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>HTML_CanGoBackAndForward_t</summary>
-    public unsafe struct HTML_CanGoBackAndForward
+    public unsafe struct HTML_CanGoBackAndForward : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_CanGoBackAndForward;
         /// <summary>HHTMLBrowser unBrowserHandle</summary>
         public HHTMLBrowser unBrowserHandle;
         /// <summary>bool bCanGoBack</summary>

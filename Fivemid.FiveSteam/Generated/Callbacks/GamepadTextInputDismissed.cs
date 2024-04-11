@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GamepadTextInputDismissed_t</summary>
-    public unsafe struct GamepadTextInputDismissed
+    public unsafe struct GamepadTextInputDismissed : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GamepadTextInputDismissed;
         /// <summary>bool m_bSubmitted</summary>
         public bool bSubmitted;
         /// <summary>uint32 m_unSubmittedText</summary>

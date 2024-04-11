@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>LeaderboardScoreUploaded_t</summary>
-    public unsafe struct LeaderboardScoreUploaded
+    public unsafe struct LeaderboardScoreUploaded : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LeaderboardScoreUploaded;
         /// <summary>uint8 m_bSuccess</summary>
         public byte bSuccess;
         /// <summary>SteamLeaderboard_t m_hSteamLeaderboard</summary>

@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>CreateItemResult_t</summary>
-    public unsafe struct CreateItemResult
+    public unsafe struct CreateItemResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.CreateItemResult;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>PublishedFileId_t m_nPublishedFileId</summary>

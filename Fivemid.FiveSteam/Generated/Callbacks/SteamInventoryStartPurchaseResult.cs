@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamInventoryStartPurchaseResult_t</summary>
-    public unsafe struct SteamInventoryStartPurchaseResult
+    public unsafe struct SteamInventoryStartPurchaseResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryStartPurchaseResult;
         /// <summary>EResult m_result</summary>
         public Result result;
         /// <summary>uint64 m_ulOrderID</summary>

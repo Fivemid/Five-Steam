@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>GSGameplayStats_t</summary>
-    public unsafe struct GSGameplayStats
+    public unsafe struct GSGameplayStats : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSGameplayStats;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>int32 m_nRank</summary>

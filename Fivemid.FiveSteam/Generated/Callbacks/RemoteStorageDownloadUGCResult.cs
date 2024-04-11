@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>RemoteStorageDownloadUGCResult_t</summary>
-    public unsafe struct RemoteStorageDownloadUGCResult
+    public unsafe struct RemoteStorageDownloadUGCResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageDownloadUGCResult;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>UGCHandle_t m_hFile</summary>

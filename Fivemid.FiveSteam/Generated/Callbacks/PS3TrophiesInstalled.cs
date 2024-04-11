@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>PS3TrophiesInstalled_t</summary>
-    public unsafe struct PS3TrophiesInstalled
+    public unsafe struct PS3TrophiesInstalled : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.PS3TrophiesInstalled;
         /// <summary>uint64 m_nGameID</summary>
         public ulong nGameID;
         /// <summary>EResult m_eResult</summary>

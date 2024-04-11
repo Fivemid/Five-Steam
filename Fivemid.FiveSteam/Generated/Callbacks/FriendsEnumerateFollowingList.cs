@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>FriendsEnumerateFollowingList_t</summary>
-    public unsafe struct FriendsEnumerateFollowingList
+    public unsafe struct FriendsEnumerateFollowingList : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendsEnumerateFollowingList;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>CSteamID [50] m_rgSteamID</summary>

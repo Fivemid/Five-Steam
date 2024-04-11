@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamInventoryEligiblePromoItemDefIDs_t</summary>
-    public unsafe struct SteamInventoryEligiblePromoItemDefIDs
+    public unsafe struct SteamInventoryEligiblePromoItemDefIDs : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryEligiblePromoItemDefIDs;
         /// <summary>EResult m_result</summary>
         public Result result;
         /// <summary>CSteamID m_steamID</summary>

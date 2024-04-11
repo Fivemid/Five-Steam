@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>AvatarImageLoaded_t</summary>
-    public unsafe struct AvatarImageLoaded
+    public unsafe struct AvatarImageLoaded : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AvatarImageLoaded;
         /// <summary>CSteamID m_steamID</summary>
         public SteamId steamID;
         /// <summary>int m_iImage</summary>

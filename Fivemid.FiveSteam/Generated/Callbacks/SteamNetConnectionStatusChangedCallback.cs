@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamNetConnectionStatusChangedCallback_t</summary>
-    public unsafe struct SteamNetConnectionStatusChangedCallback
+    public unsafe struct SteamNetConnectionStatusChangedCallback : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetConnectionStatusChangedCallback;
         /// <summary>HSteamNetConnection m_hConn</summary>
         public HSteamNetConnection hConn;
         /// <summary>SteamNetConnectionInfo_t m_info</summary>

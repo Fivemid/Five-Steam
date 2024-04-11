@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>RemoteStorageEnumerateUserPublishedFilesResult_t</summary>
-    public unsafe struct RemoteStorageEnumerateUserPublishedFilesResult
+    public unsafe struct RemoteStorageEnumerateUserPublishedFilesResult : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserPublishedFilesResult;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>int32 m_nResultsReturned</summary>

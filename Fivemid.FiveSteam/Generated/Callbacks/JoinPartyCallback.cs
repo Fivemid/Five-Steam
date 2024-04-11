@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>JoinPartyCallback_t</summary>
-    public unsafe struct JoinPartyCallback
+    public unsafe struct JoinPartyCallback : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.JoinPartyCallback;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>PartyBeaconID_t m_ulBeaconID</summary>

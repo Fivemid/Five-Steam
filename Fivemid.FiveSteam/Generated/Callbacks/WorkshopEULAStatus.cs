@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>WorkshopEULAStatus_t</summary>
-    public unsafe struct WorkshopEULAStatus
+    public unsafe struct WorkshopEULAStatus : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.WorkshopEULAStatus;
         /// <summary>EResult m_eResult</summary>
         public Result eResult;
         /// <summary>AppId_t m_nAppID</summary>

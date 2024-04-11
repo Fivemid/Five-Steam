@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SteamUGCQueryCompleted_t</summary>
-    public unsafe struct SteamUGCQueryCompleted
+    public unsafe struct SteamUGCQueryCompleted : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamUGCQueryCompleted;
         /// <summary>UGCQueryHandle_t m_handle</summary>
         public UGCQueryHandle handle;
         /// <summary>EResult m_eResult</summary>

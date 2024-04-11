@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>FavoritesListChanged_t</summary>
-    public unsafe struct FavoritesListChanged
+    public unsafe struct FavoritesListChanged : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FavoritesListChanged;
         /// <summary>uint32 m_nIP</summary>
         public uint nIP;
         /// <summary>uint32 m_nQueryPort</summary>

@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>SocketStatusCallback_t</summary>
-    public unsafe struct SocketStatusCallback
+    public unsafe struct SocketStatusCallback : global::Unity.Entities.IComponentData
     {
+        public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SocketStatusCallback;
         /// <summary>SNetSocket_t m_hSocket</summary>
         public SNetSocket hSocket;
         /// <summary>SNetListenSocket_t m_hListenSocket</summary>
