@@ -3,11 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    public unsafe static class SteamNetworkingSockets_SteamAPI
+    public unsafe static class SteamGameServerNetworkingSockets
     {
         public static ISteamNetworkingSockets.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingSockets_SteamAPI_v012", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServerNetworkingSockets_SteamAPI_v012", CallingConvention = Platform.CC)]
         private static extern ISteamNetworkingSockets.Instance Accessor();
         /// <summary>
         /// <code>

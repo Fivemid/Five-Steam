@@ -89,7 +89,7 @@ public partial class CodeWriter {
         IEnumerable<BaseTypeDeclarationSyntax> accessorDeclarations =
             (definition.Accessors ?? []).Select(
                 accessor =>
-                    ClassDeclaration(accessor.Name)
+                    ClassDeclaration(accessor.Name.StripSuffix("_SteamAPI"))
                        .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword),
                                      Token(SyntaxKind.StaticKeyword))
                        .AddMembers(

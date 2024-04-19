@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    public unsafe static class SteamGameServerNetworkingMessages_SteamAPI
+    public unsafe static class SteamGameServerNetworkingMessages
     {
         public static ISteamNetworkingMessages.Instance Instance => Accessor();
 
