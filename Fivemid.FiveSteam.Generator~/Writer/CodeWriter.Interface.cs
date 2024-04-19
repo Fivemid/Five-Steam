@@ -10,37 +10,37 @@ public partial class CodeWriter {
         foreach (SteamApiDefinition.InterfaceDefinition definition in definitions.Where(d => !d.Name.IsPrimitive()))
             Register(definition);
     }
-
+    
     private void Register(SteamApiDefinition.InterfaceDefinition definition) {
         Convert.RegisterType(definition.Name, InterfaceInstanceType(definition));
-
+        
         foreach (SteamApiDefinition.EnumDefinition subEnum in definition.Enums ?? []) {
             Convert.RegisterType($"{definition.Name}::{subEnum.Name}",
                                  ParseTypeName($"{InterfaceName(definition.Name)}.{EnumName(subEnum.Name)}"));
         }
     }
-
+    
     private BaseTypeDeclarationSyntax[] Interfaces(IEnumerable<SteamApiDefinition.InterfaceDefinition> definitions) =>
         definitions.Where(d => !d.Name.IsPrimitive()).SelectMany(Interface).ToArray();
-
+    
     private IEnumerable<BaseTypeDeclarationSyntax> Interface(SteamApiDefinition.InterfaceDefinition definition) {
         string name = InterfaceName(definition.Name);
-
+        
         BaseTypeDeclarationSyntax interfaceDeclaration =
             InterfaceDeclaration(name)
                .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
                .AddMembers(definition.Methods.Select(
                                method =>
-                                   MethodDeclaration(method.ReturnType.ToType(), Identifier(method.Name))
+                                   MethodDeclaration(method.ReturnType.ToType(), MethodName(method.Name))
                                       .AddModifiers(Token(SyntaxKind.PublicKeyword))
                                       .AddParameterListParameters(
-                                           method.Parameters.Select(InterfaceParameter).ToArray()
+                                           method.Parameters.Select(MethodParameter).ToArray()
                                        )
                                       .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                            ).ToArray<MemberDeclarationSyntax>())
                .AddMembers(definition.Methods.Select(
                                method =>
-                                   MethodDeclaration(method.ReturnType.ToType(), Identifier(method.Name))
+                                   MethodDeclaration(method.ReturnType.ToType(), MethodName(method.Name))
                                       .AddAttributeLists(
                                            DllImportAttribute(method.FlatName)
                                        )
@@ -49,7 +49,7 @@ public partial class CodeWriter {
                                       .AddParameterListParameters(
                                            Parameter(Identifier("self")).WithType(ParseTypeName("void*")))
                                       .AddParameterListParameters(
-                                           method.Parameters.Select(InterfaceParameter).ToArray()
+                                           method.Parameters.Select(MethodParameter).ToArray()
                                        )
                                       .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                            ).ToArray<MemberDeclarationSyntax>())
@@ -64,19 +64,19 @@ public partial class CodeWriter {
                         )
                        .AddMembers(definition.Methods.Select(
                                        method =>
-                                           MethodDeclaration(method.ReturnType.ToType(), Identifier(method.Name))
+                                           MethodDeclaration(method.ReturnType.ToType(), MethodName(method.Name))
                                               .AddModifiers(Token(SyntaxKind.PublicKeyword))
                                               .AddParameterListParameters(
-                                                   method.Parameters.Select(InterfaceParameter).ToArray()
+                                                   method.Parameters.Select(MethodParameter).ToArray()
                                                )
                                               .WithExpressionBody(
                                                    ArrowExpressionClause(
-                                                       InvocationExpression(ParseExpression($"{name}.{method.Name}"))
+                                                       InvocationExpression(ParseExpression($"{name}.{MethodName(method.Name)}"))
                                                           .AddArgumentListArguments(
                                                                Argument(IdentifierName("self"))
                                                            )
                                                           .AddArgumentListArguments(
-                                                               method.Parameters.Select(InterfaceArgument).ToArray()
+                                                               method.Parameters.Select(MethodArgument).ToArray()
                                                            )
                                                    )
                                                )
@@ -85,7 +85,7 @@ public partial class CodeWriter {
                 )
                .AddMembers(Enums(definition.Enums ?? []).ToArray<MemberDeclarationSyntax>())
                .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
-
+        
         IEnumerable<BaseTypeDeclarationSyntax> accessorDeclarations =
             (definition.Accessors ?? []).Select(
                 accessor =>
@@ -110,17 +110,17 @@ public partial class CodeWriter {
                         )
                        .AddMembers(definition.Methods.Select(
                                        method =>
-                                           MethodDeclaration(method.ReturnType.ToType(), Identifier(method.Name))
+                                           MethodDeclaration(method.ReturnType.ToType(), MethodName(method.Name))
                                               .AddModifiers(Token(SyntaxKind.PublicKeyword),
                                                             Token(SyntaxKind.StaticKeyword))
                                               .AddParameterListParameters(
-                                                   method.Parameters.Select(InterfaceParameter).ToArray()
+                                                   method.Parameters.Select(MethodParameter).ToArray()
                                                )
                                               .WithExpressionBody(
                                                    ArrowExpressionClause(
-                                                       InvocationExpression(ParseExpression($"Instance.{method.Name}"))
+                                                       InvocationExpression(ParseExpression($"Instance.{MethodName(method.Name)}"))
                                                           .AddArgumentListArguments(
-                                                               method.Parameters.Select(InterfaceArgument).ToArray()
+                                                               method.Parameters.Select(MethodArgument).ToArray()
                                                            )
                                                    )
                                                )
@@ -129,23 +129,23 @@ public partial class CodeWriter {
                                                    InterfaceMethodDocumentation(definition, method))
                                    ).ToArray<MemberDeclarationSyntax>())
             );
-
+        
         return accessorDeclarations.Append(interfaceDeclaration);
     }
-
+    
     private SyntaxTrivia[] InterfaceMethodDocumentation(
-        SteamApiDefinition.InterfaceDefinition        @interface,
-        SteamApiDefinition.InterfaceDefinition.Method method
+        SteamApiDefinition.InterfaceDefinition @interface,
+        SteamApiDefinition.Method              method
     ) {
         if (Documentation.VALUE.GetInterface(@interface.Name)?.GetMethod(method.Name) is { } documentation)
             return DocComment($"""
                                <summary>{documentation.Description}</summary>
                                {string.Join('\n', documentation.Parameters.Select(p => $"""<param name="{p.Name}">{p.Type}: {p.Description}</param>"""))}
                                """);
-
+        
         return DocComment("missing documentation");
     }
-
+    
     private AttributeListSyntax DllImportAttribute(string entryPoint) =>
         AttributeList()
            .AddAttributes(
@@ -161,23 +161,30 @@ public partial class CodeWriter {
                            .WithNameEquals(NameEquals("CallingConvention"))
                     )
             );
-
+    
     private TypeSyntax InterfaceInstanceType(SteamApiDefinition.InterfaceDefinition definition) =>
         ParseTypeName($"{InterfaceName(definition.Name)}.Instance");
-
-    private ParameterSyntax InterfaceParameter(SteamApiDefinition.InterfaceDefinition.Method.Parameter parameter) =>
+    
+    private ParameterSyntax MethodParameter(SteamApiDefinition.Method.Parameter parameter) =>
         Parameter(Identifier(parameter.Name))
            .WithType(parameter.Type.ToType())
            .AddModifiers(parameter.Type.EndsWith('&')
                              ? [Token(SyntaxKind.RefKeyword)]
                              : []);
-
-    private ArgumentSyntax InterfaceArgument(SteamApiDefinition.InterfaceDefinition.Method.Parameter parameter) =>
+    
+    private ArgumentSyntax MethodArgument(SteamApiDefinition.Method.Parameter parameter) =>
         Argument(IdentifierName(parameter.Name))
            .WithRefKindKeyword(parameter.Type.EndsWith('&')
                                    ? Token(SyntaxKind.RefKeyword)
                                    : Token(SyntaxKind.None));
-
+    
+    private SyntaxToken MethodName(string name) => Identifier(methodNameOverride.GetValueOrDefault(name, name));
+    
     private string InterfaceName(string name) => name;
-    private string WrapperName(string   name) => name.StripPrefix("I");
+    
+    private static readonly Dictionary<string, string> methodNameOverride = new() {
+        { "operator<", "LessThan" },
+        { "operator=", "Assign" },
+        { "operator==", "Equals" },
+    };
 }

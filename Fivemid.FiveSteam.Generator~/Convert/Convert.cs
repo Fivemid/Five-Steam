@@ -11,6 +11,7 @@ public static partial class Convert {
         ("int16", "short"),
         ("uint16", "ushort"),
         ("int32", "int"),
+        ("int32_t", "int"),
         ("uint32", "uint"),
         ("int64", "long"),
         ("int64_t", "long"),

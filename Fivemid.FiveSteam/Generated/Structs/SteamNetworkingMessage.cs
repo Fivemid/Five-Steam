@@ -34,5 +34,12 @@ namespace Fivemid.FiveSteam
         public ushort idxLane;
         /// <summary>uint16 _pad1__</summary>
         public ushort _pad1__;
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingMessage_t_Release", CallingConvention = Platform.CC)]
+        internal static extern void Release(SteamNetworkingMessage* self);
+        public void Release()
+        {
+            fixed (SteamNetworkingMessage* self = &this)
+                Release(self);
+        }
     }
 }

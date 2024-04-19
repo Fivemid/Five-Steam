@@ -10,5 +10,108 @@ namespace Fivemid.FiveSteam
         public FixedArray_byte16 ipv6;
         /// <summary>uint16 m_port</summary>
         public ushort port;
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_Clear", CallingConvention = Platform.CC)]
+        internal static extern void Clear(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsIPv6AllZeros", CallingConvention = Platform.CC)]
+        internal static extern bool IsIPv6AllZeros(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_SetIPv6", CallingConvention = Platform.CC)]
+        internal static extern void SetIPv6(SteamNetworkingIPAddr* self, byte* ipv6, ushort nPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_SetIPv4", CallingConvention = Platform.CC)]
+        internal static extern void SetIPv4(SteamNetworkingIPAddr* self, uint nIP, ushort nPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsIPv4", CallingConvention = Platform.CC)]
+        internal static extern bool IsIPv4(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_GetIPv4", CallingConvention = Platform.CC)]
+        internal static extern uint GetIPv4(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_SetIPv6LocalHost", CallingConvention = Platform.CC)]
+        internal static extern void SetIPv6LocalHost(SteamNetworkingIPAddr* self, ushort nPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsLocalHost", CallingConvention = Platform.CC)]
+        internal static extern bool IsLocalHost(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_ToString", CallingConvention = Platform.CC)]
+        internal static extern void ToString(SteamNetworkingIPAddr* self, char* buf, uint cbBuf, bool bWithPort);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_ParseString", CallingConvention = Platform.CC)]
+        internal static extern bool ParseString(SteamNetworkingIPAddr* self, UTF8StringPtr pszStr);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsEqualTo", CallingConvention = Platform.CC)]
+        internal static extern bool Equals(SteamNetworkingIPAddr* self, ref SteamNetworkingIPAddr x);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_GetFakeIPType", CallingConvention = Platform.CC)]
+        internal static extern SteamNetworkingFakeIPType GetFakeIPType(SteamNetworkingIPAddr* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsFakeIP", CallingConvention = Platform.CC)]
+        internal static extern bool IsFakeIP(SteamNetworkingIPAddr* self);
+        public void Clear()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                Clear(self);
+        }
+
+        public bool IsIPv6AllZeros()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return IsIPv6AllZeros(self);
+        }
+
+        public void SetIPv6(byte* ipv6, ushort nPort)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                SetIPv6(self, ipv6, nPort);
+        }
+
+        public void SetIPv4(uint nIP, ushort nPort)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                SetIPv4(self, nIP, nPort);
+        }
+
+        public bool IsIPv4()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return IsIPv4(self);
+        }
+
+        public uint GetIPv4()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return GetIPv4(self);
+        }
+
+        public void SetIPv6LocalHost(ushort nPort)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                SetIPv6LocalHost(self, nPort);
+        }
+
+        public bool IsLocalHost()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return IsLocalHost(self);
+        }
+
+        public void ToString(char* buf, uint cbBuf, bool bWithPort)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                ToString(self, buf, cbBuf, bWithPort);
+        }
+
+        public bool ParseString(UTF8StringPtr pszStr)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return ParseString(self, pszStr);
+        }
+
+        public bool Equals(ref SteamNetworkingIPAddr x)
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return Equals(self, ref x);
+        }
+
+        public SteamNetworkingFakeIPType GetFakeIPType()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return GetFakeIPType(self);
+        }
+
+        public bool IsFakeIP()
+        {
+            fixed (SteamNetworkingIPAddr* self = &this)
+                return IsFakeIP(self);
+        }
     }
 }

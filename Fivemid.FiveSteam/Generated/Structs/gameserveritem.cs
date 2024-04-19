@@ -42,5 +42,28 @@ namespace Fivemid.FiveSteam
         public UTF8String128 szGameTags;
         /// <summary>CSteamID m_steamID</summary>
         public SteamId steamID;
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_Construct", CallingConvention = Platform.CC)]
+        internal static extern void Construct(gameserveritem* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_GetName", CallingConvention = Platform.CC)]
+        internal static extern UTF8StringPtr GetName(gameserveritem* self);
+        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_SetName", CallingConvention = Platform.CC)]
+        internal static extern void SetName(gameserveritem* self, UTF8StringPtr pName);
+        public void Construct()
+        {
+            fixed (gameserveritem* self = &this)
+                Construct(self);
+        }
+
+        public UTF8StringPtr GetName()
+        {
+            fixed (gameserveritem* self = &this)
+                return GetName(self);
+        }
+
+        public void SetName(UTF8StringPtr pName)
+        {
+            fixed (gameserveritem* self = &this)
+                SetName(self, pName);
+        }
     }
 }
