@@ -104,7 +104,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the active user is subscribed to the specified App ID, otherwise
         /// <b>false</b>.
         /// </summary>
-        /// <param name="appID">AppId_t: The App ID to check.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID to check.</param>
         public static bool BIsSubscribedApp(AppId appID) => Instance.BIsSubscribedApp(appID);
         /// <summary>
         /// <code>bool BIsDlcInstalled( AppId_t appID );</code>
@@ -119,7 +121,9 @@ namespace Fivemid.FiveSteam
         /// <b>Note:</b> Should only be used for simple client side checks - not intended for granting
         /// in-game items.
         /// </summary>
-        /// <param name="appID">AppId_t: The App ID of the DLC to check.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID of the DLC to check.</param>
         public static bool BIsDlcInstalled(AppId appID) => Instance.BIsDlcInstalled(appID);
         /// <summary>
         /// <code>uint32 GetEarliestPurchaseUnixTime( AppId_t nAppID );</code>
@@ -133,7 +137,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a><br />
         /// The earliest purchase time in Unix epoch format (seconds since Jan 1st, 1970).
         /// </summary>
-        /// <param name="nAppID">AppId_t: The App ID to get the purchase time for.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID to get the purchase time for.</param>
         public static uint GetEarliestPurchaseUnixTime(AppId nAppID) => Instance.GetEarliestPurchaseUnixTime(nAppID);
         /// <summary>
         /// <code>bool BIsSubscribedFromFreeWeekend();</code>
@@ -198,8 +204,10 @@ namespace Fivemid.FiveSteam
         ///             Index of the DLC to get between 0 and
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamApps#GetDLCCount" class="bb_apilink">ISteamApps::GetDLCCount</a>.
         ///         </param>
-        /// <param name="pAppID">AppId_t
-        ///             *: Returns the App ID of the DLC.</param>
+        /// <param name="pAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///             *
+        ///         : Returns the App ID of the DLC.</param>
         /// <param name="pbAvailable">bool *: 
         ///             Returns whether the DLC is currently available on the Steam store. Will be false if the
         ///             DLC does not have a visible store page
@@ -222,7 +230,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamApps#DlcInstalled_t" class="bb_apilink">DlcInstalled_t</a>
         /// callback.
         /// </summary>
-        /// <param name="nAppID">AppId_t: The DLC you want to install.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The DLC you want to install.</param>
         public static void InstallDLC(AppId nAppID) => Instance.InstallDLC(nAppID);
         /// <summary>
         /// <code>void UninstallDLC( AppId_t nAppID );</code>
@@ -230,7 +240,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Allows you to uninstall an optional DLC.
         /// </summary>
-        /// <param name="nAppID">AppId_t: The DLC you want to uninstall.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The DLC you want to uninstall.</param>
         public static void UninstallDLC(AppId nAppID) => Instance.UninstallDLC(nAppID);
         /// <summary>
         /// <code>void RequestAppProofOfPurchaseKey( AppId_t nAppID );</code>
@@ -238,7 +250,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Deprecated.
         /// </summary>
-        /// <param name="nAppID">AppId_t: </param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : </param>
         public static void RequestAppProofOfPurchaseKey(AppId nAppID) => Instance.RequestAppProofOfPurchaseKey(nAppID);
         /// <summary>
         /// <code>bool GetCurrentBetaName( char *pchName, int cchNameBufferSize );</code>
@@ -278,10 +292,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a><br />
         /// The number of depots returned.
         /// </summary>
-        /// <param name="appID">AppId_t: The App to list the depots for.</param>
-        /// <param name="pvecDepots">DepotId_t
-        ///             *: A preallocated array that will be filled with the list of depots.</param>
-        /// <param name="cMaxDepots">uint32: The maximum number of depots to obtain, typically the size of pvecDepots.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App to list the depots for.</param>
+        /// <param name="pvecDepots">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#DepotId_t" class="bb_apilink">DepotId_t</a>
+        ///             *
+        ///         : A preallocated array that will be filled with the list of depots.</param>
+        /// <param name="cMaxDepots">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The maximum number of depots to obtain, typically the size of pvecDepots.</param>
         public static uint GetInstalledDepots(AppId appID, DepotId* pvecDepots, uint cMaxDepots) => Instance.GetInstalledDepots(appID, pvecDepots, cMaxDepots);
         /// <summary>
         /// <code>
@@ -299,9 +319,13 @@ namespace Fivemid.FiveSteam
         /// Returns the install directory path as a string into the buffer provided in pchFolder and returns the
         /// number of bytes that were copied into that buffer.
         /// </summary>
-        /// <param name="appID">AppId_t: The App ID to get the install dir for.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID to get the install dir for.</param>
         /// <param name="pchFolder">char *: The string buffer that the folder path will be copied into.</param>
-        /// <param name="cchFolderBufferSize">uint32: 
+        /// <param name="cchFolderBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size in bytes of the
         ///             <code class="bb_code bb_code_inline nohighlight">pchFolder</code> buffer.
         ///         </param>
@@ -323,7 +347,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// <b>true</b> if the specified App ID is installed; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="appID">AppId_t: The App ID of the application to check.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID of the application to check.</param>
         public static bool BIsAppInstalled(AppId appID) => Instance.BIsAppInstalled(appID);
         /// <summary>
         /// <code>CSteamID GetAppOwner();</code>
@@ -371,11 +397,17 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the specified DLC exists and is currently downloading; otherwise,
         /// <b>false</b>.
         /// </summary>
-        /// <param name="nAppID">AppId_t: The App ID of the DLC to monitor</param>
-        /// <param name="punBytesDownloaded">uint64
-        ///             *: Returns the number of bytes downloaded.</param>
-        /// <param name="punBytesTotal">uint64
-        ///             *: Returns the total size of the download in bytes.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID of the DLC to monitor</param>
+        /// <param name="punBytesDownloaded">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the number of bytes downloaded.</param>
+        /// <param name="punBytesTotal">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the total size of the download in bytes.</param>
         public static bool GetDlcDownloadProgress(AppId nAppID, ulong* punBytesDownloaded, ulong* punBytesTotal) => Instance.GetDlcDownloadProgress(nAppID, punBytesDownloaded, punBytesTotal);
         /// <summary>
         /// <code>int GetAppBuildId();</code>
@@ -429,7 +461,7 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamApps#NewUrlLaunchParameters_t" class="bb_apilink">ISteamApps::NewUrlLaunchParameters_t</a>
         /// </summary>
         /// <param name="pszCommandLine">char *: The string buffer that the command line will be copied into.</param>
-        /// <param name="cubCommandLine">int: 
+        /// <param name="cubCommandLine ">int: 
         ///             The size in bytes of the
         ///             <code class="bb_code bb_code_inline nohighlight">pszCommandLine</code> buffer.
         ///         </param>
@@ -466,10 +498,14 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamApps#TimedTrialStatus_t" class="bb_apilink">ISteamApps::TimedTrialStatus_t</a>
         /// </summary>
-        /// <param name="punSecondsAllowed">uint32
-        ///             *: Returns the number of seconds the timed trial will list.</param>
-        /// <param name="punSecondsPlayed">uint32
-        ///             *: Returns the number of seconds that the user has played so far.</param>
+        /// <param name="punSecondsAllowed">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the number of seconds the timed trial will list.</param>
+        /// <param name="punSecondsPlayed">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the number of seconds that the user has played so far.</param>
         public static bool BIsTimedTrial(uint* punSecondsAllowed, uint* punSecondsPlayed) => Instance.BIsTimedTrial(punSecondsAllowed, punSecondsPlayed);
         /// missing documentation
         public static bool SetDlcContext(AppId nAppID) => Instance.SetDlcContext(nAppID);

@@ -3,16 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ETextFilteringContext</summary>
+    /// <summary>
+    /// Parameter to
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#FilterText" class="bb_apilink">ISteamUtils::FilterText</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum TextFilteringContext : int
     {
-        /// <summary>k_ETextFilteringContextUnknown</summary>
+        /// <summary>Unknown context.</summary>
         Unknown = 0,
-        /// <summary>k_ETextFilteringContextGameContent</summary>
+        /// <summary>Game content, only legally required filtering is performed.</summary>
         GameContent = 1,
-        /// <summary>k_ETextFilteringContextChat</summary>
+        /// <summary>Chat from another player.</summary>
         Chat = 2,
-        /// <summary>k_ETextFilteringContextName</summary>
+        /// <summary>Character or item name.</summary>
         Name = 3
     }
 }

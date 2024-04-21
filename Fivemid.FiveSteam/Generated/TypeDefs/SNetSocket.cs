@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SNetSocket_t</summary>
+    /// <summary>
+    ///             handle to a socket<br />
+    ///             CreateP2PConnectionSocket()
+    ///         </summary>
     public unsafe struct SNetSocket
     {
         public uint value;

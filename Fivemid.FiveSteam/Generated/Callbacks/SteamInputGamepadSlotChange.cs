@@ -3,19 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInputGamepadSlotChange_t</summary>
+    /// missing documentation for SteamInputGamepadSlotChange_t
     public unsafe struct SteamInputGamepadSlotChange : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInputGamepadSlotChange;
-        /// <summary>AppId_t m_unAppID</summary>
+        /// missing documentation for SteamInputGamepadSlotChange_t.m_unAppID
         public AppId unAppID;
-        /// <summary>InputHandle_t m_ulDeviceHandle</summary>
+        /// missing documentation for SteamInputGamepadSlotChange_t.m_ulDeviceHandle
         public InputHandle ulDeviceHandle;
-        /// <summary>ESteamInputType m_eDeviceType</summary>
+        /// missing documentation for SteamInputGamepadSlotChange_t.m_eDeviceType
         public SteamInputType eDeviceType;
-        /// <summary>int m_nOldGamepadSlot</summary>
+        /// missing documentation for SteamInputGamepadSlotChange_t.m_nOldGamepadSlot
         public int nOldGamepadSlot;
-        /// <summary>int m_nNewGamepadSlot</summary>
+        /// missing documentation for SteamInputGamepadSlotChange_t.m_nNewGamepadSlot
         public int nNewGamepadSlot;
     }
 }

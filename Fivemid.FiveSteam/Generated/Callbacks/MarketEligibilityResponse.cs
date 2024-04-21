@@ -3,19 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>MarketEligibilityResponse_t</summary>
+    /// missing documentation for MarketEligibilityResponse_t
     public unsafe struct MarketEligibilityResponse : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.MarketEligibilityResponse;
-        /// <summary>bool m_bAllowed</summary>
+        /// missing documentation for MarketEligibilityResponse_t.m_bAllowed
         public bool bAllowed;
-        /// <summary>EMarketNotAllowedReasonFlags m_eNotAllowedReason</summary>
+        /// missing documentation for MarketEligibilityResponse_t.m_eNotAllowedReason
         public MarketNotAllowedReasonFlags eNotAllowedReason;
-        /// <summary>RTime32 m_rtAllowedAtTime</summary>
+        /// missing documentation for MarketEligibilityResponse_t.m_rtAllowedAtTime
         public RTime32 rtAllowedAtTime;
-        /// <summary>int m_cdaySteamGuardRequiredDays</summary>
+        /// missing documentation for MarketEligibilityResponse_t.m_cdaySteamGuardRequiredDays
         public int cdaySteamGuardRequiredDays;
-        /// <summary>int m_cdayNewDeviceCooldown</summary>
+        /// missing documentation for MarketEligibilityResponse_t.m_cdayNewDeviceCooldown
         public int cdayNewDeviceCooldown;
     }
 }

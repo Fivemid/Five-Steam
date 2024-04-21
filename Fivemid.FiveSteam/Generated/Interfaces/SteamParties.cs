@@ -36,7 +36,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
         /// </summary>
-        /// <param name="unIndex">uint32: Index of Beacon.</param>
+        /// <param name="unIndex ">
+        ///             <a href="https://partner.steamgames.com/doc/api/uint32" class="bb_apilink">uint32</a>
+        ///         : Index of Beacon.</param>
         public static PartyBeaconID GetBeaconByIndex(uint unIndex) => Instance.GetBeaconByIndex(unIndex);
         /// <summary>
         /// <code>
@@ -56,14 +58,22 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="ulBeaconID">PartyBeaconID_t: Beacon ID to query.</param>
-        /// <param name="pSteamIDBeaconOwner">CSteamID*: Creator of the beacon.</param>
-        /// <param name="pLocation">SteamPartyBeaconLocation_t*: Location the beacon has been posted.</param>
+        /// <param name="ulBeaconID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
+        ///         : Beacon ID to query.</param>
+        /// <param name="pSteamIDBeaconOwner">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>*
+        ///         : Creator of the beacon.</param>
+        /// <param name="pLocation">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#SteamPartyBeaconLocation_t" class="bb_apilink">SteamPartyBeaconLocation_t</a>*
+        ///         : Location the beacon has been posted.</param>
         /// <param name="pchMetadata">char*: 
         ///             Buffer to receive any additional metadata the game has set on this beacon (e.g. game
         ///             mode). Will be NULL terminated on success
         ///         </param>
-        /// <param name="cchMetadata">uint32: Size of the above buffer.</param>
+        /// <param name="cchMetadata ">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Size of the above buffer.</param>
         public static bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, char* pchMetadata, int cchMetadata) => Instance.GetBeaconDetails(ulBeaconID, pSteamIDBeaconOwner, pLocation, pchMetadata, cchMetadata);
         /// <summary>
         /// <code>SteamAPICall_t JoinParty( PartyBeaconID_t ulBeaconID );</code>
@@ -82,7 +92,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAPICallInvalid" class="bb_apilink">k_uAPICallInvalid</a>
         /// if the beacon ID is invalid.
         /// </summary>
-        /// <param name="ulBeacon">PartyBeaconID_t: Beacon ID for the party you wish to join.</param>
+        /// <param name="ulBeacon">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
+        ///         : Beacon ID for the party you wish to join.</param>
         public static SteamAPICall JoinParty(PartyBeaconID ulBeaconID) => Instance.JoinParty(ulBeaconID);
         /// <summary>
         /// <code>bool GetNumAvailableBeaconLocations( uint32 *puNumLocations );</code>
@@ -95,7 +107,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="puNumLocations">uint32*: Address of variable to receive the response number.</param>
+        /// <param name="puNumLocations">
+        ///             <a href="https://partner.steamgames.com/doc/api/uint32" class="bb_apilink">uint32</a>*
+        ///         : Address of variable to receive the response number.</param>
         public static bool GetNumAvailableBeaconLocations(uint* puNumLocations) => Instance.GetNumAvailableBeaconLocations(puNumLocations);
         /// <summary>
         /// <code>
@@ -111,8 +125,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="pLocationList">SteamPartyBeaconLocation_t*: Output list of available beacon locations.</param>
-        /// <param name="uMaxNumLocations">uint32: 
+        /// <param name="pLocationList">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamPartyBeaconLocation_t" class="bb_apilink">SteamPartyBeaconLocation_t</a>*
+        ///         : Output list of available beacon locations.</param>
+        /// <param name="uMaxNumLocations">
+        ///             <a href="https://partner.steamgames.com/doc/api/uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The maximum number of entries to put into the above list. Should be &gt;= the result
         ///             from GetNumAvailableBeaconLocations.
         ///         </param>
@@ -139,11 +157,15 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAPICallInvalid" class="bb_apilink">k_uAPICallInvalid</a>
         /// if the process already has an active beacon, or if the location information is invalid.
         /// </summary>
-        /// <param name="unOpenSlots">uint32: 
+        /// <param name="unOpenSlots">
+        ///             <a href="https://partner.steamgames.com/doc/api/uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             Number of reservation slots to create for the beacon. Normally, this is the size of your
         ///             desired party minus one (for the current user).
         ///         </param>
-        /// <param name="pBeaconLocation">SteamPartyBeaconLocation_t*: 
+        /// <param name="pBeaconLocation">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamPartyBeaconLocation_t" class="bb_apilink">SteamPartyBeaconLocation_t</a>*
+        ///         : 
         ///             Location information for the beacon. Should be one of the locations returned by
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#GetAvailableBeaconLocations" class="bb_apilink">ISteamParties::GetAvailableBeaconLocations</a>.
         ///         </param>
@@ -168,8 +190,12 @@ namespace Fivemid.FiveSteam
         /// callback. When that user joins your party, call <b>OnReservationCompleted</b> to notify
         /// Steam that the user has joined successfully.
         /// </summary>
-        /// <param name="ulBeacon">PartyBeaconID_t: Beacon ID for the beacon created by your process.</param>
-        /// <param name="steamIDUser">CSteamID: SteamID of the user joining your party.</param>
+        /// <param name="ulBeacon">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
+        ///         : Beacon ID for the beacon created by your process.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : SteamID of the user joining your party.</param>
         public static void OnReservationCompleted(PartyBeaconID ulBeacon, SteamId steamIDUser) => Instance.OnReservationCompleted(ulBeacon, steamIDUser);
         /// missing documentation
         public static void CancelReservation(PartyBeaconID ulBeacon, SteamId steamIDUser) => Instance.CancelReservation(ulBeacon, steamIDUser);
@@ -196,8 +222,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAPICallInvalid" class="bb_apilink">k_uAPICallInvalid</a>
         /// if the beacon ID is invalid.
         /// </summary>
-        /// <param name="ulBeacon">PartyBeaconID_t: Beacon ID for the beacon created by your process.</param>
-        /// <param name="unOpenSlots">uint32: The new number of open slots in your party.</param>
+        /// <param name="ulBeacon">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
+        ///         : Beacon ID for the beacon created by your process.</param>
+        /// <param name="unOpenSlots">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The new number of open slots in your party.</param>
         public static SteamAPICall ChangeNumOpenSlots(PartyBeaconID ulBeacon, uint unOpenSlots) => Instance.ChangeNumOpenSlots(ulBeacon, unOpenSlots);
         /// <summary>
         /// <code>bool DestroyBeacon( PartyBeaconID_t ulBeacon );</code>
@@ -214,7 +244,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="ulBeacon">PartyBeaconID_t: Beacon ID to be destroyed.</param>
+        /// <param name="ulBeacon">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamParties#PartyBeaconID_t" class="bb_apilink">PartyBeaconID_t</a>
+        ///         : Beacon ID to be destroyed.</param>
         public static bool DestroyBeacon(PartyBeaconID ulBeacon) => Instance.DestroyBeacon(ulBeacon);
         /// <summary>
         /// <code>
@@ -228,10 +260,16 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="BeaconLocation">SteamPartyBeaconLocation_t: Location to query.</param>
-        /// <param name="eData">ESteamPartyBeaconLocationData: Type of location data you wish to get.</param>
+        /// <param name="BeaconLocation">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamPartyBeaconLocation_t%20" class="bb_apilink">SteamPartyBeaconLocation_t
+        ///             </a>
+        ///         : Location to query.</param>
+        /// <param name="eData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#ESteamPartyBeaconLocationData%20" class="bb_apilink">ESteamPartyBeaconLocationData
+        ///             </a>
+        ///         : Type of location data you wish to get.</param>
         /// <param name="pchDataStringOut">char *: Output buffer for location data string. Will be NULL-terminated on success.</param>
-        /// <param name="cchDataStringOut">int: Size of buffer pointed to by pchDataStringOut.</param>
+        /// <param name="cchDataStringOut ">int: Size of buffer pointed to by pchDataStringOut.</param>
         public static bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, char* pchDataStringOut, int cchDataStringOut) => Instance.GetBeaconLocationData(BeaconLocation, eData, pchDataStringOut, cchDataStringOut);
     }
 }

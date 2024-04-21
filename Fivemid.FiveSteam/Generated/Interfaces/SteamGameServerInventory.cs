@@ -61,7 +61,9 @@ namespace Fivemid.FiveSteam
         ///     k_EResultOK ) { // Do something here } } }
         /// </code>
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to get the status for.</param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to get the status for.</param>
         public static Result GetResultStatus(SteamInventoryResult resultHandle) => Instance.GetResultStatus(resultHandle);
         /// <summary>
         /// <code>
@@ -99,11 +101,17 @@ namespace Fivemid.FiveSteam
         ///     callback-&gt;m_handle, vecDetails.data(), &amp;count ); }
         /// </code>
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to get the items for.</param>
-        /// <param name="pOutItemsArray">SteamItemDetails_t
-        ///             *: The details are returned by copying them into this array.</param>
-        /// <param name="punOutItemsArraySize">uint32
-        ///             *: 
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to get the items for.</param>
+        /// <param name="pOutItemsArray">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDetails_t" class="bb_apilink">SteamItemDetails_t</a>
+        ///             *
+        ///         : The details are returned by copying them into this array.</param>
+        /// <param name="punOutItemsArraySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be set to the length of
         ///             <code class="bb_code bb_code_inline nohighlight">pOutItemsArray</code>. If
         ///             <code class="bb_code bb_code_inline nohighlight">pOutItemsArray</code> is
@@ -128,8 +136,12 @@ namespace Fivemid.FiveSteam
         /// This returns <b>true</b> upon success; otherwise, <b>false</b> indicating that
         /// the inventory result handle was invalid or the provided index does not contain an item.
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The result handle containing the item to get the properties of.</param>
-        /// <param name="unItemIndex">uint32: </param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The result handle containing the item to get the properties of.</param>
+        /// <param name="unItemIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         /// <param name="pchPropertyName">const char *: 
         ///             The property name to get the value for. If you pass in <b>NULL</b> then
         ///             <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code> will contain a
@@ -139,8 +151,10 @@ namespace Fivemid.FiveSteam
         ///             Returns the value associated with
         ///             <code class="bb_code bb_code_inline nohighlight">pchPropertyName</code>.
         ///         </param>
-        /// <param name="punValueBufferSizeOut">uint32
-        ///             *: 
+        /// <param name="punValueBufferSizeOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be set to the size of
         ///             <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code>, and returns the
         ///             number of bytes required to hold the value.
@@ -160,7 +174,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetServerRealTime" class="bb_apilink">ISteamUtils::GetServerRealTime</a>
         /// to determine the age of the result.
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to get the timestamp for.</param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to get the timestamp for.</param>
         public static uint GetResultTimestamp(SteamInventoryResult resultHandle) => Instance.GetResultTimestamp(resultHandle);
         /// <summary>
         /// <code>
@@ -177,8 +193,12 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the result belongs to the target steam ID; otherwise,
         /// <b>false</b>.
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to check the Steam ID on.</param>
-        /// <param name="steamIDExpected">CSteamID: The Steam ID to verify.</param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to check the Steam ID on.</param>
+        /// <param name="steamIDExpected">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID to verify.</param>
         public static bool CheckResultSteamID(SteamInventoryResult resultHandle, SteamId steamIDExpected) => Instance.CheckResultSteamID(resultHandle, steamIDExpected);
         /// <summary>
         /// <code>void DestroyResult( SteamInventoryResult_t resultHandle );</code>
@@ -186,7 +206,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Destroys a result handle and frees all associated memory.
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to destroy.</param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to destroy.</param>
         public static void DestroyResult(SteamInventoryResult resultHandle) => Instance.DestroyResult(resultHandle);
         /// <summary>
         /// <code>bool GetAllItems( SteamInventoryResult_t *pResultHandle );</code>
@@ -215,8 +237,10 @@ namespace Fivemid.FiveSteam
         ///     &amp;s_RequestResult ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
         public static bool GetAllItems(SteamInventoryResult* pResultHandle) => Instance.GetAllItems(pResultHandle);
         /// <summary>
         /// <code>
@@ -247,12 +271,18 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#DestroyResult" class="bb_apilink">ISteamInventory::DestroyResult</a>
         /// on the provided inventory result when you are done with it.
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="pInstanceIDs">const
-        ///             SteamItemInstanceID_t
-        ///             *: A list of the item instance ids to update the state of.</param>
-        /// <param name="unCountInstanceIDs">uint32: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="pInstanceIDs">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///             *
+        ///         : A list of the item instance ids to update the state of.</param>
+        /// <param name="unCountInstanceIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pInstanceIDs</code>.
         ///         </param>
@@ -307,10 +337,14 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="resultHandle">SteamInventoryResult_t: The inventory result handle to serialize.</param>
+        /// <param name="resultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///         : The inventory result handle to serialize.</param>
         /// <param name="pOutBuffer">void *: The buffer that the serialized result will be copied into.</param>
-        /// <param name="punOutBufferSize">uint32
-        ///             *: 
+        /// <param name="punOutBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be set to the size of
         ///             <code class="bb_code bb_code_inline nohighlight">pOutBuffer</code>. If
         ///             <code class="bb_code bb_code_inline nohighlight">pOutBuffer</code> is
@@ -358,10 +392,14 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#DestroyResult" class="bb_apilink">ISteamInventory::DestroyResult</a>
         /// on the provided inventory result when you are done with it.
         /// </summary>
-        /// <param name="pOutResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
+        /// <param name="pOutResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
         /// <param name="pBuffer">const void *: The buffer to deserialize.</param>
-        /// <param name="unBufferSize">uint32: The size of <code class="bb_code bb_code_inline nohighlight">pBuffer</code>.</param>
+        /// <param name="unBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The size of <code class="bb_code bb_code_inline nohighlight">pBuffer</code>.</param>
         /// <param name="bRESERVED_MUST_BE_FALSE">bool: This must be <b>false</b>!</param>
         public static bool DeserializeResult(SteamInventoryResult* pOutResultHandle, void* pBuffer, uint unBufferSize, bool bRESERVED_MUST_BE_FALSE) => Instance.DeserializeResult(pOutResultHandle, pBuffer, unBufferSize, bRESERVED_MUST_BE_FALSE);
         /// <summary>
@@ -399,19 +437,27 @@ namespace Fivemid.FiveSteam
         ///     SteamInventory()-&gt;GenerateItems( &amp;s_GenerateRequestResult, newItems, quantities, 2 ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="pArrayItemDefs">const
-        ///             SteamItemDef_t
-        ///             *: The list of items to grant the user.</param>
-        /// <param name="punArrayQuantity">const
-        ///             uint32
-        ///             *: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="pArrayItemDefs">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : The list of items to grant the user.</param>
+        /// <param name="punArrayQuantity">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             The quantity of each item in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayItemDefs</code> to grant. This is
         ///             optional, pass in <b>NULL</b> to specify 1 of each item.
         ///         </param>
-        /// <param name="unArrayLength">uint32: 
+        /// <param name="unArrayLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayItemDefs</code>.
         ///         </param>
@@ -458,8 +504,10 @@ namespace Fivemid.FiveSteam
         ///     &amp;s_GenerateRequestResult ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
         public static bool GrantPromoItems(SteamInventoryResult* pResultHandle) => Instance.GrantPromoItems(pResultHandle);
         /// <summary>
         /// <code>
@@ -505,9 +553,13 @@ namespace Fivemid.FiveSteam
         ///     &amp;s_GenerateRequestResult, 110 ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="itemDef">SteamItemDef_t: The ItemDef to grant the player.</param>
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="itemDef">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///         : The ItemDef to grant the player.</param>
         public static bool AddPromoItem(SteamInventoryResult* pResultHandle, SteamItemDef itemDef) => Instance.AddPromoItem(pResultHandle, itemDef);
         /// <summary>
         /// <code>
@@ -552,12 +604,18 @@ namespace Fivemid.FiveSteam
         ///     = 111; SteamInventory()-&gt;AddPromoItems( &amp;s_GenerateRequestResult, newItems, 2 ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="pArrayItemDefs">const
-        ///             SteamItemDef_t
-        ///             *: The list of items to grant the user.</param>
-        /// <param name="unArrayLength">uint32: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="pArrayItemDefs">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : The list of items to grant the user.</param>
+        /// <param name="unArrayLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayItemDefs</code>.
         ///         </param>
@@ -596,10 +654,16 @@ namespace Fivemid.FiveSteam
         ///     SteamInventory()-&gt;ConsumeItem( &amp;s_ConsumeRequestResult, itemID, 1 ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="itemConsume">SteamItemInstanceID_t: The item instance id to consume.</param>
-        /// <param name="unQuantity">uint32: The number of items in that stack to consume.</param>
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="itemConsume">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : The item instance id to consume.</param>
+        /// <param name="unQuantity">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The number of items in that stack to consume.</param>
         public static bool ConsumeItem(SteamInventoryResult* pResultHandle, SteamItemInstanceID itemConsume, uint unQuantity) => Instance.ConsumeItem(pResultHandle, itemConsume, unQuantity);
         /// <summary>
         /// <code>
@@ -664,34 +728,48 @@ namespace Fivemid.FiveSteam
         ///     }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="pArrayGenerate">const
-        ///             SteamItemDef_t
-        ///             *: The list of items that will be created by this call. Currently can only be 1 item!</param>
-        /// <param name="punArrayGenerateQuantity">const
-        ///             uint32
-        ///             *: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="pArrayGenerate">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : The list of items that will be created by this call. Currently can only be 1 item!</param>
+        /// <param name="punArrayGenerateQuantity">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             The quantity of each item in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayGenerate</code> to create.
         ///             Currently can only be 1 item and it must be set to <b>1</b>!
         ///         </param>
-        /// <param name="unArrayGenerateLength">uint32: 
+        /// <param name="unArrayGenerateLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayGenerate</code> and
         ///             <code class="bb_code bb_code_inline nohighlight">punArrayGenerateQuantity</code>.
         ///             Currently must be <b>1</b>!
         ///         </param>
-        /// <param name="pArrayDestroy">const
-        ///             SteamItemInstanceID_t
-        ///             *: The list of items that will be destroyed by this call.</param>
-        /// <param name="punArrayDestroyQuantity">const
-        ///             uint32
-        ///             *: 
+        /// <param name="pArrayDestroy">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///             *
+        ///         : The list of items that will be destroyed by this call.</param>
+        /// <param name="punArrayDestroyQuantity">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             The quantity of each item in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayDestroy</code> to destroy.
         ///         </param>
-        /// <param name="unArrayDestroyLength">uint32: 
+        /// <param name="unArrayDestroyLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayDestroy</code> and
         ///             <code class="bb_code bb_code_inline nohighlight">punArrayDestroyQuantity</code>.
@@ -743,15 +821,23 @@ namespace Fivemid.FiveSteam
         ///     originStack, 2, destStack ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="itemIdSource">SteamItemInstanceID_t: The source item to transfer.</param>
-        /// <param name="unQuantity">uint32: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="itemIdSource">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : The source item to transfer.</param>
+        /// <param name="unQuantity">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The quantity of the item that will be transfered from
         ///             <code class="bb_code bb_code_inline nohighlight">itemIdSource</code> to
         ///             <code class="bb_code bb_code_inline nohighlight">itemIdDest</code>.
         ///         </param>
-        /// <param name="itemIdDest">SteamItemInstanceID_t: 
+        /// <param name="itemIdDest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : 
         ///             The destination item. You can pass
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#k_SteamItemInstanceIDInvalid" class="bb_apilink">k_SteamItemInstanceIDInvalid</a>
         ///             to split the source stack into a new item stack with the requested quantity.
@@ -812,9 +898,13 @@ namespace Fivemid.FiveSteam
         ///     &amp;s_PlaytimeRequestResult, 10 ); }
         /// </code>
         /// </summary>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
-        /// <param name="dropListDefinition">SteamItemDef_t: 
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
+        /// <param name="dropListDefinition">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///         : 
         ///             This must refer to an itemdefid of the type "playtimegenerator". See the
         ///             <a href="https://partner.steamgames.com/doc/features/inventory/schema" class="bb_doclink">inventory schema</a>
         ///             for more details.
@@ -866,10 +956,14 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">punItemDefIDsArraySize</code> will contain the
         /// number of item definitions available.
         /// </summary>
-        /// <param name="pItemDefIDs">SteamItemDef_t
-        ///             *: Returns the item definitions by copying them into this array.</param>
-        /// <param name="punItemDefIDsArraySize">uint32
-        ///             *: 
+        /// <param name="pItemDefIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : Returns the item definitions by copying them into this array.</param>
+        /// <param name="punItemDefIDsArraySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be set to the length of
         ///             <code class="bb_code bb_code_inline nohighlight">pItemDefIDs</code>. If
         ///             <code class="bb_code bb_code_inline nohighlight">pItemDefIDs</code> is
@@ -925,7 +1019,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#LoadItemDefinitions" class="bb_apilink">ISteamInventory::LoadItemDefinitions</a>
         /// first, to ensure that items are ready to be used before calling GetItemDefinitionProperty.
         /// </summary>
-        /// <param name="iDefinition">SteamItemDef_t: The item definition to get the properties for.</param>
+        /// <param name="iDefinition">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///         : The item definition to get the properties for.</param>
         /// <param name="pchPropertyName">const char *: 
         ///             The property name to get the value for. If you pass in <b>NULL</b> then
         ///             <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code> will contain a
@@ -935,8 +1031,10 @@ namespace Fivemid.FiveSteam
         ///             Returns the value associated with
         ///             <code class="bb_code bb_code_inline nohighlight">pchPropertyName</code>.
         ///         </param>
-        /// <param name="punValueBufferSizeOut">uint32
-        ///             *: 
+        /// <param name="punValueBufferSizeOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be set to the size of
         ///             <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code>, and returns the
         ///             number of bytes required to hold the value.
@@ -967,7 +1065,9 @@ namespace Fivemid.FiveSteam
         /// if the <code class="bb_code bb_code_inline nohighlight">steamID</code> is not a valid individual
         /// account.
         /// </summary>
-        /// <param name="steamID">CSteamID: The Steam ID of the user to request the eligible promo items for.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to request the eligible promo items for.</param>
         public static SteamAPICall RequestEligiblePromoItemDefinitionsIDs(SteamId steamID) => Instance.RequestEligiblePromoItemDefinitionsIDs(steamID);
         /// <summary>
         /// <code>
@@ -989,14 +1089,20 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#AddPromoItem" class="bb_apilink">ISteamInventory::AddPromoItem</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#AddPromoItems" class="bb_apilink">ISteamInventory::AddPromoItems</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: 
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             The Steam ID of the user who these items are for. This should be the same as
         ///             <code class="bb_code bb_code_inline nohighlight">SteamInventoryEligiblePromoItemDefIDs_t.m_steamID</code>.
         ///         </param>
-        /// <param name="pItemDefIDs">SteamItemDef_t
-        ///             *: Returns the item definition ids by copying them into this array.</param>
-        /// <param name="punItemDefIDsArraySize">uint32
-        ///             *: 
+        /// <param name="pItemDefIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : Returns the item definition ids by copying them into this array.</param>
+        /// <param name="punItemDefIDsArraySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             This should be the length of
         ///             <code class="bb_code bb_code_inline nohighlight">pItemDefIDs</code> and the same as
         ///             <code class="bb_code bb_code_inline nohighlight">SteamInventoryEligiblePromoItemDefIDs_t.m_numEligiblePromoItemDefs</code>.
@@ -1044,11 +1150,17 @@ namespace Fivemid.FiveSteam
         ///     </div>
         /// </div>
         /// </summary>
-        /// <param name="pArrayItemDefs">SteamItemDef_t
-        ///             *: The array of item definition ids that the user wants to purchase.</param>
-        /// <param name="punArrayQuantity">uint32
-        ///             *: The array of quantities of each item definition that the user wants to purchase.</param>
-        /// <param name="unArrayLength">uint32: 
+        /// <param name="pArrayItemDefs">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : The array of item definition ids that the user wants to purchase.</param>
+        /// <param name="punArrayQuantity">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : The array of quantities of each item definition that the user wants to purchase.</param>
+        /// <param name="unArrayLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This should be the length of
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayItemDefs</code> and
         ///             <code class="bb_code bb_code_inline nohighlight">punArrayQuantity</code> arrays.
@@ -1121,14 +1233,20 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RequestPrices" class="bb_apilink">ISteamInventory::RequestPrices</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#GetItemPrice" class="bb_apilink">ISteamInventory::GetItemPrice</a>
         /// </summary>
-        /// <param name="pArrayItemDefs">SteamItemDef_t
-        ///             *: The array of item definition ids to populate</param>
-        /// <param name="pPrices">uint64*: 
+        /// <param name="pArrayItemDefs">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///             *
+        ///         : The array of item definition ids to populate</param>
+        /// <param name="pPrices">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>*
+        ///         : 
         ///             The array of prices for each corresponding item definition id in pArrayItemDefs. Prices
         ///             are rendered in the user's
         ///             <a href="https://partner.steamgames.com/doc/store/pricing/currencies" class="bb_doclink">local currency</a>.
         ///         </param>
-        /// <param name="unArrayLength">uint32: 
+        /// <param name="unArrayLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This should be the length of
         ///             <code class="bb_code bb_code_inline nohighlight">pArrayItemDefs</code> and
         ///             <code class="bb_code bb_code_inline nohighlight">pPrices</code> arrays, which are
@@ -1154,8 +1272,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RequestPrices" class="bb_apilink">ISteamInventory::RequestPrices</a>
         /// </summary>
-        /// <param name="iDefinition">SteamItemDef_t: The item definition id to retrieve the price for</param>
-        /// <param name="pPrice">uint64*: 
+        /// <param name="iDefinition">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemDef_t" class="bb_apilink">SteamItemDef_t</a>
+        ///         : The item definition id to retrieve the price for</param>
+        /// <param name="pPrice">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>*
+        ///         : 
         ///             The price pointer to populate. Prices are rendered in the user's
         ///             <a href="https://partner.steamgames.com/doc/store/pricing/currencies" class="bb_doclink">local currency</a>.
         ///         </param>
@@ -1222,11 +1344,15 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SetProperty" class="bb_apilink">ISteamInventory::SetProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SubmitUpdateProperties" class="bb_apilink">ISteamInventory::SubmitUpdateProperties</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="nItemID">SteamItemInstanceID_t: ID of the item being modified.</param>
+        /// <param name="nItemID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : ID of the item being modified.</param>
         /// <param name="pchPropertyName">const char*: The dynamic property being removed.</param>
         public static bool RemoveProperty(SteamInventoryUpdateHandle handle, SteamItemInstanceID nItemID, UTF8StringPtr pchPropertyName) => Instance.RemoveProperty(handle, nItemID, pchPropertyName);
         /// <summary>
@@ -1252,15 +1378,21 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RemoveProperty" class="bb_apilink">ISteamInventory::RemoveProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SubmitUpdateProperties" class="bb_apilink">ISteamInventory::SubmitUpdateProperties</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="nItemID">SteamItemInstanceID_t: ID of the item being modified.</param>
+        /// <param name="nItemID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : ID of the item being modified.</param>
         /// <param name="pchPropertyName">const char*: The dynamic property being added or updated.</param>
         /// <param name="pchPropertyValue">const char*: The string value being set.</param>
         /// <param name="bValue">bool: The boolean value being set.</param>
-        /// <param name="nValue">int64: The 64 bit integer value being set.</param>
+        /// <param name="nValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///         : The 64 bit integer value being set.</param>
         /// <param name="flValue">float: The floating point number value being set.</param>
         public static bool SetProperty(SteamInventoryUpdateHandle handle, SteamItemInstanceID nItemID, UTF8StringPtr pchPropertyName, UTF8StringPtr pchPropertyValue) => Instance.SetProperty(handle, nItemID, pchPropertyName, pchPropertyValue);
         /// <summary>
@@ -1286,15 +1418,21 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RemoveProperty" class="bb_apilink">ISteamInventory::RemoveProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SubmitUpdateProperties" class="bb_apilink">ISteamInventory::SubmitUpdateProperties</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="nItemID">SteamItemInstanceID_t: ID of the item being modified.</param>
+        /// <param name="nItemID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : ID of the item being modified.</param>
         /// <param name="pchPropertyName">const char*: The dynamic property being added or updated.</param>
         /// <param name="pchPropertyValue">const char*: The string value being set.</param>
         /// <param name="bValue">bool: The boolean value being set.</param>
-        /// <param name="nValue">int64: The 64 bit integer value being set.</param>
+        /// <param name="nValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///         : The 64 bit integer value being set.</param>
         /// <param name="flValue">float: The floating point number value being set.</param>
         public static bool SetProperty(SteamInventoryUpdateHandle handle, SteamItemInstanceID nItemID, UTF8StringPtr pchPropertyName, bool bValue) => Instance.SetProperty(handle, nItemID, pchPropertyName, bValue);
         /// <summary>
@@ -1320,15 +1458,21 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RemoveProperty" class="bb_apilink">ISteamInventory::RemoveProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SubmitUpdateProperties" class="bb_apilink">ISteamInventory::SubmitUpdateProperties</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="nItemID">SteamItemInstanceID_t: ID of the item being modified.</param>
+        /// <param name="nItemID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : ID of the item being modified.</param>
         /// <param name="pchPropertyName">const char*: The dynamic property being added or updated.</param>
         /// <param name="pchPropertyValue">const char*: The string value being set.</param>
         /// <param name="bValue">bool: The boolean value being set.</param>
-        /// <param name="nValue">int64: The 64 bit integer value being set.</param>
+        /// <param name="nValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///         : The 64 bit integer value being set.</param>
         /// <param name="flValue">float: The floating point number value being set.</param>
         public static bool SetProperty(SteamInventoryUpdateHandle handle, SteamItemInstanceID nItemID, UTF8StringPtr pchPropertyName, long nValue) => Instance.SetProperty(handle, nItemID, pchPropertyName, nValue);
         /// <summary>
@@ -1354,15 +1498,21 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RemoveProperty" class="bb_apilink">ISteamInventory::RemoveProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SubmitUpdateProperties" class="bb_apilink">ISteamInventory::SubmitUpdateProperties</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="nItemID">SteamItemInstanceID_t: ID of the item being modified.</param>
+        /// <param name="nItemID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamItemInstanceID_t" class="bb_apilink">SteamItemInstanceID_t</a>
+        ///         : ID of the item being modified.</param>
         /// <param name="pchPropertyName">const char*: The dynamic property being added or updated.</param>
         /// <param name="pchPropertyValue">const char*: The string value being set.</param>
         /// <param name="bValue">bool: The boolean value being set.</param>
-        /// <param name="nValue">int64: The 64 bit integer value being set.</param>
+        /// <param name="nValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///         : The 64 bit integer value being set.</param>
         /// <param name="flValue">float: The floating point number value being set.</param>
         public static bool SetProperty(SteamInventoryUpdateHandle handle, SteamItemInstanceID nItemID, UTF8StringPtr pchPropertyName, float flValue) => Instance.SetProperty(handle, nItemID, pchPropertyName, flValue);
         /// <summary>
@@ -1388,12 +1538,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SetProperty" class="bb_apilink">ISteamInventory::SetProperty</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RemoveProperty" class="bb_apilink">ISteamInventory::RemoveProperty</a>
         /// </summary>
-        /// <param name="handle">SteamInventoryUpdateHandle_t: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryUpdateHandle_t" class="bb_apilink">SteamInventoryUpdateHandle_t</a>
+        ///         : 
         ///             The update handle corresponding to the transaction request, returned from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>.
         ///         </param>
-        /// <param name="pResultHandle">SteamInventoryResult_t
-        ///             *: Returns a new inventory result handle.</param>
+        /// <param name="pResultHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResult_t" class="bb_apilink">SteamInventoryResult_t</a>
+        ///             *
+        ///         : Returns a new inventory result handle.</param>
         public static bool SubmitUpdateProperties(SteamInventoryUpdateHandle handle, SteamInventoryResult* pResultHandle) => Instance.SubmitUpdateProperties(handle, pResultHandle);
         /// missing documentation
         public static bool InspectItem(SteamInventoryResult* pResultHandle, UTF8StringPtr pchItemToken) => Instance.InspectItem(pResultHandle, pchItemToken);

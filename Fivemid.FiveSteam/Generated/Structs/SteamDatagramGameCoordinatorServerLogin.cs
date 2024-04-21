@@ -3,20 +3,20 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamDatagramGameCoordinatorServerLogin</summary>
+    /// missing documentation for SteamDatagramGameCoordinatorServerLogin
     public unsafe struct SteamDatagramGameCoordinatorServerLogin
     {
-        /// <summary>SteamNetworkingIdentity m_identity</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_identity
         public SteamNetworkingIdentity identity;
-        /// <summary>SteamDatagramHostedAddress m_routing</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_routing
         public SteamDatagramHostedAddress routing;
-        /// <summary>AppId_t m_nAppID</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_nAppID
         public AppId nAppID;
-        /// <summary>RTime32 m_rtime</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_rtime
         public RTime32 rtime;
-        /// <summary>int m_cbAppData</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_cbAppData
         public int cbAppData;
-        /// <summary>char [2048] m_appData</summary>
+        /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_appData
         public UTF8String2048 appData;
     }
 }

@@ -3,42 +3,46 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamInputType</summary>
+    /// <summary>
+    /// Represents the device model for a given piece of hardware.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum SteamInputType : int
     {
-        /// <summary>k_ESteamInputType_Unknown</summary>
+        /// <summary>Catch-all for unrecognized devices</summary>
         Unknown = 0,
-        /// <summary>k_ESteamInputType_SteamController</summary>
+        /// <summary>Valve's Steam Controller</summary>
         SteamController = 1,
-        /// <summary>k_ESteamInputType_XBox360Controller</summary>
+        /// <summary>Microsoft's XBox 360 Controller</summary>
         XBox360Controller = 2,
-        /// <summary>k_ESteamInputType_XBoxOneController</summary>
+        /// <summary>Microsoft's XBox One Controller</summary>
         XBoxOneController = 3,
-        /// <summary>k_ESteamInputType_GenericGamepad</summary>
+        /// missing documentation for ESteamInputType.k_ESteamInputType_GenericGamepad
         GenericGamepad = 4,
-        /// <summary>k_ESteamInputType_PS4Controller</summary>
+        /// <summary>Sony's Playstation 4 Controller</summary>
         PS4Controller = 5,
-        /// <summary>k_ESteamInputType_AppleMFiController</summary>
+        /// <summary>Unused</summary>
         AppleMFiController = 6,
-        /// <summary>k_ESteamInputType_AndroidController</summary>
+        /// <summary>Unused</summary>
         AndroidController = 7,
-        /// <summary>k_ESteamInputType_SwitchJoyConPair</summary>
+        /// <summary>Unused</summary>
         SwitchJoyConPair = 8,
-        /// <summary>k_ESteamInputType_SwitchJoyConSingle</summary>
+        /// <summary>Unused</summary>
         SwitchJoyConSingle = 9,
-        /// <summary>k_ESteamInputType_SwitchProController</summary>
+        /// <summary>Nintendo's Switch Pro Controller</summary>
         SwitchProController = 10,
-        /// <summary>k_ESteamInputType_MobileTouch</summary>
+        /// <summary>Steam Link App's Mobile Touch Controller</summary>
         MobileTouch = 11,
-        /// <summary>k_ESteamInputType_PS3Controller</summary>
+        /// <summary>Sony's Playstation 3 Controller or PS3/PS4 compatible fight stick</summary>
         PS3Controller = 12,
-        /// <summary>k_ESteamInputType_PS5Controller</summary>
+        /// missing documentation for ESteamInputType.k_ESteamInputType_PS5Controller
         PS5Controller = 13,
-        /// <summary>k_ESteamInputType_SteamDeckController</summary>
+        /// missing documentation for ESteamInputType.k_ESteamInputType_SteamDeckController
         SteamDeckController = 14,
-        /// <summary>k_ESteamInputType_Count</summary>
+        /// <summary>Current number of values returned</summary>
         Count = 15,
-        /// <summary>k_ESteamInputType_MaximumPossibleValue</summary>
+        /// <summary>Maximum possible value returned</summary>
         MaximumPossibleValue = 255
     }
 }

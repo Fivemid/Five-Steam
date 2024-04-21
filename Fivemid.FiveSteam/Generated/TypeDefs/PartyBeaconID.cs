@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>PartyBeaconID_t</summary>
+    /// <summary>A handle to a Steam Party Beacon.</summary>
     public unsafe struct PartyBeaconID
     {
         public ulong value;

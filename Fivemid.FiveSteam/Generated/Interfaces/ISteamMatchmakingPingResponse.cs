@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamMatchmakingPingResponse</summary>
+    /// missing documentation for ISteamMatchmakingPingResponse
     public unsafe interface ISteamMatchmakingPingResponse
     {
         public void ServerResponded(ref gameserveritem server);

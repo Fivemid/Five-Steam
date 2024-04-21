@@ -3,266 +3,297 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EResult</summary>
+    /// <summary>
+    /// Steam error result codes.<br />
+    /// <br />
+    /// These are frequently returned by functions, callbacks, and call results from both the Steamworks API
+    /// and the Web API. An API may return arbitrary EResult codes, refer to the documentation for that API
+    /// function or callback to see what it could return and what they mean in the context of that API
+    /// call.<br />
+    /// This is similar to Win32's HRESULT type or POSIXs errno.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum Result : int
     {
-        /// <summary>k_EResultNone</summary>
+        /// missing documentation for EResult.k_EResultNone
         None = 0,
-        /// <summary>k_EResultOK</summary>
+        /// <summary>Success.</summary>
         OK = 1,
-        /// <summary>k_EResultFail</summary>
+        /// <summary>Generic failure.</summary>
         Fail = 2,
-        /// <summary>k_EResultNoConnection</summary>
+        /// <summary>Your Steam client doesn't have a connection to the back-end.</summary>
         NoConnection = 3,
-        /// <summary>k_EResultInvalidPassword</summary>
+        /// <summary>Password/ticket is invalid.</summary>
         InvalidPassword = 5,
-        /// <summary>k_EResultLoggedInElsewhere</summary>
+        /// <summary>The user is logged in elsewhere.</summary>
         LoggedInElsewhere = 6,
-        /// <summary>k_EResultInvalidProtocolVer</summary>
+        /// <summary>Protocol version is incorrect.</summary>
         InvalidProtocolVer = 7,
-        /// <summary>k_EResultInvalidParam</summary>
+        /// <summary>A parameter is incorrect.</summary>
         InvalidParam = 8,
-        /// <summary>k_EResultFileNotFound</summary>
+        /// <summary>File was not found.</summary>
         FileNotFound = 9,
-        /// <summary>k_EResultBusy</summary>
+        /// <summary>Called method is busy - action not taken.</summary>
         Busy = 10,
-        /// <summary>k_EResultInvalidState</summary>
+        /// <summary>Called object was in an invalid state.</summary>
         InvalidState = 11,
-        /// <summary>k_EResultInvalidName</summary>
+        /// <summary>The name was invalid.</summary>
         InvalidName = 12,
-        /// <summary>k_EResultInvalidEmail</summary>
+        /// <summary>The email was invalid.</summary>
         InvalidEmail = 13,
-        /// <summary>k_EResultDuplicateName</summary>
+        /// <summary>The name is not unique.</summary>
         DuplicateName = 14,
-        /// <summary>k_EResultAccessDenied</summary>
+        /// <summary>Access is denied.</summary>
         AccessDenied = 15,
-        /// <summary>k_EResultTimeout</summary>
+        /// <summary>Operation timed out.</summary>
         Timeout = 16,
-        /// <summary>k_EResultBanned</summary>
+        /// <summary>The user is VAC2 banned.</summary>
         Banned = 17,
-        /// <summary>k_EResultAccountNotFound</summary>
+        /// <summary>Account not found.</summary>
         AccountNotFound = 18,
-        /// <summary>k_EResultInvalidSteamID</summary>
+        /// <summary>The Steam ID was invalid.</summary>
         InvalidSteamID = 19,
-        /// <summary>k_EResultServiceUnavailable</summary>
+        /// <summary>The requested service is currently unavailable.</summary>
         ServiceUnavailable = 20,
-        /// <summary>k_EResultNotLoggedOn</summary>
+        /// <summary>The user is not logged on.</summary>
         NotLoggedOn = 21,
-        /// <summary>k_EResultPending</summary>
+        /// <summary>Request is pending, it may be in process or waiting on third party.</summary>
         Pending = 22,
-        /// <summary>k_EResultEncryptionFailure</summary>
+        /// <summary>Encryption or Decryption failed.</summary>
         EncryptionFailure = 23,
-        /// <summary>k_EResultInsufficientPrivilege</summary>
+        /// <summary>Insufficient privilege.</summary>
         InsufficientPrivilege = 24,
-        /// <summary>k_EResultLimitExceeded</summary>
+        /// <summary>Too much of a good thing.</summary>
         LimitExceeded = 25,
-        /// <summary>k_EResultRevoked</summary>
+        /// <summary>Access has been revoked (used for revoked guest passes.)</summary>
         Revoked = 26,
-        /// <summary>k_EResultExpired</summary>
+        /// <summary>License/Guest pass the user is trying to access is expired.</summary>
         Expired = 27,
-        /// <summary>k_EResultAlreadyRedeemed</summary>
+        /// <summary>Guest pass has already been redeemed by account, cannot be used again.</summary>
         AlreadyRedeemed = 28,
-        /// <summary>k_EResultDuplicateRequest</summary>
+        /// <summary>
+        ///             The request is a duplicate and the action has already occurred in the past, ignored this
+        ///             time.
+        ///         </summary>
         DuplicateRequest = 29,
-        /// <summary>k_EResultAlreadyOwned</summary>
+        /// <summary>All the games in this guest pass redemption request are already owned by the user.</summary>
         AlreadyOwned = 30,
-        /// <summary>k_EResultIPNotFound</summary>
+        /// <summary>IP address not found.</summary>
         IPNotFound = 31,
-        /// <summary>k_EResultPersistFailed</summary>
+        /// <summary>Failed to write change to the data store.</summary>
         PersistFailed = 32,
-        /// <summary>k_EResultLockingFailed</summary>
+        /// <summary>Failed to acquire access lock for this operation.</summary>
         LockingFailed = 33,
-        /// <summary>k_EResultLogonSessionReplaced</summary>
+        /// <summary>The logon session has been replaced.</summary>
         LogonSessionReplaced = 34,
-        /// <summary>k_EResultConnectFailed</summary>
+        /// <summary>Failed to connect.</summary>
         ConnectFailed = 35,
-        /// <summary>k_EResultHandshakeFailed</summary>
+        /// <summary>The authentication handshake has failed.</summary>
         HandshakeFailed = 36,
-        /// <summary>k_EResultIOFailure</summary>
+        /// <summary>There has been a generic IO failure.</summary>
         IOFailure = 37,
-        /// <summary>k_EResultRemoteDisconnect</summary>
+        /// <summary>The remote server has disconnected.</summary>
         RemoteDisconnect = 38,
-        /// <summary>k_EResultShoppingCartNotFound</summary>
+        /// <summary>Failed to find the shopping cart requested.</summary>
         ShoppingCartNotFound = 39,
-        /// <summary>k_EResultBlocked</summary>
+        /// <summary>A user blocked the action.</summary>
         Blocked = 40,
-        /// <summary>k_EResultIgnored</summary>
+        /// <summary>The target is ignoring sender.</summary>
         Ignored = 41,
-        /// <summary>k_EResultNoMatch</summary>
+        /// <summary>Nothing matching the request found.</summary>
         NoMatch = 42,
-        /// <summary>k_EResultAccountDisabled</summary>
+        /// <summary>The account is disabled.</summary>
         AccountDisabled = 43,
-        /// <summary>k_EResultServiceReadOnly</summary>
+        /// <summary>This service is not accepting content changes right now.</summary>
         ServiceReadOnly = 44,
-        /// <summary>k_EResultAccountNotFeatured</summary>
+        /// <summary>Account doesn't have value, so this feature isn't available.</summary>
         AccountNotFeatured = 45,
-        /// <summary>k_EResultAdministratorOK</summary>
+        /// <summary>Allowed to take this action, but only because requester is admin.</summary>
         AdministratorOK = 46,
-        /// <summary>k_EResultContentVersion</summary>
+        /// <summary>A Version mismatch in content transmitted within the Steam protocol.</summary>
         ContentVersion = 47,
-        /// <summary>k_EResultTryAnotherCM</summary>
+        /// <summary>The current CM can't service the user making a request, user should try another.</summary>
         TryAnotherCM = 48,
-        /// <summary>k_EResultPasswordRequiredToKickSession</summary>
+        /// <summary>You are already logged in elsewhere, this cached credential login has failed.</summary>
         PasswordRequiredToKickSession = 49,
-        /// <summary>k_EResultAlreadyLoggedInElsewhere</summary>
+        /// <summary>
+        ///             The user is logged in elsewhere. (Use
+        ///             <a href="#k_EResultLoggedInElsewhere" class="bb_apilink">k_EResultLoggedInElsewhere</a>
+        ///             instead!)
+        ///         </summary>
         AlreadyLoggedInElsewhere = 50,
-        /// <summary>k_EResultSuspended</summary>
+        /// <summary>Long running operation has suspended/paused. (eg. content download.)</summary>
         Suspended = 51,
-        /// <summary>k_EResultCancelled</summary>
+        /// <summary>Operation has been canceled, typically by user. (eg. a content download.)</summary>
         Cancelled = 52,
-        /// <summary>k_EResultDataCorruption</summary>
+        /// <summary>Operation canceled because data is ill formed or unrecoverable.</summary>
         DataCorruption = 53,
-        /// <summary>k_EResultDiskFull</summary>
+        /// <summary>Operation canceled - not enough disk space.</summary>
         DiskFull = 54,
-        /// <summary>k_EResultRemoteCallFailed</summary>
+        /// <summary>The remote or IPC call has failed.</summary>
         RemoteCallFailed = 55,
-        /// <summary>k_EResultPasswordUnset</summary>
+        /// <summary>Password could not be verified as it's unset server side.</summary>
         PasswordUnset = 56,
-        /// <summary>k_EResultExternalAccountUnlinked</summary>
+        /// <summary>External account (PSN, Facebook...) is not linked to a Steam account.</summary>
         ExternalAccountUnlinked = 57,
-        /// <summary>k_EResultPSNTicketInvalid</summary>
+        /// <summary>PSN ticket was invalid.</summary>
         PSNTicketInvalid = 58,
-        /// <summary>k_EResultExternalAccountAlreadyLinked</summary>
+        /// <summary>
+        ///             External account (PSN, Facebook...) is already linked to some other account, must
+        ///             explicitly request to replace/delete the link first.
+        ///         </summary>
         ExternalAccountAlreadyLinked = 59,
-        /// <summary>k_EResultRemoteFileConflict</summary>
+        /// <summary>The sync cannot resume due to a conflict between the local and remote files.</summary>
         RemoteFileConflict = 60,
-        /// <summary>k_EResultIllegalPassword</summary>
+        /// <summary>The requested new password is not allowed.</summary>
         IllegalPassword = 61,
-        /// <summary>k_EResultSameAsPreviousValue</summary>
+        /// <summary>New value is the same as the old one. This is used for secret question and answer.</summary>
         SameAsPreviousValue = 62,
-        /// <summary>k_EResultAccountLogonDenied</summary>
+        /// <summary>Account login denied due to 2nd factor authentication failure.</summary>
         AccountLogonDenied = 63,
-        /// <summary>k_EResultCannotUseOldPassword</summary>
+        /// <summary>The requested new password is not legal.</summary>
         CannotUseOldPassword = 64,
-        /// <summary>k_EResultInvalidLoginAuthCode</summary>
+        /// <summary>Account login denied due to auth code invalid.</summary>
         InvalidLoginAuthCode = 65,
-        /// <summary>k_EResultAccountLogonDeniedNoMail</summary>
+        /// <summary>Account login denied due to 2nd factor auth failure - and no mail has been sent.</summary>
         AccountLogonDeniedNoMail = 66,
-        /// <summary>k_EResultHardwareNotCapableOfIPT</summary>
+        /// <summary>The users hardware does not support Intel's Identity Protection Technology (IPT).</summary>
         HardwareNotCapableOfIPT = 67,
-        /// <summary>k_EResultIPTInitError</summary>
+        /// <summary>Intel's Identity Protection Technology (IPT) has failed to initialize.</summary>
         IPTInitError = 68,
-        /// <summary>k_EResultParentalControlRestricted</summary>
+        /// <summary>Operation failed due to parental control restrictions for current user.</summary>
         ParentalControlRestricted = 69,
-        /// <summary>k_EResultFacebookQueryError</summary>
+        /// <summary>Facebook query returned an error.</summary>
         FacebookQueryError = 70,
-        /// <summary>k_EResultExpiredLoginAuthCode</summary>
+        /// <summary>Account login denied due to an expired auth code.</summary>
         ExpiredLoginAuthCode = 71,
-        /// <summary>k_EResultIPLoginRestrictionFailed</summary>
+        /// <summary>The login failed due to an IP restriction.</summary>
         IPLoginRestrictionFailed = 72,
-        /// <summary>k_EResultAccountLockedDown</summary>
+        /// <summary>
+        ///             The current users account is currently locked for use. This is likely due to a hijacking
+        ///             and pending ownership verification.
+        ///         </summary>
         AccountLockedDown = 73,
-        /// <summary>k_EResultAccountLogonDeniedVerifiedEmailRequired</summary>
+        /// <summary>The logon failed because the accounts email is not verified.</summary>
         AccountLogonDeniedVerifiedEmailRequired = 74,
-        /// <summary>k_EResultNoMatchingURL</summary>
+        /// <summary>There is no URL matching the provided values.</summary>
         NoMatchingURL = 75,
-        /// <summary>k_EResultBadResponse</summary>
+        /// <summary>Bad Response due to a Parse failure, missing field, etc.</summary>
         BadResponse = 76,
-        /// <summary>k_EResultRequirePasswordReEntry</summary>
+        /// <summary>The user cannot complete the action until they re-enter their password.</summary>
         RequirePasswordReEntry = 77,
-        /// <summary>k_EResultValueOutOfRange</summary>
+        /// <summary>The value entered is outside the acceptable range.</summary>
         ValueOutOfRange = 78,
-        /// <summary>k_EResultUnexpectedError</summary>
+        /// <summary>Something happened that we didn't expect to ever happen.</summary>
         UnexpectedError = 79,
-        /// <summary>k_EResultDisabled</summary>
+        /// <summary>The requested service has been configured to be unavailable.</summary>
         Disabled = 80,
-        /// <summary>k_EResultInvalidCEGSubmission</summary>
+        /// <summary>The files submitted to the CEG server are not valid.</summary>
         InvalidCEGSubmission = 81,
-        /// <summary>k_EResultRestrictedDevice</summary>
+        /// <summary>The device being used is not allowed to perform this action.</summary>
         RestrictedDevice = 82,
-        /// <summary>k_EResultRegionLocked</summary>
+        /// <summary>The action could not be complete because it is region restricted.</summary>
         RegionLocked = 83,
-        /// <summary>k_EResultRateLimitExceeded</summary>
+        /// <summary>
+        ///             Temporary rate limit exceeded, try again later, different from k_EResultLimitExceeded
+        ///             which may be permanent.
+        ///         </summary>
         RateLimitExceeded = 84,
-        /// <summary>k_EResultAccountLoginDeniedNeedTwoFactor</summary>
+        /// <summary>Need two-factor code to login.</summary>
         AccountLoginDeniedNeedTwoFactor = 85,
-        /// <summary>k_EResultItemDeleted</summary>
+        /// <summary>The thing we're trying to access has been deleted.</summary>
         ItemDeleted = 86,
-        /// <summary>k_EResultAccountLoginDeniedThrottle</summary>
+        /// <summary>Login attempt failed, try to throttle response to possible attacker.</summary>
         AccountLoginDeniedThrottle = 87,
-        /// <summary>k_EResultTwoFactorCodeMismatch</summary>
+        /// <summary>Two factor authentication (Steam Guard) code is incorrect.</summary>
         TwoFactorCodeMismatch = 88,
-        /// <summary>k_EResultTwoFactorActivationCodeMismatch</summary>
+        /// <summary>The activation code for two-factor authentication (Steam Guard) didn't match.</summary>
         TwoFactorActivationCodeMismatch = 89,
-        /// <summary>k_EResultAccountAssociatedToMultiplePartners</summary>
+        /// <summary>The current account has been associated with multiple partners.</summary>
         AccountAssociatedToMultiplePartners = 90,
-        /// <summary>k_EResultNotModified</summary>
+        /// <summary>The data has not been modified.</summary>
         NotModified = 91,
-        /// <summary>k_EResultNoMobileDevice</summary>
+        /// <summary>The account does not have a mobile device associated with it.</summary>
         NoMobileDevice = 92,
-        /// <summary>k_EResultTimeNotSynced</summary>
+        /// <summary>The time presented is out of range or tolerance.</summary>
         TimeNotSynced = 93,
-        /// <summary>k_EResultSmsCodeFailed</summary>
+        /// <summary>SMS code failure - no match, none pending, etc.</summary>
         SmsCodeFailed = 94,
-        /// <summary>k_EResultAccountLimitExceeded</summary>
+        /// <summary>Too many accounts access this resource.</summary>
         AccountLimitExceeded = 95,
-        /// <summary>k_EResultAccountActivityLimitExceeded</summary>
+        /// <summary>Too many changes to this account.</summary>
         AccountActivityLimitExceeded = 96,
-        /// <summary>k_EResultPhoneActivityLimitExceeded</summary>
+        /// <summary>Too many changes to this phone.</summary>
         PhoneActivityLimitExceeded = 97,
-        /// <summary>k_EResultRefundToWallet</summary>
+        /// <summary>Cannot refund to payment method, must use wallet.</summary>
         RefundToWallet = 98,
-        /// <summary>k_EResultEmailSendFailure</summary>
+        /// <summary>Cannot send an email.</summary>
         EmailSendFailure = 99,
-        /// <summary>k_EResultNotSettled</summary>
+        /// <summary>Can't perform operation until payment has settled.</summary>
         NotSettled = 100,
-        /// <summary>k_EResultNeedCaptcha</summary>
+        /// <summary>The user needs to provide a valid captcha.</summary>
         NeedCaptcha = 101,
-        /// <summary>k_EResultGSLTDenied</summary>
+        /// <summary>A game server login token owned by this token's owner has been banned.</summary>
         GSLTDenied = 102,
-        /// <summary>k_EResultGSOwnerDenied</summary>
+        /// <summary>
+        ///             Game server owner is denied for some other reason such as account locked, community ban,
+        ///             vac ban, missing phone, etc.
+        ///         </summary>
         GSOwnerDenied = 103,
-        /// <summary>k_EResultInvalidItemType</summary>
+        /// <summary>The type of thing we were requested to act on is invalid.</summary>
         InvalidItemType = 104,
-        /// <summary>k_EResultIPBanned</summary>
+        /// <summary>The IP address has been banned from taking this action.</summary>
         IPBanned = 105,
-        /// <summary>k_EResultGSLTExpired</summary>
+        /// <summary>
+        ///             This Game Server Login Token (GSLT) has expired from disuse; it can be reset for use.
+        ///         </summary>
         GSLTExpired = 106,
-        /// <summary>k_EResultInsufficientFunds</summary>
+        /// <summary>user doesn't have enough wallet funds to complete the action</summary>
         InsufficientFunds = 107,
-        /// <summary>k_EResultTooManyPending</summary>
+        /// <summary>There are too many of this thing pending already</summary>
         TooManyPending = 108,
-        /// <summary>k_EResultNoSiteLicensesFound</summary>
+        /// missing documentation for EResult.k_EResultNoSiteLicensesFound
         NoSiteLicensesFound = 109,
-        /// <summary>k_EResultWGNetworkSendExceeded</summary>
+        /// missing documentation for EResult.k_EResultWGNetworkSendExceeded
         WGNetworkSendExceeded = 110,
-        /// <summary>k_EResultAccountNotFriends</summary>
+        /// missing documentation for EResult.k_EResultAccountNotFriends
         AccountNotFriends = 111,
-        /// <summary>k_EResultLimitedUserAccount</summary>
+        /// missing documentation for EResult.k_EResultLimitedUserAccount
         LimitedUserAccount = 112,
-        /// <summary>k_EResultCantRemoveItem</summary>
+        /// missing documentation for EResult.k_EResultCantRemoveItem
         CantRemoveItem = 113,
-        /// <summary>k_EResultAccountDeleted</summary>
+        /// missing documentation for EResult.k_EResultAccountDeleted
         AccountDeleted = 114,
-        /// <summary>k_EResultExistingUserCancelledLicense</summary>
+        /// missing documentation for EResult.k_EResultExistingUserCancelledLicense
         ExistingUserCancelledLicense = 115,
-        /// <summary>k_EResultCommunityCooldown</summary>
+        /// missing documentation for EResult.k_EResultCommunityCooldown
         CommunityCooldown = 116,
-        /// <summary>k_EResultNoLauncherSpecified</summary>
+        /// missing documentation for EResult.k_EResultNoLauncherSpecified
         NoLauncherSpecified = 117,
-        /// <summary>k_EResultMustAgreeToSSA</summary>
+        /// missing documentation for EResult.k_EResultMustAgreeToSSA
         MustAgreeToSSA = 118,
-        /// <summary>k_EResultLauncherMigrated</summary>
+        /// missing documentation for EResult.k_EResultLauncherMigrated
         LauncherMigrated = 119,
-        /// <summary>k_EResultSteamRealmMismatch</summary>
+        /// missing documentation for EResult.k_EResultSteamRealmMismatch
         SteamRealmMismatch = 120,
-        /// <summary>k_EResultInvalidSignature</summary>
+        /// missing documentation for EResult.k_EResultInvalidSignature
         InvalidSignature = 121,
-        /// <summary>k_EResultParseFailure</summary>
+        /// missing documentation for EResult.k_EResultParseFailure
         ParseFailure = 122,
-        /// <summary>k_EResultNoVerifiedPhone</summary>
+        /// missing documentation for EResult.k_EResultNoVerifiedPhone
         NoVerifiedPhone = 123,
-        /// <summary>k_EResultInsufficientBattery</summary>
+        /// missing documentation for EResult.k_EResultInsufficientBattery
         InsufficientBattery = 124,
-        /// <summary>k_EResultChargerRequired</summary>
+        /// missing documentation for EResult.k_EResultChargerRequired
         ChargerRequired = 125,
-        /// <summary>k_EResultCachedCredentialInvalid</summary>
+        /// missing documentation for EResult.k_EResultCachedCredentialInvalid
         CachedCredentialInvalid = 126,
-        /// <summary>K_EResultPhoneNumberIsVOIP</summary>
+        /// missing documentation for EResult.K_EResultPhoneNumberIsVOIP
         K_EResultPhoneNumberIsVOIP = 127,
-        /// <summary>k_EResultNotSupported</summary>
+        /// missing documentation for EResult.k_EResultNotSupported
         NotSupported = 128,
-        /// <summary>k_EResultFamilySizeLimitExceeded</summary>
+        /// missing documentation for EResult.k_EResultFamilySizeLimitExceeded
         FamilySizeLimitExceeded = 129
     }
 }

@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingFakeIPType</summary>
+    /// missing documentation for ESteamNetworkingFakeIPType
     public enum SteamNetworkingFakeIPType : int
     {
-        /// <summary>k_ESteamNetworkingFakeIPType_Invalid</summary>
+        /// missing documentation for ESteamNetworkingFakeIPType.k_ESteamNetworkingFakeIPType_Invalid
         Invalid = 0,
-        /// <summary>k_ESteamNetworkingFakeIPType_NotFake</summary>
+        /// missing documentation for ESteamNetworkingFakeIPType.k_ESteamNetworkingFakeIPType_NotFake
         NotFake = 1,
-        /// <summary>k_ESteamNetworkingFakeIPType_GlobalIPv4</summary>
+        /// missing documentation for ESteamNetworkingFakeIPType.k_ESteamNetworkingFakeIPType_GlobalIPv4
         GlobalIPv4 = 2,
-        /// <summary>k_ESteamNetworkingFakeIPType_LocalIPv4</summary>
+        /// missing documentation for ESteamNetworkingFakeIPType.k_ESteamNetworkingFakeIPType_LocalIPv4
         LocalIPv4 = 3,
-        /// <summary>k_ESteamNetworkingFakeIPType__Force32Bit</summary>
+        /// missing documentation for ESteamNetworkingFakeIPType.k_ESteamNetworkingFakeIPType__Force32Bit
         _Force32Bit = 2147483647
     }
 }

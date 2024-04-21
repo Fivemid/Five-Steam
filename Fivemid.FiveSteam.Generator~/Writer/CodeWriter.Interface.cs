@@ -71,7 +71,8 @@ public partial class CodeWriter {
                                                )
                                               .WithExpressionBody(
                                                    ArrowExpressionClause(
-                                                       InvocationExpression(ParseExpression($"{name}.{MethodName(method.Name)}"))
+                                                       InvocationExpression(
+                                                               ParseExpression($"{name}.{MethodName(method.Name)}"))
                                                           .AddArgumentListArguments(
                                                                Argument(IdentifierName("self"))
                                                            )
@@ -84,7 +85,7 @@ public partial class CodeWriter {
                                    ).ToArray<MemberDeclarationSyntax>())
                 )
                .AddMembers(Enums(definition.Enums ?? []).ToArray<MemberDeclarationSyntax>())
-               .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+               .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
         
         IEnumerable<BaseTypeDeclarationSyntax> accessorDeclarations =
             (definition.Accessors ?? []).Select(
@@ -118,7 +119,8 @@ public partial class CodeWriter {
                                                )
                                               .WithExpressionBody(
                                                    ArrowExpressionClause(
-                                                       InvocationExpression(ParseExpression($"Instance.{MethodName(method.Name)}"))
+                                                       InvocationExpression(
+                                                               ParseExpression($"Instance.{MethodName(method.Name)}"))
                                                           .AddArgumentListArguments(
                                                                method.Parameters.Select(MethodArgument).ToArray()
                                                            )
@@ -137,10 +139,10 @@ public partial class CodeWriter {
         SteamApiDefinition.InterfaceDefinition @interface,
         SteamApiDefinition.Method              method
     ) {
-        if (Documentation.VALUE.GetInterface(@interface.Name)?.GetMethod(method.Name) is { } documentation)
+        if (Documentation.VALUE.GetInterface(@interface.Name)?.GetChild(method.Name) is { } documentation)
             return DocComment($"""
                                <summary>{documentation.Description}</summary>
-                               {string.Join('\n', documentation.Parameters.Select(p => $"""<param name="{p.Name}">{p.Type}: {p.Description}</param>"""))}
+                               {string.Join('\n', documentation.Children.Select(p => $"""<param name="{p.Name}">{p.Type}: {p.Description}</param>"""))}
                                """);
         
         return DocComment("missing documentation");

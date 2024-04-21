@@ -73,7 +73,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/features/achievements" class="bb_doclink">Stats and Achievements</a>
         /// was introduced.
         /// </summary>
-        /// <param name="gameID">CGameID: </param>
+        /// <param name="gameID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CGameID" class="bb_apilink">CGameID</a>
+        ///         : </param>
         /// <param name="eAppUsageEvent">int: </param>
         /// <param name="pchExtraInfo">const char *: </param>
         public static void TrackAppUsageEvent(GameId gameID, int eAppUsageEvent, UTF8StringPtr pchExtraInfo) => Instance.TrackAppUsageEvent(gameID, eAppUsageEvent, pchExtraInfo);
@@ -144,11 +146,17 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#EVoiceResult" class="bb_apilink">EVoiceResult</a>
         /// </summary>
-        /// <param name="pcbCompressed">uint32
-        ///             *: Returns the size of the available voice data in bytes.</param>
-        /// <param name="pcbUncompressed_Deprecated">uint32
-        ///             *: Deprecated.</param>
-        /// <param name="nUncompressedVoiceDesiredSampleRate_Deprecated">uint32: Deprecated.</param>
+        /// <param name="pcbCompressed">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the size of the available voice data in bytes.</param>
+        /// <param name="pcbUncompressed_Deprecated">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Deprecated.</param>
+        /// <param name="nUncompressedVoiceDesiredSampleRate_Deprecated">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Deprecated.</param>
         public static VoiceResult GetAvailableVoice(uint* pcbCompressed, uint* pcbUncompressed_Deprecated, uint nUncompressedVoiceDesiredSampleRate_Deprecated) => Instance.GetAvailableVoice(pcbCompressed, pcbUncompressed_Deprecated, nUncompressedVoiceDesiredSampleRate_Deprecated);
         /// <summary>
         /// <code>
@@ -200,12 +208,16 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="bWantCompressed">bool: This should always be <b>true</b>.</param>
         /// <param name="pDestBuffer">void *: The buffer where the audio data will be copied into.</param>
-        /// <param name="cbDestBufferSize">uint32: 
+        /// <param name="cbDestBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of the buffer allocated for
         ///             <code class="bb_code bb_code_inline nohighlight">pDestBuffer</code>.
         ///         </param>
-        /// <param name="nBytesWritten">uint32
-        ///             *: 
+        /// <param name="nBytesWritten">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the number of bytes written into
         ///             <code class="bb_code bb_code_inline nohighlight">pDestBuffer</code>. This should always
         ///             be the size returned by
@@ -213,10 +225,16 @@ namespace Fivemid.FiveSteam
         ///         </param>
         /// <param name="bWantUncompressed_Deprecated">bool: Deprecated.</param>
         /// <param name="pUncompressedDestBuffer_Deprecated">void *: Deprecated.</param>
-        /// <param name="cbUncompressedDestBufferSize_Deprecated">uint32: Deprecated.</param>
-        /// <param name="nUncompressBytesWritten_Deprecated">uint32
-        ///             *: Deprecated.</param>
-        /// <param name="nUncompressedVoiceDesiredSampleRate_Deprecated">uint32: Deprecated.</param>
+        /// <param name="cbUncompressedDestBufferSize_Deprecated">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Deprecated.</param>
+        /// <param name="nUncompressBytesWritten_Deprecated">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Deprecated.</param>
+        /// <param name="nUncompressedVoiceDesiredSampleRate_Deprecated">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Deprecated.</param>
         public static VoiceResult GetVoice(bool bWantCompressed, void* pDestBuffer, uint cbDestBufferSize, uint* nBytesWritten, bool bWantUncompressed_Deprecated, void* pUncompressedDestBuffer_Deprecated, uint cbUncompressedDestBufferSize_Deprecated, uint* nUncompressBytesWritten_Deprecated, uint nUncompressedVoiceDesiredSampleRate_Deprecated) => Instance.GetVoice(bWantCompressed, pDestBuffer, cbDestBufferSize, nBytesWritten, bWantUncompressed_Deprecated, pUncompressedDestBuffer_Deprecated, cbUncompressedDestBufferSize_Deprecated, nUncompressBytesWritten_Deprecated, nUncompressedVoiceDesiredSampleRate_Deprecated);
         /// <summary>
         /// <code>
@@ -247,7 +265,9 @@ namespace Fivemid.FiveSteam
         ///             The compressed data received from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetVoice" class="bb_apilink">ISteamUser::GetVoice</a>.
         ///         </param>
-        /// <param name="cbCompressed">uint32: 
+        /// <param name="cbCompressed">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of the buffer passed into
         ///             <code class="bb_code bb_code_inline nohighlight">pCompressed</code>.
         ///         </param>
@@ -255,12 +275,16 @@ namespace Fivemid.FiveSteam
         ///             The buffer where the raw audio data will be returned. This can then be passed to your
         ///             audio subsystems for playback.
         ///         </param>
-        /// <param name="cbDestBufferSize">uint32: 
+        /// <param name="cbDestBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of the buffer passed into
         ///             <code class="bb_code bb_code_inline nohighlight">pDestBuffer</code>.
         ///         </param>
-        /// <param name="nBytesWritten">uint32
-        ///             *: 
+        /// <param name="nBytesWritten">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the number of bytes written to
         ///             <code class="bb_code bb_code_inline nohighlight">pDestBuffer</code>, or size of the
         ///             buffer required to decompress the given data if
@@ -269,7 +293,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_EVoiceResultBufferTooSmall" class="bb_apilink">k_EVoiceResultBufferTooSmall</a>
         ///             is returned).
         ///         </param>
-        /// <param name="nDesiredSampleRate">uint32: 
+        /// <param name="nDesiredSampleRate">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The sample rate that will be returned. This can be from <b>11025</b> to
         ///             <b>48000</b>, you should either use the rate that works best for your audio
         ///             playback system, which likely takes the users audio hardware into account, or you can
@@ -345,11 +371,15 @@ namespace Fivemid.FiveSteam
         ///             of <b>1024</b> will be sufficient. However, in certain cases (e.g., when an
         ///             application has a large amount of available DLC), a larger buffer size may be required.
         ///         </param>
-        /// <param name="pcbTicket">uint32
-        ///             *: Returns the length of the actual ticket.</param>
-        /// <param name="pIdentityRemote">SteamNetworkingIdentity
-        ///             
-        ///             *: 
+        /// <param name="pcbTicket">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the length of the actual ticket.</param>
+        /// <param name="pIdentityRemote ">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamNetworkingIdentity%20" class="bb_apilink">SteamNetworkingIdentity
+        ///             </a>
+        ///             *
+        ///         : 
         ///             The identity of the remote system that will authenticate the ticket. If it is
         ///             peer-to-peer then the user steam ID. If it is a game server, then the game server steam
         ///             ID may be used if it was obtained from a trusted 3rd party, otherwise use the IP
@@ -398,9 +428,11 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="*pchIdentity">const char
-        ///             
-        ///             *: 
+        /// <param name="*pchIdentity ">
+        ///             <a href="https://partner.steamgames.com/doc/api/const%20char%20" class="bb_apilink">const char
+        ///             </a>
+        ///             *
+        ///         : 
         ///             The identity of the remote service that will authenticate the ticket. The service should
         ///             provide a string identifier. Pass null if none was provided.
         ///         </param>
@@ -449,7 +481,9 @@ namespace Fivemid.FiveSteam
         ///             <code class="bb_code bb_code_inline nohighlight">pcbTicket</code> size provided by the
         ///             call that created this ticket.
         ///         </param>
-        /// <param name="steamID">CSteamID: The entity's Steam ID that sent this ticket.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The entity's Steam ID that sent this ticket.</param>
         public static BeginAuthSessionResult BeginAuthSession(void* pAuthTicket, int cbAuthTicket, SteamId steamID) => Instance.BeginAuthSession(pAuthTicket, cbAuthTicket, steamID);
         /// <summary>
         /// <code>void EndAuthSession( CSteamID steamID );</code>
@@ -461,7 +495,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The entity to end the active auth session with.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The entity to end the active auth session with.</param>
         public static void EndAuthSession(SteamId steamID) => Instance.EndAuthSession(steamID);
         /// <summary>
         /// <code>void CancelAuthTicket( HAuthTicket hAuthTicket );</code>
@@ -473,7 +509,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="hAuthTicket">HAuthTicket: The active auth ticket to cancel.</param>
+        /// <param name="hAuthTicket">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#HAuthTicket" class="bb_apilink">HAuthTicket</a>
+        ///         : The active auth ticket to cancel.</param>
         public static void CancelAuthTicket(HAuthTicket hAuthTicket) => Instance.CancelAuthTicket(hAuthTicket);
         /// <summary>
         /// <code>
@@ -494,8 +532,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The Steam ID of the user that sent the auth ticket.</param>
-        /// <param name="appID">AppId_t: The DLC App ID to check if the user owns it.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user that sent the auth ticket.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The DLC App ID to check if the user owns it.</param>
         public static UserHasLicenseForAppResult UserHasLicenseForApp(SteamId steamID, AppId appID) => Instance.UserHasLicenseForApp(steamID, appID);
         /// <summary>
         /// <code>bool BIsBehindNAT();</code>
@@ -521,15 +563,21 @@ namespace Fivemid.FiveSteam
         /// When you are using Steam authentication system this call is never required, the auth system
         /// automatically sets the appropriate rich presence.
         /// </summary>
-        /// <param name="steamIDGameServer">CSteamID: 
+        /// <param name="steamIDGameServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This should be
         ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNonSteamGS" class="bb_apilink">k_steamIDNonSteamGS</a>
         ///             if you're setting the IP/Port, otherwise it should be
         ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNil" class="bb_apilink">k_steamIDNil</a>
         ///             if you're clearing this.
         ///         </param>
-        /// <param name="unIPServer">uint32: The IP of the game server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
-        /// <param name="usPortServer">uint16: The connection port of the game server, in host order.</param>
+        /// <param name="unIPServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The IP of the game server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
+        /// <param name="usPortServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The connection port of the game server, in host order.</param>
         public static void AdvertiseGame(SteamId steamIDGameServer, uint unIPServer, ushort usPortServer) => Instance.AdvertiseGame(steamIDGameServer, unIPServer, usPortServer);
         /// <summary>
         /// <code>
@@ -638,8 +686,10 @@ namespace Fivemid.FiveSteam
         ///             The total size of the
         ///             <code class="bb_code bb_code_inline nohighlight">pTicket</code> buffer in bytes.
         ///         </param>
-        /// <param name="pcbTicket">uint32
-        ///             *: 
+        /// <param name="pcbTicket">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the number of bytes copied into
         ///             <code class="bb_code bb_code_inline nohighlight">pTicket</code>.
         ///         </param>

@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>servernetadr_t</summary>
+    /// missing documentation for servernetadr_t
     public unsafe struct servernetadr
     {
-        /// <summary>uint16 m_usConnectionPort</summary>
+        /// missing documentation for servernetadr_t.m_usConnectionPort
         public ushort usConnectionPort;
-        /// <summary>uint16 m_usQueryPort</summary>
+        /// missing documentation for servernetadr_t.m_usQueryPort
         public ushort usQueryPort;
-        /// <summary>uint32 m_unIP</summary>
+        /// missing documentation for servernetadr_t.m_unIP
         public uint unIP;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_Construct", CallingConvention = Platform.CC)]
         internal static extern void Construct(servernetadr* self);

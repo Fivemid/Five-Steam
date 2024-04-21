@@ -3,18 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ECheckFileSignature</summary>
+    /// <summary>
+    /// The result of a call to
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#CheckFileSignature" class="bb_apilink">ISteamUtils::CheckFileSignature</a><br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum CheckFileSignatureType : int
     {
-        /// <summary>k_ECheckFileSignatureInvalidSignature</summary>
+        /// <summary></summary>
         CheckFileSignatureInvalidSignature = 0,
-        /// <summary>k_ECheckFileSignatureValidSignature</summary>
+        /// <summary></summary>
         CheckFileSignatureValidSignature = 1,
-        /// <summary>k_ECheckFileSignatureFileNotFound</summary>
+        /// <summary></summary>
         CheckFileSignatureFileNotFound = 2,
-        /// <summary>k_ECheckFileSignatureNoSignaturesFoundForThisApp</summary>
+        /// <summary></summary>
         CheckFileSignatureNoSignaturesFoundForThisApp = 3,
-        /// <summary>k_ECheckFileSignatureNoSignaturesFoundForThisFile</summary>
+        /// <summary></summary>
         CheckFileSignatureNoSignaturesFoundForThisFile = 4
     }
 }

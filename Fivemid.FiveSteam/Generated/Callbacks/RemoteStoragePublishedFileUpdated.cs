@@ -3,15 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStoragePublishedFileUpdated_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct RemoteStoragePublishedFileUpdated : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStoragePublishedFileUpdated;
-        /// <summary>PublishedFileId_t m_nPublishedFileId</summary>
+        /// <summary>The published file id</summary>
         public PublishedFileId nPublishedFileId;
-        /// <summary>AppId_t m_nAppID</summary>
+        /// <summary>ID of the app that will consume this file.</summary>
         public AppId nAppID;
-        /// <summary>uint64 m_ulUnused</summary>
+        /// <summary>not used anymore</summary>
         public ulong ulUnused;
     }
 }

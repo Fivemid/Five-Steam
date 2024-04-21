@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingIPAddr</summary>
+    /// missing documentation for SteamNetworkingIPAddr
     public unsafe struct SteamNetworkingIPAddr
     {
-        /// <summary>uint8 [16] m_ipv6</summary>
+        /// missing documentation for SteamNetworkingIPAddr.m_ipv6
         public FixedArray_byte16 ipv6;
-        /// <summary>uint16 m_port</summary>
+        /// missing documentation for SteamNetworkingIPAddr.m_port
         public ushort port;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_Clear", CallingConvention = Platform.CC)]
         internal static extern void Clear(SteamNetworkingIPAddr* self);

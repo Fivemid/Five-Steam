@@ -3,12 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EGamepadTextInputLineMode</summary>
+    /// <summary>
+    /// Controls number of allowed lines for the Big Picture gamepad text entry<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum GamepadTextInputLineMode : int
     {
-        /// <summary>k_EGamepadTextInputLineModeSingleLine</summary>
+        /// <summary></summary>
         SingleLine = 0,
-        /// <summary>k_EGamepadTextInputLineModeMultipleLines</summary>
+        /// <summary></summary>
         MultipleLines = 1
     }
 }

@@ -3,7 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>MusicPlayerRemoteWillDeactivate_t</summary>
+    /// <summary>
+    /// <br />
+    /// <br />
+    /// This callback has no fields.
+    /// </summary>
     public unsafe struct MusicPlayerRemoteWillDeactivate : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.MusicPlayerRemoteWillDeactivate;

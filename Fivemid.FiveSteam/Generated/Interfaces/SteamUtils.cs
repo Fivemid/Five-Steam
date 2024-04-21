@@ -78,10 +78,14 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetAchievementIcon" class="bb_apilink">ISteamUserStats::GetAchievementIcon</a>
         /// </summary>
         /// <param name="iImage">int: The image handle to get the size for.</param>
-        /// <param name="pnWidth">uint32
-        ///             *: Returns the width of the image.</param>
-        /// <param name="pnHeight">uint32
-        ///             *: Returns the height of the image.</param>
+        /// <param name="pnWidth">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the width of the image.</param>
+        /// <param name="pnHeight">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the height of the image.</param>
         public static bool GetImageSize(int iImage, uint* pnWidth, uint* pnHeight) => Instance.GetImageSize(iImage, pnWidth, pnHeight);
         /// <summary>
         /// <code>bool GetImageRGBA( int iImage, uint8 *pubDest, int nDestBufferSize );</code>
@@ -127,8 +131,10 @@ namespace Fivemid.FiveSteam
         /// </code>
         /// </summary>
         /// <param name="iImage">int: The handle to the image that will be obtained.</param>
-        /// <param name="pubDest">uint8
-        ///             *: The buffer that will be filled.</param>
+        /// <param name="pubDest">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///             *
+        ///         : The buffer that will be filled.</param>
         /// <param name="nDestBufferSize">int: 
         ///             The total size of the
         ///             <code class="bb_code bb_code_inline nohighlight">pubDest</code> buffer.
@@ -167,7 +173,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// This position is per-game and is reset each launch.
         /// </summary>
-        /// <param name="eNotificationPosition">ENotificationPosition: </param>
+        /// <param name="eNotificationPosition">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#ENotificationPosition" class="bb_apilink">ENotificationPosition</a>
+        ///         : </param>
         public static void SetOverlayNotificationPosition(NotificationPosition eNotificationPosition) => Instance.SetOverlayNotificationPosition(eNotificationPosition);
         /// <summary>
         /// <code>
@@ -187,7 +195,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAPICallResult" class="bb_apilink">ISteamUtils::GetAPICallResult</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAPICallFailureReason" class="bb_apilink">ISteamUtils::GetAPICallFailureReason</a>
         /// </summary>
-        /// <param name="hSteamAPICall">SteamAPICall_t: The API Call handle to check.</param>
+        /// <param name="hSteamAPICall">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///         : The API Call handle to check.</param>
         /// <param name="pbFailed">bool *: 
         ///             Returns whether the API call has encountered a failure (<b>true</b>) or not
         ///             (<b>false</b>).
@@ -219,7 +229,9 @@ namespace Fivemid.FiveSteam
         ///     separately. return; } }
         /// </code>
         /// </summary>
-        /// <param name="hSteamAPICall">SteamAPICall_t: The Steam API Call handle to check the failure for.</param>
+        /// <param name="hSteamAPICall">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///         : The Steam API Call handle to check the failure for.</param>
         public static SteamAPICallFailure GetAPICallFailureReason(SteamAPICall hSteamAPICall) => Instance.GetAPICallFailureReason(hSteamAPICall);
         /// <summary>
         /// <code>
@@ -244,7 +256,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#IsAPICallCompleted" class="bb_apilink">ISteamUtils::IsAPICallCompleted</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAPICallFailureReason" class="bb_apilink">ISteamUtils::GetAPICallFailureReason</a>
         /// </summary>
-        /// <param name="hSteamAPICall">SteamAPICall_t: The handle to the API Call.</param>
+        /// <param name="hSteamAPICall">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///         : The handle to the API Call.</param>
         /// <param name="pCallback">void *: Returns the callback into the preallocated memory provided.</param>
         /// <param name="cubCallback">int: The size of pCallback that you are passing in.</param>
         /// <param name="iCallbackExpected">int: The k_iCallback number associated with the callback.</param>
@@ -356,10 +370,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetEnteredGamepadTextLength" class="bb_apilink">ISteamUtils::GetEnteredGamepadTextLength</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetEnteredGamepadTextInput" class="bb_apilink">ISteamUtils::GetEnteredGamepadTextInput</a>
         /// </summary>
-        /// <param name="eInputMode">EGamepadTextInputMode: Selects the input mode to use, either Normal or Password (hidden text)</param>
-        /// <param name="eLineInputMode">EGamepadTextInputLineMode: Controls whether to use single or multi line input.</param>
+        /// <param name="eInputMode">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUtils#EGamepadTextInputMode" class="bb_apilink">EGamepadTextInputMode</a>
+        ///         : Selects the input mode to use, either Normal or Password (hidden text)</param>
+        /// <param name="eLineInputMode">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUtils#EGamepadTextInputLineMode" class="bb_apilink">EGamepadTextInputLineMode</a>
+        ///         : Controls whether to use single or multi line input.</param>
         /// <param name="pchDescription">const char *: Sets the description that should inform the user what the input dialog is for.</param>
-        /// <param name="unCharMax">uint32: The maximum number of characters that the user can input.</param>
+        /// <param name="unCharMax">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The maximum number of characters that the user can input.</param>
         /// <param name="pchExistingText">const char *: Sets the preexisting text which the user can edit.</param>
         public static bool ShowGamepadTextInput(GamepadTextInputMode eInputMode, GamepadTextInputLineMode eLineInputMode, UTF8StringPtr pchDescription, uint unCharMax, UTF8StringPtr pchExistingText) => Instance.ShowGamepadTextInput(eInputMode, eLineInputMode, pchDescription, unCharMax, pchExistingText);
         /// <summary>
@@ -428,7 +448,9 @@ namespace Fivemid.FiveSteam
         /// </code>
         /// </summary>
         /// <param name="pchText">char *: A preallocated buffer to copy the text input string into.</param>
-        /// <param name="cchText">uint32: 
+        /// <param name="cchText">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of the <code class="bb_code bb_code_inline nohighlight">pchText</code> buffer.
         ///         </param>
         public static bool GetEnteredGamepadTextInput(char* pchText, uint cchText) => Instance.GetEnteredGamepadTextInput(pchText, cchText);
@@ -570,14 +592,18 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#InitFilterText" class="bb_apilink">ISteamUtils::InitFilterText</a>
         /// </summary>
-        /// <param name="eContext">ETextFilteringContext: the type of content in the input string</param>
-        /// <param name="sourceSteamID">CSteamID: 
+        /// <param name="eContext">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#ETextFilteringContext" class="bb_apilink">ETextFilteringContext</a>
+        ///         : the type of content in the input string</param>
+        /// <param name="sourceSteamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             the Steam ID that is the source of the input string (e.g. the player with the name, or
         ///             who said the chat text)
         ///         </param>
         /// <param name="pchInputText">const char*: the input string that should be filtered, which can be ASCII or UTF-8</param>
         /// <param name="pchOutFilteredText">char*: where the output will be placed, even if no filtering is performed</param>
-        /// <param name="nByteSizeOutFilteredText">uint32: 
+        /// <param name="nByteSizeOutFilteredText ">uint32: 
         ///             the size (in bytes) of pchOutFilteredText, should be at least strlen(pchInputText)+1
         ///         </param>
         public static int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, char* pchOutFilteredText, uint nByteSizeOutFilteredText) => Instance.FilterText(eContext, sourceSteamID, pchInputMessage, pchOutFilteredText, nByteSizeOutFilteredText);
@@ -610,11 +636,13 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#FloatingGamepadTextInputDismissed_t" class="bb_apilink">ISteamUtils::FloatingGamepadTextInputDismissed_t</a>
         /// </summary>
-        /// <param name="eKeyboardMode">EFloatingGamepadTextInputMode: Selects the keyboard type to use</param>
+        /// <param name="eKeyboardMode">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUtils#EFloatingGamepadTextInputMode" class="bb_apilink">EFloatingGamepadTextInputMode</a>
+        ///         : Selects the keyboard type to use</param>
         /// <param name="nTextFieldXPosition">int: X coordinate of text field which shouldn't be obscured by the floating keyboard</param>
         /// <param name="nTextFieldYPosition">int: Y coordinate of text field which shouldn't be obscured by the floating keyboard</param>
         /// <param name="nTextFieldWidth">int: width of text field which shouldn't be obscured by the floating keyboard</param>
-        /// <param name="nTextFieldHeight">int: height of text field which shouldn't be obscured by the floating keyboard</param>
+        /// <param name="nTextFieldHeight ">int: height of text field which shouldn't be obscured by the floating keyboard</param>
         public static bool ShowFloatingGamepadTextInput(FloatingGamepadTextInputMode eKeyboardMode, int nTextFieldXPosition, int nTextFieldYPosition, int nTextFieldWidth, int nTextFieldHeight) => Instance.ShowFloatingGamepadTextInput(eKeyboardMode, nTextFieldXPosition, nTextFieldYPosition, nTextFieldWidth, nTextFieldHeight);
         /// <summary>
         /// <code>void SetGameLauncherMode( bool bLauncherMode);</code>

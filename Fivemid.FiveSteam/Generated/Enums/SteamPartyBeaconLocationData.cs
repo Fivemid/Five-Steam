@@ -3,18 +3,29 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamPartyBeaconLocationData</summary>
+    /// <summary>
+    /// Types of extended metadata for beacon locations.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum SteamPartyBeaconLocationData : int
     {
-        /// <summary>k_ESteamPartyBeaconLocationDataInvalid</summary>
+        /// <summary>Invalid location data type.</summary>
         Invalid = 0,
-        /// <summary>k_ESteamPartyBeaconLocationDataName</summary>
+        /// <summary>The name, if any, of the location</summary>
         Name = 1,
-        /// <summary>k_ESteamPartyBeaconLocationDataIconURLSmall</summary>
+        /// <summary>
+        ///             If the location has an associated icon, this is the URL for the small format icon image.
+        ///         </summary>
         IconURLSmall = 2,
-        /// <summary>k_ESteamPartyBeaconLocationDataIconURLMedium</summary>
+        /// <summary>
+        ///             If the location has an associated icon, this is the URL for the medium format icon
+        ///             image.
+        ///         </summary>
         IconURLMedium = 3,
-        /// <summary>k_ESteamPartyBeaconLocationDataIconURLLarge</summary>
+        /// <summary>
+        ///             If the location has an associated icon, this is the URL for the small large icon image.
+        ///         </summary>
         IconURLLarge = 4
     }
 }

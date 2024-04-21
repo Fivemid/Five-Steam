@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamLeaderboard_t</summary>
+    /// <summary>Handle to a single leaderboard.</summary>
     public unsafe struct SteamLeaderboard
     {
         public ulong value;

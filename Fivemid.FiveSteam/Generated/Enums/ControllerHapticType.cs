@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EControllerHapticType</summary>
+    /// missing documentation for EControllerHapticType
     public enum ControllerHapticType : int
     {
-        /// <summary>k_EControllerHapticType_Off</summary>
+        /// missing documentation for EControllerHapticType.k_EControllerHapticType_Off
         Off = 0,
-        /// <summary>k_EControllerHapticType_Tick</summary>
+        /// missing documentation for EControllerHapticType.k_EControllerHapticType_Tick
         Tick = 1,
-        /// <summary>k_EControllerHapticType_Click</summary>
+        /// missing documentation for EControllerHapticType.k_EControllerHapticType_Click
         Click = 2
     }
 }

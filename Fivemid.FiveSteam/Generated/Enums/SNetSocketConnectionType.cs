@@ -3,14 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESNetSocketConnectionType</summary>
+    /// <summary>
+    /// Describes how the socket is currently connected. Only used by the old networking API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum SNetSocketConnectionType : int
     {
-        /// <summary>k_ESNetSocketConnectionTypeNotConnected</summary>
+        /// <summary></summary>
         NotConnected = 0,
-        /// <summary>k_ESNetSocketConnectionTypeUDP</summary>
+        /// <summary></summary>
         UDP = 1,
-        /// <summary>k_ESNetSocketConnectionTypeUDPRelay</summary>
+        /// <summary></summary>
         UDPRelay = 2
     }
 }

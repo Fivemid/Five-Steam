@@ -3,17 +3,31 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FileDetailsResult_t</summary>
+    /// <summary>
+    /// Called after requesting the details of a specific file.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamApps#GetFileDetails" class="bb_apilink">ISteamApps::GetFileDetails</a>
+    /// </summary>
     public unsafe struct FileDetailsResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FileDetailsResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>
+        ///             Was the call successful?
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultOK" class="bb_apilink">k_EResultOK</a>
+        ///             if it was; otherwise,
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultFileNotFound" class="bb_apilink">k_EResultFileNotFound</a>
+        ///             if the file was not found. None of the other fields are filled out if the call was not
+        ///             successful.
+        ///         </summary>
         public Result eResult;
-        /// <summary>uint64 m_ulFileSize</summary>
+        /// <summary>The original file size in bytes.</summary>
         public ulong ulFileSize;
-        /// <summary>uint8 [20] m_FileSHA</summary>
+        /// <summary>The original file SHA1 hash.</summary>
         public FixedArray_byte20 FileSHA;
-        /// <summary>uint32 m_unFlags</summary>
+        /// <summary></summary>
         public uint unFlags;
     }
 }

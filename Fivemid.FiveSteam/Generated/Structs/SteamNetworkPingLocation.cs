@@ -3,10 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkPingLocation_t</summary>
+    /// missing documentation for SteamNetworkPingLocation_t
     public unsafe struct SteamNetworkPingLocation
     {
-        /// <summary>uint8 [512] m_data</summary>
+        /// missing documentation for SteamNetworkPingLocation_t.m_data
         public FixedArray_byte512 data;
     }
 }

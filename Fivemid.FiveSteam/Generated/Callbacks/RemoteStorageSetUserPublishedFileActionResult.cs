@@ -3,15 +3,22 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageSetUserPublishedFileActionResult_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SetUserPublishedFileAction" class="bb_apilink">ISteamRemoteStorage::SetUserPublishedFileAction</a>
+    /// </summary>
     public unsafe struct RemoteStorageSetUserPublishedFileActionResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageSetUserPublishedFileActionResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>PublishedFileId_t m_nPublishedFileId</summary>
+        /// <summary>The published file id</summary>
         public PublishedFileId nPublishedFileId;
-        /// <summary>EWorkshopFileAction m_eAction</summary>
+        /// <summary>the action that was attempted</summary>
         public WorkshopFileAction eAction;
     }
 }

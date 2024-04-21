@@ -3,19 +3,26 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageEnumerateUserSubscribedFilesResult_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserSubscribedFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserSubscribedFiles</a>
+    /// </summary>
     public unsafe struct RemoteStorageEnumerateUserSubscribedFilesResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserSubscribedFilesResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>int32 m_nResultsReturned</summary>
+        /// <summary></summary>
         public int nResultsReturned;
-        /// <summary>int32 m_nTotalResultCount</summary>
+        /// <summary></summary>
         public int nTotalResultCount;
-        /// <summary>PublishedFileId_t [50] m_rgPublishedFileId</summary>
+        /// <summary></summary>
         public FixedArray_ulong50 rgPublishedFileId;
-        /// <summary>uint32 [50] m_rgRTimeSubscribed</summary>
+        /// <summary></summary>
         public FixedArray_uint50 rgRTimeSubscribed;
     }
 }

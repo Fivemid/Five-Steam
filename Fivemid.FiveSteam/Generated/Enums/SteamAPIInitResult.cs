@@ -3,16 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamAPIInitResult</summary>
+    /// missing documentation for ESteamAPIInitResult
     public enum SteamAPIInitResult : int
     {
-        /// <summary>k_ESteamAPIInitResult_OK</summary>
+        /// missing documentation for ESteamAPIInitResult.k_ESteamAPIInitResult_OK
         OK = 0,
-        /// <summary>k_ESteamAPIInitResult_FailedGeneric</summary>
+        /// missing documentation for ESteamAPIInitResult.k_ESteamAPIInitResult_FailedGeneric
         FailedGeneric = 1,
-        /// <summary>k_ESteamAPIInitResult_NoSteamClient</summary>
+        /// missing documentation for ESteamAPIInitResult.k_ESteamAPIInitResult_NoSteamClient
         NoSteamClient = 2,
-        /// <summary>k_ESteamAPIInitResult_VersionMismatch</summary>
+        /// missing documentation for ESteamAPIInitResult.k_ESteamAPIInitResult_VersionMismatch
         VersionMismatch = 3
     }
 }

@@ -3,20 +3,24 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamDeviceFormFactor</summary>
+    /// <summary>
+    /// The form factor of a device<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum SteamDeviceFormFactor : int
     {
-        /// <summary>k_ESteamDeviceFormFactorUnknown</summary>
+        /// <summary>The device form factor isn't available.</summary>
         Unknown = 0,
-        /// <summary>k_ESteamDeviceFormFactorPhone</summary>
+        /// <summary>The device is a phone or other small handheld device with touchscreen.</summary>
         Phone = 1,
-        /// <summary>k_ESteamDeviceFormFactorTablet</summary>
+        /// <summary>The device is a tablet or other large handheld device with a touchscreen.</summary>
         Tablet = 2,
-        /// <summary>k_ESteamDeviceFormFactorComputer</summary>
+        /// <summary>The device is a desktop computer or laptop.</summary>
         Computer = 3,
-        /// <summary>k_ESteamDeviceFormFactorTV</summary>
+        /// <summary>The device is a TV.</summary>
         TV = 4,
-        /// <summary>k_ESteamDeviceFormFactorVRHeadset</summary>
+        /// missing documentation for ESteamDeviceFormFactor.k_ESteamDeviceFormFactorVRHeadset
         VRHeadset = 5
     }
 }

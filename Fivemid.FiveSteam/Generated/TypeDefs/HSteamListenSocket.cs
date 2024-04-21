@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HSteamListenSocket</summary>
+    /// missing documentation for HSteamListenSocket
     public unsafe struct HSteamListenSocket
     {
         public uint value;

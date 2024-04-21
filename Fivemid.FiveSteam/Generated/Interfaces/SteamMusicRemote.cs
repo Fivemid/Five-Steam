@@ -64,7 +64,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool
         /// </summary>
         /// <param name="pvBuffer">void *: </param>
-        /// <param name="cbBufferLength">uint32: </param>
+        /// <param name="cbBufferLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static bool SetPNGIcon_64x64(void* pvBuffer, uint cbBufferLength) => Instance.SetPNGIcon_64x64(pvBuffer, cbBufferLength);
         /// <summary>
         /// <code>bool EnablePlayPrevious( bool bValue );</code>
@@ -134,7 +136,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="nStatus">AudioPlayback_Status: </param>
+        /// <param name="nStatus">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMusic#AudioPlayback_Status" class="bb_apilink">AudioPlayback_Status</a>
+        ///         : </param>
         public static bool UpdatePlaybackStatus(AudioPlayback_Status nStatus) => Instance.UpdatePlaybackStatus(nStatus);
         /// <summary>
         /// <code>bool UpdateShuffled( bool bValue );</code>
@@ -215,7 +219,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool
         /// </summary>
         /// <param name="pvBuffer">void *: </param>
-        /// <param name="cbBufferLength">uint32: </param>
+        /// <param name="cbBufferLength">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static bool UpdateCurrentEntryCoverArt(void* pvBuffer, uint cbBufferLength) => Instance.UpdateCurrentEntryCoverArt(pvBuffer, cbBufferLength);
         /// <summary>
         /// <code>bool CurrentEntryDidChange();</code>

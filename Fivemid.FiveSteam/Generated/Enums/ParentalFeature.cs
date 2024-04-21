@@ -3,40 +3,40 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EParentalFeature</summary>
+    /// missing documentation for EParentalFeature
     public enum ParentalFeature : int
     {
-        /// <summary>k_EFeatureInvalid</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureInvalid
         FeatureInvalid = 0,
-        /// <summary>k_EFeatureStore</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureStore
         FeatureStore = 1,
-        /// <summary>k_EFeatureCommunity</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureCommunity
         FeatureCommunity = 2,
-        /// <summary>k_EFeatureProfile</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureProfile
         FeatureProfile = 3,
-        /// <summary>k_EFeatureFriends</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureFriends
         FeatureFriends = 4,
-        /// <summary>k_EFeatureNews</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureNews
         FeatureNews = 5,
-        /// <summary>k_EFeatureTrading</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureTrading
         FeatureTrading = 6,
-        /// <summary>k_EFeatureSettings</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureSettings
         FeatureSettings = 7,
-        /// <summary>k_EFeatureConsole</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureConsole
         FeatureConsole = 8,
-        /// <summary>k_EFeatureBrowser</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureBrowser
         FeatureBrowser = 9,
-        /// <summary>k_EFeatureParentalSetup</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureParentalSetup
         FeatureParentalSetup = 10,
-        /// <summary>k_EFeatureLibrary</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureLibrary
         FeatureLibrary = 11,
-        /// <summary>k_EFeatureTest</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureTest
         FeatureTest = 12,
-        /// <summary>k_EFeatureSiteLicense</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureSiteLicense
         FeatureSiteLicense = 13,
-        /// <summary>k_EFeatureKioskMode_Deprecated</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureKioskMode_Deprecated
         FeatureKioskMode_Deprecated = 14,
-        /// <summary>k_EFeatureMax</summary>
+        /// missing documentation for EParentalFeature.k_EFeatureMax
         FeatureMax = 15
     }
 }

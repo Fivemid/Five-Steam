@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamIPType</summary>
+    /// missing documentation for ESteamIPType
     public enum SteamIPType : int
     {
-        /// <summary>k_ESteamIPTypeIPv4</summary>
+        /// missing documentation for ESteamIPType.k_ESteamIPTypeIPv4
         IPv4 = 0,
-        /// <summary>k_ESteamIPTypeIPv6</summary>
+        /// missing documentation for ESteamIPType.k_ESteamIPTypeIPv6
         IPv6 = 1
     }
 }

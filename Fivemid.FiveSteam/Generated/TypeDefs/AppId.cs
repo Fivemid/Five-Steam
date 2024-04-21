@@ -3,7 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>AppId_t</summary>
+    /// <summary>
+    ///             Unique identifier for an app. For more information see the
+    ///             <a href="https://partner.steamgames.com/doc/store/application" class="bb_doclink">Applications</a>
+    ///             documentation.
+    ///         </summary>
     public unsafe struct AppId
     {
         public uint value;

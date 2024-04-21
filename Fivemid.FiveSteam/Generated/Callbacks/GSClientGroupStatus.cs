@@ -3,17 +3,31 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GSClientGroupStatus_t</summary>
+    /// <summary>
+    /// Called when we have received the group status of a user.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#RequestUserGroupStatus" class="bb_apilink">ISteamGameServer::RequestUserGroupStatus</a>
+    /// </summary>
     public unsafe struct GSClientGroupStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientGroupStatus;
-        /// <summary>CSteamID m_SteamIDUser</summary>
+        /// <summary>The user whose group status we queried.</summary>
         public SteamId SteamIDUser;
-        /// <summary>CSteamID m_SteamIDGroup</summary>
+        /// <summary>The group that we queried.</summary>
         public SteamId SteamIDGroup;
-        /// <summary>bool m_bMember</summary>
+        /// <summary>
+        ///             Is the user a member of the group (<b>true</b>) or not
+        ///             (<b>false</b>)?
+        ///         </summary>
         public bool bMember;
-        /// <summary>bool m_bOfficer</summary>
+        /// <summary>
+        ///             Is the user an officer in the group (<b>true</b>) or not
+        ///             (<b>false</b>)? This will never be true if
+        ///             <code class="bb_code bb_code_inline nohighlight">m_bMember</code> is false.
+        ///         </summary>
         public bool bOfficer;
     }
 }

@@ -131,7 +131,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EFriendRelationship" class="bb_apilink">EFriendRelationship</a><br />
         /// How the users know each other.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the other user.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the other user.</param>
         public static FriendRelationship GetFriendRelationship(SteamId steamIDFriend) => Instance.GetFriendRelationship(steamIDFriend);
         /// <summary>
         /// <code>EPersonaState GetFriendPersonaState( CSteamID steamIDFriend );</code>
@@ -149,7 +151,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EPersonaState" class="bb_apilink">EPersonaState</a><br />
         /// The friend state of the specified user. (Online, Offline, In-Game, etc)
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the other user.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the other user.</param>
         public static PersonaState GetFriendPersonaState(SteamId steamIDFriend) => Instance.GetFriendPersonaState(steamIDFriend);
         /// <summary>
         /// <code>const char * GetFriendPersonaName( CSteamID steamIDFriend );</code>
@@ -174,7 +178,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Returns an empty string (""), or "[unknown]" if the Steam ID is invalid or not known to the caller.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the other user.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the other user.</param>
         public static UTF8StringPtr GetFriendPersonaName(SteamId steamIDFriend) => Instance.GetFriendPersonaName(steamIDFriend);
         /// <summary>
         /// <code>
@@ -187,9 +193,13 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// <b>true</b> if the user is a friend and is in a game; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the other user.</param>
-        /// <param name="pFriendGameInfo">FriendGameInfo_t
-        ///             *: Fills in the details if the user is in a game.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the other user.</param>
+        /// <param name="pFriendGameInfo">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#FriendGameInfo_t" class="bb_apilink">FriendGameInfo_t</a>
+        ///             *
+        ///         : Fills in the details if the user is in a game.</param>
         public static bool GetFriendGamePlayed(SteamId steamIDFriend, FriendGameInfo* pFriendGameInfo) => Instance.GetFriendGamePlayed(steamIDFriend, pFriendGameInfo);
         /// <summary>
         /// <code>
@@ -205,7 +215,9 @@ namespace Fivemid.FiveSteam
         /// The players old persona name at the given index. Returns an empty string when there are no further
         /// items in the history.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the other user.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the other user.</param>
         /// <param name="iPersonaName">int: 
         ///             The index of the history to receive. <b>0</b> is their current persona name,
         ///             <b>1</b> is their most recent before they changed it, etc.
@@ -229,7 +241,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">m_nChangeFlags</code> including
         /// <code class="bb_code bb_code_inline nohighlight">k_EPersonaChangeSteamLevel</code>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the user.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user.</param>
         public static int GetFriendSteamLevel(SteamId steamIDFriend) => Instance.GetFriendSteamLevel(steamIDFriend);
         /// <summary>
         /// <code>const char * GetPlayerNickname( CSteamID steamIDPlayer );</code>
@@ -240,7 +254,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> const char *<br />
         /// <b>NULL</b> if the no nickname has been set for that user.
         /// </summary>
-        /// <param name="steamIDPlayer">CSteamID: The Steam ID of the user.</param>
+        /// <param name="steamIDPlayer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user.</param>
         public static UTF8StringPtr GetPlayerNickname(SteamId steamIDPlayer) => Instance.GetPlayerNickname(steamIDPlayer);
         /// <summary>
         /// <code>int GetFriendsGroupCount();</code>
@@ -304,7 +320,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendsGroupCount" class="bb_apilink">ISteamFriends::GetFriendsGroupCount</a>
         /// </summary>
-        /// <param name="friendsGroupID">FriendsGroupID_t: The friends group ID to get the name of.</param>
+        /// <param name="friendsGroupID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#FriendsGroupID_t" class="bb_apilink">FriendsGroupID_t</a>
+        ///         : The friends group ID to get the name of.</param>
         public static UTF8StringPtr GetFriendsGroupName(FriendsGroupID friendsGroupID) => Instance.GetFriendsGroupName(friendsGroupID);
         /// <summary>
         /// <code>int GetFriendsGroupMembersCount( FriendsGroupID_t friendsGroupID );</code>
@@ -321,7 +339,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendsGroupCount" class="bb_apilink">ISteamFriends::GetFriendsGroupCount</a>
         /// </summary>
-        /// <param name="friendsGroupID">FriendsGroupID_t: The friends group ID to get the number of friends in.</param>
+        /// <param name="friendsGroupID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#FriendsGroupID_t" class="bb_apilink">FriendsGroupID_t</a>
+        ///         : The friends group ID to get the number of friends in.</param>
         public static int GetFriendsGroupMembersCount(FriendsGroupID friendsGroupID) => Instance.GetFriendsGroupMembersCount(friendsGroupID);
         /// <summary>
         /// <code>
@@ -343,9 +363,13 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendsGroupCount" class="bb_apilink">ISteamFriends::GetFriendsGroupCount</a>
         /// </summary>
-        /// <param name="friendsGroupID">FriendsGroupID_t: The friends group ID to get the members list of.</param>
-        /// <param name="pOutSteamIDMembers">CSteamID
-        ///             *: Returns the Steam IDs of the friends by setting them in this array.</param>
+        /// <param name="friendsGroupID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#FriendsGroupID_t" class="bb_apilink">FriendsGroupID_t</a>
+        ///         : The friends group ID to get the members list of.</param>
+        /// <param name="pOutSteamIDMembers">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : Returns the Steam IDs of the friends by setting them in this array.</param>
         /// <param name="nMembersCount">int: 
         ///             This should match the number of elements allocated
         ///             <code class="bb_code bb_code_inline nohighlight">pOutSteamIDMembers</code> and the value
@@ -365,7 +389,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">iFriendFlags</code>; otherwise,
         /// <b>false</b>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam user to check the friend status of.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam user to check the friend status of.</param>
         /// <param name="iFriendFlags">int: 
         ///             A combined union (binary "or") of one or more
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EFriendFlags" class="bb_apilink">EFriendFlags</a>.
@@ -430,7 +456,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#DownloadClanActivityCounts" class="bb_apilink">ISteamFriends::DownloadClanActivityCounts</a>
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the name of.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the name of.</param>
         public static UTF8StringPtr GetClanName(SteamId steamIDClan) => Instance.GetClanName(steamIDClan);
         /// <summary>
         /// <code>const char * GetClanTag( CSteamID steamIDClan );</code>
@@ -449,7 +477,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#DownloadClanActivityCounts" class="bb_apilink">ISteamFriends::DownloadClanActivityCounts</a>
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the tag of.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the tag of.</param>
         public static UTF8StringPtr GetClanTag(SteamId steamIDClan) => Instance.GetClanTag(steamIDClan);
         /// <summary>
         /// <code>
@@ -469,7 +499,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the provided Steam ID is invalid or the local client does not have info
         /// about the Steam group and sets all the other parameters to <b>0</b>.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the activity of.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the activity of.</param>
         /// <param name="pnOnline">int *: Returns the number of members that are online.</param>
         /// <param name="pnInGame">int *: 
         ///             Returns the number members that are in game (excluding those with their status set to
@@ -496,8 +528,10 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#DownloadClanActivityCountsResult_t" class="bb_apilink">DownloadClanActivityCountsResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="psteamIDClans">CSteamID
-        ///             *: A list of steam groups to get the updated data for.</param>
+        /// <param name="psteamIDClans">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : A list of steam groups to get the updated data for.</param>
         /// <param name="cClansToRequest">int: 
         ///             This MUST be the number of groups in
         ///             <code class="bb_code bb_code_inline nohighlight">psteamIDClans</code>.
@@ -523,7 +557,9 @@ namespace Fivemid.FiveSteam
         /// <b>0</b> if the Steam ID provided is invalid or if the local user doesn't have the data
         /// available.
         /// </summary>
-        /// <param name="steamIDSource">CSteamID: The Steam group, chat room, lobby or game server to get the user count of.</param>
+        /// <param name="steamIDSource">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group, chat room, lobby or game server to get the user count of.</param>
         public static int GetFriendCountFromSource(SteamId steamIDSource) => Instance.GetFriendCountFromSource(steamIDSource);
         /// <summary>
         /// <code>
@@ -543,7 +579,9 @@ namespace Fivemid.FiveSteam
         /// Invalid indices return
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNil" class="bb_apilink">k_steamIDNil</a>.
         /// </summary>
-        /// <param name="steamIDSource">CSteamID: 
+        /// <param name="steamIDSource">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This MUST be the same source used in the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendCountFromSource" class="bb_apilink">ISteamFriends::GetFriendCountFromSource</a>!
         ///         </param>
@@ -564,8 +602,12 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">steamIDSource</code>; otherwise,
         /// <b>false</b>.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The user to check if they are in the source.</param>
-        /// <param name="steamIDSource">CSteamID: The source to check for the user.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user to check if they are in the source.</param>
+        /// <param name="steamIDSource">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The source to check for the user.</param>
         public static bool IsUserInSource(SteamId steamIDUser, SteamId steamIDSource) => Instance.IsUserInSource(steamIDUser, steamIDSource);
         /// <summary>
         /// <code>void SetInGameVoiceSpeaking( CSteamID steamIDUser, bool bSpeaking );</code>
@@ -575,7 +617,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// This will suppress the microphone for all voice communication in the Steam UI.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: Unused.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : Unused.</param>
         /// <param name="bSpeaking">bool: 
         ///             Did the user start speaking in game (<b>true</b>) or stopped speaking in game
         ///             (<b>false</b>)?
@@ -646,7 +690,9 @@ namespace Fivemid.FiveSteam
         /// </ul>
         /// </summary>
         /// <param name="pchDialog">const char *: The dialog to open.</param>
-        /// <param name="steamID">CSteamID: The Steam ID of the context to open this dialog to.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the context to open this dialog to.</param>
         public static void ActivateGameOverlayToUser(UTF8StringPtr pchDialog, SteamId steamID) => Instance.ActivateGameOverlayToUser(pchDialog, steamID);
         /// <summary>
         /// <code>void ActivateGameOverlayToWebPage( const char *pchURL );</code>
@@ -660,7 +706,9 @@ namespace Fivemid.FiveSteam
         ///             The webpage to open. (A fully qualified address with the protocol is required, e.g.
         ///             <a href="http://%22http://www.steampowered.com%22)" target="_blank" rel="noreferrer">"http://www.steampowered.com")</a>
         ///         </param>
-        /// <param name="eMode">EActivateGameOverlayToWebPageMode: 
+        /// <param name="eMode">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EActivateGameOverlayToWebPageMode" class="bb_apilink">EActivateGameOverlayToWebPageMode</a>
+        ///         : 
         ///             Mode for the web page. Defaults to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#k_EActivateGameOverlayToWebPageMode_Default" class="bb_apilink">k_EActivateGameOverlayToWebPageMode_Default</a>
         ///         </param>
@@ -679,8 +727,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAppIdInvalid" class="bb_apilink">k_uAppIdInvalid</a>
         /// brings the user to the front page of the Steam store.
         /// </summary>
-        /// <param name="nAppID">AppId_t: The app ID to show the store page of.</param>
-        /// <param name="eFlag">EOverlayToStoreFlag: Flags to modify the behavior when the page opens.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app ID to show the store page of.</param>
+        /// <param name="eFlag">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EOverlayToStoreFlag" class="bb_apilink">EOverlayToStoreFlag</a>
+        ///         : Flags to modify the behavior when the page opens.</param>
         public static void ActivateGameOverlayToStore(AppId nAppID, OverlayToStoreFlag eFlag) => Instance.ActivateGameOverlayToStore(nAppID, eFlag);
         /// <summary>
         /// <code>void SetPlayedWith( CSteamID steamIDUserPlayedWith );</code>
@@ -696,7 +748,9 @@ namespace Fivemid.FiveSteam
         /// the Steam community and in the
         /// <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a>.
         /// </summary>
-        /// <param name="steamIDUserPlayedWith">CSteamID: The other user that we have played with.</param>
+        /// <param name="steamIDUserPlayedWith">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The other user that we have played with.</param>
         public static void SetPlayedWith(SteamId steamIDUserPlayedWith) => Instance.SetPlayedWith(steamIDUserPlayedWith);
         /// <summary>
         /// <code>void ActivateGameOverlayInviteDialog( CSteamID steamIDLobby );</code>
@@ -706,7 +760,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a>
         /// to open the invite dialog. Invitations sent from this dialog will be for the provided lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby that selected users will be invited to.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby that selected users will be invited to.</param>
         public static void ActivateGameOverlayInviteDialog(SteamId steamIDLobby) => Instance.ActivateGameOverlayInviteDialog(steamIDLobby);
         /// <summary>
         /// <code>int GetSmallFriendAvatar( CSteamID steamIDFriend );</code>
@@ -736,7 +792,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetLargeFriendAvatar" class="bb_apilink">ISteamFriends::GetLargeFriendAvatar</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetMediumFriendAvatar" class="bb_apilink">ISteamFriends::GetMediumFriendAvatar</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: </param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
         public static int GetSmallFriendAvatar(SteamId steamIDFriend) => Instance.GetSmallFriendAvatar(steamIDFriend);
         /// <summary>
         /// <code>int GetMediumFriendAvatar( CSteamID steamIDFriend );</code>
@@ -766,7 +824,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetLargeFriendAvatar" class="bb_apilink">ISteamFriends::GetLargeFriendAvatar</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetSmallFriendAvatar" class="bb_apilink">ISteamFriends::GetSmallFriendAvatar</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: </param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
         public static int GetMediumFriendAvatar(SteamId steamIDFriend) => Instance.GetMediumFriendAvatar(steamIDFriend);
         /// <summary>
         /// <code>int GetLargeFriendAvatar( CSteamID steamIDFriend );</code>
@@ -803,7 +863,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetMediumFriendAvatar" class="bb_apilink">ISteamFriends::GetMediumFriendAvatar</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetSmallFriendAvatar" class="bb_apilink">ISteamFriends::GetSmallFriendAvatar</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: </param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
         public static int GetLargeFriendAvatar(SteamId steamIDFriend) => Instance.GetLargeFriendAvatar(steamIDFriend);
         /// <summary>
         /// <code>
@@ -826,7 +888,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> means that we already have all the details about that user, and functions
         /// that require this information can be used immediately.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The user to request the information of.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user to request the information of.</param>
         /// <param name="bRequireNameOnly">bool: 
         ///             Retrieve the Persona name only (<b>true</b>)? Or both the name and the avatar
         ///             (<b>false</b>)?
@@ -882,7 +946,9 @@ namespace Fivemid.FiveSteam
         ///     officerSteamID.ConvertToUint64() ); } }
         /// </code>
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the officers list for.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the officers list for.</param>
         public static SteamAPICall RequestClanOfficerList(SteamId steamIDClan) => Instance.RequestClanOfficerList(steamIDClan);
         /// <summary>
         /// <code>CSteamID GetClanOwner( CSteamID steamIDClan );</code>
@@ -902,7 +968,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestClanOfficerList" class="bb_apilink">ISteamFriends::RequestClanOfficerList</a>
         /// has not been called for it.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the Steam group to get the owner for.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group to get the owner for.</param>
         public static SteamId GetClanOwner(SteamId steamIDClan) => Instance.GetClanOwner(steamIDClan);
         /// <summary>
         /// <code>int GetClanOfficerCount( CSteamID steamIDClan );</code>
@@ -926,7 +994,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestClanOfficerList" class="bb_apilink">ISteamFriends::RequestClanOfficerList</a>
         /// has not been called for it.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the officer count of.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the officer count of.</param>
         public static int GetClanOfficerCount(SteamId steamIDClan) => Instance.GetClanOfficerCount(steamIDClan);
         /// <summary>
         /// <code>CSteamID GetClanOfficerByIndex( CSteamID steamIDClan, int iOfficer );</code>
@@ -944,7 +1014,9 @@ namespace Fivemid.FiveSteam
         /// if <code class="bb_code bb_code_inline nohighlight">steamIDClan</code> or
         /// <code class="bb_code bb_code_inline nohighlight">iOfficer</code> are invalid.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: 
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This must be the same steam group used in the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetClanOfficerCount" class="bb_apilink">ISteamFriends::GetClanOfficerCount</a>!
         ///         </param>
@@ -1079,7 +1151,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestFriendRichPresence" class="bb_apilink">ISteamFriends::RequestFriendRichPresence</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetRichPresence" class="bb_apilink">ISteamFriends::SetRichPresence</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The friend to get the Rich Presence value for.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The friend to get the Rich Presence value for.</param>
         /// <param name="pchKey">const char *: The Rich Presence key to request.</param>
         public static UTF8StringPtr GetFriendRichPresence(SteamId steamIDFriend, UTF8StringPtr pchKey) => Instance.GetFriendRichPresence(steamIDFriend, pchKey);
         /// <summary>
@@ -1097,7 +1171,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> int<br />
         /// Returns <b>0</b> if there is no Rich Presence information for the specified user.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the user to get the Rich Presence Key Count of.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the Rich Presence Key Count of.</param>
         public static int GetFriendRichPresenceKeyCount(SteamId steamIDFriend) => Instance.GetFriendRichPresenceKeyCount(steamIDFriend);
         /// <summary>
         /// <code>
@@ -1111,7 +1187,9 @@ namespace Fivemid.FiveSteam
         /// Returns an empty string ("") if the index is invalid or the specified user has no Rich Presence data
         /// available.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: 
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This should be the same user provided to the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendRichPresenceKeyCount" class="bb_apilink">ISteamFriends::GetFriendRichPresenceKeyCount</a>!
         ///         </param>
@@ -1142,7 +1220,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendRichPresence" class="bb_apilink">ISteamFriends::GetFriendRichPresence</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetRichPresence" class="bb_apilink">ISteamFriends::SetRichPresence</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the user to request the rich presence of.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to request the rich presence of.</param>
         public static void RequestFriendRichPresence(SteamId steamIDFriend) => Instance.RequestFriendRichPresence(steamIDFriend);
         /// <summary>
         /// <code>
@@ -1183,7 +1263,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#InviteUserToLobby" class="bb_apilink">ISteamMatchmaking::InviteUserToLobby</a>
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the friend to invite.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the friend to invite.</param>
         /// <param name="pchConnectString">const char *: 
         ///             A string that lets the friend know how to join the game (I.E. the game server IP). This
         ///             can not be longer than specified in
@@ -1246,7 +1328,9 @@ namespace Fivemid.FiveSteam
         /// The time is provided in Unix epoch format (seconds since Jan 1st 1970).<br />
         /// Steam IDs not in the recently-played-with list return <b>0</b>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the user on the recently-played-with list to get the timestamp for.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user on the recently-played-with list to get the timestamp for.</param>
         public static int GetFriendCoplayTime(SteamId steamIDFriend) => Instance.GetFriendCoplayTime(steamIDFriend);
         /// <summary>
         /// <code>AppId_t GetFriendCoplayGame( CSteamID steamIDFriend );</code>
@@ -1259,7 +1343,9 @@ namespace Fivemid.FiveSteam
         /// Steam IDs not in the recently-played-with list return
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAppIdInvalid" class="bb_apilink">k_uAppIdInvalid</a>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the user on the recently-played-with list to get the game played.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user on the recently-played-with list to get the game played.</param>
         public static AppId GetFriendCoplayGame(SteamId steamIDFriend) => Instance.GetFriendCoplayGame(steamIDFriend);
         /// <summary>
         /// <code>SteamAPICall_t JoinClanChatRoom( CSteamID steamIDClan );</code>
@@ -1309,7 +1395,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsClanChatAdmin" class="bb_apilink">ISteamFriends::IsClanChatAdmin</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsClanChatWindowOpenInSteam" class="bb_apilink">ISteamFriends::IsClanChatWindowOpenInSteam</a>
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the Steam group to join.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group to join.</param>
         public static SteamAPICall JoinClanChatRoom(SteamId steamIDClan) => Instance.JoinClanChatRoom(steamIDClan);
         /// <summary>
         /// <code>bool LeaveClanChatRoom( CSteamID steamIDClan );</code>
@@ -1324,7 +1412,9 @@ namespace Fivemid.FiveSteam
         /// callback.<br />
         /// <b>true</b> if user is in the specified chat room, otherwise <b>false</b>.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the Steam group chat to leave.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat to leave.</param>
         public static bool LeaveClanChatRoom(SteamId steamIDClan) => Instance.LeaveClanChatRoom(steamIDClan);
         /// <summary>
         /// <code>int GetClanChatMemberCount( CSteamID steamIDClan );</code>
@@ -1345,7 +1435,9 @@ namespace Fivemid.FiveSteam
         /// <b>0</b> if the Steam ID provided is invalid or if the local user doesn't have the data
         /// available.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam group to get the chat count of.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam group to get the chat count of.</param>
         public static int GetClanChatMemberCount(SteamId steamIDClan) => Instance.GetClanChatMemberCount(steamIDClan);
         /// <summary>
         /// <code>CSteamID GetChatMemberByIndex( CSteamID steamIDClan, int iUser );</code>
@@ -1362,7 +1454,9 @@ namespace Fivemid.FiveSteam
         /// Invalid indices return
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNil" class="bb_apilink">k_steamIDNil</a>.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: 
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This MUST be the same source used in the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetClanChatMemberCount" class="bb_apilink">ISteamFriends::GetClanChatMemberCount</a>!
         ///         </param>
@@ -1393,7 +1487,9 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the group chat to send the message to.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the group chat to send the message to.</param>
         /// <param name="pchText">const char *: The UTF-8 formatted message to send. This can be up to 2048 characters long.</param>
         public static bool SendClanChatMessage(SteamId steamIDClanChat, UTF8StringPtr pchText) => Instance.SendClanChatMessage(steamIDClanChat, pchText);
         /// <summary>
@@ -1418,7 +1514,9 @@ namespace Fivemid.FiveSteam
         /// if the current user is not in the specified Steam group chat room or if the index provided in
         /// <code class="bb_code bb_code_inline nohighlight">iMessage</code> is invalid.
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the Steam group chat room.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat room.</param>
         /// <param name="iMessage">int: 
         ///             The index of the message. This should be the
         ///             <code class="bb_code bb_code_inline nohighlight">m_iMessageID</code> field of
@@ -1429,10 +1527,14 @@ namespace Fivemid.FiveSteam
         ///             2048 UTF-8 characters. So 8192 bytes + 1 for '\0')
         ///         </param>
         /// <param name="cchTextMax">int: The size of <code class="bb_code bb_code_inline nohighlight">prgchText</code>.</param>
-        /// <param name="peChatEntryType">EChatEntryType
-        ///             *: Returns the type of chat entry that was received.</param>
-        /// <param name="psteamidChatter">CSteamID
-        ///             *: Returns the Steam ID of the user that sent the message.</param>
+        /// <param name="peChatEntryType">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#EChatEntryType" class="bb_apilink">EChatEntryType</a>
+        ///             *
+        ///         : Returns the type of chat entry that was received.</param>
+        /// <param name="psteamidChatter">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : Returns the Steam ID of the user that sent the message.</param>
         public static int GetClanChatMessage(SteamId steamIDClanChat, int iMessage, void* prgchText, int cchTextMax, ChatEntryType* peChatEntryType, SteamId* psteamidChatter) => Instance.GetClanChatMessage(steamIDClanChat, iMessage, prgchText, cchTextMax, peChatEntryType, psteamidChatter);
         /// <summary>
         /// <code>
@@ -1447,8 +1549,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the user is not an admin, if the current user is not in the chat room
         /// specified, or the specified user is not in the chat room.
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the Steam group chat room.</param>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to check the admin status of.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat room.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to check the admin status of.</param>
         public static bool IsClanChatAdmin(SteamId steamIDClanChat, SteamId steamIDUser) => Instance.IsClanChatAdmin(steamIDClanChat, steamIDUser);
         /// <summary>
         /// <code>bool IsClanChatWindowOpenInSteam( CSteamID steamIDClanChat );</code>
@@ -1465,7 +1571,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#OpenClanChatWindowInSteam" class="bb_apilink">ISteamFriends::OpenClanChatWindowInSteam</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#CloseClanChatWindowInSteam" class="bb_apilink">ISteamFriends::CloseClanChatWindowInSteam</a>
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the Steam group chat room to check.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat room to check.</param>
         public static bool IsClanChatWindowOpenInSteam(SteamId steamIDClanChat) => Instance.IsClanChatWindowOpenInSteam(steamIDClanChat);
         /// <summary>
         /// <code>bool OpenClanChatWindowInSteam( CSteamID steamIDClanChat );</code>
@@ -1489,7 +1597,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsClanChatWindowOpenInSteam" class="bb_apilink">ISteamFriends::IsClanChatWindowOpenInSteam</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#CloseClanChatWindowInSteam" class="bb_apilink">ISteamFriends::CloseClanChatWindowInSteam</a>
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the Steam group chat room to open.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat room to open.</param>
         public static bool OpenClanChatWindowInSteam(SteamId steamIDClanChat) => Instance.OpenClanChatWindowInSteam(steamIDClanChat);
         /// <summary>
         /// <code>bool CloseClanChatWindowInSteam( CSteamID steamIDClanChat );</code>
@@ -1505,7 +1615,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsClanChatWindowOpenInSteam" class="bb_apilink">ISteamFriends::IsClanChatWindowOpenInSteam</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#OpenClanChatWindowInSteam" class="bb_apilink">ISteamFriends::OpenClanChatWindowInSteam</a>
         /// </summary>
-        /// <param name="steamIDClanChat">CSteamID: The Steam ID of the Steam group chat room to close.</param>
+        /// <param name="steamIDClanChat">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group chat room to close.</param>
         public static bool CloseClanChatWindowInSteam(SteamId steamIDClanChat) => Instance.CloseClanChatWindowInSteam(steamIDClanChat);
         /// <summary>
         /// <code>bool SetListenForFriendsMessages( bool bInterceptEnabled );</code>
@@ -1545,7 +1657,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the message was successfully sent.<br />
         /// <b>false</b> if the current user is rate limited or chat restricted.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the friend to send the message to.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the friend to send the message to.</param>
         /// <param name="pchMsgToSend">const char *: The UTF-8 formatted message to send.</param>
         public static bool ReplyToFriendMessage(SteamId steamIDFriend, UTF8StringPtr pchMsgToSend) => Instance.ReplyToFriendMessage(steamIDFriend, pchMsgToSend);
         /// <summary>
@@ -1570,7 +1684,9 @@ namespace Fivemid.FiveSteam
         /// if the current user is chat restricted, if the provided Steam ID is not a friend, or if the index
         /// provided in <code class="bb_code bb_code_inline nohighlight">iMessageID</code> is invalid.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the friend that sent this message.</param>
+        /// <param name="steamIDFriend">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the friend that sent this message.</param>
         /// <param name="iMessageID">int: 
         ///             The index of the message. This should be the
         ///             <code class="bb_code bb_code_inline nohighlight">m_iMessageID</code> field of
@@ -1578,8 +1694,10 @@ namespace Fivemid.FiveSteam
         ///         </param>
         /// <param name="pvData">void *: The buffer where the chat message will be copied into.</param>
         /// <param name="cubData">int: The size of <code class="bb_code bb_code_inline nohighlight">pvData</code>.</param>
-        /// <param name="peChatEntryType">EChatEntryType
-        ///             *: Returns the type of chat entry that was received.</param>
+        /// <param name="peChatEntryType">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#EChatEntryType" class="bb_apilink">EChatEntryType</a>
+        ///             *
+        ///         : Returns the type of chat entry that was received.</param>
         public static int GetFriendMessage(SteamId steamIDFriend, int iMessageID, void* pvData, int cubData, ChatEntryType* peChatEntryType) => Instance.GetFriendMessage(steamIDFriend, iMessageID, pvData, cubData, peChatEntryType);
         /// <summary>
         /// <code>SteamAPICall_t GetFollowerCount( CSteamID steamID );</code>
@@ -1611,7 +1729,9 @@ namespace Fivemid.FiveSteam
         ///     printf( "Got a FriendsGetFollowerCount_t, we have %d followers.\n", pCallback-&gt;m_nCount ); }
         /// </code>
         /// </summary>
-        /// <param name="steamID">CSteamID: The user to get the follower count for.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user to get the follower count for.</param>
         public static SteamAPICall GetFollowerCount(SteamId steamID) => Instance.GetFollowerCount(steamID);
         /// <summary>
         /// <code>SteamAPICall_t IsFollowing( CSteamID steamID );</code>
@@ -1650,7 +1770,9 @@ namespace Fivemid.FiveSteam
         ///     m_iFriendIndex++; CheckWhichFriendsWeAreFollowing(); }
         /// </code>
         /// </summary>
-        /// <param name="steamID">CSteamID: The Steam ID of the check if we are following.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the check if we are following.</param>
         public static SteamAPICall IsFollowing(SteamId steamID) => Instance.IsFollowing(steamID);
         /// <summary>
         /// <code>SteamAPICall_t EnumerateFollowingList( uint32 unStartIndex );</code>
@@ -1703,7 +1825,9 @@ namespace Fivemid.FiveSteam
         ///     this, &amp;CEnumerateFollowingListExample::OnFriendsEnumerateFollowingList ); } }
         /// </code>
         /// </summary>
-        /// <param name="unStartIndex">uint32: The index to start receiving followers from. This should be 0 on the initial call.</param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index to start receiving followers from. This should be 0 on the initial call.</param>
         public static SteamAPICall EnumerateFollowingList(uint unStartIndex) => Instance.EnumerateFollowingList(unStartIndex);
         /// <summary>
         /// <code>bool IsClanPublic( CSteamID steamIDClan );</code>
@@ -1715,7 +1839,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the specified group is public<br />
         /// <b>false</b> if the specified group is not public
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the Steam group.</param>
+        /// <param name="steamIDClan ">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group.</param>
         public static bool IsClanPublic(SteamId steamIDClan) => Instance.IsClanPublic(steamIDClan);
         /// <summary>
         /// <code>bool IsClanOfficialGameGroup( CSteamID steamIDClan );</code>
@@ -1727,7 +1853,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the specified group is an official game group/community hub<br />
         /// <b>false</b> if the specified group is not an official game group/community hub
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the Steam group.</param>
+        /// <param name="steamIDClan ">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the Steam group.</param>
         public static bool IsClanOfficialGameGroup(SteamId steamIDClan) => Instance.IsClanOfficialGameGroup(steamIDClan);
         /// missing documentation
         public static int GetNumChatsWithUnreadPriorityMessages() => Instance.GetNumChatsWithUnreadPriorityMessages();
@@ -1749,7 +1877,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EquippedProfileItems_t" class="bb_apilink">EquippedProfileItems_t</a>
         /// call result.
         /// </summary>
-        /// <param name="steamID">CSteamID: The user that you want to retrieve equipped items for.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user that you want to retrieve equipped items for.</param>
         public static SteamAPICall RequestEquippedProfileItems(SteamId steamID) => Instance.RequestEquippedProfileItems(steamID);
         /// <summary>
         /// <code>
@@ -1769,8 +1899,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyString" class="bb_apilink">ISteamFriends::GetProfileItemPropertyString</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyUint" class="bb_apilink">ISteamFriends::GetProfileItemPropertyUint</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The user that you had already retrieved equipped items for</param>
-        /// <param name="itemType">ECommunityProfileItemType: Type of item you want to see is equipped or not</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user that you had already retrieved equipped items for</param>
+        /// <param name="itemType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ECommunityProfileItemType" class="bb_apilink">ECommunityProfileItemType</a>
+        ///         : Type of item you want to see is equipped or not</param>
         public static bool BHasEquippedProfileItem(SteamId steamID, CommunityProfileItemType itemType) => Instance.BHasEquippedProfileItem(steamID, itemType);
         /// <summary>
         /// <code>
@@ -1787,9 +1921,15 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestEquippedProfileItems" class="bb_apilink">ISteamFriends::RequestEquippedProfileItems</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyUint" class="bb_apilink">ISteamFriends::GetProfileItemPropertyUint</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The user that you had already retrieved equipped items for</param>
-        /// <param name="itemType">ECommunityProfileItemType: Type of item you are retrieving the property for</param>
-        /// <param name="prop">ECommunityProfileItemProperty: The string property you want to retrieve</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user that you had already retrieved equipped items for</param>
+        /// <param name="itemType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ECommunityProfileItemType" class="bb_apilink">ECommunityProfileItemType</a>
+        ///         : Type of item you are retrieving the property for</param>
+        /// <param name="prop">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ECommunityProfileItemProperty" class="bb_apilink">ECommunityProfileItemProperty</a>
+        ///         : The string property you want to retrieve</param>
         public static UTF8StringPtr GetProfileItemPropertyString(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop) => Instance.GetProfileItemPropertyString(steamID, itemType, prop);
         /// <summary>
         /// <code>
@@ -1806,9 +1946,15 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestEquippedProfileItems" class="bb_apilink">ISteamFriends::RequestEquippedProfileItems</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyString" class="bb_apilink">ISteamFriends::GetProfileItemPropertyString</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The user that you had already retrieved equipped items for</param>
-        /// <param name="itemType">ECommunityProfileItemType: Type of item you are retrieving the property for</param>
-        /// <param name="prop">ECommunityProfileItemProperty: The unsigned integer property you want to retrieve</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user that you had already retrieved equipped items for</param>
+        /// <param name="itemType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ECommunityProfileItemType" class="bb_apilink">ECommunityProfileItemType</a>
+        ///         : Type of item you are retrieving the property for</param>
+        /// <param name="prop">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ECommunityProfileItemProperty" class="bb_apilink">ECommunityProfileItemProperty</a>
+        ///         : The unsigned integer property you want to retrieve</param>
         public static uint GetProfileItemPropertyUint(SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop) => Instance.GetProfileItemPropertyUint(steamID, itemType, prop);
     }
 }

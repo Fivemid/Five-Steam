@@ -3,13 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>UserStatsStored_t</summary>
+    /// <summary>
+    /// Result of a request to store the user stats.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#StoreStats" class="bb_apilink">ISteamUserStats::StoreStats</a>,
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#IndicateAchievementProgress" class="bb_apilink">ISteamUserStats::IndicateAchievementProgress</a>
+    /// </summary>
     public unsafe struct UserStatsStored : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserStatsStored;
-        /// <summary>uint64 m_nGameID</summary>
+        /// <summary>Game ID that these stats are for.</summary>
         public ulong nGameID;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>Returns whether the call was successful or not.</summary>
         public Result eResult;
     }
 }

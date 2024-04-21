@@ -3,13 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RequestPlayersForGameProgressCallback_t</summary>
+    /// missing documentation for RequestPlayersForGameProgressCallback_t
     public unsafe struct RequestPlayersForGameProgressCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RequestPlayersForGameProgressCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for RequestPlayersForGameProgressCallback_t.m_eResult
         public Result eResult;
-        /// <summary>uint64 m_ullSearchID</summary>
+        /// missing documentation for RequestPlayersForGameProgressCallback_t.m_ullSearchID
         public ulong ullSearchID;
     }
 }

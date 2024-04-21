@@ -49,15 +49,21 @@ namespace Fivemid.FiveSteam
         ///     <li>There are too many bytes queued up to be sent.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDRemote">CSteamID: The target user to send the packet to.</param>
+        /// <param name="steamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The target user to send the packet to.</param>
         /// <param name="pubData">const void *: 
         ///             The raw byte array for the packet data to send. The maximum size of this packet is
         ///             defined by <code class="bb_code bb_code_inline nohighlight">eP2PSendType</code>.
         ///         </param>
-        /// <param name="cubData">uint32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size in bytes of <code class="bb_code bb_code_inline nohighlight">pubData</code>.
         ///         </param>
-        /// <param name="eP2PSendType">EP2PSend: 
+        /// <param name="eP2PSendType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#EP2PSend" class="bb_apilink">EP2PSend</a>
+        ///         : 
         ///             Specifies how you want the data to be transmitted, such as reliably, unreliable,
         ///             buffered, etc.
         ///         </param>
@@ -86,8 +92,10 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// <b>true</b> if there is a packet available; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: Returns the size of the packet.</param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the size of the packet.</param>
         /// <param name="nChannel">int: The channel to check if a packet is available in.</param>
         public static bool IsP2PPacketAvailable(uint* pcubMsgSize, int nChannel) => Instance.IsP2PPacketAvailable(pcubMsgSize, nChannel);
         /// <summary>
@@ -122,15 +130,21 @@ namespace Fivemid.FiveSteam
         /// </code>
         /// </summary>
         /// <param name="pubDest">void *: Returns the packet data by copying it into this buffer.</param>
-        /// <param name="cubDest">uint32: 
+        /// <param name="cubDest">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size allocated for <code class="bb_code bb_code_inline nohighlight">pubDest</code>.
         ///             This should be either the same size returned by
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#IsP2PPacketAvailable" class="bb_apilink">ISteamNetworking::IsP2PPacketAvailable</a>, or the size of your largest packet.
         ///         </param>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: Returns the size of the packet.</param>
-        /// <param name="psteamIDRemote">CSteamID
-        ///             *: Returns the Steam ID of the user that sent this packet.</param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the size of the packet.</param>
+        /// <param name="psteamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : Returns the Steam ID of the user that sent this packet.</param>
         /// <param name="nChannel">int: The channel the packet was sent over.</param>
         public static bool ReadP2PPacket(void* pubDest, uint cubDest, uint* pcubMsgSize, SteamId* psteamIDRemote, int nChannel) => Instance.ReadP2PPacket(pubDest, cubDest, pcubMsgSize, psteamIDRemote, nChannel);
         /// <summary>
@@ -160,7 +174,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> upon success; <b>false</b> only if
         /// <code class="bb_code bb_code_inline nohighlight">steamIDRemote</code> is invalid.
         /// </summary>
-        /// <param name="steamIDRemote">CSteamID: The Steam ID of the user that sent the initial packet to us.</param>
+        /// <param name="steamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user that sent the initial packet to us.</param>
         public static bool AcceptP2PSessionWithUser(SteamId steamIDRemote) => Instance.AcceptP2PSessionWithUser(steamIDRemote);
         /// <summary>
         /// <code>bool CloseP2PSessionWithUser( CSteamID steamIDRemote );</code>
@@ -177,7 +193,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the session was successfully closed; otherwise, <b>false</b> if
         /// no connection was open with <code class="bb_code bb_code_inline nohighlight">steamIDRemote</code>.
         /// </summary>
-        /// <param name="steamIDRemote">CSteamID: The Steam ID of the user to close the connection with.</param>
+        /// <param name="steamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to close the connection with.</param>
         public static bool CloseP2PSessionWithUser(SteamId steamIDRemote) => Instance.CloseP2PSessionWithUser(steamIDRemote);
         /// <summary>
         /// <code>bool CloseP2PChannelWithUser( CSteamID steamIDRemote, int nChannel );</code>
@@ -194,7 +212,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the channel was successfully closed; otherwise, <b>false</b> if
         /// there was no active session or channel with the user.
         /// </summary>
-        /// <param name="steamIDRemote">CSteamID: The Steam ID of the user to close the connection with.</param>
+        /// <param name="steamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to close the connection with.</param>
         /// <param name="nChannel">int: The channel to close.</param>
         public static bool CloseP2PChannelWithUser(SteamId steamIDRemote, int nChannel) => Instance.CloseP2PChannelWithUser(steamIDRemote, nChannel);
         /// <summary>
@@ -222,9 +242,13 @@ namespace Fivemid.FiveSteam
         ///     &amp;p2pSessionState );
         /// </code>
         /// </summary>
-        /// <param name="steamIDRemote">CSteamID: The user to get the active session state information of.</param>
-        /// <param name="pConnectionState">P2PSessionState_t
-        ///             *: Returns the state.</param>
+        /// <param name="steamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user to get the active session state information of.</param>
+        /// <param name="pConnectionState">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#P2PSessionState_t" class="bb_apilink">P2PSessionState_t</a>
+        ///             *
+        ///         : Returns the state.</param>
         public static bool GetP2PSessionState(SteamId steamIDRemote, P2PSessionState* pConnectionState) => Instance.GetP2PSessionState(steamIDRemote, pConnectionState);
         /// <summary>
         /// <code>bool AllowP2PPacketRelay( bool bAllow );</code>
@@ -272,8 +296,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetListenSocket_t" class="bb_apilink">SNetListenSocket_t</a>
         /// </summary>
         /// <param name="nVirtualP2PPort">int: </param>
-        /// <param name="nIP">uint32: </param>
-        /// <param name="nPort">uint16: </param>
+        /// <param name="nIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="nPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : </param>
         /// <param name="bAllowUseOfPacketRelay">bool: </param>
         public static SNetListenSocket CreateListenSocket(int nVirtualP2PPort, SteamIPAddress nIP, ushort nPort, bool bAllowUseOfPacketRelay) => Instance.CreateListenSocket(nVirtualP2PPort, nIP, nPort, bAllowUseOfPacketRelay);
         /// <summary>
@@ -297,7 +325,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
         /// </summary>
-        /// <param name="steamIDTarget">CSteamID: </param>
+        /// <param name="steamIDTarget">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
         /// <param name="nVirtualPort">int: </param>
         /// <param name="nTimeoutSec">int: </param>
         /// <param name="bAllowUseOfPacketRelay">bool: </param>
@@ -317,8 +347,12 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
         /// </summary>
-        /// <param name="nIP">uint32: </param>
-        /// <param name="nPort">uint16: </param>
+        /// <param name="nIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="nPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : </param>
         /// <param name="nTimeoutSec">int: </param>
         public static SNetSocket CreateConnectionSocket(SteamIPAddress nIP, ushort nPort, int nTimeoutSec) => Instance.CreateConnectionSocket(nIP, nPort, nTimeoutSec);
         /// <summary>
@@ -337,7 +371,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
         /// <param name="bNotifyRemoteEnd">bool: </param>
         public static bool DestroySocket(SNetSocket hSocket, bool bNotifyRemoteEnd) => Instance.DestroySocket(hSocket, bNotifyRemoteEnd);
         /// <summary>
@@ -354,7 +390,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetListenSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetListenSocket_t" class="bb_apilink">SNetListenSocket_t</a>
+        ///         : </param>
         /// <param name="bNotifyRemoteEnd">bool: </param>
         public static bool DestroyListenSocket(SNetListenSocket hSocket, bool bNotifyRemoteEnd) => Instance.DestroyListenSocket(hSocket, bNotifyRemoteEnd);
         /// <summary>
@@ -372,9 +410,13 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
         /// <param name="pubData">void *: </param>
-        /// <param name="cubData">uint32: </param>
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         /// <param name="bReliable">bool: </param>
         public static bool SendDataOnSocket(SNetSocket hSocket, void* pubData, uint cubData, bool bReliable) => Instance.SendDataOnSocket(hSocket, pubData, cubData, bReliable);
         /// <summary>
@@ -393,9 +435,13 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
         public static bool IsDataAvailableOnSocket(SNetSocket hSocket, uint* pcubMsgSize) => Instance.IsDataAvailableOnSocket(hSocket, pcubMsgSize);
         /// <summary>
         /// <code>
@@ -416,11 +462,17 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
         /// <param name="pubDest">void *: </param>
-        /// <param name="cubDest">uint32: </param>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: </param>
+        /// <param name="cubDest">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
         public static bool RetrieveDataFromSocket(SNetSocket hSocket, void* pubDest, uint cubDest, uint* pcubMsgSize) => Instance.RetrieveDataFromSocket(hSocket, pubDest, cubDest, pcubMsgSize);
         /// <summary>
         /// <code>
@@ -441,11 +493,17 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hListenSocket">SNetListenSocket_t: </param>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: </param>
-        /// <param name="phSocket">SNetSocket_t
-        ///             *: </param>
+        /// <param name="hListenSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetListenSocket_t" class="bb_apilink">SNetListenSocket_t</a>
+        ///         : </param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="phSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///             *
+        ///         : </param>
         public static bool IsDataAvailable(SNetListenSocket hListenSocket, uint* pcubMsgSize, SNetSocket* phSocket) => Instance.IsDataAvailable(hListenSocket, pcubMsgSize, phSocket);
         /// <summary>
         /// <code>
@@ -468,13 +526,21 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hListenSocket">SNetListenSocket_t: </param>
+        /// <param name="hListenSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetListenSocket_t" class="bb_apilink">SNetListenSocket_t</a>
+        ///         : </param>
         /// <param name="pubDest">void *: </param>
-        /// <param name="cubDest">uint32: </param>
-        /// <param name="pcubMsgSize">uint32
-        ///             *: </param>
-        /// <param name="phSocket">SNetSocket_t
-        ///             *: </param>
+        /// <param name="cubDest">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="pcubMsgSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="phSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///             *
+        ///         : </param>
         public static bool RetrieveData(SNetListenSocket hListenSocket, void* pubDest, uint cubDest, uint* pcubMsgSize, SNetSocket* phSocket) => Instance.RetrieveData(hListenSocket, pubDest, cubDest, pcubMsgSize, phSocket);
         /// <summary>
         /// <code>
@@ -491,14 +557,22 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
-        /// <param name="pSteamIDRemote">CSteamID
-        ///             *: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
+        /// <param name="pSteamIDRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : </param>
         /// <param name="peSocketStatus">int *: </param>
-        /// <param name="punIPRemote">uint32
-        ///             *: </param>
-        /// <param name="punPortRemote">uint16
-        ///             *: </param>
+        /// <param name="punIPRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="punPortRemote">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : </param>
         public static bool GetSocketInfo(SNetSocket hSocket, SteamId* pSteamIDRemote, int* peSocketStatus, SteamIPAddress* punIPRemote, ushort* punPortRemote) => Instance.GetSocketInfo(hSocket, pSteamIDRemote, peSocketStatus, punIPRemote, punPortRemote);
         /// <summary>
         /// <code>
@@ -516,11 +590,17 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hListenSocket">SNetListenSocket_t: </param>
-        /// <param name="pnIP">uint32
-        ///             *: </param>
-        /// <param name="pnPort">uint16
-        ///             *: </param>
+        /// <param name="hListenSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetListenSocket_t" class="bb_apilink">SNetListenSocket_t</a>
+        ///         : </param>
+        /// <param name="pnIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="pnPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : </param>
         public static bool GetListenSocketInfo(SNetListenSocket hListenSocket, SteamIPAddress* pnIP, ushort* pnPort) => Instance.GetListenSocketInfo(hListenSocket, pnIP, pnPort);
         /// <summary>
         /// <code>
@@ -537,7 +617,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#ESNetSocketConnectionType" class="bb_apilink">ESNetSocketConnectionType</a>
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
         public static SNetSocketConnectionType GetSocketConnectionType(SNetSocket hSocket) => Instance.GetSocketConnectionType(hSocket);
         /// <summary>
         /// <code>int GetMaxPacketSize( SNetSocket_t hSocket );</code>
@@ -551,7 +633,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> int
         /// </summary>
-        /// <param name="hSocket">SNetSocket_t: </param>
+        /// <param name="hSocket">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SNetSocket_t" class="bb_apilink">SNetSocket_t</a>
+        ///         : </param>
         public static int GetMaxPacketSize(SNetSocket hSocket) => Instance.GetMaxPacketSize(hSocket);
     }
 }

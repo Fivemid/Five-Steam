@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamUtils</summary>
+    /// <summary>
+    /// Interface which provides access to a range of miscellaneous utility functions.
+    /// </summary>
     public unsafe interface ISteamUtils
     {
         public uint GetSecondsSinceAppActive();

@@ -3,146 +3,146 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingConfigValue</summary>
+    /// missing documentation for ESteamNetworkingConfigValue
     public enum SteamNetworkingConfigValueType : int
     {
-        /// <summary>k_ESteamNetworkingConfig_Invalid</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Invalid
         SteamNetworkingConfig_Invalid = 0,
-        /// <summary>k_ESteamNetworkingConfig_TimeoutInitial</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_TimeoutInitial
         SteamNetworkingConfig_TimeoutInitial = 24,
-        /// <summary>k_ESteamNetworkingConfig_TimeoutConnected</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_TimeoutConnected
         SteamNetworkingConfig_TimeoutConnected = 25,
-        /// <summary>k_ESteamNetworkingConfig_SendBufferSize</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SendBufferSize
         SteamNetworkingConfig_SendBufferSize = 9,
-        /// <summary>k_ESteamNetworkingConfig_RecvBufferSize</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_RecvBufferSize
         SteamNetworkingConfig_RecvBufferSize = 47,
-        /// <summary>k_ESteamNetworkingConfig_RecvBufferMessages</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_RecvBufferMessages
         SteamNetworkingConfig_RecvBufferMessages = 48,
-        /// <summary>k_ESteamNetworkingConfig_RecvMaxMessageSize</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_RecvMaxMessageSize
         SteamNetworkingConfig_RecvMaxMessageSize = 49,
-        /// <summary>k_ESteamNetworkingConfig_RecvMaxSegmentsPerPacket</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_RecvMaxSegmentsPerPacket
         SteamNetworkingConfig_RecvMaxSegmentsPerPacket = 50,
-        /// <summary>k_ESteamNetworkingConfig_ConnectionUserData</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_ConnectionUserData
         SteamNetworkingConfig_ConnectionUserData = 40,
-        /// <summary>k_ESteamNetworkingConfig_SendRateMin</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SendRateMin
         SteamNetworkingConfig_SendRateMin = 10,
-        /// <summary>k_ESteamNetworkingConfig_SendRateMax</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SendRateMax
         SteamNetworkingConfig_SendRateMax = 11,
-        /// <summary>k_ESteamNetworkingConfig_NagleTime</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_NagleTime
         SteamNetworkingConfig_NagleTime = 12,
-        /// <summary>k_ESteamNetworkingConfig_IP_AllowWithoutAuth</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_IP_AllowWithoutAuth
         SteamNetworkingConfig_IP_AllowWithoutAuth = 23,
-        /// <summary>k_ESteamNetworkingConfig_MTU_PacketSize</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_MTU_PacketSize
         SteamNetworkingConfig_MTU_PacketSize = 32,
-        /// <summary>k_ESteamNetworkingConfig_MTU_DataSize</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_MTU_DataSize
         SteamNetworkingConfig_MTU_DataSize = 33,
-        /// <summary>k_ESteamNetworkingConfig_Unencrypted</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Unencrypted
         SteamNetworkingConfig_Unencrypted = 34,
-        /// <summary>k_ESteamNetworkingConfig_SymmetricConnect</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SymmetricConnect
         SteamNetworkingConfig_SymmetricConnect = 37,
-        /// <summary>k_ESteamNetworkingConfig_LocalVirtualPort</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LocalVirtualPort
         SteamNetworkingConfig_LocalVirtualPort = 38,
-        /// <summary>k_ESteamNetworkingConfig_DualWifi_Enable</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_DualWifi_Enable
         SteamNetworkingConfig_DualWifi_Enable = 39,
-        /// <summary>k_ESteamNetworkingConfig_EnableDiagnosticsUI</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_EnableDiagnosticsUI
         SteamNetworkingConfig_EnableDiagnosticsUI = 46,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketLoss_Send</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketLoss_Send
         SteamNetworkingConfig_FakePacketLoss_Send = 2,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketLoss_Recv</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketLoss_Recv
         SteamNetworkingConfig_FakePacketLoss_Recv = 3,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketLag_Send</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketLag_Send
         SteamNetworkingConfig_FakePacketLag_Send = 4,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketLag_Recv</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketLag_Recv
         SteamNetworkingConfig_FakePacketLag_Recv = 5,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketReorder_Send</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketReorder_Send
         SteamNetworkingConfig_FakePacketReorder_Send = 6,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketReorder_Recv</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketReorder_Recv
         SteamNetworkingConfig_FakePacketReorder_Recv = 7,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketReorder_Time</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketReorder_Time
         SteamNetworkingConfig_FakePacketReorder_Time = 8,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketDup_Send</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketDup_Send
         SteamNetworkingConfig_FakePacketDup_Send = 26,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketDup_Recv</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketDup_Recv
         SteamNetworkingConfig_FakePacketDup_Recv = 27,
-        /// <summary>k_ESteamNetworkingConfig_FakePacketDup_TimeMax</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakePacketDup_TimeMax
         SteamNetworkingConfig_FakePacketDup_TimeMax = 28,
-        /// <summary>k_ESteamNetworkingConfig_PacketTraceMaxBytes</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_PacketTraceMaxBytes
         SteamNetworkingConfig_PacketTraceMaxBytes = 41,
-        /// <summary>k_ESteamNetworkingConfig_FakeRateLimit_Send_Rate</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakeRateLimit_Send_Rate
         SteamNetworkingConfig_FakeRateLimit_Send_Rate = 42,
-        /// <summary>k_ESteamNetworkingConfig_FakeRateLimit_Send_Burst</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakeRateLimit_Send_Burst
         SteamNetworkingConfig_FakeRateLimit_Send_Burst = 43,
-        /// <summary>k_ESteamNetworkingConfig_FakeRateLimit_Recv_Rate</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakeRateLimit_Recv_Rate
         SteamNetworkingConfig_FakeRateLimit_Recv_Rate = 44,
-        /// <summary>k_ESteamNetworkingConfig_FakeRateLimit_Recv_Burst</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_FakeRateLimit_Recv_Burst
         SteamNetworkingConfig_FakeRateLimit_Recv_Burst = 45,
-        /// <summary>k_ESteamNetworkingConfig_OutOfOrderCorrectionWindowMicroseconds</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_OutOfOrderCorrectionWindowMicroseconds
         SteamNetworkingConfig_OutOfOrderCorrectionWindowMicroseconds = 51,
-        /// <summary>k_ESteamNetworkingConfig_Callback_ConnectionStatusChanged</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_ConnectionStatusChanged
         SteamNetworkingConfig_Callback_ConnectionStatusChanged = 201,
-        /// <summary>k_ESteamNetworkingConfig_Callback_AuthStatusChanged</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_AuthStatusChanged
         SteamNetworkingConfig_Callback_AuthStatusChanged = 202,
-        /// <summary>k_ESteamNetworkingConfig_Callback_RelayNetworkStatusChanged</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_RelayNetworkStatusChanged
         SteamNetworkingConfig_Callback_RelayNetworkStatusChanged = 203,
-        /// <summary>k_ESteamNetworkingConfig_Callback_MessagesSessionRequest</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_MessagesSessionRequest
         SteamNetworkingConfig_Callback_MessagesSessionRequest = 204,
-        /// <summary>k_ESteamNetworkingConfig_Callback_MessagesSessionFailed</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_MessagesSessionFailed
         SteamNetworkingConfig_Callback_MessagesSessionFailed = 205,
-        /// <summary>k_ESteamNetworkingConfig_Callback_CreateConnectionSignaling</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_CreateConnectionSignaling
         SteamNetworkingConfig_Callback_CreateConnectionSignaling = 206,
-        /// <summary>k_ESteamNetworkingConfig_Callback_FakeIPResult</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_Callback_FakeIPResult
         SteamNetworkingConfig_Callback_FakeIPResult = 207,
-        /// <summary>k_ESteamNetworkingConfig_P2P_STUN_ServerList</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_STUN_ServerList
         SteamNetworkingConfig_P2P_STUN_ServerList = 103,
-        /// <summary>k_ESteamNetworkingConfig_P2P_Transport_ICE_Enable</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_Transport_ICE_Enable
         SteamNetworkingConfig_P2P_Transport_ICE_Enable = 104,
-        /// <summary>k_ESteamNetworkingConfig_P2P_Transport_ICE_Penalty</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_Transport_ICE_Penalty
         SteamNetworkingConfig_P2P_Transport_ICE_Penalty = 105,
-        /// <summary>k_ESteamNetworkingConfig_P2P_Transport_SDR_Penalty</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_Transport_SDR_Penalty
         SteamNetworkingConfig_P2P_Transport_SDR_Penalty = 106,
-        /// <summary>k_ESteamNetworkingConfig_P2P_TURN_ServerList</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_TURN_ServerList
         SteamNetworkingConfig_P2P_TURN_ServerList = 107,
-        /// <summary>k_ESteamNetworkingConfig_P2P_TURN_UserList</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_TURN_UserList
         SteamNetworkingConfig_P2P_TURN_UserList = 108,
-        /// <summary>k_ESteamNetworkingConfig_P2P_TURN_PassList</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_TURN_PassList
         SteamNetworkingConfig_P2P_TURN_PassList = 109,
-        /// <summary>k_ESteamNetworkingConfig_P2P_Transport_ICE_Implementation</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_P2P_Transport_ICE_Implementation
         SteamNetworkingConfig_P2P_Transport_ICE_Implementation = 110,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFailInitial</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFailInitial
         SteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFailInitial = 19,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFail</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFail
         SteamNetworkingConfig_SDRClient_ConsecutitivePingTimeoutsFail = 20,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_MinPingsBeforePingAccurate</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_MinPingsBeforePingAccurate
         SteamNetworkingConfig_SDRClient_MinPingsBeforePingAccurate = 21,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_SingleSocket</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_SingleSocket
         SteamNetworkingConfig_SDRClient_SingleSocket = 22,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_ForceRelayCluster</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_ForceRelayCluster
         SteamNetworkingConfig_SDRClient_ForceRelayCluster = 29,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_DevTicket</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_DevTicket
         SteamNetworkingConfig_SDRClient_DevTicket = 30,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_ForceProxyAddr</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_ForceProxyAddr
         SteamNetworkingConfig_SDRClient_ForceProxyAddr = 31,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_FakeClusterPing</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_FakeClusterPing
         SteamNetworkingConfig_SDRClient_FakeClusterPing = 36,
-        /// <summary>k_ESteamNetworkingConfig_SDRClient_LimitPingProbesToNearestN</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_SDRClient_LimitPingProbesToNearestN
         SteamNetworkingConfig_SDRClient_LimitPingProbesToNearestN = 60,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_AckRTT</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_AckRTT
         SteamNetworkingConfig_LogLevel_AckRTT = 13,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_PacketDecode</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_PacketDecode
         SteamNetworkingConfig_LogLevel_PacketDecode = 14,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_Message</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_Message
         SteamNetworkingConfig_LogLevel_Message = 15,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_PacketGaps</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_PacketGaps
         SteamNetworkingConfig_LogLevel_PacketGaps = 16,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_P2PRendezvous</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_P2PRendezvous
         SteamNetworkingConfig_LogLevel_P2PRendezvous = 17,
-        /// <summary>k_ESteamNetworkingConfig_LogLevel_SDRRelayPings</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_LogLevel_SDRRelayPings
         SteamNetworkingConfig_LogLevel_SDRRelayPings = 18,
-        /// <summary>k_ESteamNetworkingConfig_ECN</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_ECN
         SteamNetworkingConfig_ECN = 999,
-        /// <summary>k_ESteamNetworkingConfig_DELETED_EnumerateDevVars</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfig_DELETED_EnumerateDevVars
         SteamNetworkingConfig_DELETED_EnumerateDevVars = 35,
-        /// <summary>k_ESteamNetworkingConfigValue__Force32Bit</summary>
+        /// missing documentation for ESteamNetworkingConfigValue.k_ESteamNetworkingConfigValue__Force32Bit
         SteamNetworkingConfigValue__Force32Bit = 2147483647
     }
 }

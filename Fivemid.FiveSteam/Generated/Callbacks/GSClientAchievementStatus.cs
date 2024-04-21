@@ -3,15 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GSClientAchievementStatus_t</summary>
+    /// <summary>
+    /// Deprecated - Use
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats" class="bb_apilink">ISteamGameServerStats</a>
+    /// instead.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct GSClientAchievementStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientAchievementStatus;
-        /// <summary>uint64 m_SteamID</summary>
+        /// <summary>Deprecated</summary>
         public ulong SteamID;
-        /// <summary>char [128] m_pchAchievement</summary>
+        /// <summary>Deprecated</summary>
         public UTF8String128 pchAchievement;
-        /// <summary>bool m_bUnlocked</summary>
+        /// <summary>Deprecated</summary>
         public bool bUnlocked;
     }
 }

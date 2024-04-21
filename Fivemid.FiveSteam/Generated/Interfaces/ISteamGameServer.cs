@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamGameServer</summary>
+    /// <summary>
+    /// Provides the core of the Steam Game Servers API.
+    /// </summary>
     public unsafe interface ISteamGameServer
     {
         public void SetProduct(UTF8StringPtr pszProduct);

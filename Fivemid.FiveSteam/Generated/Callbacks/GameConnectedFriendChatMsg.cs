@@ -3,13 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GameConnectedFriendChatMsg_t</summary>
+    /// <summary>
+    /// Called when chat message has been received from a friend.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetListenForFriendsMessages" class="bb_apilink">ISteamFriends::SetListenForFriendsMessages</a>
+    /// </summary>
     public unsafe struct GameConnectedFriendChatMsg : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameConnectedFriendChatMsg;
-        /// <summary>CSteamID m_steamIDUser</summary>
+        /// <summary>The Steam ID of the friend that sent the message.</summary>
         public SteamId steamIDUser;
-        /// <summary>int m_iMessageID</summary>
+        /// <summary>
+        ///             The index of the message to get the actual data from with
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendMessage" class="bb_apilink">ISteamFriends::GetFriendMessage</a>.
+        ///         </summary>
         public int iMessageID;
     }
 }

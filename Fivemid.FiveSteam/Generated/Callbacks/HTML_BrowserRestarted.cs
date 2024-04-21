@@ -3,13 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTML_BrowserRestarted_t</summary>
+    /// missing documentation for HTML_BrowserRestarted_t
     public unsafe struct HTML_BrowserRestarted : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_BrowserRestarted;
-        /// <summary>HHTMLBrowser unBrowserHandle</summary>
+        /// missing documentation for HTML_BrowserRestarted_t.unBrowserHandle
         public HHTMLBrowser unBrowserHandle;
-        /// <summary>HHTMLBrowser unOldBrowserHandle</summary>
+        /// missing documentation for HTML_BrowserRestarted_t.unOldBrowserHandle
         public HHTMLBrowser unOldBrowserHandle;
     }
 }

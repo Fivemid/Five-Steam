@@ -3,28 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingConnectionState</summary>
+    /// missing documentation for ESteamNetworkingConnectionState
     public enum SteamNetworkingConnectionState : int
     {
-        /// <summary>k_ESteamNetworkingConnectionState_None</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_None
         None = 0,
-        /// <summary>k_ESteamNetworkingConnectionState_Connecting</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_Connecting
         Connecting = 1,
-        /// <summary>k_ESteamNetworkingConnectionState_FindingRoute</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_FindingRoute
         FindingRoute = 2,
-        /// <summary>k_ESteamNetworkingConnectionState_Connected</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_Connected
         Connected = 3,
-        /// <summary>k_ESteamNetworkingConnectionState_ClosedByPeer</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_ClosedByPeer
         ClosedByPeer = 4,
-        /// <summary>k_ESteamNetworkingConnectionState_ProblemDetectedLocally</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_ProblemDetectedLocally
         ProblemDetectedLocally = 5,
-        /// <summary>k_ESteamNetworkingConnectionState_FinWait</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_FinWait
         FinWait = -1,
-        /// <summary>k_ESteamNetworkingConnectionState_Linger</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_Linger
         Linger = -2,
-        /// <summary>k_ESteamNetworkingConnectionState_Dead</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_Dead
         Dead = -3,
-        /// <summary>k_ESteamNetworkingConnectionState__Force32Bit</summary>
+        /// missing documentation for ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState__Force32Bit
         _Force32Bit = 2147483647
     }
 }

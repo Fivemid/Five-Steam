@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>DepotId_t</summary>
+    /// <summary>Unique identifier for a depot.</summary>
     public unsafe struct DepotId
     {
         public uint value;

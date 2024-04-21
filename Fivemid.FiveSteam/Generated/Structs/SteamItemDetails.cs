@@ -3,16 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamItemDetails_t</summary>
+    /// <summary>
+    /// <br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct SteamItemDetails
     {
-        /// <summary>SteamItemInstanceID_t m_itemId</summary>
+        /// <summary>The globally unique item instance handle.</summary>
         public SteamItemInstanceID itemId;
-        /// <summary>SteamItemDef_t m_iDefinition</summary>
+        /// <summary>The item definition number for this item.</summary>
         public SteamItemDef iDefinition;
-        /// <summary>uint16 m_unQuantity</summary>
+        /// <summary>The current quantity of the item.</summary>
         public ushort unQuantity;
-        /// <summary>uint16 m_unFlags</summary>
+        /// <summary>
+        ///             This is a bitmasked collection of
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#ESteamItemFlags" class="bb_apilink">ESteamItemFlags</a>.
+        ///         </summary>
         public ushort unFlags;
     }
 }

@@ -3,18 +3,24 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FriendGameInfo_t</summary>
+    /// <summary>
+    /// Information about the game a friend is playing.<br />
+    /// Obtainable from:
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendGamePlayed" class="bb_apilink">ISteamFriends::GetFriendGamePlayed</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct FriendGameInfo
     {
-        /// <summary>CGameID m_gameID</summary>
+        /// <summary>The game ID that the friend is playing.</summary>
         public GameId gameID;
-        /// <summary>uint32 m_unGameIP</summary>
+        /// <summary>The IP of the server the friend is playing on.</summary>
         public uint unGameIP;
-        /// <summary>uint16 m_usGamePort</summary>
+        /// <summary>The port of the server the friend is playing on.</summary>
         public ushort usGamePort;
-        /// <summary>uint16 m_usQueryPort</summary>
+        /// <summary>The query port of the server the friend is playing on.</summary>
         public ushort usQueryPort;
-        /// <summary>CSteamID m_steamIDLobby</summary>
+        /// <summary>The Steam ID of the lobby the friend is in.</summary>
         public SteamId steamIDLobby;
     }
 }

@@ -3,51 +3,58 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageGetPublishedFileDetailsResult_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetPublishedFileDetails" class="bb_apilink">ISteamRemoteStorage::GetPublishedFileDetails</a>
+    /// </summary>
     public unsafe struct RemoteStorageGetPublishedFileDetailsResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageGetPublishedFileDetailsResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>PublishedFileId_t m_nPublishedFileId</summary>
+        /// <summary></summary>
         public PublishedFileId nPublishedFileId;
-        /// <summary>AppId_t m_nCreatorAppID</summary>
+        /// <summary>ID of the app that created this file.</summary>
         public AppId nCreatorAppID;
-        /// <summary>AppId_t m_nConsumerAppID</summary>
+        /// <summary>ID of the app that will consume this file.</summary>
         public AppId nConsumerAppID;
-        /// <summary>char [129] m_rgchTitle</summary>
+        /// <summary>title of document</summary>
         public UTF8String129 rgchTitle;
-        /// <summary>char [8000] m_rgchDescription</summary>
+        /// <summary>description of document</summary>
         public UTF8String8000 rgchDescription;
-        /// <summary>UGCHandle_t m_hFile</summary>
+        /// <summary>The handle of the primary file</summary>
         public UGCHandle hFile;
-        /// <summary>UGCHandle_t m_hPreviewFile</summary>
+        /// <summary>The handle of the preview file</summary>
         public UGCHandle hPreviewFile;
-        /// <summary>uint64 m_ulSteamIDOwner</summary>
+        /// <summary>Steam ID of the user who created this content.</summary>
         public ulong ulSteamIDOwner;
-        /// <summary>uint32 m_rtimeCreated</summary>
+        /// <summary>time when the published file was created</summary>
         public uint rtimeCreated;
-        /// <summary>uint32 m_rtimeUpdated</summary>
+        /// <summary>time when the published file was last updated</summary>
         public uint rtimeUpdated;
-        /// <summary>ERemoteStoragePublishedFileVisibility m_eVisibility</summary>
+        /// <summary></summary>
         public RemoteStoragePublishedFileVisibility eVisibility;
-        /// <summary>bool m_bBanned</summary>
+        /// <summary></summary>
         public bool bBanned;
-        /// <summary>char [1025] m_rgchTags</summary>
+        /// <summary>comma separated list of all tags associated with this file</summary>
         public UTF8String1025 rgchTags;
-        /// <summary>bool m_bTagsTruncated</summary>
+        /// <summary>whether the list of tags was too long to be returned in the provided buffer</summary>
         public bool bTagsTruncated;
-        /// <summary>char [260] m_pchFileName</summary>
+        /// <summary>The name of the primary file</summary>
         public UTF8String260 pchFileName;
-        /// <summary>int32 m_nFileSize</summary>
+        /// <summary>Size of the primary file</summary>
         public int nFileSize;
-        /// <summary>int32 m_nPreviewFileSize</summary>
+        /// <summary>Size of the preview file</summary>
         public int nPreviewFileSize;
-        /// <summary>char [256] m_rgchURL</summary>
+        /// <summary>URL (for a video or a website)</summary>
         public UTF8String256 rgchURL;
-        /// <summary>EWorkshopFileType m_eFileType</summary>
+        /// <summary>Type of the file</summary>
         public WorkshopFileType eFileType;
-        /// <summary>bool m_bAcceptedForUse</summary>
+        /// <summary>developer has specifically flagged this item as accepted in the Workshop</summary>
         public bool bAcceptedForUse;
     }
 }

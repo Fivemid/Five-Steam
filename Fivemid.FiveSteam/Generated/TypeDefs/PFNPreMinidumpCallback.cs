@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>PFNPreMinidumpCallback</summary>
+    /// missing documentation for PFNPreMinidumpCallback
     public unsafe struct PFNPreMinidumpCallback
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.void_Ptr> value;

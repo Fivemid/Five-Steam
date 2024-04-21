@@ -3,7 +3,73 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamNetworkingSockets</summary>
+    /// <summary>
+    /// Networking API similar to Berkeley sockets, but for games.<br />
+    /// <br />
+    /// <ul class="bb_ul">
+    ///     <li>
+    ///         It's a connection-oriented API (like TCP, not UDP). When sending and receiving messages, the
+    ///         peer is identified using a connection handle.<br />
+    ///     </li>
+    ///     <li>
+    ///         But unlike TCP, it's message-oriented, not stream-oriented. (The boundaries between the
+    ///         messages are maintained by the API.)<br />
+    ///     </li>
+    ///     <li>Both reliable and unreliable messages are supported.<br /></li>
+    ///     <li>
+    ///         Large messages are split into multiple packets, small messages are combined into fewer
+    ///         packets.<br />
+    ///     </li>
+    ///     <li>A robust ACK / reassembly / retransmission strategy.<br /></li>
+    ///     <li>
+    ///         Strong encryption and authentication. When a player connects, you can be sure that if a
+    ///         certain SteamID is authenticated, that someone who has access to that person's account has
+    ///         authorized the connection. Eavesdropping / tampering requires hacking into the VAC-secured
+    ///         process. Impersonation requires access to the target's computer.<br />
+    ///     </li>
+    ///     <li>
+    ///         Supports relayed connections through the Valve network. This prevents IP addresses from
+    ///         being revealed, protecting your players and gameservers from attack.<br />
+    ///     </li>
+    ///     <li>Also supports standard connectivity over plain UDP using IPv4 or IPv6.</li>
+    /// </ul>
+    /// <br />
+    /// Related documents:<br />
+    /// <ul class="bb_ul">
+    ///     <li>
+    ///         <a href="https://partner.steamgames.com/doc/features/multiplayer/networking" class="bb_doclink">Steam Networking</a>
+    ///         overview of the different networking APIs.<br />
+    ///     </li>
+    ///     <li>
+    ///         <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingUtils" class="bb_apilink">ISteamNetworkingUtils</a>
+    ///         Utilities for measuring ping and estimating ping time between peers.<br />
+    ///     </li>
+    ///     <li>
+    ///         <a href="https://partner.steamgames.com/doc/api/steamnetworkingtypes" class="bb_apilink">steamnetworkingtypes</a>
+    ///         Miscellaneous types and utilities.<br />
+    ///     </li>
+    ///     <li>
+    ///         <a href="https://partner.steamgames.com/doc/features/multiplayer/steamdatagramrelay" class="bb_doclink">Steam Datagram Relay</a>
+    ///         A service for relaying your game traffic over the Valve backbone. This prevents IP addresses
+    ///         from being revealed and in many cases improves ping times and connection quality.<br />
+    ///     </li>
+    ///     <li>
+    ///         <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingMessages" class="bb_apilink">ISteamNetworkingMessages</a>
+    ///         is a UDP-style interface. Send and receive messages by specifying the destination peer in
+    ///         each send call, instead of establishing a connection first. The same connections are still
+    ///         used under the hood, so you still get the same performance, but the connections are created
+    ///         and idle timed out for you automatically, and you do not receive quite as much control over
+    ///         the connection, or feedback about its state.
+    ///     </li>
+    /// </ul>
+    /// <br />
+    /// An opensource version of this API is available on
+    /// <a href="https://github.com/ValveSoftware/GameNetworkingSockets" target="_blank" rel="noreferrer">github</a>. You can use it for whatever purpose you want. To use the Valve network you need to be a Steam
+    /// partner and use the version in the Steamworks SDK.<br />
+    /// <br />
+    /// Member functions for ISteamNetworkingSockets are called through the global accessor function
+    /// SteamNetworkingSockets().
+    /// </summary>
     public unsafe interface ISteamNetworkingSockets
     {
         public HSteamListenSocket CreateListenSocketIP(ref SteamNetworkingIPAddr localAddress, int nOptions, SteamNetworkingConfigValue* pOptions);

@@ -30,7 +30,7 @@ public partial class CodeWriter {
                                    VariableDeclaration(field.Type.ToType())
                                       .AddVariables(VariableDeclarator(field.Name.StripPrefix("m_"))))
                               .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                              .WithLeadingTrivia(Comment($"/// <summary>{field.Type} {field.Name}</summary>"))
+                              .WithLeadingTrivia(SimpleDescriptionDocumentation($"{definition.Name}.{field.Name}"))
                    ).ToArray<MemberDeclarationSyntax>()
                )
               .AddMembers((definition.Methods ?? []).Select(
@@ -77,7 +77,7 @@ public partial class CodeWriter {
                                              )
                                          );
                               }).ToArray<MemberDeclarationSyntax>())
-              .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+              .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
     
     private static HashSet<string> excludeFieldType = ["SteamInputActionEvent_t::AnalogAction_t"];

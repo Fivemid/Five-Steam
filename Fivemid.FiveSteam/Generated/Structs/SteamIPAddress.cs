@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamIPAddress_t</summary>
+    /// missing documentation for SteamIPAddress_t
     public unsafe struct SteamIPAddress
     {
-        /// <summary>uint8 [16] m_rgubIPv6</summary>
+        /// missing documentation for SteamIPAddress_t.m_rgubIPv6
         public FixedArray_byte16 rgubIPv6;
-        /// <summary>ESteamIPType m_eType</summary>
+        /// missing documentation for SteamIPAddress_t.m_eType
         public SteamIPType eType;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamIPAddress_t_IsSet", CallingConvention = Platform.CC)]
         internal static extern bool IsSet(SteamIPAddress* self);

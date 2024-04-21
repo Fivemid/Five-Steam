@@ -3,17 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageEnumerateUserSharedWorkshopFilesResult_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct RemoteStorageEnumerateUserSharedWorkshopFilesResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserSharedWorkshopFilesResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>int32 m_nResultsReturned</summary>
+        /// <summary></summary>
         public int nResultsReturned;
-        /// <summary>int32 m_nTotalResultCount</summary>
+        /// <summary></summary>
         public int nTotalResultCount;
-        /// <summary>PublishedFileId_t [50] m_rgPublishedFileId</summary>
+        /// <summary></summary>
         public FixedArray_ulong50 rgPublishedFileId;
     }
 }

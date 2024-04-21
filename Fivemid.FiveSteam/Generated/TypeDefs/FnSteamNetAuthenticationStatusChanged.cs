@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FnSteamNetAuthenticationStatusChanged</summary>
+    /// missing documentation for FnSteamNetAuthenticationStatusChanged
     public unsafe struct FnSteamNetAuthenticationStatusChanged
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamNetAuthenticationStatusPtr> value;

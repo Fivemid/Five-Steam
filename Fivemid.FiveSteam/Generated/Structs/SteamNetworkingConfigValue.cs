@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingConfigValue_t</summary>
+    /// missing documentation for SteamNetworkingConfigValue_t
     public unsafe struct SteamNetworkingConfigValue
     {
-        /// <summary>ESteamNetworkingConfigValue m_eValue</summary>
+        /// missing documentation for SteamNetworkingConfigValue_t.m_eValue
         public SteamNetworkingConfigValueType eValue;
-        /// <summary>ESteamNetworkingConfigDataType m_eDataType</summary>
+        /// missing documentation for SteamNetworkingConfigValue_t.m_eDataType
         public SteamNetworkingConfigDataType eDataType;
-        /// <summary>int64_t m_int64</summary>
+        /// missing documentation for SteamNetworkingConfigValue_t.m_int64
         public long int64;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt32", CallingConvention = Platform.CC)]
         internal static extern void SetInt32(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, int data);

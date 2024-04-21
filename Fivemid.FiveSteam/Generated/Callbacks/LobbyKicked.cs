@@ -3,15 +3,22 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>LobbyKicked_t</summary>
+    /// <summary>
+    /// Currently unused! If you want to implement kicking at this time then do it with a special packet
+    /// sent with
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SendLobbyChatMsg" class="bb_apilink">ISteamMatchmaking::SendLobbyChatMsg</a>, when the user gets the packet they should call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LeaveLobby" class="bb_apilink">ISteamMatchmaking::LeaveLobby</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct LobbyKicked : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyKicked;
-        /// <summary>uint64 m_ulSteamIDLobby</summary>
+        /// <summary></summary>
         public ulong ulSteamIDLobby;
-        /// <summary>uint64 m_ulSteamIDAdmin</summary>
+        /// <summary></summary>
         public ulong ulSteamIDAdmin;
-        /// <summary>uint8 m_bKickedDueToDisconnect</summary>
+        /// <summary></summary>
         public byte bKickedDueToDisconnect;
     }
 }

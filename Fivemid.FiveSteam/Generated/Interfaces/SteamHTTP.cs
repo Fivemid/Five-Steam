@@ -37,7 +37,9 @@ namespace Fivemid.FiveSteam
         /// if <code class="bb_code bb_code_inline nohighlight">pchAbsoluteURL</code> is
         /// <b>NULL</b> or empty ("").
         /// </summary>
-        /// <param name="eHTTPRequestMethod">EHTTPMethod: The type of request to make with this request.</param>
+        /// <param name="eHTTPRequestMethod">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#EHTTPMethod" class="bb_apilink">EHTTPMethod</a>
+        ///         : The type of request to make with this request.</param>
         /// <param name="pchAbsoluteURL">const char *: 
         ///             The url to request. Must start with "<a href="http://%22" target="_blank" rel="noreferrer">http://"</a>
         ///             or "<a href="https://%22" target="_blank" rel="noreferrer">https://"</a>.
@@ -66,8 +68,12 @@ namespace Fivemid.FiveSteam
         ///     <li>The request has already been sent.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the context value on.</param>
-        /// <param name="ulContextValue">uint64: The context value to set.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the context value on.</param>
+        /// <param name="ulContextValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///         : The context value to set.</param>
         public static bool SetHTTPRequestContextValue(HTTPRequestHandle hRequest, ulong ulContextValue) => Instance.SetHTTPRequestContextValue(hRequest, ulContextValue);
         /// <summary>
         /// <code>
@@ -91,8 +97,12 @@ namespace Fivemid.FiveSteam
         ///     <li>The request has already been sent.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the timeout on.</param>
-        /// <param name="unTimeoutSeconds">uint32: The length of the timeout period in seconds.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the timeout on.</param>
+        /// <param name="unTimeoutSeconds">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The length of the timeout period in seconds.</param>
         public static bool SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hRequest, uint unTimeoutSeconds) => Instance.SetHTTPRequestNetworkActivityTimeout(hRequest, unTimeoutSeconds);
         /// <summary>
         /// <code>
@@ -125,7 +135,9 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the header value for.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the header value for.</param>
         /// <param name="pchHeaderName">const char *: The header name field.</param>
         /// <param name="pchHeaderValue">const char *: Value to associate with the header name field.</param>
         public static bool SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, UTF8StringPtr pchHeaderValue) => Instance.SetHTTPRequestHeaderValue(hRequest, pchHeaderName, pchHeaderValue);
@@ -167,7 +179,9 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the parameter on.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the parameter on.</param>
         /// <param name="pchParamName">const char *: Parameter name field.</param>
         /// <param name="pchParamValue">const char *: Value to associate with the name field.</param>
         public static bool SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, UTF8StringPtr pchParamName, UTF8StringPtr pchParamValue) => Instance.SetHTTPRequestGetOrPostParameter(hRequest, pchParamName, pchParamValue);
@@ -208,9 +222,13 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to send.</param>
-        /// <param name="pCallHandle">SteamAPICall_t
-        ///             *: Returns a call result handle to receive the response.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to send.</param>
+        /// <param name="pCallHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///             *
+        ///         : Returns a call result handle to receive the response.</param>
         public static bool SendHTTPRequest(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle) => Instance.SendHTTPRequest(hRequest, pCallHandle);
         /// <summary>
         /// <code>
@@ -261,9 +279,13 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to send.</param>
-        /// <param name="pCallHandle">SteamAPICall_t
-        ///             *: Returns a call result handle to receive the response.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to send.</param>
+        /// <param name="pCallHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///             *
+        ///         : Returns a call result handle to receive the response.</param>
         public static bool SendHTTPRequestAndStreamResponse(HTTPRequestHandle hRequest, SteamAPICall* pCallHandle) => Instance.SendHTTPRequestAndStreamResponse(hRequest, pCallHandle);
         /// <summary>
         /// <code>bool DeferHTTPRequest( HTTPRequestHandle hRequest );</code>
@@ -280,7 +302,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequest" target="_blank" rel="noreferrer">HTTP::SendHTTPRequest</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequestAndStreamResponse" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequestAndStreamResponse" target="_blank" rel="noreferrer">HTTP::SendHTTPRequestAndStreamResponse</a>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to defer.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to defer.</param>
         public static bool DeferHTTPRequest(HTTPRequestHandle hRequest) => Instance.DeferHTTPRequest(hRequest);
         /// <summary>
         /// <code>bool PrioritizeHTTPRequest( HTTPRequestHandle hRequest );</code>
@@ -297,7 +321,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequest" target="_blank" rel="noreferrer">HTTP::SendHTTPRequest</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequestAndStreamResponse" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequestAndStreamResponse" target="_blank" rel="noreferrer">HTTP::SendHTTPRequestAndStreamResponse</a>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to prioritize.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to prioritize.</param>
         public static bool PrioritizeHTTPRequest(HTTPRequestHandle hRequest) => Instance.PrioritizeHTTPRequest(hRequest);
         /// <summary>
         /// <code>
@@ -338,10 +364,14 @@ namespace Fivemid.FiveSteam
         ///     <li>The header name is not present in the response.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to check for the response header name.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to check for the response header name.</param>
         /// <param name="pchHeaderName">const char *: The header name to check.</param>
-        /// <param name="unResponseHeaderSize">uint32
-        ///             *: Returns the size of the response header, if it is present in the response.</param>
+        /// <param name="unResponseHeaderSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the size of the response header, if it is present in the response.</param>
         public static bool GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, UTF8StringPtr pchHeaderName, uint* unResponseHeaderSize) => Instance.GetHTTPResponseHeaderSize(hRequest, pchHeaderName, unResponseHeaderSize);
         /// <summary>
         /// <code>
@@ -385,11 +415,17 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to get the response header value for.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to get the response header value for.</param>
         /// <param name="pchHeaderName">const char *: The header name to get the header value for.</param>
-        /// <param name="pHeaderValueBuffer">uint8
-        ///             *: The buffer where the value will be copied into.</param>
-        /// <param name="unBufferSize">uint32: 
+        /// <param name="pHeaderValueBuffer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///             *
+        ///         : The buffer where the value will be copied into.</param>
+        /// <param name="unBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This should be the size of
         ///             <code class="bb_code bb_code_inline nohighlight">pHeaderValueBuffer</code> in bytes.
         ///         </param>
@@ -424,9 +460,13 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to get the response body size for.</param>
-        /// <param name="unBodySize">uint32
-        ///             *: Returns the size of the response body.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to get the response body size for.</param>
+        /// <param name="unBodySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the size of the response body.</param>
         public static bool GetHTTPResponseBodySize(HTTPRequestHandle hRequest, uint* unBodySize) => Instance.GetHTTPResponseBodySize(hRequest, unBodySize);
         /// <summary>
         /// <code>
@@ -470,10 +510,16 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to get the response body data for.</param>
-        /// <param name="pBodyDataBuffer">uint8
-        ///             *: The buffer where the data will be copied into.</param>
-        /// <param name="unBufferSize">uint32: 
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to get the response body data for.</param>
+        /// <param name="pBodyDataBuffer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///             *
+        ///         : The buffer where the data will be copied into.</param>
+        /// <param name="unBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This should be the size of
         ///             <code class="bb_code bb_code_inline nohighlight">pBodyDataBuffer</code> in bytes.
         ///         </param>
@@ -522,14 +568,22 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to get the response body data for.</param>
-        /// <param name="cOffset">uint32: 
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to get the response body data for.</param>
+        /// <param name="cOffset">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This must be the offset provided by
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestDataReceived_t" class="bb_apilink">HTTPRequestDataReceived_t</a>.
         ///         </param>
-        /// <param name="pBodyDataBuffer">uint8
-        ///             *: Returns the data by copying it into this buffer.</param>
-        /// <param name="unBufferSize">uint32: 
+        /// <param name="pBodyDataBuffer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///             *
+        ///         : Returns the data by copying it into this buffer.</param>
+        /// <param name="unBufferSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             This must be the size provided by
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestDataReceived_t" class="bb_apilink">HTTPRequestDataReceived_t</a>.
         ///         </param>
@@ -547,7 +601,9 @@ namespace Fivemid.FiveSteam
         /// Returns <b>true</b> if the the handle was released successfully,
         /// <b>false</b> only if the handle is invalid.
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to release.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to release.</param>
         public static bool ReleaseHTTPRequest(HTTPRequestHandle hRequest) => Instance.ReleaseHTTPRequest(hRequest);
         /// <summary>
         /// <code>
@@ -566,7 +622,9 @@ namespace Fivemid.FiveSteam
         /// Otherwise, <b>false</b> if the handle is invalid or
         /// <code class="bb_code bb_code_inline nohighlight">pflPercentOut</code> is <b>NULL</b>.
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to get the download percentage for.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to get the download percentage for.</param>
         /// <param name="pflPercentOut">float *: Returns the download percentage if the call was successful.</param>
         public static bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, float* pflPercentOut) => Instance.GetHTTPDownloadProgressPct(hRequest, pflPercentOut);
         /// <summary>
@@ -603,11 +661,17 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the post body on.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the post body on.</param>
         /// <param name="pchContentType">const char *: Sets the value of the calls "content-type" http header.</param>
-        /// <param name="pubBody">uint8
-        ///             *: The raw POST body data to set.</param>
-        /// <param name="unBodyLen">uint32: 
+        /// <param name="pubBody">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///             *
+        ///         : The raw POST body data to set.</param>
+        /// <param name="unBodyLen">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The length of the body data passed into
         ///             <code class="bb_code bb_code_inline nohighlight">pubBody</code>.
         ///         </param>
@@ -656,7 +720,9 @@ namespace Fivemid.FiveSteam
         /// Returns <b>true</b> if the handle has been freed; otherwise, <b>false</b> if the
         /// handle was invalid.
         /// </summary>
-        /// <param name="hCookieContainer">HTTPCookieContainerHandle: The cookie container handle to release.</param>
+        /// <param name="hCookieContainer">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPCookieContainerHandle" class="bb_apilink">HTTPCookieContainerHandle</a>
+        ///         : The cookie container handle to release.</param>
         public static bool ReleaseCookieContainer(HTTPCookieContainerHandle hCookieContainer) => Instance.ReleaseCookieContainer(hCookieContainer);
         /// <summary>
         /// <code>
@@ -672,7 +738,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the request handle was invalid or if there was a security issue parsing
         /// the cookie.
         /// </summary>
-        /// <param name="hCookieContainer">HTTPCookieContainerHandle: The cookie container to set the the cookie in.</param>
+        /// <param name="hCookieContainer">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPCookieContainerHandle" class="bb_apilink">HTTPCookieContainerHandle</a>
+        ///         : The cookie container to set the the cookie in.</param>
         /// <param name="pchHost">const char *: The host to set this cookie for.</param>
         /// <param name="pchUrl">const char *: The url to set this cookie for.</param>
         /// <param name="pchCookie">const char *: The cookie to set.</param>
@@ -694,8 +762,12 @@ namespace Fivemid.FiveSteam
         ///     <li><code class="bb_code bb_code_inline nohighlight">hCookieContainer</code> was invalid.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to associate the cookie container with.</param>
-        /// <param name="hCookieContainer">HTTPCookieContainerHandle: The cookie container handle to associate with the request handle.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to associate the cookie container with.</param>
+        /// <param name="hCookieContainer">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPCookieContainerHandle" class="bb_apilink">HTTPCookieContainerHandle</a>
+        ///         : The cookie container handle to associate with the request handle.</param>
         public static bool SetHTTPRequestCookieContainer(HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer) => Instance.SetHTTPRequestCookieContainer(hRequest, hCookieContainer);
         /// <summary>
         /// <code>
@@ -712,7 +784,9 @@ namespace Fivemid.FiveSteam
         /// Returns <b>true</b> upon success indicating that the user agent has been updated.
         /// Otherwise, <b>false</b> if the request handle is invalid.
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the user agent info for.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the user agent info for.</param>
         /// <param name="pchUserAgentInfo">const char *: The string to append to the end of the user agent.</param>
         public static bool SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, UTF8StringPtr pchUserAgentInfo) => Instance.SetHTTPRequestUserAgentInfo(hRequest, pchUserAgentInfo);
         /// <summary>
@@ -731,7 +805,9 @@ namespace Fivemid.FiveSteam
         /// Returns <b>true</b> upon success. Otherwise, <b>false</b> if the request handle
         /// is invalid.
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set whether the request requires a verified certificate.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set whether the request requires a verified certificate.</param>
         /// <param name="bRequireVerifiedCertificate">bool: Turn on verified certificate?</param>
         public static bool SetHTTPRequestRequiresVerifiedCertificate(HTTPRequestHandle hRequest, bool bRequireVerifiedCertificate) => Instance.SetHTTPRequestRequiresVerifiedCertificate(hRequest, bRequireVerifiedCertificate);
         /// <summary>
@@ -755,8 +831,12 @@ namespace Fivemid.FiveSteam
         ///     <li>The request has already been sent.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to set the timeout on.</param>
-        /// <param name="unMilliseconds">uint32: The length of the timeout period in milliseconds.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to set the timeout on.</param>
+        /// <param name="unMilliseconds">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The length of the timeout period in milliseconds.</param>
         public static bool SetHTTPRequestAbsoluteTimeoutMS(HTTPRequestHandle hRequest, uint unMilliseconds) => Instance.SetHTTPRequestAbsoluteTimeoutMS(hRequest, unMilliseconds);
         /// <summary>
         /// <code>
@@ -780,7 +860,9 @@ namespace Fivemid.FiveSteam
         ///     <li>The request has not been sent or has not completed.</li>
         /// </ul>
         /// </summary>
-        /// <param name="hRequest">HTTPRequestHandle: The request handle to check the failure reason for.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#HTTPRequestHandle" class="bb_apilink">HTTPRequestHandle</a>
+        ///         : The request handle to check the failure reason for.</param>
         /// <param name="pbWasTimedOut">bool *: Returns whether the request was timed out or not.</param>
         public static bool GetHTTPRequestWasTimedOut(HTTPRequestHandle hRequest, bool* pbWasTimedOut) => Instance.GetHTTPRequestWasTimedOut(hRequest, pbWasTimedOut);
     }

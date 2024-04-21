@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HServerQuery</summary>
+    /// <summary>Handle that you will receive when querying details on an individual server.</summary>
     public unsafe struct HServerQuery
     {
         public int value;

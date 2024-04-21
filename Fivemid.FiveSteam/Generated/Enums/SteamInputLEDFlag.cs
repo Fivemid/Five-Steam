@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamInputLEDFlag</summary>
+    /// missing documentation for ESteamInputLEDFlag
     public enum SteamInputLEDFlag : int
     {
-        /// <summary>k_ESteamInputLEDFlag_SetColor</summary>
+        /// missing documentation for ESteamInputLEDFlag.k_ESteamInputLEDFlag_SetColor
         SetColor = 0,
-        /// <summary>k_ESteamInputLEDFlag_RestoreUserDefault</summary>
+        /// missing documentation for ESteamInputLEDFlag.k_ESteamInputLEDFlag_RestoreUserDefault
         RestoreUserDefault = 1
     }
 }

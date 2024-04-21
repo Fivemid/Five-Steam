@@ -47,22 +47,34 @@ namespace Fivemid.FiveSteam
         ///             The index of the favorite game server to get the details of. This must be between 0 and
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetFavoriteGameCount" class="bb_apilink">ISteamMatchmaking::GetFavoriteGameCount</a>
         ///         </param>
-        /// <param name="pnAppID">AppId_t
-        ///             *: Returns the App ID this server is for.</param>
-        /// <param name="pnIP">uint32
-        ///             *: Returns the IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
-        /// <param name="pnConnPort">uint16
-        ///             *: Returns the port used to connect to the server, in host order.</param>
-        /// <param name="pnQueryPort">uint16
-        ///             *: Returns the port used to query the server, in host order.</param>
-        /// <param name="punFlags">uint32
-        ///             *: 
+        /// <param name="pnAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///             *
+        ///         : Returns the App ID this server is for.</param>
+        /// <param name="pnIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
+        /// <param name="pnConnPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : Returns the port used to connect to the server, in host order.</param>
+        /// <param name="pnQueryPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : Returns the port used to query the server, in host order.</param>
+        /// <param name="punFlags">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns whether the server is on the favorites list or the history list. See
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_unFavoriteFlagNone" class="bb_apilink">k_unFavoriteFlagNone</a>
         ///             for more information.
         ///         </param>
-        /// <param name="pRTime32LastPlayedOnServer">uint32
-        ///             *: 
+        /// <param name="pRTime32LastPlayedOnServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the time the server was last added to the favorites list in Unix epoch format
         ///             (seconds since Jan 1st, 1970).
         ///         </param>
@@ -79,16 +91,28 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> int
         /// </summary>
-        /// <param name="nAppID">AppId_t: The App ID of the game.</param>
-        /// <param name="nIP">uint32: The IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
-        /// <param name="nConnPort">uint16: The port used to connect to the server, in host order.</param>
-        /// <param name="nQueryPort">uint16: The port used to query the server, in host order.</param>
-        /// <param name="unFlags">uint32: 
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID of the game.</param>
+        /// <param name="nIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
+        /// <param name="nConnPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port used to connect to the server, in host order.</param>
+        /// <param name="nQueryPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port used to query the server, in host order.</param>
+        /// <param name="unFlags">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             Sets the whether the server should be added to the favorites list or history list. See
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_unFavoriteFlagNone" class="bb_apilink">k_unFavoriteFlagNone</a>
         ///             for more information.
         ///         </param>
-        /// <param name="rTime32LastPlayedOnServer">uint32: This should be the current time in Unix epoch format (seconds since Jan 1st, 1970).</param>
+        /// <param name="rTime32LastPlayedOnServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : This should be the current time in Unix epoch format (seconds since Jan 1st, 1970).</param>
         public static int AddFavoriteGame(AppId nAppID, uint nIP, ushort nConnPort, ushort nQueryPort, uint unFlags, uint rTime32LastPlayedOnServer) => Instance.AddFavoriteGame(nAppID, nIP, nConnPort, nQueryPort, unFlags, rTime32LastPlayedOnServer);
         /// <summary>
         /// <code>
@@ -103,11 +127,21 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the server was removed; otherwise, <b>false</b> if the specified
         /// server was not on the users local favorites list.
         /// </summary>
-        /// <param name="nAppID">AppId_t: The App ID of the game.</param>
-        /// <param name="nIP">uint32: The IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
-        /// <param name="nConnPort">uint16: The port used to connect to the server, in host order.</param>
-        /// <param name="nQueryPort">uint16: The port used to query the server, in host order.</param>
-        /// <param name="unFlags">uint32: 
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID of the game.</param>
+        /// <param name="nIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The IP address of the server in host order, i.e 127.0.0.1 == 0x7f000001.</param>
+        /// <param name="nConnPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port used to connect to the server, in host order.</param>
+        /// <param name="nQueryPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port used to query the server, in host order.</param>
+        /// <param name="unFlags">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             Whether the server is on the favorites list or history list. See
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_unFavoriteFlagNone" class="bb_apilink">k_unFavoriteFlagNone</a>
         ///             for more information.
@@ -182,7 +216,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_nMaxLobbyKeyLength" class="bb_apilink">k_nMaxLobbyKeyLength</a>.
         ///         </param>
         /// <param name="pchValueToMatch">const char *: The string to match.</param>
-        /// <param name="eComparisonType">ELobbyComparison: The type of comparison to make.</param>
+        /// <param name="eComparisonType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#ELobbyComparison" class="bb_apilink">ELobbyComparison</a>
+        ///         : The type of comparison to make.</param>
         public static void AddRequestLobbyListStringFilter(UTF8StringPtr pchKeyToMatch, UTF8StringPtr pchValueToMatch, LobbyComparison eComparisonType) => Instance.AddRequestLobbyListStringFilter(pchKeyToMatch, pchValueToMatch, eComparisonType);
         /// <summary>
         /// <code>
@@ -200,7 +236,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_nMaxLobbyKeyLength" class="bb_apilink">k_nMaxLobbyKeyLength</a>.
         ///         </param>
         /// <param name="nValueToMatch">int: The number to match.</param>
-        /// <param name="eComparisonType">ELobbyComparison: The type of comparison to make.</param>
+        /// <param name="eComparisonType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#ELobbyComparison" class="bb_apilink">ELobbyComparison</a>
+        ///         : The type of comparison to make.</param>
         public static void AddRequestLobbyListNumericalFilter(UTF8StringPtr pchKeyToMatch, int nValueToMatch, LobbyComparison eComparisonType) => Instance.AddRequestLobbyListNumericalFilter(pchKeyToMatch, nValueToMatch, eComparisonType);
         /// <summary>
         /// <code>
@@ -237,7 +275,9 @@ namespace Fivemid.FiveSteam
         /// Sets the physical distance for which we should search for lobbies, this is based on the users IP
         /// address and a IP location map on the Steam backed.
         /// </summary>
-        /// <param name="eLobbyDistanceFilter">ELobbyDistanceFilter: Specifies the maximum distance.</param>
+        /// <param name="eLobbyDistanceFilter">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#ELobbyDistanceFilter" class="bb_apilink">ELobbyDistanceFilter</a>
+        ///         : Specifies the maximum distance.</param>
         public static void AddRequestLobbyListDistanceFilter(LobbyDistanceFilter eLobbyDistanceFilter) => Instance.AddRequestLobbyListDistanceFilter(eLobbyDistanceFilter);
         /// <summary>
         /// <code>void AddRequestLobbyListResultCountFilter( int cMaxResults );</code>
@@ -256,7 +296,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Unused - Checks the player compatibility based on the frenemy system.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: </param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
         public static void AddRequestLobbyListCompatibleMembersFilter(SteamId steamIDLobby) => Instance.AddRequestLobbyListCompatibleMembersFilter(steamIDLobby);
         /// <summary>
         /// <code>CSteamID GetLobbyByIndex( int iLobby );</code>
@@ -306,7 +348,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyEnter_t" class="bb_apilink">LobbyEnter_t</a>
         /// callback is also received since the local user has joined their own lobby.
         /// </summary>
-        /// <param name="eLobbyType">ELobbyType: 
+        /// <param name="eLobbyType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#ELobbyType" class="bb_apilink">ELobbyType</a>
+        ///         : 
         ///             The type and visibility of this lobby. This can be changed later via
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyType" class="bb_apilink">ISteamMatchmaking::SetLobbyType</a>.
         ///         </param>
@@ -330,7 +374,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyDataUpdate_t" class="bb_apilink">LobbyDataUpdate_t</a>
         /// callback.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to join.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to join.</param>
         public static SteamAPICall JoinLobby(SteamId steamIDLobby) => Instance.JoinLobby(steamIDLobby);
         /// <summary>
         /// <code>void LeaveLobby( CSteamID steamIDLobby );</code>
@@ -341,7 +387,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatUpdate_t" class="bb_apilink">LobbyChatUpdate_t</a>
         /// callback.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The lobby to leave.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The lobby to leave.</param>
         public static void LeaveLobby(SteamId steamIDLobby) => Instance.LeaveLobby(steamIDLobby);
         /// <summary>
         /// <code>
@@ -366,8 +414,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>NOTE:</b> This call doesn't check if the other user was successfully invited.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to invite the user to.</param>
-        /// <param name="steamIDInvitee">CSteamID: The Steam ID of the person who will be invited.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to invite the user to.</param>
+        /// <param name="steamIDInvitee">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the person who will be invited.</param>
         public static bool InviteUserToLobby(SteamId steamIDLobby, SteamId steamIDInvitee) => Instance.InviteUserToLobby(steamIDLobby, steamIDInvitee);
         /// <summary>
         /// <code>int GetNumLobbyMembers( CSteamID steamIDLobby );</code>
@@ -389,7 +441,9 @@ namespace Fivemid.FiveSteam
         /// The number of members in the lobby, <b>0</b> if the current user has no data from the
         /// lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the number of members of.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the number of members of.</param>
         public static int GetNumLobbyMembers(SteamId steamIDLobby) => Instance.GetNumLobbyMembers(steamIDLobby);
         /// <summary>
         /// <code>CSteamID GetLobbyMemberByIndex( CSteamID steamIDLobby, int iMember );</code>
@@ -409,7 +463,9 @@ namespace Fivemid.FiveSteam
         /// Invalid indices return
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNil" class="bb_apilink">k_steamIDNil</a>.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This MUST be the same lobby used in the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetNumLobbyMembers" class="bb_apilink">ISteamMatchmaking::GetNumLobbyMembers</a>!
         ///         </param>
@@ -436,7 +492,9 @@ namespace Fivemid.FiveSteam
         /// Returns an empty string ("") if no value is set for this key, or if
         /// <code class="bb_code bb_code_inline nohighlight">steamIDLobby</code> is invalid.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the metadata from.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the metadata from.</param>
         /// <param name="pchKey">const char *: The key to get the value of.</param>
         public static UTF8StringPtr GetLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey) => Instance.GetLobbyData(steamIDLobby, pchKey);
         /// <summary>
@@ -465,7 +523,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">steamIDLobby</code> was invalid, or the key/value
         /// are too long.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to set the metadata for.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to set the metadata for.</param>
         /// <param name="pchKey">const char *: 
         ///             The key to set the data for. This can not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_nMaxLobbyKeyLength" class="bb_apilink">k_nMaxLobbyKeyLength</a>.
@@ -506,7 +566,9 @@ namespace Fivemid.FiveSteam
         ///     Key: \"%s\" - Value: \"%s\"\n", i, key, value ); } } }
         /// </code>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the data count from.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the data count from.</param>
         public static int GetLobbyDataCount(SteamId steamIDLobby) => Instance.GetLobbyDataCount(steamIDLobby);
         /// <summary>
         /// <code>
@@ -526,7 +588,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">steamIDLobby</code> or
         /// <code class="bb_code bb_code_inline nohighlight">iLobbyData</code> are invalid.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             This MUST be the same lobby used in the previous call to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyDataCount" class="bb_apilink">ISteamMatchmaking::GetLobbyDataCount</a>!
         ///         </param>
@@ -568,7 +632,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if <code class="bb_code bb_code_inline nohighlight">steamIDLobby</code> or
         /// <code class="bb_code bb_code_inline nohighlight">pchKey</code> are invalid.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to delete the metadata for.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to delete the metadata for.</param>
         /// <param name="pchKey">const char *: The key to delete the data for.</param>
         public static bool DeleteLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey) => Instance.DeleteLobbyData(steamIDLobby, pchKey);
         /// <summary>
@@ -593,8 +659,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyMemberData" class="bb_apilink">ISteamMatchmaking::SetLobbyMemberData</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby that the other player is in.</param>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the player to get the metadata from.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby that the other player is in.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the player to get the metadata from.</param>
         /// <param name="pchKey">const char *: The key to get the value of.</param>
         public static UTF8StringPtr GetLobbyMemberData(SteamId steamIDLobby, SteamId steamIDUser, UTF8StringPtr pchKey) => Instance.GetLobbyMemberData(steamIDLobby, steamIDUser, pchKey);
         /// <summary>
@@ -621,7 +691,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyMemberData" class="bb_apilink">ISteamMatchmaking::GetLobbyMemberData</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to set our metadata in.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to set our metadata in.</param>
         /// <param name="pchKey">const char *: 
         ///             The key to set the data for. This can not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_nMaxLobbyKeyLength" class="bb_apilink">k_nMaxLobbyKeyLength</a>.
@@ -666,7 +738,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the message was successfully sent. <b>false</b> if the message is
         /// too small or too large, or no connection to Steam could be made.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to send the chat message to.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to send the chat message to.</param>
         /// <param name="pvMsgBody">const void *: This can be text or binary data, up to 4 Kilobytes in size.</param>
         /// <param name="cubMsgBody">int: 
         ///             The size in bytes of <code class="bb_code bb_code_inline nohighlight">pvMsgBody</code>,
@@ -692,7 +766,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SendLobbyChatMsg" class="bb_apilink">ISteamMatchmaking::SendLobbyChatMsg</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             The Steam ID of the lobby to get the chat entry from. This should almost always be
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatMsg_t" class="bb_apilink">LobbyChatMsg_t</a>::<code class="bb_code bb_code_inline nohighlight">m_ulSteamIDUser</code>.
         ///         </param>
@@ -700,8 +776,10 @@ namespace Fivemid.FiveSteam
         ///             The index of the chat entry in the lobby. This should almost always be
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatMsg_t" class="bb_apilink">LobbyChatMsg_t</a>::<code class="bb_code bb_code_inline nohighlight">m_iChatID</code>.
         ///         </param>
-        /// <param name="pSteamIDUser">CSteamID
-        ///             *: 
+        /// <param name="pSteamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : 
         ///             If set then this returns the Steam ID of the user who sent this message. Usually
         ///             unneeded since it will be the same as
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatMsg_t" class="bb_apilink">LobbyChatMsg_t</a>::<code class="bb_code bb_code_inline nohighlight">m_ulSteamIDUser</code>.
@@ -714,8 +792,10 @@ namespace Fivemid.FiveSteam
         ///             The size of the buffer allocated for
         ///             <code class="bb_code bb_code_inline nohighlight">pvData</code>.
         ///         </param>
-        /// <param name="peChatEntryType">EChatEntryType
-        ///             *: 
+        /// <param name="peChatEntryType">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#EChatEntryType" class="bb_apilink">EChatEntryType</a>
+        ///             *
+        ///         : 
         ///             If set then this will just always return
         ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_EChatEntryTypeChatMsg" class="bb_apilink">k_EChatEntryTypeChatMsg</a>. This can usually just be set to <b>NULL</b>.
         ///         </param>
@@ -743,7 +823,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyDataUpdate_t" class="bb_apilink">LobbyDataUpdate_t</a>::<code class="bb_code bb_code_inline nohighlight">m_bSuccess</code> will be set to
         /// <b>false</b>.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to refresh the metadata of.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to refresh the metadata of.</param>
         public static bool RequestLobbyData(SteamId steamIDLobby) => Instance.RequestLobbyData(steamIDLobby);
         /// <summary>
         /// <code>
@@ -773,10 +855,18 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyGameServer" class="bb_apilink">ISteamMatchmaking::GetLobbyGameServer</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to set the game server information for.</param>
-        /// <param name="unGameServerIP">uint32: Sets the IP address of the game server, in host order, i.e 127.0.0.1 == 0x7f000001.</param>
-        /// <param name="unGameServerPort">uint16: Sets the connection port of the game server, in host order.</param>
-        /// <param name="steamIDGameServer">CSteamID: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to set the game server information for.</param>
+        /// <param name="unGameServerIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Sets the IP address of the game server, in host order, i.e 127.0.0.1 == 0x7f000001.</param>
+        /// <param name="unGameServerPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : Sets the connection port of the game server, in host order.</param>
+        /// <param name="steamIDGameServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             Sets the Steam ID of the game server. Use
         ///             <a href="https://partner.steamgames.com/doc/api/steam_api#k_steamIDNil" class="bb_apilink">k_steamIDNil</a>
         ///             if you're not setting this.
@@ -801,16 +891,24 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyGameServer" class="bb_apilink">ISteamMatchmaking::SetLobbyGameServer</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the game server information from.</param>
-        /// <param name="punGameServerIP">uint32
-        ///             *: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the game server information from.</param>
+        /// <param name="punGameServerIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the IP address of the game server, in host order, i.e 127.0.0.1 == 0x7f000001,
         ///             if it's set.
         ///         </param>
-        /// <param name="punGameServerPort">uint16
-        ///             *: Returns the connection port of the game server, in host order, if it's set.</param>
-        /// <param name="psteamIDGameServer">CSteamID
-        ///             *: Returns the Steam ID of the game server, if it's set.</param>
+        /// <param name="punGameServerPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : Returns the connection port of the game server, in host order, if it's set.</param>
+        /// <param name="psteamIDGameServer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : Returns the Steam ID of the game server, if it's set.</param>
         public static bool GetLobbyGameServer(SteamId steamIDLobby, uint* punGameServerIP, ushort* punGameServerPort, SteamId* psteamIDGameServer) => Instance.GetLobbyGameServer(steamIDLobby, punGameServerIP, punGameServerPort, psteamIDGameServer);
         /// <summary>
         /// <code>bool SetLobbyMemberLimit( CSteamID steamIDLobby, int cMaxMembers );</code>
@@ -826,7 +924,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the limit was successfully set.<br />
         /// <b>false</b> if you are not the owner of the specified lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to set the member limit for.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to set the member limit for.</param>
         /// <param name="cMaxMembers">int: The maximum number of players allowed in this lobby. This can not be above 250.</param>
         public static bool SetLobbyMemberLimit(SteamId steamIDLobby, int cMaxMembers) => Instance.SetLobbyMemberLimit(steamIDLobby, cMaxMembers);
         /// <summary>
@@ -839,7 +939,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> int<br />
         /// Returns <b>0</b> if no metadata is available for the specified lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the member limit of.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the member limit of.</param>
         public static int GetLobbyMemberLimit(SteamId steamIDLobby) => Instance.GetLobbyMemberLimit(steamIDLobby);
         /// <summary>
         /// <code>bool SetLobbyType( CSteamID steamIDLobby, ELobbyType eLobbyType );</code>
@@ -855,8 +957,12 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> upon success; otherwise, <b>false</b> if you're not the owner of the
         /// lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to set the type of.</param>
-        /// <param name="eLobbyType">ELobbyType: The new lobby type to that will be set.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to set the type of.</param>
+        /// <param name="eLobbyType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#ELobbyType" class="bb_apilink">ELobbyType</a>
+        ///         : The new lobby type to that will be set.</param>
         public static bool SetLobbyType(SteamId steamIDLobby, LobbyType eLobbyType) => Instance.SetLobbyType(steamIDLobby, eLobbyType);
         /// <summary>
         /// <code>bool SetLobbyJoinable( CSteamID steamIDLobby, bool bLobbyJoinable );</code>
@@ -873,7 +979,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> upon success; otherwise, <b>false</b> if you're not the owner of the
         /// lobby.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby</param>
         /// <param name="bLobbyJoinable">bool: 
         ///             Enable (<b>true</b>) or disable (<b>false</b>) allowing users to
         ///             join this lobby?
@@ -900,7 +1008,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyOwner" class="bb_apilink">ISteamMatchmaking::SetLobbyOwner</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby to get the owner of.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby to get the owner of.</param>
         public static SteamId GetLobbyOwner(SteamId steamIDLobby) => Instance.GetLobbyOwner(steamIDLobby);
         /// <summary>
         /// <code>
@@ -927,8 +1037,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyOwner" class="bb_apilink">ISteamMatchmaking::GetLobbyOwner</a>
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the lobby where the owner change will take place.</param>
-        /// <param name="steamIDNewOwner">CSteamID: 
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the lobby where the owner change will take place.</param>
+        /// <param name="steamIDNewOwner">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : 
         ///             The Steam ID of the user that will be the new owner of the lobby, they must be in the
         ///             lobby.
         ///         </param>
@@ -949,8 +1063,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the local user isn't the owner of both lobbies, or no connection to Steam
         /// could be made.
         /// </summary>
-        /// <param name="steamIDLobby">CSteamID: The Steam ID of the primary lobby.</param>
-        /// <param name="steamIDLobbyDependent">CSteamID: The Steam ID that will be linked to the primary lobby.</param>
+        /// <param name="steamIDLobby">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the primary lobby.</param>
+        /// <param name="steamIDLobbyDependent">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID that will be linked to the primary lobby.</param>
         public static bool SetLinkedLobby(SteamId steamIDLobby, SteamId steamIDLobbyDependent) => Instance.SetLinkedLobby(steamIDLobby, steamIDLobbyDependent);
     }
 }

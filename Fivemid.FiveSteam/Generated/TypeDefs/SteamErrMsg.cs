@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamErrMsg</summary>
+    /// missing documentation for SteamErrMsg
     public unsafe struct SteamErrMsg
     {
         public UTF8String1024 value;

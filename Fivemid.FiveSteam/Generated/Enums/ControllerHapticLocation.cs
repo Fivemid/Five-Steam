@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EControllerHapticLocation</summary>
+    /// missing documentation for EControllerHapticLocation
     public enum ControllerHapticLocation : int
     {
-        /// <summary>k_EControllerHapticLocation_Left</summary>
+        /// missing documentation for EControllerHapticLocation.k_EControllerHapticLocation_Left
         Left = 1,
-        /// <summary>k_EControllerHapticLocation_Right</summary>
+        /// missing documentation for EControllerHapticLocation.k_EControllerHapticLocation_Right
         Right = 2,
-        /// <summary>k_EControllerHapticLocation_Both</summary>
+        /// missing documentation for EControllerHapticLocation.k_EControllerHapticLocation_Both
         Both = 3
     }
 }

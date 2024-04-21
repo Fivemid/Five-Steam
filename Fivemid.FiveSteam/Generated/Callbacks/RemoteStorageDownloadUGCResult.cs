@@ -3,21 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageDownloadUGCResult_t</summary>
+    /// <summary>
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownload" class="bb_apilink">ISteamRemoteStorage::UGCDownload</a>,
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownloadToLocation" class="bb_apilink">ISteamRemoteStorage::UGCDownloadToLocation</a>
+    /// </summary>
     public unsafe struct RemoteStorageDownloadUGCResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageDownloadUGCResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>UGCHandle_t m_hFile</summary>
+        /// <summary>The handle to the file that was attempted to be downloaded.</summary>
         public UGCHandle hFile;
-        /// <summary>AppId_t m_nAppID</summary>
+        /// <summary>ID of the app that created this file.</summary>
         public AppId nAppID;
-        /// <summary>int32 m_nSizeInBytes</summary>
+        /// <summary>The size of the file that was downloaded, in bytes.</summary>
         public int nSizeInBytes;
-        /// <summary>char [260] m_pchFileName</summary>
+        /// <summary>The name of the file that was downloaded.</summary>
         public UTF8String260 pchFileName;
-        /// <summary>uint64 m_ulSteamIDOwner</summary>
+        /// <summary>Steam ID of the user who created this content.</summary>
         public ulong ulSteamIDOwner;
     }
 }

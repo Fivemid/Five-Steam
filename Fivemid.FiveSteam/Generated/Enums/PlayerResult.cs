@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EPlayerResult_t</summary>
+    /// missing documentation for EPlayerResult_t
     public enum PlayerResult : int
     {
-        /// <summary>k_EPlayerResultFailedToConnect</summary>
+        /// missing documentation for EPlayerResult_t.k_EPlayerResultFailedToConnect
         FailedToConnect = 1,
-        /// <summary>k_EPlayerResultAbandoned</summary>
+        /// missing documentation for EPlayerResult_t.k_EPlayerResultAbandoned
         Abandoned = 2,
-        /// <summary>k_EPlayerResultKicked</summary>
+        /// missing documentation for EPlayerResult_t.k_EPlayerResultKicked
         Kicked = 3,
-        /// <summary>k_EPlayerResultIncomplete</summary>
+        /// missing documentation for EPlayerResult_t.k_EPlayerResultIncomplete
         Incomplete = 4,
-        /// <summary>k_EPlayerResultCompleted</summary>
+        /// missing documentation for EPlayerResult_t.k_EPlayerResultCompleted
         Completed = 5
     }
 }

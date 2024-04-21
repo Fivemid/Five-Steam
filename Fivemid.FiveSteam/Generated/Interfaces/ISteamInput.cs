@@ -3,7 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamInput</summary>
+    /// <summary>
+    /// Steam Input API is a flexible action-based API that supports all major controller types - Xbox,
+    /// PlayStation, Nintendo Switch Pro, and Steam Controllers.<br />
+    /// <br />
+    /// See the
+    /// <a href="https://partner.steamgames.com/doc/features/steam_controller" class="bb_doclink">Steam Input</a>
+    /// documentation for more information.
+    /// </summary>
     public unsafe interface ISteamInput
     {
         public bool Init(bool bExplicitlyCallRunFrame);

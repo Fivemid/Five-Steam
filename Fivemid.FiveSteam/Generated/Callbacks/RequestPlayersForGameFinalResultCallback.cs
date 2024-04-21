@@ -3,15 +3,15 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RequestPlayersForGameFinalResultCallback_t</summary>
+    /// missing documentation for RequestPlayersForGameFinalResultCallback_t
     public unsafe struct RequestPlayersForGameFinalResultCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RequestPlayersForGameFinalResultCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for RequestPlayersForGameFinalResultCallback_t.m_eResult
         public Result eResult;
-        /// <summary>uint64 m_ullSearchID</summary>
+        /// missing documentation for RequestPlayersForGameFinalResultCallback_t.m_ullSearchID
         public ulong ullSearchID;
-        /// <summary>uint64 m_ullUniqueGameID</summary>
+        /// missing documentation for RequestPlayersForGameFinalResultCallback_t.m_ullUniqueGameID
         public ulong ullUniqueGameID;
     }
 }

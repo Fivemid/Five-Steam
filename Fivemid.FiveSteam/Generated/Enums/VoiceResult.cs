@@ -3,28 +3,34 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EVoiceResult</summary>
+    /// <summary>
+    /// Results for use with the
+    /// <a href="https://partner.steamgames.com/doc/features/voice" class="bb_doclink">Steam Voice</a>
+    /// functions.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum VoiceResult : int
     {
-        /// <summary>k_EVoiceResultOK</summary>
+        /// <summary>The call has completed successfully.</summary>
         OK = 0,
-        /// <summary>k_EVoiceResultNotInitialized</summary>
+        /// <summary>The Steam Voice interface has not been initialized.</summary>
         NotInitialized = 1,
-        /// <summary>k_EVoiceResultNotRecording</summary>
+        /// <summary>Steam Voice is not currently recording.</summary>
         NotRecording = 2,
-        /// <summary>k_EVoiceResultNoData</summary>
+        /// <summary>There is no voice data available.</summary>
         NoData = 3,
-        /// <summary>k_EVoiceResultBufferTooSmall</summary>
+        /// <summary>The provided buffer is too small to receive the data.</summary>
         BufferTooSmall = 4,
-        /// <summary>k_EVoiceResultDataCorrupted</summary>
+        /// <summary>The voice data has been corrupted.</summary>
         DataCorrupted = 5,
-        /// <summary>k_EVoiceResultRestricted</summary>
+        /// <summary>The user is chat restricted.</summary>
         Restricted = 6,
-        /// <summary>k_EVoiceResultUnsupportedCodec</summary>
+        /// <summary>Deprecated.</summary>
         UnsupportedCodec = 7,
-        /// <summary>k_EVoiceResultReceiverOutOfDate</summary>
+        /// <summary>Deprecated.</summary>
         ReceiverOutOfDate = 8,
-        /// <summary>k_EVoiceResultReceiverDidNotAnswer</summary>
+        /// <summary>Deprecated.</summary>
         ReceiverDidNotAnswer = 9
     }
 }

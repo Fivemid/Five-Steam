@@ -34,7 +34,9 @@ namespace Fivemid.FiveSteam
         /// callback will be sent when the screenshot has finished writing to disk.
         /// </summary>
         /// <param name="pubRGB">void *: The buffer containing the raw RGB data from the screenshot.</param>
-        /// <param name="cubRGB">uint32: 
+        /// <param name="cubRGB">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pubRGB</code> in bytes.
         ///         </param>
         /// <param name="nWidth">int: The width of the screenshot in pixels.</param>
@@ -144,7 +146,9 @@ namespace Fivemid.FiveSteam
         /// invalid, or <code class="bb_code bb_code_inline nohighlight">pchLocation</code> is invalid or too
         /// long.
         /// </summary>
-        /// <param name="hScreenshot">ScreenshotHandle: The handle to the screenshot to tag.</param>
+        /// <param name="hScreenshot">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#ScreenshotHandle" class="bb_apilink">ScreenshotHandle</a>
+        ///         : The handle to the screenshot to tag.</param>
         /// <param name="pchLocation">const char *: 
         ///             The location in the game where this screenshot was taken. This can not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#k_cubUFSTagValueMax" class="bb_apilink">k_cubUFSTagValueMax</a>.
@@ -173,8 +177,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hScreenshot">ScreenshotHandle: The handle to the screenshot to tag.</param>
-        /// <param name="steamID">CSteamID: The Steam ID of a user that is in the screenshot.</param>
+        /// <param name="hScreenshot">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#ScreenshotHandle" class="bb_apilink">ScreenshotHandle</a>
+        ///         : The handle to the screenshot to tag.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of a user that is in the screenshot.</param>
         public static bool TagUser(ScreenshotHandle hScreenshot, SteamId steamID) => Instance.TagUser(hScreenshot, steamID);
         /// <summary>
         /// <code>
@@ -201,8 +209,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hScreenshot">ScreenshotHandle: The handle to the screenshot to tag.</param>
-        /// <param name="unPublishedFileID">PublishedFileId_t: The workshop item ID that is in the screenshot.</param>
+        /// <param name="hScreenshot">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#ScreenshotHandle" class="bb_apilink">ScreenshotHandle</a>
+        ///         : The handle to the screenshot to tag.</param>
+        /// <param name="unPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item ID that is in the screenshot.</param>
         public static bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId unPublishedFileID) => Instance.TagPublishedFile(hScreenshot, unPublishedFileID);
         /// <summary>
         /// <code>bool IsScreenshotsHooked();</code>
@@ -241,7 +253,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#ScreenshotReady_t" class="bb_apilink">ScreenshotReady_t</a>
         /// callback will be sent when the screenshot has finished writing to disk.
         /// </summary>
-        /// <param name="eType">EVRScreenshotType: The type of VR screenshot that this is.</param>
+        /// <param name="eType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#EVRScreenshotType" class="bb_apilink">EVRScreenshotType</a>
+        ///         : The type of VR screenshot that this is.</param>
         /// <param name="pchFilename">const char *: 
         ///             The absolute file path to a 2D JPG, PNG, or TGA version of the screenshot for the
         ///             library view.

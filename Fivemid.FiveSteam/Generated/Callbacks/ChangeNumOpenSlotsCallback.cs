@@ -3,11 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ChangeNumOpenSlotsCallback_t</summary>
+    /// <summary>
+    /// Call result for
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#ChangeNumOpenSlots" class="bb_apilink">ISteamParties::ChangeNumOpenSlots</a>. <br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct ChangeNumOpenSlotsCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ChangeNumOpenSlotsCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the attempt to change the number of open slots.</summary>
         public Result eResult;
     }
 }

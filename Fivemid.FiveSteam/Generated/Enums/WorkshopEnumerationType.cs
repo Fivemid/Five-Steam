@@ -3,22 +3,26 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EWorkshopEnumerationType</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum WorkshopEnumerationType : int
     {
-        /// <summary>k_EWorkshopEnumerationTypeRankedByVote</summary>
+        /// <summary></summary>
         RankedByVote = 0,
-        /// <summary>k_EWorkshopEnumerationTypeRecent</summary>
+        /// <summary></summary>
         Recent = 1,
-        /// <summary>k_EWorkshopEnumerationTypeTrending</summary>
+        /// <summary></summary>
         Trending = 2,
-        /// <summary>k_EWorkshopEnumerationTypeFavoritesOfFriends</summary>
+        /// <summary></summary>
         FavoritesOfFriends = 3,
-        /// <summary>k_EWorkshopEnumerationTypeVotedByFriends</summary>
+        /// <summary></summary>
         VotedByFriends = 4,
-        /// <summary>k_EWorkshopEnumerationTypeContentByFriends</summary>
+        /// <summary></summary>
         ContentByFriends = 5,
-        /// <summary>k_EWorkshopEnumerationTypeRecentFromFollowedUsers</summary>
+        /// <summary></summary>
         RecentFromFollowedUsers = 6
     }
 }

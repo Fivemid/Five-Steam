@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>InputDigitalActionHandle_t</summary>
+    /// <summary>
+    ///             A handle to a digital action. This can be obtained from
+    ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#GetDigitalActionHandle" class="bb_apilink">ISteamInput::GetDigitalActionHandle</a>.
+    ///         </summary>
     public unsafe struct InputDigitalActionHandle
     {
         public ulong value;

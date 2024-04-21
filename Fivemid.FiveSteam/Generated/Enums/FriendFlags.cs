@@ -3,32 +3,44 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EFriendFlags</summary>
+    /// <summary>
+    /// Flags for enumerating friends list, or quickly checking the relationship between users.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum FriendFlags : int
     {
-        /// <summary>k_EFriendFlagNone</summary>
+        /// <summary>None.</summary>
         FriendFlagNone = 0,
-        /// <summary>k_EFriendFlagBlocked</summary>
+        /// <summary>Users that the current user has blocked from contacting.</summary>
         FriendFlagBlocked = 1,
-        /// <summary>k_EFriendFlagFriendshipRequested</summary>
+        /// <summary>Users that have sent a friend invite to the current user.</summary>
         FriendFlagFriendshipRequested = 2,
-        /// <summary>k_EFriendFlagImmediate</summary>
+        /// <summary>The current user's "regular" friends.</summary>
         FriendFlagImmediate = 4,
-        /// <summary>k_EFriendFlagClanMember</summary>
+        /// <summary>Users that are in one of the same (small) Steam groups as the current user.</summary>
         FriendFlagClanMember = 8,
-        /// <summary>k_EFriendFlagOnGameServer</summary>
+        /// <summary>
+        ///             Users that are on the same game server; as set by
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetPlayedWith" class="bb_apilink">ISteamFriends::SetPlayedWith</a>.
+        ///         </summary>
         FriendFlagOnGameServer = 16,
-        /// <summary>k_EFriendFlagRequestingFriendship</summary>
+        /// <summary>Users that the current user has sent friend invites to.</summary>
         FriendFlagRequestingFriendship = 128,
-        /// <summary>k_EFriendFlagRequestingInfo</summary>
+        /// <summary>
+        ///             Users that are currently sending additional info about themselves after a call to
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestUserInformation" class="bb_apilink">ISteamFriends::RequestUserInformation</a>
+        ///         </summary>
         FriendFlagRequestingInfo = 256,
-        /// <summary>k_EFriendFlagIgnored</summary>
+        /// <summary>Users that the current user has ignored from contacting them.</summary>
         FriendFlagIgnored = 512,
-        /// <summary>k_EFriendFlagIgnoredFriend</summary>
+        /// <summary>
+        ///             Users that have ignored the current user; but the current user still knows about them.
+        ///         </summary>
         FriendFlagIgnoredFriend = 1024,
-        /// <summary>k_EFriendFlagChatMember</summary>
+        /// <summary>Users in one of the same chats.</summary>
         FriendFlagChatMember = 4096,
-        /// <summary>k_EFriendFlagAll</summary>
+        /// <summary>Returns all friend flags.</summary>
         FriendFlagAll = 65535
     }
 }

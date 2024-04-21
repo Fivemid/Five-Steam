@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>UGCHandle_t</summary>
+    /// <summary>A unique handle to a piece of user generated content.</summary>
     public unsafe struct UGCHandle
     {
         public ulong value;

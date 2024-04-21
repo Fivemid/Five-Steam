@@ -70,8 +70,10 @@ namespace Fivemid.FiveSteam
         ///     inputHandles );
         /// </code>
         /// </summary>
-        /// <param name="handlesOut">InputHandle_t
-        ///             *: 
+        /// <param name="handlesOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///             *
+        ///         : 
         ///             This must point to a
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#STEAM_INPUT_MAX_COUNT" class="bb_apilink">STEAM_INPUT_MAX_COUNT</a>
         ///             sized array of InputHandle_t.
@@ -143,8 +145,12 @@ namespace Fivemid.FiveSteam
         ///     doFightingStuff(); break; } }
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to activate an action set for.</param>
-        /// <param name="actionSetHandle">InputActionSetHandle_t: The handle of the action set you want to activate.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to activate an action set for.</param>
+        /// <param name="actionSetHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>
+        ///         : The handle of the action set you want to activate.</param>
         public static void ActivateActionSet(InputHandle inputHandle, InputActionSetHandle actionSetHandle) => Instance.ActivateActionSet(inputHandle, actionSetHandle);
         /// <summary>
         /// <code>
@@ -163,7 +169,9 @@ namespace Fivemid.FiveSteam
         ///     InputActionSetHandle_t controller1Set = SteamInput()-&gt;GetCurrentActionSet(controller1Handle);
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to query.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to query.</param>
         public static InputActionSetHandle GetCurrentActionSet(InputHandle inputHandle) => Instance.GetCurrentActionSet(inputHandle);
         /// <summary>
         /// <code>
@@ -183,8 +191,12 @@ namespace Fivemid.FiveSteam
         ///     SteamInput()-&gt;ActivateActionSetLayer( inputHandle1, myActionSetLayer );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to activate an action set layer for.</param>
-        /// <param name="actionSetHandle">InputActionSetHandle_t: The handle of the action set layer you want to activate.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to activate an action set layer for.</param>
+        /// <param name="actionSetHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>
+        ///         : The handle of the action set layer you want to activate.</param>
         public static void ActivateActionSetLayer(InputHandle inputHandle, InputActionSetHandle actionSetLayerHandle) => Instance.ActivateActionSetLayer(inputHandle, actionSetLayerHandle);
         /// <summary>
         /// <code>
@@ -200,8 +212,12 @@ namespace Fivemid.FiveSteam
         ///     SteamInput()-&gt;DeactivateActionSetLayer( inputHandle1, myActionSetLayer );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to deactivate an action set layer for.</param>
-        /// <param name="actionSetHandle">InputActionSetHandle_t: The handle of the action set layer you want to deactivate.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to deactivate an action set layer for.</param>
+        /// <param name="actionSetHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>
+        ///         : The handle of the action set layer you want to deactivate.</param>
         public static void DeactivateActionSetLayer(InputHandle inputHandle, InputActionSetHandle actionSetLayerHandle) => Instance.DeactivateActionSetLayer(inputHandle, actionSetLayerHandle);
         /// <summary>
         /// <code>void DeactivateAllActionSetLayers( InputHandle_t inputHandle );</code>
@@ -212,7 +228,9 @@ namespace Fivemid.FiveSteam
         /// <b>Example:</b><br />
         /// <code>SteamInput()-&gt;DeactivateAllActionSetLayers( inputHandle1 );</code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to deactivate all action set layers for.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to deactivate all action set layers for.</param>
         public static void DeactivateAllActionSetLayers(InputHandle inputHandle) => Instance.DeactivateAllActionSetLayers(inputHandle);
         /// <summary>
         /// <code>
@@ -229,8 +247,12 @@ namespace Fivemid.FiveSteam
         ///     inputHandle1, &amp;handlesOut );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to get active action set layers for.</param>
-        /// <param name="handlesOut">InputActionSetHandle_t*: 
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to get active action set layers for.</param>
+        /// <param name="handlesOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>*
+        ///         : 
         ///             This must point to a
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#STEAM_INPUT_MAX_COUNT" class="bb_apilink">STEAM_INPUT_MAX_COUNT</a>
         ///             sized array of InputHandle_t.
@@ -273,8 +295,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputDigitalActionData_t" class="bb_apilink">InputDigitalActionData_t</a><br />
         /// The current state of the specified digital action.
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to query.</param>
-        /// <param name="digitalActionHandle">InputDigitalActionHandle_t: The handle of the digital action you want to query.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to query.</param>
+        /// <param name="digitalActionHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputDigitalActionHandle_t" class="bb_apilink">InputDigitalActionHandle_t</a>
+        ///         : The handle of the digital action you want to query.</param>
         public static InputDigitalActionData GetDigitalActionData(InputHandle inputHandle, InputDigitalActionHandle digitalActionHandle) => Instance.GetDigitalActionData(inputHandle, digitalActionHandle);
         /// <summary>
         /// <code>
@@ -299,11 +325,19 @@ namespace Fivemid.FiveSteam
         ///     origins );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to query.</param>
-        /// <param name="actionSetHandle">InputActionSetHandle_t: The handle of the action set you want to query.</param>
-        /// <param name="digitalActionHandle">InputDigitalActionHandle_t: The handle of the digital action you want to query.</param>
-        /// <param name="originsOut">EInputActionOrigin
-        ///             *: 
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to query.</param>
+        /// <param name="actionSetHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>
+        ///         : The handle of the action set you want to query.</param>
+        /// <param name="digitalActionHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputDigitalActionHandle_t" class="bb_apilink">InputDigitalActionHandle_t</a>
+        ///         : The handle of the digital action you want to query.</param>
+        /// <param name="originsOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#EInputActionOrigin" class="bb_apilink">EInputActionOrigin</a>
+        ///             *
+        ///         : 
         ///             A
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#STEAM_INPUT_MAX_ORIGINS" class="bb_apilink">STEAM_INPUT_MAX_ORIGINS</a>
         ///             sized array of
@@ -356,8 +390,12 @@ namespace Fivemid.FiveSteam
         ///     moveHandle );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to query.</param>
-        /// <param name="analogActionHandle">InputAnalogActionHandle_t: The handle of the analog action you want to query.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to query.</param>
+        /// <param name="analogActionHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputAnalogActionHandle_t" class="bb_apilink">InputAnalogActionHandle_t</a>
+        ///         : The handle of the analog action you want to query.</param>
         public static InputAnalogActionData GetAnalogActionData(InputHandle inputHandle, InputAnalogActionHandle analogActionHandle) => Instance.GetAnalogActionData(inputHandle, analogActionHandle);
         /// <summary>
         /// <code>
@@ -379,11 +417,19 @@ namespace Fivemid.FiveSteam
         ///     controller1Handle, walkingSetHandle, moveHandle, origins );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to query.</param>
-        /// <param name="actionSetHandle">InputActionSetHandle_t: The handle of the action set you want to query.</param>
-        /// <param name="analogActionHandle">InputAnalogActionHandle_t: The handle of the analog action you want to query.</param>
-        /// <param name="originsOut">EInputActionOrigin
-        ///             *: 
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to query.</param>
+        /// <param name="actionSetHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputActionSetHandle_t" class="bb_apilink">InputActionSetHandle_t</a>
+        ///         : The handle of the action set you want to query.</param>
+        /// <param name="analogActionHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputAnalogActionHandle_t" class="bb_apilink">InputAnalogActionHandle_t</a>
+        ///         : The handle of the analog action you want to query.</param>
+        /// <param name="originsOut">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#EInputActionOrigin" class="bb_apilink">EInputActionOrigin</a>
+        ///             *
+        ///         : 
         ///             A
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#STEAM_INPUT_MAX_ORIGINS" class="bb_apilink">STEAM_INPUT_MAX_ORIGINS</a>
         ///             sized array of
@@ -414,7 +460,9 @@ namespace Fivemid.FiveSteam
         ///     printf("punch = %s\n",punchString);
         /// </code>
         /// </summary>
-        /// <param name="eOrigin">EInputActionOrigin: </param>
+        /// <param name="eOrigin">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#EInputActionOrigin" class="bb_apilink">EInputActionOrigin</a>
+        ///         : </param>
         public static UTF8StringPtr GetStringForActionOrigin(InputActionOrigin eOrigin) => Instance.GetStringForActionOrigin(eOrigin);
         /// missing documentation
         public static UTF8StringPtr GetStringForAnalogActionName(InputAnalogActionHandle eActionHandle) => Instance.GetStringForAnalogActionName(eActionHandle);
@@ -437,8 +485,12 @@ namespace Fivemid.FiveSteam
         ///     SteamInput()-&gt;StopAnalogActionMomentum( controller1Handle, moveHandle );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to affect.</param>
-        /// <param name="eAction">InputAnalogActionHandle_t: The analog action to stop momentum for.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to affect.</param>
+        /// <param name="eAction">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputAnalogActionHandle_t" class="bb_apilink">InputAnalogActionHandle_t</a>
+        ///         : The analog action to stop momentum for.</param>
         public static void StopAnalogActionMomentum(InputHandle inputHandle, InputAnalogActionHandle eAction) => Instance.StopAnalogActionMomentum(inputHandle, eAction);
         /// <summary>
         /// <code>InputMotionData_t GetMotionData( InputHandle_t inputHandle );</code>
@@ -455,7 +507,9 @@ namespace Fivemid.FiveSteam
         ///     InputMotionData_t motionData = SteamInput()-&gt;GetControllerMotionData( inputHandle );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to get motion data for.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to get motion data for.</param>
         public static InputMotionData GetMotionData(InputHandle inputHandle) => Instance.GetMotionData(inputHandle);
         /// <summary>
         /// <code>
@@ -474,7 +528,9 @@ namespace Fivemid.FiveSteam
         /// <b>Example:</b><br />
         /// <code>SteamInput()-&gt;TriggerVibration( controller1Handle, 10000, 10000 );</code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to affect.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to affect.</param>
         /// <param name="usLeftSpeed">unsigned short: The intensity value for the left rumble motor.</param>
         /// <param name="usRightSpeed">unsigned short: The intensity value of the right rumble motor.</param>
         public static void TriggerVibration(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed) => Instance.TriggerVibration(inputHandle, usLeftSpeed, usRightSpeed);
@@ -497,7 +553,9 @@ namespace Fivemid.FiveSteam
         ///     SteamInput()-&gt;TriggerVibrationExtended( controller1Handle, 10000, 10000, 10000, 10000 );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to affect.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to affect.</param>
         /// <param name="usLeftSpeed">unsigned short: The intensity value for the left rumble motor.</param>
         /// <param name="usRightSpeed">unsigned short: The intensity value of the right rumble motor.</param>
         /// <param name="usLeftTriggerSpeed">unsigned short: The intensity value for the left Xbox Impulse Trigger motor.</param>
@@ -528,10 +586,18 @@ namespace Fivemid.FiveSteam
         ///     k_ESteamControllerLEDFlag_SetColor );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to affect.</param>
-        /// <param name="nColorR">uint8: The red component of the color to set (0-255).</param>
-        /// <param name="nColorG">uint8: The green component of the color to set (0-255).</param>
-        /// <param name="nColorB">uint8: The blue component of the color to set (0-255).</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to affect.</param>
+        /// <param name="nColorR">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///         : The red component of the color to set (0-255).</param>
+        /// <param name="nColorG">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///         : The green component of the color to set (0-255).</param>
+        /// <param name="nColorB">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint8" class="bb_apilink">uint8</a>
+        ///         : The blue component of the color to set (0-255).</param>
         /// <param name="nFlags">unsigned int: 
         ///             Bit-masked flags combined from values defined in
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#ESteamControllerLEDFlag" class="bb_apilink">ESteamControllerLEDFlag</a>.
@@ -555,7 +621,9 @@ namespace Fivemid.FiveSteam
         /// <b>Example:</b><br />
         /// <code>SteamInput()-&gt;ShowBindingPanel( myControllerHandle );</code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller you want to bring up the binding screen for.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to bring up the binding screen for.</param>
         public static bool ShowBindingPanel(InputHandle inputHandle) => Instance.ShowBindingPanel(inputHandle);
         /// <summary>
         /// <code>ESteamInputType GetInputTypeForHandle( InputHandle_t inputHandle );</code>
@@ -579,7 +647,9 @@ namespace Fivemid.FiveSteam
         ///     k_ESteamInputType_PS4Controller: printf("PS4 controller!\n"); break; }
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller whose input type (device model) you want to query</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller whose input type (device model) you want to query</param>
         public static SteamInputType GetInputTypeForHandle(InputHandle inputHandle) => Instance.GetInputTypeForHandle(inputHandle);
         /// <summary>
         /// <code>InputHandle_t GetControllerForGamepadIndex( int nIndex );</code>
@@ -623,7 +693,9 @@ namespace Fivemid.FiveSteam
         ///     int gamepadIndex = SteamInput()-&gt;GetGamepadIndexForController( controller1Handle );
         /// </code>
         /// </summary>
-        /// <param name="ulControllerHandle">InputHandle_t: The handle of the controller you want to get a gamepad index for.</param>
+        /// <param name="ulControllerHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller you want to get a gamepad index for.</param>
         public static int GetGamepadIndexForController(InputHandle ulinputHandle) => Instance.GetGamepadIndexForController(ulinputHandle);
         /// missing documentation
         public static UTF8StringPtr GetStringForXboxOrigin(XboxOrigin eOrigin) => Instance.GetStringForXboxOrigin(eOrigin);
@@ -655,7 +727,9 @@ namespace Fivemid.FiveSteam
         ///     loadButtonGlyphTextureFromLocalPath( localGlyphPath );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: 
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : 
         ///             The handle of the controller to affect. You can use GetControllerForGamepadIndex to get
         ///             this handle
         ///         </param>
@@ -690,11 +764,15 @@ namespace Fivemid.FiveSteam
         ///     );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: 
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : 
         ///             The handle of the controller to affect. You can use GetControllerForGamepadIndex to get
         ///             this handle
         ///         </param>
-        /// <param name="eDestinationInputType">ESteamInputType: 
+        /// <param name="eDestinationInputType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ESteamInputType" class="bb_apilink">ESteamInputType</a>
+        ///         : 
         ///             The controller type you want to translate to. Steam will pick the closest type from your
         ///             SDK version if k_ESteamInputType_Unknown is used
         ///         </param>
@@ -735,9 +813,15 @@ namespace Fivemid.FiveSteam
         ///     "In Game Actions" { "major_revision" "0" "minor_revision" "1" "actions" { ...
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to query.</param>
-        /// <param name="pMajor">int *: Pointer to int that Major binding revision will be populated into</param>
-        /// <param name="pMinor">int *: Pointer to int that Minor binding revision will be populated into</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to query.</param>
+        /// <param name="pMajor">
+        ///             <a href="https://partner.steamgames.com/doc/api/int%20*" class="bb_apilink">int *</a>
+        ///         : Pointer to int that Major binding revision will be populated into</param>
+        /// <param name="pMinor">
+        ///             <a href="https://partner.steamgames.com/doc/api/int%20*" class="bb_apilink">int *</a>
+        ///         : Pointer to int that Minor binding revision will be populated into</param>
         public static bool GetDeviceBindingRevision(InputHandle inputHandle, int* pMajor, int* pMinor) => Instance.GetDeviceBindingRevision(inputHandle, pMajor, pMinor);
         /// <summary>
         /// <code>uint32 GetRemotePlaySessionID( InputHandle_t inputHandle );</code>
@@ -748,7 +832,9 @@ namespace Fivemid.FiveSteam
         /// Get the Steam Remote Play session ID associated with a device, or 0 if there is no session
         /// associated with it. See isteamremoteplay.h for more information on Steam Remote Play sessions.
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to query.</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to query.</param>
         public static uint GetRemotePlaySessionID(InputHandle inputHandle) => Instance.GetRemotePlaySessionID(inputHandle);
         /// missing documentation
         public static ushort GetSessionInputConfigurationSettings() => Instance.GetSessionInputConfigurationSettings();
@@ -774,8 +860,10 @@ namespace Fivemid.FiveSteam
         ///     8; SteamInput()-&gt;SetDualSenseTriggerEffect( controller1Handle, &amp;param );
         /// </code>
         /// </summary>
-        /// <param name="inputHandle">InputHandle_t: The handle of the controller to affect.</param>
-        /// <param name="pParam">ScePadTriggerEffectParam: The trigger parameter, defined in isteamdualsense.h</param>
+        /// <param name="inputHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#InputHandle_t" class="bb_apilink">InputHandle_t</a>
+        ///         : The handle of the controller to affect.</param>
+        /// <param name="pParam ">ScePadTriggerEffectParam: The trigger parameter, defined in isteamdualsense.h</param>
         public static void SetDualSenseTriggerEffect(InputHandle inputHandle, Unknown* pParam) => Instance.SetDualSenseTriggerEffect(inputHandle, pParam);
     }
 }

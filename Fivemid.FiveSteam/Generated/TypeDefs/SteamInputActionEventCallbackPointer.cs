@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInputActionEventCallbackPointer</summary>
+    /// missing documentation for SteamInputActionEventCallbackPointer
     public unsafe struct SteamInputActionEventCallbackPointer
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamInputActionEventPtr> value;

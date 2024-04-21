@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamApps</summary>
+    /// <summary>
+    /// Exposes a wide range of information and actions for applications and
+    /// <a href="https://partner.steamgames.com/doc/store/application/dlc" class="bb_doclink">Downloadable Content (DLC)</a>.
+    /// </summary>
     public unsafe interface ISteamApps
     {
         public bool BIsSubscribed();

@@ -3,15 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageUserVoteDetails_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct RemoteStorageUserVoteDetails : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageUserVoteDetails;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>PublishedFileId_t m_nPublishedFileId</summary>
+        /// <summary>The published file id</summary>
         public PublishedFileId nPublishedFileId;
-        /// <summary>EWorkshopVote m_eVote</summary>
+        /// <summary>what the user voted</summary>
         public WorkshopVote eVote;
     }
 }

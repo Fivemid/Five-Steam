@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FnSteamNetworkingFakeIPResult</summary>
+    /// missing documentation for FnSteamNetworkingFakeIPResult
     public unsafe struct FnSteamNetworkingFakeIPResult
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamNetworkingFakeIPResultPtr> value;

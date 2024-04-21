@@ -3,15 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FriendsIsFollowing_t</summary>
+    /// <summary>
+    /// Returns the result of
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsFollowing" class="bb_apilink">ISteamFriends::IsFollowing</a>.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#IsFollowing" class="bb_apilink">ISteamFriends::IsFollowing</a>
+    /// </summary>
     public unsafe struct FriendsIsFollowing : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendsIsFollowing;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>CSteamID m_steamID</summary>
+        /// <summary>The Steam ID that was checked.</summary>
         public SteamId steamID;
-        /// <summary>bool m_bIsFollowing</summary>
+        /// <summary>Are we following the user? (<b>true</b>) or not? (<b>false</b>)</summary>
         public bool bIsFollowing;
     }
 }

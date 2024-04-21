@@ -66,7 +66,7 @@ public partial class CodeWriter {
                        ]
                        : []
                )
-              .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+              .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
 
     private IdentifierNameSyntax TypeDefName(string name) => IdentifierName(name.StripSuffix("_t"));

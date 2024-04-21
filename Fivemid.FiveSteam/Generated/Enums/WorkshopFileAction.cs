@@ -3,12 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EWorkshopFileAction</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum WorkshopFileAction : int
     {
-        /// <summary>k_EWorkshopFileActionPlayed</summary>
+        /// <summary>The user has played with or on this item. (e.g. Loaded a weapon or level.)</summary>
         Played = 0,
-        /// <summary>k_EWorkshopFileActionCompleted</summary>
+        /// <summary>The user has completed this item. (e.g. Got to the end of a linear map.)</summary>
         Completed = 1
     }
 }

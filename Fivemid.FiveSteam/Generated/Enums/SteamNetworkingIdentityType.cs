@@ -3,28 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingIdentityType</summary>
+    /// missing documentation for ESteamNetworkingIdentityType
     public enum SteamNetworkingIdentityType : int
     {
-        /// <summary>k_ESteamNetworkingIdentityType_Invalid</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_Invalid
         Invalid = 0,
-        /// <summary>k_ESteamNetworkingIdentityType_SteamID</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_SteamID
         SteamID = 16,
-        /// <summary>k_ESteamNetworkingIdentityType_XboxPairwiseID</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_XboxPairwiseID
         XboxPairwiseID = 17,
-        /// <summary>k_ESteamNetworkingIdentityType_SonyPSN</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_SonyPSN
         SonyPSN = 18,
-        /// <summary>k_ESteamNetworkingIdentityType_GoogleStadia</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_GoogleStadia
         GoogleStadia = 19,
-        /// <summary>k_ESteamNetworkingIdentityType_IPAddress</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_IPAddress
         IPAddress = 1,
-        /// <summary>k_ESteamNetworkingIdentityType_GenericString</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_GenericString
         GenericString = 2,
-        /// <summary>k_ESteamNetworkingIdentityType_GenericBytes</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_GenericBytes
         GenericBytes = 3,
-        /// <summary>k_ESteamNetworkingIdentityType_UnknownType</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType_UnknownType
         UnknownType = 4,
-        /// <summary>k_ESteamNetworkingIdentityType__Force32bit</summary>
+        /// missing documentation for ESteamNetworkingIdentityType.k_ESteamNetworkingIdentityType__Force32bit
         _Force32bit = 2147483647
     }
 }

@@ -3,7 +3,46 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamParties</summary>
+    /// <summary>
+    /// This API can be used to selectively advertise your multiplayer game session in a Steam chat room
+    /// group. Tell Steam the number of player spots that are available for your party, and a join-game
+    /// string, and it will show a beacon in the selected group and allow that many users to “follow” the
+    /// beacon to your party. Adjust the number of open slots if other players join through alternate
+    /// matchmaking methods. <br />
+    /// <br />
+    /// For example, you can use ISteamParties in conjunction with a private lobby. Create a private lobby,
+    /// and then use
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#CreateBeacon" class="bb_apilink">ISteamParties::CreateBeacon</a>
+    /// to create a party "beacon" for the number of players desired. The game connect string should
+    /// indicate the ID of the private lobby. <br />
+    /// <br />
+    /// The beacon will appear in Steam in the specified location (e.g. a Chat Room Group), and also via the
+    /// in-game ISteamParties API as described below. Steam creates "reservation" slots for the number of
+    /// desired players. Whenever a user follows the beacon, Steam will hold a reservation slot for them and
+    /// launch the game using the given connect string. <br />
+    /// <br />
+    /// The game session that created the beacon will be notified of this reservation, so the game can
+    /// display the appropriate "User &lt;username&gt; is joining your party" or some other indicator. Once
+    /// the user joins successfully, the game session should call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#OnReservationCompleted" class="bb_apilink">ISteamParties::OnReservationCompleted</a>
+    /// to tell Steam that the user successfully joined (otherwise, Steam will eventually timeout their
+    /// reservation and re-open the slot). <br />
+    /// <br />
+    /// When all of the beacon slots are occupied - either by reservations for users still launching the
+    /// game, or completed slots for users in the party - Steam will hide and disable the beacon. <br />
+    /// <br />
+    /// To cancel the beacon - for instance when the party is full and the game begins - call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#DestroyBeacon" class="bb_apilink">ISteamParties::DestroyBeacon</a>.<br />
+    /// <br />
+    /// The client side of this operation - seeing and following beacons - can also be managed by your game.
+    /// Using
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#GetNumActiveBeacons" class="bb_apilink">ISteamParties::GetNumActiveBeacons</a>
+    /// and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#GetBeaconDetails" class="bb_apilink">ISteamParties::GetBeaconDetails</a>, your game can get a list of beacons from other users that are currently active in locations
+    /// relevant to the current user. If the user desires, call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#JoinParty" class="bb_apilink">ISteamParties::JoinParty</a>
+    /// to "follow" one of those beacons.
+    /// </summary>
     public unsafe interface ISteamParties
     {
         public uint GetNumActiveBeacons();

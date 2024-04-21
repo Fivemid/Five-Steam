@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamParentalSettings</summary>
+    /// missing documentation for ISteamParentalSettings
     public unsafe interface ISteamParentalSettings
     {
         public bool BIsParentalLockEnabled();

@@ -244,7 +244,9 @@ namespace Fivemid.FiveSteam
         /// Set whether the game server allows spectators, and what port they should connect on. The default
         /// value is 0, meaning the service is not used.
         /// </summary>
-        /// <param name="unSpectatorPort">uint16: The port for spectators to join.</param>
+        /// <param name="unSpectatorPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port for spectators to join.</param>
         public static void SetSpectatorPort(ushort unSpectatorPort) => Instance.SetSpectatorPort(unSpectatorPort);
         /// <summary>
         /// <code>void SetSpectatorServerName( const char *pszSpectatorServerName );</code>
@@ -371,8 +373,10 @@ namespace Fivemid.FiveSteam
         ///             <code class="bb_code bb_code_inline nohighlight">pTicket</code>. This should be
         ///             <b>1024</b>.
         ///         </param>
-        /// <param name="pcbTicket">uint32
-        ///             *: Returns the length of the actual ticket.</param>
+        /// <param name="pcbTicket">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the length of the actual ticket.</param>
         public static HAuthTicket GetAuthSessionTicket(void* pTicket, int cbMaxTicket, uint* pcbTicket, SteamNetworkingIdentity* pSnid) => Instance.GetAuthSessionTicket(pTicket, cbMaxTicket, pcbTicket, pSnid);
         /// <summary>
         /// <code>
@@ -414,7 +418,9 @@ namespace Fivemid.FiveSteam
         ///             <code class="bb_code bb_code_inline nohighlight">pcbTicket</code> size provided by the
         ///             call that created this ticket.
         ///         </param>
-        /// <param name="steamID">CSteamID: The entity's Steam ID that sent this ticket.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The entity's Steam ID that sent this ticket.</param>
         public static BeginAuthSessionResult BeginAuthSession(void* pAuthTicket, int cbAuthTicket, SteamId steamID) => Instance.BeginAuthSession(pAuthTicket, cbAuthTicket, steamID);
         /// <summary>
         /// <code>void EndAuthSession( CSteamID steamID );</code>
@@ -426,7 +432,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The entity to end the active auth session with.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The entity to end the active auth session with.</param>
         public static void EndAuthSession(SteamId steamID) => Instance.EndAuthSession(steamID);
         /// <summary>
         /// <code>void CancelAuthTicket( HAuthTicket hAuthTicket );</code>
@@ -438,7 +446,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="hAuthTicket">HAuthTicket: The active auth ticket to cancel.</param>
+        /// <param name="hAuthTicket">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#HAuthTicket" class="bb_apilink">HAuthTicket</a>
+        ///         : The active auth ticket to cancel.</param>
         public static void CancelAuthTicket(HAuthTicket hAuthTicket) => Instance.CancelAuthTicket(hAuthTicket);
         /// <summary>
         /// <code>
@@ -459,8 +469,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="steamID">CSteamID: The Steam ID of the user that sent the auth ticket.</param>
-        /// <param name="appID">AppId_t: The DLC App ID to check if the user owns it.</param>
+        /// <param name="steamID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user that sent the auth ticket.</param>
+        /// <param name="appID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The DLC App ID to check if the user owns it.</param>
         public static UserHasLicenseForAppResult UserHasLicenseForApp(SteamId steamID, AppId appID) => Instance.UserHasLicenseForApp(steamID, appID);
         /// <summary>
         /// <code>
@@ -478,8 +492,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if we're not connected to the steam servers or an invalid user or group was
         /// provided.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The user to check the group status of.</param>
-        /// <param name="steamIDGroup">CSteamID: The group to check.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The user to check the group status of.</param>
+        /// <param name="steamIDGroup">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The group to check.</param>
         public static bool RequestUserGroupStatus(SteamId steamIDUser, SteamId steamIDGroup) => Instance.RequestUserGroupStatus(steamIDUser, steamIDGroup);
         /// <summary>
         /// <code>void GetGameplayStats();</code>
@@ -551,10 +569,14 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="pData">const void *: The data from the incoming packet.</param>
         /// <param name="cbData">int: The size of <code class="bb_code bb_code_inline nohighlight">pData</code> in bytes.</param>
-        /// <param name="srcIP">uint32: 
+        /// <param name="srcIP">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The IP address that this packet was sent to in host order, i.e 127.0.0.1 == 0x7f000001.
         ///         </param>
-        /// <param name="srcPort">uint16: The port that this packet was sent through, in host order.</param>
+        /// <param name="srcPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///         : The port that this packet was sent through, in host order.</param>
         public static bool HandleIncomingPacket(void* pData, int cbData, uint srcIP, ushort srcPort) => Instance.HandleIncomingPacket(pData, cbData, srcIP, srcPort);
         /// <summary>
         /// <code>
@@ -587,13 +609,17 @@ namespace Fivemid.FiveSteam
         ///             The size of the buffer provided to
         ///             <code class="bb_code bb_code_inline nohighlight">pOut</code>, should be 16 * 1024.
         ///         </param>
-        /// <param name="pNetAdr">uint32
-        ///             *: 
+        /// <param name="pNetAdr">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : 
         ///             Returns the The IP address that this packet needs to be sent to in host order, i.e
         ///             127.0.0.1 == 0x7f000001.
         ///         </param>
-        /// <param name="pPort">uint16
-        ///             *: Returns the port that this packet needs to be sent through, in host order.</param>
+        /// <param name="pPort">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint16" class="bb_apilink">uint16</a>
+        ///             *
+        ///         : Returns the port that this packet needs to be sent through, in host order.</param>
         public static int GetNextOutgoingPacket(void* pOut, int cbMaxOut, uint* pNetAdr, ushort* pPort) => Instance.GetNextOutgoingPacket(pOut, cbMaxOut, pNetAdr, pPort);
         /// <summary>
         /// <code>SteamAPICall_t AssociateWithClan( CSteamID steamIDClan );</code>
@@ -607,7 +633,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#AssociateWithClanResult_t" class="bb_apilink">AssociateWithClanResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="steamIDClan">CSteamID: The Steam ID of the group you want to be associated with.</param>
+        /// <param name="steamIDClan">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the group you want to be associated with.</param>
         public static SteamAPICall AssociateWithClan(SteamId steamIDClan) => Instance.AssociateWithClan(steamIDClan);
         /// <summary>
         /// <code>
@@ -624,7 +652,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#ComputeNewPlayerCompatibilityResult_t" class="bb_apilink">ComputeNewPlayerCompatibilityResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="steamIDNewPlayer">CSteamID: The Steam ID of the player that is attempting to join.</param>
+        /// <param name="steamIDNewPlayer">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the player that is attempting to join.</param>
         public static SteamAPICall ComputeNewPlayerCompatibility(SteamId steamIDNewPlayer) => Instance.ComputeNewPlayerCompatibility(steamIDNewPlayer);
         /// missing documentation
         public static bool SendUserConnectAndAuthenticate_DEPRECATED(uint unIPClient, void* pvAuthBlob, uint cubAuthBlobSize, SteamId* pSteamIDUser) => Instance.SendUserConnectAndAuthenticate_DEPRECATED(unIPClient, pvAuthBlob, cubAuthBlobSize, pSteamIDUser);
@@ -668,9 +698,13 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/auth" class="bb_doclink">User Authentication and Ownership</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user.</param>
         /// <param name="pchPlayerName">const char *: The name of the user.</param>
-        /// <param name="uScore">uint32: The current score of the user.</param>
+        /// <param name="uScore">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The current score of the user.</param>
         public static bool BUpdateUserData(SteamId steamIDUser, UTF8StringPtr pchPlayerName, uint uScore) => Instance.BUpdateUserData(steamIDUser, pchPlayerName, uScore);
     }
 }

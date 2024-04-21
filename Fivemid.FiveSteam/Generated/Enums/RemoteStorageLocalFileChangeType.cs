@@ -3,14 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ERemoteStorageLocalFileChange</summary>
+    /// <summary>
+    /// Ways in which a local file may be changed by Steam during the application session. See
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetLocalFileChange" class="bb_apilink">ISteamRemoteStorage::GetLocalFileChange</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum RemoteStorageLocalFileChangeType : int
     {
-        /// <summary>k_ERemoteStorageLocalFileChange_Invalid</summary>
+        /// <summary>Unused.</summary>
         RemoteStorageLocalFileChange_Invalid = 0,
-        /// <summary>k_ERemoteStorageLocalFileChange_FileUpdated</summary>
+        /// <summary>The file contents changed.</summary>
         RemoteStorageLocalFileChange_FileUpdated = 1,
-        /// <summary>k_ERemoteStorageLocalFileChange_FileDeleted</summary>
+        /// <summary>The file was deleted.</summary>
         RemoteStorageLocalFileChange_FileDeleted = 2
     }
 }

@@ -3,20 +3,20 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ETimelineGameMode</summary>
+    /// missing documentation for ETimelineGameMode
     public enum TimelineGameMode : int
     {
-        /// <summary>k_ETimelineGameMode_Invalid</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_Invalid
         Invalid = 0,
-        /// <summary>k_ETimelineGameMode_Playing</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_Playing
         Playing = 1,
-        /// <summary>k_ETimelineGameMode_Staging</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_Staging
         Staging = 2,
-        /// <summary>k_ETimelineGameMode_Menus</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_Menus
         Menus = 3,
-        /// <summary>k_ETimelineGameMode_LoadingScreen</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_LoadingScreen
         LoadingScreen = 4,
-        /// <summary>k_ETimelineGameMode_Max</summary>
+        /// missing documentation for ETimelineGameMode.k_ETimelineGameMode_Max
         Max = 5
     }
 }

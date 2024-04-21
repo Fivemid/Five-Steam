@@ -3,15 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTML_FinishedRequest_t</summary>
+    /// <summary>
+    /// Called when a browser has finished loading a page.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct HTML_FinishedRequest : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_FinishedRequest;
-        /// <summary>HHTMLBrowser unBrowserHandle</summary>
+        /// <summary>The handle of the surface that this call was for.</summary>
         public HHTMLBrowser unBrowserHandle;
-        /// <summary>const char * pchURL</summary>
+        /// <summary>The URL that was loaded.</summary>
         public UTF8StringPtr pchURL;
-        /// <summary>const char * pchPageTitle</summary>
+        /// <summary>The title of the page that got loaded.</summary>
         public UTF8StringPtr pchPageTitle;
     }
 }

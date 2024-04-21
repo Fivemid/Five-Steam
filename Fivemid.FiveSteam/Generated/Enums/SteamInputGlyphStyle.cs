@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamInputGlyphStyle</summary>
+    /// missing documentation for ESteamInputGlyphStyle
     public enum SteamInputGlyphStyle : int
     {
-        /// <summary>ESteamInputGlyphStyle_Knockout</summary>
+        /// missing documentation for ESteamInputGlyphStyle.ESteamInputGlyphStyle_Knockout
         Knockout = 0,
-        /// <summary>ESteamInputGlyphStyle_Light</summary>
+        /// missing documentation for ESteamInputGlyphStyle.ESteamInputGlyphStyle_Light
         Light = 1,
-        /// <summary>ESteamInputGlyphStyle_Dark</summary>
+        /// missing documentation for ESteamInputGlyphStyle.ESteamInputGlyphStyle_Dark
         Dark = 2,
-        /// <summary>ESteamInputGlyphStyle_NeutralColorABXY</summary>
+        /// missing documentation for ESteamInputGlyphStyle.ESteamInputGlyphStyle_NeutralColorABXY
         NeutralColorABXY = 16,
-        /// <summary>ESteamInputGlyphStyle_SolidABXY</summary>
+        /// missing documentation for ESteamInputGlyphStyle.ESteamInputGlyphStyle_SolidABXY
         SolidABXY = 32
     }
 }

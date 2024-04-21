@@ -3,36 +3,36 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetConnectionRealTimeStatus_t</summary>
+    /// missing documentation for SteamNetConnectionRealTimeStatus_t
     public unsafe struct SteamNetConnectionRealTimeStatus
     {
-        /// <summary>ESteamNetworkingConnectionState m_eState</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_eState
         public SteamNetworkingConnectionState eState;
-        /// <summary>int m_nPing</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_nPing
         public int nPing;
-        /// <summary>float m_flConnectionQualityLocal</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flConnectionQualityLocal
         public float flConnectionQualityLocal;
-        /// <summary>float m_flConnectionQualityRemote</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flConnectionQualityRemote
         public float flConnectionQualityRemote;
-        /// <summary>float m_flOutPacketsPerSec</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flOutPacketsPerSec
         public float flOutPacketsPerSec;
-        /// <summary>float m_flOutBytesPerSec</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flOutBytesPerSec
         public float flOutBytesPerSec;
-        /// <summary>float m_flInPacketsPerSec</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flInPacketsPerSec
         public float flInPacketsPerSec;
-        /// <summary>float m_flInBytesPerSec</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_flInBytesPerSec
         public float flInBytesPerSec;
-        /// <summary>int m_nSendRateBytesPerSecond</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_nSendRateBytesPerSecond
         public int nSendRateBytesPerSecond;
-        /// <summary>int m_cbPendingUnreliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_cbPendingUnreliable
         public int cbPendingUnreliable;
-        /// <summary>int m_cbPendingReliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_cbPendingReliable
         public int cbPendingReliable;
-        /// <summary>int m_cbSentUnackedReliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_cbSentUnackedReliable
         public int cbSentUnackedReliable;
-        /// <summary>SteamNetworkingMicroseconds m_usecQueueTime</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.m_usecQueueTime
         public SteamNetworkingMicroseconds usecQueueTime;
-        /// <summary>uint32 [16] reserved</summary>
+        /// missing documentation for SteamNetConnectionRealTimeStatus_t.reserved
         public FixedArray_uint16 reserved;
     }
 }

@@ -3,24 +3,40 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EItemState</summary>
+    /// <summary>
+    /// Specifies an items state. These are flags that can be combined. Returned by
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetItemState" class="bb_apilink">ISteamUGC::GetItemState</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum ItemState : int
     {
-        /// <summary>k_EItemStateNone</summary>
+        /// <summary>The item is not tracked on client.</summary>
         None = 0,
-        /// <summary>k_EItemStateSubscribed</summary>
+        /// <summary>The current user is subscribed to this item. Not just cached.</summary>
         Subscribed = 1,
-        /// <summary>k_EItemStateLegacyItem</summary>
+        /// <summary>
+        ///             The item was created with the old workshop functions in
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage" class="bb_apilink">ISteamRemoteStorage</a>.
+        ///         </summary>
         LegacyItem = 2,
-        /// <summary>k_EItemStateInstalled</summary>
+        /// <summary>Item is installed and usable (but maybe out of date).</summary>
         Installed = 4,
-        /// <summary>k_EItemStateNeedsUpdate</summary>
+        /// <summary>
+        ///             The item needs an update. Either because it's not installed yet or creator updated the
+        ///             content.
+        ///         </summary>
         NeedsUpdate = 8,
-        /// <summary>k_EItemStateDownloading</summary>
+        /// <summary>The item update is currently downloading.</summary>
         Downloading = 16,
-        /// <summary>k_EItemStateDownloadPending</summary>
+        /// <summary>
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItem" class="bb_apilink">ISteamUGC::DownloadItem</a>
+        ///             was called for this item, the content isn't available until
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItemResult_t" class="bb_apilink">DownloadItemResult_t</a>
+        ///             is fired.
+        ///         </summary>
         DownloadPending = 32,
-        /// <summary>k_EItemStateDisabledLocally</summary>
+        /// missing documentation for EItemState.k_EItemStateDisabledLocally
         DisabledLocally = 64
     }
 }

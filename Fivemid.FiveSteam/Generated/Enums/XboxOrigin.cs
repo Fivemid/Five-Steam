@@ -3,66 +3,66 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EXboxOrigin</summary>
+    /// missing documentation for EXboxOrigin
     public enum XboxOrigin : int
     {
-        /// <summary>k_EXboxOrigin_A</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_A
         A = 0,
-        /// <summary>k_EXboxOrigin_B</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_B
         B = 1,
-        /// <summary>k_EXboxOrigin_X</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_X
         X = 2,
-        /// <summary>k_EXboxOrigin_Y</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_Y
         Y = 3,
-        /// <summary>k_EXboxOrigin_LeftBumper</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftBumper
         LeftBumper = 4,
-        /// <summary>k_EXboxOrigin_RightBumper</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightBumper
         RightBumper = 5,
-        /// <summary>k_EXboxOrigin_Menu</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_Menu
         Menu = 6,
-        /// <summary>k_EXboxOrigin_View</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_View
         View = 7,
-        /// <summary>k_EXboxOrigin_LeftTrigger_Pull</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftTrigger_Pull
         LeftTrigger_Pull = 8,
-        /// <summary>k_EXboxOrigin_LeftTrigger_Click</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftTrigger_Click
         LeftTrigger_Click = 9,
-        /// <summary>k_EXboxOrigin_RightTrigger_Pull</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightTrigger_Pull
         RightTrigger_Pull = 10,
-        /// <summary>k_EXboxOrigin_RightTrigger_Click</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightTrigger_Click
         RightTrigger_Click = 11,
-        /// <summary>k_EXboxOrigin_LeftStick_Move</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_Move
         LeftStick_Move = 12,
-        /// <summary>k_EXboxOrigin_LeftStick_Click</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_Click
         LeftStick_Click = 13,
-        /// <summary>k_EXboxOrigin_LeftStick_DPadNorth</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_DPadNorth
         LeftStick_DPadNorth = 14,
-        /// <summary>k_EXboxOrigin_LeftStick_DPadSouth</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_DPadSouth
         LeftStick_DPadSouth = 15,
-        /// <summary>k_EXboxOrigin_LeftStick_DPadWest</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_DPadWest
         LeftStick_DPadWest = 16,
-        /// <summary>k_EXboxOrigin_LeftStick_DPadEast</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_LeftStick_DPadEast
         LeftStick_DPadEast = 17,
-        /// <summary>k_EXboxOrigin_RightStick_Move</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_Move
         RightStick_Move = 18,
-        /// <summary>k_EXboxOrigin_RightStick_Click</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_Click
         RightStick_Click = 19,
-        /// <summary>k_EXboxOrigin_RightStick_DPadNorth</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_DPadNorth
         RightStick_DPadNorth = 20,
-        /// <summary>k_EXboxOrigin_RightStick_DPadSouth</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_DPadSouth
         RightStick_DPadSouth = 21,
-        /// <summary>k_EXboxOrigin_RightStick_DPadWest</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_DPadWest
         RightStick_DPadWest = 22,
-        /// <summary>k_EXboxOrigin_RightStick_DPadEast</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_RightStick_DPadEast
         RightStick_DPadEast = 23,
-        /// <summary>k_EXboxOrigin_DPad_North</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_DPad_North
         DPad_North = 24,
-        /// <summary>k_EXboxOrigin_DPad_South</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_DPad_South
         DPad_South = 25,
-        /// <summary>k_EXboxOrigin_DPad_West</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_DPad_West
         DPad_West = 26,
-        /// <summary>k_EXboxOrigin_DPad_East</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_DPad_East
         DPad_East = 27,
-        /// <summary>k_EXboxOrigin_Count</summary>
+        /// missing documentation for EXboxOrigin.k_EXboxOrigin_Count
         Count = 28
     }
 }

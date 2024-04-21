@@ -3,56 +3,61 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EBroadcastUploadResult</summary>
+    /// <summary>
+    /// Broadcast upload result from
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamVideo#BroadcastUploadStop_t" class="bb_apilink">BroadcastUploadStop_t</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum BroadcastUploadResult : int
     {
-        /// <summary>k_EBroadcastUploadResultNone</summary>
+        /// <summary>Broadcast state unknown.</summary>
         None = 0,
-        /// <summary>k_EBroadcastUploadResultOK</summary>
+        /// <summary>Broadcast was good, no problems.</summary>
         OK = 1,
-        /// <summary>k_EBroadcastUploadResultInitFailed</summary>
+        /// <summary>Broadcast init failed.</summary>
         InitFailed = 2,
-        /// <summary>k_EBroadcastUploadResultFrameFailed</summary>
+        /// <summary>Broadcast frame upload failed.</summary>
         FrameFailed = 3,
-        /// <summary>k_EBroadcastUploadResultTimeout</summary>
+        /// <summary>Broadcast upload timed out.</summary>
         Timeout = 4,
-        /// <summary>k_EBroadcastUploadResultBandwidthExceeded</summary>
+        /// <summary>Broadcast send too much data.</summary>
         BandwidthExceeded = 5,
-        /// <summary>k_EBroadcastUploadResultLowFPS</summary>
+        /// <summary>Broadcast FPS is too low.</summary>
         LowFPS = 6,
-        /// <summary>k_EBroadcastUploadResultMissingKeyFrames</summary>
+        /// <summary>Broadcast sending not enough key frames.</summary>
         MissingKeyFrames = 7,
-        /// <summary>k_EBroadcastUploadResultNoConnection</summary>
+        /// <summary>Broadcast client failed to connect to relay.</summary>
         NoConnection = 8,
-        /// <summary>k_EBroadcastUploadResultRelayFailed</summary>
+        /// <summary>Relay dropped the upload.</summary>
         RelayFailed = 9,
-        /// <summary>k_EBroadcastUploadResultSettingsChanged</summary>
+        /// <summary>The client changed broadcast settings.</summary>
         SettingsChanged = 10,
-        /// <summary>k_EBroadcastUploadResultMissingAudio</summary>
+        /// <summary>Client failed to send audio data.</summary>
         MissingAudio = 11,
-        /// <summary>k_EBroadcastUploadResultTooFarBehind</summary>
+        /// <summary>Clients was too slow uploading.</summary>
         TooFarBehind = 12,
-        /// <summary>k_EBroadcastUploadResultTranscodeBehind</summary>
+        /// <summary>Server failed to keep up with transcode.</summary>
         TranscodeBehind = 13,
-        /// <summary>k_EBroadcastUploadResultNotAllowedToPlay</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultNotAllowedToPlay
         NotAllowedToPlay = 14,
-        /// <summary>k_EBroadcastUploadResultBusy</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultBusy
         Busy = 15,
-        /// <summary>k_EBroadcastUploadResultBanned</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultBanned
         Banned = 16,
-        /// <summary>k_EBroadcastUploadResultAlreadyActive</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultAlreadyActive
         AlreadyActive = 17,
-        /// <summary>k_EBroadcastUploadResultForcedOff</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultForcedOff
         ForcedOff = 18,
-        /// <summary>k_EBroadcastUploadResultAudioBehind</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultAudioBehind
         AudioBehind = 19,
-        /// <summary>k_EBroadcastUploadResultShutdown</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultShutdown
         Shutdown = 20,
-        /// <summary>k_EBroadcastUploadResultDisconnect</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultDisconnect
         Disconnect = 21,
-        /// <summary>k_EBroadcastUploadResultVideoInitFailed</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultVideoInitFailed
         VideoInitFailed = 22,
-        /// <summary>k_EBroadcastUploadResultAudioInitFailed</summary>
+        /// missing documentation for EBroadcastUploadResult.k_EBroadcastUploadResultAudioInitFailed
         AudioInitFailed = 23
     }
 }

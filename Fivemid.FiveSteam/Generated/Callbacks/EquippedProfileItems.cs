@@ -3,23 +3,30 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EquippedProfileItems_t</summary>
+    /// <summary>
+    /// <a href="https://partner.steamgames.com/doc/sdk/api#callresults" class="bb_doclink">CallResult</a>
+    /// from
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestEquippedProfileItems" class="bb_apilink">ISteamFriends::RequestEquippedProfileItems</a>. Also sent as a
+    /// <a href="https://partner.steamgames.com/doc/sdk/api#callbacks" class="bb_doclink">Callback</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct EquippedProfileItems : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.EquippedProfileItems;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary></summary>
         public Result eResult;
-        /// <summary>CSteamID m_steamID</summary>
+        /// missing documentation for EquippedProfileItems_t.m_steamID
         public SteamId steamID;
-        /// <summary>bool m_bHasAnimatedAvatar</summary>
+        /// <summary></summary>
         public bool bHasAnimatedAvatar;
-        /// <summary>bool m_bHasAvatarFrame</summary>
+        /// <summary></summary>
         public bool bHasAvatarFrame;
-        /// <summary>bool m_bHasProfileModifier</summary>
+        /// <summary></summary>
         public bool bHasProfileModifier;
-        /// <summary>bool m_bHasProfileBackground</summary>
+        /// <summary></summary>
         public bool bHasProfileBackground;
-        /// <summary>bool m_bHasMiniProfileBackground</summary>
+        /// <summary></summary>
         public bool bHasMiniProfileBackground;
     }
 }

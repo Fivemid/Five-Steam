@@ -3,7 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamNetworking</summary>
+    /// <summary>
+    /// Networking functions for making connections and sending data between clients, traversing NATs when
+    /// possible.<br />
+    /// <br />
+    /// <b>NOTE</b>: This API is deprecated and may be removed in a future Steamworks SDK release.
+    /// Please use
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingSockets" class="bb_apilink">ISteamNetworkingSockets</a>
+    /// or
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingMessages" class="bb_apilink">ISteamNetworkingMessages</a>
+    /// instead. See the
+    /// <a href="https://partner.steamgames.com/doc/features/multiplayer/networking" class="bb_doclink">Steam Networking</a>
+    /// overview for more information.
+    /// </summary>
     public unsafe interface ISteamNetworking
     {
         public bool SendP2PPacket(SteamId steamIDRemote, void* pubData, uint cubData, P2PSend eP2PSendType, int nChannel);

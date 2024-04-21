@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>UnreadChatMessagesChanged_t</summary>
+    /// missing documentation for UnreadChatMessagesChanged_t
     public unsafe struct UnreadChatMessagesChanged : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UnreadChatMessagesChanged;

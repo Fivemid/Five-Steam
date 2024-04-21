@@ -3,20 +3,24 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EVRScreenshotType</summary>
+    /// <summary>
+    /// Describes the type of VR screenshots.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum VRScreenshotType : int
     {
-        /// <summary>k_EVRScreenshotType_None</summary>
+        /// <summary></summary>
         None = 0,
-        /// <summary>k_EVRScreenshotType_Mono</summary>
+        /// <summary></summary>
         Mono = 1,
-        /// <summary>k_EVRScreenshotType_Stereo</summary>
+        /// <summary></summary>
         Stereo = 2,
-        /// <summary>k_EVRScreenshotType_MonoCubemap</summary>
+        /// <summary></summary>
         MonoCubemap = 3,
-        /// <summary>k_EVRScreenshotType_MonoPanorama</summary>
+        /// <summary></summary>
         MonoPanorama = 4,
-        /// <summary>k_EVRScreenshotType_StereoPanorama</summary>
+        /// <summary></summary>
         StereoPanorama = 5
     }
 }

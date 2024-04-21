@@ -3,7 +3,22 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamHTMLSurface</summary>
+    /// <summary>
+    /// Interface for rendering and interacting with HTML pages.<br />
+    /// <br />
+    /// You can use this interface to render and display HTML pages directly inside your game or
+    /// application. You must call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Init" class="bb_apilink">ISteamHTMLSurface::Init</a>
+    /// prior to using this interface, and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Shutdown" class="bb_apilink">ISteamHTMLSurface::Shutdown</a>
+    /// when you're done using it.<br />
+    /// <br />
+    /// It is built upon the Chromium Embedded Framework and supports HTML5 markup.<br />
+    /// <br />
+    /// See
+    /// <a href="https://partner.steamgames.com/doc/features/html_surface" class="bb_doclink">Steam HTML Surface</a>
+    /// for more information.
+    /// </summary>
     public unsafe interface ISteamHTMLSurface
     {
         public bool Init();
@@ -159,116 +174,136 @@ namespace Fivemid.FiveSteam
             public void FileLoadDialogResponse(HHTMLBrowser unBrowserHandle, UTF8StringPtr* pchSelectedFiles) => ISteamHTMLSurface.FileLoadDialogResponse(self, unBrowserHandle, pchSelectedFiles);
         }
 
-        /// <summary>EHTMLMouseButton</summary>
+        /// <summary>
+        /// Used to let the browser know when a mouse button is pressed with:
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseUp" class="bb_apilink">ISteamHTMLSurface::MouseUp</a>,
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDown" class="bb_apilink">ISteamHTMLSurface::MouseDown</a>
+        /// and
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDoubleClick" class="bb_apilink">ISteamHTMLSurface::MouseDoubleClick</a>.<br />
+        /// <br />
+        /// 
+        /// </summary>
         public enum HTMLMouseButton : int
         {
-            /// <summary>eHTMLMouseButton_Left</summary>
+            /// <summary>The left button is pressed.</summary>
             eHTMLMouseButton_Left = 0,
-            /// <summary>eHTMLMouseButton_Right</summary>
+            /// <summary>The right button is pressed.</summary>
             eHTMLMouseButton_Right = 1,
-            /// <summary>eHTMLMouseButton_Middle</summary>
+            /// <summary>The middle button is pressed.</summary>
             eHTMLMouseButton_Middle = 2
         }
 
-        /// <summary>EMouseCursor</summary>
+        /// <summary>
+        /// This lists the mouse cursors that the HTML surface will tell you to render.<br />
+        /// <br />
+        /// 
+        /// </summary>
         public enum MouseCursor : int
         {
-            /// <summary>dc_user</summary>
+            /// <summary></summary>
             dc_user = 0,
-            /// <summary>dc_none</summary>
+            /// <summary></summary>
             dc_none = 1,
-            /// <summary>dc_arrow</summary>
+            /// <summary></summary>
             dc_arrow = 2,
-            /// <summary>dc_ibeam</summary>
+            /// <summary></summary>
             dc_ibeam = 3,
-            /// <summary>dc_hourglass</summary>
+            /// <summary></summary>
             dc_hourglass = 4,
-            /// <summary>dc_waitarrow</summary>
+            /// <summary></summary>
             dc_waitarrow = 5,
-            /// <summary>dc_crosshair</summary>
+            /// <summary></summary>
             dc_crosshair = 6,
-            /// <summary>dc_up</summary>
+            /// <summary></summary>
             dc_up = 7,
-            /// <summary>dc_sizenw</summary>
+            /// <summary></summary>
             dc_sizenw = 8,
-            /// <summary>dc_sizese</summary>
+            /// <summary></summary>
             dc_sizese = 9,
-            /// <summary>dc_sizene</summary>
+            /// <summary></summary>
             dc_sizene = 10,
-            /// <summary>dc_sizesw</summary>
+            /// <summary></summary>
             dc_sizesw = 11,
-            /// <summary>dc_sizew</summary>
+            /// <summary></summary>
             dc_sizew = 12,
-            /// <summary>dc_sizee</summary>
+            /// <summary></summary>
             dc_sizee = 13,
-            /// <summary>dc_sizen</summary>
+            /// <summary></summary>
             dc_sizen = 14,
-            /// <summary>dc_sizes</summary>
+            /// <summary></summary>
             dc_sizes = 15,
-            /// <summary>dc_sizewe</summary>
+            /// <summary></summary>
             dc_sizewe = 16,
-            /// <summary>dc_sizens</summary>
+            /// <summary></summary>
             dc_sizens = 17,
-            /// <summary>dc_sizeall</summary>
+            /// <summary></summary>
             dc_sizeall = 18,
-            /// <summary>dc_no</summary>
+            /// <summary></summary>
             dc_no = 19,
-            /// <summary>dc_hand</summary>
+            /// <summary></summary>
             dc_hand = 20,
-            /// <summary>dc_blank</summary>
+            /// <summary>Don't show any custom cursor, just use your default.</summary>
             dc_blank = 21,
-            /// <summary>dc_middle_pan</summary>
+            /// <summary></summary>
             dc_middle_pan = 22,
-            /// <summary>dc_north_pan</summary>
+            /// <summary></summary>
             dc_north_pan = 23,
-            /// <summary>dc_north_east_pan</summary>
+            /// <summary></summary>
             dc_north_east_pan = 24,
-            /// <summary>dc_east_pan</summary>
+            /// <summary></summary>
             dc_east_pan = 25,
-            /// <summary>dc_south_east_pan</summary>
+            /// <summary></summary>
             dc_south_east_pan = 26,
-            /// <summary>dc_south_pan</summary>
+            /// <summary></summary>
             dc_south_pan = 27,
-            /// <summary>dc_south_west_pan</summary>
+            /// <summary></summary>
             dc_south_west_pan = 28,
-            /// <summary>dc_west_pan</summary>
+            /// <summary></summary>
             dc_west_pan = 29,
-            /// <summary>dc_north_west_pan</summary>
+            /// <summary></summary>
             dc_north_west_pan = 30,
-            /// <summary>dc_alias</summary>
+            /// <summary></summary>
             dc_alias = 31,
-            /// <summary>dc_cell</summary>
+            /// <summary></summary>
             dc_cell = 32,
-            /// <summary>dc_colresize</summary>
+            /// <summary></summary>
             dc_colresize = 33,
-            /// <summary>dc_copycur</summary>
+            /// <summary></summary>
             dc_copycur = 34,
-            /// <summary>dc_verticaltext</summary>
+            /// <summary></summary>
             dc_verticaltext = 35,
-            /// <summary>dc_rowresize</summary>
+            /// <summary></summary>
             dc_rowresize = 36,
-            /// <summary>dc_zoomin</summary>
+            /// <summary></summary>
             dc_zoomin = 37,
-            /// <summary>dc_zoomout</summary>
+            /// <summary></summary>
             dc_zoomout = 38,
-            /// <summary>dc_help</summary>
+            /// <summary></summary>
             dc_help = 39,
-            /// <summary>dc_custom</summary>
+            /// <summary></summary>
             dc_custom = 40,
-            /// <summary>dc_last</summary>
+            /// <summary>Only used to iterate over all cursors. Custom cursors start from this value and up.</summary>
             dc_last = 41
         }
 
-        /// <summary>EHTMLKeyModifiers</summary>
+        /// <summary>
+        /// Used to let the browser know what keys are pressed with:
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyChar" class="bb_apilink">ISteamHTMLSurface::KeyChar</a>,
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyUp" class="bb_apilink">ISteamHTMLSurface::KeyUp</a>
+        /// and
+        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyDown" class="bb_apilink">ISteamHTMLSurface::KeyDown</a>. These flags can be added together using bitwise OR.<br />
+        /// <br />
+        /// 
+        /// </summary>
         public enum HTMLKeyModifiers : int
         {
-            /// <summary>k_eHTMLKeyModifier_None</summary>
+            /// <summary>No modifiers are pressed.</summary>
             k_eHTMLKeyModifier_None = 0,
-            /// <summary>k_eHTMLKeyModifier_AltDown</summary>
+            /// <summary>One of the alt keys are pressed.</summary>
             k_eHTMLKeyModifier_AltDown = 1,
-            /// <summary>k_eHTMLKeyModifier_CtrlDown</summary>
+            /// <summary>One of the ctrl keys are pressed.</summary>
             k_eHTMLKeyModifier_CtrlDown = 2,
-            /// <summary>k_eHTMLKeyModifier_ShiftDown</summary>
+            /// <summary>One of the shift keys are pressed.</summary>
             k_eHTMLKeyModifier_ShiftDown = 4
         }
     }

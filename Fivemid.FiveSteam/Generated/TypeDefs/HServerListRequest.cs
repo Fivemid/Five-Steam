@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HServerListRequest</summary>
+    /// <summary>Handle that you will receive when requesting server list.</summary>
     public unsafe struct HServerListRequest
     {
         public void* value;

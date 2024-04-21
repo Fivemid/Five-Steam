@@ -3,28 +3,42 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>InputMotionData_t</summary>
+    /// <summary>
+    /// Represents the current state of a device's motion sensor(s).<br />
+    /// <br />
+    /// <b>NOTE:</b> For rotQuatX/rotQuatY/rotQuatZ/rotQuatW, the inertial measurement unit on the
+    /// controller will create a quaternion based on fusing the gyro and the accelerometer. This value is
+    /// the absolute orientation of the controller, but it will drift on the yaw axis.<br />
+    /// <br />
+    /// Positional acceleration is reported as an interpolated value between INT16_MIN and INT16_MAX where
+    /// the extents are clamped to ±2G (1G = 9.80665 m/s<sup>2</sup>).<br />
+    /// <br />
+    /// Angular velocity is reported as an interpolated value between INT16_MIN and INT16_MAX where the
+    /// extents are clamped to ±2000 degrees per second.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct InputMotionData
     {
-        /// <summary>float rotQuatX</summary>
+        /// <summary>Sensor-fused absolute rotation (will drift in heading), x axis</summary>
         public float rotQuatX;
-        /// <summary>float rotQuatY</summary>
+        /// <summary>Sensor-fused absolute rotation (will drift in heading), y axis</summary>
         public float rotQuatY;
-        /// <summary>float rotQuatZ</summary>
+        /// <summary>Sensor-fused absolute rotation (will drift in heading), z axis</summary>
         public float rotQuatZ;
-        /// <summary>float rotQuatW</summary>
+        /// <summary>Sensor-fused absolute rotation (will drift in heading), w axis</summary>
         public float rotQuatW;
-        /// <summary>float posAccelX</summary>
+        /// <summary>Positional acceleration, x axis</summary>
         public float posAccelX;
-        /// <summary>float posAccelY</summary>
+        /// <summary>Positional acceleration, y axis</summary>
         public float posAccelY;
-        /// <summary>float posAccelZ</summary>
+        /// <summary>Positional acceleration, z axis</summary>
         public float posAccelZ;
-        /// <summary>float rotVelX</summary>
+        /// <summary>Angular velocity, x axis</summary>
         public float rotVelX;
-        /// <summary>float rotVelY</summary>
+        /// <summary>Angular velocity, y axis</summary>
         public float rotVelY;
-        /// <summary>float rotVelZ</summary>
+        /// <summary>Angular velocity, z axis</summary>
         public float rotVelZ;
     }
 }

@@ -3,15 +3,30 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>LeaderboardScoresDownloaded_t</summary>
+    /// <summary>
+    /// Called when scores for a leaderboard have been downloaded and are ready to be retrieved.<br />
+    /// After calling you must use
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>
+    /// to retrieve the info for each downloaded entry.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#DownloadLeaderboardEntries" class="bb_apilink">ISteamUserStats::DownloadLeaderboardEntries</a>,
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#DownloadLeaderboardEntriesForUsers" class="bb_apilink">ISteamUserStats::DownloadLeaderboardEntriesForUsers</a>
+    /// </summary>
     public unsafe struct LeaderboardScoresDownloaded : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LeaderboardScoresDownloaded;
-        /// <summary>SteamLeaderboard_t m_hSteamLeaderboard</summary>
+        /// <summary>Handle to the leaderboard that these entries belong to.</summary>
         public SteamLeaderboard hSteamLeaderboard;
-        /// <summary>SteamLeaderboardEntries_t m_hSteamLeaderboardEntries</summary>
+        /// <summary>
+        ///             The handle to pass into
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>
+        ///             to retrieve the info for each downloaded entry.
+        ///         </summary>
         public SteamLeaderboardEntries hSteamLeaderboardEntries;
-        /// <summary>int m_cEntryCount</summary>
+        /// <summary>The number of entries downloaded.</summary>
         public int cEntryCount;
     }
 }

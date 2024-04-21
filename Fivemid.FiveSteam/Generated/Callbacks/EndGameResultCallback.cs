@@ -3,13 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EndGameResultCallback_t</summary>
+    /// missing documentation for EndGameResultCallback_t
     public unsafe struct EndGameResultCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.EndGameResultCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for EndGameResultCallback_t.m_eResult
         public Result eResult;
-        /// <summary>uint64 ullUniqueGameID</summary>
+        /// missing documentation for EndGameResultCallback_t.ullUniqueGameID
         public ulong ullUniqueGameID;
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>PublishedFileUpdateHandle_t</summary>
+    /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.</summary>
     public unsafe struct PublishedFileUpdateHandle
     {
         public ulong value;

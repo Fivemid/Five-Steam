@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamNetworkingFakeUDPPort</summary>
+    /// missing documentation for ISteamNetworkingFakeUDPPort
     public unsafe interface ISteamNetworkingFakeUDPPort
     {
         public void DestroyFakeUDPPort();

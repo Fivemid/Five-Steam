@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamController</summary>
+    /// missing documentation for ISteamController
     public unsafe interface ISteamController
     {
         public bool Init();

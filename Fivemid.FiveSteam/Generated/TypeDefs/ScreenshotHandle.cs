@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ScreenshotHandle</summary>
+    /// <summary>
+    ///             Handle to a screenshot. This will be valid for the lifetime of your process, but no
+    ///             longer.
+    ///         </summary>
     public unsafe struct ScreenshotHandle
     {
         public uint value;

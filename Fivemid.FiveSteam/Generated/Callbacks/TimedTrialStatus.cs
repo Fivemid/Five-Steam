@@ -3,17 +3,27 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>TimedTrialStatus_t</summary>
+    /// <summary>
+    /// Sent every minute when a appID is owned via a timed trial.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>See Also:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamApps#BIsTimedTrial" class="bb_apilink">ISteamApps::BIsTimedTrial</a>
+    /// </summary>
     public unsafe struct TimedTrialStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.TimedTrialStatus;
-        /// <summary>AppId_t m_unAppID</summary>
+        /// <summary>AppID that is in a timed trial.</summary>
         public AppId unAppID;
-        /// <summary>bool m_bIsOffline</summary>
+        /// <summary>
+        ///             If true, the user is currently offline. Time allowed / played refers to offline time,
+        ///             not total time.
+        ///         </summary>
         public bool bIsOffline;
-        /// <summary>uint32 m_unSecondsAllowed</summary>
+        /// <summary>How many seconds the app can be played in total.</summary>
         public uint unSecondsAllowed;
-        /// <summary>uint32 m_unSecondsPlayed</summary>
+        /// <summary>How many seconds the app was already played.</summary>
         public uint unSecondsPlayed;
     }
 }

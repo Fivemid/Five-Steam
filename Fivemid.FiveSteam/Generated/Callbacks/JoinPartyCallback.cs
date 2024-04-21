@@ -3,17 +3,26 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>JoinPartyCallback_t</summary>
+    /// <summary>
+    /// This callback is used as a call response for
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#JoinParty" class="bb_apilink">ISteamParties::JoinParty</a>. On success, you will have reserved a slot in the beacon-owner's party, and should use
+    /// <b>m_rgchConnectString</b> to connect to their game and complete the process.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct JoinPartyCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.JoinPartyCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the attempt to join the party.</summary>
         public Result eResult;
-        /// <summary>PartyBeaconID_t m_ulBeaconID</summary>
+        /// <summary>Beacon ID used in the attempt.</summary>
         public PartyBeaconID ulBeaconID;
-        /// <summary>CSteamID m_SteamIDBeaconOwner</summary>
+        /// <summary>Creator of the beacon used in the attempt.</summary>
         public SteamId SteamIDBeaconOwner;
-        /// <summary>char [256] m_rgchConnectString</summary>
+        /// <summary>
+        ///             If successful, a "join game" string for your game to use to complete the process of
+        ///             joining the desired party
+        ///         </summary>
         public UTF8String256 rgchConnectString;
     }
 }

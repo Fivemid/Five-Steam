@@ -24,7 +24,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats#GSStatsReceived_t" class="bb_apilink">GSStatsReceived_t</a>
         /// call result.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to request the stats for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to request the stats for.</param>
         public static SteamAPICall RequestUserStats(SteamId steamIDUser) => Instance.RequestUserStats(steamIDUser);
         /// <summary>
         /// <code>
@@ -57,13 +59,17 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the stat for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the stat for.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetUserStat(SteamId steamIDUser, UTF8StringPtr pchName, int* pData) => Instance.GetUserStat(steamIDUser, pchName, pData);
         /// <summary>
         /// <code>
@@ -96,13 +102,17 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the stat for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the stat for.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetUserStat(SteamId steamIDUser, UTF8StringPtr pchName, float* pData) => Instance.GetUserStat(steamIDUser, pchName, pData);
         /// <summary>
         /// <code>
@@ -129,7 +139,9 @@ namespace Fivemid.FiveSteam
         /// If the call is successful then the unlock status is returned via the
         /// <code class="bb_code bb_code_inline nohighlight">pbAchieved</code> parameter.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the achievement for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the achievement for.</param>
         /// <param name="pchName">const char *: The 'API Name' of the achievement.</param>
         /// <param name="pbAchieved">bool *: Returns the unlock status of the achievement.</param>
         public static bool GetUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName, bool* pbAchieved) => Instance.GetUserAchievement(steamIDUser, pchName, pbAchieved);
@@ -176,13 +188,17 @@ namespace Fivemid.FiveSteam
         ///     <li>The stat must be allowed to be set by game server.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to set the stat on.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to set the stat on.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="nData">int32
-        ///             / float: 
+        /// <param name="nData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             / float
+        ///         : 
         ///             The new value of the stat. This must be an absolute value, it will not increment or
         ///             decrement for you.
         ///         </param>
@@ -230,13 +246,17 @@ namespace Fivemid.FiveSteam
         ///     <li>The stat must be allowed to be set by game server.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to set the stat on.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to set the stat on.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="nData">int32
-        ///             / float: 
+        /// <param name="nData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             / float
+        ///         : 
         ///             The new value of the stat. This must be an absolute value, it will not increment or
         ///             decrement for you.
         ///         </param>
@@ -281,7 +301,9 @@ namespace Fivemid.FiveSteam
         ///     <li>The stat must be allowed to be set by game server.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to update the AVGRATE stat for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to update the AVGRATE stat for.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
@@ -325,7 +347,9 @@ namespace Fivemid.FiveSteam
         ///     <li>The stat must be allowed to be set by game server.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to unlock the achievement for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to unlock the achievement for.</param>
         /// <param name="pchName">const char *: The 'API Name' of the Achievement to unlock.</param>
         public static bool SetUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName) => Instance.SetUserAchievement(steamIDUser, pchName);
         /// <summary>
@@ -368,7 +392,9 @@ namespace Fivemid.FiveSteam
         ///     <li>The stat must be allowed to be set by game server.</li>
         /// </ul>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to clear the achievement for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to clear the achievement for.</param>
         /// <param name="pchName">const char *: The 'API Name' of the Achievement to reset.</param>
         public static bool ClearUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName) => Instance.ClearUserAchievement(steamIDUser, pchName);
         /// <summary>
@@ -402,7 +428,9 @@ namespace Fivemid.FiveSteam
         /// out of date. In this case the server sends back updated values and the stats should be updated
         /// locally to keep in sync.
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to store the stats of.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to store the stats of.</param>
         public static SteamAPICall StoreUserStats(SteamId steamIDUser) => Instance.StoreUserStats(steamIDUser);
     }
 }

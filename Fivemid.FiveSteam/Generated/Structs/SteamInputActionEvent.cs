@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInputActionEvent_t</summary>
+    /// missing documentation for SteamInputActionEvent_t
     public unsafe struct SteamInputActionEvent
     {
-        /// <summary>InputHandle_t controllerHandle</summary>
+        /// missing documentation for SteamInputActionEvent_t.controllerHandle
         public InputHandle controllerHandle;
-        /// <summary>ESteamInputActionEventType eEventType</summary>
+        /// missing documentation for SteamInputActionEvent_t.eEventType
         public SteamInputActionEventType eEventType;
     }
 }

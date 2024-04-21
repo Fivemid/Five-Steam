@@ -51,7 +51,9 @@ namespace Fivemid.FiveSteam
         /// The Steam ID of the user associated with the Remote Play session. This would normally be the logged
         /// in user, or a friend in the case of Remote Play Together.
         /// </summary>
-        /// <param name="unSessionID">uint32: The session ID to get information about</param>
+        /// <param name="unSessionID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The session ID to get information about</param>
         public static SteamId GetSessionSteamID(RemotePlaySessionID unSessionID) => Instance.GetSessionSteamID(unSessionID);
         /// <summary>
         /// <code>const char *GetSessionClientName( uint32 unSessionID );</code>
@@ -63,7 +65,9 @@ namespace Fivemid.FiveSteam
         /// The name of the device associated with the Remote Play session, or NULL if the session ID is not
         /// valid.
         /// </summary>
-        /// <param name="unSessionID">uint32: The session ID to get information about</param>
+        /// <param name="unSessionID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The session ID to get information about</param>
         public static UTF8StringPtr GetSessionClientName(RemotePlaySessionID unSessionID) => Instance.GetSessionClientName(unSessionID);
         /// <summary>
         /// <code>
@@ -89,7 +93,9 @@ namespace Fivemid.FiveSteam
         ///     k_ESteamDeviceFormFactorPhone ) { return true; } } return false; }
         /// </code>
         /// </summary>
-        /// <param name="unSessionID">uint32: The session ID to get information about</param>
+        /// <param name="unSessionID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The session ID to get information about</param>
         public static SteamDeviceFormFactor GetSessionClientFormFactor(RemotePlaySessionID unSessionID) => Instance.GetSessionClientFormFactor(unSessionID);
         /// <summary>
         /// <code>
@@ -117,7 +123,9 @@ namespace Fivemid.FiveSteam
         ///     &amp;&amp; nMaxResolutionY &gt; 0 ); }
         /// </code>
         /// </summary>
-        /// <param name="unSessionID">uint32: The session ID to get information about</param>
+        /// <param name="unSessionID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The session ID to get information about</param>
         /// <param name="pnResolutionX">int: A pointer to a variable to fill with the device resolution width</param>
         /// <param name="pnResolutionY">int: A pointer to a variable to fill with the device resolution height</param>
         public static bool BGetSessionClientResolution(RemotePlaySessionID unSessionID, int* pnResolutionX, int* pnResolutionY) => Instance.BGetSessionClientResolution(unSessionID, pnResolutionX, pnResolutionY);
@@ -132,7 +140,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// <b>true</b> if the invite was successfully sent; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="steamIDFriend">CSteamID: The Steam ID of the friend you'd like to invite</param>
+        /// <param name="steamIDFriend ">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the friend you'd like to invite</param>
         public static bool BSendRemotePlayTogetherInvite(SteamId steamIDFriend) => Instance.BSendRemotePlayTogetherInvite(steamIDFriend);
     }
 }

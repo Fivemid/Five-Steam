@@ -3,38 +3,38 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RequestPlayersForGameResultCallback_t</summary>
+    /// missing documentation for RequestPlayersForGameResultCallback_t
     public unsafe struct RequestPlayersForGameResultCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RequestPlayersForGameResultCallback;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_eResult
         public Result eResult;
-        /// <summary>uint64 m_ullSearchID</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_ullSearchID
         public ulong ullSearchID;
-        /// <summary>CSteamID m_SteamIDPlayerFound</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_SteamIDPlayerFound
         public SteamId SteamIDPlayerFound;
-        /// <summary>CSteamID m_SteamIDLobby</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_SteamIDLobby
         public SteamId SteamIDLobby;
-        /// <summary>RequestPlayersForGameResultCallback_t::PlayerAcceptState_t m_ePlayerAcceptState</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_ePlayerAcceptState
         public RequestPlayersForGameResultCallback.PlayerAcceptState ePlayerAcceptState;
-        /// <summary>int32 m_nPlayerIndex</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_nPlayerIndex
         public int nPlayerIndex;
-        /// <summary>int32 m_nTotalPlayersFound</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_nTotalPlayersFound
         public int nTotalPlayersFound;
-        /// <summary>int32 m_nTotalPlayersAcceptedGame</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_nTotalPlayersAcceptedGame
         public int nTotalPlayersAcceptedGame;
-        /// <summary>int32 m_nSuggestedTeamIndex</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_nSuggestedTeamIndex
         public int nSuggestedTeamIndex;
-        /// <summary>uint64 m_ullUniqueGameID</summary>
+        /// missing documentation for RequestPlayersForGameResultCallback_t.m_ullUniqueGameID
         public ulong ullUniqueGameID;
-        /// <summary>PlayerAcceptState_t</summary>
+        /// missing documentation for PlayerAcceptState_t
         public enum PlayerAcceptState : int
         {
-            /// <summary>k_EStateUnknown</summary>
+            /// missing documentation for PlayerAcceptState_t.k_EStateUnknown
             StateUnknown = 0,
-            /// <summary>k_EStatePlayerAccepted</summary>
+            /// missing documentation for PlayerAcceptState_t.k_EStatePlayerAccepted
             StatePlayerAccepted = 1,
-            /// <summary>k_EStatePlayerDeclined</summary>
+            /// missing documentation for PlayerAcceptState_t.k_EStatePlayerDeclined
             StatePlayerDeclined = 2
         }
     }

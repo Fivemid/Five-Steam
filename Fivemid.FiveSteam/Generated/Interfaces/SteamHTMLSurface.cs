@@ -95,7 +95,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Failing to call this will result in a memory leak!
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The browser handle to release.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The browser handle to release.</param>
         public static void RemoveBrowser(HHTMLBrowser unBrowserHandle) => Instance.RemoveBrowser(unBrowserHandle);
         /// <summary>
         /// <code>
@@ -121,7 +123,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HTML_StartRequest_t" class="bb_apilink">HTML_StartRequest_t</a>
         /// callback.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to load this URL in.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to load this URL in.</param>
         /// <param name="pchURL">const char *: The URL to load.</param>
         /// <param name="pchPostData">const char *: 
         ///             Optionally send a POST request with this data, set this to NULL to not send any data.
@@ -135,9 +139,15 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Sets the display size of a surface in pixels.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to set the size of.</param>
-        /// <param name="unWidth">uint32: The width of the surface in pixels.</param>
-        /// <param name="unHeight">uint32: The height of the surface in pixels.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to set the size of.</param>
+        /// <param name="unWidth">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The width of the surface in pixels.</param>
+        /// <param name="unHeight">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The height of the surface in pixels.</param>
         public static void SetSize(HHTMLBrowser unBrowserHandle, uint unWidth, uint unHeight) => Instance.SetSize(unBrowserHandle, unWidth, unHeight);
         /// <summary>
         /// <code>void StopLoad( HHTMLBrowser unBrowserHandle );</code>
@@ -145,7 +155,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Stop the load of the current HTML page.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to stop loading.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to stop loading.</param>
         public static void StopLoad(HHTMLBrowser unBrowserHandle) => Instance.StopLoad(unBrowserHandle);
         /// <summary>
         /// <code>void Reload( HHTMLBrowser unBrowserHandle );</code>
@@ -156,7 +168,9 @@ namespace Fivemid.FiveSteam
         /// The reload will most likely hit the local cache instead of going over the network. This is
         /// equivalent to F5 or Ctrl+R in your browser of choice.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to reload.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to reload.</param>
         public static void Reload(HHTMLBrowser unBrowserHandle) => Instance.Reload(unBrowserHandle);
         /// <summary>
         /// <code>void GoBack( HHTMLBrowser unBrowserHandle );</code>
@@ -164,7 +178,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Navigate back in the page history.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to navigate back on.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to navigate back on.</param>
         public static void GoBack(HHTMLBrowser unBrowserHandle) => Instance.GoBack(unBrowserHandle);
         /// <summary>
         /// <code>void GoForward( HHTMLBrowser unBrowserHandle );</code>
@@ -172,7 +188,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Navigate forward in the page history
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to navigate forward on.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to navigate forward on.</param>
         public static void GoForward(HHTMLBrowser unBrowserHandle) => Instance.GoForward(unBrowserHandle);
         /// <summary>
         /// <code>
@@ -185,7 +203,9 @@ namespace Fivemid.FiveSteam
         /// A full list of standard request fields are available here on
         /// <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="noreferrer">wikipedia</a>.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to add the header to.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to add the header to.</param>
         /// <param name="pchKey">const char *: The header name to add.</param>
         /// <param name="pchValue">const char *: The header value to associate with the key.</param>
         public static void AddHeader(HHTMLBrowser unBrowserHandle, UTF8StringPtr pchKey, UTF8StringPtr pchValue) => Instance.AddHeader(unBrowserHandle, pchKey, pchValue);
@@ -197,7 +217,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Run a javascript script in the currently loaded page.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface that is navigating.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface that is navigating.</param>
         /// <param name="pchScript">const char *: The javascript script to run.</param>
         public static void ExecuteJavascript(HHTMLBrowser unBrowserHandle, UTF8StringPtr pchScript) => Instance.ExecuteJavascript(unBrowserHandle, pchScript);
         /// <summary>
@@ -211,8 +233,12 @@ namespace Fivemid.FiveSteam
         /// The click will occur where the surface thinks the mouse is based on the last call to
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseMove" class="bb_apilink">ISteamHTMLSurface::MouseMove</a>.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="eMouseButton">EHTMLMouseButton: The mouse button which was released.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="eMouseButton">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLMouseButton" class="bb_apilink">EHTMLMouseButton</a>
+        ///         : The mouse button which was released.</param>
         public static void MouseUp(HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton) => Instance.MouseUp(unBrowserHandle, eMouseButton);
         /// <summary>
         /// <code>
@@ -225,8 +251,12 @@ namespace Fivemid.FiveSteam
         /// The click will occur where the surface thinks the mouse is based on the last call to
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseMove" class="bb_apilink">ISteamHTMLSurface::MouseMove</a>.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="eMouseButton">EHTMLMouseButton: The mouse button which was pressed.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="eMouseButton">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLMouseButton" class="bb_apilink">EHTMLMouseButton</a>
+        ///         : The mouse button which was pressed.</param>
         public static void MouseDown(HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton) => Instance.MouseDown(unBrowserHandle, eMouseButton);
         /// <summary>
         /// <code>
@@ -239,8 +269,12 @@ namespace Fivemid.FiveSteam
         /// The click will occur where the surface thinks the mouse is based on the last call to
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseMove" class="bb_apilink">ISteamHTMLSurface::MouseMove</a>.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="eMouseButton">EHTMLMouseButton: The mouse button which was double clicked.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="eMouseButton">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLMouseButton" class="bb_apilink">EHTMLMouseButton</a>
+        ///         : The mouse button which was double clicked.</param>
         public static void MouseDoubleClick(HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton) => Instance.MouseDoubleClick(unBrowserHandle, eMouseButton);
         /// <summary>
         /// <code>void MouseMove( HHTMLBrowser unBrowserHandle, int x, int y );</code>
@@ -248,7 +282,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Tells an HTML surface where the mouse is.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
         /// <param name="x">int: 
         ///             X (width) coordinate in pixels relative to the position of the HTML surface. (0, 0) is
         ///             the top left.
@@ -264,8 +300,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Tells an HTML surface that the mouse wheel has moved.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="nDelta">int32: The number of pixels to scroll.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="nDelta">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : The number of pixels to scroll.</param>
         public static void MouseWheel(HHTMLBrowser unBrowserHandle, int nDelta) => Instance.MouseWheel(unBrowserHandle, nDelta);
         /// <summary>
         /// <code>
@@ -276,9 +316,15 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// keyboard interactions, native keycode is the virtual key code value from your OS
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="nNativeKeyCode">uint32: This is the virtual keycode value from the OS.</param>
-        /// <param name="eHTMLKeyModifiers">EHTMLKeyModifiers: 
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="nNativeKeyCode">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : This is the virtual keycode value from the OS.</param>
+        /// <param name="eHTMLKeyModifiers">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLKeyModifiers" class="bb_apilink">EHTMLKeyModifiers</a>
+        ///         : 
         ///             This should be set to a bitmask of the modifier keys that the user is currently
         ///             pressing.
         ///         </param>
@@ -290,9 +336,15 @@ namespace Fivemid.FiveSteam
         /// </code>
         /// 
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="nNativeKeyCode">uint32: This is the virtual keycode value from the OS.</param>
-        /// <param name="eHTMLKeyModifiers">EHTMLKeyModifiers: 
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="nNativeKeyCode">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : This is the virtual keycode value from the OS.</param>
+        /// <param name="eHTMLKeyModifiers">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLKeyModifiers" class="bb_apilink">EHTMLKeyModifiers</a>
+        ///         : 
         ///             This should be set to a bitmask of the modifier keys that the user is currently
         ///             pressing.
         ///         </param>
@@ -307,12 +359,18 @@ namespace Fivemid.FiveSteam
         /// cUnicodeChar is the unicode character point for this keypress (and potentially multiple chars per
         /// press)
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to send the interaction to.</param>
-        /// <param name="cUnicodeChar">uint32: 
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to send the interaction to.</param>
+        /// <param name="cUnicodeChar">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The unicode character point for this keypress; and potentially multiple characters per
         ///             press.
         ///         </param>
-        /// <param name="eHTMLKeyModifiers">EHTMLKeyModifiers: 
+        /// <param name="eHTMLKeyModifiers">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#EHTMLKeyModifiers" class="bb_apilink">EHTMLKeyModifiers</a>
+        ///         : 
         ///             This should be set to a bitmask of the modifier keys that the user is currently
         ///             pressing.
         ///         </param>
@@ -336,8 +394,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#SetVerticalScroll" class="bb_apilink">ISteamHTMLSurface::SetVerticalScroll</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HTML_VerticalScroll_t" class="bb_apilink">HTML_VerticalScroll_t</a>
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to set the horizontal scroll position.</param>
-        /// <param name="nAbsolutePixelScroll">uint32: 
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to set the horizontal scroll position.</param>
+        /// <param name="nAbsolutePixelScroll">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The absolute pixel position to scroll to. 0 is the left and
         ///             <code class="bb_code bb_code_inline nohighlight">HTML_HorizontalScroll_t.unScrollMax</code>
         ///             is the right side.
@@ -362,8 +424,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#SetHorizontalScroll" class="bb_apilink">ISteamHTMLSurface::SetHorizontalScroll</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HTML_HorizontalScroll_t" class="bb_apilink">HTML_HorizontalScroll_t</a>
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to set the vertical scroll position.</param>
-        /// <param name="nAbsolutePixelScroll">uint32: 
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to set the vertical scroll position.</param>
+        /// <param name="nAbsolutePixelScroll">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The absolute pixel position to scroll to. 0 is the top and
         ///             <code class="bb_code bb_code_inline nohighlight">HTML_VerticalScroll_t.unScrollMax</code>
         ///             is the bottom.
@@ -376,7 +442,9 @@ namespace Fivemid.FiveSteam
         /// Tell a HTML surface if it has key focus currently, controls showing the I-beam cursor in text
         /// controls amongst other things.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to set key focus on.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to set key focus on.</param>
         /// <param name="bHasKeyFocus">bool: Turn key focus on or off?</param>
         public static void SetKeyFocus(HHTMLBrowser unBrowserHandle, bool bHasKeyFocus) => Instance.SetKeyFocus(unBrowserHandle, bHasKeyFocus);
         /// <summary>
@@ -385,7 +453,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Open the current pages HTML source code in default local text editor, used for debugging.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to view its current pages source.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to view its current pages source.</param>
         public static void ViewSource(HHTMLBrowser unBrowserHandle) => Instance.ViewSource(unBrowserHandle);
         /// <summary>
         /// <code>void CopyToClipboard( HHTMLBrowser unBrowserHandle );</code>
@@ -393,7 +463,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Copy the currently selected text from the current page in an HTML surface into the local clipboard.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to copy the text from.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to copy the text from.</param>
         public static void CopyToClipboard(HHTMLBrowser unBrowserHandle) => Instance.CopyToClipboard(unBrowserHandle);
         /// <summary>
         /// <code>void PasteFromClipboard( HHTMLBrowser unBrowserHandle );</code>
@@ -401,7 +473,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// Paste from the local clipboard to the current page in an HTML surface.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to paste into.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to paste into.</param>
         public static void PasteFromClipboard(HHTMLBrowser unBrowserHandle) => Instance.PasteFromClipboard(unBrowserHandle);
         /// <summary>
         /// <code>
@@ -424,7 +498,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HTML_SearchResults_t" class="bb_apilink">HTML_SearchResults_t</a>
         /// callback.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to find the string in.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to find the string in.</param>
         /// <param name="pchSearchStr">const char *: The string to search for.</param>
         /// <param name="bCurrentlyInFind">bool: 
         ///             Set this to <b>true</b> on subsequent calls to cycle through to the next
@@ -441,7 +517,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Find" class="bb_apilink">ISteamHTMLSurface::Find</a>
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to stop the find results.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to stop the find results.</param>
         public static void StopFind(HHTMLBrowser unBrowserHandle) => Instance.StopFind(unBrowserHandle);
         /// <summary>
         /// <code>void GetLinkAtPosition( HHTMLBrowser unBrowserHandle, int x, int y );</code>
@@ -454,7 +532,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HTML_LinkAtPosition_t" class="bb_apilink">HTML_LinkAtPosition_t</a>
         /// callback.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to get a link from.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to get a link from.</param>
         /// <param name="x">int: The X (width) position in pixels within the surface. (0, 0) is the top left corner.</param>
         /// <param name="y">int: 
         ///             The Y (height) position in pixels within the surface. (0, 0) is the top left corner.
@@ -479,7 +559,9 @@ namespace Fivemid.FiveSteam
         ///             Sets the 'Path' attribute on the cookie. You can use this to restrict the cookie to a
         ///             specific path on the domain. e.g. "/accounts"
         ///         </param>
-        /// <param name="nExpires">RTime32: 
+        /// <param name="nExpires">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#RTime32" class="bb_apilink">RTime32</a>
+        ///         : 
         ///             Sets the 'Expires' attribute on the cookie to the specified timestamp in Unix epoch
         ///             format (seconds since Jan 1st 1970).
         ///         </param>
@@ -499,7 +581,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">HTML_HorizontalScroll_t.flPageScale</code>, and
         /// <code class="bb_code bb_code_inline nohighlight">HTML_VerticalScroll_t.flPageScale</code>.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface to scale.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface to scale.</param>
         /// <param name="flZoom">float: 
         ///             The amount to zoom, this can range from <b>1</b> (100% and the default) to
         ///             <b>2</b> (200%).
@@ -521,7 +605,9 @@ namespace Fivemid.FiveSteam
         /// When background mode is disabled, any video or audio objects with that property will resume with
         /// ".play()".
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface set background mode on.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface set background mode on.</param>
         /// <param name="bBackgroundMode">bool: Toggle background mode on or off.</param>
         public static void SetBackgroundMode(HHTMLBrowser unBrowserHandle, bool bBackgroundMode) => Instance.SetBackgroundMode(unBrowserHandle, bBackgroundMode);
         /// missing documentation
@@ -545,7 +631,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// You can use this feature to limit the valid pages allowed in your HTML surface.
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface that is navigating.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface that is navigating.</param>
         /// <param name="bAllowed">bool: Allow or deny the navigation to the current start request.</param>
         public static void AllowStartRequest(HHTMLBrowser unBrowserHandle, bool bAllowed) => Instance.AllowStartRequest(unBrowserHandle, bAllowed);
         /// <summary>
@@ -563,7 +651,9 @@ namespace Fivemid.FiveSteam
         ///     </div>
         /// </div>
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface that is spawning a dialog.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface that is spawning a dialog.</param>
         /// <param name="bResult">bool: 
         ///             Set this to <b>true</b> to simulate pressing the "OK" button, otherwise
         ///             <b>false</b> for "Cancel".
@@ -584,7 +674,9 @@ namespace Fivemid.FiveSteam
         ///     </div>
         /// </div>
         /// </summary>
-        /// <param name="unBrowserHandle">HHTMLBrowser: The handle of the surface that wants to spawn a file open dialog.</param>
+        /// <param name="unBrowserHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#HHTMLBrowser" class="bb_apilink">HHTMLBrowser</a>
+        ///         : The handle of the surface that wants to spawn a file open dialog.</param>
         /// <param name="pchSelectedFiles">const char **: 
         ///             This should be an array of absolute file paths to the files that the user has selected.
         ///             <b>NULL</b> if the user did not select any files.

@@ -3,13 +3,17 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>PSNGameBootInviteResult_t</summary>
+    /// <summary>
+    /// Deprecated - PS3 only.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct PSNGameBootInviteResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.PSNGameBootInviteResult;
-        /// <summary>bool m_bGameBootInviteExists</summary>
+        /// <summary></summary>
         public bool bGameBootInviteExists;
-        /// <summary>CSteamID m_steamIDLobby</summary>
+        /// <summary></summary>
         public SteamId steamIDLobby;
     }
 }

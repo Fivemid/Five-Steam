@@ -3,100 +3,113 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EHTTPStatusCode</summary>
+    /// <summary>
+    /// HTTP response status codes that the server can send in response to a request.<br />
+    /// <br />
+    /// See the
+    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" rel="noreferrer">Mozilla Developer Network</a>
+    /// or RFC2616 section 10.3 for detailed descriptions for each of these.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum HTTPStatusCode : int
     {
-        /// <summary>k_EHTTPStatusCodeInvalid</summary>
+        /// <summary>
+        ///             Invalid status code. This isn't defined in HTTP, used to indicate unset in our code.
+        ///         </summary>
         Invalid = 0,
-        /// <summary>k_EHTTPStatusCode100Continue</summary>
+        /// <summary></summary>
         _100Continue = 100,
-        /// <summary>k_EHTTPStatusCode101SwitchingProtocols</summary>
+        /// <summary></summary>
         _101SwitchingProtocols = 101,
-        /// <summary>k_EHTTPStatusCode200OK</summary>
+        /// <summary></summary>
         _200OK = 200,
-        /// <summary>k_EHTTPStatusCode201Created</summary>
+        /// <summary></summary>
         _201Created = 201,
-        /// <summary>k_EHTTPStatusCode202Accepted</summary>
+        /// <summary></summary>
         _202Accepted = 202,
-        /// <summary>k_EHTTPStatusCode203NonAuthoritative</summary>
+        /// <summary></summary>
         _203NonAuthoritative = 203,
-        /// <summary>k_EHTTPStatusCode204NoContent</summary>
+        /// <summary></summary>
         _204NoContent = 204,
-        /// <summary>k_EHTTPStatusCode205ResetContent</summary>
+        /// <summary></summary>
         _205ResetContent = 205,
-        /// <summary>k_EHTTPStatusCode206PartialContent</summary>
+        /// <summary></summary>
         _206PartialContent = 206,
-        /// <summary>k_EHTTPStatusCode300MultipleChoices</summary>
+        /// <summary></summary>
         _300MultipleChoices = 300,
-        /// <summary>k_EHTTPStatusCode301MovedPermanently</summary>
+        /// <summary></summary>
         _301MovedPermanently = 301,
-        /// <summary>k_EHTTPStatusCode302Found</summary>
+        /// <summary></summary>
         _302Found = 302,
-        /// <summary>k_EHTTPStatusCode303SeeOther</summary>
+        /// <summary></summary>
         _303SeeOther = 303,
-        /// <summary>k_EHTTPStatusCode304NotModified</summary>
+        /// <summary></summary>
         _304NotModified = 304,
-        /// <summary>k_EHTTPStatusCode305UseProxy</summary>
+        /// <summary></summary>
         _305UseProxy = 305,
-        /// <summary>k_EHTTPStatusCode307TemporaryRedirect</summary>
+        /// <summary></summary>
         _307TemporaryRedirect = 307,
-        /// <summary>k_EHTTPStatusCode308PermanentRedirect</summary>
+        /// missing documentation for EHTTPStatusCode.k_EHTTPStatusCode308PermanentRedirect
         _308PermanentRedirect = 308,
-        /// <summary>k_EHTTPStatusCode400BadRequest</summary>
+        /// <summary></summary>
         _400BadRequest = 400,
-        /// <summary>k_EHTTPStatusCode401Unauthorized</summary>
+        /// <summary>
+        ///             You probably want 403 or something else. 401 implies you're sending a WWW-Authenticate
+        ///             header and the client can sent an Authorization header in response.
+        ///         </summary>
         _401Unauthorized = 401,
-        /// <summary>k_EHTTPStatusCode402PaymentRequired</summary>
+        /// <summary>This is reserved for future HTTP specs, not really supported by clients.</summary>
         _402PaymentRequired = 402,
-        /// <summary>k_EHTTPStatusCode403Forbidden</summary>
+        /// <summary></summary>
         _403Forbidden = 403,
-        /// <summary>k_EHTTPStatusCode404NotFound</summary>
+        /// <summary></summary>
         _404NotFound = 404,
-        /// <summary>k_EHTTPStatusCode405MethodNotAllowed</summary>
+        /// <summary></summary>
         _405MethodNotAllowed = 405,
-        /// <summary>k_EHTTPStatusCode406NotAcceptable</summary>
+        /// <summary></summary>
         _406NotAcceptable = 406,
-        /// <summary>k_EHTTPStatusCode407ProxyAuthRequired</summary>
+        /// <summary></summary>
         _407ProxyAuthRequired = 407,
-        /// <summary>k_EHTTPStatusCode408RequestTimeout</summary>
+        /// <summary></summary>
         _408RequestTimeout = 408,
-        /// <summary>k_EHTTPStatusCode409Conflict</summary>
+        /// <summary></summary>
         _409Conflict = 409,
-        /// <summary>k_EHTTPStatusCode410Gone</summary>
+        /// <summary></summary>
         _410Gone = 410,
-        /// <summary>k_EHTTPStatusCode411LengthRequired</summary>
+        /// <summary></summary>
         _411LengthRequired = 411,
-        /// <summary>k_EHTTPStatusCode412PreconditionFailed</summary>
+        /// <summary></summary>
         _412PreconditionFailed = 412,
-        /// <summary>k_EHTTPStatusCode413RequestEntityTooLarge</summary>
+        /// <summary></summary>
         _413RequestEntityTooLarge = 413,
-        /// <summary>k_EHTTPStatusCode414RequestURITooLong</summary>
+        /// <summary></summary>
         _414RequestURITooLong = 414,
-        /// <summary>k_EHTTPStatusCode415UnsupportedMediaType</summary>
+        /// <summary></summary>
         _415UnsupportedMediaType = 415,
-        /// <summary>k_EHTTPStatusCode416RequestedRangeNotSatisfiable</summary>
+        /// <summary></summary>
         _416RequestedRangeNotSatisfiable = 416,
-        /// <summary>k_EHTTPStatusCode417ExpectationFailed</summary>
+        /// <summary></summary>
         _417ExpectationFailed = 417,
-        /// <summary>k_EHTTPStatusCode4xxUnknown</summary>
+        /// <summary>418 is reserved, so we use it to mean unknown.</summary>
         _4xxUnknown = 418,
-        /// <summary>k_EHTTPStatusCode429TooManyRequests</summary>
+        /// <summary></summary>
         _429TooManyRequests = 429,
-        /// <summary>k_EHTTPStatusCode444ConnectionClosed</summary>
+        /// missing documentation for EHTTPStatusCode.k_EHTTPStatusCode444ConnectionClosed
         _444ConnectionClosed = 444,
-        /// <summary>k_EHTTPStatusCode500InternalServerError</summary>
+        /// <summary></summary>
         _500InternalServerError = 500,
-        /// <summary>k_EHTTPStatusCode501NotImplemented</summary>
+        /// <summary></summary>
         _501NotImplemented = 501,
-        /// <summary>k_EHTTPStatusCode502BadGateway</summary>
+        /// <summary></summary>
         _502BadGateway = 502,
-        /// <summary>k_EHTTPStatusCode503ServiceUnavailable</summary>
+        /// <summary></summary>
         _503ServiceUnavailable = 503,
-        /// <summary>k_EHTTPStatusCode504GatewayTimeout</summary>
+        /// <summary></summary>
         _504GatewayTimeout = 504,
-        /// <summary>k_EHTTPStatusCode505HTTPVersionNotSupported</summary>
+        /// <summary></summary>
         _505HTTPVersionNotSupported = 505,
-        /// <summary>k_EHTTPStatusCode5xxUnknown</summary>
+        /// <summary></summary>
         _5xxUnknown = 599
     }
 }

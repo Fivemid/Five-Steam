@@ -3,14 +3,25 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ERemoteStorageFilePathType</summary>
+    /// <summary>
+    /// For APIs that may return file paths in different forms. See
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetLocalFileChange" class="bb_apilink">ISteamRemoteStorage::GetLocalFileChange</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum RemoteStorageFilePathType : int
     {
-        /// <summary>k_ERemoteStorageFilePathType_Invalid</summary>
+        /// <summary>Unused.</summary>
         Invalid = 0,
-        /// <summary>k_ERemoteStorageFilePathType_Absolute</summary>
+        /// <summary>
+        ///             An absolute disk path is provided. This type of path is used for files managed via
+        ///             AutoCloud.
+        ///         </summary>
         Absolute = 1,
-        /// <summary>k_ERemoteStorageFilePathType_APIFilename</summary>
+        /// <summary>
+        ///             An ISteamRemoteStorage API relative path is provided. This type of path is used for
+        ///             files managed via the ISteamRemoteStorage API methods (FileWrite, FileRead, etc).
+        ///         </summary>
         APIFilename = 2
     }
 }

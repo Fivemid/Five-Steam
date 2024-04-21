@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamMatchmakingRulesResponse</summary>
+    /// missing documentation for ISteamMatchmakingRulesResponse
     public unsafe interface ISteamMatchmakingRulesResponse
     {
         public void RulesResponded(UTF8StringPtr pchRule, UTF8StringPtr pchValue);

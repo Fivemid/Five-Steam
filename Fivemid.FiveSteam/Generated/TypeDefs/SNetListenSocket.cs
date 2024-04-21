@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SNetListenSocket_t</summary>
+    /// <summary>CreateListenSocket()</summary>
     public unsafe struct SNetListenSocket
     {
         public uint value;

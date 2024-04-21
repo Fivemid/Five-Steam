@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FnSteamNetworkingMessagesSessionRequest</summary>
+    /// missing documentation for FnSteamNetworkingMessagesSessionRequest
     public unsafe struct FnSteamNetworkingMessagesSessionRequest
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamNetworkingMessagesSessionRequestPtr> value;

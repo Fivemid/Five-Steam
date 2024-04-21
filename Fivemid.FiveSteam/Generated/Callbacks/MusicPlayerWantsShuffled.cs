@@ -3,11 +3,15 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>MusicPlayerWantsShuffled_t</summary>
+    /// <summary>
+    /// <br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct MusicPlayerWantsShuffled : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.MusicPlayerWantsShuffled;
-        /// <summary>bool m_bShuffled</summary>
+        /// <summary></summary>
         public bool bShuffled;
     }
 }

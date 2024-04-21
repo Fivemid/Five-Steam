@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>PublishedFileId_t</summary>
+    /// <summary>A unique handle to an individual workshop item.</summary>
     public unsafe struct PublishedFileId
     {
         public ulong value;

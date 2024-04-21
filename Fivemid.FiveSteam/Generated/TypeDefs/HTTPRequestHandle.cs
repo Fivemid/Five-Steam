@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTTPRequestHandle</summary>
+    /// <summary>Handle to a HTTP Request handle</summary>
     public unsafe struct HTTPRequestHandle
     {
         public uint value;

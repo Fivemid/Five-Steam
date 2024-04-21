@@ -80,8 +80,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetStat(UTF8StringPtr pchName, int* pData) => Instance.GetStat(pchName, pData);
         /// <summary>
         /// <code>
@@ -128,8 +130,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetStat(UTF8StringPtr pchName, float* pData) => Instance.GetStat(pchName, pData);
         /// <summary>
         /// <code>
@@ -179,8 +183,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="nData">int32
-        ///             / float: 
+        /// <param name="nData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             / float
+        ///         : 
         ///             The new value of the stat. This must be an absolute value, it will not increment or
         ///             decrement for you.
         ///         </param>
@@ -233,8 +239,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="nData">int32
-        ///             / float: 
+        /// <param name="nData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             / float
+        ///         : 
         ///             The new value of the stat. This must be an absolute value, it will not increment or
         ///             decrement for you.
         ///         </param>
@@ -436,8 +444,10 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="pchName">const char *: The 'API Name' of the achievement.</param>
         /// <param name="pbAchieved">bool *: Returns whether the current user has unlocked the achievement.</param>
-        /// <param name="punUnlockTime">uint32
-        ///             *: Returns the time that the achievement was unlocked; if pbAchieved is true.</param>
+        /// <param name="punUnlockTime">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the time that the achievement was unlocked; if pbAchieved is true.</param>
         public static bool GetAchievementAndUnlockTime(UTF8StringPtr pchName, bool* pbAchieved, uint* punUnlockTime) => Instance.GetAchievementAndUnlockTime(pchName, pbAchieved, punUnlockTime);
         /// <summary>
         /// <code>bool StoreStats();</code>
@@ -640,8 +650,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#SetOverlayNotificationInset" class="bb_apilink">ISteamUtils::SetOverlayNotificationInset</a>
         /// </summary>
         /// <param name="pchName">const char *: The 'API Name' of the achievement.</param>
-        /// <param name="nCurProgress">uint32: The current progress.</param>
-        /// <param name="nMaxProgress">uint32: The progress required to unlock the achievement.</param>
+        /// <param name="nCurProgress">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The current progress.</param>
+        /// <param name="nMaxProgress">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The progress required to unlock the achievement.</param>
         public static bool IndicateAchievementProgress(UTF8StringPtr pchName, uint nCurProgress, uint nMaxProgress) => Instance.IndicateAchievementProgress(pchName, nCurProgress, nMaxProgress);
         /// <summary>
         /// <code>uint32 GetNumAchievements();</code>
@@ -701,7 +715,9 @@ namespace Fivemid.FiveSteam
         ///     ( achName ) { printf( "%s", achName ); } }
         /// </code>
         /// </summary>
-        /// <param name="iAchievement">uint32: Index of the achievement.</param>
+        /// <param name="iAchievement">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Index of the achievement.</param>
         public static UTF8StringPtr GetAchievementName(uint iAchievement) => Instance.GetAchievementName(iAchievement);
         /// <summary>
         /// <code>SteamAPICall_t RequestUserStats( CSteamID steamIDUser );</code>
@@ -734,7 +750,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievementAndUnlockTime" class="bb_apilink">ISteamUserStats::GetUserAchievementAndUnlockTime</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserStat" class="bb_apilink">ISteamUserStats::GetUserStat</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to request stats for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to request stats for.</param>
         public static SteamAPICall RequestUserStats(SteamId steamIDUser) => Instance.RequestUserStats(steamIDUser);
         /// <summary>
         /// <code>
@@ -774,13 +792,17 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievement" class="bb_apilink">ISteamUserStats::GetUserAchievement</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievementAndUnlockTime" class="bb_apilink">ISteamUserStats::GetUserAchievementAndUnlockTime</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the stat for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the stat for.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetUserStat(SteamId steamIDUser, UTF8StringPtr pchName, int* pData) => Instance.GetUserStat(steamIDUser, pchName, pData);
         /// <summary>
         /// <code>
@@ -820,13 +842,17 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievement" class="bb_apilink">ISteamUserStats::GetUserAchievement</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievementAndUnlockTime" class="bb_apilink">ISteamUserStats::GetUserAchievementAndUnlockTime</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the stat for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the stat for.</param>
         /// <param name="pchName">const char *: 
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int32
-        ///             * / float *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             * / float *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetUserStat(SteamId steamIDUser, UTF8StringPtr pchName, float* pData) => Instance.GetUserStat(steamIDUser, pchName, pData);
         /// <summary>
         /// <code>
@@ -862,7 +888,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserStat" class="bb_apilink">ISteamUserStats::GetUserStat</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievementAndUnlockTime" class="bb_apilink">ISteamUserStats::GetUserAchievementAndUnlockTime</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the achievement for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the achievement for.</param>
         /// <param name="pchName">const char *: The 'API Name' of the achievement.</param>
         /// <param name="pbAchieved">bool *: Returns the unlock status of the achievement.</param>
         public static bool GetUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName, bool* pbAchieved) => Instance.GetUserAchievement(steamIDUser, pchName, pbAchieved);
@@ -905,11 +933,15 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserAchievement" class="bb_apilink">ISteamUserStats::GetUserAchievement</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetUserStat" class="bb_apilink">ISteamUserStats::GetUserStat</a>
         /// </summary>
-        /// <param name="steamIDUser">CSteamID: The Steam ID of the user to get the achievement for.</param>
+        /// <param name="steamIDUser">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : The Steam ID of the user to get the achievement for.</param>
         /// <param name="pchName">const char *: The 'API Name' of the achievement.</param>
         /// <param name="pbAchieved">bool *: Returns whether the current user has unlocked the achievement.</param>
-        /// <param name="punUnlockTime">uint32
-        ///             *: Returns the time that the achievement was unlocked; if pbAchieved is true.</param>
+        /// <param name="punUnlockTime">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the time that the achievement was unlocked; if pbAchieved is true.</param>
         public static bool GetUserAchievementAndUnlockTime(SteamId steamIDUser, UTF8StringPtr pchName, bool* pbAchieved, uint* punUnlockTime) => Instance.GetUserAchievementAndUnlockTime(steamIDUser, pchName, pbAchieved, punUnlockTime);
         /// <summary>
         /// <code>bool ResetAllStats( bool bAchievementsToo );</code>
@@ -975,8 +1007,12 @@ namespace Fivemid.FiveSteam
         ///             The name of the leaderboard to find or create. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchLeaderboardNameMax" class="bb_apilink">k_cchLeaderboardNameMax</a>.
         ///         </param>
-        /// <param name="eLeaderboardSortMethod">ELeaderboardSortMethod: The sort order of the new leaderboard if it's created.</param>
-        /// <param name="eLeaderboardDisplayType">ELeaderboardDisplayType: 
+        /// <param name="eLeaderboardSortMethod">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#ELeaderboardSortMethod" class="bb_apilink">ELeaderboardSortMethod</a>
+        ///         : The sort order of the new leaderboard if it's created.</param>
+        /// <param name="eLeaderboardDisplayType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#ELeaderboardDisplayType" class="bb_apilink">ELeaderboardDisplayType</a>
+        ///         : 
         ///             The display type (used by the Steam Community web site) of the new leaderboard if it's
         ///             created.
         ///         </param>
@@ -1025,7 +1061,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardSortMethod" class="bb_apilink">ISteamUserStats::GetLeaderboardSortMethod</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardDisplayType" class="bb_apilink">ISteamUserStats::GetLeaderboardDisplayType</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
@@ -1055,7 +1093,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardSortMethod" class="bb_apilink">ISteamUserStats::GetLeaderboardSortMethod</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardDisplayType" class="bb_apilink">ISteamUserStats::GetLeaderboardDisplayType</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
@@ -1081,7 +1121,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardDisplayType" class="bb_apilink">ISteamUserStats::GetLeaderboardDisplayType</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardEntryCount" class="bb_apilink">ISteamUserStats::GetLeaderboardEntryCount</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
@@ -1107,7 +1149,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardSortMethod" class="bb_apilink">ISteamUserStats::GetLeaderboardSortMethod</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetLeaderboardEntryCount" class="bb_apilink">ISteamUserStats::GetLeaderboardEntryCount</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
@@ -1149,13 +1193,17 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#UploadLeaderboardScore" class="bb_apilink">ISteamUserStats::UploadLeaderboardScore</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindOrCreateLeaderboard" class="bb_apilink">ISteamUserStats::FindOrCreateLeaderboard</a>.
         ///         </param>
-        /// <param name="eLeaderboardDataRequest">ELeaderboardDataRequest: The type of data request to make.</param>
+        /// <param name="eLeaderboardDataRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#ELeaderboardDataRequest" class="bb_apilink">ELeaderboardDataRequest</a>
+        ///         : The type of data request to make.</param>
         /// <param name="nRangeStart">int: The index to start downloading entries relative to eLeaderboardDataRequest.</param>
         /// <param name="nRangeEnd">int: The last index to retrieve entries for relative to eLeaderboardDataRequest.</param>
         public static SteamAPICall DownloadLeaderboardEntries(SteamLeaderboard hSteamLeaderboard, LeaderboardDataRequest eLeaderboardDataRequest, int nRangeStart, int nRangeEnd) => Instance.DownloadLeaderboardEntries(hSteamLeaderboard, eLeaderboardDataRequest, nRangeStart, nRangeEnd);
@@ -1197,14 +1245,18 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#UploadLeaderboardScore" class="bb_apilink">ISteamUserStats::UploadLeaderboardScore</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindOrCreateLeaderboard" class="bb_apilink">ISteamUserStats::FindOrCreateLeaderboard</a>.
         ///         </param>
-        /// <param name="prgUsers">CSteamID
-        ///             *: An array of Steam IDs to get the leaderboard entries for.</param>
+        /// <param name="prgUsers">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : An array of Steam IDs to get the leaderboard entries for.</param>
         /// <param name="cUsers">int: 
         ///             The number of elements in the
         ///             <code class="bb_code bb_code_inline nohighlight">prgUsers</code> array.
@@ -1266,7 +1318,9 @@ namespace Fivemid.FiveSteam
         ///     &amp;leaderboardEntry, details, 3 ); assert( leaderboardEntry.m_cDetails == 3 ); //... } }
         /// </code>
         /// </summary>
-        /// <param name="hSteamLeaderboardEntries">SteamLeaderboardEntries_t: 
+        /// <param name="hSteamLeaderboardEntries">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboardEntries_t" class="bb_apilink">SteamLeaderboardEntries_t</a>
+        ///         : 
         ///             A leaderboard entries handle obtained from the most recently received
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#LeaderboardScoresDownloaded_t" class="bb_apilink">LeaderboardScoresDownloaded_t</a>
         ///             call result.
@@ -1275,10 +1329,14 @@ namespace Fivemid.FiveSteam
         ///             The index of the leaderboard entry to receive, must be between 0 and
         ///             <code class="bb_code bb_code_inline nohighlight">LeaderboardScoresDownloaded_t.m_cEntryCount</code>.
         ///         </param>
-        /// <param name="pLeaderboardEntry">LeaderboardEntry_t
-        ///             *: Variable where the entry will be returned to.</param>
-        /// <param name="pDetails">int32
-        ///             *: A preallocated array where the details of this entry get returned into.</param>
+        /// <param name="pLeaderboardEntry">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#LeaderboardEntry_t" class="bb_apilink">LeaderboardEntry_t</a>
+        ///             *
+        ///         : Variable where the entry will be returned to.</param>
+        /// <param name="pDetails">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : A preallocated array where the details of this entry get returned into.</param>
         /// <param name="cDetailsMax">int: 
         ///             The length of the
         ///             <code class="bb_code bb_code_inline nohighlight">pDetails</code> array.
@@ -1313,19 +1371,27 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#DownloadLeaderboardEntries" class="bb_apilink">ISteamUserStats::DownloadLeaderboardEntries</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#AttachLeaderboardUGC" class="bb_apilink">ISteamUserStats::AttachLeaderboardUGC</a>
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindOrCreateLeaderboard" class="bb_apilink">ISteamUserStats::FindOrCreateLeaderboard</a>.
         ///         </param>
-        /// <param name="eLeaderboardUploadScoreMethod">ELeaderboardUploadScoreMethod: 
+        /// <param name="eLeaderboardUploadScoreMethod">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#ELeaderboardUploadScoreMethod" class="bb_apilink">ELeaderboardUploadScoreMethod</a>
+        ///         : 
         ///             Do you want to force the score to change, or keep the previous score if it was better?
         ///         </param>
-        /// <param name="nScore">int32: The score to upload.</param>
-        /// <param name="pScoreDetails">const
-        ///             int32
-        ///             *: Optional: Array containing the details surrounding the unlocking of this score.</param>
+        /// <param name="nScore">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : The score to upload.</param>
+        /// <param name="pScoreDetails">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : Optional: Array containing the details surrounding the unlocking of this score.</param>
         /// <param name="cScoreDetailsCount">int: 
         ///             The number of elements in
         ///             <code class="bb_code bb_code_inline nohighlight">pScoreDetails</code>. Must not exceed
@@ -1364,13 +1430,17 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#LeaderboardUGCSet_t" class="bb_apilink">LeaderboardUGCSet_t</a>
         /// call result.
         /// </summary>
-        /// <param name="hSteamLeaderboard">SteamLeaderboard_t: 
+        /// <param name="hSteamLeaderboard">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#SteamLeaderboard_t" class="bb_apilink">SteamLeaderboard_t</a>
+        ///         : 
         ///             A leaderboard handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindLeaderboard" class="bb_apilink">ISteamUserStats::FindLeaderboard</a>
         ///             or
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#FindOrCreateLeaderboard" class="bb_apilink">ISteamUserStats::FindOrCreateLeaderboard</a>.
         ///         </param>
-        /// <param name="hUGC">UGCHandle_t: 
+        /// <param name="hUGC">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : 
         ///             Handle to a piece of user generated content that was shared using
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#FileShare" class="bb_apilink">ISteamRemoteStorage::FileShare</a>.
         ///         </param>
@@ -1450,7 +1520,9 @@ namespace Fivemid.FiveSteam
         /// </code>
         /// </summary>
         /// <param name="pchName">char *: String buffer to return the 'API Name' of the achievement into.</param>
-        /// <param name="unNameBufLen">uint32: 
+        /// <param name="unNameBufLen">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size in bytes of pchName, should be at least as long as your longest achievement
         ///             'API Name'.
         ///         </param>
@@ -1497,7 +1569,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetMostAchievedAchievementInfo" class="bb_apilink">ISteamUserStats::GetMostAchievedAchievementInfo</a>
         ///         </param>
         /// <param name="pchName">char *: String buffer to return the 'API Name' of the achievement into.</param>
-        /// <param name="unNameBufLen">uint32: 
+        /// <param name="unNameBufLen">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size in bytes of pchName, should be at least as long as your longest achievement
         ///             'API Name'.
         ///         </param>
@@ -1597,8 +1671,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int64
-        ///             * / double *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///             * / double *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetGlobalStat(UTF8StringPtr pchStatName, long* pData) => Instance.GetGlobalStat(pchStatName, pData);
         /// <summary>
         /// <code>
@@ -1635,8 +1711,10 @@ namespace Fivemid.FiveSteam
         ///             The 'API Name' of the stat. Must not be longer than
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
-        /// <param name="pData">int64
-        ///             * / double *: The variable to return the stat value into.</param>
+        /// <param name="pData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int64" class="bb_apilink">int64</a>
+        ///             * / double *
+        ///         : The variable to return the stat value into.</param>
         public static bool GetGlobalStat(UTF8StringPtr pchStatName, double* pData) => Instance.GetGlobalStat(pchStatName, pData);
         /// <summary>
         /// <code>
@@ -1684,7 +1762,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
         /// <param name="pData">double *: Array that the daily history will be returned into.</param>
-        /// <param name="cubData">uint32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The total size <b>in bytes</b> of the
         ///             <code class="bb_code bb_code_inline nohighlight">pData</code> array.
         ///         </param>
@@ -1735,7 +1815,9 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#k_cchStatNameMax" class="bb_apilink">k_cchStatNameMax</a>.
         ///         </param>
         /// <param name="pData">double *: Array that the daily history will be returned into.</param>
-        /// <param name="cubData">uint32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The total size <b>in bytes</b> of the
         ///             <code class="bb_code bb_code_inline nohighlight">pData</code> array.
         ///         </param>

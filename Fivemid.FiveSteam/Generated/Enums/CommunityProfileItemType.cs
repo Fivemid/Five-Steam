@@ -3,18 +3,22 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ECommunityProfileItemType</summary>
+    /// <summary>
+    /// Steam Community profile item types<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum CommunityProfileItemType : int
     {
-        /// <summary>k_ECommunityProfileItemType_AnimatedAvatar</summary>
+        /// <summary>Animated avatar image (GIF)</summary>
         AnimatedAvatar = 0,
-        /// <summary>k_ECommunityProfileItemType_AvatarFrame</summary>
+        /// <summary>Avatar frame (may or may not be an animated PNG)</summary>
         AvatarFrame = 1,
-        /// <summary>k_ECommunityProfileItemType_ProfileModifier</summary>
+        /// <summary>Special profile modifier item, like Seasonal Profile or Artist Profile</summary>
         ProfileModifier = 2,
-        /// <summary>k_ECommunityProfileItemType_ProfileBackground</summary>
+        /// <summary>Profile background image or movie</summary>
         ProfileBackground = 3,
-        /// <summary>k_ECommunityProfileItemType_MiniProfileBackground</summary>
+        /// <summary>Background image or movie for the hover flyout for a user</summary>
         MiniProfileBackground = 4
     }
 }

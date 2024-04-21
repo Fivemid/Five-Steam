@@ -3,21 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SearchForGameProgressCallback_t</summary>
+    /// missing documentation for SearchForGameProgressCallback_t
     public unsafe struct SearchForGameProgressCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SearchForGameProgressCallback;
-        /// <summary>uint64 m_ullSearchID</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_ullSearchID
         public ulong ullSearchID;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_eResult
         public Result eResult;
-        /// <summary>CSteamID m_lobbyID</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_lobbyID
         public SteamId lobbyID;
-        /// <summary>CSteamID m_steamIDEndedSearch</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_steamIDEndedSearch
         public SteamId steamIDEndedSearch;
-        /// <summary>int32 m_nSecondsRemainingEstimate</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_nSecondsRemainingEstimate
         public int nSecondsRemainingEstimate;
-        /// <summary>int32 m_cPlayersSearching</summary>
+        /// missing documentation for SearchForGameProgressCallback_t.m_cPlayersSearching
         public int cPlayersSearching;
     }
 }

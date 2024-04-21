@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTTPCookieContainerHandle</summary>
+    /// <summary></summary>
     public unsafe struct HTTPCookieContainerHandle
     {
         public uint value;

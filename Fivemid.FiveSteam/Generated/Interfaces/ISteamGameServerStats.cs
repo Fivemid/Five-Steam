@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamGameServerStats</summary>
+    /// <summary>
+    /// Functions to allow game servers to set stats and achievements on players.
+    /// </summary>
     public unsafe interface ISteamGameServerStats
     {
         public SteamAPICall RequestUserStats(SteamId steamIDUser);

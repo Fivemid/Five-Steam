@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HHTMLBrowser</summary>
+    /// <summary>Represents a unique handle to an HTML surface.</summary>
     public unsafe struct HHTMLBrowser
     {
         public uint value;

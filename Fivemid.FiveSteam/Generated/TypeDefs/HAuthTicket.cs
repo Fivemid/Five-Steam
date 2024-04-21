@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HAuthTicket</summary>
+    /// <summary>
+    ///             Handle to an user authentication ticket. Return type of
+    ///             <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetAuthSessionTicket" class="bb_apilink">ISteamUser::GetAuthSessionTicket</a>.
+    ///         </summary>
     public unsafe struct HAuthTicket
     {
         public uint value;

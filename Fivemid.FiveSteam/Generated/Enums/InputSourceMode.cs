@@ -3,42 +3,42 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EInputSourceMode</summary>
+    /// missing documentation for EInputSourceMode
     public enum InputSourceMode : int
     {
-        /// <summary>k_EInputSourceMode_None</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_None
         None = 0,
-        /// <summary>k_EInputSourceMode_Dpad</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_Dpad
         Dpad = 1,
-        /// <summary>k_EInputSourceMode_Buttons</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_Buttons
         Buttons = 2,
-        /// <summary>k_EInputSourceMode_FourButtons</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_FourButtons
         FourButtons = 3,
-        /// <summary>k_EInputSourceMode_AbsoluteMouse</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_AbsoluteMouse
         AbsoluteMouse = 4,
-        /// <summary>k_EInputSourceMode_RelativeMouse</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_RelativeMouse
         RelativeMouse = 5,
-        /// <summary>k_EInputSourceMode_JoystickMove</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_JoystickMove
         JoystickMove = 6,
-        /// <summary>k_EInputSourceMode_JoystickMouse</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_JoystickMouse
         JoystickMouse = 7,
-        /// <summary>k_EInputSourceMode_JoystickCamera</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_JoystickCamera
         JoystickCamera = 8,
-        /// <summary>k_EInputSourceMode_ScrollWheel</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_ScrollWheel
         ScrollWheel = 9,
-        /// <summary>k_EInputSourceMode_Trigger</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_Trigger
         Trigger = 10,
-        /// <summary>k_EInputSourceMode_TouchMenu</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_TouchMenu
         TouchMenu = 11,
-        /// <summary>k_EInputSourceMode_MouseJoystick</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_MouseJoystick
         MouseJoystick = 12,
-        /// <summary>k_EInputSourceMode_MouseRegion</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_MouseRegion
         MouseRegion = 13,
-        /// <summary>k_EInputSourceMode_RadialMenu</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_RadialMenu
         RadialMenu = 14,
-        /// <summary>k_EInputSourceMode_SingleButton</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_SingleButton
         SingleButton = 15,
-        /// <summary>k_EInputSourceMode_Switches</summary>
+        /// missing documentation for EInputSourceMode.k_EInputSourceMode_Switches
         Switches = 16
     }
 }

@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>InputAnalogActionHandle_t</summary>
+    /// <summary>
+    ///             A handle to an analog action. This can be obtained from
+    ///             <a href="https://partner.steamgames.com/doc/api/ISteamInput#GetAnalogActionHandle" class="bb_apilink">ISteamInput::GetAnalogActionHandle</a>.
+    ///         </summary>
     public unsafe struct InputAnalogActionHandle
     {
         public ulong value;

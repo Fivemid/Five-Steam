@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamInputConfigurationEnableType</summary>
+    /// missing documentation for ESteamInputConfigurationEnableType
     public enum SteamInputConfigurationEnableType : int
     {
-        /// <summary>k_ESteamInputConfigurationEnableType_None</summary>
+        /// missing documentation for ESteamInputConfigurationEnableType.k_ESteamInputConfigurationEnableType_None
         None = 0,
-        /// <summary>k_ESteamInputConfigurationEnableType_Playstation</summary>
+        /// missing documentation for ESteamInputConfigurationEnableType.k_ESteamInputConfigurationEnableType_Playstation
         Playstation = 1,
-        /// <summary>k_ESteamInputConfigurationEnableType_Xbox</summary>
+        /// missing documentation for ESteamInputConfigurationEnableType.k_ESteamInputConfigurationEnableType_Xbox
         Xbox = 2,
-        /// <summary>k_ESteamInputConfigurationEnableType_Generic</summary>
+        /// missing documentation for ESteamInputConfigurationEnableType.k_ESteamInputConfigurationEnableType_Generic
         Generic = 4,
-        /// <summary>k_ESteamInputConfigurationEnableType_Switch</summary>
+        /// missing documentation for ESteamInputConfigurationEnableType.k_ESteamInputConfigurationEnableType_Switch
         Switch = 8
     }
 }

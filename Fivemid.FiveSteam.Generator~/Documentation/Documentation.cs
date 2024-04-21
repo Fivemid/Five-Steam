@@ -5,10 +5,10 @@ namespace Fivemid.FiveSteam.Generator;
 
 public class Documentation {
     private static HashSet<string> exclude = [];
-
+    
     public static readonly Documentation VALUE =
         new("Data/SteamworksDocumentation/docs/api");
-
+    
     public Documentation(string folder) {
         foreach (string file in Directory.EnumerateFiles(folder, "*.html", SearchOption.AllDirectories)) {
             if (exclude.Contains(Path.GetFileName(file)))
@@ -16,64 +16,137 @@ public class Documentation {
             Parse(file);
         }
     }
-
+    
     private void Parse(string file) {
         HtmlDocument doc = new();
         doc.Load(file);
-
+        
         Interface @interface = ParseInterface(doc);
         interfaces.Add(@interface.Name, @interface);
+        AddObject(@interface, @interface.Name);
+        foreach (Object @object in @interface.Objects)
+            AddObject(@object, @object.Name);
+        return;
+        
+        void AddObject(Object @object, string path) {
+            objects.TryAdd(path, @object);
+            foreach (Object child in @object.Children)
+                AddObject(child, $"{path}.{child.Name}");
+        }
     }
-
+    
     private Interface ParseInterface(HtmlDocument doc) {
         HtmlNode header = doc.DocumentNode.SelectSingleNode("/h1");
         string name = header
                      .InnerText.StripSuffix(" Interface").Trim();
-        string description = header.NextSibling.InnerText.Trim();
-
-        Method[] methods =
-            (doc.DocumentNode.SelectNodes("""/h2[@class="bb_subsection" and following::*[@class="bb_code cpp"]]""")
-               ?.ToArray() ?? [])
-           .Select(ParseMethod)
-           .ToArray();
-
-        return new Interface(name, description, methods);
-    }
-
-    private Method ParseMethod(HtmlNode node) {
-        string name = node.InnerText.Trim();
-
         List<HtmlNode> descriptionNodes = [];
-        HtmlNode?      parametersNode   = null;
-
+        
+        {
+            HtmlNode following = header.NextSibling;
+            while (following != null && !following.Name.Equals("h2")) {
+                descriptionNodes.Add(following);
+                following = following.NextSibling;
+            }
+        }
+        
+        string description = FormatDescription(descriptionNodes);
+        
+        Object[] objects =
+            (doc.DocumentNode.SelectNodes("""/h2[@class="bb_subsection"]""")
+               ?.ToArray() ?? [])
+           .Select(ParseSubsection)
+           .ToArray();
+        
+        Object[] looseObjects =
+            (doc.DocumentNode.SelectNodes("""/table""")?.ToArray() ?? [])
+           .Where(t => !usedTables.Contains(t))
+           .SelectMany(ParseTable)
+           .ToArray();
+        
+        return new Interface(name, description, objects.Concat(looseObjects).ToArray());
+    }
+    
+    private readonly HashSet<HtmlNode> usedTables = [];
+    
+    private Object ParseSubsection(HtmlNode node) {
+        string name = node.InnerText.Trim();
+        
+        List<HtmlNode> descriptionNodes = [];
+        HtmlNode?      childrenNode     = null;
+        
         {
             HtmlNode following = node.NextSibling;
             while (following != null && !following.Name.Equals("h2")) {
                 if (following.Name.Equals("table"))
-                    parametersNode = following;
+                    childrenNode = following;
                 else
                     descriptionNodes.Add(following);
                 following = following.NextSibling;
             }
         }
-
+        
         string description = FormatDescription(descriptionNodes);
-
-        Parameter[] parameters =
-            (parametersNode?
-            .SelectNodes("""child::tr[position() > 1]""")
-           ?.ToArray() ?? [])
-           .Select(ParseParameter)
-           .ToArray();
-
-        return new Method(name, description, parameters);
+        
+        Object[] children;
+        if (childrenNode == null) {
+            children = [];
+        } else {
+            usedTables.Add(childrenNode);
+            children = ParseTable(childrenNode);
+        }
+        
+        return new Object(Name: name,
+                          Description: description,
+                          Type: null,
+                          Value: null,
+                          BaseType: null,
+                          Children: children
+        );
     }
-
-    private Parameter ParseParameter(HtmlNode node) {
+    
+    private Object[] ParseTable(HtmlNode node) {
+        string[] headers = node.SelectNodes("""child::tr[1]/th""")
+                               .Select(n => n.InnerText)
+                               .ToArray();
+        
+        return node
+              .SelectNodes("""child::tr[position() > 1]""")
+              .Select(n => ParseChild(n, headers))
+              .Where(c => c != null)
+              .OfType<Object>()
+              .ToArray();
+    }
+    
+    private Object? ParseChild(HtmlNode node, string[] headers) {
         HtmlNode[] nodes = node.SelectNodes("""child::td""").ToArray();
-        return new Parameter(nodes[0].InnerText.Trim(), nodes[1].InnerText.Trim(), FormatDescription(nodes[2].ChildNodes));
+        
+        if (Get("Name",        false) is not { } name
+         || Get("Description", true) is not { } description)
+            return null;
+        
+        return new Object(
+            Name: name,
+            Description: description,
+            Type: Get("Type",         true),
+            Value: Get("Value",       true),
+            BaseType: Get("BaseType", true),
+            Children: []
+        );
+        
+        
+        string? Get(string header, bool rich) {
+            for (int index = 0; index < headers.Length; index++) {
+                if (headers[index].Equals(header)) {
+                    return rich
+                               ? FormatDescription(nodes[index].ChildNodes)
+                               : nodes[index].InnerText;
+                }
+            }
+            
+            return null;
+        }
     }
-
+    
     private string FormatDescription(IEnumerable<HtmlNode> nodes) {
         StringBuilder builder = new();
         foreach (HtmlNode node in nodes) {
@@ -82,7 +155,7 @@ public class Documentation {
                 n      = n.Clone();
                 n.Name = "b";
             }
-
+            
             if (n.Name.Equals("div")) {
                 if (n.HasClass("bb_code")) {
                     n = n.Clone();
@@ -90,23 +163,31 @@ public class Documentation {
                     n.Name = "code";
                 }
             }
-
+            
             builder.Append(n.OuterHtml.Replace("<br>", "<br />"));
         }
-
+        
         return builder.ToString();
     }
-
+    
     private Dictionary<string, Interface> interfaces = [];
-
+    private Dictionary<string, Object>    objects    = [];
+    
     public Interface? GetInterface(string name) => interfaces.GetValueOrDefault(name);
-
-    public record Interface(string Name, string Description, Method[] Methods) {
-        public Method? GetMethod(string name) =>
-            Methods.FirstOrDefault(m => m.Name == name);
+    public Object?    GetObject(string    path) => objects.GetValueOrDefault(path);
+    
+    public record Interface(string Name, string Description, Object[] Objects)
+        : Object(Name, Description, null, null, null, Objects);
+    
+    public record Object(
+        string   Name,
+        string   Description,
+        string?  Type,
+        string?  Value,
+        string?  BaseType,
+        Object[] Children
+    ) {
+        public Object? GetChild(string name) =>
+            Children.FirstOrDefault(c => c.Name.Equals(name));
     }
-
-    public record Method(string Name, string Description, Parameter[] Parameters);
-
-    public record Parameter(string Name, string Type, string Description);
 }

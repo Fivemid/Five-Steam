@@ -3,17 +3,21 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>AppProofOfPurchaseKeyResponse_t</summary>
+    /// <summary>
+    /// Only used internally in Steam.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct AppProofOfPurchaseKeyResponse : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AppProofOfPurchaseKeyResponse;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary></summary>
         public Result eResult;
-        /// <summary>uint32 m_nAppID</summary>
+        /// <summary></summary>
         public uint nAppID;
-        /// <summary>uint32 m_cchKeyLength</summary>
+        /// <summary></summary>
         public uint cchKeyLength;
-        /// <summary>char [240] m_rgchKey</summary>
+        /// <summary></summary>
         public UTF8String240 rgchKey;
     }
 }

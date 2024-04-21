@@ -3,23 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInputConfigurationLoaded_t</summary>
+    /// missing documentation for SteamInputConfigurationLoaded_t
     public unsafe struct SteamInputConfigurationLoaded : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInputConfigurationLoaded;
-        /// <summary>AppId_t m_unAppID</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_unAppID
         public AppId unAppID;
-        /// <summary>InputHandle_t m_ulDeviceHandle</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_ulDeviceHandle
         public InputHandle ulDeviceHandle;
-        /// <summary>CSteamID m_ulMappingCreator</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_ulMappingCreator
         public SteamId ulMappingCreator;
-        /// <summary>uint32 m_unMajorRevision</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_unMajorRevision
         public uint unMajorRevision;
-        /// <summary>uint32 m_unMinorRevision</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_unMinorRevision
         public uint unMinorRevision;
-        /// <summary>bool m_bUsesSteamInputAPI</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_bUsesSteamInputAPI
         public bool bUsesSteamInputAPI;
-        /// <summary>bool m_bUsesGamepadAPI</summary>
+        /// missing documentation for SteamInputConfigurationLoaded_t.m_bUsesGamepadAPI
         public bool bUsesGamepadAPI;
     }
 }

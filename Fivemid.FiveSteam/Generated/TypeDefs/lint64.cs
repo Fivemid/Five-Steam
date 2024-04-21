@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>lint64</summary>
+    /// <summary>Only used internally in Steam.</summary>
     public unsafe struct lint64
     {
         public long value;

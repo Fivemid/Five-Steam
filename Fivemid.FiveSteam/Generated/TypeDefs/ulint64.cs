@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ulint64</summary>
+    /// <summary>Only used internally in Steam.</summary>
     public unsafe struct ulint64
     {
         public ulong value;

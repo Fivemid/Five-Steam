@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamGameSearch</summary>
+    /// missing documentation for ISteamGameSearch
     public unsafe interface ISteamGameSearch
     {
         public GameSearchErrorCode AddGameSearchParams(UTF8StringPtr pchKeyToFind, UTF8StringPtr pchValuesToFind);

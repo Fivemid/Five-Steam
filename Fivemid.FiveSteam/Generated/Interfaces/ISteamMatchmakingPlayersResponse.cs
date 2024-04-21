@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamMatchmakingPlayersResponse</summary>
+    /// missing documentation for ISteamMatchmakingPlayersResponse
     public unsafe interface ISteamMatchmakingPlayersResponse
     {
         public void AddPlayerToList(UTF8StringPtr pchName, int nScore, float flTimePlayed);

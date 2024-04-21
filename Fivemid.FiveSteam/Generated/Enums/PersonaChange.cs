@@ -3,38 +3,44 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EPersonaChange</summary>
+    /// <summary>
+    /// used in PersonaStateChange_t::m_nChangeFlags to describe what's changed about a user<br />
+    /// these flags describe what the client has learned has changed recently, so on startup you'll see a
+    /// name, avatar &amp; relationship change for every friend<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum PersonaChange : int
     {
-        /// <summary>k_EPersonaChangeName</summary>
+        /// <summary></summary>
         Name = 1,
-        /// <summary>k_EPersonaChangeStatus</summary>
+        /// <summary></summary>
         Status = 2,
-        /// <summary>k_EPersonaChangeComeOnline</summary>
+        /// <summary></summary>
         ComeOnline = 4,
-        /// <summary>k_EPersonaChangeGoneOffline</summary>
+        /// <summary></summary>
         GoneOffline = 8,
-        /// <summary>k_EPersonaChangeGamePlayed</summary>
+        /// <summary></summary>
         GamePlayed = 16,
-        /// <summary>k_EPersonaChangeGameServer</summary>
+        /// <summary></summary>
         GameServer = 32,
-        /// <summary>k_EPersonaChangeAvatar</summary>
+        /// <summary></summary>
         Avatar = 64,
-        /// <summary>k_EPersonaChangeJoinedSource</summary>
+        /// <summary></summary>
         JoinedSource = 128,
-        /// <summary>k_EPersonaChangeLeftSource</summary>
+        /// <summary></summary>
         LeftSource = 256,
-        /// <summary>k_EPersonaChangeRelationshipChanged</summary>
+        /// <summary></summary>
         RelationshipChanged = 512,
-        /// <summary>k_EPersonaChangeNameFirstSet</summary>
+        /// <summary></summary>
         NameFirstSet = 1024,
-        /// <summary>k_EPersonaChangeBroadcast</summary>
+        /// missing documentation for EPersonaChange.k_EPersonaChangeBroadcast
         Broadcast = 2048,
-        /// <summary>k_EPersonaChangeNickname</summary>
+        /// <summary></summary>
         Nickname = 4096,
-        /// <summary>k_EPersonaChangeSteamLevel</summary>
+        /// <summary></summary>
         SteamLevel = 8192,
-        /// <summary>k_EPersonaChangeRichPresence</summary>
+        /// missing documentation for EPersonaChange.k_EPersonaChangeRichPresence
         RichPresence = 16384
     }
 }

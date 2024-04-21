@@ -3,46 +3,53 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EWorkshopFileType</summary>
+    /// <summary>
+    /// The way that a shared file will be shared with the community.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum WorkshopFileType : int
     {
-        /// <summary>k_EWorkshopFileTypeFirst</summary>
+        /// <summary>Only used for enumerating.</summary>
         First = 0,
-        /// <summary>k_EWorkshopFileTypeCommunity</summary>
+        /// <summary>Normal Workshop item that can be subscribed to.</summary>
         Community = 0,
-        /// <summary>k_EWorkshopFileTypeMicrotransaction</summary>
+        /// <summary>
+        ///             Workshop item that is meant to be voted on for the purpose of selling in-game. (See:
+        ///             <a href="https://partner.steamgames.com/doc/features/workshop#curated_workshop" class="bb_doclink">Curated Workshop</a>)
+        ///         </summary>
         Microtransaction = 1,
-        /// <summary>k_EWorkshopFileTypeCollection</summary>
+        /// <summary>A collection of Workshop items.</summary>
         Collection = 2,
-        /// <summary>k_EWorkshopFileTypeArt</summary>
+        /// <summary>Artwork.</summary>
         Art = 3,
-        /// <summary>k_EWorkshopFileTypeVideo</summary>
+        /// <summary>External video.</summary>
         Video = 4,
-        /// <summary>k_EWorkshopFileTypeScreenshot</summary>
+        /// <summary>Screenshot.</summary>
         Screenshot = 5,
-        /// <summary>k_EWorkshopFileTypeGame</summary>
+        /// <summary>Unused, used to be for Greenlight game entries</summary>
         Game = 6,
-        /// <summary>k_EWorkshopFileTypeSoftware</summary>
+        /// <summary>Unused, used to be for Greenlight software entries.</summary>
         Software = 7,
-        /// <summary>k_EWorkshopFileTypeConcept</summary>
+        /// <summary>Unused, used to be for Greenlight concepts.</summary>
         Concept = 8,
-        /// <summary>k_EWorkshopFileTypeWebGuide</summary>
+        /// <summary>Steam web guide.</summary>
         WebGuide = 9,
-        /// <summary>k_EWorkshopFileTypeIntegratedGuide</summary>
+        /// <summary>Application integrated guide.</summary>
         IntegratedGuide = 10,
-        /// <summary>k_EWorkshopFileTypeMerch</summary>
+        /// <summary>Workshop merchandise meant to be voted on for the purpose of being sold.</summary>
         Merch = 11,
-        /// <summary>k_EWorkshopFileTypeControllerBinding</summary>
+        /// <summary>Steam Controller bindings.</summary>
         ControllerBinding = 12,
-        /// <summary>k_EWorkshopFileTypeSteamworksAccessInvite</summary>
+        /// <summary>Only used internally in Steam.</summary>
         SteamworksAccessInvite = 13,
-        /// <summary>k_EWorkshopFileTypeSteamVideo</summary>
+        /// <summary>Steam video.</summary>
         SteamVideo = 14,
-        /// <summary>k_EWorkshopFileTypeGameManagedItem</summary>
+        /// <summary>Managed completely by the game, not the user, and not shown on the web.</summary>
         GameManagedItem = 15,
-        /// <summary>k_EWorkshopFileTypeClip</summary>
+        /// missing documentation for EWorkshopFileType.k_EWorkshopFileTypeClip
         Clip = 16,
-        /// <summary>k_EWorkshopFileTypeMax</summary>
+        /// <summary>Only used for enumerating.</summary>
         Max = 17
     }
 }

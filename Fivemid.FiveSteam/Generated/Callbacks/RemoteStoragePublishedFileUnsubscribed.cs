@@ -3,13 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStoragePublishedFileUnsubscribed_t</summary>
+    /// <summary>
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct RemoteStoragePublishedFileUnsubscribed : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStoragePublishedFileUnsubscribed;
-        /// <summary>PublishedFileId_t m_nPublishedFileId</summary>
+        /// <summary>The published file id</summary>
         public PublishedFileId nPublishedFileId;
-        /// <summary>AppId_t m_nAppID</summary>
+        /// <summary>ID of the app that will consume this file.</summary>
         public AppId nAppID;
     }
 }

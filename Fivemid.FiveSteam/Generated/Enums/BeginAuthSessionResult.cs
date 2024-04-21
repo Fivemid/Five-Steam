@@ -3,20 +3,27 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EBeginAuthSessionResult</summary>
+    /// <summary>
+    /// Results returned from
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#BeginAuthSession" class="bb_apilink">ISteamUser::BeginAuthSession</a>
+    /// and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#BeginAuthSession" class="bb_apilink">ISteamGameServer::BeginAuthSession</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum BeginAuthSessionResult : int
     {
-        /// <summary>k_EBeginAuthSessionResultOK</summary>
+        /// <summary>Ticket is valid for this game and this Steam ID.</summary>
         OK = 0,
-        /// <summary>k_EBeginAuthSessionResultInvalidTicket</summary>
+        /// <summary>The ticket is invalid.</summary>
         InvalidTicket = 1,
-        /// <summary>k_EBeginAuthSessionResultDuplicateRequest</summary>
+        /// <summary>A ticket has already been submitted for this Steam ID.</summary>
         DuplicateRequest = 2,
-        /// <summary>k_EBeginAuthSessionResultInvalidVersion</summary>
+        /// <summary>Ticket is from an incompatible interface version.</summary>
         InvalidVersion = 3,
-        /// <summary>k_EBeginAuthSessionResultGameMismatch</summary>
+        /// <summary>Ticket is not for this game.</summary>
         GameMismatch = 4,
-        /// <summary>k_EBeginAuthSessionResultExpiredTicket</summary>
+        /// <summary>Ticket has expired.</summary>
         ExpiredTicket = 5
     }
 }

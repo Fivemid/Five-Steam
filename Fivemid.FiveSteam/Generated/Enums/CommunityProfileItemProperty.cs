@@ -3,32 +3,39 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ECommunityProfileItemProperty</summary>
+    /// <summary>
+    /// Properties on a Steam Community profile item. See
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyString" class="bb_apilink">ISteamFriends::GetProfileItemPropertyString</a>
+    /// and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyUint" class="bb_apilink">ISteamFriends::GetProfileItemPropertyUint</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum CommunityProfileItemProperty : int
     {
-        /// <summary>k_ECommunityProfileItemProperty_ImageSmall</summary>
+        /// <summary>URL to the small or animated version of the image</summary>
         ImageSmall = 0,
-        /// <summary>k_ECommunityProfileItemProperty_ImageLarge</summary>
+        /// <summary>URL to the large or static version of the image</summary>
         ImageLarge = 1,
-        /// <summary>k_ECommunityProfileItemProperty_InternalName</summary>
+        /// <summary>Internal name entered on the partner site (for debugging)</summary>
         InternalName = 2,
-        /// <summary>k_ECommunityProfileItemProperty_Title</summary>
+        /// <summary>Localized name of the item</summary>
         Title = 3,
-        /// <summary>k_ECommunityProfileItemProperty_Description</summary>
+        /// <summary>Localized description of the item</summary>
         Description = 4,
-        /// <summary>k_ECommunityProfileItemProperty_AppID</summary>
+        /// <summary>AppID of the item (unsigned integer)</summary>
         AppID = 5,
-        /// <summary>k_ECommunityProfileItemProperty_TypeID</summary>
+        /// <summary>Type id of the item, unique to the appid (unsigned integer)</summary>
         TypeID = 6,
-        /// <summary>k_ECommunityProfileItemProperty_Class</summary>
+        /// <summary>"Class" or type of item (internal value, unsigned integer)</summary>
         Class = 7,
-        /// <summary>k_ECommunityProfileItemProperty_MovieWebM</summary>
+        /// <summary>URL to the webm video file</summary>
         MovieWebM = 8,
-        /// <summary>k_ECommunityProfileItemProperty_MovieMP4</summary>
+        /// <summary>URL to the mp4 video file</summary>
         MovieMP4 = 9,
-        /// <summary>k_ECommunityProfileItemProperty_MovieWebMSmall</summary>
+        /// <summary>URL to the small webm video file</summary>
         MovieWebMSmall = 10,
-        /// <summary>k_ECommunityProfileItemProperty_MovieMP4Small</summary>
+        /// <summary>URL to the small mp4 video file</summary>
         MovieMP4Small = 11
     }
 }

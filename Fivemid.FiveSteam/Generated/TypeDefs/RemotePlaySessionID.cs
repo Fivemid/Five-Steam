@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemotePlaySessionID_t</summary>
+    /// missing documentation for RemotePlaySessionID_t
     public unsafe struct RemotePlaySessionID
     {
         public uint value;

@@ -33,10 +33,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to get the server list of.</param>
-        /// <param name="ppchFilters">MatchMakingKeyValuePair_t
-        ///             **: An array of filters to only retrieve servers the user cares about.</param>
-        /// <param name="nFilters">uint32: 
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to get the server list of.</param>
+        /// <param name="ppchFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#MatchMakingKeyValuePair_t" class="bb_apilink">MatchMakingKeyValuePair_t</a>
+        ///             **
+        ///         : An array of filters to only retrieve servers the user cares about.</param>
+        /// <param name="nFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of filters in
         ///             <code class="bb_code bb_code_inline nohighlight">ppchFilters</code> array.
         ///         </param>
@@ -66,7 +72,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to request the server list of.</param>
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to request the server list of.</param>
         /// <param name="pRequestServersResponse">ISteamMatchmakingServerListResponse *: 
         ///             This must be the object that inherits from
         ///             <code class="bb_code bb_code_inline nohighlight">ISteamMatchmakingServerListResponse</code>. Typically <code class="bb_code bb_code_inline nohighlight">this</code>.
@@ -93,10 +101,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to request the server list of.</param>
-        /// <param name="ppchFilters">MatchMakingKeyValuePair_t
-        ///             **: An array of filters to only retrieve servers the user cares about.</param>
-        /// <param name="nFilters">uint32: 
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to request the server list of.</param>
+        /// <param name="ppchFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#MatchMakingKeyValuePair_t" class="bb_apilink">MatchMakingKeyValuePair_t</a>
+        ///             **
+        ///         : An array of filters to only retrieve servers the user cares about.</param>
+        /// <param name="nFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of filters in
         ///             <code class="bb_code bb_code_inline nohighlight">ppchFilters</code> array.
         ///         </param>
@@ -126,10 +140,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to request the server list of.</param>
-        /// <param name="ppchFilters">MatchMakingKeyValuePair_t
-        ///             **: An array of filters to only retrieve servers the user cares about.</param>
-        /// <param name="nFilters">uint32: 
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to request the server list of.</param>
+        /// <param name="ppchFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#MatchMakingKeyValuePair_t" class="bb_apilink">MatchMakingKeyValuePair_t</a>
+        ///             **
+        ///         : An array of filters to only retrieve servers the user cares about.</param>
+        /// <param name="nFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of filters in
         ///             <code class="bb_code bb_code_inline nohighlight">ppchFilters</code> array.
         ///         </param>
@@ -159,10 +179,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to get the server list of.</param>
-        /// <param name="ppchFilters">MatchMakingKeyValuePair_t
-        ///             **: An array of filters to only retrieve servers the user cares about.</param>
-        /// <param name="nFilters">uint32: 
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to get the server list of.</param>
+        /// <param name="ppchFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#MatchMakingKeyValuePair_t" class="bb_apilink">MatchMakingKeyValuePair_t</a>
+        ///             **
+        ///         : An array of filters to only retrieve servers the user cares about.</param>
+        /// <param name="nFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of filters in
         ///             <code class="bb_code bb_code_inline nohighlight">ppchFilters</code> array.
         ///         </param>
@@ -192,10 +218,16 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>
         /// when you're done using it!
         /// </summary>
-        /// <param name="iApp">AppId_t: The app to request the server list of.</param>
-        /// <param name="ppchFilters">MatchMakingKeyValuePair_t
-        ///             **: An array of filters to only retrieve servers the user cares about.</param>
-        /// <param name="nFilters">uint32: 
+        /// <param name="iApp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app to request the server list of.</param>
+        /// <param name="ppchFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#MatchMakingKeyValuePair_t" class="bb_apilink">MatchMakingKeyValuePair_t</a>
+        ///             **
+        ///         : An array of filters to only retrieve servers the user cares about.</param>
+        /// <param name="nFilters">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of filters in
         ///             <code class="bb_code bb_code_inline nohighlight">ppchFilters</code> array.
         ///         </param>
@@ -214,7 +246,9 @@ namespace Fivemid.FiveSteam
         /// The <code class="bb_code bb_code_inline nohighlight">RefreshComplete</code> callback will not be
         /// posted when request is released.
         /// </summary>
-        /// <param name="hServerListRequest">HServerListRequest: The asynchronous server list request object to release.</param>
+        /// <param name="hServerListRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The asynchronous server list request object to release.</param>
         public static void ReleaseRequest(HServerListRequest hServerListRequest) => Instance.ReleaseRequest(hServerListRequest);
         /// <summary>
         /// <code>
@@ -233,7 +267,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> gameserveritem_t *
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         /// <param name="iServer">int: 
         ///             The index of the server to get the details of, from 0 to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#GetServerCount" class="bb_apilink">ISteamMatchmakingServers::GetServerCount</a>.
@@ -252,7 +288,9 @@ namespace Fivemid.FiveSteam
         /// using
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>.
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         public static void CancelQuery(HServerListRequest hRequest) => Instance.CancelQuery(hRequest);
         /// <summary>
         /// <code>void RefreshQuery( HServerListRequest hRequest );</code>
@@ -265,7 +303,9 @@ namespace Fivemid.FiveSteam
         /// called again, so the callback must remain valid until it completes or the request is released with
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#ReleaseRequest" class="bb_apilink">ISteamMatchmakingServers::ReleaseRequest</a>.
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         public static void RefreshQuery(HServerListRequest hRequest) => Instance.RefreshQuery(hRequest);
         /// <summary>
         /// <code>bool IsRefreshing( HServerListRequest hRequest );</code>
@@ -277,7 +317,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if <code class="bb_code bb_code_inline nohighlight">hRequest</code> is valid,
         /// and is currently refreshing; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         public static bool IsRefreshing(HServerListRequest hRequest) => Instance.IsRefreshing(hRequest);
         /// <summary>
         /// <code>int GetServerCount( HServerListRequest hRequest );</code>
@@ -294,7 +336,9 @@ namespace Fivemid.FiveSteam
         /// Returns <b>0</b> if <code class="bb_code bb_code_inline nohighlight">hRequest</code> is
         /// invalid.
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         public static int GetServerCount(HServerListRequest hRequest) => Instance.GetServerCount(hRequest);
         /// <summary>
         /// <code>void RefreshServer( HServerListRequest hRequest, int iServer );</code>
@@ -305,7 +349,9 @@ namespace Fivemid.FiveSteam
         /// If you want to refresh all of the servers then you should use
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#RefreshQuery" class="bb_apilink">ISteamMatchmakingServers::RefreshQuery</a>.
         /// </summary>
-        /// <param name="hRequest">HServerListRequest: The handle to the server list request.</param>
+        /// <param name="hRequest">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerListRequest" class="bb_apilink">HServerListRequest</a>
+        ///         : The handle to the server list request.</param>
         /// <param name="iServer">int: 
         ///             The index of the server to refresh, from 0 to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmakingServers#GetServerCount" class="bb_apilink">ISteamMatchmakingServers::GetServerCount</a>.
@@ -339,10 +385,7 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerQuery" class="bb_apilink">HServerQuery</a><br />
         /// Handle to the outstanding server query.
         /// </summary>
-        /// <param name="void">ServerResponded: 
-        ///             <code class="bb_code bb_code_inline nohighlight">gameserveritem_t &amp;server</code>
-        ///         </param>
-        /// <param name="void">ServerFailedToRespond: </param>
+        /// 
         public static HServerQuery PingServer(uint unIP, ushort usPort, ISteamMatchmakingPingResponse.Instance* pRequestServersResponse) => Instance.PingServer(unIP, usPort, pRequestServersResponse);
         /// <summary>
         /// <code>
@@ -372,11 +415,7 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerQuery" class="bb_apilink">HServerQuery</a><br />
         /// Handle to the outstanding server query.
         /// </summary>
-        /// <param name="void">AddPlayerToList: 
-        ///             <code class="bb_code bb_code_inline nohighlight">const char *pchName, int nScore, float flTimePlayed</code>
-        ///         </param>
-        /// <param name="void">PlayersFailedToRespond: </param>
-        /// <param name="void">PlayersRefreshComplete: </param>
+        /// 
         public static HServerQuery PlayerDetails(uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse) => Instance.PlayerDetails(unIP, usPort, pRequestServersResponse);
         /// <summary>
         /// <code>
@@ -408,11 +447,7 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerQuery" class="bb_apilink">HServerQuery</a><br />
         /// Handle to the outstanding server query.
         /// </summary>
-        /// <param name="void">AddPlayerToList: 
-        ///             <code class="bb_code bb_code_inline nohighlight">const char *pchName, int nScore, float flTimePlayed</code>
-        ///         </param>
-        /// <param name="void">PlayersFailedToRespond: </param>
-        /// <param name="void">RulesRefreshComplete: </param>
+        /// 
         public static HServerQuery ServerRules(uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse) => Instance.ServerRules(unIP, usPort, pRequestServersResponse);
         /// <summary>
         /// <code>void CancelServerQuery( HServerQuery hServerQuery );</code>
@@ -436,7 +471,9 @@ namespace Fivemid.FiveSteam
         /// You should call this to cancel any in-progress requests before destructing a callback object that
         /// may have been passed to one of the above calls to avoid crashing when callbacks occur.
         /// </summary>
-        /// <param name="hServerQuery">HServerQuery: The server query to cancel.</param>
+        /// <param name="hServerQuery">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#HServerQuery" class="bb_apilink">HServerQuery</a>
+        ///         : The server query to cancel.</param>
         public static void CancelServerQuery(HServerQuery hServerQuery) => Instance.CancelServerQuery(hServerQuery);
     }
 }

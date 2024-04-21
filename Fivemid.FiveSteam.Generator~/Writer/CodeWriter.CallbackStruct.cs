@@ -29,7 +29,6 @@ public partial class CodeWriter {
     private BaseTypeDeclarationSyntax CallbackStruct(SteamApiDefinition.CallbackStructDefinition definition) {
         string name = CallbackStructName(definition.Name);
         
-        // TODO use callback id
         return StructDeclaration(name)
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .WithBaseList(BaseList().AddTypes(SimpleBaseType(ParseTypeName("global::Unity.Entities.IComponentData"))))
@@ -49,11 +48,11 @@ public partial class CodeWriter {
                                    VariableDeclaration(field.Type.ToType())
                                       .AddVariables(VariableDeclarator(field.Name.StripPrefix("m_"))))
                               .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                              .WithLeadingTrivia(Comment($"/// <summary>{field.Type} {field.Name}</summary>"))
+                              .WithLeadingTrivia(SimpleDescriptionDocumentation($"{definition.Name}.{field.Name}"))
                    ).ToArray<MemberDeclarationSyntax>()
                )
               .AddMembers(Enums(definition.Enums ?? []).ToArray<MemberDeclarationSyntax>())
-              .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+              .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
     
     private BaseTypeDeclarationSyntax CallbackIdentifier(

@@ -3,12 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EGamepadTextInputMode</summary>
+    /// <summary>
+    /// Input modes for the Big Picture gamepad text entry<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum GamepadTextInputMode : int
     {
-        /// <summary>k_EGamepadTextInputModeNormal</summary>
+        /// <summary></summary>
         Normal = 0,
-        /// <summary>k_EGamepadTextInputModePassword</summary>
+        /// <summary></summary>
         Password = 1
     }
 }

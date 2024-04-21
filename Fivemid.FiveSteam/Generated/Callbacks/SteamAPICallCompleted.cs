@@ -3,15 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamAPICallCompleted_t</summary>
+    /// <summary>
+    /// Called when a SteamAPICall_t has completed (or failed)<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct SteamAPICallCompleted : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamAPICallCompleted;
-        /// <summary>SteamAPICall_t m_hAsyncCall</summary>
+        /// <summary>The handle of the Steam API Call that completed.</summary>
         public SteamAPICall hAsyncCall;
-        /// <summary>int m_iCallback</summary>
+        /// <summary>This is the k_iCallback constant which uniquely identifies the completed callback.</summary>
         public int iCallback;
-        /// <summary>uint32 m_cubParam</summary>
+        /// <summary>The size in bytes of the completed callback.</summary>
         public uint cubParam;
     }
 }

@@ -3,15 +3,22 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GSClientDeny_t</summary>
+    /// <summary>
+    /// Called when a user has been denied to connection to this game server.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct GSClientDeny : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientDeny;
-        /// <summary>CSteamID m_SteamID</summary>
+        /// <summary>The Steam ID of the user that attempted to connect.</summary>
         public SteamId SteamID;
-        /// <summary>EDenyReason m_eDenyReason</summary>
+        /// <summary>The reason the player was denied.</summary>
         public DenyReason eDenyReason;
-        /// <summary>char [128] m_rgchOptionalText</summary>
+        /// <summary>
+        ///             An optional text message explaining the deny reason. Typically unused except for
+        ///             logging.
+        ///         </summary>
         public UTF8String128 rgchOptionalText;
     }
 }

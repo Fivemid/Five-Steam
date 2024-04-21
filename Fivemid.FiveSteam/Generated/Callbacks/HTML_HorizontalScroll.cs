@@ -3,21 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTML_HorizontalScroll_t</summary>
+    /// <summary>
+    /// Provides details on the visibility and size of the horizontal scrollbar.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#SetHorizontalScroll" class="bb_apilink">ISteamHTMLSurface::SetHorizontalScroll</a>
+    /// </summary>
     public unsafe struct HTML_HorizontalScroll : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_HorizontalScroll;
-        /// <summary>HHTMLBrowser unBrowserHandle</summary>
+        /// <summary>The handle of the surface that this callback is for.</summary>
         public HHTMLBrowser unBrowserHandle;
-        /// <summary>uint32 unScrollMax</summary>
+        /// <summary>The maximum amount you can scroll horizontally.</summary>
         public uint unScrollMax;
-        /// <summary>uint32 unScrollCurrent</summary>
+        /// <summary>The current horizontal scroll position.</summary>
         public uint unScrollCurrent;
-        /// <summary>float flPageScale</summary>
+        /// <summary>The current page scale.</summary>
         public float flPageScale;
-        /// <summary>bool bVisible</summary>
+        /// <summary>Whether the horizontal scrollbar is visible.</summary>
         public bool bVisible;
-        /// <summary>uint32 unPageSize</summary>
+        /// <summary>The total width of the page in pixels.</summary>
         public uint unPageSize;
     }
 }

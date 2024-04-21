@@ -3,16 +3,20 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EWorkshopVote</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum WorkshopVote : int
     {
-        /// <summary>k_EWorkshopVoteUnvoted</summary>
+        /// <summary>The user has not voted.</summary>
         Unvoted = 0,
-        /// <summary>k_EWorkshopVoteFor</summary>
+        /// <summary>The user has voted this item up.</summary>
         For = 1,
-        /// <summary>k_EWorkshopVoteAgainst</summary>
+        /// <summary>The user has voted this item down.</summary>
         Against = 2,
-        /// <summary>k_EWorkshopVoteLater</summary>
+        /// <summary>The user has chosen to vote later.</summary>
         Later = 3
     }
 }

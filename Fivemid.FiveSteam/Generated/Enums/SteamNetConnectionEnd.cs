@@ -3,74 +3,74 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetConnectionEnd</summary>
+    /// missing documentation for ESteamNetConnectionEnd
     public enum SteamNetConnectionEnd : int
     {
-        /// <summary>k_ESteamNetConnectionEnd_Invalid</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Invalid
         Invalid = 0,
-        /// <summary>k_ESteamNetConnectionEnd_App_Min</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_App_Min
         App_Min = 1000,
-        /// <summary>k_ESteamNetConnectionEnd_App_Generic</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_App_Generic
         App_Generic = 1000,
-        /// <summary>k_ESteamNetConnectionEnd_App_Max</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_App_Max
         App_Max = 1999,
-        /// <summary>k_ESteamNetConnectionEnd_AppException_Min</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_AppException_Min
         AppException_Min = 2000,
-        /// <summary>k_ESteamNetConnectionEnd_AppException_Generic</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_AppException_Generic
         AppException_Generic = 2000,
-        /// <summary>k_ESteamNetConnectionEnd_AppException_Max</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_AppException_Max
         AppException_Max = 2999,
-        /// <summary>k_ESteamNetConnectionEnd_Local_Min</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_Min
         Local_Min = 3000,
-        /// <summary>k_ESteamNetConnectionEnd_Local_OfflineMode</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_OfflineMode
         Local_OfflineMode = 3001,
-        /// <summary>k_ESteamNetConnectionEnd_Local_ManyRelayConnectivity</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_ManyRelayConnectivity
         Local_ManyRelayConnectivity = 3002,
-        /// <summary>k_ESteamNetConnectionEnd_Local_HostedServerPrimaryRelay</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_HostedServerPrimaryRelay
         Local_HostedServerPrimaryRelay = 3003,
-        /// <summary>k_ESteamNetConnectionEnd_Local_NetworkConfig</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_NetworkConfig
         Local_NetworkConfig = 3004,
-        /// <summary>k_ESteamNetConnectionEnd_Local_Rights</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_Rights
         Local_Rights = 3005,
-        /// <summary>k_ESteamNetConnectionEnd_Local_P2P_ICE_NoPublicAddresses</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_P2P_ICE_NoPublicAddresses
         Local_P2P_ICE_NoPublicAddresses = 3006,
-        /// <summary>k_ESteamNetConnectionEnd_Local_Max</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Local_Max
         Local_Max = 3999,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_Min</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_Min
         Remote_Min = 4000,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_Timeout</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_Timeout
         Remote_Timeout = 4001,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_BadCrypt</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_BadCrypt
         Remote_BadCrypt = 4002,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_BadCert</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_BadCert
         Remote_BadCert = 4003,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_BadProtocolVersion</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_BadProtocolVersion
         Remote_BadProtocolVersion = 4006,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_P2P_ICE_NoPublicAddresses</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_P2P_ICE_NoPublicAddresses
         Remote_P2P_ICE_NoPublicAddresses = 4007,
-        /// <summary>k_ESteamNetConnectionEnd_Remote_Max</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Remote_Max
         Remote_Max = 4999,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_Min</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_Min
         Misc_Min = 5000,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_Generic</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_Generic
         Misc_Generic = 5001,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_InternalError</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_InternalError
         Misc_InternalError = 5002,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_Timeout</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_Timeout
         Misc_Timeout = 5003,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_SteamConnectivity</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_SteamConnectivity
         Misc_SteamConnectivity = 5005,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_NoRelaySessionsToClient</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_NoRelaySessionsToClient
         Misc_NoRelaySessionsToClient = 5006,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_P2P_Rendezvous</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_P2P_Rendezvous
         Misc_P2P_Rendezvous = 5008,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_P2P_NAT_Firewall</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_P2P_NAT_Firewall
         Misc_P2P_NAT_Firewall = 5009,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_PeerSentNoConnection</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_PeerSentNoConnection
         Misc_PeerSentNoConnection = 5010,
-        /// <summary>k_ESteamNetConnectionEnd_Misc_Max</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd_Misc_Max
         Misc_Max = 5999,
-        /// <summary>k_ESteamNetConnectionEnd__Force32Bit</summary>
+        /// missing documentation for ESteamNetConnectionEnd.k_ESteamNetConnectionEnd__Force32Bit
         _Force32Bit = 2147483647
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingMicroseconds</summary>
+    /// missing documentation for SteamNetworkingMicroseconds
     public unsafe struct SteamNetworkingMicroseconds
     {
         public long value;

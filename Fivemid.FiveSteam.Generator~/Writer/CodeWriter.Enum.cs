@@ -10,13 +10,13 @@ public partial class CodeWriter {
         foreach (SteamApiDefinition.EnumDefinition definition in definitions.Where(d => !d.Name.IsPrimitive()))
             Register(definition);
     }
-
+    
     private void Register(SteamApiDefinition.EnumDefinition definition) =>
         Convert.RegisterType(definition.Name, IdentifierName(EnumName(definition.Name)));
-
+    
     private BaseTypeDeclarationSyntax[] Enums(IEnumerable<SteamApiDefinition.EnumDefinition> definitions) =>
         definitions.Select(Enum).ToArray();
-
+    
     private BaseTypeDeclarationSyntax Enum(SteamApiDefinition.EnumDefinition definition) {
         string name = EnumName(definition.Name);
         return EnumDeclaration(name)
@@ -34,19 +34,20 @@ public partial class CodeWriter {
                                           )
                                          .WithEqualsValue(
                                               EqualsValueClause(value.Value.ToInitializerValue()))
-                                         .WithLeadingTrivia(Comment($"/// <summary>{value.Name}</summary>"))
+                                         .WithLeadingTrivia(
+                                              SimpleDescriptionDocumentation($"{definition.Name}.{value.Name}"))
                               )
                              .ToArray()
                )
-              .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+              .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
-
+    
     private static Dictionary<string, string> enumNameOverrides = new() {
         { "ESteamNetworkingConfigValue", "SteamNetworkingConfigValueType" },
         { "ECheckFileSignature", "CheckFileSignatureType" },
         { "ERemoteStorageLocalFileChange", "RemoteStorageLocalFileChangeType" }
     };
-
+    
     private string EnumName(string name) =>
         enumNameOverrides.GetValueOrDefault(name, name.StripSuffix("_t").StripPrefix("E"));
 }

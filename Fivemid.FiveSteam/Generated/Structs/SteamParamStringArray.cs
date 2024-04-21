@@ -3,12 +3,15 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamParamStringArray_t</summary>
+    /// <summary>
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct SteamParamStringArray
     {
-        /// <summary>const char ** m_ppStrings</summary>
+        /// <summary>Array of strings.</summary>
         public UTF8StringPtr* ppStrings;
-        /// <summary>int32 m_nNumStrings</summary>
+        /// <summary>The number of strings that are in [param]m_ppStrings[/param].</summary>
         public int nNumStrings;
     }
 }

@@ -3,19 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamRelayNetworkStatus_t</summary>
+    /// missing documentation for SteamRelayNetworkStatus_t
     public unsafe struct SteamRelayNetworkStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamRelayNetworkStatus;
-        /// <summary>ESteamNetworkingAvailability m_eAvail</summary>
+        /// missing documentation for SteamRelayNetworkStatus_t.m_eAvail
         public SteamNetworkingAvailability eAvail;
-        /// <summary>int m_bPingMeasurementInProgress</summary>
+        /// missing documentation for SteamRelayNetworkStatus_t.m_bPingMeasurementInProgress
         public int bPingMeasurementInProgress;
-        /// <summary>ESteamNetworkingAvailability m_eAvailNetworkConfig</summary>
+        /// missing documentation for SteamRelayNetworkStatus_t.m_eAvailNetworkConfig
         public SteamNetworkingAvailability eAvailNetworkConfig;
-        /// <summary>ESteamNetworkingAvailability m_eAvailAnyRelay</summary>
+        /// missing documentation for SteamRelayNetworkStatus_t.m_eAvailAnyRelay
         public SteamNetworkingAvailability eAvailAnyRelay;
-        /// <summary>char [256] m_debugMsg</summary>
+        /// missing documentation for SteamRelayNetworkStatus_t.m_debugMsg
         public UTF8String256 debugMsg;
     }
 }

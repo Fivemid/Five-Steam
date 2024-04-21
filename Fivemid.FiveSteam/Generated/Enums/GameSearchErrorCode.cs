@@ -3,26 +3,26 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EGameSearchErrorCode_t</summary>
+    /// missing documentation for EGameSearchErrorCode_t
     public enum GameSearchErrorCode : int
     {
-        /// <summary>k_EGameSearchErrorCode_OK</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_OK
         OK = 1,
-        /// <summary>k_EGameSearchErrorCode_Failed_Search_Already_In_Progress</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_Search_Already_In_Progress
         Failed_Search_Already_In_Progress = 2,
-        /// <summary>k_EGameSearchErrorCode_Failed_No_Search_In_Progress</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_No_Search_In_Progress
         Failed_No_Search_In_Progress = 3,
-        /// <summary>k_EGameSearchErrorCode_Failed_Not_Lobby_Leader</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_Not_Lobby_Leader
         Failed_Not_Lobby_Leader = 4,
-        /// <summary>k_EGameSearchErrorCode_Failed_No_Host_Available</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_No_Host_Available
         Failed_No_Host_Available = 5,
-        /// <summary>k_EGameSearchErrorCode_Failed_Search_Params_Invalid</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_Search_Params_Invalid
         Failed_Search_Params_Invalid = 6,
-        /// <summary>k_EGameSearchErrorCode_Failed_Offline</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_Offline
         Failed_Offline = 7,
-        /// <summary>k_EGameSearchErrorCode_Failed_NotAuthorized</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_NotAuthorized
         Failed_NotAuthorized = 8,
-        /// <summary>k_EGameSearchErrorCode_Failed_Unknown_Error</summary>
+        /// missing documentation for EGameSearchErrorCode_t.k_EGameSearchErrorCode_Failed_Unknown_Error
         Failed_Unknown_Error = 9
     }
 }

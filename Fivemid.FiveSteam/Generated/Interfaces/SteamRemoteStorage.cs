@@ -55,7 +55,9 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="pchFile">const char *: The name of the file to write to.</param>
         /// <param name="pvData">const void *: The bytes to write to the file.</param>
-        /// <param name="cubData">int32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : 
         ///             The number of bytes to write to the file. Typically the total size of
         ///             <code class="bb_code bb_code_inline nohighlight">pvData</code>.
         ///         </param>
@@ -84,7 +86,9 @@ namespace Fivemid.FiveSteam
         ///             The buffer that the file will be read into. This buffer must be at least the same size
         ///             provided to <code class="bb_code bb_code_inline nohighlight">cubDataToRead</code>.
         ///         </param>
-        /// <param name="cubDataToRead">int32: 
+        /// <param name="cubDataToRead">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : 
         ///             The amount of bytes to read. Generally obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetFileSize" class="bb_apilink">ISteamRemoteStorage::GetFileSize</a>
         ///             or
@@ -135,7 +139,9 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="pchFile">const char *: The name of the file to write to.</param>
         /// <param name="pvData">const void *: The bytes to write to the file.</param>
-        /// <param name="cubData">uint32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of bytes to write to the file. Typically the total size of
         ///             <code class="bb_code bb_code_inline nohighlight">pvData</code>.
         ///         </param>
@@ -193,11 +199,15 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">m_cubRead</code>.
         /// </summary>
         /// <param name="pchFile">const char *: The name of the file to read from.</param>
-        /// <param name="nOffset">uint32: 
+        /// <param name="nOffset">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The offset in bytes into the file where the read will start from. <b>0</b> if
         ///             you're reading the whole file in one chunk.
         ///         </param>
-        /// <param name="cubToRead">uint32: 
+        /// <param name="cubToRead">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The amount of bytes to read starting from
         ///             <code class="bb_code bb_code_inline nohighlight">nOffset</code>.
         ///         </param>
@@ -236,12 +246,16 @@ namespace Fivemid.FiveSteam
         ///     </li>
         /// </ul>
         /// </summary>
-        /// <param name="hReadCall">SteamAPICall_t: 
+        /// <param name="hReadCall">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPICall_t" class="bb_apilink">SteamAPICall_t</a>
+        ///         : 
         ///             The call result handle obtained from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageFileReadAsyncComplete_t" class="bb_apilink">RemoteStorageFileReadAsyncComplete_t</a>.
         ///         </param>
         /// <param name="pvBuffer">void *: The buffer that the file will be read into.</param>
-        /// <param name="cubToRead">uint32: 
+        /// <param name="cubToRead">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of bytes to copy. This should usually be the
         ///             <code class="bb_code bb_code_inline nohighlight">m_cubRead</code> value from
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageFileReadAsyncComplete_t" class="bb_apilink">RemoteStorageFileReadAsyncComplete_t</a>
@@ -327,7 +341,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the file exists, otherwise false.
         /// </summary>
         /// <param name="pchFile">const char *: The name of the file.</param>
-        /// <param name="eRemoteStoragePlatform">ERemoteStoragePlatform: The platforms that the file will be syncronized to.</param>
+        /// <param name="eRemoteStoragePlatform">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStoragePlatform" class="bb_apilink">ERemoteStoragePlatform</a>
+        ///         : The platforms that the file will be syncronized to.</param>
         public static bool SetSyncPlatforms(UTF8StringPtr pchFile, RemoteStoragePlatform eRemoteStoragePlatform) => Instance.SetSyncPlatforms(pchFile, eRemoteStoragePlatform);
         /// <summary>
         /// <code>
@@ -384,9 +400,13 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#k_unMaxCloudFileChunkSize" class="bb_apilink">k_unMaxCloudFileChunkSize</a>, or the current user's Steam Cloud storage quota has been exceeded. They may have run out of
         /// space, or have too many files.
         /// </summary>
-        /// <param name="writeHandle">UGCFileWriteStreamHandle_t: The file write stream to write to.</param>
+        /// <param name="writeHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCFileWriteStreamHandle_t" class="bb_apilink">UGCFileWriteStreamHandle_t</a>
+        ///         : The file write stream to write to.</param>
         /// <param name="pvData">const void *: The data to write to the stream.</param>
-        /// <param name="cubData">int32: 
+        /// <param name="cubData">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pvData</code> in bytes.
         ///         </param>
         public static bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle writeHandle, void* pvData, int cubData) => Instance.FileWriteStreamWriteChunk(writeHandle, pvData, cubData);
@@ -405,7 +425,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if <code class="bb_code bb_code_inline nohighlight">writeHandle</code> is not
         /// a valid file write stream.
         /// </summary>
-        /// <param name="writeHandle">UGCFileWriteStreamHandle_t: The file write stream to close.</param>
+        /// <param name="writeHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCFileWriteStreamHandle_t" class="bb_apilink">UGCFileWriteStreamHandle_t</a>
+        ///         : The file write stream to close.</param>
         public static bool FileWriteStreamClose(UGCFileWriteStreamHandle writeHandle) => Instance.FileWriteStreamClose(writeHandle);
         /// <summary>
         /// <code>bool FileWriteStreamCancel( UGCFileWriteStreamHandle_t writeHandle );</code>
@@ -419,7 +441,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="writeHandle">UGCFileWriteStreamHandle_t: The file write stream to cancel.</param>
+        /// <param name="writeHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCFileWriteStreamHandle_t" class="bb_apilink">UGCFileWriteStreamHandle_t</a>
+        ///         : The file write stream to cancel.</param>
         public static bool FileWriteStreamCancel(UGCFileWriteStreamHandle writeHandle) => Instance.FileWriteStreamCancel(writeHandle);
         /// <summary>
         /// <code>bool FileExists( const char *pchFile );</code>
@@ -524,8 +548,10 @@ namespace Fivemid.FiveSteam
         ///             The index of the file, this should be between 0 and
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetFileCount" class="bb_apilink">ISteamRemoteStorage::GetFileCount</a>.
         ///         </param>
-        /// <param name="pnFileSizeInBytes">int32
-        ///             *: Returns the file size in bytes.</param>
+        /// <param name="pnFileSizeInBytes">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : Returns the file size in bytes.</param>
         public static UTF8StringPtr GetFileNameAndSize(int iFile, int* pnFileSizeInBytes) => Instance.GetFileNameAndSize(iFile, pnFileSizeInBytes);
         /// <summary>
         /// <code>bool GetQuota( uint64 *pnTotalBytes, uint64 *puAvailableBytes );</code>
@@ -536,10 +562,14 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// This function always returns <b>true</b>.
         /// </summary>
-        /// <param name="pnTotalBytes">uint64
-        ///             *: Returns the total amount of bytes the user has access to.</param>
-        /// <param name="puAvailableBytes">uint64
-        ///             *: Returns the number of bytes available.</param>
+        /// <param name="pnTotalBytes">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the total amount of bytes the user has access to.</param>
+        /// <param name="puAvailableBytes">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the number of bytes available.</param>
         public static bool GetQuota(ulong* pnTotalBytes, ulong* puAvailableBytes) => Instance.GetQuota(pnTotalBytes, puAvailableBytes);
         /// <summary>
         /// <code>bool IsCloudEnabledForAccount();</code>
@@ -601,8 +631,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageDownloadUGCResult_t" class="bb_apilink">RemoteStorageDownloadUGCResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="hContent">UGCHandle_t: </param>
-        /// <param name="unPriority">uint32: </param>
+        /// <param name="hContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : </param>
+        /// <param name="unPriority">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall UGCDownload(UGCHandle hContent, uint unPriority) => Instance.UGCDownload(hContent, unPriority);
         /// <summary>
         /// <code>
@@ -613,11 +647,17 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hContent">UGCHandle_t: </param>
-        /// <param name="pnBytesDownloaded">int32
-        ///             *: </param>
-        /// <param name="pnBytesExpected">int32
-        ///             *: </param>
+        /// <param name="hContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : </param>
+        /// <param name="pnBytesDownloaded">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="pnBytesExpected">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : </param>
         public static bool GetUGCDownloadProgress(UGCHandle hContent, int* pnBytesDownloaded, int* pnBytesExpected) => Instance.GetUGCDownloadProgress(hContent, pnBytesDownloaded, pnBytesExpected);
         /// <summary>
         /// <code>
@@ -628,14 +668,22 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="hContent">UGCHandle_t: </param>
-        /// <param name="pnAppID">AppId_t
-        ///             *: </param>
+        /// <param name="hContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : </param>
+        /// <param name="pnAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///             *
+        ///         : </param>
         /// <param name="ppchName">char **: </param>
-        /// <param name="pnFileSizeInBytes">int32
-        ///             *: </param>
-        /// <param name="pSteamIDOwner">CSteamID
-        ///             *: </param>
+        /// <param name="pnFileSizeInBytes">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///             *
+        ///         : </param>
+        /// <param name="pSteamIDOwner">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///             *
+        ///         : </param>
         public static bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner) => Instance.GetUGCDetails(hContent, pnAppID, ppchName, pnFileSizeInBytes, pSteamIDOwner);
         /// <summary>
         /// <code>
@@ -647,11 +695,19 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
         /// </summary>
-        /// <param name="hContent">UGCHandle_t: </param>
+        /// <param name="hContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : </param>
         /// <param name="pvData">void *: </param>
-        /// <param name="cubDataToRead">int32: </param>
-        /// <param name="cOffset">uint32: </param>
-        /// <param name="eAction">EUGCReadAction: </param>
+        /// <param name="cubDataToRead">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : </param>
+        /// <param name="cOffset">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="eAction">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EUGCReadAction" class="bb_apilink">EUGCReadAction</a>
+        ///         : </param>
         public static int UGCRead(UGCHandle hContent, void* pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction) => Instance.UGCRead(hContent, pvData, cubDataToRead, cOffset, eAction);
         /// <summary>
         /// <code>int32 GetCachedUGCCount();</code>
@@ -668,7 +724,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
         /// </summary>
-        /// <param name="iCachedContent">int32: </param>
+        /// <param name="iCachedContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : </param>
         public static UGCHandle GetCachedUGCHandle(int iCachedContent) => Instance.GetCachedUGCHandle(iCachedContent);
         /// <summary>
         /// <code>
@@ -689,13 +747,21 @@ namespace Fivemid.FiveSteam
         /// </summary>
         /// <param name="pchFile">const char *: </param>
         /// <param name="pchPreviewFile">const char *: </param>
-        /// <param name="nConsumerAppId">AppId_t: </param>
+        /// <param name="nConsumerAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : </param>
         /// <param name="pchTitle">const char *: </param>
         /// <param name="pchDescription">const char *: </param>
-        /// <param name="eVisibility">ERemoteStoragePublishedFileVisibility: </param>
-        /// <param name="pTags">SteamParamStringArray_t
-        ///             *: </param>
-        /// <param name="eWorkshopFileType">EWorkshopFileType: </param>
+        /// <param name="eVisibility">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStoragePublishedFileVisibility" class="bb_apilink">ERemoteStoragePublishedFileVisibility</a>
+        ///         : </param>
+        /// <param name="pTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
+        /// <param name="eWorkshopFileType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopFileType" class="bb_apilink">EWorkshopFileType</a>
+        ///         : </param>
         public static SteamAPICall PublishWorkshopFile(UTF8StringPtr pchFile, UTF8StringPtr pchPreviewFile, AppId nConsumerAppId, UTF8StringPtr pchTitle, UTF8StringPtr pchDescription, RemoteStoragePublishedFileVisibility eVisibility, SteamParamStringArray* pTags, WorkshopFileType eWorkshopFileType) => Instance.PublishWorkshopFile(pchFile, pchPreviewFile, nConsumerAppId, pchTitle, pchDescription, eVisibility, pTags, eWorkshopFileType);
         /// <summary>
         /// <code>
@@ -709,7 +775,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static PublishedFileUpdateHandle CreatePublishedFileUpdateRequest(PublishedFileId unPublishedFileId) => Instance.CreatePublishedFileUpdateRequest(unPublishedFileId);
         /// <summary>
         /// <code>
@@ -721,7 +789,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         /// <param name="pchFile">const char *: </param>
         public static bool UpdatePublishedFileFile(PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchFile) => Instance.UpdatePublishedFileFile(updateHandle, pchFile);
         /// <summary>
@@ -735,7 +805,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         /// <param name="pchPreviewFile">const char *: </param>
         public static bool UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchPreviewFile) => Instance.UpdatePublishedFilePreviewFile(updateHandle, pchPreviewFile);
         /// <summary>
@@ -748,7 +820,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         /// <param name="pchTitle">const char *: </param>
         public static bool UpdatePublishedFileTitle(PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchTitle) => Instance.UpdatePublishedFileTitle(updateHandle, pchTitle);
         /// <summary>
@@ -762,7 +836,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         /// <param name="pchDescription">const char *: </param>
         public static bool UpdatePublishedFileDescription(PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchDescription) => Instance.UpdatePublishedFileDescription(updateHandle, pchDescription);
         /// <summary>
@@ -776,8 +852,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
-        /// <param name="eVisibility">ERemoteStoragePublishedFileVisibility: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
+        /// <param name="eVisibility">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStoragePublishedFileVisibility" class="bb_apilink">ERemoteStoragePublishedFileVisibility</a>
+        ///         : </param>
         public static bool UpdatePublishedFileVisibility(PublishedFileUpdateHandle updateHandle, RemoteStoragePublishedFileVisibility eVisibility) => Instance.UpdatePublishedFileVisibility(updateHandle, eVisibility);
         /// <summary>
         /// <code>
@@ -790,9 +870,13 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
-        /// <param name="pTags">SteamParamStringArray_t
-        ///             *: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
+        /// <param name="pTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
         public static bool UpdatePublishedFileTags(PublishedFileUpdateHandle updateHandle, SteamParamStringArray* pTags) => Instance.UpdatePublishedFileTags(updateHandle, pTags);
         /// <summary>
         /// <code>
@@ -808,7 +892,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageUpdatePublishedFileResult_t" class="bb_apilink">RemoteStorageUpdatePublishedFileResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         public static SteamAPICall CommitPublishedFileUpdate(PublishedFileUpdateHandle updateHandle) => Instance.CommitPublishedFileUpdate(updateHandle);
         /// <summary>
         /// <code>
@@ -825,8 +911,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageGetPublishedFileDetailsResult_t" class="bb_apilink">RemoteStorageGetPublishedFileDetailsResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
-        /// <param name="unMaxSecondsOld">uint32: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
+        /// <param name="unMaxSecondsOld">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall GetPublishedFileDetails(PublishedFileId unPublishedFileId, uint unMaxSecondsOld) => Instance.GetPublishedFileDetails(unPublishedFileId, unMaxSecondsOld);
         /// <summary>
         /// <code>
@@ -842,7 +932,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageDeletePublishedFileResult_t" class="bb_apilink">RemoteStorageDeletePublishedFileResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static SteamAPICall DeletePublishedFile(PublishedFileId unPublishedFileId) => Instance.DeletePublishedFile(unPublishedFileId);
         /// <summary>
         /// <code>SteamAPICall_t EnumerateUserPublishedFiles( uint32 unStartIndex );</code>
@@ -856,7 +948,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageEnumerateUserPublishedFilesResult_t" class="bb_apilink">RemoteStorageEnumerateUserPublishedFilesResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unStartIndex">uint32: </param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall EnumerateUserPublishedFiles(uint unStartIndex) => Instance.EnumerateUserPublishedFiles(unStartIndex);
         /// <summary>
         /// <code>
@@ -872,7 +966,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageSubscribePublishedFileResult_t" class="bb_apilink">RemoteStorageSubscribePublishedFileResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static SteamAPICall SubscribePublishedFile(PublishedFileId unPublishedFileId) => Instance.SubscribePublishedFile(unPublishedFileId);
         /// <summary>
         /// <code>SteamAPICall_t EnumerateUserSubscribedFiles( uint32 unStartIndex );</code>
@@ -886,7 +982,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageEnumerateUserSubscribedFilesResult_t" class="bb_apilink">RemoteStorageEnumerateUserSubscribedFilesResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unStartIndex">uint32: </param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall EnumerateUserSubscribedFiles(uint unStartIndex) => Instance.EnumerateUserSubscribedFiles(unStartIndex);
         /// <summary>
         /// <code>
@@ -902,7 +1000,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageUnsubscribePublishedFileResult_t" class="bb_apilink">RemoteStorageUnsubscribePublishedFileResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static SteamAPICall UnsubscribePublishedFile(PublishedFileId unPublishedFileId) => Instance.UnsubscribePublishedFile(unPublishedFileId);
         /// <summary>
         /// <code>
@@ -915,7 +1015,9 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="updateHandle">PublishedFileUpdateHandle_t: </param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileUpdateHandle_t" class="bb_apilink">PublishedFileUpdateHandle_t</a>
+        ///         : </param>
         /// <param name="pchChangeDescription">const char *: </param>
         public static bool UpdatePublishedFileSetChangeDescription(PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchChangeDescription) => Instance.UpdatePublishedFileSetChangeDescription(updateHandle, pchChangeDescription);
         /// <summary>
@@ -932,7 +1034,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageGetPublishedItemVoteDetailsResult_t" class="bb_apilink">RemoteStorageGetPublishedItemVoteDetailsResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static SteamAPICall GetPublishedItemVoteDetails(PublishedFileId unPublishedFileId) => Instance.GetPublishedItemVoteDetails(unPublishedFileId);
         /// <summary>
         /// <code>
@@ -948,7 +1052,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageUpdateUserPublishedItemVoteResult_t" class="bb_apilink">RemoteStorageUpdateUserPublishedItemVoteResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         /// <param name="bVoteUp">bool: </param>
         public static SteamAPICall UpdateUserPublishedItemVote(PublishedFileId unPublishedFileId, bool bVoteUp) => Instance.UpdateUserPublishedItemVote(unPublishedFileId, bVoteUp);
         /// <summary>
@@ -965,7 +1071,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageGetPublishedItemVoteDetailsResult_t" class="bb_apilink">RemoteStorageGetPublishedItemVoteDetailsResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
         public static SteamAPICall GetUserPublishedItemVoteDetails(PublishedFileId unPublishedFileId) => Instance.GetUserPublishedItemVoteDetails(unPublishedFileId);
         /// <summary>
         /// <code>
@@ -982,12 +1090,20 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageEnumerateUserPublishedFilesResult_t" class="bb_apilink">RemoteStorageEnumerateUserPublishedFilesResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="steamId">CSteamID: </param>
-        /// <param name="unStartIndex">uint32: </param>
-        /// <param name="pRequiredTags">SteamParamStringArray_t
-        ///             *: </param>
-        /// <param name="pExcludedTags">SteamParamStringArray_t
-        ///             *: </param>
+        /// <param name="steamId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a>
+        ///         : </param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="pRequiredTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
+        /// <param name="pExcludedTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
         public static SteamAPICall EnumerateUserSharedWorkshopFiles(SteamId steamId, uint unStartIndex, SteamParamStringArray* pRequiredTags, SteamParamStringArray* pExcludedTags) => Instance.EnumerateUserSharedWorkshopFiles(steamId, unStartIndex, pRequiredTags, pExcludedTags);
         /// <summary>
         /// <code>
@@ -1006,16 +1122,24 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStoragePublishFileProgress_t" class="bb_apilink">RemoteStoragePublishFileProgress_t</a>
         /// call result.
         /// </summary>
-        /// <param name="eVideoProvider">EWorkshopVideoProvider: </param>
+        /// <param name="eVideoProvider">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopVideoProvider" class="bb_apilink">EWorkshopVideoProvider</a>
+        ///         : </param>
         /// <param name="pchVideoAccount">const char *: </param>
         /// <param name="pchVideoIdentifier">const char *: </param>
         /// <param name="pchPreviewFile">const char *: </param>
-        /// <param name="nConsumerAppId">AppId_t: </param>
+        /// <param name="nConsumerAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : </param>
         /// <param name="pchTitle">const char *: </param>
         /// <param name="pchDescription">const char *: </param>
-        /// <param name="eVisibility">ERemoteStoragePublishedFileVisibility: </param>
-        /// <param name="pTags">SteamParamStringArray_t
-        ///             *: </param>
+        /// <param name="eVisibility">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStoragePublishedFileVisibility" class="bb_apilink">ERemoteStoragePublishedFileVisibility</a>
+        ///         : </param>
+        /// <param name="pTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
         public static SteamAPICall PublishVideo(WorkshopVideoProvider eVideoProvider, UTF8StringPtr pchVideoAccount, UTF8StringPtr pchVideoIdentifier, UTF8StringPtr pchPreviewFile, AppId nConsumerAppId, UTF8StringPtr pchTitle, UTF8StringPtr pchDescription, RemoteStoragePublishedFileVisibility eVisibility, SteamParamStringArray* pTags) => Instance.PublishVideo(eVideoProvider, pchVideoAccount, pchVideoIdentifier, pchPreviewFile, nConsumerAppId, pchTitle, pchDescription, eVisibility, pTags);
         /// <summary>
         /// <code>
@@ -1032,8 +1156,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageSetUserPublishedFileActionResult_t" class="bb_apilink">RemoteStorageSetUserPublishedFileActionResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="unPublishedFileId">PublishedFileId_t: </param>
-        /// <param name="eAction">EWorkshopFileAction: </param>
+        /// <param name="unPublishedFileId">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : </param>
+        /// <param name="eAction">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopFileAction" class="bb_apilink">EWorkshopFileAction</a>
+        ///         : </param>
         public static SteamAPICall SetUserPublishedFileAction(PublishedFileId unPublishedFileId, WorkshopFileAction eAction) => Instance.SetUserPublishedFileAction(unPublishedFileId, eAction);
         /// <summary>
         /// <code>
@@ -1050,8 +1178,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageEnumeratePublishedFilesByUserActionResult_t" class="bb_apilink">RemoteStorageEnumeratePublishedFilesByUserActionResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="eAction">EWorkshopFileAction: </param>
-        /// <param name="unStartIndex">uint32: </param>
+        /// <param name="eAction">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopFileAction" class="bb_apilink">EWorkshopFileAction</a>
+        ///         : </param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall EnumeratePublishedFilesByUserAction(WorkshopFileAction eAction, uint unStartIndex) => Instance.EnumeratePublishedFilesByUserAction(eAction, unStartIndex);
         /// <summary>
         /// <code>
@@ -1069,14 +1201,26 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageEnumerateWorkshopFilesResult_t" class="bb_apilink">RemoteStorageEnumerateWorkshopFilesResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="eEnumerationType">EWorkshopEnumerationType: </param>
-        /// <param name="unStartIndex">uint32: </param>
-        /// <param name="unCount">uint32: </param>
-        /// <param name="unDays">uint32: </param>
-        /// <param name="pTags">SteamParamStringArray_t
-        ///             *: </param>
-        /// <param name="pUserTags">SteamParamStringArray_t
-        ///             *: </param>
+        /// <param name="eEnumerationType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopEnumerationType" class="bb_apilink">EWorkshopEnumerationType</a>
+        ///         : </param>
+        /// <param name="unStartIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="unCount">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="unDays">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
+        /// <param name="pTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
+        /// <param name="pUserTags">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : </param>
         public static SteamAPICall EnumeratePublishedWorkshopFiles(WorkshopEnumerationType eEnumerationType, uint unStartIndex, uint unCount, uint unDays, SteamParamStringArray* pTags, SteamParamStringArray* pUserTags) => Instance.EnumeratePublishedWorkshopFiles(eEnumerationType, unStartIndex, unCount, unDays, pTags, pUserTags);
         /// <summary>
         /// <code>
@@ -1091,9 +1235,13 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#RemoteStorageDownloadUGCResult_t" class="bb_apilink">RemoteStorageDownloadUGCResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="hContent">UGCHandle_t: </param>
+        /// <param name="hContent">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>
+        ///         : </param>
         /// <param name="pchLocation">const char *: </param>
-        /// <param name="unPriority">uint32: </param>
+        /// <param name="unPriority">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static SteamAPICall UGCDownloadToLocation(UGCHandle hContent, UTF8StringPtr pchLocation, uint unPriority) => Instance.UGCDownloadToLocation(hContent, pchLocation, unPriority);
         /// <summary>
         /// <code>int32 GetLocalFileChangeCount( );</code>
@@ -1150,9 +1298,15 @@ namespace Fivemid.FiveSteam
         /// The file name or full path of the file affected by this change. See comments on
         /// <code class="bb_code bb_code_inline nohighlight">pEFilePathType</code> above for more detail.
         /// </summary>
-        /// <param name="iFile">int32: Zero-based index of the change</param>
-        /// <param name="pEChangeType">ERemoteStorageLocalFileChange: What happened to this file</param>
-        /// <param name="pEFilePathType">ERemoteStorageFilePathType: Type of path to the file returned</param>
+        /// <param name="iFile">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a>
+        ///         : Zero-based index of the change</param>
+        /// <param name="pEChangeType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStorageLocalFileChange" class="bb_apilink">ERemoteStorageLocalFileChange</a>
+        ///         : What happened to this file</param>
+        /// <param name="pEFilePathType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStorageFilePathType" class="bb_apilink">ERemoteStorageFilePathType</a>
+        ///         : Type of path to the file returned</param>
         public static UTF8StringPtr GetLocalFileChange(int iFile, RemoteStorageLocalFileChangeType* pEChangeType, RemoteStorageFilePathType* pEFilePathType) => Instance.GetLocalFileChange(iFile, pEChangeType, pEFilePathType);
         /// <summary>
         /// <code>bool BeginFileWriteBatch( );</code>

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HSteamNetConnection</summary>
+    /// missing documentation for HSteamNetConnection
     public unsafe struct HSteamNetConnection
     {
         public uint value;

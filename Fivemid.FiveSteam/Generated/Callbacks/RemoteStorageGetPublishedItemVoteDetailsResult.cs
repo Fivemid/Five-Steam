@@ -3,21 +3,29 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>RemoteStorageGetPublishedItemVoteDetailsResult_t</summary>
+    /// <summary>
+    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetPublishedItemVoteDetails" class="bb_apilink">ISteamRemoteStorage::GetPublishedItemVoteDetails</a>,
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetUserPublishedItemVoteDetails" class="bb_apilink">ISteamRemoteStorage::GetUserPublishedItemVoteDetails</a>
+    /// </summary>
     public unsafe struct RemoteStorageGetPublishedItemVoteDetailsResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageGetPublishedItemVoteDetailsResult;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary></summary>
         public Result eResult;
-        /// <summary>PublishedFileId_t m_unPublishedFileId</summary>
+        /// <summary></summary>
         public PublishedFileId unPublishedFileId;
-        /// <summary>int32 m_nVotesFor</summary>
+        /// <summary></summary>
         public int nVotesFor;
-        /// <summary>int32 m_nVotesAgainst</summary>
+        /// <summary></summary>
         public int nVotesAgainst;
-        /// <summary>int32 m_nReports</summary>
+        /// <summary></summary>
         public int nReports;
-        /// <summary>float m_fScore</summary>
+        /// <summary></summary>
         public float fScore;
     }
 }

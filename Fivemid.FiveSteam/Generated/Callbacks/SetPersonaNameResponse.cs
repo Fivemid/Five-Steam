@@ -3,15 +3,25 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SetPersonaNameResponse_t</summary>
+    /// <summary>
+    /// Reports the result of an attempt to change the current user's persona name.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetPersonaName" class="bb_apilink">ISteamFriends::SetPersonaName</a>
+    /// </summary>
     public unsafe struct SetPersonaNameResponse : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SetPersonaNameResponse;
-        /// <summary>bool m_bSuccess</summary>
+        /// <summary><b>true</b> if name change completed successfully.</summary>
         public bool bSuccess;
-        /// <summary>bool m_bLocalSuccess</summary>
+        /// <summary>
+        ///             <b>true</b> if name change was retained locally. We might not have been able
+        ///             to communicate with Steam.
+        ///         </summary>
         public bool bLocalSuccess;
-        /// <summary>EResult m_result</summary>
+        /// <summary>The result of the operation.</summary>
         public Result result;
     }
 }

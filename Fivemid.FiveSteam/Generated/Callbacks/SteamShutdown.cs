@@ -3,7 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamShutdown_t</summary>
+    /// <summary>
+    /// Called when Steam wants to shutdown.<br />
+    /// <br />
+    /// This callback has no fields.
+    /// </summary>
     public unsafe struct SteamShutdown : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamShutdown;

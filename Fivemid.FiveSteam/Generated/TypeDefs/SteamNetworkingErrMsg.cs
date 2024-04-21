@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingErrMsg</summary>
+    /// missing documentation for SteamNetworkingErrMsg
     public unsafe struct SteamNetworkingErrMsg
     {
         public UTF8String1024 value;

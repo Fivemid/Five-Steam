@@ -3,44 +3,44 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>gameserveritem_t</summary>
+    /// missing documentation for gameserveritem_t
     public unsafe struct gameserveritem
     {
-        /// <summary>servernetadr_t m_NetAdr</summary>
+        /// missing documentation for gameserveritem_t.m_NetAdr
         public servernetadr NetAdr;
-        /// <summary>int m_nPing</summary>
+        /// missing documentation for gameserveritem_t.m_nPing
         public int nPing;
-        /// <summary>bool m_bHadSuccessfulResponse</summary>
+        /// missing documentation for gameserveritem_t.m_bHadSuccessfulResponse
         public bool bHadSuccessfulResponse;
-        /// <summary>bool m_bDoNotRefresh</summary>
+        /// missing documentation for gameserveritem_t.m_bDoNotRefresh
         public bool bDoNotRefresh;
-        /// <summary>char [32] m_szGameDir</summary>
+        /// missing documentation for gameserveritem_t.m_szGameDir
         public UTF8String32 szGameDir;
-        /// <summary>char [32] m_szMap</summary>
+        /// missing documentation for gameserveritem_t.m_szMap
         public UTF8String32 szMap;
-        /// <summary>char [64] m_szGameDescription</summary>
+        /// missing documentation for gameserveritem_t.m_szGameDescription
         public UTF8String64 szGameDescription;
-        /// <summary>uint32 m_nAppID</summary>
+        /// missing documentation for gameserveritem_t.m_nAppID
         public uint nAppID;
-        /// <summary>int m_nPlayers</summary>
+        /// missing documentation for gameserveritem_t.m_nPlayers
         public int nPlayers;
-        /// <summary>int m_nMaxPlayers</summary>
+        /// missing documentation for gameserveritem_t.m_nMaxPlayers
         public int nMaxPlayers;
-        /// <summary>int m_nBotPlayers</summary>
+        /// missing documentation for gameserveritem_t.m_nBotPlayers
         public int nBotPlayers;
-        /// <summary>bool m_bPassword</summary>
+        /// missing documentation for gameserveritem_t.m_bPassword
         public bool bPassword;
-        /// <summary>bool m_bSecure</summary>
+        /// missing documentation for gameserveritem_t.m_bSecure
         public bool bSecure;
-        /// <summary>uint32 m_ulTimeLastPlayed</summary>
+        /// missing documentation for gameserveritem_t.m_ulTimeLastPlayed
         public uint ulTimeLastPlayed;
-        /// <summary>int m_nServerVersion</summary>
+        /// missing documentation for gameserveritem_t.m_nServerVersion
         public int nServerVersion;
-        /// <summary>char [64] m_szServerName</summary>
+        /// missing documentation for gameserveritem_t.m_szServerName
         public UTF8String64 szServerName;
-        /// <summary>char [128] m_szGameTags</summary>
+        /// missing documentation for gameserveritem_t.m_szGameTags
         public UTF8String128 szGameTags;
-        /// <summary>CSteamID m_steamID</summary>
+        /// missing documentation for gameserveritem_t.m_steamID
         public SteamId steamID;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_Construct", CallingConvention = Platform.CC)]
         internal static extern void Construct(gameserveritem* self);

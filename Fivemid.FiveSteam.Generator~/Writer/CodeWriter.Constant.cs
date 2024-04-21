@@ -29,7 +29,18 @@ public partial class CodeWriter {
                       ? [Token(SyntaxKind.ConstKeyword)]
                       : [Token(SyntaxKind.StaticKeyword), Token(SyntaxKind.ReadOnlyKeyword)]
               )
-             .WithLeadingTrivia(Comment($"/// <summary>{definition.Name}</summary>"));
+             .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
+    }
+    
+    private SyntaxTrivia[] SimpleDescriptionDocumentation(
+        string objectPath
+    ) {
+        if (Documentation.VALUE.GetObject(objectPath) is { } documentation)
+            return DocComment($"""
+                               <summary>{documentation.Description}</summary>
+                               """);
+        
+        return DocComment($"missing documentation for {objectPath}");
     }
     
     private static readonly Dictionary<string, string> constantInitializerOverrides = new() {

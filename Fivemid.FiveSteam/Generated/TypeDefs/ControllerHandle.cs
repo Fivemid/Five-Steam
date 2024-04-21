@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ControllerHandle_t</summary>
+    /// <summary>
+    ///             This handle will consistently identify a controller, even if it is disconnected and
+    ///             re-connected
+    ///         </summary>
     public unsafe struct ControllerHandle
     {
         public ulong value;

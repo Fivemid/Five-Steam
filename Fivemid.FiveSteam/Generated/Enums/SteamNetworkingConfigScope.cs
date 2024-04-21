@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingConfigScope</summary>
+    /// missing documentation for ESteamNetworkingConfigScope
     public enum SteamNetworkingConfigScope : int
     {
-        /// <summary>k_ESteamNetworkingConfig_Global</summary>
+        /// missing documentation for ESteamNetworkingConfigScope.k_ESteamNetworkingConfig_Global
         SteamNetworkingConfig_Global = 1,
-        /// <summary>k_ESteamNetworkingConfig_SocketsInterface</summary>
+        /// missing documentation for ESteamNetworkingConfigScope.k_ESteamNetworkingConfig_SocketsInterface
         SteamNetworkingConfig_SocketsInterface = 2,
-        /// <summary>k_ESteamNetworkingConfig_ListenSocket</summary>
+        /// missing documentation for ESteamNetworkingConfigScope.k_ESteamNetworkingConfig_ListenSocket
         SteamNetworkingConfig_ListenSocket = 3,
-        /// <summary>k_ESteamNetworkingConfig_Connection</summary>
+        /// missing documentation for ESteamNetworkingConfigScope.k_ESteamNetworkingConfig_Connection
         SteamNetworkingConfig_Connection = 4,
-        /// <summary>k_ESteamNetworkingConfigScope__Force32Bit</summary>
+        /// missing documentation for ESteamNetworkingConfigScope.k_ESteamNetworkingConfigScope__Force32Bit
         _Force32Bit = 2147483647
     }
 }

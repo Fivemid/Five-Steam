@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamIPv6ConnectivityState</summary>
+    /// missing documentation for ESteamIPv6ConnectivityState
     public enum SteamIPv6ConnectivityState : int
     {
-        /// <summary>k_ESteamIPv6ConnectivityState_Unknown</summary>
+        /// missing documentation for ESteamIPv6ConnectivityState.k_ESteamIPv6ConnectivityState_Unknown
         Unknown = 0,
-        /// <summary>k_ESteamIPv6ConnectivityState_Good</summary>
+        /// missing documentation for ESteamIPv6ConnectivityState.k_ESteamIPv6ConnectivityState_Good
         Good = 1,
-        /// <summary>k_ESteamIPv6ConnectivityState_Bad</summary>
+        /// missing documentation for ESteamIPv6ConnectivityState.k_ESteamIPv6ConnectivityState_Bad
         Bad = 2
     }
 }

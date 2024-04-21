@@ -3,7 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamUGC</summary>
+    /// <summary>
+    /// Functions to create, consume, and interact with the
+    /// <a href="https://partner.steamgames.com/doc/features/workshop" class="bb_doclink">Steam Workshop</a>.
+    /// </summary>
     public unsafe interface ISteamUGC
     {
         public UGCQueryHandle CreateQueryUserUGCRequest(AccountID unAccountID, UserUGCList eListType, UGCMatchingUGCType eMatchingUGCType, UserUGCListSortOrder eSortOrder, AppId nCreatorAppID, AppId nConsumerAppID, uint unPage);

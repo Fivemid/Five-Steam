@@ -67,12 +67,16 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAppID" class="bb_apilink">ISteamUtils::GetAppID</a>
         /// </summary>
-        /// <param name="unAccountID">AccountID_t: 
+        /// <param name="unAccountID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AccountID_t" class="bb_apilink">AccountID_t</a>
+        ///         : 
         ///             The Account ID to query the UGC for. You can use
         ///             <code class="bb_code bb_code_inline nohighlight">CSteamID.GetAccountID</code> to get the
         ///             Account ID from a Steam ID.
         ///         </param>
-        /// <param name="eListType">EUserUGCList: 
+        /// <param name="eListType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUserUGCList" class="bb_apilink">EUserUGCList</a>
+        ///         : 
         ///             Used to specify the type of list to get.<br />
         ///             If the currently logged in user is different than the user specified in
         ///             <code class="bb_code bb_code_inline nohighlight">unAccountID</code>, then some options
@@ -82,18 +86,28 @@ namespace Fivemid.FiveSteam
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#k_EUserUGCList_WillVoteLater" class="bb_apilink">k_EUserUGCList_WillVoteLater</a>,
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#k_EUserUGCList_Subscribed" class="bb_apilink">k_EUserUGCList_Subscribed</a>)
         ///         </param>
-        /// <param name="eMatchingUGCType">EUGCMatchingUGCType: Used to specify the type of UGC queried for.</param>
-        /// <param name="eSortOrder">EUserUGCListSortOrder: Used to specify the order that the list will be sorted in.</param>
-        /// <param name="nCreatorAppID">AppId_t: 
+        /// <param name="eMatchingUGCType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCMatchingUGCType" class="bb_apilink">EUGCMatchingUGCType</a>
+        ///         : Used to specify the type of UGC queried for.</param>
+        /// <param name="eSortOrder">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUserUGCListSortOrder" class="bb_apilink">EUserUGCListSortOrder</a>
+        ///         : Used to specify the order that the list will be sorted in.</param>
+        /// <param name="nCreatorAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID of the app where the item was created. This may be
         ///             different than <code class="bb_code bb_code_inline nohighlight">nConsumerAppID</code> if
         ///             your item creation tool is a separate App ID.
         ///         </param>
-        /// <param name="nConsumerAppID">AppId_t: 
+        /// <param name="nConsumerAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID for the current game or application. Do not pass the App
         ///             ID of the workshop item creation tool if that is a separate App ID!
         ///         </param>
-        /// <param name="unPage">uint32: 
+        /// <param name="unPage">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The page number of the results to receive. This should start at 1 on the first call.
         ///         </param>
         public static UGCQueryHandle CreateQueryUserUGCRequest(AccountID unAccountID, UserUGCList eListType, UGCMatchingUGCType eMatchingUGCType, UserUGCListSortOrder eSortOrder, AppId nCreatorAppID, AppId nConsumerAppID, uint unPage) => Instance.CreateQueryUserUGCRequest(unAccountID, eListType, eMatchingUGCType, eSortOrder, nCreatorAppID, nConsumerAppID, unPage);
@@ -150,18 +164,28 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAppID" class="bb_apilink">ISteamUtils::GetAppID</a>
         /// </summary>
-        /// <param name="eQueryType">EUGCQuery: Used to specify the sorting and filtering for this call.</param>
-        /// <param name="eMatchingeMatchingUGCTypeFileType">EUGCMatchingUGCType: Used to specify the type of UGC queried for.</param>
-        /// <param name="nCreatorAppID">AppId_t: 
+        /// <param name="eQueryType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCQuery" class="bb_apilink">EUGCQuery</a>
+        ///         : Used to specify the sorting and filtering for this call.</param>
+        /// <param name="eMatchingeMatchingUGCTypeFileType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCMatchingUGCType" class="bb_apilink">EUGCMatchingUGCType</a>
+        ///         : Used to specify the type of UGC queried for.</param>
+        /// <param name="nCreatorAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID of the app where the item was created. This may be
         ///             different than <code class="bb_code bb_code_inline nohighlight">nConsumerAppID</code> if
         ///             your item creation tool is a separate App ID.
         ///         </param>
-        /// <param name="nConsumerAppID">AppId_t: 
+        /// <param name="nConsumerAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID for the current game or application. Do not pass the App
         ///             ID of the workshop item creation tool if that is a separate App ID!
         ///         </param>
-        /// <param name="unPage">uint32: 
+        /// <param name="unPage">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The page number of the results to receive. This should start at 1 on the first call.
         ///         </param>
         public static UGCQueryHandle CreateQueryAllUGCRequest(UGCQuery eQueryType, UGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId nCreatorAppID, AppId nConsumerAppID, uint unPage) => Instance.CreateQueryAllUGCRequest(eQueryType, eMatchingeMatchingUGCTypeFileType, nCreatorAppID, nConsumerAppID, unPage);
@@ -218,18 +242,28 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAppID" class="bb_apilink">ISteamUtils::GetAppID</a>
         /// </summary>
-        /// <param name="eQueryType">EUGCQuery: Used to specify the sorting and filtering for this call.</param>
-        /// <param name="eMatchingeMatchingUGCTypeFileType">EUGCMatchingUGCType: Used to specify the type of UGC queried for.</param>
-        /// <param name="nCreatorAppID">AppId_t: 
+        /// <param name="eQueryType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCQuery" class="bb_apilink">EUGCQuery</a>
+        ///         : Used to specify the sorting and filtering for this call.</param>
+        /// <param name="eMatchingeMatchingUGCTypeFileType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCMatchingUGCType" class="bb_apilink">EUGCMatchingUGCType</a>
+        ///         : Used to specify the type of UGC queried for.</param>
+        /// <param name="nCreatorAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID of the app where the item was created. This may be
         ///             different than <code class="bb_code bb_code_inline nohighlight">nConsumerAppID</code> if
         ///             your item creation tool is a separate App ID.
         ///         </param>
-        /// <param name="nConsumerAppID">AppId_t: 
+        /// <param name="nConsumerAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : 
         ///             This should contain the App ID for the current game or application. Do not pass the App
         ///             ID of the workshop item creation tool if that is a separate App ID!
         ///         </param>
-        /// <param name="unPage">uint32: 
+        /// <param name="unPage">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The page number of the results to receive. This should start at 1 on the first call.
         ///         </param>
         public static UGCQueryHandle CreateQueryAllUGCRequest(UGCQuery eQueryType, UGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId nCreatorAppID, AppId nConsumerAppID, UTF8StringPtr pchCursor) => Instance.CreateQueryAllUGCRequest(eQueryType, eMatchingeMatchingUGCTypeFileType, nCreatorAppID, nConsumerAppID, pchCursor);
@@ -291,9 +325,13 @@ namespace Fivemid.FiveSteam
         /// This handle can be used to further customize the query before sending it out with
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SendQueryUGCRequest" class="bb_apilink">ISteamUGC::SendQueryUGCRequest</a>.
         /// </summary>
-        /// <param name="pvecPublishedFileID">PublishedFileId_t
-        ///             *: The list of workshop items to get the details for.</param>
-        /// <param name="unNumPublishedFileIDs">uint32: 
+        /// <param name="pvecPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///             *
+        ///         : The list of workshop items to get the details for.</param>
+        /// <param name="unNumPublishedFileIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of items in
         ///             <code class="bb_code bb_code_inline nohighlight">pvecPublishedFileID</code>.
         ///         </param>
@@ -336,7 +374,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAPICallInvalid" class="bb_apilink">k_uAPICallInvalid</a>
         /// if the UGC query <code class="bb_code bb_code_inline nohighlight">handle</code> was invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query request handle to send.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query request handle to send.</param>
         public static SteamAPICall SendQueryUGCRequest(UGCQueryHandle handle) => Instance.SendQueryUGCRequest(handle);
         /// <summary>
         /// <code>
@@ -359,10 +399,16 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="pDetails">SteamUGCDetails_t
-        ///             *: Returns the the UGC details.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="pDetails">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SteamUGCDetails_t" class="bb_apilink">SteamUGCDetails_t</a>
+        ///             *
+        ///         : Returns the the UGC details.</param>
         public static bool GetQueryUGCResult(UGCQueryHandle handle, uint index, SteamUGCDetails* pDetails) => Instance.GetQueryUGCResult(handle, index, pDetails);
         /// <summary>
         /// <code>uint32 GetQueryUGCNumTags( UGCQueryHandle_t handle, uint32 index );</code>
@@ -392,8 +438,12 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
         public static uint GetQueryUGCNumTags(UGCQueryHandle handle, uint index) => Instance.GetQueryUGCNumTags(handle, index);
         /// <summary>
         /// <code>
@@ -417,11 +467,19 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCNumTags" class="bb_apilink">ISteamUGC::GetQueryUGCNumTags</a>
         /// to get number of tags.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="tagIndex">uint32: The index of the tag.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="tagIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the tag.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
-        /// <param name="cchValueSize">uint32: 
+        /// <param name="cchValueSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes
         ///             (allocate at least 64 bytes).
         ///         </param>
@@ -448,11 +506,19 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCNumTags" class="bb_apilink">ISteamUGC::GetQueryUGCNumTags</a>
         /// to get number of tags.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="tagIndex">uint32: The index of the tag.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="tagIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the tag.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
-        /// <param name="cchValueSize">uint32: 
+        /// <param name="cchValueSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes
         ///             (allocate at least 256 bytes).
         ///         </param>
@@ -484,10 +550,16 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
         /// <param name="pchURL">char *: Returns the Metadata by copying it into this string.</param>
-        /// <param name="cchURLSize">uint32: 
+        /// <param name="cchURLSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchURL</code> in bytes.
         ///         </param>
         public static bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize) => Instance.GetQueryUGCPreviewURL(handle, index, pchURL, cchURLSize);
@@ -517,10 +589,16 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemMetadata" class="bb_apilink">ISteamUGC::SetItemMetadata</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
         /// <param name="pchMetadata">char *: Returns the url by copying it into this string.</param>
-        /// <param name="cchMetadatasize">uint32: 
+        /// <param name="cchMetadatasize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchMetadata</code> in
         ///             bytes.
         ///         </param>
@@ -555,11 +633,19 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="pvecPublishedFileID">PublishedFileId_t
-        ///             *: Returns the UGC children by setting this array.</param>
-        /// <param name="cMaxEntries">uint32: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="pvecPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///             *
+        ///         : Returns the UGC children by setting this array.</param>
+        /// <param name="cMaxEntries">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The length of
         ///             <code class="bb_code bb_code_inline nohighlight">pvecPublishedFileID</code>.
         ///         </param>
@@ -588,11 +674,19 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds, or
         /// <code class="bb_code bb_code_inline nohighlight">eStatType</code> was invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="eStatType">EItemStatistic: The statistic to retrieve.</param>
-        /// <param name="pStatValue">uint64
-        ///             *: Returns the value associated with the specified statistic.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="eStatType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EItemStatistic" class="bb_apilink">EItemStatistic</a>
+        ///         : The statistic to retrieve.</param>
+        /// <param name="pStatValue">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the value associated with the specified statistic.</param>
         public static bool GetQueryUGCStatistic(UGCQueryHandle handle, uint index, ItemStatistic eStatType, ulong* pStatValue) => Instance.GetQueryUGCStatistic(handle, index, eStatType, pStatValue);
         /// <summary>
         /// <code>
@@ -620,8 +714,12 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
         public static uint GetQueryUGCNumAdditionalPreviews(UGCQueryHandle handle, uint index) => Instance.GetQueryUGCNumAdditionalPreviews(handle, index);
         /// <summary>
         /// <code>
@@ -653,23 +751,35 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds, or
         /// <code class="bb_code bb_code_inline nohighlight">previewIndex</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="previewIndex">uint32: The index of the additional preview to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="previewIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the additional preview to get the details of.</param>
         /// <param name="pchURLOrVideoID">char *: Returns a URL or Video ID by copying it into this string.</param>
-        /// <param name="cchURLSize">uint32: 
+        /// <param name="cchURLSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchURLOrVideoID</code> in
         ///             bytes.
         ///         </param>
         /// <param name="pchOriginalFileName">char *: 
         ///             Returns the original file name. May be set to <b>NULL</b> to not receive this.
         ///         </param>
-        /// <param name="cchOriginalFileNameSize">uint32: 
+        /// <param name="cchOriginalFileNameSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of
         ///             <code class="bb_code bb_code_inline nohighlight">pchOriginalFileName</code> in bytes.
         ///         </param>
-        /// <param name="pPreviewType">EItemPreviewType
-        ///             *: The type of preview that was returned.</param>
+        /// <param name="pPreviewType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EItemPreviewType" class="bb_apilink">EItemPreviewType</a>
+        ///             *
+        ///         : The type of preview that was returned.</param>
         public static bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType) => Instance.GetQueryUGCAdditionalPreview(handle, index, previewIndex, pchURLOrVideoID, cchURLSize, pchOriginalFileName, cchOriginalFileNameSize, pPreviewType);
         /// <summary>
         /// <code>
@@ -697,8 +807,12 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid or the
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
         public static uint GetQueryUGCNumKeyValueTags(UGCQueryHandle handle, uint index) => Instance.GetQueryUGCNumKeyValueTags(handle, index);
         /// <summary>
         /// <code>
@@ -729,15 +843,25 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds, or
         /// <code class="bb_code bb_code_inline nohighlight">keyValueTagIndex</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="keyValueTagIndex">uint32: The index of the tag to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="keyValueTagIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the tag to get the details of.</param>
         /// <param name="pchKey">char *: Returns the key by copying it into this string.</param>
-        /// <param name="cchKeySize">uint32: 
+        /// <param name="cchKeySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchKey</code> in bytes.
         ///         </param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
-        /// <param name="cchValueSize">uint32: 
+        /// <param name="cchValueSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes.
         ///         </param>
         public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, keyValueTagIndex, pchKey, cchKeySize, pchValue, cchValueSize);
@@ -770,15 +894,25 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">index</code> is out of bounds, or
         /// <code class="bb_code bb_code_inline nohighlight">keyValueTagIndex</code> is out of bounds.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="keyValueTagIndex">uint32: The index of the tag to get the details of.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="keyValueTagIndex">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the tag to get the details of.</param>
         /// <param name="pchKey">char *: Returns the key by copying it into this string.</param>
-        /// <param name="cchKeySize">uint32: 
+        /// <param name="cchKeySize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchKey</code> in bytes.
         ///         </param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
-        /// <param name="cchValueSize">uint32: 
+        /// <param name="cchValueSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes.
         ///         </param>
         public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, pchKey, pchValue, cchValueSize);
@@ -806,10 +940,18 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddContentDescriptor" class="bb_apilink">ISteamUGC::AddContentDescriptor</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveContentDescriptor" class="bb_apilink">ISteamUGC::RemoveContentDescriptor</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to get the results from.</param>
-        /// <param name="index">uint32: The index of the item to get the details of.</param>
-        /// <param name="pvecDescriptors">EUGCContentDescriptorID: An array of EUGCContentDescriptorID to fill in.</param>
-        /// <param name="cMaxEntries">uint32: Size of the pvecDescriptors array</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to get the results from.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The index of the item to get the details of.</param>
+        /// <param name="pvecDescriptors">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCContentDescriptorID" class="bb_apilink">EUGCContentDescriptorID</a>
+        ///         : An array of EUGCContentDescriptorID to fill in.</param>
+        /// <param name="cMaxEntries">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Size of the pvecDescriptors array</param>
         public static uint GetQueryUGCContentDescriptors(UGCQueryHandle handle, uint index, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries) => Instance.GetQueryUGCContentDescriptors(handle, index, pvecDescriptors, cMaxEntries);
         /// <summary>
         /// <code>bool ReleaseQueryUGCRequest( UGCQueryHandle_t handle );</code>
@@ -820,7 +962,9 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// Always returns <b>true</b>.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to release.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to release.</param>
         public static bool ReleaseQueryUGCRequest(UGCQueryHandle handle) => Instance.ReleaseQueryUGCRequest(handle);
         /// <summary>
         /// <code>bool AddRequiredTag( UGCQueryHandle_t handle, const char *pTagName );</code>
@@ -844,7 +988,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetMatchAnyTag" class="bb_apilink">ISteamUGC::SetMatchAnyTag</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemTags" class="bb_apilink">ISteamUGC::SetItemTags</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pTagName">const char *: The tag must be attached to the UGC to receive it.</param>
         public static bool AddRequiredTag(UGCQueryHandle handle, UTF8StringPtr pTagName) => Instance.AddRequiredTag(handle, pTagName);
         /// <summary>
@@ -872,10 +1018,14 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddRequiredTag" class="bb_apilink">ISteamUGC::AddRequiredTag</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddExcludedTag" class="bb_apilink">ISteamUGC::AddExcludedTag</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
-        /// <param name="pTags">const
-        ///             SteamParamStringArray_t
-        ///             *: A set of tags where at least one of the tags must attach to the UGC.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
+        /// <param name="pTags">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : A set of tags where at least one of the tags must attach to the UGC.</param>
         public static bool AddRequiredTagGroup(UGCQueryHandle handle, SteamParamStringArray* pTagGroups) => Instance.AddRequiredTagGroup(handle, pTagGroups);
         /// <summary>
         /// <code>bool AddExcludedTag( UGCQueryHandle_t handle, const char *pTagName );</code>
@@ -899,7 +1049,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetMatchAnyTag" class="bb_apilink">ISteamUGC::SetMatchAnyTag</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemTags" class="bb_apilink">ISteamUGC::SetItemTags</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pTagName">const char *: The tag must NOT be attached to the UGC to receive it.</param>
         public static bool AddExcludedTag(UGCQueryHandle handle, UTF8StringPtr pTagName) => Instance.AddExcludedTag(handle, pTagName);
         /// <summary>
@@ -923,7 +1075,9 @@ namespace Fivemid.FiveSteam
         /// is from
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#CreateQueryUGCDetailsRequest" class="bb_apilink">ISteamUGC::CreateQueryUGCDetailsRequest</a>.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnOnlyIDs">bool: Return only the IDs of items?</param>
         public static bool SetReturnOnlyIDs(UGCQueryHandle handle, bool bReturnOnlyIDs) => Instance.SetReturnOnlyIDs(handle, bReturnOnlyIDs);
         /// <summary>
@@ -942,7 +1096,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC query
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnKeyValueTags">bool: Return any key-value tags for the items?</param>
         public static bool SetReturnKeyValueTags(UGCQueryHandle handle, bool bReturnKeyValueTags) => Instance.SetReturnKeyValueTags(handle, bReturnKeyValueTags);
         /// <summary>
@@ -967,7 +1123,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemDescription" class="bb_apilink">ISteamUGC::SetItemDescription</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnLongDescription">bool: Return the long description for the items?</param>
         public static bool SetReturnLongDescription(UGCQueryHandle handle, bool bReturnLongDescription) => Instance.SetReturnLongDescription(handle, bReturnLongDescription);
         /// <summary>
@@ -989,7 +1147,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemMetadata" class="bb_apilink">ISteamUGC::SetItemMetadata</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnMetadata">bool: Return the metadata for the items?</param>
         public static bool SetReturnMetadata(UGCQueryHandle handle, bool bReturnMetadata) => Instance.SetReturnMetadata(handle, bReturnMetadata);
         /// <summary>
@@ -1008,7 +1168,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC query
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnChildren">bool: Return the IDs of children of the items?</param>
         public static bool SetReturnChildren(UGCQueryHandle handle, bool bReturnChildren) => Instance.SetReturnChildren(handle, bReturnChildren);
         /// <summary>
@@ -1027,7 +1189,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC query
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnAdditionalPreviews">bool: Return the additional previews for the items?</param>
         public static bool SetReturnAdditionalPreviews(UGCQueryHandle handle, bool bReturnAdditionalPreviews) => Instance.SetReturnAdditionalPreviews(handle, bReturnAdditionalPreviews);
         /// <summary>
@@ -1052,7 +1216,9 @@ namespace Fivemid.FiveSteam
         /// is from
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#CreateQueryUGCDetailsRequest" class="bb_apilink">ISteamUGC::CreateQueryUGCDetailsRequest</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bReturnTotalOnly">bool: Only return the total number of items?</param>
         public static bool SetReturnTotalOnly(UGCQueryHandle handle, bool bReturnTotalOnly) => Instance.SetReturnTotalOnly(handle, bReturnTotalOnly);
         /// <summary>
@@ -1071,8 +1237,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC query
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
-        /// <param name="unDays">uint32: The number of days worth of playtime stats to return.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
+        /// <param name="unDays">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : The number of days worth of playtime stats to return.</param>
         public static bool SetReturnPlaytimeStats(UGCQueryHandle handle, uint unDays) => Instance.SetReturnPlaytimeStats(handle, unDays);
         /// <summary>
         /// <code>bool SetLanguage( UGCQueryHandle_t handle, const char *pchLanguage );</code>
@@ -1096,7 +1266,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemUpdateLanguage" class="bb_apilink">ISteamUGC::SetItemUpdateLanguage</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pchLanguage">const char *: The language to return.</param>
         public static bool SetLanguage(UGCQueryHandle handle, UTF8StringPtr pchLanguage) => Instance.SetLanguage(handle, pchLanguage);
         /// <summary>
@@ -1116,8 +1288,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC query
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
-        /// <param name="unMaxAgeSeconds">uint32: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
+        /// <param name="unMaxAgeSeconds">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The maximum amount of time that an item can be returned without a cache invalidation.
         ///         </param>
         public static bool SetAllowCachedResponse(UGCQueryHandle handle, uint unMaxAgeSeconds) => Instance.SetAllowCachedResponse(handle, unMaxAgeSeconds);
@@ -1144,7 +1320,9 @@ namespace Fivemid.FiveSteam
         /// or if <code class="bb_code bb_code_inline nohighlight">pMatchCloudFileName</code> is
         /// <b>NULL</b>.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pMatchCloudFileName">const char *: The filename to match.</param>
         public static bool SetCloudFileNameFilter(UGCQueryHandle handle, UTF8StringPtr pMatchCloudFileName) => Instance.SetCloudFileNameFilter(handle, pMatchCloudFileName);
         /// <summary>
@@ -1172,7 +1350,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddExcludedTag" class="bb_apilink">ISteamUGC::AddExcludedTag</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemTags" class="bb_apilink">ISteamUGC::SetItemTags</a>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="bMatchAnyTag">bool: 
         ///             Should the item just need to have one required tag (<b>true</b>), or all of
         ///             them? (<b>false</b>)
@@ -1201,7 +1381,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#CreateQueryAllUGCRequest" class="bb_apilink">ISteamUGC::CreateQueryAllUGCRequest</a>
         /// or if <code class="bb_code bb_code_inline nohighlight">pSearchText</code> is <b>NULL</b>.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pSearchText">const char *: The text to be searched for.</param>
         public static bool SetSearchText(UGCQueryHandle handle, UTF8StringPtr pSearchText) => Instance.SetSearchText(handle, pSearchText);
         /// <summary>
@@ -1232,8 +1414,12 @@ namespace Fivemid.FiveSteam
         /// or
         /// <code class="bb_code bb_code_inline nohighlight">k_PublishedFileQueryType_RankedByPlaytimeSessionsTrend</code>
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
-        /// <param name="unDays">uint32: Sets the number of days to rank items over. Valid values are 1-365 inclusive.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
+        /// <param name="unDays">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Sets the number of days to rank items over. Valid values are 1-365 inclusive.</param>
         public static bool SetRankedByTrendDays(UGCQueryHandle handle, uint unDays) => Instance.SetRankedByTrendDays(handle, unDays);
         /// missing documentation
         public static bool SetTimeCreatedDateRange(UGCQueryHandle handle, RTime32 rtStart, RTime32 rtEnd) => Instance.SetTimeCreatedDateRange(handle, rtStart, rtEnd);
@@ -1259,7 +1445,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">pKey</code> or
         /// <code class="bb_code bb_code_inline nohighlight">pValue</code> are <b>NULL</b>.
         /// </summary>
-        /// <param name="handle">UGCQueryHandle_t: The UGC query handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCQueryHandle_t" class="bb_apilink">UGCQueryHandle_t</a>
+        ///         : The UGC query handle to customize.</param>
         /// <param name="pKey">const char *: The key-value key that must be attached to the UGC to receive it.</param>
         /// <param name="pValue">const char *: 
         ///             The key-value value associated with
@@ -1283,8 +1471,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SteamUGCRequestUGCDetailsResult_t" class="bb_apilink">SteamUGCRequestUGCDetailsResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: Deprecated!</param>
-        /// <param name="unMaxAgeSeconds">uint32: Deprecated!</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : Deprecated!</param>
+        /// <param name="unMaxAgeSeconds">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : Deprecated!</param>
         public static SteamAPICall RequestUGCDetails(PublishedFileId nPublishedFileID, uint unMaxAgeSeconds) => Instance.RequestUGCDetails(nPublishedFileID, unMaxAgeSeconds);
         /// <summary>
         /// <code>
@@ -1304,8 +1496,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/features/workshop/implementation#creating_a_workshop_item" class="bb_doclink">Creating a Workshop Item</a>
         /// </summary>
-        /// <param name="nConsumerAppId">AppId_t: The App ID that will be using this item.</param>
-        /// <param name="eFileType">EWorkshopFileType: The type of UGC to create.</param>
+        /// <param name="nConsumerAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID that will be using this item.</param>
+        /// <param name="eFileType">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EWorkshopFileType" class="bb_apilink">EWorkshopFileType</a>
+        ///         : The type of UGC to create.</param>
         public static SteamAPICall CreateItem(AppId nConsumerAppId, WorkshopFileType eFileType) => Instance.CreateItem(nConsumerAppId, eFileType);
         /// <summary>
         /// <code>
@@ -1341,8 +1537,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UpdateItemPreviewVideo" class="bb_apilink">ISteamUGC::UpdateItemPreviewVideo</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveItemPreview" class="bb_apilink">ISteamUGC::RemoveItemPreview</a>
         /// </summary>
-        /// <param name="nConsumerAppId">AppId_t: The App ID that will be using this item.</param>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The item to update.</param>
+        /// <param name="nConsumerAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The App ID that will be using this item.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The item to update.</param>
         public static UGCUpdateHandle StartItemUpdate(AppId nConsumerAppId, PublishedFileId nPublishedFileID) => Instance.StartItemUpdate(nConsumerAppId, nPublishedFileID);
         /// <summary>
         /// <code>bool SetItemTitle( UGCUpdateHandle_t handle, const char *pchTitle );</code>
@@ -1364,7 +1564,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC update
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchTitle">const char *: The new title of the item.</param>
         public static bool SetItemTitle(UGCUpdateHandle handle, UTF8StringPtr pchTitle) => Instance.SetItemTitle(handle, pchTitle);
         /// <summary>
@@ -1392,7 +1594,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetReturnLongDescription" class="bb_apilink">ISteamUGC::SetReturnLongDescription</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchDescription">const char *: The new description of the item.</param>
         public static bool SetItemDescription(UGCUpdateHandle handle, UTF8StringPtr pchDescription) => Instance.SetItemDescription(handle, pchDescription);
         /// <summary>
@@ -1421,7 +1625,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetItemDescription" class="bb_apilink">ISteamUGC::SetItemDescription</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetLanguage" class="bb_apilink">ISteamUGC::SetLanguage</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchLanguage">const char *: The language of the title and description that will be set in this update.</param>
         public static bool SetItemUpdateLanguage(UGCUpdateHandle handle, UTF8StringPtr pchLanguage) => Instance.SetItemUpdateLanguage(handle, pchLanguage);
         /// <summary>
@@ -1449,7 +1655,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetReturnMetadata" class="bb_apilink">ISteamUGC::SetReturnMetadata</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchMetaData">const char *: The new metadata for this item.</param>
         public static bool SetItemMetadata(UGCUpdateHandle handle, UTF8StringPtr pchMetaData) => Instance.SetItemMetadata(handle, pchMetaData);
         /// <summary>
@@ -1469,8 +1677,12 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC update
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
-        /// <param name="eVisibility">ERemoteStoragePublishedFileVisibility: The visibility to set.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
+        /// <param name="eVisibility">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#ERemoteStoragePublishedFileVisibility" class="bb_apilink">ERemoteStoragePublishedFileVisibility</a>
+        ///         : The visibility to set.</param>
         public static bool SetItemVisibility(UGCUpdateHandle handle, RemoteStoragePublishedFileVisibility eVisibility) => Instance.SetItemVisibility(handle, eVisibility);
         /// <summary>
         /// <code>
@@ -1498,10 +1710,14 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddExcludedTag" class="bb_apilink">ISteamUGC::AddExcludedTag</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetMatchAnyTag" class="bb_apilink">ISteamUGC::SetMatchAnyTag</a>
         /// </summary>
-        /// <param name="updateHandle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
-        /// <param name="pTags">const
-        ///             SteamParamStringArray_t
-        ///             *: The list of tags to set on this item.</param>
+        /// <param name="updateHandle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
+        /// <param name="pTags">
+        ///             const
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SteamParamStringArray_t" class="bb_apilink">SteamParamStringArray_t</a>
+        ///             *
+        ///         : The list of tags to set on this item.</param>
         public static bool SetItemTags(UGCUpdateHandle updateHandle, SteamParamStringArray* pTags, bool bAllowAdminTags) => Instance.SetItemTags(updateHandle, pTags, bAllowAdminTags);
         /// <summary>
         /// <code>
@@ -1522,7 +1738,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC update
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pszContentFolder">const char *: The absolute path to a local folder containing the content for the item.</param>
         public static bool SetItemContent(UGCUpdateHandle handle, UTF8StringPtr pszContentFolder) => Instance.SetItemContent(handle, pszContentFolder);
         /// <summary>
@@ -1547,7 +1765,9 @@ namespace Fivemid.FiveSteam
         /// <b>false</b> if the UGC update
         /// <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pszPreviewFile">const char *: The absolute path to a local preview image file for the item.</param>
         public static bool SetItemPreview(UGCUpdateHandle handle, UTF8StringPtr pszPreviewFile) => Instance.SetItemPreview(handle, pszPreviewFile);
         /// missing documentation
@@ -1577,7 +1797,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemKeyValueTag" class="bb_apilink">ISteamUGC::AddItemKeyValueTag</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchKey">const char *: The key to remove from the item.</param>
         public static bool RemoveItemKeyValueTags(UGCUpdateHandle handle, UTF8StringPtr pchKey) => Instance.RemoveItemKeyValueTags(handle, pchKey);
         /// <summary>
@@ -1613,7 +1835,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCNumKeyValueTags" class="bb_apilink">ISteamUGC::GetQueryUGCNumKeyValueTags</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCKeyValueTag" class="bb_apilink">ISteamUGC::GetQueryUGCKeyValueTag</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pchKey">const char *: The key to set on the item.</param>
         /// <param name="pchValue">const char *: A value to map to the key.</param>
         public static bool AddItemKeyValueTag(UGCUpdateHandle handle, UTF8StringPtr pchKey, UTF8StringPtr pchValue) => Instance.AddItemKeyValueTag(handle, pchKey, pchValue);
@@ -1652,9 +1876,13 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemPreviewVideo" class="bb_apilink">ISteamUGC::AddItemPreviewVideo</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveItemPreview" class="bb_apilink">ISteamUGC::RemoveItemPreview</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pszPreviewFile">const char *: Absolute path to the local image.</param>
-        /// <param name="type">EItemPreviewType: The type of this preview.</param>
+        /// <param name="type">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EItemPreviewType" class="bb_apilink">EItemPreviewType</a>
+        ///         : The type of this preview.</param>
         public static bool AddItemPreviewFile(UGCUpdateHandle handle, UTF8StringPtr pszPreviewFile, ItemPreviewType type) => Instance.AddItemPreviewFile(handle, pszPreviewFile, type);
         /// <summary>
         /// <code>
@@ -1680,7 +1908,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemPreviewFile" class="bb_apilink">ISteamUGC::AddItemPreviewFile</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveItemPreview" class="bb_apilink">ISteamUGC::RemoveItemPreview</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
         /// <param name="pszVideoID">const char *: The YouTube video ID to add. (e.g. "jHgZh4GV9G0")</param>
         public static bool AddItemPreviewVideo(UGCUpdateHandle handle, UTF8StringPtr pszVideoID) => Instance.AddItemPreviewVideo(handle, pszVideoID);
         /// <summary>
@@ -1706,8 +1936,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemPreviewFile" class="bb_apilink">ISteamUGC::AddItemPreviewFile</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
-        /// <param name="index">uint32: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The index of the preview file from 0 to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCNumAdditionalPreviews" class="bb_apilink">ISteamUGC::GetQueryUGCNumAdditionalPreviews</a>.
         ///         </param>
@@ -1732,8 +1966,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemPreviewVideo" class="bb_apilink">ISteamUGC::AddItemPreviewVideo</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The workshop item update handle to customize.</param>
-        /// <param name="index">uint32: 
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The workshop item update handle to customize.</param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The index of the preview file from 0 to
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCNumAdditionalPreviews" class="bb_apilink">ISteamUGC::GetQueryUGCNumAdditionalPreviews</a>.
         ///         </param>
@@ -1745,8 +1983,12 @@ namespace Fivemid.FiveSteam
         /// <br />
         /// <b>Returns:</b> bool
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: </param>
-        /// <param name="index">uint32: </param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : </param>
+        /// <param name="index">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : </param>
         public static bool RemoveItemPreview(UGCUpdateHandle handle, uint index) => Instance.RemoveItemPreview(handle, index);
         /// <summary>
         /// <code>
@@ -1764,8 +2006,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCContentDescriptors" class="bb_apilink">ISteamUGC::GetQueryUGCContentDescriptors</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveContentDescriptor" class="bb_apilink">ISteamUGC::RemoveContentDescriptor</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: </param>
-        /// <param name="descid">EUGCContentDescriptorID: </param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : </param>
+        /// <param name="descid">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCContentDescriptorID" class="bb_apilink">EUGCContentDescriptorID</a>
+        ///         : </param>
         public static bool AddContentDescriptor(UGCUpdateHandle handle, UGCContentDescriptorID descid) => Instance.AddContentDescriptor(handle, descid);
         /// <summary>
         /// <code>
@@ -1783,8 +2029,12 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCContentDescriptors" class="bb_apilink">ISteamUGC::GetQueryUGCContentDescriptors</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddContentDescriptor" class="bb_apilink">ISteamUGC::AddContentDescriptor</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: </param>
-        /// <param name="descid">EUGCContentDescriptorID: </param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : </param>
+        /// <param name="descid">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCContentDescriptorID" class="bb_apilink">EUGCContentDescriptorID</a>
+        ///         : </param>
         public static bool RemoveContentDescriptor(UGCUpdateHandle handle, UGCContentDescriptorID descid) => Instance.RemoveContentDescriptor(handle, descid);
         /// <summary>
         /// <code>
@@ -1806,7 +2056,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/steam_api#k_uAPICallInvalid" class="bb_apilink">k_uAPICallInvalid</a>
         /// if <code class="bb_code bb_code_inline nohighlight">handle</code> is invalid.
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The update handle to submit.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The update handle to submit.</param>
         /// <param name="pchChangeNote">const char *: 
         ///             A brief description of the changes made. (Optional, set to <b>NULL</b> for no
         ///             change note)
@@ -1828,11 +2080,17 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SubmitItemUpdate" class="bb_apilink">ISteamUGC::SubmitItemUpdate</a>
         /// </summary>
-        /// <param name="handle">UGCUpdateHandle_t: The update handle to get the progress for.</param>
-        /// <param name="punBytesProcessed">uint64
-        ///             *: Returns the current number of bytes uploaded.</param>
-        /// <param name="punBytesTotal">uint64
-        ///             *: Returns the total number of bytes that will be uploaded.</param>
+        /// <param name="handle">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
+        ///         : The update handle to get the progress for.</param>
+        /// <param name="punBytesProcessed">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the current number of bytes uploaded.</param>
+        /// <param name="punBytesTotal">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the total number of bytes that will be uploaded.</param>
         public static ItemUpdateStatus GetItemUpdateProgress(UGCUpdateHandle handle, ulong* punBytesProcessed, ulong* punBytesTotal) => Instance.GetItemUpdateProgress(handle, punBytesProcessed, punBytesTotal);
         /// <summary>
         /// <code>
@@ -1852,7 +2110,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetUserItemVote" class="bb_apilink">ISteamUGC::GetUserItemVote</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item ID to vote on.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item ID to vote on.</param>
         /// <param name="bVoteUp">bool: Vote up (<b>true</b>) or down (<b>false</b>)?</param>
         public static SteamAPICall SetUserItemVote(PublishedFileId nPublishedFileID, bool bVoteUp) => Instance.SetUserItemVote(nPublishedFileID, bVoteUp);
         /// <summary>
@@ -1871,7 +2131,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetUserItemVote" class="bb_apilink">ISteamUGC::SetUserItemVote</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item ID to get the user's vote.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item ID to get the user's vote.</param>
         public static SteamAPICall GetUserItemVote(PublishedFileId nPublishedFileID) => Instance.GetUserItemVote(nPublishedFileID);
         /// <summary>
         /// <code>
@@ -1891,8 +2153,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveItemFromFavorites" class="bb_apilink">ISteamUGC::RemoveItemFromFavorites</a>
         /// </summary>
-        /// <param name="nAppId">AppId_t: The app ID that this item belongs to.</param>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to add to the user's favorites list.</param>
+        /// <param name="nAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app ID that this item belongs to.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to add to the user's favorites list.</param>
         public static SteamAPICall AddItemToFavorites(AppId nAppId, PublishedFileId nPublishedFileID) => Instance.AddItemToFavorites(nAppId, nPublishedFileID);
         /// <summary>
         /// <code>
@@ -1912,8 +2178,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemToFavorites" class="bb_apilink">ISteamUGC::AddItemToFavorites</a>
         /// </summary>
-        /// <param name="nAppId">AppId_t: The app ID that this item belongs to.</param>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to remove from the user's favorites list.</param>
+        /// <param name="nAppId">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app ID that this item belongs to.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to remove from the user's favorites list.</param>
         public static SteamAPICall RemoveItemFromFavorites(AppId nAppId, PublishedFileId nPublishedFileID) => Instance.RemoveItemFromFavorites(nAppId, nPublishedFileID);
         /// <summary>
         /// <code>SteamAPICall_t SubscribeItem( PublishedFileId_t nPublishedFileID );</code>
@@ -1931,7 +2201,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SubscribeItem" class="bb_apilink">ISteamUGC::SubscribeItem</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to subscribe to.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to subscribe to.</param>
         public static SteamAPICall SubscribeItem(PublishedFileId nPublishedFileID) => Instance.SubscribeItem(nPublishedFileID);
         /// <summary>
         /// <code>SteamAPICall_t UnsubscribeItem( PublishedFileId_t nPublishedFileID );</code>
@@ -1950,7 +2222,9 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UnsubscribeItem" class="bb_apilink">ISteamUGC::UnsubscribeItem</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to unsubscribe from.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to unsubscribe from.</param>
         public static SteamAPICall UnsubscribeItem(PublishedFileId nPublishedFileID) => Instance.UnsubscribeItem(nPublishedFileID);
         /// <summary>
         /// <code>uint32 GetNumSubscribedItems();</code>
@@ -1980,9 +2254,13 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">pvecPublishedFileID</code>.<br />
         /// Returns <b>0</b> if called from a game server.
         /// </summary>
-        /// <param name="pvecPublishedFileID">PublishedFileId_t
-        ///             *: The array where the item ids will be copied into.</param>
-        /// <param name="cMaxEntries">uint32: 
+        /// <param name="pvecPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///             *
+        ///         : The array where the item ids will be copied into.</param>
+        /// <param name="cMaxEntries">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The maximum number of items to return. This should typically be the same as
         ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetNumSubscribedItems" class="bb_apilink">ISteamUGC::GetNumSubscribedItems</a>
         ///             and the same size as
@@ -2009,7 +2287,9 @@ namespace Fivemid.FiveSteam
         ///     indicates the item is installed but needs to be updated }
         /// </code>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to get the state for.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to get the state for.</param>
         public static uint GetItemState(PublishedFileId nPublishedFileID) => Instance.GetItemState(nPublishedFileID);
         /// <summary>
         /// <code>
@@ -2040,15 +2320,23 @@ namespace Fivemid.FiveSteam
         ///     <li>The workshop item is not installed.</li>
         /// </ul>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to get the install info for.</param>
-        /// <param name="punSizeOnDisk">uint64
-        ///             *: Returns the size of the workshop item in bytes.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to get the install info for.</param>
+        /// <param name="punSizeOnDisk">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the size of the workshop item in bytes.</param>
         /// <param name="pchFolder">char *: Returns the absolute path to the folder containing the content by copying it.</param>
-        /// <param name="cchFolderSize">uint32: 
+        /// <param name="cchFolderSize">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The size of <code class="bb_code bb_code_inline nohighlight">pchFolder</code> in bytes.
         ///         </param>
-        /// <param name="punTimeStamp">uint32
-        ///             *: Returns the time when the workshop item was last updated.</param>
+        /// <param name="punTimeStamp">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///             *
+        ///         : Returns the time when the workshop item was last updated.</param>
         public static bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp) => Instance.GetItemInstallInfo(nPublishedFileID, punSizeOnDisk, pchFolder, cchFolderSize, punTimeStamp);
         /// <summary>
         /// <code>
@@ -2063,11 +2351,17 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool<br />
         /// <b>true</b> if the download information was available; otherwise, <b>false</b>.
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to get the download info for.</param>
-        /// <param name="punBytesDownloaded">uint64
-        ///             *: Returns the current bytes downloaded.</param>
-        /// <param name="punBytesTotal">uint64
-        ///             *: Returns the total bytes. This is only valid after the download has started.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to get the download info for.</param>
+        /// <param name="punBytesDownloaded">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the current bytes downloaded.</param>
+        /// <param name="punBytesTotal">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint64" class="bb_apilink">uint64</a>
+        ///             *
+        ///         : Returns the total bytes. This is only valid after the download has started.</param>
         public static bool GetItemDownloadInfo(PublishedFileId nPublishedFileID, ulong* punBytesDownloaded, ulong* punBytesTotal) => Instance.GetItemDownloadInfo(nPublishedFileID, punBytesDownloaded, punBytesTotal);
         /// <summary>
         /// <code>
@@ -2106,7 +2400,9 @@ namespace Fivemid.FiveSteam
         /// <code class="bb_code bb_code_inline nohighlight">nPublishedFileID</code> is invalid or the user is
         /// not logged on.
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to download.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to download.</param>
         /// <param name="bHighPriority">bool: 
         ///             Start the download in high priority mode, pausing any existing in-progress Steam
         ///             downloads and immediately begin downloading this workshop item.
@@ -2127,7 +2423,9 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> upon success; otherwise, <b>false</b> if the calling user is not a
         /// game server or if the workshop is currently updating its content.
         /// </summary>
-        /// <param name="unWorkshopDepotID">DepotId_t: The depot ID of the game server.</param>
+        /// <param name="unWorkshopDepotID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#DepotId_t" class="bb_apilink">DepotId_t</a>
+        ///         : The depot ID of the game server.</param>
         /// <param name="pszFolder">const char *: The absolute path to store the workshop content.</param>
         public static bool BInitWorkshopForGameServer(DepotId unWorkshopDepotID, UTF8StringPtr pszFolder) => Instance.BInitWorkshopForGameServer(unWorkshopDepotID, pszFolder);
         /// <summary>
@@ -2172,9 +2470,13 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#StopPlaytimeTracking" class="bb_apilink">ISteamUGC::StopPlaytimeTracking</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#StopPlaytimeTrackingForAllItems" class="bb_apilink">ISteamUGC::StopPlaytimeTrackingForAllItems</a>
         /// </summary>
-        /// <param name="pvecPublishedFileID">PublishedFileId_t
-        ///             *: The array of workshop items you want to start tracking. (Maximum of 100 items.)</param>
-        /// <param name="unNumPublishedFileIDs">uint32: 
+        /// <param name="pvecPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///             *
+        ///         : The array of workshop items you want to start tracking. (Maximum of 100 items.)</param>
+        /// <param name="unNumPublishedFileIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of elements in
         ///             <code class="bb_code bb_code_inline nohighlight">pvecPublishedFileID</code>.
         ///         </param>
@@ -2196,9 +2498,13 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#StopPlaytimeTrackingResult_t" class="bb_apilink">StopPlaytimeTrackingResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="pvecPublishedFileID">PublishedFileId_t
-        ///             *: The array of workshop items you want to stop tracking. (Maximum of 100 items.)</param>
-        /// <param name="unNumPublishedFileIDs">uint32: 
+        /// <param name="pvecPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///             *
+        ///         : The array of workshop items you want to stop tracking. (Maximum of 100 items.)</param>
+        /// <param name="unNumPublishedFileIDs">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>
+        ///         : 
         ///             The number of elements in
         ///             <code class="bb_code bb_code_inline nohighlight">pvecPublishedFileID</code>.
         ///         </param>
@@ -2252,8 +2558,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveDependency" class="bb_apilink">ISteamUGC::RemoveDependency</a>
         /// </summary>
-        /// <param name="nParentPublishedFileID">PublishedFileId_t: The workshop item to add a dependency to.</param>
-        /// <param name="nChildPublishedFileID">PublishedFileId_t: The dependency to add to the parent.</param>
+        /// <param name="nParentPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to add a dependency to.</param>
+        /// <param name="nChildPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The dependency to add to the parent.</param>
         public static SteamAPICall AddDependency(PublishedFileId nParentPublishedFileID, PublishedFileId nChildPublishedFileID) => Instance.AddDependency(nParentPublishedFileID, nChildPublishedFileID);
         /// <summary>
         /// <code>
@@ -2274,8 +2584,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddDependency" class="bb_apilink">ISteamUGC::AddDependency</a>
         /// </summary>
-        /// <param name="nParentPublishedFileID">PublishedFileId_t: The workshop item to remove a dependency from.</param>
-        /// <param name="nChildPublishedFileID">PublishedFileId_t: The dependency to remove from the parent.</param>
+        /// <param name="nParentPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to remove a dependency from.</param>
+        /// <param name="nChildPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The dependency to remove from the parent.</param>
         public static SteamAPICall RemoveDependency(PublishedFileId nParentPublishedFileID, PublishedFileId nChildPublishedFileID) => Instance.RemoveDependency(nParentPublishedFileID, nChildPublishedFileID);
         /// <summary>
         /// <code>
@@ -2297,8 +2611,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveAppDependency" class="bb_apilink">ISteamUGC::RemoveAppDependency</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The item.</param>
-        /// <param name="nAppID">AppId_t: The required app/dlc.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The item.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The required app/dlc.</param>
         public static SteamAPICall AddAppDependency(PublishedFileId nPublishedFileID, AppId nAppID) => Instance.AddAppDependency(nPublishedFileID, nAppID);
         /// <summary>
         /// <code>
@@ -2319,8 +2637,12 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b>
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddAppDependency" class="bb_apilink">ISteamUGC::AddAppDependency</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The item.</param>
-        /// <param name="nAppID">AppId_t: The app/dlc.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The item.</param>
+        /// <param name="nAppID">
+        ///             <a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>
+        ///         : The app/dlc.</param>
         public static SteamAPICall RemoveAppDependency(PublishedFileId nPublishedFileID, AppId nAppID) => Instance.RemoveAppDependency(nPublishedFileID, nAppID);
         /// <summary>
         /// <code>bool GetAppDependencies( PublishedFileId_t nPublishedFileID );</code>
@@ -2340,7 +2662,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddAppDependency" class="bb_apilink">ISteamUGC::AddAppDependency</a>,
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveAppDependency" class="bb_apilink">ISteamUGC::RemoveAppDependency</a>
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The workshop item to get app dependencies for.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The workshop item to get app dependencies for.</param>
         public static SteamAPICall GetAppDependencies(PublishedFileId nPublishedFileID) => Instance.GetAppDependencies(nPublishedFileID);
         /// <summary>
         /// <code>SteamAPICall_t DeleteItem( PublishedFileId_t nPublishedFileID );</code>
@@ -2354,7 +2678,9 @@ namespace Fivemid.FiveSteam
         /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DeleteItemResult_t" class="bb_apilink">DeleteItemResult_t</a>
         /// call result.
         /// </summary>
-        /// <param name="nPublishedFileID">PublishedFileId_t: The item to delete.</param>
+        /// <param name="nPublishedFileID">
+        ///             <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#PublishedFileId_t" class="bb_apilink">PublishedFileId_t</a>
+        ///         : The item to delete.</param>
         public static SteamAPICall DeleteItem(PublishedFileId nPublishedFileID) => Instance.DeleteItem(nPublishedFileID);
         /// <summary>
         /// <code>bool ShowWorkshopEULA();</code>

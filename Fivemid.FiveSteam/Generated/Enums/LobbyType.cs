@@ -3,18 +3,29 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ELobbyType</summary>
+    /// <summary>
+    /// Specifies the lobby type, this is set from
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#CreateLobby" class="bb_apilink">ISteamMatchmaking::CreateLobby</a>
+    /// and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyType" class="bb_apilink">ISteamMatchmaking::SetLobbyType</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum LobbyType : int
     {
-        /// <summary>k_ELobbyTypePrivate</summary>
+        /// <summary>The only way to join the lobby is from an invite.</summary>
         Private = 0,
-        /// <summary>k_ELobbyTypeFriendsOnly</summary>
+        /// <summary>Joinable by friends and invitees, but does not show up in the lobby list.</summary>
         FriendsOnly = 1,
-        /// <summary>k_ELobbyTypePublic</summary>
+        /// <summary>Returned by search and visible to friends.</summary>
         Public = 2,
-        /// <summary>k_ELobbyTypeInvisible</summary>
+        /// <summary>
+        ///             Returned by search, but not visible to other friends.<br />
+        ///             This is useful if you want a user in two lobbies, for example matching groups together.
+        ///             A user can be in only one regular lobby, and up to two invisible lobbies.
+        ///         </summary>
         Invisible = 3,
-        /// <summary>k_ELobbyTypePrivateUnique</summary>
+        /// missing documentation for ELobbyType.k_ELobbyTypePrivateUnique
         PrivateUnique = 4
     }
 }

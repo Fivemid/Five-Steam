@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HSteamPipe</summary>
+    /// <summary>Handle to a communication pipe to the Steam client.</summary>
     public unsafe struct HSteamPipe
     {
         public int value;

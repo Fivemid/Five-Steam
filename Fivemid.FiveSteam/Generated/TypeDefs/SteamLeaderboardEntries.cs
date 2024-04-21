@@ -3,7 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamLeaderboardEntries_t</summary>
+    /// <summary>
+    ///             Handle to a list of downloaded entries in a leaderboard. This is returned by
+    ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#LeaderboardScoresDownloaded_t" class="bb_apilink">LeaderboardScoresDownloaded_t</a>
+    ///             and can be used to iterate through all of the entries with
+    ///             <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>
+    ///         </summary>
     public unsafe struct SteamLeaderboardEntries
     {
         public ulong value;

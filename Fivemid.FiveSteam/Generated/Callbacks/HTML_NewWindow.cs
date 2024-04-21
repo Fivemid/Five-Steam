@@ -3,23 +3,27 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTML_NewWindow_t</summary>
+    /// <summary>
+    /// A browser has created a new HTML window.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct HTML_NewWindow : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_NewWindow;
-        /// <summary>HHTMLBrowser unBrowserHandle</summary>
+        /// <summary>The handle of the surface that this callback is for.</summary>
         public HHTMLBrowser unBrowserHandle;
-        /// <summary>const char * pchURL</summary>
+        /// <summary>The URL to load in the new window.</summary>
         public UTF8StringPtr pchURL;
-        /// <summary>uint32 unX</summary>
+        /// <summary>The x pos into the page to display the popup.</summary>
         public uint unX;
-        /// <summary>uint32 unY</summary>
+        /// <summary>The y pos into the page to display the popup.</summary>
         public uint unY;
-        /// <summary>uint32 unWide</summary>
+        /// <summary>The total width of the pBGRA texture.</summary>
         public uint unWide;
-        /// <summary>uint32 unTall</summary>
+        /// <summary>The total height of the pBGRA texture.</summary>
         public uint unTall;
-        /// <summary>HHTMLBrowser unNewWindow_BrowserHandle_IGNORE</summary>
+        /// missing documentation for HTML_NewWindow_t.unNewWindow_BrowserHandle_IGNORE
         public HHTMLBrowser unNewWindow_BrowserHandle_IGNORE;
     }
 }

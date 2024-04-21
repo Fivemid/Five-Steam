@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamUserStats</summary>
+    /// <summary>
+    /// Provides functions for accessing and submitting stats, achievements, and leaderboards.
+    /// </summary>
     public unsafe interface ISteamUserStats
     {
         public bool RequestCurrentStats();

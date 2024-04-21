@@ -3,11 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamRemotePlayTogetherGuestInvite_t</summary>
+    /// missing documentation for SteamRemotePlayTogetherGuestInvite_t
     public unsafe struct SteamRemotePlayTogetherGuestInvite : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamRemotePlayTogetherGuestInvite;
-        /// <summary>char [1024] m_szConnectURL</summary>
+        /// missing documentation for SteamRemotePlayTogetherGuestInvite_t.m_szConnectURL
         public UTF8String1024 szConnectURL;
     }
 }

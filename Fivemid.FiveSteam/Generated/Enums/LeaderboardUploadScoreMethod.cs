@@ -3,14 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ELeaderboardUploadScoreMethod</summary>
+    /// <summary>
+    /// <br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum LeaderboardUploadScoreMethod : int
     {
-        /// <summary>k_ELeaderboardUploadScoreMethodNone</summary>
+        /// <summary></summary>
         None = 0,
-        /// <summary>k_ELeaderboardUploadScoreMethodKeepBest</summary>
+        /// <summary>Leaderboard will keep user's best score</summary>
         KeepBest = 1,
-        /// <summary>k_ELeaderboardUploadScoreMethodForceUpdate</summary>
+        /// <summary>Leaderboard will always replace score with specified</summary>
         ForceUpdate = 2
     }
 }

@@ -3,34 +3,39 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EItemStatistic</summary>
+    /// <summary>
+    /// Used to retrieve item statistics with
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCStatistic" class="bb_apilink">ISteamUGC::GetQueryUGCStatistic</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum ItemStatistic : int
     {
-        /// <summary>k_EItemStatistic_NumSubscriptions</summary>
+        /// <summary>Gets the number of subscriptions.</summary>
         NumSubscriptions = 0,
-        /// <summary>k_EItemStatistic_NumFavorites</summary>
+        /// <summary>Gets the number of favorites.</summary>
         NumFavorites = 1,
-        /// <summary>k_EItemStatistic_NumFollowers</summary>
+        /// <summary>Gets the number of followers.</summary>
         NumFollowers = 2,
-        /// <summary>k_EItemStatistic_NumUniqueSubscriptions</summary>
+        /// <summary>Gets the number of unique subscriptions.</summary>
         NumUniqueSubscriptions = 3,
-        /// <summary>k_EItemStatistic_NumUniqueFavorites</summary>
+        /// <summary>Gets the number of unique favorites.</summary>
         NumUniqueFavorites = 4,
-        /// <summary>k_EItemStatistic_NumUniqueFollowers</summary>
+        /// <summary>Gets the number of unique followers.</summary>
         NumUniqueFollowers = 5,
-        /// <summary>k_EItemStatistic_NumUniqueWebsiteViews</summary>
+        /// <summary>Gets the number of unique views the item has on its Steam Workshop page.</summary>
         NumUniqueWebsiteViews = 6,
-        /// <summary>k_EItemStatistic_ReportScore</summary>
+        /// <summary>Gets the number of times the item has been reported.</summary>
         ReportScore = 7,
-        /// <summary>k_EItemStatistic_NumSecondsPlayed</summary>
+        /// <summary>Gets the total number of seconds this item has been used across all players.</summary>
         NumSecondsPlayed = 8,
-        /// <summary>k_EItemStatistic_NumPlaytimeSessions</summary>
+        /// <summary>Gets the total number of play sessions this item has been used in.</summary>
         NumPlaytimeSessions = 9,
-        /// <summary>k_EItemStatistic_NumComments</summary>
+        /// <summary>Gets the number of comments on the items that steam has on its Steam Workshop page.</summary>
         NumComments = 10,
-        /// <summary>k_EItemStatistic_NumSecondsPlayedDuringTimePeriod</summary>
+        /// <summary>Gets the number of seconds this item has been used over the given time period.</summary>
         NumSecondsPlayedDuringTimePeriod = 11,
-        /// <summary>k_EItemStatistic_NumPlaytimeSessionsDuringTimePeriod</summary>
+        /// <summary>Gets the number of sessions this item has been used in over the given time period.</summary>
         NumPlaytimeSessionsDuringTimePeriod = 12
     }
 }

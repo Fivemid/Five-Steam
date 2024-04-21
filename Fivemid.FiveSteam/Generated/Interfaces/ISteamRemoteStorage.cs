@@ -3,7 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamRemoteStorage</summary>
+    /// <summary>
+    /// Provides functions for reading, writing, and accessing files which can be stored remotely in the
+    /// Steam Cloud.<br />
+    /// <br />
+    /// See
+    /// <a href="https://partner.steamgames.com/doc/features/cloud" class="bb_doclink">Steam Cloud</a> for
+    /// more information.
+    /// </summary>
     public unsafe interface ISteamRemoteStorage
     {
         public bool FileWrite(UTF8StringPtr pchFile, void* pvData, int cubData);

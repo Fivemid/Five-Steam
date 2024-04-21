@@ -3,28 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingAvailability</summary>
+    /// missing documentation for ESteamNetworkingAvailability
     public enum SteamNetworkingAvailability : int
     {
-        /// <summary>k_ESteamNetworkingAvailability_CannotTry</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_CannotTry
         CannotTry = -102,
-        /// <summary>k_ESteamNetworkingAvailability_Failed</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Failed
         Failed = -101,
-        /// <summary>k_ESteamNetworkingAvailability_Previously</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Previously
         Previously = -100,
-        /// <summary>k_ESteamNetworkingAvailability_Retrying</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Retrying
         Retrying = -10,
-        /// <summary>k_ESteamNetworkingAvailability_NeverTried</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_NeverTried
         NeverTried = 1,
-        /// <summary>k_ESteamNetworkingAvailability_Waiting</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Waiting
         Waiting = 2,
-        /// <summary>k_ESteamNetworkingAvailability_Attempting</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Attempting
         Attempting = 3,
-        /// <summary>k_ESteamNetworkingAvailability_Current</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Current
         Current = 100,
-        /// <summary>k_ESteamNetworkingAvailability_Unknown</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability_Unknown
         Unknown = 0,
-        /// <summary>k_ESteamNetworkingAvailability__Force32bit</summary>
+        /// missing documentation for ESteamNetworkingAvailability.k_ESteamNetworkingAvailability__Force32bit
         _Force32bit = 2147483647
     }
 }

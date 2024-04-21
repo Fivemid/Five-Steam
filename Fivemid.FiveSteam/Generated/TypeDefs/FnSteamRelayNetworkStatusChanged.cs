@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FnSteamRelayNetworkStatusChanged</summary>
+    /// missing documentation for FnSteamRelayNetworkStatusChanged
     public unsafe struct FnSteamRelayNetworkStatusChanged
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamRelayNetworkStatusPtr> value;

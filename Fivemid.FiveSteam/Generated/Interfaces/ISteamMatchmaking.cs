@@ -3,7 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ISteamMatchmaking</summary>
+    /// <summary>
+    /// Functions for clients to access matchmaking services, favorites, and to operate on game lobbies.<br />
+    /// <br />
+    /// See
+    /// <a href="https://partner.steamgames.com/doc/features/multiplayer/matchmaking" class="bb_doclink">Steam Matchmaking &amp; Lobbies</a>
+    /// for more information.
+    /// </summary>
     public unsafe interface ISteamMatchmaking
     {
         public int GetFavoriteGameCount();

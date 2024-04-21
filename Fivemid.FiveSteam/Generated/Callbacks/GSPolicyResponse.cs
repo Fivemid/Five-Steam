@@ -3,11 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GSPolicyResponse_t</summary>
+    /// <summary>
+    /// Received when the game server requests to be displayed as secure (VAC protected)<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct GSPolicyResponse : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSPolicyResponse;
-        /// <summary>uint8 m_bSecure</summary>
+        /// <summary>
+        ///             Is the server now set to secure (<b>true</b>) or unsecure
+        ///             (<b>false</b>)?.
+        ///         </summary>
         public byte bSecure;
     }
 }

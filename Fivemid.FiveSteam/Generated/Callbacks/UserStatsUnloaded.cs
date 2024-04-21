@@ -3,11 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>UserStatsUnloaded_t</summary>
+    /// <summary>
+    /// Callback indicating that a user's stats have been unloaded.<br />
+    /// <br />
+    /// Call
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestUserStats" class="bb_apilink">ISteamUserStats::RequestUserStats</a>
+    /// again before accessing stats for this user.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct UserStatsUnloaded : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserStatsUnloaded;
-        /// <summary>CSteamID m_steamIDUser</summary>
+        /// <summary>User whose stats have been unloaded.</summary>
         public SteamId steamIDUser;
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FriendsGroupID_t</summary>
+    /// <summary>Friends group (tags) identifier.</summary>
     public unsafe struct FriendsGroupID
     {
         public short value;

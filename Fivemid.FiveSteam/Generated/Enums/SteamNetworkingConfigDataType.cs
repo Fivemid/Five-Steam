@@ -3,20 +3,20 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamNetworkingConfigDataType</summary>
+    /// missing documentation for ESteamNetworkingConfigDataType
     public enum SteamNetworkingConfigDataType : int
     {
-        /// <summary>k_ESteamNetworkingConfig_Int32</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Int32
         SteamNetworkingConfig_Int32 = 1,
-        /// <summary>k_ESteamNetworkingConfig_Int64</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Int64
         SteamNetworkingConfig_Int64 = 2,
-        /// <summary>k_ESteamNetworkingConfig_Float</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Float
         SteamNetworkingConfig_Float = 3,
-        /// <summary>k_ESteamNetworkingConfig_String</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_String
         SteamNetworkingConfig_String = 4,
-        /// <summary>k_ESteamNetworkingConfig_Ptr</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Ptr
         SteamNetworkingConfig_Ptr = 5,
-        /// <summary>k_ESteamNetworkingConfigDataType__Force32Bit</summary>
+        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfigDataType__Force32Bit
         _Force32Bit = 2147483647
     }
 }

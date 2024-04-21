@@ -3,11 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInputDeviceConnected_t</summary>
+    /// missing documentation for SteamInputDeviceConnected_t
     public unsafe struct SteamInputDeviceConnected : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInputDeviceConnected;
-        /// <summary>InputHandle_t m_ulConnectedDeviceHandle</summary>
+        /// missing documentation for SteamInputDeviceConnected_t.m_ulConnectedDeviceHandle
         public InputHandle ulConnectedDeviceHandle;
     }
 }

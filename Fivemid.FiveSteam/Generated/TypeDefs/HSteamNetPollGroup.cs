@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HSteamNetPollGroup</summary>
+    /// missing documentation for HSteamNetPollGroup
     public unsafe struct HSteamNetPollGroup
     {
         public uint value;

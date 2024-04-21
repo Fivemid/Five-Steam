@@ -3,15 +3,19 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HTML_CanGoBackAndForward_t</summary>
+    /// <summary>
+    /// Called when page history status has changed the ability to go backwards and forward.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct HTML_CanGoBackAndForward : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_CanGoBackAndForward;
-        /// <summary>HHTMLBrowser unBrowserHandle</summary>
+        /// <summary>The handle of the surface that this callback is for.</summary>
         public HHTMLBrowser unBrowserHandle;
-        /// <summary>bool bCanGoBack</summary>
+        /// <summary>Returns whether you can navigate backwards.</summary>
         public bool bCanGoBack;
-        /// <summary>bool bCanGoForward</summary>
+        /// <summary>Returns whether you can navigate forward.</summary>
         public bool bCanGoForward;
     }
 }

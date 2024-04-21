@@ -3,42 +3,42 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EMarketNotAllowedReasonFlags</summary>
+    /// missing documentation for EMarketNotAllowedReasonFlags
     public enum MarketNotAllowedReasonFlags : int
     {
-        /// <summary>k_EMarketNotAllowedReason_None</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_None
         MarketNotAllowedReason_None = 0,
-        /// <summary>k_EMarketNotAllowedReason_TemporaryFailure</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_TemporaryFailure
         MarketNotAllowedReason_TemporaryFailure = 1,
-        /// <summary>k_EMarketNotAllowedReason_AccountDisabled</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_AccountDisabled
         MarketNotAllowedReason_AccountDisabled = 2,
-        /// <summary>k_EMarketNotAllowedReason_AccountLockedDown</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_AccountLockedDown
         MarketNotAllowedReason_AccountLockedDown = 4,
-        /// <summary>k_EMarketNotAllowedReason_AccountLimited</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_AccountLimited
         MarketNotAllowedReason_AccountLimited = 8,
-        /// <summary>k_EMarketNotAllowedReason_TradeBanned</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_TradeBanned
         MarketNotAllowedReason_TradeBanned = 16,
-        /// <summary>k_EMarketNotAllowedReason_AccountNotTrusted</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_AccountNotTrusted
         MarketNotAllowedReason_AccountNotTrusted = 32,
-        /// <summary>k_EMarketNotAllowedReason_SteamGuardNotEnabled</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_SteamGuardNotEnabled
         MarketNotAllowedReason_SteamGuardNotEnabled = 64,
-        /// <summary>k_EMarketNotAllowedReason_SteamGuardOnlyRecentlyEnabled</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_SteamGuardOnlyRecentlyEnabled
         MarketNotAllowedReason_SteamGuardOnlyRecentlyEnabled = 128,
-        /// <summary>k_EMarketNotAllowedReason_RecentPasswordReset</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_RecentPasswordReset
         MarketNotAllowedReason_RecentPasswordReset = 256,
-        /// <summary>k_EMarketNotAllowedReason_NewPaymentMethod</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_NewPaymentMethod
         MarketNotAllowedReason_NewPaymentMethod = 512,
-        /// <summary>k_EMarketNotAllowedReason_InvalidCookie</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_InvalidCookie
         MarketNotAllowedReason_InvalidCookie = 1024,
-        /// <summary>k_EMarketNotAllowedReason_UsingNewDevice</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_UsingNewDevice
         MarketNotAllowedReason_UsingNewDevice = 2048,
-        /// <summary>k_EMarketNotAllowedReason_RecentSelfRefund</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_RecentSelfRefund
         MarketNotAllowedReason_RecentSelfRefund = 4096,
-        /// <summary>k_EMarketNotAllowedReason_NewPaymentMethodCannotBeVerified</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_NewPaymentMethodCannotBeVerified
         MarketNotAllowedReason_NewPaymentMethodCannotBeVerified = 8192,
-        /// <summary>k_EMarketNotAllowedReason_NoRecentPurchases</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_NoRecentPurchases
         MarketNotAllowedReason_NoRecentPurchases = 16384,
-        /// <summary>k_EMarketNotAllowedReason_AcceptedWalletGift</summary>
+        /// missing documentation for EMarketNotAllowedReasonFlags.k_EMarketNotAllowedReason_AcceptedWalletGift
         MarketNotAllowedReason_AcceptedWalletGift = 32768
     }
 }

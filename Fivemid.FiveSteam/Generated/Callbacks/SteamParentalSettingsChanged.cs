@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamParentalSettingsChanged_t</summary>
+    /// missing documentation for SteamParentalSettingsChanged_t
     public unsafe struct SteamParentalSettingsChanged : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamParentalSettingsChanged;

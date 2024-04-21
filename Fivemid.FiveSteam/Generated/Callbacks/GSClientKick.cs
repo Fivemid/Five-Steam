@@ -3,13 +3,17 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>GSClientKick_t</summary>
+    /// <summary>
+    /// Called when the game server should kick the user.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct GSClientKick : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientKick;
-        /// <summary>CSteamID m_SteamID</summary>
+        /// <summary>The Steam ID of the player that should be kicked.</summary>
         public SteamId SteamID;
-        /// <summary>EDenyReason m_eDenyReason</summary>
+        /// <summary>The reason the player is being kicked.</summary>
         public DenyReason eDenyReason;
     }
 }

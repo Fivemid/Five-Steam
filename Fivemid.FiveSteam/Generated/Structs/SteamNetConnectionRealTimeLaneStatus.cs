@@ -3,20 +3,20 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetConnectionRealTimeLaneStatus_t</summary>
+    /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t
     public unsafe struct SteamNetConnectionRealTimeLaneStatus
     {
-        /// <summary>int m_cbPendingUnreliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.m_cbPendingUnreliable
         public int cbPendingUnreliable;
-        /// <summary>int m_cbPendingReliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.m_cbPendingReliable
         public int cbPendingReliable;
-        /// <summary>int m_cbSentUnackedReliable</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.m_cbSentUnackedReliable
         public int cbSentUnackedReliable;
-        /// <summary>int _reservePad1</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t._reservePad1
         public int _reservePad1;
-        /// <summary>SteamNetworkingMicroseconds m_usecQueueTime</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.m_usecQueueTime
         public SteamNetworkingMicroseconds usecQueueTime;
-        /// <summary>uint32 [10] reserved</summary>
+        /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.reserved
         public FixedArray_uint10 reserved;
     }
 }

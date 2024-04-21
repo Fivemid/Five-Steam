@@ -3,14 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingIdentity</summary>
+    /// missing documentation for SteamNetworkingIdentity
     public unsafe struct SteamNetworkingIdentity
     {
-        /// <summary>ESteamNetworkingIdentityType m_eType</summary>
+        /// missing documentation for SteamNetworkingIdentity.m_eType
         public SteamNetworkingIdentityType eType;
-        /// <summary>int m_cbSize</summary>
+        /// missing documentation for SteamNetworkingIdentity.m_cbSize
         public int cbSize;
-        /// <summary>char [128] m_szUnknownRawString</summary>
+        /// missing documentation for SteamNetworkingIdentity.m_szUnknownRawString
         public UTF8String128 szUnknownRawString;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_Clear", CallingConvention = Platform.CC)]
         internal static extern void Clear(SteamNetworkingIdentity* self);

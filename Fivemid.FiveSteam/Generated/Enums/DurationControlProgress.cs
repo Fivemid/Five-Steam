@@ -3,20 +3,29 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EDurationControlProgress</summary>
+    /// <summary>
+    /// Describes playtime restrictions that apply for games with duration control / anti-indulgence enabled
+    /// for minor Steam China users.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b><br />
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetDurationControl" class="bb_apilink">ISteamUser::GetDurationControl</a><br />
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#BSetDurationControlOnlineState" class="bb_apilink">ISteamUser::BSetDurationControlOnlineState</a>
+    /// </summary>
     public enum DurationControlProgress : int
     {
-        /// <summary>k_EDurationControlProgress_Full</summary>
+        /// <summary>Normal play</summary>
         Full = 0,
-        /// <summary>k_EDurationControlProgress_Half</summary>
+        /// <summary>(This value is deprecated)</summary>
         Half = 1,
-        /// <summary>k_EDurationControlProgress_None</summary>
+        /// <summary>User's playtime has run out. Steam will terminate the game soon</summary>
         None = 2,
-        /// <summary>k_EDurationControl_ExitSoon_3h</summary>
+        /// missing documentation for EDurationControlProgress.k_EDurationControl_ExitSoon_3h
         DurationControl_ExitSoon_3h = 3,
-        /// <summary>k_EDurationControl_ExitSoon_5h</summary>
+        /// missing documentation for EDurationControlProgress.k_EDurationControl_ExitSoon_5h
         DurationControl_ExitSoon_5h = 4,
-        /// <summary>k_EDurationControl_ExitSoon_Night</summary>
+        /// missing documentation for EDurationControlProgress.k_EDurationControl_ExitSoon_Night
         DurationControl_ExitSoon_Night = 5
     }
 }

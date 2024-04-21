@@ -3,12 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamPartyBeaconLocation_t</summary>
+    /// <summary>
+    /// <br />
+    /// <br />
+    /// 
+    /// </summary>
     public unsafe struct SteamPartyBeaconLocation
     {
-        /// <summary>ESteamPartyBeaconLocationType m_eType</summary>
+        /// <summary>The location type.</summary>
         public SteamPartyBeaconLocationType eType;
-        /// <summary>uint64 m_ulLocationID</summary>
+        /// <summary>Opaque identifier of this location.</summary>
         public ulong ulLocationID;
     }
 }

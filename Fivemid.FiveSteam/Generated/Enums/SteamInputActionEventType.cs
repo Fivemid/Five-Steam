@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>ESteamInputActionEventType</summary>
+    /// missing documentation for ESteamInputActionEventType
     public enum SteamInputActionEventType : int
     {
-        /// <summary>ESteamInputActionEventType_DigitalAction</summary>
+        /// missing documentation for ESteamInputActionEventType.ESteamInputActionEventType_DigitalAction
         DigitalAction = 0,
-        /// <summary>ESteamInputActionEventType_AnalogAction</summary>
+        /// missing documentation for ESteamInputActionEventType.ESteamInputActionEventType_AnalogAction
         AnalogAction = 1
     }
 }

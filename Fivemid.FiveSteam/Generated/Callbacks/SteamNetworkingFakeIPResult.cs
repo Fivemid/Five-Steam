@@ -3,17 +3,17 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingFakeIPResult_t</summary>
+    /// missing documentation for SteamNetworkingFakeIPResult_t
     public unsafe struct SteamNetworkingFakeIPResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingFakeIPResult;
-        /// <summary>EResult m_eResult</summary>
+        /// missing documentation for SteamNetworkingFakeIPResult_t.m_eResult
         public Result eResult;
-        /// <summary>SteamNetworkingIdentity m_identity</summary>
+        /// missing documentation for SteamNetworkingFakeIPResult_t.m_identity
         public SteamNetworkingIdentity identity;
-        /// <summary>uint32 m_unIP</summary>
+        /// missing documentation for SteamNetworkingFakeIPResult_t.m_unIP
         public uint unIP;
-        /// <summary>uint16 [8] m_unPorts</summary>
+        /// missing documentation for SteamNetworkingFakeIPResult_t.m_unPorts
         public FixedArray_ushort8 unPorts;
     }
 }

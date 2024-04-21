@@ -3,40 +3,47 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>EDenyReason</summary>
+    /// <summary>
+    /// Result values when a client failed to join or has been kicked from a game server. Obtained from
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientDeny_t" class="bb_apilink">GSClientDeny_t</a>
+    /// and
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientKick_t" class="bb_apilink">GSClientKick_t</a>.<br />
+    /// <br />
+    /// 
+    /// </summary>
     public enum DenyReason : int
     {
-        /// <summary>k_EDenyInvalid</summary>
+        /// <summary>Unknown.</summary>
         DenyInvalid = 0,
-        /// <summary>k_EDenyInvalidVersion</summary>
+        /// <summary>The client and server are not the same version.</summary>
         DenyInvalidVersion = 1,
-        /// <summary>k_EDenyGeneric</summary>
+        /// <summary>Generic.</summary>
         DenyGeneric = 2,
-        /// <summary>k_EDenyNotLoggedOn</summary>
+        /// <summary>The client is not logged on.</summary>
         DenyNotLoggedOn = 3,
-        /// <summary>k_EDenyNoLicense</summary>
+        /// <summary>The client does not have a license to play this game.</summary>
         DenyNoLicense = 4,
-        /// <summary>k_EDenyCheater</summary>
+        /// <summary>The client is VAC banned.</summary>
         DenyCheater = 5,
-        /// <summary>k_EDenyLoggedInElseWhere</summary>
+        /// <summary>The client is logged in elsewhere.</summary>
         DenyLoggedInElseWhere = 6,
-        /// <summary>k_EDenyUnknownText</summary>
+        /// <summary></summary>
         DenyUnknownText = 7,
-        /// <summary>k_EDenyIncompatibleAnticheat</summary>
+        /// <summary></summary>
         DenyIncompatibleAnticheat = 8,
-        /// <summary>k_EDenyMemoryCorruption</summary>
+        /// <summary></summary>
         DenyMemoryCorruption = 9,
-        /// <summary>k_EDenyIncompatibleSoftware</summary>
+        /// <summary></summary>
         DenyIncompatibleSoftware = 10,
-        /// <summary>k_EDenySteamConnectionLost</summary>
+        /// <summary>The server lost connection to steam.</summary>
         DenySteamConnectionLost = 11,
-        /// <summary>k_EDenySteamConnectionError</summary>
+        /// <summary>The server had a general error connecting to Steam.</summary>
         DenySteamConnectionError = 12,
-        /// <summary>k_EDenySteamResponseTimedOut</summary>
+        /// <summary>The server timed out connecting to Steam.</summary>
         DenySteamResponseTimedOut = 13,
-        /// <summary>k_EDenySteamValidationStalled</summary>
+        /// <summary>The client has not authed with Steam yet.</summary>
         DenySteamValidationStalled = 14,
-        /// <summary>k_EDenySteamOwnerLeftGuestUser</summary>
+        /// <summary>The owner of the shared game has left, called for each guest of the owner.</summary>
         DenySteamOwnerLeftGuestUser = 15
     }
 }

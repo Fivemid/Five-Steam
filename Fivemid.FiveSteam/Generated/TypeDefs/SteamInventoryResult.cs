@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamInventoryResult_t</summary>
+    /// <summary>A handle to an asyncronous inventory result.</summary>
     public unsafe struct SteamInventoryResult
     {
         public int value;

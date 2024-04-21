@@ -3,11 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FilterTextDictionaryChanged_t</summary>
+    /// missing documentation for FilterTextDictionaryChanged_t
     public unsafe struct FilterTextDictionaryChanged : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FilterTextDictionaryChanged;
-        /// <summary>int m_eLanguage</summary>
+        /// missing documentation for FilterTextDictionaryChanged_t.m_eLanguage
         public int eLanguage;
     }
 }

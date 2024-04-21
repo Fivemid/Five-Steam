@@ -3,15 +3,23 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>FriendsGetFollowerCount_t</summary>
+    /// <summary>
+    /// Returns the result of
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a>.<br />
+    /// <br />
+    /// 
+    /// <br />
+    /// <b>Associated Functions:</b>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a>
+    /// </summary>
     public unsafe struct FriendsGetFollowerCount : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendsGetFollowerCount;
-        /// <summary>EResult m_eResult</summary>
+        /// <summary>The result of the operation.</summary>
         public Result eResult;
-        /// <summary>CSteamID m_steamID</summary>
+        /// <summary>The Steam ID of the user we requested the follower count for.</summary>
         public SteamId steamID;
-        /// <summary>int m_nCount</summary>
+        /// <summary>The number of followers the user has.</summary>
         public int nCount;
     }
 }

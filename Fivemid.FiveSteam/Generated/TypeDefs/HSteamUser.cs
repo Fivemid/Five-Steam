@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>HSteamUser</summary>
+    /// <summary>Handle to single instance of a steam user.</summary>
     public unsafe struct HSteamUser
     {
         public int value;

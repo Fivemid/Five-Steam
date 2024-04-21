@@ -3,11 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>OverlayBrowserProtocolNavigation_t</summary>
+    /// missing documentation for OverlayBrowserProtocolNavigation_t
     public unsafe struct OverlayBrowserProtocolNavigation : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.OverlayBrowserProtocolNavigation;
-        /// <summary>char [1024] rgchURI</summary>
+        /// missing documentation for OverlayBrowserProtocolNavigation_t.rgchURI
         public UTF8String1024 rgchURI;
     }
 }

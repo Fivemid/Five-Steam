@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>SteamNetworkingPOPID</summary>
+    /// missing documentation for SteamNetworkingPOPID
     public unsafe struct SteamNetworkingPOPID
     {
         public uint value;
