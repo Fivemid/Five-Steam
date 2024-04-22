@@ -3,14 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Provides details on the visibility and size of the horizontal scrollbar.<br />
+    /// <summary>Provides details on the visibility and size of the horizontal scrollbar.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#SetHorizontalScroll" class="bb_apilink">ISteamHTMLSurface::SetHorizontalScroll</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#SetHorizontalScroll" class="bb_apilink">ISteamHTMLSurface::SetHorizontalScroll</a></summary>
     public unsafe struct HTML_HorizontalScroll : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_HorizontalScroll;

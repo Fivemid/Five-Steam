@@ -7,24 +7,10 @@ namespace Fivemid.FiveSteam
     /// Misc networking utilities for checking the local networking environment and estimating pings.<br />
     /// <br />
     /// Related documents:<br />
-    /// <ul class="bb_ul">
-    ///     <li>
-    ///         <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingSockets" class="bb_doclink">ISteamNetworkingSockets Interface</a>
-    ///         Connection-handle-oriented interface for sending and receiving messages.<br />
-    ///     </li>
-    ///     <li>
-    ///         <a href="https://partner.steamgames.com/doc/api/steamnetworkingtypes" class="bb_doclink">steamnetworkingtypes.h</a>
-    ///         Miscellaneous types and utilities.<br />
-    ///     </li>
-    ///     <li>
-    ///         <a href="https://partner.steamgames.com/doc/features/multiplayer/networking" class="bb_doclink">Steam Networking</a>
-    ///         overview of the different networking APIs.
-    ///     </li>
-    /// </ul>
-    /// <br />
-    /// Member functions for ISteamNetworkingUtils are called through the global accessor function
-    /// SteamNetworkingUtils().
-    /// </summary>
+    /// <ul class="bb_ul "><li> <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingSockets" class="bb_doclink">ISteamNetworkingSockets Interface</a> Connection-handle-oriented interface for sending and receiving messages.<br />
+    /// </li><li> <a href="https://partner.steamgames.com/doc/api/steamnetworkingtypes" class="bb_doclink">steamnetworkingtypes.h</a> Miscellaneous types and utilities.<br />
+    /// </li><li> <a href="https://partner.steamgames.com/doc/features/multiplayer/networking" class="bb_doclink">Steam Networking</a> overview of the different networking APIs.</li></ul><br />
+    /// Member functions for ISteamNetworkingUtils are called through the global accessor function SteamNetworkingUtils().</summary>
     public unsafe interface ISteamNetworkingUtils
     {
         public SteamNetworkingMessage* AllocateMessage(int cbAllocateBuffer);

@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a browser has finished loading a page.<br />
+    /// <summary>Called when a browser has finished loading a page.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_FinishedRequest : global::Unity.Entities.IComponentData
     {

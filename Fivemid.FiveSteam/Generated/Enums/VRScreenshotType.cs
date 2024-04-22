@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Describes the type of VR screenshots.<br />
+    /// <summary>Describes the type of VR screenshots.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum VRScreenshotType : int
     {

@@ -3,15 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Returns the result of
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a>.<br />
+    /// <summary>Returns the result of <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a>.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFollowerCount" class="bb_apilink">ISteamFriends::GetFollowerCount</a></summary>
     public unsafe struct FriendsGetFollowerCount : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendsGetFollowerCount;

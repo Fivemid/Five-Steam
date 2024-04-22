@@ -3,10 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             A unique handle to a single UGC Query. This is used when requesting lists of items from
-    ///             the workshop.
-    ///         </summary>
+    /// <summary>A unique handle to a single UGC Query. This is used when requesting lists of items from the workshop.</summary>
     public unsafe struct UGCQueryHandle
     {
         public ulong value;

@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Inputs the player binds to actions in the Steam Input Configurator. The chief purpose of these
-    /// values is to direct which on-screen button glyphs should appear for a given action, such as "Press
-    /// [A] to Jump".<br />
+    /// <summary>Inputs the player binds to actions in the Steam Input Configurator. The chief purpose of these values is to direct which on-screen button glyphs should appear for a given action, such as "Press [A] to Jump".<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ControllerActionOrigin : int
     {
@@ -68,9 +64,7 @@ namespace Fivemid.FiveSteam
         LeftTrigger_Click = 26,
         /// <summary>(Valve Steam Controller) right analog trigger, pulled by any amount (analog value)</summary>
         RightTrigger_Pull = 27,
-        /// <summary>
-        ///             (Valve Steam Controller) right analog trigger, pulled in all the way (digital value)
-        ///         </summary>
+        /// <summary>(Valve Steam Controller) right analog trigger, pulled in all the way (digital value)</summary>
         RightTrigger_Click = 28,
         /// <summary>(Valve Steam Controller) left joystick, movement on any axis (analog value)</summary>
         LeftStick_Move = 29,
@@ -86,20 +80,11 @@ namespace Fivemid.FiveSteam
         LeftStick_DPadEast = 34,
         /// <summary>(Valve Steam Controller) gyroscope, analog movement in any axis</summary>
         Gyro_Move = 35,
-        /// <summary>
-        ///             (Valve Steam Controller) gyroscope, analog movement on the Pitch axis (point head up to
-        ///             ceiling, point head down to floor)
-        ///         </summary>
+        /// <summary>(Valve Steam Controller) gyroscope, analog movement on the Pitch axis (point head up to ceiling, point head down to floor)</summary>
         Gyro_Pitch = 36,
-        /// <summary>
-        ///             (Valve Steam Controller) gyroscope, analog movement on the Yaw axis (turn head left to
-        ///             face one wall, turn head right to face other)
-        ///         </summary>
+        /// <summary>(Valve Steam Controller) gyroscope, analog movement on the Yaw axis (turn head left to face one wall, turn head right to face other)</summary>
         Gyro_Yaw = 37,
-        /// <summary>
-        ///             (Valve Steam Controller) gyroscope, analog movement on the Roll axis (tilt head left
-        ///             towards shoulder, tilt head right towards other)
-        ///         </summary>
+        /// <summary>(Valve Steam Controller) gyroscope, analog movement on the Roll axis (tilt head left towards shoulder, tilt head right towards other)</summary>
         Gyro_Roll = 38,
         /// <summary>(Sony Dualshock 4) digital face button X</summary>
         PS4_X = 39,
@@ -123,7 +108,7 @@ namespace Fivemid.FiveSteam
         PS4_LeftPad_Swipe = 48,
         /// <summary>(Sony Dualshock 4) left half of the touchpad, digital click (for the whole thing)</summary>
         PS4_LeftPad_Click = 49,
-        /// <summary>(Sony Dualshock 4) left half of the touchpad, digital click (upper quadrant)</summary>
+        /// <summary>(Sony Dualshock 4) left half of the  touchpad, digital click (upper quadrant)</summary>
         PS4_LeftPad_DPadNorth = 50,
         /// <summary>(Sony Dualshock 4) left half of the touchpad, digital click (lower quadrant)</summary>
         PS4_LeftPad_DPadSouth = 51,
@@ -201,20 +186,11 @@ namespace Fivemid.FiveSteam
         PS4_DPad_East = 87,
         /// <summary>(Sony Dualshock 4) gyroscope, analog movement in any axis</summary>
         PS4_Gyro_Move = 88,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Pitch axis (point head up to
-        ///             ceiling, point head down to floor)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Pitch axis (point head up to ceiling, point head down to floor)</summary>
         PS4_Gyro_Pitch = 89,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Yaw axis (turn head left to face
-        ///             one wall, turn head right to face other)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Yaw axis (turn head left to face one wall, turn head right to face other)</summary>
         PS4_Gyro_Yaw = 90,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Roll axis (tilt head left towards
-        ///             shoulder, tilt head right towards other shoulder)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Roll axis (tilt head left towards shoulder, tilt head right towards other shoulder)</summary>
         PS4_Gyro_Roll = 91,
         /// <summary>(XB1) digital face button A</summary>
         XBoxOne_A = 92,

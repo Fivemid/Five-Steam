@@ -6,10 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Functions for adding screenshots to the user's screenshot library.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/screenshots" class="bb_doclink">Steam Screenshots</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/screenshots" class="bb_doclink">Steam Screenshots</a> for more information.</summary>
     public unsafe interface ISteamScreenshots
     {
         public ScreenshotHandle WriteScreenshot(void* pubRGB, uint cubRGB, int nWidth, int nHeight);

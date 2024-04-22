@@ -3,13 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Lobby search filter options. These can be set with
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#AddRequestLobbyListStringFilter" class="bb_apilink">ISteamMatchmaking::AddRequestLobbyListStringFilter</a>
-    /// and
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#AddRequestLobbyListNearValueFilter" class="bb_apilink">ISteamMatchmaking::AddRequestLobbyListNearValueFilter</a>.<br />
+    /// <summary>Lobby search filter options. These can be set with <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#AddRequestLobbyListStringFilter" class="bb_apilink">ISteamMatchmaking::AddRequestLobbyListStringFilter</a> and <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#AddRequestLobbyListNearValueFilter" class="bb_apilink">ISteamMatchmaking::AddRequestLobbyListNearValueFilter</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum LobbyComparison : int
     {

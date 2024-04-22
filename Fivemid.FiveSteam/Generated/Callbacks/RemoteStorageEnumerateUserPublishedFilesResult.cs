@@ -3,15 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserPublishedFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserPublishedFiles</a>,
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserSharedWorkshopFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserSharedWorkshopFiles</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserPublishedFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserPublishedFiles</a>, <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserSharedWorkshopFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserSharedWorkshopFiles</a></summary>
     public unsafe struct RemoteStorageEnumerateUserPublishedFilesResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserPublishedFilesResult;

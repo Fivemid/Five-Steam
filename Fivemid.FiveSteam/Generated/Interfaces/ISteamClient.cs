@@ -4,15 +4,10 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>
-    /// Interface to create a new steam instance or to connect to an existing steam instance, whether it's
-    /// in a different process or is local.<br />
+    /// Interface to create a new steam instance or to connect to an existing steam instance, whether it's in a different process or is local.<br />
     /// <br />
-    /// In most scenarios this is all handled automatically via
-    /// <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPI_Init" class="bb_apilink">SteamAPI_Init</a>.<br />
-    /// You'll only ever need to use these APIs if you have a more complex versioning scheme, or if you want
-    /// to implement a multiplexed gameserver where a single process is handling multiple games at once with
-    /// independent gameserver Steam IDs.
-    /// </summary>
+    /// In most scenarios this is all handled automatically via <a href="https://partner.steamgames.com/doc/api/steam_api#SteamAPI_Init" class="bb_apilink">SteamAPI_Init</a>.<br />
+    /// You'll only ever need to use these APIs if you have a more complex versioning scheme, or if you want to implement a multiplexed gameserver where a single process is handling multiple games at once with independent gameserver Steam IDs.</summary>
     public unsafe interface ISteamClient
     {
         public HSteamPipe CreateSteamPipe();

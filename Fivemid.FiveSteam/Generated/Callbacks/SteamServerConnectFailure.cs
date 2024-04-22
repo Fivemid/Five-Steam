@@ -3,12 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a connection attempt has failed.<br />
-    /// This will occur periodically if the Steam client is not connected, and has failed when retrying to
-    /// establish a connection.<br />
+    /// <summary>Called when a connection attempt has failed.<br />
+    /// This will occur periodically if the Steam client is not connected, and has failed when retrying to establish a connection.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct SteamServerConnectFailure : global::Unity.Entities.IComponentData
     {

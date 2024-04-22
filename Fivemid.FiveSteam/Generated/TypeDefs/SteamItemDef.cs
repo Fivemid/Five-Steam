@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             Types of items in your game are identified by a 32-bit "item definition number".<br />
-    ///             Valid definition numbers are between 1 and 999999999; numbers less than or equal to zero
-    ///             are invalid, and numbers greater than or equal to one billion (1x10^9) are reserved for
-    ///             internal Steam use.
-    ///         </summary>
+    /// <summary>Types of items in your game are identified by a 32-bit "item definition number".<br />
+    /// Valid definition numbers are between 1 and 999999999; numbers less than or equal to zero are invalid, and numbers greater than or equal to one billion (1x10^9) are reserved for internal Steam use.</summary>
     public unsafe struct SteamItemDef
     {
         public int value;

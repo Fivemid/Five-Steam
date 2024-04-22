@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Chat Room Enter Responses.<br />
+    /// <summary>Chat Room Enter Responses.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ChatRoomEnterResponse : int
     {
@@ -22,9 +20,7 @@ namespace Fivemid.FiveSteam
         Error = 5,
         /// <summary>You are banned from this chat room and may not join.</summary>
         Banned = 6,
-        /// <summary>
-        ///             Joining this chat is not allowed because you are a limited user (no value on account).
-        ///         </summary>
+        /// <summary>Joining this chat is not allowed because you are a limited user (no value on account).</summary>
         Limited = 7,
         /// <summary>Attempt to join a clan chat when the clan is locked or disabled.</summary>
         ClanDisabled = 8,

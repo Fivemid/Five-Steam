@@ -3,12 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// used in PersonaStateChange_t::m_nChangeFlags to describe what's changed about a user<br />
-    /// these flags describe what the client has learned has changed recently, so on startup you'll see a
-    /// name, avatar &amp; relationship change for every friend<br />
+    /// <summary>used in PersonaStateChange_t::m_nChangeFlags to describe what's changed about a user<br />
+    /// these flags describe what the client has learned has changed recently, so on startup you'll see a name, avatar &amp; relationship change for every friend<br />
     /// <br />
-    /// 
     /// </summary>
     public enum PersonaChange : int
     {

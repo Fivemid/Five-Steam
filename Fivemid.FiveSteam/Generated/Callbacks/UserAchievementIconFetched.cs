@@ -3,14 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Result of an achievement icon that has been fetched<br />
+    /// <summary>Result of an achievement icon that has been fetched<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetAchievementIcon" class="bb_apilink">ISteamUserStats::GetAchievementIcon</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetAchievementIcon" class="bb_apilink">ISteamUserStats::GetAchievementIcon</a></summary>
     public unsafe struct UserAchievementIconFetched : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementIconFetched;
@@ -18,16 +14,9 @@ namespace Fivemid.FiveSteam
         public GameId nGameID;
         /// <summary>The name of the achievement that this callback is for.</summary>
         public UTF8String128 rgchAchievementName;
-        /// <summary>
-        ///             Returns whether the icon for the achieved (<b>true</b>) or unachieved
-        ///             (<b>false</b>) version.
-        ///         </summary>
+        /// <summary>Returns whether the icon for the achieved (<b>true</b>) or unachieved (<b>false</b>) version.</summary>
         public bool bAchieved;
-        /// <summary>
-        ///             Handle to the image, which can be used with
-        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetImageRGBA" class="bb_apilink">ISteamUtils::GetImageRGBA</a>
-        ///             to get the image data. <b>0</b> means no image is set for the achievement.
-        ///         </summary>
+        /// <summary>Handle to the image, which can be used with <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetImageRGBA" class="bb_apilink">ISteamUtils::GetImageRGBA</a> to get the image data. <b>0</b> means no image is set for the achievement.</summary>
         public int nIconHandle;
     }
 }

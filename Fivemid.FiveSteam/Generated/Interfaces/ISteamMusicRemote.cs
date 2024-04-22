@@ -6,10 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Allows direct interaction with the Steam Music player.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/music_player" class="bb_doclink">features/music_player</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/music_player" class="bb_doclink">features/music_player</a> for more information.</summary>
     public unsafe interface ISteamMusicRemote
     {
         public bool RegisterSteamMusicRemote(UTF8StringPtr pchName);

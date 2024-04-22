@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Special flags for Chat accounts - they go in the top 8 bits of the Steam ID's "instance", leaving 12
-    /// for the actual instances<br />
+    /// <summary>Special flags for Chat accounts - they go in the top 8 bits of the Steam ID's "instance", leaving 12 for the actual instances<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ChatSteamIDInstanceFlags : int
     {

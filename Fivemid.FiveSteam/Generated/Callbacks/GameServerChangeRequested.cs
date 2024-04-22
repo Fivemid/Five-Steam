@@ -3,19 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when the user tries to join a different game server from their friends list. The game client
-    /// should attempt to connect to the specified server when this is received.<br />
+    /// <summary>Called when the user tries to join a different game server from their friends list. The game client should attempt to connect to the specified server when this is received.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct GameServerChangeRequested : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameServerChangeRequested;
-        /// <summary>
-        ///             Server address (e.g. "127.0.0.1:27015",
-        ///             <a href="http://%22tf2.valvesoftware.com%22)" target="_blank" rel="noreferrer">"tf2.valvesoftware.com")</a>
-        ///         </summary>
+        /// <summary>Server address (e.g. "127.0.0.1:27015", <a href="http://%22tf2.valvesoftware.com%22)" target="_blank" rel="noreferrer">"tf2.valvesoftware.com")</a></summary>
         public UTF8String64 rgchServer;
         /// <summary>Server password, if any.</summary>
         public UTF8String64 rgchPassword;

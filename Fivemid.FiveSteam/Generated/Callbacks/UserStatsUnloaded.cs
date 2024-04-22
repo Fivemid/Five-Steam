@@ -3,14 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Callback indicating that a user's stats have been unloaded.<br />
+    /// <summary>Callback indicating that a user's stats have been unloaded.<br />
     /// <br />
-    /// Call
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestUserStats" class="bb_apilink">ISteamUserStats::RequestUserStats</a>
-    /// again before accessing stats for this user.<br />
+    /// Call <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestUserStats" class="bb_apilink">ISteamUserStats::RequestUserStats</a> again before accessing stats for this user.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct UserStatsUnloaded : global::Unity.Entities.IComponentData
     {

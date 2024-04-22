@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Steam Community profile item types<br />
+    /// <summary>Steam Community profile item types<br />
     /// <br />
-    /// 
     /// </summary>
     public enum CommunityProfileItemType : int
     {

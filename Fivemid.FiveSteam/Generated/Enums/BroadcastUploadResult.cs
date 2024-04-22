@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Broadcast upload result from
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamVideo#BroadcastUploadStop_t" class="bb_apilink">BroadcastUploadStop_t</a>.<br />
+    /// <summary>Broadcast upload result from <a href="https://partner.steamgames.com/doc/api/ISteamVideo#BroadcastUploadStop_t" class="bb_apilink">BroadcastUploadStop_t</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum BroadcastUploadResult : int
     {

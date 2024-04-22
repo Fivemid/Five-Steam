@@ -3,8 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// The form factor of a device<br />
+    /// <summary>The form factor of a device<br />
     /// <br />
     /// 
     /// </summary>

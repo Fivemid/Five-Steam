@@ -6,19 +6,11 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Interface for rendering and interacting with HTML pages.<br />
     /// <br />
-    /// You can use this interface to render and display HTML pages directly inside your game or
-    /// application. You must call
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Init" class="bb_apilink">ISteamHTMLSurface::Init</a>
-    /// prior to using this interface, and
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Shutdown" class="bb_apilink">ISteamHTMLSurface::Shutdown</a>
-    /// when you're done using it.<br />
+    /// You can use this interface to render and display HTML pages directly inside your game or application. You must call <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Init" class="bb_apilink">ISteamHTMLSurface::Init</a> prior to using this interface, and <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Shutdown" class="bb_apilink">ISteamHTMLSurface::Shutdown</a> when you're done using it.<br />
     /// <br />
     /// It is built upon the Chromium Embedded Framework and supports HTML5 markup.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/html_surface" class="bb_doclink">Steam HTML Surface</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/html_surface" class="bb_doclink">Steam HTML Surface</a> for more information.</summary>
     public unsafe interface ISteamHTMLSurface
     {
         public bool Init();
@@ -174,14 +166,8 @@ namespace Fivemid.FiveSteam
             public void FileLoadDialogResponse(HHTMLBrowser unBrowserHandle, UTF8StringPtr* pchSelectedFiles) => ISteamHTMLSurface.FileLoadDialogResponse(self, unBrowserHandle, pchSelectedFiles);
         }
 
-        /// <summary>
-        /// Used to let the browser know when a mouse button is pressed with:
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseUp" class="bb_apilink">ISteamHTMLSurface::MouseUp</a>,
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDown" class="bb_apilink">ISteamHTMLSurface::MouseDown</a>
-        /// and
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDoubleClick" class="bb_apilink">ISteamHTMLSurface::MouseDoubleClick</a>.<br />
+        /// <summary>Used to let the browser know when a mouse button is pressed with: <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseUp" class="bb_apilink">ISteamHTMLSurface::MouseUp</a>, <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDown" class="bb_apilink">ISteamHTMLSurface::MouseDown</a> and <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#MouseDoubleClick" class="bb_apilink">ISteamHTMLSurface::MouseDoubleClick</a>.<br />
         /// <br />
-        /// 
         /// </summary>
         public enum HTMLMouseButton : int
         {
@@ -193,10 +179,8 @@ namespace Fivemid.FiveSteam
             eHTMLMouseButton_Middle = 2
         }
 
-        /// <summary>
-        /// This lists the mouse cursors that the HTML surface will tell you to render.<br />
+        /// <summary>This lists the mouse cursors that the HTML surface will tell you to render.<br />
         /// <br />
-        /// 
         /// </summary>
         public enum MouseCursor : int
         {
@@ -286,14 +270,8 @@ namespace Fivemid.FiveSteam
             dc_last = 41
         }
 
-        /// <summary>
-        /// Used to let the browser know what keys are pressed with:
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyChar" class="bb_apilink">ISteamHTMLSurface::KeyChar</a>,
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyUp" class="bb_apilink">ISteamHTMLSurface::KeyUp</a>
-        /// and
-        /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyDown" class="bb_apilink">ISteamHTMLSurface::KeyDown</a>. These flags can be added together using bitwise OR.<br />
+        /// <summary>Used to let the browser know what keys are pressed with: <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyChar" class="bb_apilink">ISteamHTMLSurface::KeyChar</a>, <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyUp" class="bb_apilink">ISteamHTMLSurface::KeyUp</a> and <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#KeyDown" class="bb_apilink">ISteamHTMLSurface::KeyDown</a>. These flags can be added together using bitwise OR.<br />
         /// <br />
-        /// 
         /// </summary>
         public enum HTMLKeyModifiers : int
         {

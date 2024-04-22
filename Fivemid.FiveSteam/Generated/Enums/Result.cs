@@ -3,16 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Steam error result codes.<br />
+    /// <summary>Steam error result codes.<br />
     /// <br />
-    /// These are frequently returned by functions, callbacks, and call results from both the Steamworks API
-    /// and the Web API. An API may return arbitrary EResult codes, refer to the documentation for that API
-    /// function or callback to see what it could return and what they mean in the context of that API
-    /// call.<br />
+    /// These are frequently returned by functions, callbacks, and call results from both the Steamworks API and the Web API. An API may return arbitrary EResult codes, refer to the documentation for that API function or callback to see what it could return and what they mean in the context of that API call.<br />
     /// This is similar to Win32's HRESULT type or POSIXs errno.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum Result : int
     {
@@ -72,10 +67,7 @@ namespace Fivemid.FiveSteam
         Expired = 27,
         /// <summary>Guest pass has already been redeemed by account, cannot be used again.</summary>
         AlreadyRedeemed = 28,
-        /// <summary>
-        ///             The request is a duplicate and the action has already occurred in the past, ignored this
-        ///             time.
-        ///         </summary>
+        /// <summary>The request is a duplicate and the action has already occurred in the past, ignored this time.</summary>
         DuplicateRequest = 29,
         /// <summary>All the games in this guest pass redemption request are already owned by the user.</summary>
         AlreadyOwned = 30,
@@ -117,11 +109,7 @@ namespace Fivemid.FiveSteam
         TryAnotherCM = 48,
         /// <summary>You are already logged in elsewhere, this cached credential login has failed.</summary>
         PasswordRequiredToKickSession = 49,
-        /// <summary>
-        ///             The user is logged in elsewhere. (Use
-        ///             <a href="#k_EResultLoggedInElsewhere" class="bb_apilink">k_EResultLoggedInElsewhere</a>
-        ///             instead!)
-        ///         </summary>
+        /// <summary>The user is logged in elsewhere. (Use <a href="#k_EResultLoggedInElsewhere" class="bb_apilink">k_EResultLoggedInElsewhere</a> instead!)</summary>
         AlreadyLoggedInElsewhere = 50,
         /// <summary>Long running operation has suspended/paused. (eg. content download.)</summary>
         Suspended = 51,
@@ -139,10 +127,7 @@ namespace Fivemid.FiveSteam
         ExternalAccountUnlinked = 57,
         /// <summary>PSN ticket was invalid.</summary>
         PSNTicketInvalid = 58,
-        /// <summary>
-        ///             External account (PSN, Facebook...) is already linked to some other account, must
-        ///             explicitly request to replace/delete the link first.
-        ///         </summary>
+        /// <summary>External account (PSN, Facebook...) is already linked to some other account, must explicitly request to replace/delete the link first.</summary>
         ExternalAccountAlreadyLinked = 59,
         /// <summary>The sync cannot resume due to a conflict between the local and remote files.</summary>
         RemoteFileConflict = 60,
@@ -170,10 +155,7 @@ namespace Fivemid.FiveSteam
         ExpiredLoginAuthCode = 71,
         /// <summary>The login failed due to an IP restriction.</summary>
         IPLoginRestrictionFailed = 72,
-        /// <summary>
-        ///             The current users account is currently locked for use. This is likely due to a hijacking
-        ///             and pending ownership verification.
-        ///         </summary>
+        /// <summary>The current users account is currently locked for use. This is likely due to a hijacking and pending ownership verification.</summary>
         AccountLockedDown = 73,
         /// <summary>The logon failed because the accounts email is not verified.</summary>
         AccountLogonDeniedVerifiedEmailRequired = 74,
@@ -195,10 +177,7 @@ namespace Fivemid.FiveSteam
         RestrictedDevice = 82,
         /// <summary>The action could not be complete because it is region restricted.</summary>
         RegionLocked = 83,
-        /// <summary>
-        ///             Temporary rate limit exceeded, try again later, different from k_EResultLimitExceeded
-        ///             which may be permanent.
-        ///         </summary>
+        /// <summary>Temporary rate limit exceeded, try again later, different from k_EResultLimitExceeded which may be permanent.</summary>
         RateLimitExceeded = 84,
         /// <summary>Need two-factor code to login.</summary>
         AccountLoginDeniedNeedTwoFactor = 85,
@@ -236,18 +215,13 @@ namespace Fivemid.FiveSteam
         NeedCaptcha = 101,
         /// <summary>A game server login token owned by this token's owner has been banned.</summary>
         GSLTDenied = 102,
-        /// <summary>
-        ///             Game server owner is denied for some other reason such as account locked, community ban,
-        ///             vac ban, missing phone, etc.
-        ///         </summary>
+        /// <summary>Game server owner is denied for some other reason such as account locked, community ban, vac ban, missing phone, etc.</summary>
         GSOwnerDenied = 103,
         /// <summary>The type of thing we were requested to act on is invalid.</summary>
         InvalidItemType = 104,
         /// <summary>The IP address has been banned from taking this action.</summary>
         IPBanned = 105,
-        /// <summary>
-        ///             This Game Server Login Token (GSLT) has expired from disuse; it can be reset for use.
-        ///         </summary>
+        /// <summary>This Game Server Login Token (GSLT) has expired from disuse; it can be reset for use.</summary>
         GSLTExpired = 106,
         /// <summary>user doesn't have enough wallet funds to complete the action</summary>
         InsufficientFunds = 107,

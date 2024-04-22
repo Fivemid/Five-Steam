@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Details for a single published item/UGC. This is returned by
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCResult" class="bb_apilink">ISteamUGC::GetQueryUGCResult</a>.<br />
+    /// <summary>Details for a single published item/UGC. This is returned by <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCResult" class="bb_apilink">ISteamUGC::GetQueryUGCResult</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct SteamUGCDetails
     {
@@ -27,35 +24,19 @@ namespace Fivemid.FiveSteam
         public UTF8String8000 rgchDescription;
         /// <summary>Steam ID of the user who created this content.</summary>
         public ulong ulSteamIDOwner;
-        /// <summary>
-        ///             Time when the published item was created, provided in Unix epoch format (time since Jan
-        ///             1st, 1970).
-        ///         </summary>
+        /// <summary>Time when the published item was created, provided in Unix epoch format (time since Jan 1st, 1970).</summary>
         public uint rtimeCreated;
-        /// <summary>
-        ///             Time when the published item was last updated, provided in Unix epoch format (time since
-        ///             Jan 1st, 1970).
-        ///         </summary>
+        /// <summary>Time when the published item was last updated, provided in Unix epoch format (time since Jan 1st, 1970).</summary>
         public uint rtimeUpdated;
-        /// <summary>
-        ///             Time when the user added the published item to their list (not always applicable),
-        ///             provided in Unix epoch format (time since Jan 1st, 1970).
-        ///         </summary>
+        /// <summary>Time when the user added the published item to their list (not always applicable), provided in Unix epoch format (time since Jan 1st, 1970).</summary>
         public uint rtimeAddedToUserList;
         /// <summary>The visibility of the item.</summary>
         public RemoteStoragePublishedFileVisibility eVisibility;
         /// <summary>Whether the item was banned.</summary>
         public bool bBanned;
-        /// <summary>
-        ///             Whether the developer of this app has specifically flagged this item as accepted in the
-        ///             Workshop. (See:
-        ///             <a href="https://partner.steamgames.com/doc/features/workshop#curated_workshop" class="bb_doclink">Curated Workshop</a>)
-        ///         </summary>
+        /// <summary>Whether the developer of this app has specifically flagged this item as accepted in the Workshop. (See: <a href="https://partner.steamgames.com/doc/features/workshop#curated_workshop" class="bb_doclink">Curated Workshop</a>)</summary>
         public bool bAcceptedForUse;
-        /// <summary>
-        ///             Whether the list of tags was too long to be returned in the provided buffer, and were
-        ///             therefore truncated.
-        ///         </summary>
+        /// <summary>Whether the list of tags was too long to be returned in the provided buffer, and were therefore truncated.</summary>
         public bool bTagsTruncated;
         /// <summary>Comma separated list of all tags associated with this item.</summary>
         public UTF8String1025 rgchTags;
@@ -77,12 +58,7 @@ namespace Fivemid.FiveSteam
         public uint unVotesDown;
         /// <summary>The bayesian average for up votes / total votes, between [0,1].</summary>
         public float flScore;
-        /// <summary>
-        ///             The number of items in the collection if <b>m_eFileType</b> is
-        ///             <code class="bb_code bb_code_inline nohighlight">k_EWorkshopFileTypeCollection</code>,
-        ///             or the number of items this specific item has a dependency on (see
-        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddDependency" class="bb_apilink">ISteamUGC::AddDependency</a>).
-        ///         </summary>
+        /// <summary>The number of items in the collection if <b>m_eFileType</b> is <code class="bb_code bb_code_inline nohighlight">k_EWorkshopFileTypeCollection</code>, or the number of items this specific item has a dependency on (see <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddDependency" class="bb_apilink">ISteamUGC::AddDependency</a>).</summary>
         public uint unNumChildren;
     }
 }

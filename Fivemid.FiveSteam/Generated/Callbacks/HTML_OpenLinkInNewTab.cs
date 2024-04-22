@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// The browser has requested to load a url in a new tab.<br />
+    /// <summary>The browser has requested to load a url in a new tab.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_OpenLinkInNewTab : global::Unity.Entities.IComponentData
     {

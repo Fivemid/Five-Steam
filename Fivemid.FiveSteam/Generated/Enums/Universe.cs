@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Steam universes. Each universe is a self-contained Steam instance.<br />
+    /// <summary>Steam universes. Each universe is a self-contained Steam instance.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum Universe : int
     {

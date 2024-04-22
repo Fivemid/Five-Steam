@@ -3,16 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// missing documentation for ESteamNetworkingConfigDataType
+    /// <summary>
+    /// <br />
+    /// Different configuration values have different data types<br /></summary>
     public enum SteamNetworkingConfigDataType : int
     {
-        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Int32
+        /// <summary></summary>
         SteamNetworkingConfig_Int32 = 1,
-        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Int64
+        /// <summary></summary>
         SteamNetworkingConfig_Int64 = 2,
-        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Float
+        /// <summary></summary>
         SteamNetworkingConfig_Float = 3,
-        /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_String
+        /// <summary></summary>
         SteamNetworkingConfig_String = 4,
         /// missing documentation for ESteamNetworkingConfigDataType.k_ESteamNetworkingConfig_Ptr
         SteamNetworkingConfig_Ptr = 5,

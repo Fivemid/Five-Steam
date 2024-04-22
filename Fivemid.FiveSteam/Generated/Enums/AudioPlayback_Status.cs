@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Specifies the current playback status.<br />
+    /// <summary>Specifies the current playback status.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum AudioPlayback_Status : int
     {

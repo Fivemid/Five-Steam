@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// List of states a Steam friend can be in.<br />
+    /// <summary>List of states a Steam friend can be in.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum PersonaState : int
     {

@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Possible positions to have the overlay show notifications in. Used with
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#SetOverlayNotificationPosition" class="bb_apilink">ISteamUtils::SetOverlayNotificationPosition</a>.<br />
+    /// <summary>Possible positions to have the overlay show notifications in. Used with <a href="https://partner.steamgames.com/doc/api/ISteamUtils#SetOverlayNotificationPosition" class="bb_apilink">ISteamUtils::SetOverlayNotificationPosition</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum NotificationPosition : int
     {

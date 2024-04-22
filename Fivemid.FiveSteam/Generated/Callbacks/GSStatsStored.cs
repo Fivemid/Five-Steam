@@ -3,14 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Result of a request to store the user stats.<br />
+    /// <summary>Result of a request to store the user stats.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats#StoreUserStats" class="bb_apilink">ISteamGameServerStats::StoreUserStats</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats#StoreUserStats" class="bb_apilink">ISteamGameServerStats::StoreUserStats</a></summary>
     public unsafe struct GSStatsStored : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSStatsStored;

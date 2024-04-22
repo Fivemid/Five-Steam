@@ -3,9 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Used to set the authentication and VAC status of a game server when initializing with
-    /// <a href="#SteamGameServer_Init" class="bb_apilink">SteamGameServer_Init</a>.<br />
+    /// <summary>Used to set the authentication and VAC status of a game server when initializing with <a href="#SteamGameServer_Init" class="bb_apilink">SteamGameServer_Init</a>.<br />
     /// <br />
     /// 
     /// </summary>

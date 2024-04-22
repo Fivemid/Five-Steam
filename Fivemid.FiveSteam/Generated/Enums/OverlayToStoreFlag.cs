@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// These values are passed as parameters to the store with
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ActivateGameOverlayToStore" class="bb_apilink">ISteamFriends::ActivateGameOverlayToStore</a>
-    /// and modify the behavior when the page opens.<br />
+    /// <summary>These values are passed as parameters to the store with <a href="https://partner.steamgames.com/doc/api/ISteamFriends#ActivateGameOverlayToStore" class="bb_apilink">ISteamFriends::ActivateGameOverlayToStore</a> and modify the behavior when the page opens.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum OverlayToStoreFlag : int
     {

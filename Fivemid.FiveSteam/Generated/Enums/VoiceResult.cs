@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Results for use with the
-    /// <a href="https://partner.steamgames.com/doc/features/voice" class="bb_doclink">Steam Voice</a>
-    /// functions.<br />
+    /// <summary>Results for use with the <a href="https://partner.steamgames.com/doc/features/voice" class="bb_doclink">Steam Voice</a> functions.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum VoiceResult : int
     {

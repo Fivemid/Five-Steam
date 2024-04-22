@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
+    /// <summary><br />
     /// <br />
-    /// <br />
-    /// 
     /// </summary>
     public unsafe struct MusicPlayerWantsVolume : global::Unity.Entities.IComponentData
     {

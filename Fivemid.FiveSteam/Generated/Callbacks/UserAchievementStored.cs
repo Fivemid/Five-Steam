@@ -3,18 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Result of a request to store the achievements on the server, or an "indicate progress" call. If both
-    /// <code class="bb_code bb_code_inline nohighlight">m_nCurProgress</code> and
-    /// <code class="bb_code bb_code_inline nohighlight">m_nMaxProgress</code> are zero, that means the
-    /// achievement has been fully unlocked.<br />
+    /// <summary>Result of a request to store the achievements on the server, or an "indicate progress" call. If both <code class="bb_code bb_code_inline nohighlight">m_nCurProgress</code> and <code class="bb_code bb_code_inline nohighlight">m_nMaxProgress</code> are zero, that means the achievement has been fully unlocked.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#StoreStats" class="bb_apilink">ISteamUserStats::StoreStats</a>,
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#IndicateAchievementProgress" class="bb_apilink">ISteamUserStats::IndicateAchievementProgress</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#StoreStats" class="bb_apilink">ISteamUserStats::StoreStats</a>, <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#IndicateAchievementProgress" class="bb_apilink">ISteamUserStats::IndicateAchievementProgress</a></summary>
     public unsafe struct UserAchievementStored : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementStored;

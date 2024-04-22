@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a a browser wants to hide a tooltip.<br />
+    /// <summary>Called when a a browser wants to hide a tooltip.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_HideToolTip : global::Unity.Entities.IComponentData
     {

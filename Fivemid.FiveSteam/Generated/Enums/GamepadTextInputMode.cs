@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Input modes for the Big Picture gamepad text entry<br />
+    /// <summary>Input modes for the Big Picture gamepad text entry<br />
     /// <br />
-    /// 
     /// </summary>
     public enum GamepadTextInputMode : int
     {

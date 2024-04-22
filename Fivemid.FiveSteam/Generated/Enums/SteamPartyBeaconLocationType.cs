@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Types of locations where beacons can be posted.<br />
+    /// <summary>Types of locations where beacons can be posted.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum SteamPartyBeaconLocationType : int
     {

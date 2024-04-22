@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Steam account types. This is used internally in
-    /// <a href="#CSteamID" class="bb_apilink">CSteamID</a>.<br />
+    /// <summary>Steam account types. This is used internally in <a href="#CSteamID" class="bb_apilink">CSteamID</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum AccountType : int
     {

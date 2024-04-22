@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Only used internally in Steam.<br />
+    /// <summary>Only used internally in Steam.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct AppProofOfPurchaseKeyResponse : global::Unity.Entities.IComponentData
     {

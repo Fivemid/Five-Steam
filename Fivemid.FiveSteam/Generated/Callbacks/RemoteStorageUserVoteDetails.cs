@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct RemoteStorageUserVoteDetails : global::Unity.Entities.IComponentData
     {

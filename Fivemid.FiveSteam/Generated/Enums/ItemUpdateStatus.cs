@@ -3,22 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Specifies the status of a
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a>
-    /// after a call to
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetItemUpdateProgress" class="bb_apilink">ISteamUGC::GetItemUpdateProgress</a>, returned by
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetItemUpdateProgress" class="bb_apilink">ISteamUGC::GetItemUpdateProgress</a>.<br />
+    /// <summary>Specifies the status of a <a href="https://partner.steamgames.com/doc/api/ISteamUGC#UGCUpdateHandle_t" class="bb_apilink">UGCUpdateHandle_t</a> after a call to <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetItemUpdateProgress" class="bb_apilink">ISteamUGC::GetItemUpdateProgress</a>, returned by <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetItemUpdateProgress" class="bb_apilink">ISteamUGC::GetItemUpdateProgress</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ItemUpdateStatus : int
     {
-        /// <summary>
-        ///             The item update handle was invalid, the job might be finished, a
-        ///             <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SubmitItemUpdateResult_t" class="bb_apilink">SubmitItemUpdateResult_t</a>
-        ///             call result should have been returned for it.
-        ///         </summary>
+        /// <summary>The item update handle was invalid, the job might be finished, a <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SubmitItemUpdateResult_t" class="bb_apilink">SubmitItemUpdateResult_t</a> call result should have been returned for it.</summary>
         Invalid = 0,
         /// <summary>The item update is processing configuration data.</summary>
         PreparingConfig = 1,

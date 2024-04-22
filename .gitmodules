@@ -1,3 +1,3 @@
 [submodule "Fivemid.FiveSteam.Generator~/Data/SteamworksDocumentation"]
 	path = Fivemid.FiveSteam.Generator~/Data/SteamworksDocumentation
-	url = git@github.com:SteamDatabase/SteamworksDocumentation.git
+	url = git@github.com:Fivemid/Five-Fork-SteamworksDocumentation.git

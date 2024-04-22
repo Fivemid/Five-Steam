@@ -3,9 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// <br />
-    /// 
+    /// <summary><br />
     /// </summary>
     public unsafe struct SteamRemotePlaySessionConnected : global::Unity.Entities.IComponentData
     {

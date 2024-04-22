@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             Every individual instance of an item has a globally-unique instance ID.<br />
-    ///             This ID is unique to the combination of a player and specific item instance, and will
-    ///             not be transferred to another player or re-used for another item.
-    ///         </summary>
+    /// <summary>Every individual instance of an item has a globally-unique instance ID.<br />
+    /// This ID is unique to the combination of a player and specific item instance, and will not be transferred to another player or re-used for another item.</summary>
     public unsafe struct SteamItemInstanceID
     {
         public ulong value;

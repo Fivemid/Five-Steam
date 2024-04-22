@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Controls the mode for the floating keyboard<br />
+    /// <summary>Controls the mode for the floating keyboard<br />
     /// <br />
-    /// 
     /// </summary>
     public enum FloatingGamepadTextInputMode : int
     {

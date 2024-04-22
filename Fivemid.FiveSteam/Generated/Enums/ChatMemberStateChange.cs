@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Flags describing how a users lobby state has changed. This is provided from
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatUpdate_t" class="bb_apilink">LobbyChatUpdate_t</a>.<br />
+    /// <summary>Flags describing how a users lobby state has changed. This is provided from <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#LobbyChatUpdate_t" class="bb_apilink">LobbyChatUpdate_t</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ChatMemberStateChange : int
     {

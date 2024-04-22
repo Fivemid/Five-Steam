@@ -3,14 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetPublishedFileDetails" class="bb_apilink">ISteamRemoteStorage::GetPublishedFileDetails</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetPublishedFileDetails" class="bb_apilink">ISteamRemoteStorage::GetPublishedFileDetails</a></summary>
     public unsafe struct RemoteStorageGetPublishedFileDetailsResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageGetPublishedFileDetailsResult;

@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a browser wants to display a tooltip.<br />
+    /// <summary>Called when a browser wants to display a tooltip.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_ShowToolTip : global::Unity.Entities.IComponentData
     {

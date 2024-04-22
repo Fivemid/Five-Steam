@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// A browser has created a new HTML window.<br />
+    /// <summary>A browser has created a new HTML window.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_NewWindow : global::Unity.Entities.IComponentData
     {

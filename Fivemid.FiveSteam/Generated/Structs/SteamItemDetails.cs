@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
+    /// <summary><br />
     /// <br />
-    /// <br />
-    /// 
     /// </summary>
     public unsafe struct SteamItemDetails
     {
@@ -16,10 +14,7 @@ namespace Fivemid.FiveSteam
         public SteamItemDef iDefinition;
         /// <summary>The current quantity of the item.</summary>
         public ushort unQuantity;
-        /// <summary>
-        ///             This is a bitmasked collection of
-        ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#ESteamItemFlags" class="bb_apilink">ESteamItemFlags</a>.
-        ///         </summary>
+        /// <summary>This is a bitmasked collection of <a href="https://partner.steamgames.com/doc/api/ISteamInventory#ESteamItemFlags" class="bb_apilink">ESteamItemFlags</a>.</summary>
         public ushort unFlags;
     }
 }

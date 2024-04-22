@@ -3,12 +3,16 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// missing documentation for SteamNetworkingIPAddr
+    /// <summary><br />
+    /// Store an IP and port.<br />
+    /// <br />
+    /// IPv6 is always used; IPv4 is represented using "IPv4-mapped" addresses: IPv4 aa.bb.cc.dd =&gt; IPv6 ::ffff:aabb:ccdd.  (See <a href="https://tools.ietf.org/html/rfc4291#section-2.5.5.2" target="_blank" rel="noreferrer">RFC 4291</a> section 2.5.5.2.)<br />
+    /// </summary>
     public unsafe struct SteamNetworkingIPAddr
     {
-        /// missing documentation for SteamNetworkingIPAddr.m_ipv6
+        /// <summary></summary>
         public FixedArray_byte16 ipv6;
-        /// missing documentation for SteamNetworkingIPAddr.m_port
+        /// <summary>Host byte order</summary>
         public ushort port;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_Clear", CallingConvention = Platform.CC)]
         internal static extern void Clear(SteamNetworkingIPAddr* self);

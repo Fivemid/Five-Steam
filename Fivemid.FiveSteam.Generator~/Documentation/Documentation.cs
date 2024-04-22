@@ -3,7 +3,7 @@ using HtmlAgilityPack;
 
 namespace Fivemid.FiveSteam.Generator;
 
-public class Documentation {
+public partial class Documentation {
     private static HashSet<string> exclude = [];
     
     public static readonly Documentation VALUE =
@@ -19,7 +19,10 @@ public class Documentation {
     
     private void Parse(string file) {
         HtmlDocument doc = new();
-        doc.Load(file);
+        doc.OptionWriteEmptyNodes = true;
+        doc.OptionFixNestedTags   = true;
+        doc.LoadHtml(File.ReadAllText(file).Replace("<br>", "<br />"));
+        FixHtml(doc);
         
         Interface @interface = ParseInterface(doc);
         interfaces.Add(@interface.Name, @interface);
@@ -29,7 +32,7 @@ public class Documentation {
         return;
         
         void AddObject(Object @object, string path) {
-            objects.TryAdd(path, @object);
+            objects[path] = @object;
             foreach (Object child in @object.Children)
                 AddObject(child, $"{path}.{child.Name}");
         }
@@ -61,6 +64,12 @@ public class Documentation {
             (doc.DocumentNode.SelectNodes("""/table""")?.ToArray() ?? [])
            .Where(t => !usedTables.Contains(t))
            .SelectMany(ParseTable)
+           .Concat(
+                (doc.DocumentNode.SelectNodes("""/div[contains(@class, "bb_code")]""")?.ToArray() ?? [])
+               .Select(ParseCodeDefinition)
+               .Where(c => c != null)
+               .OfType<Object>()
+            )
            .ToArray();
         
         return new Interface(name, description, objects.Concat(looseObjects).ToArray());
@@ -69,7 +78,11 @@ public class Documentation {
     private readonly HashSet<HtmlNode> usedTables = [];
     
     private Object ParseSubsection(HtmlNode node) {
-        string name = node.InnerText.Trim();
+        string name = node.InnerText
+                          .Trim()
+                          .StripPrefix("struct ")
+                          .StripPrefix("enum ")
+                          .Trim();
         
         List<HtmlNode> descriptionNodes = [];
         HtmlNode?      childrenNode     = null;
@@ -150,24 +163,30 @@ public class Documentation {
     private string FormatDescription(IEnumerable<HtmlNode> nodes) {
         StringBuilder builder = new();
         foreach (HtmlNode node in nodes) {
-            HtmlNode n = node;
-            if (n.Name.Equals("strong")) {
-                n      = n.Clone();
-                n.Name = "b";
-            }
+            HtmlNode n = node.Clone();
+            FormatNode(n);
             
-            if (n.Name.Equals("div")) {
-                if (n.HasClass("bb_code")) {
-                    n = n.Clone();
-                    n.RemoveClass();
-                    n.Name = "code";
-                }
-            }
-            
-            builder.Append(n.OuterHtml.Replace("<br>", "<br />"));
+            builder.Append(n.OuterHtml);
         }
         
         return builder.ToString();
+        
+        void FormatNode(HtmlNode node) {
+            if (node.Name.Equals("strong")) {
+                node.Name = "b";
+            }
+            
+            if (node.Name.Equals("div")) {
+                if (node.HasClass("bb_code")) {
+                    node.RemoveClass();
+                    node.Name = "code";
+                }
+            }
+            
+            foreach (HtmlNode child in node.ChildNodes) {
+                FormatNode(child);
+            }
+        }
     }
     
     private Dictionary<string, Interface> interfaces = [];

@@ -6,10 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Functions which provide access to the game server browser.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/multiplayer/game_servers" class="bb_doclink">Game Servers</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/multiplayer/game_servers" class="bb_doclink">Game Servers</a> for more information.</summary>
     public unsafe interface ISteamMatchmakingServers
     {
         public HServerListRequest RequestInternetServerList(AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);

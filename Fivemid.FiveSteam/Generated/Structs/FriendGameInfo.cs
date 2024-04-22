@@ -3,12 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Information about the game a friend is playing.<br />
-    /// Obtainable from:
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendGamePlayed" class="bb_apilink">ISteamFriends::GetFriendGamePlayed</a>.<br />
+    /// <summary>Information about the game a friend is playing.<br />
+    /// Obtainable from: <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendGamePlayed" class="bb_apilink">ISteamFriends::GetFriendGamePlayed</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct FriendGameInfo
     {

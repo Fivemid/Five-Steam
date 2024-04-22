@@ -6,13 +6,9 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Functions to control music playback in the steam client.<br />
     /// <br />
-    /// This gives games the opportunity to do things like pause the music or lower the volume, when an
-    /// important cut scene is shown, and start playing afterwards.<br />
+    /// This gives games the opportunity to do things like pause the music or lower the volume, when an important cut scene is shown, and start playing afterwards.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/music_player" class="bb_doclink">features/music_player</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/music_player" class="bb_doclink">features/music_player</a> for more information.</summary>
     public unsafe interface ISteamMusic
     {
         public bool BIsEnabled();

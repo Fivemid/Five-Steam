@@ -4,13 +4,9 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>
-    /// Functions that provide information about Steam Remote Play sessions, streaming your game content to
-    /// another computer or to a Steam Link app or hardware.<br />
+    /// Functions that provide information about Steam Remote Play sessions, streaming your game content to another computer or to a Steam Link app or hardware.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/remoteplay" class="bb_doclink">Steam Remote Play</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/remoteplay" class="bb_doclink">Steam Remote Play</a> for more information.</summary>
     public unsafe interface ISteamRemotePlay
     {
         public uint GetSessionCount();

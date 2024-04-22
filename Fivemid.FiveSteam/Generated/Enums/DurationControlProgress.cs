@@ -3,16 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Describes playtime restrictions that apply for games with duration control / anti-indulgence enabled
-    /// for minor Steam China users.<br />
+    /// <summary>Describes playtime restrictions that apply for games with duration control / anti-indulgence enabled for minor Steam China users.<br />
     /// <br />
-    /// 
     /// <br />
     /// <b>Associated Functions:</b><br />
     /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetDurationControl" class="bb_apilink">ISteamUser::GetDurationControl</a><br />
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#BSetDurationControlOnlineState" class="bb_apilink">ISteamUser::BSetDurationControlOnlineState</a>
-    /// </summary>
+    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#BSetDurationControlOnlineState" class="bb_apilink">ISteamUser::BSetDurationControlOnlineState</a></summary>
     public enum DurationControlProgress : int
     {
         /// <summary>Normal play</summary>

@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a SteamAPICall_t has completed (or failed)<br />
+    /// <summary>Called when a SteamAPICall_t has completed (or failed)<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct SteamAPICallCompleted : global::Unity.Entities.IComponentData
     {

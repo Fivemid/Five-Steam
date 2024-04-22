@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Declares the set of relationships that Steam users may have.<br />
+    /// <summary>Declares the set of relationships that Steam users may have.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum FriendRelationship : int
     {
@@ -20,10 +18,7 @@ namespace Fivemid.FiveSteam
         Friend = 3,
         /// <summary>The current user has sent a friend invite.</summary>
         RequestInitiator = 4,
-        /// <summary>
-        ///             The current user has explicit blocked this other user from comments/chat/etc. This is
-        ///             stored.
-        ///         </summary>
+        /// <summary>The current user has explicit blocked this other user from comments/chat/etc. This is stored.</summary>
         Ignored = 5,
         /// <summary>The user has ignored the current user.</summary>
         IgnoredFriend = 6,

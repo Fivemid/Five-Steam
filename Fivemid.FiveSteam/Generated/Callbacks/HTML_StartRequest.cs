@@ -3,21 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a browser wants to navigate to a new page.
-    /// <div class="bb_callout bb_red bb_fixed">
-    ///     <div>
-    ///         <strong>NOTE:</strong> You MUST call
-    ///         <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#AllowStartRequest" class="bb_apilink">ISteamHTMLSurface::AllowStartRequest</a>
-    ///         in response to this callback!
-    ///     </div>
-    /// </div>
+    /// <summary>Called when a browser wants to navigate to a new page.<div class="bb_callout bb_red bb_fixed"><div><b>NOTE:</b> You MUST call <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#AllowStartRequest" class="bb_apilink">ISteamHTMLSurface::AllowStartRequest</a> in response to this callback!</div></div><br />
     /// <br />
-    /// 
-    /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#LoadURL" class="bb_apilink">ISteamHTMLSurface::LoadURL</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#LoadURL" class="bb_apilink">ISteamHTMLSurface::LoadURL</a></summary>
     public unsafe struct HTML_StartRequest : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_StartRequest;

@@ -6,10 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Steam Inventory query and manipulation API.<br />
     /// <br />
-    /// See
-    /// <a href="https://partner.steamgames.com/doc/features/inventory" class="bb_doclink">Steam Inventory Service</a>
-    /// for more information.
-    /// </summary>
+    /// See <a href="https://partner.steamgames.com/doc/features/inventory" class="bb_doclink">Steam Inventory Service</a> for more information.</summary>
     public unsafe interface ISteamInventory
     {
         public Result GetResultStatus(SteamInventoryResult resultHandle);

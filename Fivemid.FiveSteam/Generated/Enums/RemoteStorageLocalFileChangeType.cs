@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Ways in which a local file may be changed by Steam during the application session. See
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetLocalFileChange" class="bb_apilink">ISteamRemoteStorage::GetLocalFileChange</a>.<br />
+    /// <summary>Ways in which a local file may be changed by Steam during the application session. See <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetLocalFileChange" class="bb_apilink">ISteamRemoteStorage::GetLocalFileChange</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum RemoteStorageLocalFileChangeType : int
     {

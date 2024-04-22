@@ -3,13 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Result values when a client failed to join or has been kicked from a game server. Obtained from
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientDeny_t" class="bb_apilink">GSClientDeny_t</a>
-    /// and
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientKick_t" class="bb_apilink">GSClientKick_t</a>.<br />
+    /// <summary>Result values when a client failed to join or has been kicked from a game server. Obtained from <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientDeny_t" class="bb_apilink">GSClientDeny_t</a> and <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GSClientKick_t" class="bb_apilink">GSClientKick_t</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum DenyReason : int
     {

@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Posted when the
-    /// <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a>
-    /// activates or deactivates. The game can use this to pause or resume single player games.<br />
+    /// <summary>Posted when the <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a> activates or deactivates. The game can use this to pause or resume single player games.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct GameOverlayActivated : global::Unity.Entities.IComponentData
     {

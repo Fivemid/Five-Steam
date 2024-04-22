@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Sync Platforms flags. These can be used with
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SetSyncPlatforms" class="bb_apilink">ISteamRemoteStorage::SetSyncPlatforms</a>
-    /// to restrict a file to a specific OS.<br />
+    /// <summary>Sync Platforms flags. These can be used with <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#SetSyncPlatforms" class="bb_apilink">ISteamRemoteStorage::SetSyncPlatforms</a> to restrict a file to a specific OS.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum RemoteStoragePlatform : int
     {

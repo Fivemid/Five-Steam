@@ -3,16 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Chat Entry Types.<br />
+    /// <summary>Chat Entry Types.<br />
     /// <br />
-    /// Returned by
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendMessage" class="bb_apilink">ISteamFriends::GetFriendMessage</a>,
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetClanChatMessage" class="bb_apilink">ISteamFriends::GetClanChatMessage</a>
-    /// and
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyChatEntry" class="bb_apilink">ISteamMatchmaking::GetLobbyChatEntry</a>.<br />
+    /// Returned by <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendMessage" class="bb_apilink">ISteamFriends::GetFriendMessage</a>, <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetClanChatMessage" class="bb_apilink">ISteamFriends::GetClanChatMessage</a> and <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#GetLobbyChatEntry" class="bb_apilink">ISteamMatchmaking::GetLobbyChatEntry</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ChatEntryType : int
     {

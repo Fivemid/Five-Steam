@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a browser wants you to display an informational message. This is most commonly used when
-    /// you hover over links.<br />
+    /// <summary>Called when a browser wants you to display an informational message. This is most commonly used when you hover over links.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_StatusText : global::Unity.Entities.IComponentData
     {

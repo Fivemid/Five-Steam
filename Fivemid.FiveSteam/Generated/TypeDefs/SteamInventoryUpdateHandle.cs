@@ -3,11 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             Returned from the call
-    ///             <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>, which starts a transaction request to modify dynamic properties on items for the
-    ///             current user.
-    ///         </summary>
+    /// <summary>Returned from the call <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>, which starts a transaction request to modify dynamic properties on items for the current user.</summary>
     public unsafe struct SteamInventoryUpdateHandle
     {
         public ulong value;

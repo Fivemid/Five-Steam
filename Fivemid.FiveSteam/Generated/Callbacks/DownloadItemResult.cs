@@ -3,17 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when a workshop item has been downloaded.<br />
+    /// <summary>Called when a workshop item has been downloaded.<br />
     /// <br />
-    /// <b>NOTE:</b> This callback goes out to all running applications, ensure that the app ID
-    /// associated with the item matches what you expect.<br />
+    /// <b>NOTE:</b> This callback goes out to all running applications, ensure that the app ID associated with the item matches what you expect.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItem" class="bb_apilink">ISteamUGC::DownloadItem</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItem" class="bb_apilink">ISteamUGC::DownloadItem</a></summary>
     public unsafe struct DownloadItemResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.DownloadItemResult;

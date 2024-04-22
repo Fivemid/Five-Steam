@@ -4,8 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>
-    /// A small and easy to use HTTP client to send and receive data from the web.
-    /// </summary>
+    /// A small and easy to use HTTP client to send and receive data from the web.</summary>
     public unsafe interface ISteamHTTP
     {
         public HTTPRequestHandle CreateHTTPRequest(HTTPMethod eHTTPRequestMethod, UTF8StringPtr pchAbsoluteURL);

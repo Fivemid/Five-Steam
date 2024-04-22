@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Used to retrieve item statistics with
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCStatistic" class="bb_apilink">ISteamUGC::GetQueryUGCStatistic</a>.<br />
+    /// <summary>Used to retrieve item statistics with <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCStatistic" class="bb_apilink">ISteamUGC::GetQueryUGCStatistic</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum ItemStatistic : int
     {

@@ -3,15 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Used to set the HTTP request method in
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#CreateHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::CreateHTTPRequest" target="_blank" rel="noreferrer">HTTP::CreateHTTPRequest</a>. For
-    /// the most part you should only ever need GET or POST.<br />
+    /// <summary>Used to set the HTTP request method in <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#CreateHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::CreateHTTPRequest" target="_blank" rel="noreferrer">HTTP::CreateHTTPRequest</a>. For the most part you should only ever need GET or POST.<br />
     /// <br />
-    /// You can read more about HTTP request methods on the
-    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank" rel="noreferrer">Mozilla Developer Network</a>.<br />
+    /// You can read more about HTTP request methods on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank" rel="noreferrer">Mozilla Developer Network</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum HTTPMethod : int
     {

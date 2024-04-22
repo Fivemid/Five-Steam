@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// User restriction flags. These are returned by
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetUserRestrictions" class="bb_apilink">ISteamFriends::GetUserRestrictions</a>.<br />
+    /// <summary>User restriction flags. These are returned by <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetUserRestrictions" class="bb_apilink">ISteamFriends::GetUserRestrictions</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum UserRestriction : int
     {

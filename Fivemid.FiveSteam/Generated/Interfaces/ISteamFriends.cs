@@ -4,9 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>
-    /// Interface to access information about individual users and interact with the
-    /// <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a>.
-    /// </summary>
+    /// Interface to access information about individual users and interact with the <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a>.</summary>
     public unsafe interface ISteamFriends
     {
         public UTF8StringPtr GetPersonaName();

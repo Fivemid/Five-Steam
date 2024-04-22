@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// The result of a call to
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#CheckFileSignature" class="bb_apilink">ISteamUtils::CheckFileSignature</a><br />
+    /// <summary>The result of a call to <a href="https://partner.steamgames.com/doc/api/ISteamUtils#CheckFileSignature" class="bb_apilink">ISteamUtils::CheckFileSignature</a><br />
     /// <br />
-    /// 
     /// </summary>
     public enum CheckFileSignatureType : int
     {

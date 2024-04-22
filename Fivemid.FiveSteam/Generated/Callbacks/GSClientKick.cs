@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when the game server should kick the user.<br />
+    /// <summary>Called when the game server should kick the user.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct GSClientKick : global::Unity.Entities.IComponentData
     {

@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Use
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats" class="bb_apilink">ISteamGameServerStats</a>
-    /// instead.<br />
+    /// <summary>Deprecated - Use <a href="https://partner.steamgames.com/doc/api/ISteamGameServerStats" class="bb_apilink">ISteamGameServerStats</a> instead.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct GSClientAchievementStatus : global::Unity.Entities.IComponentData
     {

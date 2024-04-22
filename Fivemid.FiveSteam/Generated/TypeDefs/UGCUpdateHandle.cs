@@ -3,10 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             A unique handle to a single item update. This is used when uploading or updating an item
-    ///             on the workshop.
-    ///         </summary>
+    /// <summary>A unique handle to a single item update. This is used when uploading or updating an item on the workshop.</summary>
     public unsafe struct UGCUpdateHandle
     {
         public ulong value;

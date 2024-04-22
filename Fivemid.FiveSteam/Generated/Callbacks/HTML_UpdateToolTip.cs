@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when the text of an existing tooltip has been updated.<br />
+    /// <summary>Called when the text of an existing tooltip has been updated.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_UpdateToolTip : global::Unity.Entities.IComponentData
     {

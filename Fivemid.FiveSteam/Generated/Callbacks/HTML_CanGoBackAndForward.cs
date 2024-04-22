@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Called when page history status has changed the ability to go backwards and forward.<br />
+    /// <summary>Called when page history status has changed the ability to go backwards and forward.<br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct HTML_CanGoBackAndForward : global::Unity.Entities.IComponentData
     {

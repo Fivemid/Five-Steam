@@ -3,14 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// missing documentation for SteamNetworkingConfigValue_t
+    /// <summary>
+    /// <br />, where the scope arguments are supplied by the object being created.<a href="https://partner.steamgames.com/doc/api/ISteamNetworkingUtils#SetConfigValueStruct" class="bb_apilink">ISteamNetworkingUtils::SetConfigValueStruct</a>.  Basically when the object is created, we just iterate over the list of options and call <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingUtils#SetConfigValue" class="bb_apilink">ISteamNetworkingUtils::SetConfigValue</a>
+    /// For the meaning of these fields, see <br />
+    /// <br /> the listen socket or connection really starts doing anything.  Creating the object and then setting the options "immediately" after creation doesn't work completely, because network packets could be received between the time the object is created and when the options are applied.  To set options at creation time in a reliable way, they must be passed to the creation function.  This structure is used to pass those options.<i>before</i>
+    /// In a few places we need to set configuration options on listen sockets and connections, and have them take effect <br /></summary>
     public unsafe struct SteamNetworkingConfigValue
     {
-        /// missing documentation for SteamNetworkingConfigValue_t.m_eValue
+        /// <summary>Which option is being set</summary>
         public SteamNetworkingConfigValueType eValue;
-        /// missing documentation for SteamNetworkingConfigValue_t.m_eDataType
+        /// <summary>Which field below did you fill in?</summary>
         public SteamNetworkingConfigDataType eDataType;
-        /// missing documentation for SteamNetworkingConfigValue_t.m_int64
+        /// <summary></summary>
         public long int64;
         [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt32", CallingConvention = Platform.CC)]
         internal static extern void SetInt32(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, int data);

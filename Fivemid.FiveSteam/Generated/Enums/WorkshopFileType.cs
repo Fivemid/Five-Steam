@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// The way that a shared file will be shared with the community.<br />
+    /// <summary>The way that a shared file will be shared with the community.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum WorkshopFileType : int
     {
@@ -14,10 +12,7 @@ namespace Fivemid.FiveSteam
         First = 0,
         /// <summary>Normal Workshop item that can be subscribed to.</summary>
         Community = 0,
-        /// <summary>
-        ///             Workshop item that is meant to be voted on for the purpose of selling in-game. (See:
-        ///             <a href="https://partner.steamgames.com/doc/features/workshop#curated_workshop" class="bb_doclink">Curated Workshop</a>)
-        ///         </summary>
+        /// <summary>Workshop item that is meant to be voted on for the purpose of selling in-game. (See: <a href="https://partner.steamgames.com/doc/features/workshop#curated_workshop" class="bb_doclink">Curated Workshop</a>)</summary>
         Microtransaction = 1,
         /// <summary>A collection of Workshop items.</summary>
         Collection = 2,

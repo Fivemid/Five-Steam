@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Result of
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUser#UserHasLicenseForApp" class="bb_apilink">ISteamUser::UserHasLicenseForApp</a>.<br />
+    /// <summary>Result of <a href="https://partner.steamgames.com/doc/api/ISteamUser#UserHasLicenseForApp" class="bb_apilink">ISteamUser::UserHasLicenseForApp</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum UserHasLicenseForAppResult : int
     {

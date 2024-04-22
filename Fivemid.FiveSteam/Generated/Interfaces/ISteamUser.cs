@@ -6,10 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>
     /// Functions for accessing and manipulating Steam user information.<br />
     /// <br />
-    /// This is also where the APIs for
-    /// <a href="https://partner.steamgames.com/doc/features/voice" class="bb_doclink">Steam Voice</a> are
-    /// exposed.
-    /// </summary>
+    /// This is also where the APIs for <a href="https://partner.steamgames.com/doc/features/voice" class="bb_doclink">Steam Voice</a> are exposed.</summary>
     public unsafe interface ISteamUser
     {
         public HSteamUser GetHSteamUser();

@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Parameter to
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamUtils#FilterText" class="bb_apilink">ISteamUtils::FilterText</a>.<br />
+    /// <summary>Parameter to <a href="https://partner.steamgames.com/doc/api/ISteamUtils#FilterText" class="bb_apilink">ISteamUtils::FilterText</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum TextFilteringContext : int
     {

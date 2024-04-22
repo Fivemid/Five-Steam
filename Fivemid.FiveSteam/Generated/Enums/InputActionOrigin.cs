@@ -3,12 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Inputs the player binds to actions in the Steam Input Configurator. The chief purpose of these
-    /// values is to direct which on-screen button glyphs should appear for a given action, such as "Press
-    /// [A] to Jump".<br />
+    /// <summary>Inputs the player binds to actions in the Steam Input Configurator. The chief purpose of these values is to direct which on-screen button glyphs should appear for a given action, such as "Press [A] to Jump".<br />
     /// <br />
-    /// 
     /// </summary>
     public enum InputActionOrigin : int
     {
@@ -212,20 +208,11 @@ namespace Fivemid.FiveSteam
         PS4_DPad_East = 98,
         /// <summary>(Sony Dualshock 4) gyroscope, analog movement in any axis</summary>
         PS4_Gyro_Move = 99,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Pitch axis (point head up to
-        ///             ceiling, point head down to floor)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Pitch axis (point head up to ceiling, point head down to floor)</summary>
         PS4_Gyro_Pitch = 100,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Yaw axis (turn head left to face
-        ///             one wall, turn head right to face other)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Yaw axis (turn head left to face one wall, turn head right to face other)</summary>
         PS4_Gyro_Yaw = 101,
-        /// <summary>
-        ///             (Sony Dualshock 4) gyroscope, analog movement on the Roll axis (tilt head left towards
-        ///             shoulder, tilt head right towards other shoulder)
-        ///         </summary>
+        /// <summary>(Sony Dualshock 4) gyroscope, analog movement on the Roll axis (tilt head left towards shoulder, tilt head right towards other shoulder)</summary>
         PS4_Gyro_Roll = 102,
         /// missing documentation for EInputActionOrigin.k_EInputActionOrigin_PS4_DPad_Move
         PS4_DPad_Move = 103,

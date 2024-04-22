@@ -3,20 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// HTTP response status codes that the server can send in response to a request.<br />
+    /// <summary>HTTP response status codes that the server can send in response to a request.<br />
     /// <br />
-    /// See the
-    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" rel="noreferrer">Mozilla Developer Network</a>
-    /// or RFC2616 section 10.3 for detailed descriptions for each of these.<br />
+    /// See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" rel="noreferrer">Mozilla Developer Network</a> or RFC2616 section 10.3 for detailed descriptions for each of these.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum HTTPStatusCode : int
     {
-        /// <summary>
-        ///             Invalid status code. This isn't defined in HTTP, used to indicate unset in our code.
-        ///         </summary>
+        /// <summary>Invalid status code. This isn't defined in HTTP, used to indicate unset in our code.</summary>
         Invalid = 0,
         /// <summary></summary>
         _100Continue = 100,
@@ -54,10 +48,7 @@ namespace Fivemid.FiveSteam
         _308PermanentRedirect = 308,
         /// <summary></summary>
         _400BadRequest = 400,
-        /// <summary>
-        ///             You probably want 403 or something else. 401 implies you're sending a WWW-Authenticate
-        ///             header and the client can sent an Authorization header in response.
-        ///         </summary>
+        /// <summary>You probably want 403 or something else. 401 implies you're sending a WWW-Authenticate header and the client can sent an Authorization header in response.</summary>
         _401Unauthorized = 401,
         /// <summary>This is reserved for future HTTP specs, not really supported by clients.</summary>
         _402PaymentRequired = 402,

@@ -3,15 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Called when gameplay stats info has been queried using
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GetGameplayStats" class="bb_apilink">ISteamGameServer::GetGameplayStats</a>.<br />
+    /// <summary>Deprecated - Called when gameplay stats info has been queried using <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GetGameplayStats" class="bb_apilink">ISteamGameServer::GetGameplayStats</a>.<br />
     /// <br />
-    /// 
     /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GetGameplayStats" class="bb_apilink">ISteamGameServer::GetGameplayStats</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GetGameplayStats" class="bb_apilink">ISteamGameServer::GetGameplayStats</a></summary>
     public unsafe struct GSGameplayStats : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSGameplayStats;

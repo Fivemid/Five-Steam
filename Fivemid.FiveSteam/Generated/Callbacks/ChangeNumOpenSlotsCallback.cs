@@ -3,11 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Call result for
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamParties#ChangeNumOpenSlots" class="bb_apilink">ISteamParties::ChangeNumOpenSlots</a>. <br />
+    /// <summary>Call result for <a href="https://partner.steamgames.com/doc/api/ISteamParties#ChangeNumOpenSlots" class="bb_apilink">ISteamParties::ChangeNumOpenSlots</a>. <br />
     /// <br />
-    /// 
     /// </summary>
     public unsafe struct ChangeNumOpenSlotsCallback : global::Unity.Entities.IComponentData
     {

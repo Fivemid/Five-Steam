@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
+    /// <summary><br />
     /// <br />
-    /// <br />
-    /// 
     /// </summary>
     public unsafe struct MusicPlayerWantsLooped : global::Unity.Entities.IComponentData
     {

@@ -3,13 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Properties on a Steam Community profile item. See
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyString" class="bb_apilink">ISteamFriends::GetProfileItemPropertyString</a>
-    /// and
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyUint" class="bb_apilink">ISteamFriends::GetProfileItemPropertyUint</a>.<br />
+    /// <summary>Properties on a Steam Community profile item.  See <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyString" class="bb_apilink">ISteamFriends::GetProfileItemPropertyString</a> and <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetProfileItemPropertyUint" class="bb_apilink">ISteamFriends::GetProfileItemPropertyUint</a>.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum CommunityProfileItemProperty : int
     {

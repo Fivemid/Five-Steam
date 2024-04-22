@@ -3,10 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// missing documentation for SteamNetworkingIdentity
+    /// <summary><br />
+    /// An abstract way to represent the identity of a network host.<br />
+    /// <br />
+    /// </summary>
     public unsafe struct SteamNetworkingIdentity
     {
-        /// missing documentation for SteamNetworkingIdentity.m_eType
+        /// <summary>Type of identity.</summary>
         public SteamNetworkingIdentityType eType;
         /// missing documentation for SteamNetworkingIdentity.m_cbSize
         public int cbSize;

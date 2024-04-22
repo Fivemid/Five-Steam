@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    ///             These handles are used to refer to a specific in-game action or action set<br />
-    ///             All action handles should be queried during initialization for performance reasons
-    ///         </summary>
+    /// <summary>These handles are used to refer to a specific in-game action or action set<br />
+    /// All action handles should be queried during initialization for performance reasons</summary>
     public unsafe struct ControllerActionSetHandle
     {
         public ulong value;

@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
-    /// Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
+    /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
     /// <br />
-    /// 
     /// </summary>
     public enum WorkshopVideoProvider : int
     {

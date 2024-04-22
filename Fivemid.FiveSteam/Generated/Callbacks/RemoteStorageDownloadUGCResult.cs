@@ -3,14 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    /// <summary>
+    /// <summary><br />
     /// <br />
-    /// 
-    /// <br />
-    /// <b>Associated Functions:</b>
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownload" class="bb_apilink">ISteamRemoteStorage::UGCDownload</a>,
-    /// <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownloadToLocation" class="bb_apilink">ISteamRemoteStorage::UGCDownloadToLocation</a>
-    /// </summary>
+    /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownload" class="bb_apilink">ISteamRemoteStorage::UGCDownload</a>, <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCDownloadToLocation" class="bb_apilink">ISteamRemoteStorage::UGCDownloadToLocation</a></summary>
     public unsafe struct RemoteStorageDownloadUGCResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageDownloadUGCResult;
