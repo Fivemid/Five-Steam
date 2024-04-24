@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for HSteamNetPollGroup
-    public unsafe struct HSteamNetPollGroup
+    public unsafe struct HSteamNetPollGroup : IEquatable<HSteamNetPollGroup>, IComparable<HSteamNetPollGroup>
     {
         public uint value;
         public static implicit operator HSteamNetPollGroup(uint value) => new()

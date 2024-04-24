@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A handle to an asyncronous inventory result.</summary>
-    public unsafe struct SteamInventoryResult
+    public unsafe struct SteamInventoryResult : IEquatable<SteamInventoryResult>, IComparable<SteamInventoryResult>
     {
         public int value;
         public static implicit operator SteamInventoryResult(int value) => new()

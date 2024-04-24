@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.</summary>
-    public unsafe struct PublishedFileUpdateHandle
+    public unsafe struct PublishedFileUpdateHandle : IEquatable<PublishedFileUpdateHandle>, IComparable<PublishedFileUpdateHandle>
     {
         public ulong value;
         public static implicit operator PublishedFileUpdateHandle(ulong value) => new()

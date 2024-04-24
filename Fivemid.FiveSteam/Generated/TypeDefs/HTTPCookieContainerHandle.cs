@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary></summary>
-    public unsafe struct HTTPCookieContainerHandle
+    public unsafe struct HTTPCookieContainerHandle : IEquatable<HTTPCookieContainerHandle>, IComparable<HTTPCookieContainerHandle>
     {
         public uint value;
         public static implicit operator HTTPCookieContainerHandle(uint value) => new()

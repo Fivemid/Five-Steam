@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>CreateListenSocket()</summary>
-    public unsafe struct SNetListenSocket
+    public unsafe struct SNetListenSocket : IEquatable<SNetListenSocket>, IComparable<SNetListenSocket>
     {
         public uint value;
         public static implicit operator SNetListenSocket(uint value) => new()

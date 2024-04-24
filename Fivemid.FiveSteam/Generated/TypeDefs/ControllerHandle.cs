@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>This handle will consistently identify a controller, even if it is disconnected and re-connected</summary>
-    public unsafe struct ControllerHandle
+    public unsafe struct ControllerHandle : IEquatable<ControllerHandle>, IComparable<ControllerHandle>
     {
         public ulong value;
         public static implicit operator ControllerHandle(ulong value) => new()

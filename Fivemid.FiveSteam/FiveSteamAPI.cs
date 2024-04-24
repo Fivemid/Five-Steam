@@ -1,10 +1,16 @@
 ﻿using System;
+using Unity.Burst;
 
 namespace Fivemid.FiveSteam {
     public static partial class FiveSteamAPI {
         private static bool initialized;
         
-        public static AppId AppId { get; private set; }
+        private static readonly SharedStatic<AppId> appIdData = SharedStatic<AppId>.GetOrCreate<AppIdContext>();
+        
+        public static AppId AppId {
+            get => appIdData.Data;
+            private set => appIdData.Data = value;
+        }
         
         public static unsafe void Init(AppId appId) {
             if (initialized)
@@ -30,5 +36,7 @@ namespace Fivemid.FiveSteam {
             SteamAPI.Shutdown();
             initialized = false;
         }
+        
+        private struct AppIdContext { }
     }
 }

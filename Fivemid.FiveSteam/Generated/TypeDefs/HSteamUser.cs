@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle to single instance of a steam user.</summary>
-    public unsafe struct HSteamUser
+    public unsafe struct HSteamUser : IEquatable<HSteamUser>, IComparable<HSteamUser>
     {
         public int value;
         public static implicit operator HSteamUser(int value) => new()

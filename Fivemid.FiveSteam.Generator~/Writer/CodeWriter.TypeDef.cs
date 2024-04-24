@@ -10,24 +10,30 @@ public partial class CodeWriter {
         foreach (SteamApiDefinition.TypeDef definition in definitions.Where(d => !d.Name.IsPrimitive()))
             Register(definition);
     }
-
+    
     private void Register(SteamApiDefinition.TypeDef definition) =>
         Convert.RegisterType(definition.Name, TypeDefName(definition.Name));
-
+    
     private BaseTypeDeclarationSyntax[] TypeDefs(IEnumerable<SteamApiDefinition.TypeDef> definitions) =>
         definitions.Where(d => !d.Name.IsPrimitive()).Select(TypeDef).ToArray();
-
+    
     private BaseTypeDeclarationSyntax TypeDef(SteamApiDefinition.TypeDef definition) {
         IdentifierNameSyntax name      = TypeDefName(definition.Name);
         TypeSyntax           valueType = definition.Type.ToType();
-
+        
         Convert.RegisterTypeDef(name, valueType);
         bool equatable = !valueType.ToString().StartsWith("global::Unity.Burst.FunctionPointer")
                       && !valueType.ToString().Contains('*')
                       && !valueType.ToString().StartsWith("UTF8String");
-
+        
         return StructDeclaration(name.Identifier)
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
+              .WithBaseList(equatable
+                                ? BaseList().AddTypes(
+                                    SimpleBaseType(GenericName("IEquatable").AddTypeArgumentListArguments(name)),
+                                    SimpleBaseType(GenericName("IComparable").AddTypeArgumentListArguments(name))
+                                )
+                                : null)
               .AddMembers(FieldDeclaration(
                                   VariableDeclaration(definition.Type.ToType())
                                      .AddVariables(VariableDeclarator("value"))
@@ -68,6 +74,6 @@ public partial class CodeWriter {
                )
               .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
-
+    
     private IdentifierNameSyntax TypeDefName(string name) => IdentifierName(name.StripSuffix("_t"));
 }

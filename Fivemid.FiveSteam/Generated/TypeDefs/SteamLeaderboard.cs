@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle to a single leaderboard.</summary>
-    public unsafe struct SteamLeaderboard
+    public unsafe struct SteamLeaderboard : IEquatable<SteamLeaderboard>, IComparable<SteamLeaderboard>
     {
         public ulong value;
         public static implicit operator SteamLeaderboard(ulong value) => new()

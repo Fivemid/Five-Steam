@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamNetworkingPOPID
-    public unsafe struct SteamNetworkingPOPID
+    public unsafe struct SteamNetworkingPOPID : IEquatable<SteamNetworkingPOPID>, IComparable<SteamNetworkingPOPID>
     {
         public uint value;
         public static implicit operator SteamNetworkingPOPID(uint value) => new()

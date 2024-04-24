@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle to a communication pipe to the Steam client.</summary>
-    public unsafe struct HSteamPipe
+    public unsafe struct HSteamPipe : IEquatable<HSteamPipe>, IComparable<HSteamPipe>
     {
         public int value;
         public static implicit operator HSteamPipe(int value) => new()

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Only used internally in Steam.</summary>
-    public unsafe struct ulint64
+    public unsafe struct ulint64 : IEquatable<ulint64>, IComparable<ulint64>
     {
         public ulong value;
         public static implicit operator ulint64(ulong value) => new()

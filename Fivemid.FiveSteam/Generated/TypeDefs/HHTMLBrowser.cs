@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Represents a unique handle to an HTML surface.</summary>
-    public unsafe struct HHTMLBrowser
+    public unsafe struct HHTMLBrowser : IEquatable<HHTMLBrowser>, IComparable<HHTMLBrowser>
     {
         public uint value;
         public static implicit operator HHTMLBrowser(uint value) => new()

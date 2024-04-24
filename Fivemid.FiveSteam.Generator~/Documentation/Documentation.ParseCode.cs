@@ -95,9 +95,6 @@ public partial class Documentation {
         if (name is null)
             return null;
         
-        if (name.Equals("k_nSteamNetworkingSend_Unreliable"))
-            Console.WriteLine(description);
-        
         return new Object(
             Name: name,
             Description: description,

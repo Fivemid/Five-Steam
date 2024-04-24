@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// <summary>Unique handle to a Steam API call.<br />
     /// If a function returns one of these you must track its status by using the <a href="https://partner.steamgames.com/doc/sdk/api#callresults" class="bb_doclink">Call Result</a> system.</summary>
-    public unsafe struct SteamAPICall
+    public unsafe struct SteamAPICall : IEquatable<SteamAPICall>, IComparable<SteamAPICall>
     {
         public ulong value;
         public static implicit operator SteamAPICall(ulong value) => new()

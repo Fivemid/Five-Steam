@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle to a HTTP Request handle</summary>
-    public unsafe struct HTTPRequestHandle
+    public unsafe struct HTTPRequestHandle : IEquatable<HTTPRequestHandle>, IComparable<HTTPRequestHandle>
     {
         public uint value;
         public static implicit operator HTTPRequestHandle(uint value) => new()

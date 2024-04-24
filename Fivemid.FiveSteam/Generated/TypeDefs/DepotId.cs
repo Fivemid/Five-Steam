@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Unique identifier for a depot.</summary>
-    public unsafe struct DepotId
+    public unsafe struct DepotId : IEquatable<DepotId>, IComparable<DepotId>
     {
         public uint value;
         public static implicit operator DepotId(uint value) => new()

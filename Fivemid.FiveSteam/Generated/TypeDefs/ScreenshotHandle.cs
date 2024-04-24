@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle to a screenshot. This will be valid for the lifetime of your process, but no longer.</summary>
-    public unsafe struct ScreenshotHandle
+    public unsafe struct ScreenshotHandle : IEquatable<ScreenshotHandle>, IComparable<ScreenshotHandle>
     {
         public uint value;
         public static implicit operator ScreenshotHandle(uint value) => new()

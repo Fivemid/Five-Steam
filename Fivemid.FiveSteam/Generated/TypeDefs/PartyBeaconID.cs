@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A handle to a Steam Party Beacon.</summary>
-    public unsafe struct PartyBeaconID
+    public unsafe struct PartyBeaconID : IEquatable<PartyBeaconID>, IComparable<PartyBeaconID>
     {
         public ulong value;
         public static implicit operator PartyBeaconID(ulong value) => new()

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamNetworkingMicroseconds
-    public unsafe struct SteamNetworkingMicroseconds
+    public unsafe struct SteamNetworkingMicroseconds : IEquatable<SteamNetworkingMicroseconds>, IComparable<SteamNetworkingMicroseconds>
     {
         public long value;
         public static implicit operator SteamNetworkingMicroseconds(long value) => new()

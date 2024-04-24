@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Steam's version of Unix epoch time. It offers 1 second resolution starting from the epoch, 1970-01-01 00:00:00 +0000 (UTC)</summary>
-    public unsafe struct RTime32
+    public unsafe struct RTime32 : IEquatable<RTime32>, IComparable<RTime32>
     {
         public uint value;
         public static implicit operator RTime32(uint value) => new()

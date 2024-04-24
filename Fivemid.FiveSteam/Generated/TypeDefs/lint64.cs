@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Only used internally in Steam.</summary>
-    public unsafe struct lint64
+    public unsafe struct lint64 : IEquatable<lint64>, IComparable<lint64>
     {
         public long value;
         public static implicit operator lint64(long value) => new()

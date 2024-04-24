@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for HSteamListenSocket
-    public unsafe struct HSteamListenSocket
+    public unsafe struct HSteamListenSocket : IEquatable<HSteamListenSocket>, IComparable<HSteamListenSocket>
     {
         public uint value;
         public static implicit operator HSteamListenSocket(uint value) => new()

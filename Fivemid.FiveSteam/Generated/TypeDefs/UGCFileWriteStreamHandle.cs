@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle used when asynchronously writing to Steam Cloud.</summary>
-    public unsafe struct UGCFileWriteStreamHandle
+    public unsafe struct UGCFileWriteStreamHandle : IEquatable<UGCFileWriteStreamHandle>, IComparable<UGCFileWriteStreamHandle>
     {
         public ulong value;
         public static implicit operator UGCFileWriteStreamHandle(ulong value) => new()

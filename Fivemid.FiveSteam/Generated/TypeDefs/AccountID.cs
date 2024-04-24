@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>This is used internally in <a href="#CSteamID" class="bb_apilink">CSteamID</a> to represent a specific user account without caring about what steam universe it's in.</summary>
-    public unsafe struct AccountID
+    public unsafe struct AccountID : IEquatable<AccountID>, IComparable<AccountID>
     {
         public uint value;
         public static implicit operator AccountID(uint value) => new()

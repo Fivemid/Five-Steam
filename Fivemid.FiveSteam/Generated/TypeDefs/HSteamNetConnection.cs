@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for HSteamNetConnection
-    public unsafe struct HSteamNetConnection
+    public unsafe struct HSteamNetConnection : IEquatable<HSteamNetConnection>, IComparable<HSteamNetConnection>
     {
         public uint value;
         public static implicit operator HSteamNetConnection(uint value) => new()

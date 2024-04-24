@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// <summary>handle to a socket<br />
     /// CreateP2PConnectionSocket()</summary>
-    public unsafe struct SNetSocket
+    public unsafe struct SNetSocket : IEquatable<SNetSocket>, IComparable<SNetSocket>
     {
         public uint value;
         public static implicit operator SNetSocket(uint value) => new()
