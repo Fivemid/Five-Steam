@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamHTMLSurface.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamHTMLSurface_v005", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamHTMLSurface_v005", CallingConvention = Platform.CC)]
         private static extern ISteamHTMLSurface.Instance Accessor();
         /// <summary><code>bool Init();</code>Initializes the HTML Surface API.<br />
         /// <br />

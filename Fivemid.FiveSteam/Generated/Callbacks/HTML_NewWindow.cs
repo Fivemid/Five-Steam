@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>A browser has created a new HTML window.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_NewWindow : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_NewWindow;

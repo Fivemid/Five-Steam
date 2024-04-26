@@ -4,17 +4,18 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamDatagramHostedAddress
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamDatagramHostedAddress
     {
         /// missing documentation for SteamDatagramHostedAddress.m_cbSize
         public int cbSize;
         /// missing documentation for SteamDatagramHostedAddress.m_data
         public UTF8String128 data;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_Clear", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_Clear", CallingConvention = Platform.CC)]
         internal static extern void Clear(SteamDatagramHostedAddress* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_GetPopID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_GetPopID", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingPOPID GetPopID(SteamDatagramHostedAddress* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_SetDevAddress", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamDatagramHostedAddress_SetDevAddress", CallingConvention = Platform.CC)]
         internal static extern void SetDevAddress(SteamDatagramHostedAddress* self, uint nIP, ushort nPort, SteamNetworkingPOPID popid);
         public void Clear()
         {

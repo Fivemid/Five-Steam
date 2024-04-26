@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A handle to an analog action. This can be obtained from <a href="https://partner.steamgames.com/doc/api/ISteamInput#GetAnalogActionHandle" class="bb_apilink">ISteamInput::GetAnalogActionHandle</a>.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct InputAnalogActionHandle : IEquatable<InputAnalogActionHandle>, IComparable<InputAnalogActionHandle>
     {
         public ulong value;

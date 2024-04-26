@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// An abstract way to represent the identity of a network host.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetworkingIdentity
     {
         /// <summary>Type of identity.</summary>
@@ -15,59 +16,59 @@ namespace Fivemid.FiveSteam
         public int cbSize;
         /// missing documentation for SteamNetworkingIdentity.m_szUnknownRawString
         public UTF8String128 szUnknownRawString;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_Clear", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_Clear", CallingConvention = Platform.CC)]
         internal static extern void Clear(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsInvalid", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsInvalid", CallingConvention = Platform.CC)]
         internal static extern bool IsInvalid(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetSteamID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetSteamID", CallingConvention = Platform.CC)]
         internal static extern void SetSteamID(SteamNetworkingIdentity* self, SteamId steamID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetSteamID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetSteamID", CallingConvention = Platform.CC)]
         internal static extern SteamId GetSteamID(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetSteamID64", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetSteamID64", CallingConvention = Platform.CC)]
         internal static extern void SetSteamID64(SteamNetworkingIdentity* self, ulong steamID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetSteamID64", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetSteamID64", CallingConvention = Platform.CC)]
         internal static extern ulong GetSteamID64(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetXboxPairwiseID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetXboxPairwiseID", CallingConvention = Platform.CC)]
         internal static extern bool SetXboxPairwiseID(SteamNetworkingIdentity* self, UTF8StringPtr pszString);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetXboxPairwiseID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetXboxPairwiseID", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetXboxPairwiseID(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetPSNID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetPSNID", CallingConvention = Platform.CC)]
         internal static extern void SetPSNID(SteamNetworkingIdentity* self, ulong id);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetPSNID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetPSNID", CallingConvention = Platform.CC)]
         internal static extern ulong GetPSNID(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetStadiaID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetStadiaID", CallingConvention = Platform.CC)]
         internal static extern void SetStadiaID(SteamNetworkingIdentity* self, ulong id);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetStadiaID", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetStadiaID", CallingConvention = Platform.CC)]
         internal static extern ulong GetStadiaID(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetIPAddr", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetIPAddr", CallingConvention = Platform.CC)]
         internal static extern void SetIPAddr(SteamNetworkingIdentity* self, ref SteamNetworkingIPAddr addr);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetIPAddr", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetIPAddr", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingIPAddr* GetIPAddr(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetIPv4Addr", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetIPv4Addr", CallingConvention = Platform.CC)]
         internal static extern void SetIPv4Addr(SteamNetworkingIdentity* self, uint nIPv4, ushort nPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetIPv4", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetIPv4", CallingConvention = Platform.CC)]
         internal static extern uint GetIPv4(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetFakeIPType", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetFakeIPType", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingFakeIPType GetFakeIPType(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsFakeIP", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsFakeIP", CallingConvention = Platform.CC)]
         internal static extern bool IsFakeIP(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetLocalHost", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetLocalHost", CallingConvention = Platform.CC)]
         internal static extern void SetLocalHost(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsLocalHost", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsLocalHost", CallingConvention = Platform.CC)]
         internal static extern bool IsLocalHost(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetGenericString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetGenericString", CallingConvention = Platform.CC)]
         internal static extern bool SetGenericString(SteamNetworkingIdentity* self, UTF8StringPtr pszString);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetGenericString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetGenericString", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetGenericString(SteamNetworkingIdentity* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetGenericBytes", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_SetGenericBytes", CallingConvention = Platform.CC)]
         internal static extern bool SetGenericBytes(SteamNetworkingIdentity* self, void* data, uint cbLen);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetGenericBytes", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_GetGenericBytes", CallingConvention = Platform.CC)]
         internal static extern byte* GetGenericBytes(SteamNetworkingIdentity* self, ref int cbLen);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsEqualTo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsEqualTo", CallingConvention = Platform.CC)]
         internal static extern bool Equals(SteamNetworkingIdentity* self, ref SteamNetworkingIdentity x);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ToString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ToString", CallingConvention = Platform.CC)]
         internal static extern void ToString(SteamNetworkingIdentity* self, char* buf, uint cbBuf);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ParseString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool ParseString(SteamNetworkingIdentity* self, UTF8StringPtr pszStr);
         public void Clear()
         {

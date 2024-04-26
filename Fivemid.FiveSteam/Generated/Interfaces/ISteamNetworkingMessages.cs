@@ -22,18 +22,19 @@ namespace Fivemid.FiveSteam
         public bool CloseSessionWithUser(ref SteamNetworkingIdentity identityRemote);
         public bool CloseChannelWithUser(ref SteamNetworkingIdentity identityRemote, int nLocalChannel);
         public SteamNetworkingConnectionState GetSessionConnectionInfo(ref SteamNetworkingIdentity identityRemote, SteamNetConnectionInfo* pConnectionInfo, SteamNetConnectionRealTimeStatus* pQuickStatus);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_SendMessageToUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_SendMessageToUser", CallingConvention = Platform.CC)]
         internal static extern Result SendMessageToUser(void* self, ref SteamNetworkingIdentity identityRemote, void* pubData, uint cubData, int nSendFlags, int nRemoteChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_ReceiveMessagesOnChannel", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_ReceiveMessagesOnChannel", CallingConvention = Platform.CC)]
         internal static extern int ReceiveMessagesOnChannel(void* self, int nLocalChannel, SteamNetworkingMessage** ppOutMessages, int nMaxMessages);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_AcceptSessionWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_AcceptSessionWithUser", CallingConvention = Platform.CC)]
         internal static extern bool AcceptSessionWithUser(void* self, ref SteamNetworkingIdentity identityRemote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_CloseSessionWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_CloseSessionWithUser", CallingConvention = Platform.CC)]
         internal static extern bool CloseSessionWithUser(void* self, ref SteamNetworkingIdentity identityRemote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_CloseChannelWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_CloseChannelWithUser", CallingConvention = Platform.CC)]
         internal static extern bool CloseChannelWithUser(void* self, ref SteamNetworkingIdentity identityRemote, int nLocalChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingMessages_GetSessionConnectionInfo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_GetSessionConnectionInfo", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingConnectionState GetSessionConnectionInfo(void* self, ref SteamNetworkingIdentity identityRemote, SteamNetConnectionInfo* pConnectionInfo, SteamNetConnectionRealTimeStatus* pQuickStatus);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamNetworkingMessages
         {
             public void* self;

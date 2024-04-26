@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamDatagramGameCoordinatorServerLogin
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamDatagramGameCoordinatorServerLogin
     {
         /// missing documentation for SteamDatagramGameCoordinatorServerLogin.m_identity

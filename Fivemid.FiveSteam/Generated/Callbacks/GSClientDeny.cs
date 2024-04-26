@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a user has been denied to connection to this game server.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct GSClientDeny : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientDeny;

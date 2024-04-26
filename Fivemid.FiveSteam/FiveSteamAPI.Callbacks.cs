@@ -46,11 +46,11 @@ namespace Fivemid.FiveSteam {
             }
         }
         
-        private static void ManagedListener(Callback callback) {
+        private static void ManagedListener(ref Callback callback) {
             Debug.Log($"callback: {callback.id}");
         }
         
-        public delegate void CallbackListenerDelegate(Callback callback);
+        public delegate void CallbackListenerDelegate(ref Callback callback);
         
         public readonly struct Callback {
             public readonly void*              userData;
@@ -78,8 +78,10 @@ namespace Fivemid.FiveSteam {
                 this.functionPointer = functionPointer;
             }
             
-            public void Invoke(CallbackIdentifier id, byte* data, int dataSize) =>
-                functionPointer.Invoke(new Callback(userData, id, data, dataSize));
+            public void Invoke(CallbackIdentifier id, byte* data, int dataSize) {
+                Callback callback = new(userData, id, data, dataSize);
+                functionPointer.Invoke(ref callback);
+            }
             
             public bool Equals(CallbackListener other) =>
                 userData == other.userData

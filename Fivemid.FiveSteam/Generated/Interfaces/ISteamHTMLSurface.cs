@@ -50,80 +50,81 @@ namespace Fivemid.FiveSteam
         public void AllowStartRequest(HHTMLBrowser unBrowserHandle, bool bAllowed);
         public void JSDialogResponse(HHTMLBrowser unBrowserHandle, bool bResult);
         public void FileLoadDialogResponse(HHTMLBrowser unBrowserHandle, UTF8StringPtr* pchSelectedFiles);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_Init", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_Init", CallingConvention = Platform.CC)]
         internal static extern bool Init(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_Shutdown", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_Shutdown", CallingConvention = Platform.CC)]
         internal static extern bool Shutdown(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_CreateBrowser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_CreateBrowser", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall CreateBrowser(void* self, UTF8StringPtr pchUserAgent, UTF8StringPtr pchUserCSS);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_RemoveBrowser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_RemoveBrowser", CallingConvention = Platform.CC)]
         internal static extern void RemoveBrowser(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_LoadURL", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_LoadURL", CallingConvention = Platform.CC)]
         internal static extern void LoadURL(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr pchURL, UTF8StringPtr pchPostData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetSize", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetSize", CallingConvention = Platform.CC)]
         internal static extern void SetSize(void* self, HHTMLBrowser unBrowserHandle, uint unWidth, uint unHeight);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_StopLoad", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_StopLoad", CallingConvention = Platform.CC)]
         internal static extern void StopLoad(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_Reload", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_Reload", CallingConvention = Platform.CC)]
         internal static extern void Reload(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_GoBack", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_GoBack", CallingConvention = Platform.CC)]
         internal static extern void GoBack(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_GoForward", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_GoForward", CallingConvention = Platform.CC)]
         internal static extern void GoForward(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_AddHeader", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_AddHeader", CallingConvention = Platform.CC)]
         internal static extern void AddHeader(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_ExecuteJavascript", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_ExecuteJavascript", CallingConvention = Platform.CC)]
         internal static extern void ExecuteJavascript(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr pchScript);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseUp", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseUp", CallingConvention = Platform.CC)]
         internal static extern void MouseUp(void* self, HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseDown", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseDown", CallingConvention = Platform.CC)]
         internal static extern void MouseDown(void* self, HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseDoubleClick", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseDoubleClick", CallingConvention = Platform.CC)]
         internal static extern void MouseDoubleClick(void* self, HHTMLBrowser unBrowserHandle, ISteamHTMLSurface.HTMLMouseButton eMouseButton);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseMove", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseMove", CallingConvention = Platform.CC)]
         internal static extern void MouseMove(void* self, HHTMLBrowser unBrowserHandle, int x, int y);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseWheel", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_MouseWheel", CallingConvention = Platform.CC)]
         internal static extern void MouseWheel(void* self, HHTMLBrowser unBrowserHandle, int nDelta);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyDown", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyDown", CallingConvention = Platform.CC)]
         internal static extern void KeyDown(void* self, HHTMLBrowser unBrowserHandle, uint nNativeKeyCode, ISteamHTMLSurface.HTMLKeyModifiers eHTMLKeyModifiers, bool bIsSystemKey);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyUp", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyUp", CallingConvention = Platform.CC)]
         internal static extern void KeyUp(void* self, HHTMLBrowser unBrowserHandle, uint nNativeKeyCode, ISteamHTMLSurface.HTMLKeyModifiers eHTMLKeyModifiers);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyChar", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_KeyChar", CallingConvention = Platform.CC)]
         internal static extern void KeyChar(void* self, HHTMLBrowser unBrowserHandle, uint cUnicodeChar, ISteamHTMLSurface.HTMLKeyModifiers eHTMLKeyModifiers);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetHorizontalScroll", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetHorizontalScroll", CallingConvention = Platform.CC)]
         internal static extern void SetHorizontalScroll(void* self, HHTMLBrowser unBrowserHandle, uint nAbsolutePixelScroll);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetVerticalScroll", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetVerticalScroll", CallingConvention = Platform.CC)]
         internal static extern void SetVerticalScroll(void* self, HHTMLBrowser unBrowserHandle, uint nAbsolutePixelScroll);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetKeyFocus", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetKeyFocus", CallingConvention = Platform.CC)]
         internal static extern void SetKeyFocus(void* self, HHTMLBrowser unBrowserHandle, bool bHasKeyFocus);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_ViewSource", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_ViewSource", CallingConvention = Platform.CC)]
         internal static extern void ViewSource(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_CopyToClipboard", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_CopyToClipboard", CallingConvention = Platform.CC)]
         internal static extern void CopyToClipboard(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_PasteFromClipboard", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_PasteFromClipboard", CallingConvention = Platform.CC)]
         internal static extern void PasteFromClipboard(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_Find", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_Find", CallingConvention = Platform.CC)]
         internal static extern void Find(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr pchSearchStr, bool bCurrentlyInFind, bool bReverse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_StopFind", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_StopFind", CallingConvention = Platform.CC)]
         internal static extern void StopFind(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_GetLinkAtPosition", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_GetLinkAtPosition", CallingConvention = Platform.CC)]
         internal static extern void GetLinkAtPosition(void* self, HHTMLBrowser unBrowserHandle, int x, int y);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetCookie", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetCookie", CallingConvention = Platform.CC)]
         internal static extern void SetCookie(void* self, UTF8StringPtr pchHostname, UTF8StringPtr pchKey, UTF8StringPtr pchValue, UTF8StringPtr pchPath, RTime32 nExpires, bool bSecure, bool bHTTPOnly);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetPageScaleFactor", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetPageScaleFactor", CallingConvention = Platform.CC)]
         internal static extern void SetPageScaleFactor(void* self, HHTMLBrowser unBrowserHandle, float flZoom, int nPointX, int nPointY);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetBackgroundMode", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetBackgroundMode", CallingConvention = Platform.CC)]
         internal static extern void SetBackgroundMode(void* self, HHTMLBrowser unBrowserHandle, bool bBackgroundMode);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetDPIScalingFactor", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_SetDPIScalingFactor", CallingConvention = Platform.CC)]
         internal static extern void SetDPIScalingFactor(void* self, HHTMLBrowser unBrowserHandle, float flDPIScaling);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_OpenDeveloperTools", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_OpenDeveloperTools", CallingConvention = Platform.CC)]
         internal static extern void OpenDeveloperTools(void* self, HHTMLBrowser unBrowserHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_AllowStartRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_AllowStartRequest", CallingConvention = Platform.CC)]
         internal static extern void AllowStartRequest(void* self, HHTMLBrowser unBrowserHandle, bool bAllowed);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_JSDialogResponse", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_JSDialogResponse", CallingConvention = Platform.CC)]
         internal static extern void JSDialogResponse(void* self, HHTMLBrowser unBrowserHandle, bool bResult);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamHTMLSurface_FileLoadDialogResponse", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_FileLoadDialogResponse", CallingConvention = Platform.CC)]
         internal static extern void FileLoadDialogResponse(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr* pchSelectedFiles);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamHTMLSurface
         {
             public void* self;

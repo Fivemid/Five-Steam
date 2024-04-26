@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamMatchmakingServers.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamMatchmakingServers_v002", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamMatchmakingServers_v002", CallingConvention = Platform.CC)]
         private static extern ISteamMatchmakingServers.Instance Accessor();
         /// <summary><code>HServerListRequest RequestInternetServerList( AppId_t iApp, MatchMakingKeyValuePair_t **ppchFilters, uint32 nFilters, ISteamMatchmakingServerListResponse *pRequestServersResponse );</code><br />
         /// Request a new list of game servers from the 'internet' server list.<br />

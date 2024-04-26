@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamInventory.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamInventory_v003", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamInventory_v003", CallingConvention = Platform.CC)]
         private static extern ISteamInventory.Instance Accessor();
         /// <summary><code>EResult GetResultStatus( SteamInventoryResult_t resultHandle );</code><br />
         /// Find out the status of an asynchronous inventory result handle.<br />

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamUser.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamUser_v023", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamUser_v023", CallingConvention = Platform.CC)]
         private static extern ISteamUser.Instance Accessor();
         /// <summary><code>HSteamUser GetHSteamUser();</code>Gets Steam user handle that this interface represents.<br />
         /// <br />

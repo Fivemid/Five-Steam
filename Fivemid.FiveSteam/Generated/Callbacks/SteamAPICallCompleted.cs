@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a SteamAPICall_t has completed (or failed)<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamAPICallCompleted : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamAPICallCompleted;

@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Connection state to a specified user, returned by <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#GetP2PSessionState" class="bb_apilink">ISteamNetworking::GetP2PSessionState</a>. This is the under-the-hood info about what's going on with a previous call to <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SendP2PPacket" class="bb_apilink">ISteamNetworking::SendP2PPacket</a>. This typically shouldn't be needed except for debugging purposes.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct P2PSessionState
     {
         /// <summary>Do we have an active open connection with the user (<b>true</b>) or not (<b>false</b>)?</summary>

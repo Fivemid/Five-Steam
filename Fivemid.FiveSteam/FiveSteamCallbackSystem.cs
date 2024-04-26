@@ -33,6 +33,8 @@ namespace Fivemid.FiveSteam {
                 CallbackUtility.ToEntity(id, data, ref ecb);
             }
             
+            callbackBuffer->Reset();
+            
             ecb.Playback(state.EntityManager);
         }
         
@@ -44,7 +46,7 @@ namespace Fivemid.FiveSteam {
         }
         
         [BurstCompile]
-        private static void Callback(FiveSteamAPI.Callback callback) {
+        private static void Callback(ref FiveSteamAPI.Callback callback) {
             ref UnsafeAppendBuffer callbackBuffer = ref callback.UserData<UnsafeAppendBuffer>();
             callbackBuffer.Add(callback.id);
             callbackBuffer.Add(callback.dataSize);

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetConnectionRealTimeLaneStatus
     {
         /// missing documentation for SteamNetConnectionRealTimeLaneStatus_t.m_cbPendingUnreliable

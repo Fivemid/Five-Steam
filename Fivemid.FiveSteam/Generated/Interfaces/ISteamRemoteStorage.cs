@@ -68,124 +68,125 @@ namespace Fivemid.FiveSteam
         public UTF8StringPtr GetLocalFileChange(int iFile, RemoteStorageLocalFileChangeType* pEChangeType, RemoteStorageFilePathType* pEFilePathType);
         public bool BeginFileWriteBatch();
         public bool EndFileWriteBatch();
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWrite", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWrite", CallingConvention = Platform.CC)]
         internal static extern bool FileWrite(void* self, UTF8StringPtr pchFile, void* pvData, int cubData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileRead", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileRead", CallingConvention = Platform.CC)]
         internal static extern int FileRead(void* self, UTF8StringPtr pchFile, void* pvData, int cubDataToRead);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteAsync", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteAsync", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall FileWriteAsync(void* self, UTF8StringPtr pchFile, void* pvData, uint cubData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileReadAsync", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileReadAsync", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall FileReadAsync(void* self, UTF8StringPtr pchFile, uint nOffset, uint cubToRead);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileReadAsyncComplete", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileReadAsyncComplete", CallingConvention = Platform.CC)]
         internal static extern bool FileReadAsyncComplete(void* self, SteamAPICall hReadCall, void* pvBuffer, uint cubToRead);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileForget", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileForget", CallingConvention = Platform.CC)]
         internal static extern bool FileForget(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileDelete", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileDelete", CallingConvention = Platform.CC)]
         internal static extern bool FileDelete(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileShare", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileShare", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall FileShare(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetSyncPlatforms", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetSyncPlatforms", CallingConvention = Platform.CC)]
         internal static extern bool SetSyncPlatforms(void* self, UTF8StringPtr pchFile, RemoteStoragePlatform eRemoteStoragePlatform);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamOpen", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamOpen", CallingConvention = Platform.CC)]
         internal static extern UGCFileWriteStreamHandle FileWriteStreamOpen(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamWriteChunk", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamWriteChunk", CallingConvention = Platform.CC)]
         internal static extern bool FileWriteStreamWriteChunk(void* self, UGCFileWriteStreamHandle writeHandle, void* pvData, int cubData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamClose", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamClose", CallingConvention = Platform.CC)]
         internal static extern bool FileWriteStreamClose(void* self, UGCFileWriteStreamHandle writeHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamCancel", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileWriteStreamCancel", CallingConvention = Platform.CC)]
         internal static extern bool FileWriteStreamCancel(void* self, UGCFileWriteStreamHandle writeHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileExists", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FileExists", CallingConvention = Platform.CC)]
         internal static extern bool FileExists(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_FilePersisted", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_FilePersisted", CallingConvention = Platform.CC)]
         internal static extern bool FilePersisted(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileSize", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileSize", CallingConvention = Platform.CC)]
         internal static extern int GetFileSize(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileTimestamp", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileTimestamp", CallingConvention = Platform.CC)]
         internal static extern long GetFileTimestamp(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetSyncPlatforms", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetSyncPlatforms", CallingConvention = Platform.CC)]
         internal static extern RemoteStoragePlatform GetSyncPlatforms(void* self, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileCount", CallingConvention = Platform.CC)]
         internal static extern int GetFileCount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileNameAndSize", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetFileNameAndSize", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetFileNameAndSize(void* self, int iFile, int* pnFileSizeInBytes);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetQuota", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetQuota", CallingConvention = Platform.CC)]
         internal static extern bool GetQuota(void* self, ulong* pnTotalBytes, ulong* puAvailableBytes);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount", CallingConvention = Platform.CC)]
         internal static extern bool IsCloudEnabledForAccount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_IsCloudEnabledForApp", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_IsCloudEnabledForApp", CallingConvention = Platform.CC)]
         internal static extern bool IsCloudEnabledForApp(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetCloudEnabledForApp", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetCloudEnabledForApp", CallingConvention = Platform.CC)]
         internal static extern void SetCloudEnabledForApp(void* self, bool bEnabled);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCDownload", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCDownload", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall UGCDownload(void* self, UGCHandle hContent, uint unPriority);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDownloadProgress", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDownloadProgress", CallingConvention = Platform.CC)]
         internal static extern bool GetUGCDownloadProgress(void* self, UGCHandle hContent, int* pnBytesDownloaded, int* pnBytesExpected);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDetails", CallingConvention = Platform.CC)]
         internal static extern bool GetUGCDetails(void* self, UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCRead", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCRead", CallingConvention = Platform.CC)]
         internal static extern int UGCRead(void* self, UGCHandle hContent, void* pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetCachedUGCCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetCachedUGCCount", CallingConvention = Platform.CC)]
         internal static extern int GetCachedUGCCount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetCachedUGCHandle", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetCachedUGCHandle", CallingConvention = Platform.CC)]
         internal static extern UGCHandle GetCachedUGCHandle(void* self, int iCachedContent);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_PublishWorkshopFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_PublishWorkshopFile", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall PublishWorkshopFile(void* self, UTF8StringPtr pchFile, UTF8StringPtr pchPreviewFile, AppId nConsumerAppId, UTF8StringPtr pchTitle, UTF8StringPtr pchDescription, RemoteStoragePublishedFileVisibility eVisibility, SteamParamStringArray* pTags, WorkshopFileType eWorkshopFileType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_CreatePublishedFileUpdateRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_CreatePublishedFileUpdateRequest", CallingConvention = Platform.CC)]
         internal static extern PublishedFileUpdateHandle CreatePublishedFileUpdateRequest(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileFile", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileFile(void* self, PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFilePreviewFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFilePreviewFile", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFilePreviewFile(void* self, PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchPreviewFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileTitle", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileTitle", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileTitle(void* self, PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchTitle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileDescription", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileDescription", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileDescription(void* self, PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchDescription);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileVisibility", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileVisibility", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileVisibility(void* self, PublishedFileUpdateHandle updateHandle, RemoteStoragePublishedFileVisibility eVisibility);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileTags", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileTags(void* self, PublishedFileUpdateHandle updateHandle, SteamParamStringArray* pTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_CommitPublishedFileUpdate", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_CommitPublishedFileUpdate", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall CommitPublishedFileUpdate(void* self, PublishedFileUpdateHandle updateHandle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetPublishedFileDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetPublishedFileDetails", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetPublishedFileDetails(void* self, PublishedFileId unPublishedFileId, uint unMaxSecondsOld);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_DeletePublishedFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_DeletePublishedFile", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall DeletePublishedFile(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserPublishedFiles", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserPublishedFiles", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall EnumerateUserPublishedFiles(void* self, uint unStartIndex);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_SubscribePublishedFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_SubscribePublishedFile", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SubscribePublishedFile(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserSubscribedFiles", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserSubscribedFiles", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall EnumerateUserSubscribedFiles(void* self, uint unStartIndex);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UnsubscribePublishedFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UnsubscribePublishedFile", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall UnsubscribePublishedFile(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileSetChangeDescription", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdatePublishedFileSetChangeDescription", CallingConvention = Platform.CC)]
         internal static extern bool UpdatePublishedFileSetChangeDescription(void* self, PublishedFileUpdateHandle updateHandle, UTF8StringPtr pchChangeDescription);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetPublishedItemVoteDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetPublishedItemVoteDetails", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetPublishedItemVoteDetails(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdateUserPublishedItemVote", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UpdateUserPublishedItemVote", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall UpdateUserPublishedItemVote(void* self, PublishedFileId unPublishedFileId, bool bVoteUp);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUserPublishedItemVoteDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUserPublishedItemVoteDetails", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetUserPublishedItemVoteDetails(void* self, PublishedFileId unPublishedFileId);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserSharedWorkshopFiles", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumerateUserSharedWorkshopFiles", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall EnumerateUserSharedWorkshopFiles(void* self, SteamId steamId, uint unStartIndex, SteamParamStringArray* pRequiredTags, SteamParamStringArray* pExcludedTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_PublishVideo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_PublishVideo", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall PublishVideo(void* self, WorkshopVideoProvider eVideoProvider, UTF8StringPtr pchVideoAccount, UTF8StringPtr pchVideoIdentifier, UTF8StringPtr pchPreviewFile, AppId nConsumerAppId, UTF8StringPtr pchTitle, UTF8StringPtr pchDescription, RemoteStoragePublishedFileVisibility eVisibility, SteamParamStringArray* pTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetUserPublishedFileAction", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_SetUserPublishedFileAction", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SetUserPublishedFileAction(void* self, PublishedFileId unPublishedFileId, WorkshopFileAction eAction);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumeratePublishedFilesByUserAction", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumeratePublishedFilesByUserAction", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall EnumeratePublishedFilesByUserAction(void* self, WorkshopFileAction eAction, uint unStartIndex);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumeratePublishedWorkshopFiles", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EnumeratePublishedWorkshopFiles", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall EnumeratePublishedWorkshopFiles(void* self, WorkshopEnumerationType eEnumerationType, uint unStartIndex, uint unCount, uint unDays, SteamParamStringArray* pTags, SteamParamStringArray* pUserTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCDownloadToLocation", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCDownloadToLocation", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall UGCDownloadToLocation(void* self, UGCHandle hContent, UTF8StringPtr pchLocation, uint unPriority);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetLocalFileChangeCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetLocalFileChangeCount", CallingConvention = Platform.CC)]
         internal static extern int GetLocalFileChangeCount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetLocalFileChange", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetLocalFileChange", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetLocalFileChange(void* self, int iFile, RemoteStorageLocalFileChangeType* pEChangeType, RemoteStorageFilePathType* pEFilePathType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_BeginFileWriteBatch", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_BeginFileWriteBatch", CallingConvention = Platform.CC)]
         internal static extern bool BeginFileWriteBatch(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamRemoteStorage_EndFileWriteBatch", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_EndFileWriteBatch", CallingConvention = Platform.CC)]
         internal static extern bool EndFileWriteBatch(void* self);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamRemoteStorage
         {
             public void* self;

@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#ComputeNewPlayerCompatibility" class="bb_apilink">ISteamGameServer::ComputeNewPlayerCompatibility</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct ComputeNewPlayerCompatibilityResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ComputeNewPlayerCompatibilityResult;

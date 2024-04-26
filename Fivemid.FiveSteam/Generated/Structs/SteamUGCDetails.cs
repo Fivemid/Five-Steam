@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Details for a single published item/UGC. This is returned by <a href="https://partner.steamgames.com/doc/api/ISteamUGC#GetQueryUGCResult" class="bb_apilink">ISteamUGC::GetQueryUGCResult</a>.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamUGCDetails
     {
         /// <summary>The globally unique item handle to this piece of UGC.</summary>

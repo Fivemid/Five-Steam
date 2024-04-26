@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamGameServer.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServer_v015", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamGameServer_v015", CallingConvention = Platform.CC)]
         private static extern ISteamGameServer.Instance Accessor();
         /// <summary><code>void SetProduct( const char *pszProduct );</code><br />
         /// Sets the game product identifier. This is currently used by the master server for version checking purposes.<br />

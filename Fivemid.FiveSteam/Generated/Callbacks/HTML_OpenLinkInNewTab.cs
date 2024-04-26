@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>The browser has requested to load a url in a new tab.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_OpenLinkInNewTab : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_OpenLinkInNewTab;

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Handle that you will receive when querying details on an individual server.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HServerQuery : IEquatable<HServerQuery>, IComparable<HServerQuery>
     {
         public int value;

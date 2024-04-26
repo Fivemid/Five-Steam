@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when the user tries to join a different game server from their friends list. The game client should attempt to connect to the specified server when this is received.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct GameServerChangeRequested : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameServerChangeRequested;

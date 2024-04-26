@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>A single entry in a leaderboard, as returned by <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetDownloadedLeaderboardEntry" class="bb_apilink">ISteamUserStats::GetDownloadedLeaderboardEntry</a>.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct LeaderboardEntry
     {
         /// <summary>User who this entry belongs to. You can use <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendPersonaName" class="bb_apilink">ISteamFriends::GetFriendPersonaName</a> and <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetSmallFriendAvatar" class="bb_apilink">ISteamFriends::GetSmallFriendAvatar</a> to get more info.</summary>

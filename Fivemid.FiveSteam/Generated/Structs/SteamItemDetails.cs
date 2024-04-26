@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary><br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamItemDetails
     {
         /// <summary>The globally unique item instance handle.</summary>

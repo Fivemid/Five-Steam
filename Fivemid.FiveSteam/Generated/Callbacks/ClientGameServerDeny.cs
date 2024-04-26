@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// This can usually occur if the user doesn't have rights to play on the game server.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct ClientGameServerDeny : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ClientGameServerDeny;

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamParentalSettings.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamParentalSettings_v001", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamParentalSettings_v001", CallingConvention = Platform.CC)]
         private static extern ISteamParentalSettings.Instance Accessor();
         /// missing documentation
         public static bool BIsParentalLockEnabled() => Instance.BIsParentalLockEnabled();

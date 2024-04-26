@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamApps#GetFileDetails" class="bb_apilink">ISteamApps::GetFileDetails</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct FileDetailsResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FileDetailsResult;

@@ -7,8 +7,8 @@ namespace Fivemid.FiveSteam.Generator;
 
 public partial class CodeWriter {
     private TypeDeclarationSyntax Constants(IEnumerable<SteamApiDefinition.Const> definitions) =>
-        TypeDeclaration(SyntaxKind.StructDeclaration, "FiveSteamConstants")
-           .AddModifiers(Token(SyntaxKind.PublicKeyword))
+        ClassDeclaration("FiveSteamConstants")
+           .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
            .AddMembers(definitions.Select(Constant).ToArray<MemberDeclarationSyntax>());
     
     private FieldDeclarationSyntax Constant(SteamApiDefinition.Const definition) {

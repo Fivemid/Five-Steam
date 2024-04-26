@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamParties.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamParties_v002", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamParties_v002", CallingConvention = Platform.CC)]
         private static extern ISteamParties.Instance Accessor();
         /// <summary><code>uint32 GetNumActiveBeacons();</code><br />
         /// This method has no parameters.<br />

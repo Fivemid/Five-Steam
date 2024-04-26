@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Deprecated - Only used with the deprecated RemoteStorage based Workshop API.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct RemoteStorageUserVoteDetails : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageUserVoteDetails;

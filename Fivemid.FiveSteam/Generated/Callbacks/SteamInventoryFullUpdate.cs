@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// The regular <a href="https://partner.steamgames.com/doc/api/ISteamInventory#SteamInventoryResultReady_t" class="bb_apilink">SteamInventoryResultReady_t</a> callback will still be triggered immediately afterwards; this is an additional notification for your convenience.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamInventoryFullUpdate : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryFullUpdate;

@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumeratePublishedFilesByUserAction" class="bb_apilink">ISteamRemoteStorage::EnumeratePublishedFilesByUserAction</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct RemoteStorageEnumeratePublishedFilesByUserActionResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumeratePublishedFilesByUserActionResult;

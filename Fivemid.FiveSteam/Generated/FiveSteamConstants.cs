@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Fivemid.FiveSteam
 {
-    public struct FiveSteamConstants
+    public static class FiveSteamConstants
     {
         /// <summary>An Invalid App ID.</summary>
         public static readonly AppId k_uAppIdInvalid = 0x0;

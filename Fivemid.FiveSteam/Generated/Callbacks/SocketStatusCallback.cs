@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// This is part of an older set of functions designed around the Berkeley TCP sockets model. It's preferential that you use the P2P functions, they're more robust and these older functions will be removed eventually.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SocketStatusCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SocketStatusCallback;

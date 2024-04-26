@@ -97,186 +97,187 @@ namespace Fivemid.FiveSteam
         public bool ShowWorkshopEULA();
         public SteamAPICall GetWorkshopEULAStatus();
         public uint GetUserContentDescriptorPreferences(UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryUserUGCRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryUserUGCRequest", CallingConvention = Platform.CC)]
         internal static extern UGCQueryHandle CreateQueryUserUGCRequest(void* self, AccountID unAccountID, UserUGCList eListType, UGCMatchingUGCType eMatchingUGCType, UserUGCListSortOrder eSortOrder, AppId nCreatorAppID, AppId nConsumerAppID, uint unPage);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryAllUGCRequestPage", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryAllUGCRequestPage", CallingConvention = Platform.CC)]
         internal static extern UGCQueryHandle CreateQueryAllUGCRequest(void* self, UGCQuery eQueryType, UGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId nCreatorAppID, AppId nConsumerAppID, uint unPage);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryAllUGCRequestCursor", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryAllUGCRequestCursor", CallingConvention = Platform.CC)]
         internal static extern UGCQueryHandle CreateQueryAllUGCRequest(void* self, UGCQuery eQueryType, UGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId nCreatorAppID, AppId nConsumerAppID, UTF8StringPtr pchCursor);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryUGCDetailsRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_CreateQueryUGCDetailsRequest", CallingConvention = Platform.CC)]
         internal static extern UGCQueryHandle CreateQueryUGCDetailsRequest(void* self, PublishedFileId* pvecPublishedFileID, uint unNumPublishedFileIDs);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SendQueryUGCRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SendQueryUGCRequest", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SendQueryUGCRequest(void* self, UGCQueryHandle handle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCResult", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCResult", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCResult(void* self, UGCQueryHandle handle, uint index, SteamUGCDetails* pDetails);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumTags", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumTags(void* self, UGCQueryHandle handle, uint index);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTag", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCTag(void* self, UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTagDisplayName", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTagDisplayName", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCTagDisplayName(void* self, UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCPreviewURL", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCPreviewURL", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCPreviewURL(void* self, UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCMetadata", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCMetadata", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCMetadata(void* self, UGCQueryHandle handle, uint index, char* pchMetadata, uint cchMetadatasize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCChildren", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCChildren", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCChildren(void* self, UGCQueryHandle handle, uint index, PublishedFileId* pvecPublishedFileID, uint cMaxEntries);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCStatistic", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCStatistic", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCStatistic(void* self, UGCQueryHandle handle, uint index, ItemStatistic eStatType, ulong* pStatValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumAdditionalPreviews(void* self, UGCQueryHandle handle, uint index);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCAdditionalPreview", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCAdditionalPreview", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCAdditionalPreview(void* self, UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumKeyValueTags(void* self, UGCQueryHandle handle, uint index);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCKeyValueTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCKeyValueTag", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryFirstUGCKeyValueTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryFirstUGCKeyValueTag", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCContentDescriptors", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCContentDescriptors", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCContentDescriptors(void* self, UGCQueryHandle handle, uint index, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_ReleaseQueryUGCRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_ReleaseQueryUGCRequest", CallingConvention = Platform.CC)]
         internal static extern bool ReleaseQueryUGCRequest(void* self, UGCQueryHandle handle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredTag", CallingConvention = Platform.CC)]
         internal static extern bool AddRequiredTag(void* self, UGCQueryHandle handle, UTF8StringPtr pTagName);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredTagGroup", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredTagGroup", CallingConvention = Platform.CC)]
         internal static extern bool AddRequiredTagGroup(void* self, UGCQueryHandle handle, SteamParamStringArray* pTagGroups);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddExcludedTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddExcludedTag", CallingConvention = Platform.CC)]
         internal static extern bool AddExcludedTag(void* self, UGCQueryHandle handle, UTF8StringPtr pTagName);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnOnlyIDs", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnOnlyIDs", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnOnlyIDs(void* self, UGCQueryHandle handle, bool bReturnOnlyIDs);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnKeyValueTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnKeyValueTags", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnKeyValueTags(void* self, UGCQueryHandle handle, bool bReturnKeyValueTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnLongDescription", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnLongDescription", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnLongDescription(void* self, UGCQueryHandle handle, bool bReturnLongDescription);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnMetadata", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnMetadata", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnMetadata(void* self, UGCQueryHandle handle, bool bReturnMetadata);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnChildren", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnChildren", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnChildren(void* self, UGCQueryHandle handle, bool bReturnChildren);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnAdditionalPreviews", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnAdditionalPreviews", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnAdditionalPreviews(void* self, UGCQueryHandle handle, bool bReturnAdditionalPreviews);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnTotalOnly", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnTotalOnly", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnTotalOnly(void* self, UGCQueryHandle handle, bool bReturnTotalOnly);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetReturnPlaytimeStats", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetReturnPlaytimeStats", CallingConvention = Platform.CC)]
         internal static extern bool SetReturnPlaytimeStats(void* self, UGCQueryHandle handle, uint unDays);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetLanguage", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetLanguage", CallingConvention = Platform.CC)]
         internal static extern bool SetLanguage(void* self, UGCQueryHandle handle, UTF8StringPtr pchLanguage);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetAllowCachedResponse", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetAllowCachedResponse", CallingConvention = Platform.CC)]
         internal static extern bool SetAllowCachedResponse(void* self, UGCQueryHandle handle, uint unMaxAgeSeconds);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetCloudFileNameFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetCloudFileNameFilter", CallingConvention = Platform.CC)]
         internal static extern bool SetCloudFileNameFilter(void* self, UGCQueryHandle handle, UTF8StringPtr pMatchCloudFileName);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetMatchAnyTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetMatchAnyTag", CallingConvention = Platform.CC)]
         internal static extern bool SetMatchAnyTag(void* self, UGCQueryHandle handle, bool bMatchAnyTag);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetSearchText", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetSearchText", CallingConvention = Platform.CC)]
         internal static extern bool SetSearchText(void* self, UGCQueryHandle handle, UTF8StringPtr pSearchText);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetRankedByTrendDays", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetRankedByTrendDays", CallingConvention = Platform.CC)]
         internal static extern bool SetRankedByTrendDays(void* self, UGCQueryHandle handle, uint unDays);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetTimeCreatedDateRange", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetTimeCreatedDateRange", CallingConvention = Platform.CC)]
         internal static extern bool SetTimeCreatedDateRange(void* self, UGCQueryHandle handle, RTime32 rtStart, RTime32 rtEnd);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetTimeUpdatedDateRange", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetTimeUpdatedDateRange", CallingConvention = Platform.CC)]
         internal static extern bool SetTimeUpdatedDateRange(void* self, UGCQueryHandle handle, RTime32 rtStart, RTime32 rtEnd);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredKeyValueTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddRequiredKeyValueTag", CallingConvention = Platform.CC)]
         internal static extern bool AddRequiredKeyValueTag(void* self, UGCQueryHandle handle, UTF8StringPtr pKey, UTF8StringPtr pValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RequestUGCDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RequestUGCDetails", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RequestUGCDetails(void* self, PublishedFileId nPublishedFileID, uint unMaxAgeSeconds);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_CreateItem", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_CreateItem", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall CreateItem(void* self, AppId nConsumerAppId, WorkshopFileType eFileType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_StartItemUpdate", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_StartItemUpdate", CallingConvention = Platform.CC)]
         internal static extern UGCUpdateHandle StartItemUpdate(void* self, AppId nConsumerAppId, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemTitle", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemTitle", CallingConvention = Platform.CC)]
         internal static extern bool SetItemTitle(void* self, UGCUpdateHandle handle, UTF8StringPtr pchTitle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemDescription", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemDescription", CallingConvention = Platform.CC)]
         internal static extern bool SetItemDescription(void* self, UGCUpdateHandle handle, UTF8StringPtr pchDescription);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemUpdateLanguage", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemUpdateLanguage", CallingConvention = Platform.CC)]
         internal static extern bool SetItemUpdateLanguage(void* self, UGCUpdateHandle handle, UTF8StringPtr pchLanguage);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemMetadata", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemMetadata", CallingConvention = Platform.CC)]
         internal static extern bool SetItemMetadata(void* self, UGCUpdateHandle handle, UTF8StringPtr pchMetaData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemVisibility", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemVisibility", CallingConvention = Platform.CC)]
         internal static extern bool SetItemVisibility(void* self, UGCUpdateHandle handle, RemoteStoragePublishedFileVisibility eVisibility);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemTags", CallingConvention = Platform.CC)]
         internal static extern bool SetItemTags(void* self, UGCUpdateHandle updateHandle, SteamParamStringArray* pTags, bool bAllowAdminTags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemContent", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemContent", CallingConvention = Platform.CC)]
         internal static extern bool SetItemContent(void* self, UGCUpdateHandle handle, UTF8StringPtr pszContentFolder);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetItemPreview", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetItemPreview", CallingConvention = Platform.CC)]
         internal static extern bool SetItemPreview(void* self, UGCUpdateHandle handle, UTF8StringPtr pszPreviewFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetAllowLegacyUpload", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetAllowLegacyUpload", CallingConvention = Platform.CC)]
         internal static extern bool SetAllowLegacyUpload(void* self, UGCUpdateHandle handle, bool bAllowLegacyUpload);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveAllItemKeyValueTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveAllItemKeyValueTags", CallingConvention = Platform.CC)]
         internal static extern bool RemoveAllItemKeyValueTags(void* self, UGCUpdateHandle handle);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemKeyValueTags", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemKeyValueTags", CallingConvention = Platform.CC)]
         internal static extern bool RemoveItemKeyValueTags(void* self, UGCUpdateHandle handle, UTF8StringPtr pchKey);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddItemKeyValueTag", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddItemKeyValueTag", CallingConvention = Platform.CC)]
         internal static extern bool AddItemKeyValueTag(void* self, UGCUpdateHandle handle, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddItemPreviewFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddItemPreviewFile", CallingConvention = Platform.CC)]
         internal static extern bool AddItemPreviewFile(void* self, UGCUpdateHandle handle, UTF8StringPtr pszPreviewFile, ItemPreviewType type);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddItemPreviewVideo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddItemPreviewVideo", CallingConvention = Platform.CC)]
         internal static extern bool AddItemPreviewVideo(void* self, UGCUpdateHandle handle, UTF8StringPtr pszVideoID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_UpdateItemPreviewFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_UpdateItemPreviewFile", CallingConvention = Platform.CC)]
         internal static extern bool UpdateItemPreviewFile(void* self, UGCUpdateHandle handle, uint index, UTF8StringPtr pszPreviewFile);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_UpdateItemPreviewVideo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_UpdateItemPreviewVideo", CallingConvention = Platform.CC)]
         internal static extern bool UpdateItemPreviewVideo(void* self, UGCUpdateHandle handle, uint index, UTF8StringPtr pszVideoID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemPreview", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemPreview", CallingConvention = Platform.CC)]
         internal static extern bool RemoveItemPreview(void* self, UGCUpdateHandle handle, uint index);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddContentDescriptor", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddContentDescriptor", CallingConvention = Platform.CC)]
         internal static extern bool AddContentDescriptor(void* self, UGCUpdateHandle handle, UGCContentDescriptorID descid);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveContentDescriptor", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveContentDescriptor", CallingConvention = Platform.CC)]
         internal static extern bool RemoveContentDescriptor(void* self, UGCUpdateHandle handle, UGCContentDescriptorID descid);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SubmitItemUpdate", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SubmitItemUpdate", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SubmitItemUpdate(void* self, UGCUpdateHandle handle, UTF8StringPtr pchChangeNote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetItemUpdateProgress", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemUpdateProgress", CallingConvention = Platform.CC)]
         internal static extern ItemUpdateStatus GetItemUpdateProgress(void* self, UGCUpdateHandle handle, ulong* punBytesProcessed, ulong* punBytesTotal);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SetUserItemVote", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SetUserItemVote", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SetUserItemVote(void* self, PublishedFileId nPublishedFileID, bool bVoteUp);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetUserItemVote", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetUserItemVote", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetUserItemVote(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddItemToFavorites", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddItemToFavorites", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall AddItemToFavorites(void* self, AppId nAppId, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemFromFavorites", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveItemFromFavorites", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RemoveItemFromFavorites(void* self, AppId nAppId, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SubscribeItem", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SubscribeItem", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall SubscribeItem(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_UnsubscribeItem", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_UnsubscribeItem", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall UnsubscribeItem(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetNumSubscribedItems", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetNumSubscribedItems", CallingConvention = Platform.CC)]
         internal static extern uint GetNumSubscribedItems(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetSubscribedItems", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetSubscribedItems", CallingConvention = Platform.CC)]
         internal static extern uint GetSubscribedItems(void* self, PublishedFileId* pvecPublishedFileID, uint cMaxEntries);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetItemState", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemState", CallingConvention = Platform.CC)]
         internal static extern uint GetItemState(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetItemInstallInfo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemInstallInfo", CallingConvention = Platform.CC)]
         internal static extern bool GetItemInstallInfo(void* self, PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetItemDownloadInfo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemDownloadInfo", CallingConvention = Platform.CC)]
         internal static extern bool GetItemDownloadInfo(void* self, PublishedFileId nPublishedFileID, ulong* punBytesDownloaded, ulong* punBytesTotal);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_DownloadItem", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_DownloadItem", CallingConvention = Platform.CC)]
         internal static extern bool DownloadItem(void* self, PublishedFileId nPublishedFileID, bool bHighPriority);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_BInitWorkshopForGameServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_BInitWorkshopForGameServer", CallingConvention = Platform.CC)]
         internal static extern bool BInitWorkshopForGameServer(void* self, DepotId unWorkshopDepotID, UTF8StringPtr pszFolder);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_SuspendDownloads", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_SuspendDownloads", CallingConvention = Platform.CC)]
         internal static extern void SuspendDownloads(void* self, bool bSuspend);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_StartPlaytimeTracking", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_StartPlaytimeTracking", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall StartPlaytimeTracking(void* self, PublishedFileId* pvecPublishedFileID, uint unNumPublishedFileIDs);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_StopPlaytimeTracking", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_StopPlaytimeTracking", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall StopPlaytimeTracking(void* self, PublishedFileId* pvecPublishedFileID, uint unNumPublishedFileIDs);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_StopPlaytimeTrackingForAllItems", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_StopPlaytimeTrackingForAllItems", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall StopPlaytimeTrackingForAllItems(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddDependency", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddDependency", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall AddDependency(void* self, PublishedFileId nParentPublishedFileID, PublishedFileId nChildPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveDependency", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveDependency", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RemoveDependency(void* self, PublishedFileId nParentPublishedFileID, PublishedFileId nChildPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_AddAppDependency", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_AddAppDependency", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall AddAppDependency(void* self, PublishedFileId nPublishedFileID, AppId nAppID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_RemoveAppDependency", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_RemoveAppDependency", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RemoveAppDependency(void* self, PublishedFileId nPublishedFileID, AppId nAppID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetAppDependencies", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetAppDependencies", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetAppDependencies(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_DeleteItem", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_DeleteItem", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall DeleteItem(void* self, PublishedFileId nPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_ShowWorkshopEULA", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_ShowWorkshopEULA", CallingConvention = Platform.CC)]
         internal static extern bool ShowWorkshopEULA(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetWorkshopEULAStatus", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetWorkshopEULAStatus", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetWorkshopEULAStatus(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamUGC_GetUserContentDescriptorPreferences", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetUserContentDescriptorPreferences", CallingConvention = Platform.CC)]
         internal static extern uint GetUserContentDescriptorPreferences(void* self, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamUGC
         {
             public void* self;

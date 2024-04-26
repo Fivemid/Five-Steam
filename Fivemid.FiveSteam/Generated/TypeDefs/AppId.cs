@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Unique identifier for an app. For more information see the <a href="https://partner.steamgames.com/doc/store/application" class="bb_doclink">Applications</a> documentation.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct AppId : IEquatable<AppId>, IComparable<AppId>
     {
         public uint value;

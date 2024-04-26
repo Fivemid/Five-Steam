@@ -18,24 +18,25 @@ namespace Fivemid.FiveSteam
         public bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId unPublishedFileID);
         public bool IsScreenshotsHooked();
         public ScreenshotHandle AddVRScreenshotToLibrary(VRScreenshotType eType, UTF8StringPtr pchFilename, UTF8StringPtr pchVRFilename);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_WriteScreenshot", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_WriteScreenshot", CallingConvention = Platform.CC)]
         internal static extern ScreenshotHandle WriteScreenshot(void* self, void* pubRGB, uint cubRGB, int nWidth, int nHeight);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_AddScreenshotToLibrary", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_AddScreenshotToLibrary", CallingConvention = Platform.CC)]
         internal static extern ScreenshotHandle AddScreenshotToLibrary(void* self, UTF8StringPtr pchFilename, UTF8StringPtr pchThumbnailFilename, int nWidth, int nHeight);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_TriggerScreenshot", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_TriggerScreenshot", CallingConvention = Platform.CC)]
         internal static extern void TriggerScreenshot(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_HookScreenshots", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_HookScreenshots", CallingConvention = Platform.CC)]
         internal static extern void HookScreenshots(void* self, bool bHook);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_SetLocation", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_SetLocation", CallingConvention = Platform.CC)]
         internal static extern bool SetLocation(void* self, ScreenshotHandle hScreenshot, UTF8StringPtr pchLocation);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_TagUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_TagUser", CallingConvention = Platform.CC)]
         internal static extern bool TagUser(void* self, ScreenshotHandle hScreenshot, SteamId steamID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_TagPublishedFile", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_TagPublishedFile", CallingConvention = Platform.CC)]
         internal static extern bool TagPublishedFile(void* self, ScreenshotHandle hScreenshot, PublishedFileId unPublishedFileID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_IsScreenshotsHooked", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_IsScreenshotsHooked", CallingConvention = Platform.CC)]
         internal static extern bool IsScreenshotsHooked(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamScreenshots_AddVRScreenshotToLibrary", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_AddVRScreenshotToLibrary", CallingConvention = Platform.CC)]
         internal static extern ScreenshotHandle AddVRScreenshotToLibrary(void* self, VRScreenshotType eType, UTF8StringPtr pchFilename, UTF8StringPtr pchVRFilename);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamScreenshots
         {
             public void* self;

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for servernetadr_t
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct servernetadr
     {
         /// missing documentation for servernetadr_t.m_usConnectionPort
@@ -12,29 +13,29 @@ namespace Fivemid.FiveSteam
         public ushort usQueryPort;
         /// missing documentation for servernetadr_t.m_unIP
         public uint unIP;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_Construct", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_Construct", CallingConvention = Platform.CC)]
         internal static extern void Construct(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_Init", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_Init", CallingConvention = Platform.CC)]
         internal static extern void Init(servernetadr* self, uint ip, ushort usQueryPort, ushort usConnectionPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_GetQueryPort", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_GetQueryPort", CallingConvention = Platform.CC)]
         internal static extern ushort GetQueryPort(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_SetQueryPort", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_SetQueryPort", CallingConvention = Platform.CC)]
         internal static extern void SetQueryPort(servernetadr* self, ushort usPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_GetConnectionPort", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_GetConnectionPort", CallingConvention = Platform.CC)]
         internal static extern ushort GetConnectionPort(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_SetConnectionPort", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_SetConnectionPort", CallingConvention = Platform.CC)]
         internal static extern void SetConnectionPort(servernetadr* self, ushort usPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_GetIP", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_GetIP", CallingConvention = Platform.CC)]
         internal static extern uint GetIP(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_SetIP", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_SetIP", CallingConvention = Platform.CC)]
         internal static extern void SetIP(servernetadr* self, uint unIP);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_GetConnectionAddressString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_GetConnectionAddressString", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetConnectionAddressString(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_GetQueryAddressString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_GetQueryAddressString", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetQueryAddressString(servernetadr* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_IsLessThan", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_IsLessThan", CallingConvention = Platform.CC)]
         internal static extern bool LessThan(servernetadr* self, ref servernetadr netadr);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_servernetadr_t_Assign", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_servernetadr_t_Assign", CallingConvention = Platform.CC)]
         internal static extern void Assign(servernetadr* self, ref servernetadr that);
         public void Construct()
         {

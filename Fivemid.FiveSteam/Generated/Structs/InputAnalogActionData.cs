@@ -10,6 +10,7 @@ namespace Fivemid.FiveSteam
     /// 	</li><li> While the delta provided by mouse-like actions is very similar to pixel deltas as provided by an OS, the SC deltas are floats, not ints. This means less potential quantization and loss of precision when mapping this data to a camera rotation.<br />
     /// 	</li><li> In the case of single-axis analog inputs (such as analog triggers), only the x axis will contain data; the y axis will always be zero.</li></ul><br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct InputAnalogActionData
     {
         /// <summary>The type of data coming from this action, this will match what was specified in the action set's VDF definition.</summary>

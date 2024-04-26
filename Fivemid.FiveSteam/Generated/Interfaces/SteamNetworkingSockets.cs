@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamNetworkingSockets.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingSockets_SteamAPI_v012", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingSockets_SteamAPI_v012", CallingConvention = Platform.CC)]
         private static extern ISteamNetworkingSockets.Instance Accessor();
         /// <summary><code>HSteamListenSocket CreateListenSocketIP( const SteamNetworkingIPAddr &amp;localAddress, int nOptions, const SteamNetworkingConfigValue_t *pOptions );</code><br />
         /// Creates a "server" socket that listens for clients to connect to by calling <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingSockets#ConnectByIPAddress" class="bb_apilink">ISteamNetworkingSockets::ConnectByIPAddress</a>, over ordinary UDP (IPv4 or IPv6)<br />

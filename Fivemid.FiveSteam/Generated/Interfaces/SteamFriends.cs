@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamFriends.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamFriends_v017", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamFriends_v017", CallingConvention = Platform.CC)]
         private static extern ISteamFriends.Instance Accessor();
         /// <summary><code>const char * GetPersonaName();</code>Gets the current user's persona (display) name.<br />
         /// <br />

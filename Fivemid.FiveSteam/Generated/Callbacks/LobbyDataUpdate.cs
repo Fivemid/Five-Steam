@@ -9,6 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#CreateLobby" class="bb_apilink">ISteamMatchmaking::CreateLobby</a>, <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#JoinLobby" class="bb_apilink">ISteamMatchmaking::JoinLobby</a>, <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyMemberData" class="bb_apilink">ISteamMatchmaking::SetLobbyMemberData</a>, <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#RequestLobbyData" class="bb_apilink">ISteamMatchmaking::RequestLobbyData</a>, <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#SetLobbyOwner" class="bb_apilink">ISteamMatchmaking::SetLobbyOwner</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct LobbyDataUpdate : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyDataUpdate;

@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// All queued packets unsent at this point will be dropped, further attempts to send will retry making the connection (but will be dropped if we fail again).<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct P2PSessionConnectFail : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.P2PSessionConnectFail;

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for gameserveritem_t
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct gameserveritem
     {
         /// missing documentation for gameserveritem_t.m_NetAdr
@@ -42,11 +43,11 @@ namespace Fivemid.FiveSteam
         public UTF8String128 szGameTags;
         /// missing documentation for gameserveritem_t.m_steamID
         public SteamId steamID;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_Construct", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_gameserveritem_t_Construct", CallingConvention = Platform.CC)]
         internal static extern void Construct(gameserveritem* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_GetName", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_gameserveritem_t_GetName", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetName(gameserveritem* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_gameserveritem_t_SetName", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_gameserveritem_t_SetName", CallingConvention = Platform.CC)]
         internal static extern void SetName(gameserveritem* self, UTF8StringPtr pName);
         public void Construct()
         {

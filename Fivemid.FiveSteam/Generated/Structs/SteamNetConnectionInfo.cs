@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary><br />
     /// Describe the state of a connection.<br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetConnectionInfo
     {
         /// <summary>Who is on the other end?  Depending on the connection type and phase of the connection, we might not know</summary>

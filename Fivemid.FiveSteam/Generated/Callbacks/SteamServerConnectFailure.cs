@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// This will occur periodically if the Steam client is not connected, and has failed when retrying to establish a connection.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamServerConnectFailure : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamServerConnectFailure;

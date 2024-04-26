@@ -10,14 +10,15 @@ namespace Fivemid.FiveSteam
         public Result SendMessageToFakeIP(ref SteamNetworkingIPAddr remoteAddress, void* pData, uint cbData, int nSendFlags);
         public int ReceiveMessages(SteamNetworkingMessage** ppOutMessages, int nMaxMessages);
         public void ScheduleCleanup(ref SteamNetworkingIPAddr remoteAddress);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_DestroyFakeUDPPort", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_DestroyFakeUDPPort", CallingConvention = Platform.CC)]
         internal static extern void DestroyFakeUDPPort(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_SendMessageToFakeIP", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_SendMessageToFakeIP", CallingConvention = Platform.CC)]
         internal static extern Result SendMessageToFakeIP(void* self, ref SteamNetworkingIPAddr remoteAddress, void* pData, uint cbData, int nSendFlags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_ReceiveMessages", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_ReceiveMessages", CallingConvention = Platform.CC)]
         internal static extern int ReceiveMessages(void* self, SteamNetworkingMessage** ppOutMessages, int nMaxMessages);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_ScheduleCleanup", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_ScheduleCleanup", CallingConvention = Platform.CC)]
         internal static extern void ScheduleCleanup(void* self, ref SteamNetworkingIPAddr remoteAddress);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamNetworkingFakeUDPPort
         {
             public void* self;

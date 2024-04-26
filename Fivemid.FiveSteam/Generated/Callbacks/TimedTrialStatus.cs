@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>See Also:</b> <a href="https://partner.steamgames.com/doc/api/ISteamApps#BIsTimedTrial" class="bb_apilink">ISteamApps::BIsTimedTrial</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct TimedTrialStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.TimedTrialStatus;

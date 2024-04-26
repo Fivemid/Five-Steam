@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A unique handle to a piece of user generated content.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct UGCHandle : IEquatable<UGCHandle>, IComparable<UGCHandle>
     {
         public ulong value;

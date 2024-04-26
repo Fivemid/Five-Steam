@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A unique handle to a single UGC Query. This is used when requesting lists of items from the workshop.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct UGCQueryHandle : IEquatable<UGCQueryHandle>, IComparable<UGCQueryHandle>
     {
         public ulong value;

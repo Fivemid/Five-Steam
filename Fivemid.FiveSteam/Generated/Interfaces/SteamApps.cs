@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamApps.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamApps_v008", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamApps_v008", CallingConvention = Platform.CC)]
         private static extern ISteamApps.Instance Accessor();
         /// <summary><code>bool BIsSubscribed();</code>Checks if the active user is subscribed to the current App ID.<br />
         /// <br />

@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when the browser is navigating to a new url<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_URLChanged : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_URLChanged;

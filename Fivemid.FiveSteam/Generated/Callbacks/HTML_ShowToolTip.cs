@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a browser wants to display a tooltip.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_ShowToolTip : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_ShowToolTip;

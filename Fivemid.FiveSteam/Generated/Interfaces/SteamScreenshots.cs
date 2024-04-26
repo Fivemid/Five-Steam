@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamScreenshots.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamScreenshots_v003", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamScreenshots_v003", CallingConvention = Platform.CC)]
         private static extern ISteamScreenshots.Instance Accessor();
         /// <summary><code>ScreenshotHandle WriteScreenshot( void *pubRGB, uint32 cubRGB, int nWidth, int nHeight );</code><br />
         /// Writes a screenshot to the user's Steam screenshot library given the raw image data, which must be in RGB format.<br />

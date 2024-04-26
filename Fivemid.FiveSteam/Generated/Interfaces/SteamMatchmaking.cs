@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamMatchmaking.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamMatchmaking_v009", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamMatchmaking_v009", CallingConvention = Platform.CC)]
         private static extern ISteamMatchmaking.Instance Accessor();
         /// <summary><code>int GetFavoriteGameCount();</code>Gets the number of favorite and recent game servers the user has stored locally.<br />
         /// <br />

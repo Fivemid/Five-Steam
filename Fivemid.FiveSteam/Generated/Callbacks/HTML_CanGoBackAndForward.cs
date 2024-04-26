@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when page history status has changed the ability to go backwards and forward.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_CanGoBackAndForward : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_CanGoBackAndForward;

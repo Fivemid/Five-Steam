@@ -22,6 +22,7 @@ public partial class CodeWriter {
         string name = StructName(definition.Name);
         
         return StructDeclaration(name)
+              .AddAttributeLists(StructLayoutAttribute())
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .AddMembers(
                    definition.Fields.Where(f => !excludeFieldType.Contains(f.Type)).Select(
@@ -79,6 +80,27 @@ public partial class CodeWriter {
                               }).ToArray<MemberDeclarationSyntax>())
               .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
+    
+    private AttributeListSyntax StructLayoutAttribute(bool emptyStruct = false) =>
+        AttributeList()
+           .AddAttributes(
+                Attribute(IdentifierName("StructLayout"))
+                   .AddArgumentListArguments(
+                        AttributeArgument(ParseExpression("LayoutKind.Sequential")),
+                        AttributeArgument(ParseExpression("CharSet.Unicode"))
+                           .WithNameEquals(NameEquals("CharSet")),
+                        AttributeArgument(ParseExpression("Platform.PACK_SIZE"))
+                           .WithNameEquals(NameEquals("Pack"))
+                    )
+                   .AddArgumentListArguments(
+                        emptyStruct
+                            ? [
+                                AttributeArgument(ParseExpression("1"))
+                                   .WithNameEquals(NameEquals("Size"))
+                            ]
+                            : []
+                    )
+            );
     
     private static HashSet<string> excludeFieldType = ["SteamInputActionEvent_t::AnalogAction_t"];
     

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A unique handle to a single item update. This is used when uploading or updating an item on the workshop.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct UGCUpdateHandle : IEquatable<UGCUpdateHandle>, IComparable<UGCUpdateHandle>
     {
         public ulong value;

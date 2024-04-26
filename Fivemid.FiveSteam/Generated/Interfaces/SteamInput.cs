@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamInput.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamInput_v006", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamInput_v006", CallingConvention = Platform.CC)]
         private static extern ISteamInput.Instance Accessor();
         /// <summary><code>bool Init();</code>Must be called when starting use of the <a href="https://partner.steamgames.com/doc/api/ISteamInput" class="bb_apilink">ISteamInput</a> interface.<br />
         /// <br />

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for FSteamNetworkingSocketsDebugOutput
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct FSteamNetworkingSocketsDebugOutput
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamNetworkingSocketsDebugOutputType_UTF8StringPtr> value;

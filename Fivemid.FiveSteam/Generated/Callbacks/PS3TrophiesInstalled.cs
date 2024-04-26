@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when PS3 trophies are available.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct PS3TrophiesInstalled : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.PS3TrophiesInstalled;

@@ -11,6 +11,7 @@ public partial class CodeWriter {
     
     private BaseTypeDeclarationSyntax UTF8String(UTF8StringType type) {
         return StructDeclaration(type.TypeIdentifier)
+              .AddAttributeLists(StructLayoutAttribute())
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .AddMembers(FieldDeclaration(
                                   VariableDeclaration(ParseTypeName("char"))

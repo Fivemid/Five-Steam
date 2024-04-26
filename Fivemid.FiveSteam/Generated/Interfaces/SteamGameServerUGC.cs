@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamUGC.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServerUGC_v018", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamGameServerUGC_v018", CallingConvention = Platform.CC)]
         private static extern ISteamUGC.Instance Accessor();
         /// <summary><code>UGCQueryHandle_t CreateQueryUserUGCRequest( AccountID_t unAccountID, EUserUGCList eListType, EUGCMatchingUGCType eMatchingUGCType, EUserUGCListSortOrder eSortOrder, AppId_t nCreatorAppID, AppId_t nConsumerAppID, uint32 unPage );</code><br />
         /// Query UGC associated with a user. You can use this to list the UGC the user is subscribed to amongst other things.<br />

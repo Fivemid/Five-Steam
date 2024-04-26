@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamGameSearch.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameSearch_v001", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamGameSearch_v001", CallingConvention = Platform.CC)]
         private static extern ISteamGameSearch.Instance Accessor();
         /// missing documentation
         public static GameSearchErrorCode AddGameSearchParams(UTF8StringPtr pchKeyToFind, UTF8StringPtr pchValuesToFind) => Instance.AddGameSearchParams(pchKeyToFind, pchValuesToFind);

@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Returned after <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RequestPrices" class="bb_apilink">ISteamInventory::RequestPrices</a> is called.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamInventoryRequestPricesResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryRequestPricesResult;

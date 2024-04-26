@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamUtils.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamUtils_v010", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamUtils_v010", CallingConvention = Platform.CC)]
         private static extern ISteamUtils.Instance Accessor();
         /// <summary><code>uint32 GetSecondsSinceAppActive();</code>Returns the number of seconds since the application was active.<br />
         /// <br />

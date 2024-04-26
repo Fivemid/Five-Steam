@@ -27,6 +27,7 @@ public partial class CodeWriter {
                       && !valueType.ToString().StartsWith("UTF8String");
         
         return StructDeclaration(name.Identifier)
+              .AddAttributeLists(StructLayoutAttribute())
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .WithBaseList(equatable
                                 ? BaseList().AddTypes(

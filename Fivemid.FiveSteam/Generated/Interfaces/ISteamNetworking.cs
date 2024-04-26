@@ -31,50 +31,51 @@ namespace Fivemid.FiveSteam
         public bool GetListenSocketInfo(SNetListenSocket hListenSocket, SteamIPAddress* pnIP, ushort* pnPort);
         public SNetSocketConnectionType GetSocketConnectionType(SNetSocket hSocket);
         public int GetMaxPacketSize(SNetSocket hSocket);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_SendP2PPacket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_SendP2PPacket", CallingConvention = Platform.CC)]
         internal static extern bool SendP2PPacket(void* self, SteamId steamIDRemote, void* pubData, uint cubData, P2PSend eP2PSendType, int nChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_IsP2PPacketAvailable", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_IsP2PPacketAvailable", CallingConvention = Platform.CC)]
         internal static extern bool IsP2PPacketAvailable(void* self, uint* pcubMsgSize, int nChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_ReadP2PPacket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_ReadP2PPacket", CallingConvention = Platform.CC)]
         internal static extern bool ReadP2PPacket(void* self, void* pubDest, uint cubDest, uint* pcubMsgSize, SteamId* psteamIDRemote, int nChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_AcceptP2PSessionWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_AcceptP2PSessionWithUser", CallingConvention = Platform.CC)]
         internal static extern bool AcceptP2PSessionWithUser(void* self, SteamId steamIDRemote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_CloseP2PSessionWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_CloseP2PSessionWithUser", CallingConvention = Platform.CC)]
         internal static extern bool CloseP2PSessionWithUser(void* self, SteamId steamIDRemote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_CloseP2PChannelWithUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_CloseP2PChannelWithUser", CallingConvention = Platform.CC)]
         internal static extern bool CloseP2PChannelWithUser(void* self, SteamId steamIDRemote, int nChannel);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_GetP2PSessionState", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetP2PSessionState", CallingConvention = Platform.CC)]
         internal static extern bool GetP2PSessionState(void* self, SteamId steamIDRemote, P2PSessionState* pConnectionState);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_AllowP2PPacketRelay", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_AllowP2PPacketRelay", CallingConvention = Platform.CC)]
         internal static extern bool AllowP2PPacketRelay(void* self, bool bAllow);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_CreateListenSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_CreateListenSocket", CallingConvention = Platform.CC)]
         internal static extern SNetListenSocket CreateListenSocket(void* self, int nVirtualP2PPort, SteamIPAddress nIP, ushort nPort, bool bAllowUseOfPacketRelay);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_CreateP2PConnectionSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_CreateP2PConnectionSocket", CallingConvention = Platform.CC)]
         internal static extern SNetSocket CreateP2PConnectionSocket(void* self, SteamId steamIDTarget, int nVirtualPort, int nTimeoutSec, bool bAllowUseOfPacketRelay);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_CreateConnectionSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_CreateConnectionSocket", CallingConvention = Platform.CC)]
         internal static extern SNetSocket CreateConnectionSocket(void* self, SteamIPAddress nIP, ushort nPort, int nTimeoutSec);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_DestroySocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_DestroySocket", CallingConvention = Platform.CC)]
         internal static extern bool DestroySocket(void* self, SNetSocket hSocket, bool bNotifyRemoteEnd);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_DestroyListenSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_DestroyListenSocket", CallingConvention = Platform.CC)]
         internal static extern bool DestroyListenSocket(void* self, SNetListenSocket hSocket, bool bNotifyRemoteEnd);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_SendDataOnSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_SendDataOnSocket", CallingConvention = Platform.CC)]
         internal static extern bool SendDataOnSocket(void* self, SNetSocket hSocket, void* pubData, uint cubData, bool bReliable);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_IsDataAvailableOnSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_IsDataAvailableOnSocket", CallingConvention = Platform.CC)]
         internal static extern bool IsDataAvailableOnSocket(void* self, SNetSocket hSocket, uint* pcubMsgSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_RetrieveDataFromSocket", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_RetrieveDataFromSocket", CallingConvention = Platform.CC)]
         internal static extern bool RetrieveDataFromSocket(void* self, SNetSocket hSocket, void* pubDest, uint cubDest, uint* pcubMsgSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_IsDataAvailable", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_IsDataAvailable", CallingConvention = Platform.CC)]
         internal static extern bool IsDataAvailable(void* self, SNetListenSocket hListenSocket, uint* pcubMsgSize, SNetSocket* phSocket);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_RetrieveData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_RetrieveData", CallingConvention = Platform.CC)]
         internal static extern bool RetrieveData(void* self, SNetListenSocket hListenSocket, void* pubDest, uint cubDest, uint* pcubMsgSize, SNetSocket* phSocket);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_GetSocketInfo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetSocketInfo", CallingConvention = Platform.CC)]
         internal static extern bool GetSocketInfo(void* self, SNetSocket hSocket, SteamId* pSteamIDRemote, int* peSocketStatus, SteamIPAddress* punIPRemote, ushort* punPortRemote);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_GetListenSocketInfo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetListenSocketInfo", CallingConvention = Platform.CC)]
         internal static extern bool GetListenSocketInfo(void* self, SNetListenSocket hListenSocket, SteamIPAddress* pnIP, ushort* pnPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_GetSocketConnectionType", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetSocketConnectionType", CallingConvention = Platform.CC)]
         internal static extern SNetSocketConnectionType GetSocketConnectionType(void* self, SNetSocket hSocket);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamNetworking_GetMaxPacketSize", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetMaxPacketSize", CallingConvention = Platform.CC)]
         internal static extern int GetMaxPacketSize(void* self, SNetSocket hSocket);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamNetworking
         {
             public void* self;

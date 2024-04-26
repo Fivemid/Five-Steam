@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when the text of an existing tooltip has been updated.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_UpdateToolTip : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_UpdateToolTip;

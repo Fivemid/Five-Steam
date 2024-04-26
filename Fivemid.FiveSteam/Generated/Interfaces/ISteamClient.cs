@@ -44,74 +44,75 @@ namespace Fivemid.FiveSteam
         public ISteamInput.Instance* GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
         public ISteamParties.Instance* GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
         public ISteamRemotePlay.Instance* GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_CreateSteamPipe", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_CreateSteamPipe", CallingConvention = Platform.CC)]
         internal static extern HSteamPipe CreateSteamPipe(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_BReleaseSteamPipe", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_BReleaseSteamPipe", CallingConvention = Platform.CC)]
         internal static extern bool BReleaseSteamPipe(void* self, HSteamPipe hSteamPipe);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_ConnectToGlobalUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_ConnectToGlobalUser", CallingConvention = Platform.CC)]
         internal static extern HSteamUser ConnectToGlobalUser(void* self, HSteamPipe hSteamPipe);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_CreateLocalUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_CreateLocalUser", CallingConvention = Platform.CC)]
         internal static extern HSteamUser CreateLocalUser(void* self, HSteamPipe* phSteamPipe, AccountType eAccountType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_ReleaseUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_ReleaseUser", CallingConvention = Platform.CC)]
         internal static extern void ReleaseUser(void* self, HSteamPipe hSteamPipe, HSteamUser hUser);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamUser", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamUser", CallingConvention = Platform.CC)]
         internal static extern ISteamUser.Instance* GetISteamUser(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameServer", CallingConvention = Platform.CC)]
         internal static extern ISteamGameServer.Instance* GetISteamGameServer(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_SetLocalIPBinding", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_SetLocalIPBinding", CallingConvention = Platform.CC)]
         internal static extern void SetLocalIPBinding(void* self, ref SteamIPAddress unIP, ushort usPort);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamFriends", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamFriends", CallingConvention = Platform.CC)]
         internal static extern ISteamFriends.Instance* GetISteamFriends(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamUtils", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamUtils", CallingConvention = Platform.CC)]
         internal static extern ISteamUtils.Instance* GetISteamUtils(void* self, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamMatchmaking", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamMatchmaking", CallingConvention = Platform.CC)]
         internal static extern ISteamMatchmaking.Instance* GetISteamMatchmaking(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamMatchmakingServers", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamMatchmakingServers", CallingConvention = Platform.CC)]
         internal static extern ISteamMatchmakingServers.Instance* GetISteamMatchmakingServers(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamGenericInterface", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamGenericInterface", CallingConvention = Platform.CC)]
         internal static extern void* GetISteamGenericInterface(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamUserStats", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamUserStats", CallingConvention = Platform.CC)]
         internal static extern ISteamUserStats.Instance* GetISteamUserStats(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameServerStats", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameServerStats", CallingConvention = Platform.CC)]
         internal static extern ISteamGameServerStats.Instance* GetISteamGameServerStats(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamApps", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamApps", CallingConvention = Platform.CC)]
         internal static extern ISteamApps.Instance* GetISteamApps(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamNetworking", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamNetworking", CallingConvention = Platform.CC)]
         internal static extern ISteamNetworking.Instance* GetISteamNetworking(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamRemoteStorage", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamRemoteStorage", CallingConvention = Platform.CC)]
         internal static extern ISteamRemoteStorage.Instance* GetISteamRemoteStorage(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamScreenshots", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamScreenshots", CallingConvention = Platform.CC)]
         internal static extern ISteamScreenshots.Instance* GetISteamScreenshots(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameSearch", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamGameSearch", CallingConvention = Platform.CC)]
         internal static extern ISteamGameSearch.Instance* GetISteamGameSearch(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetIPCCallCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetIPCCallCount", CallingConvention = Platform.CC)]
         internal static extern uint GetIPCCallCount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_SetWarningMessageHook", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_SetWarningMessageHook", CallingConvention = Platform.CC)]
         internal static extern void SetWarningMessageHook(void* self, Unknown pFunction);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_BShutdownIfAllPipesClosed", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_BShutdownIfAllPipesClosed", CallingConvention = Platform.CC)]
         internal static extern bool BShutdownIfAllPipesClosed(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamHTTP", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamHTTP", CallingConvention = Platform.CC)]
         internal static extern ISteamHTTP.Instance* GetISteamHTTP(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamController", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamController", CallingConvention = Platform.CC)]
         internal static extern ISteamController.Instance* GetISteamController(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamUGC", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamUGC", CallingConvention = Platform.CC)]
         internal static extern ISteamUGC.Instance* GetISteamUGC(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamMusic", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamMusic", CallingConvention = Platform.CC)]
         internal static extern ISteamMusic.Instance* GetISteamMusic(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamMusicRemote", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamMusicRemote", CallingConvention = Platform.CC)]
         internal static extern ISteamMusicRemote.Instance* GetISteamMusicRemote(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamHTMLSurface", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamHTMLSurface", CallingConvention = Platform.CC)]
         internal static extern ISteamHTMLSurface.Instance* GetISteamHTMLSurface(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamInventory", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamInventory", CallingConvention = Platform.CC)]
         internal static extern ISteamInventory.Instance* GetISteamInventory(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamParentalSettings", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamParentalSettings", CallingConvention = Platform.CC)]
         internal static extern ISteamParentalSettings.Instance* GetISteamParentalSettings(void* self, HSteamUser hSteamuser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamInput", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamInput", CallingConvention = Platform.CC)]
         internal static extern ISteamInput.Instance* GetISteamInput(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamParties", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamParties", CallingConvention = Platform.CC)]
         internal static extern ISteamParties.Instance* GetISteamParties(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamClient_GetISteamRemotePlay", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamRemotePlay", CallingConvention = Platform.CC)]
         internal static extern ISteamRemotePlay.Instance* GetISteamRemotePlay(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamClient
         {
             public void* self;

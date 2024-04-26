@@ -15,6 +15,7 @@ namespace Fivemid.FiveSteam
     /// Also note that callbacks will be posted when connections are created and destroyed by your own API calls.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetConnectionStatusChangedCallback : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetConnectionStatusChangedCallback;

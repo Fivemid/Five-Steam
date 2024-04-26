@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamMusicRemote.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamMusicRemote_v001", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamMusicRemote_v001", CallingConvention = Platform.CC)]
         private static extern ISteamMusicRemote.Instance Accessor();
         /// <summary><code>bool RegisterSteamMusicRemote( const char *pchName );</code><br />
         /// Service Definition<br />

@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when the big picture gamepad text input has been closed.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct GamepadTextInputDismissed : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GamepadTextInputDismissed;

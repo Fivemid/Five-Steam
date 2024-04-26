@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// For the meaning of these fields, see <br />
     /// <br /> the listen socket or connection really starts doing anything.  Creating the object and then setting the options "immediately" after creation doesn't work completely, because network packets could be received between the time the object is created and when the options are applied.  To set options at creation time in a reliable way, they must be passed to the creation function.  This structure is used to pass those options.<i>before</i>
     /// In a few places we need to set configuration options on listen sockets and connections, and have them take effect <br /></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetworkingConfigValue
     {
         /// <summary>Which option is being set</summary>
@@ -16,15 +17,15 @@ namespace Fivemid.FiveSteam
         public SteamNetworkingConfigDataType eDataType;
         /// <summary></summary>
         public long int64;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt32", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt32", CallingConvention = Platform.CC)]
         internal static extern void SetInt32(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, int data);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt64", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetInt64", CallingConvention = Platform.CC)]
         internal static extern void SetInt64(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, long data);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetFloat", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetFloat", CallingConvention = Platform.CC)]
         internal static extern void SetFloat(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, float data);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetPtr", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetPtr", CallingConvention = Platform.CC)]
         internal static extern void SetPtr(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, void* data);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetString", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingConfigValue_t_SetString", CallingConvention = Platform.CC)]
         internal static extern void SetString(SteamNetworkingConfigValue* self, SteamNetworkingConfigValueType eVal, UTF8StringPtr data);
         public void SetInt32(SteamNetworkingConfigValueType eVal, int data)
         {

@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#WriteScreenshot" class="bb_apilink">ISteamScreenshots::WriteScreenshot</a>, <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#AddScreenshotToLibrary" class="bb_apilink">ISteamScreenshots::AddScreenshotToLibrary</a>, <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#TriggerScreenshot" class="bb_apilink">ISteamScreenshots::TriggerScreenshot</a>, <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#AddVRScreenshotToLibrary" class="bb_apilink">ISteamScreenshots::AddVRScreenshotToLibrary</a></summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct ScreenshotReady : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ScreenshotReady;

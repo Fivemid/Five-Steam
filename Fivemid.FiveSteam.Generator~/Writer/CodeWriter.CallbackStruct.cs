@@ -30,6 +30,7 @@ public partial class CodeWriter {
         string name = CallbackStructName(definition.Name);
         
         return StructDeclaration(name)
+              .AddAttributeLists(StructLayoutAttribute(definition.Fields.Length == 0))
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .WithBaseList(BaseList().AddTypes(SimpleBaseType(ParseTypeName("global::Unity.Entities.IComponentData"))))
               .AddMembers(

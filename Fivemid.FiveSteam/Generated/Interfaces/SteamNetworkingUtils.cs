@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamNetworkingUtils.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingUtils_SteamAPI_v004", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingUtils_SteamAPI_v004", CallingConvention = Platform.CC)]
         private static extern ISteamNetworkingUtils.Instance Accessor();
         /// <summary><code>SteamNetworkingMessage_t *AllocateMessage( int cbAllocateBuffer ) </code>Allocate and initialize a message object.  Usually the reason you call this is to pass it to <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingSockets#SendMessages" class="bb_apilink">ISteamNetworkingSockets::SendMessages</a>.  The returned object will have all of the relevant fields cleared to zero.<br />
         /// <br />

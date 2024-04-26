@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for RemotePlaySessionID_t
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct RemotePlaySessionID : IEquatable<RemotePlaySessionID>, IComparable<RemotePlaySessionID>
     {
         public uint value;

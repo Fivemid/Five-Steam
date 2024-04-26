@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// Obtainable from: <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetFriendGamePlayed" class="bb_apilink">ISteamFriends::GetFriendGamePlayed</a>.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct FriendGameInfo
     {
         /// <summary>The game ID that the friend is playing.</summary>

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Friends group (tags) identifier.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct FriendsGroupID : IEquatable<FriendsGroupID>, IComparable<FriendsGroupID>
     {
         public short value;

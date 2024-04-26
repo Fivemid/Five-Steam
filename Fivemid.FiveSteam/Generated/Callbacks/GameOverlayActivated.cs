@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Posted when the <a href="https://partner.steamgames.com/doc/features/overlay" class="bb_doclink">Steam Overlay</a> activates or deactivates. The game can use this to pause or resume single player games.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct GameOverlayActivated : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameOverlayActivated;

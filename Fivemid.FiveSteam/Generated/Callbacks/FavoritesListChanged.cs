@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>A server was added/removed from the favorites list, you should refresh now.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct FavoritesListChanged : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FavoritesListChanged;

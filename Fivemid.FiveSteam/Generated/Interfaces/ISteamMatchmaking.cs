@@ -47,82 +47,83 @@ namespace Fivemid.FiveSteam
         public SteamId GetLobbyOwner(SteamId steamIDLobby);
         public bool SetLobbyOwner(SteamId steamIDLobby, SteamId steamIDNewOwner);
         public bool SetLinkedLobby(SteamId steamIDLobby, SteamId steamIDLobbyDependent);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetFavoriteGameCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetFavoriteGameCount", CallingConvention = Platform.CC)]
         internal static extern int GetFavoriteGameCount(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetFavoriteGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetFavoriteGame", CallingConvention = Platform.CC)]
         internal static extern bool GetFavoriteGame(void* self, int iGame, AppId* pnAppID, uint* pnIP, ushort* pnConnPort, ushort* pnQueryPort, uint* punFlags, uint* pRTime32LastPlayedOnServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddFavoriteGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddFavoriteGame", CallingConvention = Platform.CC)]
         internal static extern int AddFavoriteGame(void* self, AppId nAppID, uint nIP, ushort nConnPort, ushort nQueryPort, uint unFlags, uint rTime32LastPlayedOnServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_RemoveFavoriteGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_RemoveFavoriteGame", CallingConvention = Platform.CC)]
         internal static extern bool RemoveFavoriteGame(void* self, AppId nAppID, uint nIP, ushort nConnPort, ushort nQueryPort, uint unFlags);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_RequestLobbyList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_RequestLobbyList", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RequestLobbyList(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListStringFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListStringFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListStringFilter(void* self, UTF8StringPtr pchKeyToMatch, UTF8StringPtr pchValueToMatch, LobbyComparison eComparisonType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListNumericalFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListNumericalFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListNumericalFilter(void* self, UTF8StringPtr pchKeyToMatch, int nValueToMatch, LobbyComparison eComparisonType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListNearValueFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListNearValueFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListNearValueFilter(void* self, UTF8StringPtr pchKeyToMatch, int nValueToBeCloseTo);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListFilterSlotsAvailable", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListFilterSlotsAvailable", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListFilterSlotsAvailable(void* self, int nSlotsAvailable);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListDistanceFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListDistanceFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListDistanceFilter(void* self, LobbyDistanceFilter eLobbyDistanceFilter);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListResultCountFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListResultCountFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListResultCountFilter(void* self, int cMaxResults);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListCompatibleMembersFilter", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_AddRequestLobbyListCompatibleMembersFilter", CallingConvention = Platform.CC)]
         internal static extern void AddRequestLobbyListCompatibleMembersFilter(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyByIndex", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyByIndex", CallingConvention = Platform.CC)]
         internal static extern SteamId GetLobbyByIndex(void* self, int iLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_CreateLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_CreateLobby", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall CreateLobby(void* self, LobbyType eLobbyType, int cMaxMembers);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_JoinLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_JoinLobby", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall JoinLobby(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_LeaveLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_LeaveLobby", CallingConvention = Platform.CC)]
         internal static extern void LeaveLobby(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_InviteUserToLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_InviteUserToLobby", CallingConvention = Platform.CC)]
         internal static extern bool InviteUserToLobby(void* self, SteamId steamIDLobby, SteamId steamIDInvitee);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetNumLobbyMembers", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetNumLobbyMembers", CallingConvention = Platform.CC)]
         internal static extern int GetNumLobbyMembers(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberByIndex", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberByIndex", CallingConvention = Platform.CC)]
         internal static extern SteamId GetLobbyMemberByIndex(void* self, SteamId steamIDLobby, int iMember);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyData", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetLobbyData(void* self, SteamId steamIDLobby, UTF8StringPtr pchKey);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyData", CallingConvention = Platform.CC)]
         internal static extern bool SetLobbyData(void* self, SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataCount", CallingConvention = Platform.CC)]
         internal static extern int GetLobbyDataCount(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataByIndex", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataByIndex", CallingConvention = Platform.CC)]
         internal static extern bool GetLobbyDataByIndex(void* self, SteamId steamIDLobby, int iLobbyData, char* pchKey, int cchKeyBufferSize, char* pchValue, int cchValueBufferSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_DeleteLobbyData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_DeleteLobbyData", CallingConvention = Platform.CC)]
         internal static extern bool DeleteLobbyData(void* self, SteamId steamIDLobby, UTF8StringPtr pchKey);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberData", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetLobbyMemberData(void* self, SteamId steamIDLobby, SteamId steamIDUser, UTF8StringPtr pchKey);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyMemberData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyMemberData", CallingConvention = Platform.CC)]
         internal static extern void SetLobbyMemberData(void* self, SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SendLobbyChatMsg", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SendLobbyChatMsg", CallingConvention = Platform.CC)]
         internal static extern bool SendLobbyChatMsg(void* self, SteamId steamIDLobby, void* pvMsgBody, int cubMsgBody);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyChatEntry", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyChatEntry", CallingConvention = Platform.CC)]
         internal static extern int GetLobbyChatEntry(void* self, SteamId steamIDLobby, int iChatID, SteamId* pSteamIDUser, void* pvData, int cubData, ChatEntryType* peChatEntryType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_RequestLobbyData", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_RequestLobbyData", CallingConvention = Platform.CC)]
         internal static extern bool RequestLobbyData(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyGameServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyGameServer", CallingConvention = Platform.CC)]
         internal static extern void SetLobbyGameServer(void* self, SteamId steamIDLobby, uint unGameServerIP, ushort unGameServerPort, SteamId steamIDGameServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyGameServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyGameServer", CallingConvention = Platform.CC)]
         internal static extern bool GetLobbyGameServer(void* self, SteamId steamIDLobby, uint* punGameServerIP, ushort* punGameServerPort, SteamId* psteamIDGameServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyMemberLimit", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyMemberLimit", CallingConvention = Platform.CC)]
         internal static extern bool SetLobbyMemberLimit(void* self, SteamId steamIDLobby, int cMaxMembers);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberLimit", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberLimit", CallingConvention = Platform.CC)]
         internal static extern int GetLobbyMemberLimit(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyType", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyType", CallingConvention = Platform.CC)]
         internal static extern bool SetLobbyType(void* self, SteamId steamIDLobby, LobbyType eLobbyType);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyJoinable", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyJoinable", CallingConvention = Platform.CC)]
         internal static extern bool SetLobbyJoinable(void* self, SteamId steamIDLobby, bool bLobbyJoinable);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyOwner", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyOwner", CallingConvention = Platform.CC)]
         internal static extern SteamId GetLobbyOwner(void* self, SteamId steamIDLobby);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyOwner", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLobbyOwner", CallingConvention = Platform.CC)]
         internal static extern bool SetLobbyOwner(void* self, SteamId steamIDLobby, SteamId steamIDNewOwner);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLinkedLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLinkedLobby", CallingConvention = Platform.CC)]
         internal static extern bool SetLinkedLobby(void* self, SteamId steamIDLobby, SteamId steamIDLobbyDependent);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamMatchmaking
         {
             public void* self;

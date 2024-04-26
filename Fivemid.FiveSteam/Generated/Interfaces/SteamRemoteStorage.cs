@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamRemoteStorage.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamRemoteStorage_v016", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamRemoteStorage_v016", CallingConvention = Platform.CC)]
         private static extern ISteamRemoteStorage.Instance Accessor();
         /// <summary><code>bool FileWrite( const char *pchFile, const void *pvData, int32 cubData );</code><br />
         /// Creates a new file, writes the bytes to the file, and then closes the file. If the target file already exists, it is overwritten.<br />

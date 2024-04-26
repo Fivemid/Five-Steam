@@ -26,40 +26,41 @@ namespace Fivemid.FiveSteam
         public HServerQuery PlayerDetails(uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse);
         public HServerQuery ServerRules(uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse);
         public void CancelServerQuery(HServerQuery hServerQuery);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestInternetServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestInternetServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestInternetServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestLANServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestLANServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestLANServerList(void* self, AppId iApp, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestFriendsServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestFavoritesServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestHistoryServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList", CallingConvention = Platform.CC)]
         internal static extern HServerListRequest RequestSpectatorServerList(void* self, AppId iApp, MatchMakingKeyValuePair** ppchFilters, uint nFilters, ISteamMatchmakingServerListResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ReleaseRequest", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ReleaseRequest", CallingConvention = Platform.CC)]
         internal static extern void ReleaseRequest(void* self, HServerListRequest hServerListRequest);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerDetails", CallingConvention = Platform.CC)]
         internal static extern gameserveritem* GetServerDetails(void* self, HServerListRequest hRequest, int iServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelQuery", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelQuery", CallingConvention = Platform.CC)]
         internal static extern void CancelQuery(void* self, HServerListRequest hRequest);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshQuery", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshQuery", CallingConvention = Platform.CC)]
         internal static extern void RefreshQuery(void* self, HServerListRequest hRequest);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_IsRefreshing", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_IsRefreshing", CallingConvention = Platform.CC)]
         internal static extern bool IsRefreshing(void* self, HServerListRequest hRequest);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerCount", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_GetServerCount", CallingConvention = Platform.CC)]
         internal static extern int GetServerCount(void* self, HServerListRequest hRequest);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_RefreshServer", CallingConvention = Platform.CC)]
         internal static extern void RefreshServer(void* self, HServerListRequest hRequest, int iServer);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PingServer", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PingServer", CallingConvention = Platform.CC)]
         internal static extern HServerQuery PingServer(void* self, uint unIP, ushort usPort, ISteamMatchmakingPingResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PlayerDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_PlayerDetails", CallingConvention = Platform.CC)]
         internal static extern HServerQuery PlayerDetails(void* self, uint unIP, ushort usPort, ISteamMatchmakingPlayersResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ServerRules", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_ServerRules", CallingConvention = Platform.CC)]
         internal static extern HServerQuery ServerRules(void* self, uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelServerQuery", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelServerQuery", CallingConvention = Platform.CC)]
         internal static extern void CancelServerQuery(void* self, HServerQuery hServerQuery);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamMatchmakingServers
         {
             public void* self;

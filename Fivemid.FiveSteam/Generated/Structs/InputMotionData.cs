@@ -12,6 +12,7 @@ namespace Fivemid.FiveSteam
     /// Angular velocity is reported as an interpolated value between INT16_MIN and INT16_MAX where the extents are clamped to ±2000 degrees per second.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct InputMotionData
     {
         /// <summary>Sensor-fused absolute rotation (will drift in heading), x axis</summary>

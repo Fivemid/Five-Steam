@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary><br />
     /// A message that has been received<br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetworkingMessage
     {
         /// <summary>Message payload</summary>
@@ -64,7 +65,7 @@ namespace Fivemid.FiveSteam
         public ushort idxLane;
         /// missing documentation for SteamNetworkingMessage_t._pad1__
         public ushort _pad1__;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingMessage_t_Release", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingMessage_t_Release", CallingConvention = Platform.CC)]
         internal static extern void Release(SteamNetworkingMessage* self);
         public void Release()
         {

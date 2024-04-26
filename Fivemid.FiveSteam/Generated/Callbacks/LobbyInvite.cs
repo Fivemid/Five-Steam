@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// If the user outside a game chooses to join, your game will be launched with the parameter <code class="bb_code bb_code_inline nohighlight">+connect_lobby &lt;64-bit lobby id&gt;</code>, or with the callback <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GameLobbyJoinRequested_t" class="bb_apilink">GameLobbyJoinRequested_t</a> if they're already in-game.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct LobbyInvite : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyInvite;

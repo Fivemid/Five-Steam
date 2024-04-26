@@ -7,6 +7,7 @@ namespace Fivemid.FiveSteam
     /// Posted when a remote host is sending us a message, and we do not already have a session with them<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetworkingMessagesSessionRequest : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingMessagesSessionRequest;

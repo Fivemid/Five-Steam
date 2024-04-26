@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamHTTP.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServerHTTP_v003", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamGameServerHTTP_v003", CallingConvention = Platform.CC)]
         private static extern ISteamHTTP.Instance Accessor();
         /// <summary><code>HTTPRequestHandle CreateHTTPRequest( EHTTPMethod eHTTPRequestMethod, const char *pchAbsoluteURL );</code><br />
         /// Initializes a new HTTP request.<br />

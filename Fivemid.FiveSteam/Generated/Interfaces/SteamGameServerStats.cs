@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamGameServerStats.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamGameServerStats_v001", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamGameServerStats_v001", CallingConvention = Platform.CC)]
         private static extern ISteamGameServerStats.Instance Accessor();
         /// <summary><code>SteamAPICall_t RequestUserStats( CSteamID steamIDUser );</code><br />
         /// Asynchronously downloads stats and achievements for the specified user from the server.<br />

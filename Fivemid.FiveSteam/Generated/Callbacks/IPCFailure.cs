@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// This usually occurs in the rare event the Steam client has some kind of fatal error.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct IPCFailure : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.IPCFailure;

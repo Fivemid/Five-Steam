@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a browser wants to change the mouse cursor.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_SetCursor : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_SetCursor;

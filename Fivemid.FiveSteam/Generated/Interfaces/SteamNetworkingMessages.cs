@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamNetworkingMessages.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworkingMessages_SteamAPI_v002", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingMessages_SteamAPI_v002", CallingConvention = Platform.CC)]
         private static extern ISteamNetworkingMessages.Instance Accessor();
         /// <summary><code>EResult SendMessageToUser( const SteamNetworkingIdentity &amp;identityRemote, const void *pubData, uint32 cubData, int nSendFlags, int nRemoteChannel );</code><br />
         /// Sends a message to the specified host.  If we don't already have a session with that user, a session is implicitly created.  There might be some handshaking that needs to happen before we can actually begin sending message data.  If this handshaking fails and we can't get through, an error will be posted via the callback <a href="https://partner.steamgames.com/doc/api/ISteamNetworkingMessages#SteamNetworkingMessagesSessionFailed_t" class="bb_apilink">SteamNetworkingMessagesSessionFailed_t</a>. <br />

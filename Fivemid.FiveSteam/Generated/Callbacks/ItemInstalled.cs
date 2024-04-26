@@ -8,6 +8,7 @@ namespace Fivemid.FiveSteam
     /// <b>NOTE:</b> This callback goes out to all running applications, ensure that the app ID associated with the item matches what you expect.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct ItemInstalled : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ItemInstalled;

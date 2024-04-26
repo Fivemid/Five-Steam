@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Deprecated - PS3 only.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct PSNGameBootInviteResult : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.PSNGameBootInviteResult;

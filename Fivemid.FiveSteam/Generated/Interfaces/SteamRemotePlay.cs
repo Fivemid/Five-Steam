@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamRemotePlay.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamRemotePlay_v002", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamRemotePlay_v002", CallingConvention = Platform.CC)]
         private static extern ISteamRemotePlay.Instance Accessor();
         /// <summary><code>uint32 GetSessionCount();</code>Get the number of currently connected Steam Remote Play sessions<br />
         /// <br />

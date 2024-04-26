@@ -58,13 +58,14 @@ namespace Fivemid.FiveSteam
     ///     </li><li> "linux"<br />
     ///         Server passes the filter if it's a linux server.</li></ul><br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct MatchMakingKeyValuePair
     {
         /// <summary>Filter operation code.</summary>
         public UTF8String256 szKey;
         /// <summary>Operation operand.</summary>
         public UTF8String256 szValue;
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_MatchMakingKeyValuePair_t_Construct", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_MatchMakingKeyValuePair_t_Construct", CallingConvention = Platform.CC)]
         internal static extern void Construct(MatchMakingKeyValuePair* self);
         public void Construct()
         {

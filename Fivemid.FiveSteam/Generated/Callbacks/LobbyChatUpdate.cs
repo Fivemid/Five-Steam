@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>A lobby chat room state has changed, this is usually sent when a user has joined or left the lobby.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct LobbyChatUpdate : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyChatUpdate;

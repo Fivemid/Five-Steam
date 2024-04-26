@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Only used internally in Steam.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct AppProofOfPurchaseKeyResponse : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AppProofOfPurchaseKeyResponse;

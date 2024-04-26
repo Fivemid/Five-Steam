@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamMusic.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamMusic_v001", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamMusic_v001", CallingConvention = Platform.CC)]
         private static extern ISteamMusic.Instance Accessor();
         /// <summary><code>bool BIsEnabled();</code>Checks if Steam Music is enabled.<br />
         /// <br />

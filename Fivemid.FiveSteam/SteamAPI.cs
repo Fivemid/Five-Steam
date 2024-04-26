@@ -3,35 +3,35 @@
 namespace Fivemid.FiveSteam {
     public static unsafe class SteamAPI {
         private static class Native {
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern SteamAPIInitResult SteamAPI_InitFlat(SteamErrMsg* pOutErrMsg);
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern void SteamAPI_Shutdown();
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern HSteamPipe SteamAPI_GetHSteamPipe();
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             [return: MarshalAs(UnmanagedType.I1)]
             public static extern bool SteamAPI_RestartAppIfNecessary(uint unOwnAppID);
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern void SteamAPI_ManualDispatch_Init();
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern void SteamAPI_ManualDispatch_RunFrame(HSteamPipe hSteamPipe);
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             [return: MarshalAs(UnmanagedType.I1)]
             public static extern bool SteamAPI_ManualDispatch_GetNextCallback(
                 HSteamPipe   hSteamPipe,
                 CallbackMsg* pCallbackMsg);
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             public static extern void SteamAPI_ManualDispatch_FreeLastCallback(HSteamPipe hSteamPipe);
             
-            [DllImport(Platform.LibraryName, CallingConvention = Platform.CC)]
+            [DllImport(Platform.LIBRARY_NAME, CallingConvention = Platform.CC)]
             [return: MarshalAs(UnmanagedType.I1)]
             public static extern bool SteamAPI_ManualDispatch_GetAPICallResult(
                 HSteamPipe   hSteamPipe,

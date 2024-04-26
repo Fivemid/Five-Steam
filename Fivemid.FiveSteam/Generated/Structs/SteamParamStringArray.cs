@@ -5,6 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// <summary><br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamParamStringArray
     {
         /// <summary>Array of strings.</summary>

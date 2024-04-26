@@ -5,6 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// <summary>These handles are used to refer to a specific in-game action or action set<br />
     /// All action handles should be queried during initialization for performance reasons</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct InputActionSetHandle : IEquatable<InputActionSetHandle>, IComparable<InputActionSetHandle>
     {
         public ulong value;

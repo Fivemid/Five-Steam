@@ -10,6 +10,7 @@ namespace Fivemid.FiveSteam
     /// This callback is posted whenever the state of our readiness changes.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamNetAuthenticationStatus : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetAuthenticationStatus;

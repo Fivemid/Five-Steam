@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Represents the current state of a digital action.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct InputDigitalActionData
     {
         /// <summary>The current state of this action; <b>true</b> if the action is currently pressed, otherwise <b>false</b>.</summary>

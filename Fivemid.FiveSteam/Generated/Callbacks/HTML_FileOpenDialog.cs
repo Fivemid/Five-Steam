@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a browser surface has received a file open dialog from a <code class="bb_code bb_code_inline nohighlight">&lt;input type="file"&gt;</code> click or similar, you must call <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#FileLoadDialogResponse" class="bb_apilink">ISteamHTMLSurface::FileLoadDialogResponse</a> with the file(s) the user selected.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_FileOpenDialog : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_FileOpenDialog;

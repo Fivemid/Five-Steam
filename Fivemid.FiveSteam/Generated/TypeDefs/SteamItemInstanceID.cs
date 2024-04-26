@@ -5,6 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// <summary>Every individual instance of an item has a globally-unique instance ID.<br />
     /// This ID is unique to the combination of a player and specific item instance, and will not be transferred to another player or re-used for another item.</summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct SteamItemInstanceID : IEquatable<SteamItemInstanceID>, IComparable<SteamItemInstanceID>
     {
         public ulong value;

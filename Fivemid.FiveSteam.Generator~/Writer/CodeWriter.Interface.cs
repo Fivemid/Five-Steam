@@ -55,6 +55,7 @@ public partial class CodeWriter {
                            ).ToArray<MemberDeclarationSyntax>())
                .AddMembers(
                     StructDeclaration("Instance")
+                       .AddAttributeLists(StructLayoutAttribute())
                        .AddModifiers(Token(SyntaxKind.PublicKeyword))
                        .AddBaseListTypes(SimpleBaseType(IdentifierName(name)))
                        .AddMembers(
@@ -153,7 +154,7 @@ public partial class CodeWriter {
            .AddAttributes(
                 Attribute(IdentifierName("DllImport"))
                    .AddArgumentListArguments(
-                        AttributeArgument(ParseExpression("Platform.LibraryName")),
+                        AttributeArgument(ParseExpression("Platform.LIBRARY_NAME")),
                         AttributeArgument(
                                 LiteralExpression(
                                     SyntaxKind.StringLiteralExpression,

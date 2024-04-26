@@ -9,12 +9,13 @@ namespace Fivemid.FiveSteam
         public void RulesResponded(UTF8StringPtr pchRule, UTF8StringPtr pchValue);
         public void RulesFailedToRespond();
         public void RulesRefreshComplete();
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded", CallingConvention = Platform.CC)]
         internal static extern void RulesResponded(void* self, UTF8StringPtr pchRule, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond", CallingConvention = Platform.CC)]
         internal static extern void RulesFailedToRespond(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete", CallingConvention = Platform.CC)]
         internal static extern void RulesRefreshComplete(void* self);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamMatchmakingRulesResponse
         {
             public void* self;

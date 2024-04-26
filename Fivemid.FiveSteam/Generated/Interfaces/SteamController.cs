@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamController.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamController_v008", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamController_v008", CallingConvention = Platform.CC)]
         private static extern ISteamController.Instance Accessor();
         /// missing documentation
         public static bool Init() => Instance.Init();

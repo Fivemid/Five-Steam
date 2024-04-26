@@ -8,10 +8,11 @@ namespace Fivemid.FiveSteam
     {
         public void ServerResponded(ref gameserveritem server);
         public void ServerFailedToRespond();
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerResponded", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerResponded", CallingConvention = Platform.CC)]
         internal static extern void ServerResponded(void* self, ref gameserveritem server);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond", CallingConvention = Platform.CC)]
         internal static extern void ServerFailedToRespond(void* self);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamMatchmakingPingResponse
         {
             public void* self;

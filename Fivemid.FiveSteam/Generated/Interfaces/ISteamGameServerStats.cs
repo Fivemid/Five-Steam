@@ -17,26 +17,27 @@ namespace Fivemid.FiveSteam
         public bool SetUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName);
         public bool ClearUserAchievement(SteamId steamIDUser, UTF8StringPtr pchName);
         public SteamAPICall StoreUserStats(SteamId steamIDUser);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_RequestUserStats", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_RequestUserStats", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RequestUserStats(void* self, SteamId steamIDUser);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserStatInt32", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserStatInt32", CallingConvention = Platform.CC)]
         internal static extern bool GetUserStat(void* self, SteamId steamIDUser, UTF8StringPtr pchName, int* pData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserStatFloat", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserStatFloat", CallingConvention = Platform.CC)]
         internal static extern bool GetUserStat(void* self, SteamId steamIDUser, UTF8StringPtr pchName, float* pData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserAchievement", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_GetUserAchievement", CallingConvention = Platform.CC)]
         internal static extern bool GetUserAchievement(void* self, SteamId steamIDUser, UTF8StringPtr pchName, bool* pbAchieved);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserStatInt32", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserStatInt32", CallingConvention = Platform.CC)]
         internal static extern bool SetUserStat(void* self, SteamId steamIDUser, UTF8StringPtr pchName, int nData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserStatFloat", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserStatFloat", CallingConvention = Platform.CC)]
         internal static extern bool SetUserStat(void* self, SteamId steamIDUser, UTF8StringPtr pchName, float fData);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat", CallingConvention = Platform.CC)]
         internal static extern bool UpdateUserAvgRateStat(void* self, SteamId steamIDUser, UTF8StringPtr pchName, float flCountThisSession, double dSessionLength);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserAchievement", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_SetUserAchievement", CallingConvention = Platform.CC)]
         internal static extern bool SetUserAchievement(void* self, SteamId steamIDUser, UTF8StringPtr pchName);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_ClearUserAchievement", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_ClearUserAchievement", CallingConvention = Platform.CC)]
         internal static extern bool ClearUserAchievement(void* self, SteamId steamIDUser, UTF8StringPtr pchName);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameServerStats_StoreUserStats", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_StoreUserStats", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall StoreUserStats(void* self, SteamId steamIDUser);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamGameServerStats
         {
             public void* self;

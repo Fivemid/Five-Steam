@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     {
         public static ISteamNetworking.Instance Instance => Accessor();
 
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_SteamNetworking_v006", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworking_v006", CallingConvention = Platform.CC)]
         private static extern ISteamNetworking.Instance Accessor();
         /// <summary><code>bool SendP2PPacket( CSteamID steamIDRemote, const void *pubData, uint32 cubData, EP2PSend eP2PSendType, int nChannel = 0 );</code><br />
         /// Sends a P2P packet to the specified user.<br />

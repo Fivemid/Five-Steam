@@ -20,34 +20,35 @@ namespace Fivemid.FiveSteam
         public GameSearchErrorCode CancelRequestPlayersForGame();
         public GameSearchErrorCode SubmitPlayerResult(ulong ullUniqueGameID, SteamId steamIDPlayer, PlayerResult EPlayerResult);
         public GameSearchErrorCode EndGame(ulong ullUniqueGameID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_AddGameSearchParams", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_AddGameSearchParams", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode AddGameSearchParams(void* self, UTF8StringPtr pchKeyToFind, UTF8StringPtr pchValuesToFind);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_SearchForGameWithLobby", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SearchForGameWithLobby", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode SearchForGameWithLobby(void* self, SteamId steamIDLobby, int nPlayerMin, int nPlayerMax);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_SearchForGameSolo", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SearchForGameSolo", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode SearchForGameSolo(void* self, int nPlayerMin, int nPlayerMax);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_AcceptGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_AcceptGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode AcceptGame(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_DeclineGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_DeclineGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode DeclineGame(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_RetrieveConnectionDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_RetrieveConnectionDetails", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode RetrieveConnectionDetails(void* self, SteamId steamIDHost, char* pchConnectionDetails, int cubConnectionDetails);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_EndGameSearch", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_EndGameSearch", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode EndGameSearch(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_SetGameHostParams", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SetGameHostParams", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode SetGameHostParams(void* self, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_SetConnectionDetails", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SetConnectionDetails", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode SetConnectionDetails(void* self, UTF8StringPtr pchConnectionDetails, int cubConnectionDetails);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_RequestPlayersForGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_RequestPlayersForGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode RequestPlayersForGame(void* self, int nPlayerMin, int nPlayerMax, int nMaxTeamSize);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_HostConfirmGameStart", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_HostConfirmGameStart", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode HostConfirmGameStart(void* self, ulong ullUniqueGameID);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_CancelRequestPlayersForGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_CancelRequestPlayersForGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode CancelRequestPlayersForGame(void* self);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_SubmitPlayerResult", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SubmitPlayerResult", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode SubmitPlayerResult(void* self, ulong ullUniqueGameID, SteamId steamIDPlayer, PlayerResult EPlayerResult);
-        [DllImport(Platform.LibraryName, EntryPoint = "SteamAPI_ISteamGameSearch_EndGame", CallingConvention = Platform.CC)]
+        [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_EndGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode EndGame(void* self, ulong ullUniqueGameID);
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamGameSearch
         {
             public void* self;

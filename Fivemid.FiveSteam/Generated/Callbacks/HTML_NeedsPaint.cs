@@ -6,6 +6,7 @@ namespace Fivemid.FiveSteam
     /// <summary>Called when a browser surface has a pending paint. This is where you get the actual image data to render to the screen.<br />
     /// <br />
     /// </summary>
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct HTML_NeedsPaint : global::Unity.Entities.IComponentData
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_NeedsPaint;
