@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct MusicPlayerWantsVolume : global::Unity.Entities.IComponentData
+    public unsafe struct MusicPlayerWantsVolume
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.MusicPlayerWantsVolume;
         /// <summary></summary>

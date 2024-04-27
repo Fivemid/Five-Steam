@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#GetLinkAtPosition" class="bb_apilink">ISteamHTMLSurface::GetLinkAtPosition</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTML_LinkAtPosition : global::Unity.Entities.IComponentData
+    public unsafe struct HTML_LinkAtPosition
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_LinkAtPosition;
         /// <summary>The handle of the surface that this call was for.</summary>

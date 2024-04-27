@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#CreateItem" class="bb_apilink">ISteamUGC::CreateItem</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct CreateItemResult : global::Unity.Entities.IComponentData
+    public unsafe struct CreateItemResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.CreateItemResult;
         /// <summary>The result of the operation. Some of the possible return values include:<br />

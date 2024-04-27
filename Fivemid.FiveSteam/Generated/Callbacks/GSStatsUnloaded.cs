@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSStatsUnloaded : global::Unity.Entities.IComponentData
+    public unsafe struct GSStatsUnloaded
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSStatsUnloaded;
         /// <summary>User whose stats have been unloaded.</summary>

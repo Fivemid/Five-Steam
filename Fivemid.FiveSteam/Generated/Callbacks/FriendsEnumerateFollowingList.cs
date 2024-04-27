@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#EnumerateFollowingList" class="bb_apilink">ISteamFriends::EnumerateFollowingList</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct FriendsEnumerateFollowingList : global::Unity.Entities.IComponentData
+    public unsafe struct FriendsEnumerateFollowingList
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendsEnumerateFollowingList;
         /// <summary>The result of the operation.</summary>

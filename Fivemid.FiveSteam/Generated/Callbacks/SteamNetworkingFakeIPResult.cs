@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamNetworkingFakeIPResult_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamNetworkingFakeIPResult : global::Unity.Entities.IComponentData
+    public unsafe struct SteamNetworkingFakeIPResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingFakeIPResult;
         /// missing documentation for SteamNetworkingFakeIPResult_t.m_eResult

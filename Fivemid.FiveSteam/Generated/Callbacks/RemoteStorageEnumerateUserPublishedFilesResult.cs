@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserPublishedFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserPublishedFiles</a>, <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#EnumerateUserSharedWorkshopFiles" class="bb_apilink">ISteamRemoteStorage::EnumerateUserSharedWorkshopFiles</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageEnumerateUserPublishedFilesResult : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageEnumerateUserPublishedFilesResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserPublishedFilesResult;
         /// <summary>The result of the operation.</summary>

@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamInputGamepadSlotChange_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamInputGamepadSlotChange : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInputGamepadSlotChange
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInputGamepadSlotChange;
         /// missing documentation for SteamInputGamepadSlotChange_t.m_unAppID

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUtils#CheckFileSignature" class="bb_apilink">ISteamUtils::CheckFileSignature</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct CheckFileSignature : global::Unity.Entities.IComponentData
+    public unsafe struct CheckFileSignature
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.CheckFileSignature;
         /// <summary>Contains the result of the file signature check.<br />

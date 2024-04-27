@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequest" target="_blank" rel="noreferrer">HTTP::SendHTTPRequest</a>, <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequestAndStreamResponse" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequestAndStreamResponse" target="_blank" rel="noreferrer">HTTP::SendHTTPRequestAndStreamResponse</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTTPRequestCompleted : global::Unity.Entities.IComponentData
+    public unsafe struct HTTPRequestCompleted
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTTPRequestCompleted;
         /// <summary>Handle for the request that has completed. You should call <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#ReleaseHTTPRequest" class="bb_apilink">ISteam</a><a href="HTTP::ReleaseHTTPRequest" target="_blank" rel="noreferrer">HTTP::ReleaseHTTPRequest</a> on this handle to free the resources when you're done using it, which is typically in this callback.</summary>

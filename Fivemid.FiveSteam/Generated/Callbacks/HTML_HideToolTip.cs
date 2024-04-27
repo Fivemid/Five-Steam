@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTML_HideToolTip : global::Unity.Entities.IComponentData
+    public unsafe struct HTML_HideToolTip
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_HideToolTip;
         /// <summary>The handle of the surface that this callback is for.</summary>

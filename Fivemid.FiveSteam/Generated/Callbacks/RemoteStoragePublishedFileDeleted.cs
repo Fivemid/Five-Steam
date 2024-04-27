@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStoragePublishedFileDeleted : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStoragePublishedFileDeleted
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStoragePublishedFileDeleted;
         /// <summary>The published file id</summary>

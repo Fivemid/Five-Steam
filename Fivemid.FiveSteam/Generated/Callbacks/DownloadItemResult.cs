@@ -10,7 +10,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItem" class="bb_apilink">ISteamUGC::DownloadItem</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct DownloadItemResult : global::Unity.Entities.IComponentData
+    public unsafe struct DownloadItemResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.DownloadItemResult;
         /// <summary>The app ID associated with this workshop item.</summary>

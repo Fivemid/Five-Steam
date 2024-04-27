@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTTP#SendHTTPRequestAndStreamResponse" class="bb_apilink">ISteam</a><a href="HTTP::SendHTTPRequestAndStreamResponse" target="_blank" rel="noreferrer">HTTP::SendHTTPRequestAndStreamResponse</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTTPRequestHeadersReceived : global::Unity.Entities.IComponentData
+    public unsafe struct HTTPRequestHeadersReceived
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTTPRequestHeadersReceived;
         /// <summary>Handle value for the request that has received headers.</summary>

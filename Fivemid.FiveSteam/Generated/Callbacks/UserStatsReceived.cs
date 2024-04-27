@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestCurrentStats" class="bb_apilink">ISteamUserStats::RequestCurrentStats</a>, <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestUserStats" class="bb_apilink">ISteamUserStats::RequestUserStats</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct UserStatsReceived : global::Unity.Entities.IComponentData
+    public unsafe struct UserStatsReceived
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserStatsReceived;
         /// <summary>Game ID that these stats are for.</summary>

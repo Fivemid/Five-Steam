@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUser#RequestEncryptedAppTicket" class="bb_apilink">ISteamUser::RequestEncryptedAppTicket</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct EncryptedAppTicketResponse : global::Unity.Entities.IComponentData
+    public unsafe struct EncryptedAppTicketResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.EncryptedAppTicketResponse;
         /// <summary>Was the call successful?<br />

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SetUserItemVote" class="bb_apilink">ISteamUGC::SetUserItemVote</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SetUserItemVoteResult : global::Unity.Entities.IComponentData
+    public unsafe struct SetUserItemVoteResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SetUserItemVoteResult;
         /// <summary>The workshop item that the user voted on.</summary>

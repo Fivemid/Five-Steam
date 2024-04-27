@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamApps#GetFileDetails" class="bb_apilink">ISteamApps::GetFileDetails</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct FileDetailsResult : global::Unity.Entities.IComponentData
+    public unsafe struct FileDetailsResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FileDetailsResult;
         /// <summary>Was the call successful? <a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultOK" class="bb_apilink">k_EResultOK</a> if it was; otherwise, <a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultFileNotFound" class="bb_apilink">k_EResultFileNotFound</a> if the file was not found. None of the other fields are filled out if the call was not successful.</summary>

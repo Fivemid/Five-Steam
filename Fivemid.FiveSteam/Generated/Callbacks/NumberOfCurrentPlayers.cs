@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetNumberOfCurrentPlayers" class="bb_apilink">ISteamUserStats::GetNumberOfCurrentPlayers</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct NumberOfCurrentPlayers : global::Unity.Entities.IComponentData
+    public unsafe struct NumberOfCurrentPlayers
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.NumberOfCurrentPlayers;
         /// <summary>Was the call successful? Returns <b>1</b> if it was; otherwise, <b>0</b> on failure.</summary>

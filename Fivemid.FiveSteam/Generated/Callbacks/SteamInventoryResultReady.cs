@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamInventoryResultReady : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInventoryResultReady
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryResultReady;
         /// <summary>The inventory result which is now ready.</summary>

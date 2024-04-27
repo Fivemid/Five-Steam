@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSClientDeny : global::Unity.Entities.IComponentData
+    public unsafe struct GSClientDeny
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientDeny;
         /// <summary>The Steam ID of the user that attempted to connect.</summary>

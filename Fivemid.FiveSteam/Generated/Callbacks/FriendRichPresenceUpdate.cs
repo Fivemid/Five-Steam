@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestFriendRichPresence" class="bb_apilink">ISteamFriends::RequestFriendRichPresence</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct FriendRichPresenceUpdate : global::Unity.Entities.IComponentData
+    public unsafe struct FriendRichPresenceUpdate
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FriendRichPresenceUpdate;
         /// <summary>The Steam ID of the user who's rich presence has changed.</summary>

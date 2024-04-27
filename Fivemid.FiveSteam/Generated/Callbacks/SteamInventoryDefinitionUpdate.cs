@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamInventory#LoadItemDefinitions" class="bb_apilink">ISteamInventory::LoadItemDefinitions</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE, Size = 1)]
-    public unsafe struct SteamInventoryDefinitionUpdate : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInventoryDefinitionUpdate
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryDefinitionUpdate;
     }

@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for MarketEligibilityResponse_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct MarketEligibilityResponse : global::Unity.Entities.IComponentData
+    public unsafe struct MarketEligibilityResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.MarketEligibilityResponse;
         /// missing documentation for MarketEligibilityResponse_t.m_bAllowed

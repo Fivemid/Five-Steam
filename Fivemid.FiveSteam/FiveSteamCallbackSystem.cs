@@ -16,13 +16,19 @@ namespace Fivemid.FiveSteam {
             callbackListener = FiveSteamAPI.CallbackListener.Create(
                 callbackBuffer,
                 BurstCompiler.CompileFunctionPointer<FiveSteamAPI.CallbackListenerDelegate>(Callback));
+            {
+                Entity entity = state.EntityManager.CreateSingleton(new FiveSteamCallbacks(Allocator.Persistent));
+                state.EntityManager.AddComponent<FiveSteamCallbacks.AnyCallback>(entity);
+            }
         }
         
         [BurstCompile]
         public void OnUpdate(ref SystemState state) {
-            state.EntityManager.DestroyEntity(SystemAPI.QueryBuilder().WithAll<FiveSteamCallback>().Build());
+            ref FiveSteamCallbacks fiveSteamCallbacks = ref SystemAPI.GetSingletonRW<FiveSteamCallbacks>().ValueRW;
             
-            EntityCommandBuffer       ecb    = new();
+            fiveSteamCallbacks.Clear();
+            bool anyCallback = false;
+            
             UnsafeAppendBuffer.Reader reader = callbackBuffer->AsReader();
             
             while (!reader.EndOfBuffer) {
@@ -30,12 +36,14 @@ namespace Fivemid.FiveSteam {
                 int                dataSize = reader.ReadNext<int>();
                 void*              data     = reader.ReadNext(dataSize);
                 
-                CallbackUtility.ToEntity(id, data, ref ecb);
+                fiveSteamCallbacks.Add(id, data, dataSize);
+                anyCallback = true;
             }
             
             callbackBuffer->Reset();
             
-            ecb.Playback(state.EntityManager);
+            SystemAPI.SetComponentEnabled<FiveSteamCallbacks.AnyCallback>(
+                SystemAPI.GetSingletonEntity<FiveSteamCallbacks>(), anyCallback);
         }
         
         [BurstCompile]
@@ -43,6 +51,10 @@ namespace Fivemid.FiveSteam {
             callbackListener.Dispose();
             callbackBuffer->Dispose();
             AllocatorManager.Free(Allocator.Persistent, callbackBuffer);
+            
+            ref FiveSteamCallbacks fiveSteamCallbacks = ref SystemAPI.GetSingletonRW<FiveSteamCallbacks>().ValueRW;
+            fiveSteamCallbacks.Dispose();
+            state.EntityManager.DestroyEntity(SystemAPI.GetSingletonEntity<FiveSteamCallbacks>());
         }
         
         [BurstCompile]

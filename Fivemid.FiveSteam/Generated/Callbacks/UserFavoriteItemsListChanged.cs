@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddItemToFavorites" class="bb_apilink">ISteamUGC::AddItemToFavorites</a>, <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveItemFromFavorites" class="bb_apilink">ISteamUGC::RemoveItemFromFavorites</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct UserFavoriteItemsListChanged : global::Unity.Entities.IComponentData
+    public unsafe struct UserFavoriteItemsListChanged
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserFavoriteItemsListChanged;
         /// <summary>The item which was added/removed.</summary>

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GameOverlayActivated : global::Unity.Entities.IComponentData
+    public unsafe struct GameOverlayActivated
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameOverlayActivated;
         /// <summary><b>1</b> if it's just been activated, otherwise <b>0</b>.</summary>

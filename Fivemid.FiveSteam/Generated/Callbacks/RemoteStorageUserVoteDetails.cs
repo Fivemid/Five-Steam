@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageUserVoteDetails : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageUserVoteDetails
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageUserVoteDetails;
         /// <summary>The result of the operation.</summary>

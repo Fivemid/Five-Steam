@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestGlobalStats" class="bb_apilink">ISteamUserStats::RequestGlobalStats</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GlobalStatsReceived : global::Unity.Entities.IComponentData
+    public unsafe struct GlobalStatsReceived
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GlobalStatsReceived;
         /// <summary>Game ID which these global stats are for.</summary>

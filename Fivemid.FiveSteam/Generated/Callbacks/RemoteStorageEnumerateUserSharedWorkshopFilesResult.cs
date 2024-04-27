@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageEnumerateUserSharedWorkshopFilesResult : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageEnumerateUserSharedWorkshopFilesResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageEnumerateUserSharedWorkshopFilesResult;
         /// <summary>The result of the operation.</summary>

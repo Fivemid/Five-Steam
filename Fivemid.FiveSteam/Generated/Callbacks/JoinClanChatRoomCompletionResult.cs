@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#JoinClanChatRoom" class="bb_apilink">ISteamFriends::JoinClanChatRoom</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct JoinClanChatRoomCompletionResult : global::Unity.Entities.IComponentData
+    public unsafe struct JoinClanChatRoomCompletionResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.JoinClanChatRoomCompletionResult;
         /// <summary>The Steam ID of the chat that the user has joined.</summary>

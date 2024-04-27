@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for RequestPlayersForGameProgressCallback_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RequestPlayersForGameProgressCallback : global::Unity.Entities.IComponentData
+    public unsafe struct RequestPlayersForGameProgressCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RequestPlayersForGameProgressCallback;
         /// missing documentation for RequestPlayersForGameProgressCallback_t.m_eResult

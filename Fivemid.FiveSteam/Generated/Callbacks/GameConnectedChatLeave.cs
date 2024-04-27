@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#LeaveClanChatRoom" class="bb_apilink">ISteamFriends::LeaveClanChatRoom</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GameConnectedChatLeave : global::Unity.Entities.IComponentData
+    public unsafe struct GameConnectedChatLeave
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameConnectedChatLeave;
         /// <summary>The Steam ID of the chat that a user has left.</summary>

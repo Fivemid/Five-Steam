@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#StoreStats" class="bb_apilink">ISteamUserStats::StoreStats</a>, <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#IndicateAchievementProgress" class="bb_apilink">ISteamUserStats::IndicateAchievementProgress</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct UserAchievementStored : global::Unity.Entities.IComponentData
+    public unsafe struct UserAchievementStored
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementStored;
         /// <summary>Game ID that this achievement is for.</summary>

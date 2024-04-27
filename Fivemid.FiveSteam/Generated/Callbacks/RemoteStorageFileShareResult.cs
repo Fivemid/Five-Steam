@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#FileShare" class="bb_apilink">ISteamRemoteStorage::FileShare</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageFileShareResult : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageFileShareResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageFileShareResult;
         /// <summary>The result of the operation</summary>

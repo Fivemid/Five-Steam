@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#SetPersonaName" class="bb_apilink">ISteamFriends::SetPersonaName</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SetPersonaNameResponse : global::Unity.Entities.IComponentData
+    public unsafe struct SetPersonaNameResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SetPersonaNameResponse;
         /// <summary><b>true</b> if name change completed successfully.</summary>

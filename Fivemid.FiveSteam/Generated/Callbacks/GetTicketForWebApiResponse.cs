@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetAuthTicketForWebApi" class="bb_apilink">ISteamUser::GetAuthTicketForWebApi</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GetTicketForWebApiResponse : global::Unity.Entities.IComponentData
+    public unsafe struct GetTicketForWebApiResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GetTicketForWebApiResponse;
         /// <summary>The handle to the ticket that was created.</summary>

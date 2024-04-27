@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct CreateBeaconCallback : global::Unity.Entities.IComponentData
+    public unsafe struct CreateBeaconCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.CreateBeaconCallback;
         /// <summary>The result of the attempt to create a beacon.</summary>

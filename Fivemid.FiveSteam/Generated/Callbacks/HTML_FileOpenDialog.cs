@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTML_FileOpenDialog : global::Unity.Entities.IComponentData
+    public unsafe struct HTML_FileOpenDialog
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_FileOpenDialog;
         /// <summary>The handle of the surface that is navigating.</summary>

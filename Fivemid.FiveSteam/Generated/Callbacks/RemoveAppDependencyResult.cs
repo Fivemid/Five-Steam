@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RemoveAppDependency" class="bb_apilink">ISteamUGC::RemoveAppDependency</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoveAppDependencyResult : global::Unity.Entities.IComponentData
+    public unsafe struct RemoveAppDependencyResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoveAppDependencyResult;
         /// <summary>The result of the operation.</summary>

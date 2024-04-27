@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#RequestUGCDetails" class="bb_apilink">ISteamUGC::RequestUGCDetails</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamUGCRequestUGCDetailsResult : global::Unity.Entities.IComponentData
+    public unsafe struct SteamUGCRequestUGCDetailsResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamUGCRequestUGCDetailsResult;
         /// <summary>Deprecated.</summary>

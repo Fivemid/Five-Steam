@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddAppDependency" class="bb_apilink">ISteamUGC::AddAppDependency</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct AddAppDependencyResult : global::Unity.Entities.IComponentData
+    public unsafe struct AddAppDependencyResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AddAppDependencyResult;
         /// <summary>The result of the operation.</summary>

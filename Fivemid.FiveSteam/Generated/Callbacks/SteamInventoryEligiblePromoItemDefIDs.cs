@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamInventory#RequestEligiblePromoItemDefinitionsIDs" class="bb_apilink">ISteamInventory::RequestEligiblePromoItemDefinitionsIDs</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamInventoryEligiblePromoItemDefIDs : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInventoryEligiblePromoItemDefIDs
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryEligiblePromoItemDefIDs;
         /// <summary><a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultOK" class="bb_apilink">k_EResultOK</a> upon success, any other value indicates failure.</summary>

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// This callback has no members.</summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE, Size = 1)]
-    public unsafe struct AvailableBeaconLocationsUpdated : global::Unity.Entities.IComponentData
+    public unsafe struct AvailableBeaconLocationsUpdated
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AvailableBeaconLocationsUpdated;
     }

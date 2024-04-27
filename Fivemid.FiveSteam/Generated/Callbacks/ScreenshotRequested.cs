@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamScreenshots#TriggerScreenshot" class="bb_apilink">ISteamScreenshots::TriggerScreenshot</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE, Size = 1)]
-    public unsafe struct ScreenshotRequested : global::Unity.Entities.IComponentData
+    public unsafe struct ScreenshotRequested
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ScreenshotRequested;
     }

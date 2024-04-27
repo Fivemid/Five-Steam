@@ -12,7 +12,7 @@ namespace Fivemid.FiveSteam
     /// 
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamNetworkingMessagesSessionFailed : global::Unity.Entities.IComponentData
+    public unsafe struct SteamNetworkingMessagesSessionFailed
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingMessagesSessionFailed;
         /// <summary>Detailed info about the session that failed.

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct P2PSessionConnectFail : global::Unity.Entities.IComponentData
+    public unsafe struct P2PSessionConnectFail
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.P2PSessionConnectFail;
         /// <summary>User we were trying to send the packets to.</summary>

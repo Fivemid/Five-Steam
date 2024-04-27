@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamNetworking#SendP2PPacket" class="bb_apilink">ISteamNetworking::SendP2PPacket</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct P2PSessionRequest : global::Unity.Entities.IComponentData
+    public unsafe struct P2PSessionRequest
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.P2PSessionRequest;
         /// <summary>The user who wants to start a P2P session with us.</summary>

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#UploadLeaderboardScore" class="bb_apilink">ISteamUserStats::UploadLeaderboardScore</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct LeaderboardScoreUploaded : global::Unity.Entities.IComponentData
+    public unsafe struct LeaderboardScoreUploaded
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LeaderboardScoreUploaded;
         /// <summary>Was the call successful? Returns <b>1</b> if the call was successful, <b>0</b> on failure.<br />

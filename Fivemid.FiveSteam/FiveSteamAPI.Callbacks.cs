@@ -6,13 +6,14 @@ using UnityEngine;
 
 namespace Fivemid.FiveSteam {
     public static unsafe partial class FiveSteamAPI {
-        private static NativeHashSet<CallbackListener> listeners;
-        private static CallbackListenerDelegate        managedListenerDelegate;
+        private static readonly SharedStatic<NativeHashSet<CallbackListener>> listeners =
+            SharedStatic<NativeHashSet<CallbackListener>>.GetOrCreate<SharedStaticListeners>();
+        private static CallbackListenerDelegate managedListenerDelegate;
         
         private static void InitCallbacks() {
             SteamAPI.ManualDispatch_Init();
             
-            listeners = new(0, Allocator.Domain);
+            listeners.Data = new(0, Allocator.Domain);
             
             managedListenerDelegate = ManagedListener;
             CallbackListener.Create(
@@ -23,9 +24,9 @@ namespace Fivemid.FiveSteam {
         }
         
         private static void ShutdownCallbacks() {
-            if (listeners.IsCreated)
-                listeners.Dispose();
-            listeners = default;
+            if (listeners.Data.IsCreated)
+                listeners.Data.Dispose();
+            listeners.Data = default;
         }
         
         public static void RunCallbacks() {
@@ -34,7 +35,7 @@ namespace Fivemid.FiveSteam {
             
             CallbackMsg callbackMsg;
             while (SteamAPI.ManualDispatch_GetNextCallback(pipe, &callbackMsg)) {
-                foreach (CallbackListener listener in listeners) {
+                foreach (CallbackListener listener in listeners.Data) {
                     listener.Invoke(
                         (CallbackIdentifier)callbackMsg.m_iCallback,
                         callbackMsg.m_pubParam,
@@ -84,8 +85,8 @@ namespace Fivemid.FiveSteam {
             }
             
             public bool Equals(CallbackListener other) =>
-                userData == other.userData
-             && functionPointer.Value.Equals(other.functionPointer.Value);
+                userData              == other.userData
+             && functionPointer.Value == other.functionPointer.Value;
             
             public override bool Equals(object obj) => obj is CallbackListener other && Equals(other);
             public override int  GetHashCode() => unchecked((int)userData * 397) ^ functionPointer.Value.GetHashCode();
@@ -97,14 +98,16 @@ namespace Fivemid.FiveSteam {
                 FunctionPointer<CallbackListenerDelegate> functionPointer
             ) {
                 CallbackListener callbackListener = new(userData, functionPointer);
-                listeners.Add(callbackListener);
+                listeners.Data.Add(callbackListener);
                 return callbackListener;
             }
             
             public void Dispose() {
-                if (listeners.IsCreated)
-                    listeners.Remove(this);
+                if (listeners.Data.IsCreated)
+                    listeners.Data.Remove(this);
             }
         }
+        
+        private struct SharedStaticListeners { }
     }
 }

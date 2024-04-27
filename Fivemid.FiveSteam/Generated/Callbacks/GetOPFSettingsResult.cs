@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamVideo#GetOPFSettings" class="bb_apilink">ISteamVideo::GetOPFSettings</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GetOPFSettingsResult : global::Unity.Entities.IComponentData
+    public unsafe struct GetOPFSettingsResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GetOPFSettingsResult;
         /// <summary>The result of the operation.<br />

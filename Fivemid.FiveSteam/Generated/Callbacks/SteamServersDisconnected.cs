@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamServersDisconnected : global::Unity.Entities.IComponentData
+    public unsafe struct SteamServersDisconnected
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamServersDisconnected;
         /// <summary>The reason we were disconnected from Steam.</summary>

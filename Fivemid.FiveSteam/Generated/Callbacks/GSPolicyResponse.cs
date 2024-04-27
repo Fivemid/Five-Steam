@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSPolicyResponse : global::Unity.Entities.IComponentData
+    public unsafe struct GSPolicyResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSPolicyResponse;
         /// <summary>Is the server now set to secure (<b>true</b>) or unsecure (<b>false</b>)?.</summary>

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#RequestLobbyList" class="bb_apilink">ISteamMatchmaking::RequestLobbyList</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct LobbyMatchList : global::Unity.Entities.IComponentData
+    public unsafe struct LobbyMatchList
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyMatchList;
         /// <summary>Number of lobbies that matched search criteria and we have Steam IDs for.</summary>

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// This callback has no fields.</summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE, Size = 1)]
-    public unsafe struct IPCountry : global::Unity.Entities.IComponentData
+    public unsafe struct IPCountry
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.IPCountry;
     }

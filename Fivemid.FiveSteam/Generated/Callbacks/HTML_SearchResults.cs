@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamHTMLSurface#Find" class="bb_apilink">ISteamHTMLSurface::Find</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTML_SearchResults : global::Unity.Entities.IComponentData
+    public unsafe struct HTML_SearchResults
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_SearchResults;
         /// <summary>The handle of the surface that this callback is for.</summary>

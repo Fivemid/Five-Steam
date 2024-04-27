@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct ClientGameServerDeny : global::Unity.Entities.IComponentData
+    public unsafe struct ClientGameServerDeny
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ClientGameServerDeny;
         /// <summary>The App ID this call is for. Verify that it's the same as the current App ID with <a href="https://partner.steamgames.com/doc/api/ISteamUtils#GetAppID" class="bb_apilink">ISteamUtils::GetAppID</a>.</summary>

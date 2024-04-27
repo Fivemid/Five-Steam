@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>See Also:</b> <a href="https://partner.steamgames.com/doc/api/ISteamApps#BIsTimedTrial" class="bb_apilink">ISteamApps::BIsTimedTrial</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct TimedTrialStatus : global::Unity.Entities.IComponentData
+    public unsafe struct TimedTrialStatus
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.TimedTrialStatus;
         /// <summary>AppID that is in a timed trial.</summary>

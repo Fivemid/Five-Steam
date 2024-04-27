@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for EndGameResultCallback_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct EndGameResultCallback : global::Unity.Entities.IComponentData
+    public unsafe struct EndGameResultCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.EndGameResultCallback;
         /// missing documentation for EndGameResultCallback_t.m_eResult

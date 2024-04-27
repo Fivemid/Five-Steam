@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#GetPublishedFileDetails" class="bb_apilink">ISteamRemoteStorage::GetPublishedFileDetails</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageGetPublishedFileDetailsResult : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageGetPublishedFileDetailsResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageGetPublishedFileDetailsResult;
         /// <summary>The result of the operation.</summary>

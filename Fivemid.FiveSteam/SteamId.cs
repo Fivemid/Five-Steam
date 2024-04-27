@@ -46,6 +46,36 @@ namespace Fivemid.FiveSteam {
             }
         }
         
+        public FixedString32Bytes ToFixedString() {
+            char accountTypeLetter = AccountType switch {
+                AccountType.Invalid        => 'I',
+                AccountType.Individual     => 'U',
+                AccountType.Multiseat      => 'M',
+                AccountType.GameServer     => 'G',
+                AccountType.AnonGameServer => 'A',
+                AccountType.ContentServer  => 'C',
+                AccountType.Clan           => 'G',
+                AccountType.Chat =>
+                    (AccountInstance & unchecked((uint)ChatSteamIDInstanceFlags.ChatInstanceFlagClan)) != 0
+                        ? 'c'
+                        : (AccountInstance & unchecked((uint)ChatSteamIDInstanceFlags.ChatInstanceFlagLobby)) != 0
+                            ? 'L'
+                            : 'T',
+                AccountType.AnonUser => 'a',
+                _                    => 'i'
+            };
+            
+            bool renderInstance = AccountType is AccountType.AnonGameServer or AccountType.Multiseat
+                               || AccountType is AccountType.Individual
+                               && AccountInstance != FiveSteamConstants.k_unSteamUserDefaultInstance;
+            
+            if (renderInstance) {
+                return $"[{accountTypeLetter}:{(uint)Universe}:{AccountId.value}:{AccountInstance}]";
+            }
+            
+            return $"[{accountTypeLetter}:{(uint)Universe}:{AccountId.value}]";
+        }
+        
         public          bool Equals(SteamId other)                    => value == other.value;
         public override int  GetHashCode()                            => value.GetHashCode();
         public override bool Equals(object       obj)                 => obj is SteamId other && Equals(other);

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUser#RequestStoreAuthURL" class="bb_apilink">ISteamUser::RequestStoreAuthURL</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct StoreAuthURLResponse : global::Unity.Entities.IComponentData
+    public unsafe struct StoreAuthURLResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.StoreAuthURLResponse;
         /// <summary>The authentication URL.</summary>

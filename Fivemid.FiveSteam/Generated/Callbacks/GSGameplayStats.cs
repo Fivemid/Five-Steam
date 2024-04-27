@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#GetGameplayStats" class="bb_apilink">ISteamGameServer::GetGameplayStats</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSGameplayStats : global::Unity.Entities.IComponentData
+    public unsafe struct GSGameplayStats
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSGameplayStats;
         /// <summary>The result of the operation.</summary>

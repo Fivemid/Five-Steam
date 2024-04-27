@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamInventoryStartPurchaseResult : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInventoryStartPurchaseResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryStartPurchaseResult;
         /// <summary><a href="https://partner.steamgames.com/doc/api/steam_api#k_EResultOK" class="bb_apilink">k_EResultOK</a> upon success, any other value indicates failure.</summary>

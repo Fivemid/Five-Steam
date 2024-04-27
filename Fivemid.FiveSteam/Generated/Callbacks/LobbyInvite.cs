@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct LobbyInvite : global::Unity.Entities.IComponentData
+    public unsafe struct LobbyInvite
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.LobbyInvite;
         /// <summary>Steam ID of the person that sent the invite.</summary>

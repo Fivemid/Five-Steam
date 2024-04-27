@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#FileWriteAsync" class="bb_apilink">ISteamRemoteStorage::FileWriteAsync</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct RemoteStorageFileWriteAsyncComplete : global::Unity.Entities.IComponentData
+    public unsafe struct RemoteStorageFileWriteAsyncComplete
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.RemoteStorageFileWriteAsyncComplete;
         /// <summary>The result of the operation.<br />

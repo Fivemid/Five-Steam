@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SocketStatusCallback : global::Unity.Entities.IComponentData
+    public unsafe struct SocketStatusCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SocketStatusCallback;
         /// <summary>the socket used to send/receive data to the remote host</summary>

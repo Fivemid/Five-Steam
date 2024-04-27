@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSClientApprove : global::Unity.Entities.IComponentData
+    public unsafe struct GSClientApprove
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientApprove;
         /// <summary>The Steam ID of the user that is wanting to connect.</summary>

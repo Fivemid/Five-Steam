@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct FavoritesListChanged : global::Unity.Entities.IComponentData
+    public unsafe struct FavoritesListChanged
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.FavoritesListChanged;
         /// <summary>An IP of 0 means reload the whole list, any other value means just one server. This is host order, i.e 127.0.0.1 == 0x7f000001.</summary>

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct HTML_NewWindow : global::Unity.Entities.IComponentData
+    public unsafe struct HTML_NewWindow
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.HTML_NewWindow;
         /// <summary>The handle of the surface that this callback is for.</summary>

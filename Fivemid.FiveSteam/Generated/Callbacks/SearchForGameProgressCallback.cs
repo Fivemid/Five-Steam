@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for SearchForGameProgressCallback_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SearchForGameProgressCallback : global::Unity.Entities.IComponentData
+    public unsafe struct SearchForGameProgressCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SearchForGameProgressCallback;
         /// missing documentation for SearchForGameProgressCallback_t.m_ullSearchID

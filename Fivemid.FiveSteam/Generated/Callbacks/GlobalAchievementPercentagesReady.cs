@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#RequestGlobalAchievementPercentages" class="bb_apilink">ISteamUserStats::RequestGlobalAchievementPercentages</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GlobalAchievementPercentagesReady : global::Unity.Entities.IComponentData
+    public unsafe struct GlobalAchievementPercentagesReady
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GlobalAchievementPercentagesReady;
         /// <summary>Game ID which these achievement percentages are for.</summary>

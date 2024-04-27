@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// NOTE: This callback is made when joining a lobby. If the user is attempting to join a game but not a lobby, then the callback <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GameRichPresenceJoinRequested_t" class="bb_apilink">GameRichPresenceJoinRequested_t</a> will be made.</summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GameLobbyJoinRequested : global::Unity.Entities.IComponentData
+    public unsafe struct GameLobbyJoinRequested
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GameLobbyJoinRequested;
         /// <summary>The Steam ID of the lobby to connect to.</summary>

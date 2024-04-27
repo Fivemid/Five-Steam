@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUserStats#GetAchievementIcon" class="bb_apilink">ISteamUserStats::GetAchievementIcon</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct UserAchievementIconFetched : global::Unity.Entities.IComponentData
+    public unsafe struct UserAchievementIconFetched
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.UserAchievementIconFetched;
         /// <summary>The Game ID this achievement is for.</summary>

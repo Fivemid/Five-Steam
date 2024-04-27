@@ -5,7 +5,7 @@ namespace Fivemid.FiveSteam
 {
     /// missing documentation for SteamRelayNetworkStatus_t
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamRelayNetworkStatus : global::Unity.Entities.IComponentData
+    public unsafe struct SteamRelayNetworkStatus
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamRelayNetworkStatus;
         /// missing documentation for SteamRelayNetworkStatus_t.m_eAvail

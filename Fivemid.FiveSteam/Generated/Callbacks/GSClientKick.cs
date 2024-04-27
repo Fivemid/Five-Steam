@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSClientKick : global::Unity.Entities.IComponentData
+    public unsafe struct GSClientKick
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientKick;
         /// <summary>The Steam ID of the player that should be kicked.</summary>

@@ -7,7 +7,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct ChangeNumOpenSlotsCallback : global::Unity.Entities.IComponentData
+    public unsafe struct ChangeNumOpenSlotsCallback
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ChangeNumOpenSlotsCallback;
         /// <summary>The result of the attempt to change the number of open slots.</summary>

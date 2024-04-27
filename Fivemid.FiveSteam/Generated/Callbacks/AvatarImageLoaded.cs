@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#GetLargeFriendAvatar" class="bb_apilink">ISteamFriends::GetLargeFriendAvatar</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct AvatarImageLoaded : global::Unity.Entities.IComponentData
+    public unsafe struct AvatarImageLoaded
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AvatarImageLoaded;
         /// <summary>The Steam ID that the avatar has been loaded for.</summary>

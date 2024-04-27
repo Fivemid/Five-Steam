@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct ItemInstalled : global::Unity.Entities.IComponentData
+    public unsafe struct ItemInstalled
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ItemInstalled;
         /// <summary>The app ID associated with this workshop item.</summary>

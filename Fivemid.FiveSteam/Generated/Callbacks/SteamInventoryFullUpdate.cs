@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamInventoryFullUpdate : global::Unity.Entities.IComponentData
+    public unsafe struct SteamInventoryFullUpdate
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamInventoryFullUpdate;
         /// <summary>A new inventory result handle.</summary>

@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamServerConnectFailure : global::Unity.Entities.IComponentData
+    public unsafe struct SteamServerConnectFailure
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamServerConnectFailure;
         /// <summary>The reason why the connection failed.</summary>

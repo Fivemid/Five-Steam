@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamUGC#SendQueryUGCRequest" class="bb_apilink">ISteamUGC::SendQueryUGCRequest</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamUGCQueryCompleted : global::Unity.Entities.IComponentData
+    public unsafe struct SteamUGCQueryCompleted
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamUGCQueryCompleted;
         /// <summary>The UGC query handle associated with this call result.</summary>

@@ -9,7 +9,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct IPCFailure : global::Unity.Entities.IComponentData
+    public unsafe struct IPCFailure
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.IPCFailure;
         /// <summary>This is a <a href="https://partner.steamgames.com/doc/api/ISteamUser#EFailureType" class="bb_apilink">EFailureType</a>.</summary>

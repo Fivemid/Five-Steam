@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#RequestUserGroupStatus" class="bb_apilink">ISteamGameServer::RequestUserGroupStatus</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GSClientGroupStatus : global::Unity.Entities.IComponentData
+    public unsafe struct GSClientGroupStatus
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GSClientGroupStatus;
         /// <summary>The user whose group status we queried.</summary>

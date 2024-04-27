@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamFriends#RequestClanOfficerList" class="bb_apilink">ISteamFriends::RequestClanOfficerList</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct ClanOfficerListResponse : global::Unity.Entities.IComponentData
+    public unsafe struct ClanOfficerListResponse
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.ClanOfficerListResponse;
         /// <summary>The Steam group that we just got the officer list for.</summary>

@@ -11,7 +11,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct SteamNetAuthenticationStatus : global::Unity.Entities.IComponentData
+    public unsafe struct SteamNetAuthenticationStatus
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetAuthenticationStatus;
         /// <summary>Status</summary>

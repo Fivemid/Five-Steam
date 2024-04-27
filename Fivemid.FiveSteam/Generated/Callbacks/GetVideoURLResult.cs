@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamVideo#GetVideoURL" class="bb_apilink">ISteamVideo::GetVideoURL</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct GetVideoURLResult : global::Unity.Entities.IComponentData
+    public unsafe struct GetVideoURLResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.GetVideoURLResult;
         /// <summary>The result of the operation.<br />

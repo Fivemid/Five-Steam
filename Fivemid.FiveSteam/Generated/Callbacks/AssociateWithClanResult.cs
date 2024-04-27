@@ -8,7 +8,7 @@ namespace Fivemid.FiveSteam
     /// <br />
     /// <b>Associated Functions:</b> <a href="https://partner.steamgames.com/doc/api/ISteamGameServer#AssociateWithClan" class="bb_apilink">ISteamGameServer::AssociateWithClan</a></summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
-    public unsafe struct AssociateWithClanResult : global::Unity.Entities.IComponentData
+    public unsafe struct AssociateWithClanResult
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.AssociateWithClanResult;
         /// <summary>The result of the operation. Possible values:<br />

@@ -27,8 +27,6 @@ namespace Fivemid.FiveSteam {
             
             InitCallbacks();
             initialized = true;
-            
-            SteamMatchmaking.CreateLobby(LobbyType.Public, 8);
         }
         
         public static void Shutdown() {
