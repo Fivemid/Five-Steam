@@ -5,16 +5,16 @@ namespace Fivemid.FiveSteam {
     public struct SteamId : IEquatable<SteamId>, IComparable<SteamId> {
         public ulong value;
         
-        public AccountID AccountId =>
+        public readonly AccountID AccountId =>
             (uint)new BitField64(value).GetBits(0, 32);
         
-        public uint AccountInstance =>
+        public readonly uint AccountInstance =>
             (uint)new BitField64(value).GetBits(32, 20);
         
-        public AccountType AccountType =>
+        public readonly AccountType AccountType =>
             (AccountType)new BitField64(value).GetBits(52, 4);
         
-        public Universe Universe =>
+        public readonly Universe Universe =>
             (Universe)new BitField64(value).GetBits(56, 8);
         
         public bool IsValid {
@@ -46,7 +46,7 @@ namespace Fivemid.FiveSteam {
             }
         }
         
-        public FixedString32Bytes ToFixedString() {
+        public readonly FixedString32Bytes ToFixedString() {
             char accountTypeLetter = AccountType switch {
                 AccountType.Invalid        => 'I',
                 AccountType.Individual     => 'U',
