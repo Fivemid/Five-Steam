@@ -3,17 +3,14 @@ using Unity.Burst;
 
 namespace Fivemid.FiveSteam {
     public static partial class FiveSteamAPI {
-        private static bool initialized;
+        private static readonly SharedStatic<bool>  initialized = SharedStatic<bool>.GetOrCreate<InitializedContext>();
+        private static readonly SharedStatic<AppId> appId       = SharedStatic<AppId>.GetOrCreate<AppIdContext>();
         
-        private static readonly SharedStatic<AppId> appIdData = SharedStatic<AppId>.GetOrCreate<AppIdContext>();
-        
-        public static AppId AppId {
-            get => appIdData.Data;
-            private set => appIdData.Data = value;
-        }
+        public static ref bool  Initialized => ref initialized.Data;
+        public static ref AppId AppId       => ref appId.Data;
         
         public static unsafe void Init(AppId appId) {
-            if (initialized)
+            if (Initialized)
                 throw new Exception("FiveSteam is already initialized");
             
             AppId = appId;
@@ -26,14 +23,16 @@ namespace Fivemid.FiveSteam {
                 throw new Exception($"SteamAPI init failed: {initResult} - {error.value}");
             
             InitCallbacks();
-            initialized = true;
+            Initialized = true;
         }
         
         public static void Shutdown() {
             ShutdownCallbacks();
             SteamAPI.Shutdown();
-            initialized = false;
+            Initialized = false;
         }
+        
+        private struct InitializedContext { }
         
         private struct AppIdContext { }
     }

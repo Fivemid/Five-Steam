@@ -1,0 +1,27 @@
+{
+    "name": "Fivemid.FiveSteam.Tests",
+    "rootNamespace": "",
+    "references": [
+        "Fivemid.FiveSteam",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Entities",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
