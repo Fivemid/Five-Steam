@@ -2,30 +2,26 @@
 using System.Runtime.InteropServices;
 using Unity.Burst;
 using Unity.Collections;
-using UnityEngine;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace Fivemid.FiveSteam {
     public static unsafe partial class FiveSteamAPI {
-        private static readonly SharedStatic<NativeHashSet<CallbackListener>> listeners =
-            SharedStatic<NativeHashSet<CallbackListener>>.GetOrCreate<SharedStaticListeners>();
-        private static CallbackListenerDelegate managedListenerDelegate;
+        private static readonly SharedStatic<UnsafeHashSet<CallbackListener>> listeners =
+            SharedStatic<UnsafeHashSet<CallbackListener>>.GetOrCreate<SharedStaticListeners>();
         
         private static void InitCallbacks() {
             SteamAPI.ManualDispatch_Init();
             
-            listeners.Data = new(0, Allocator.Domain);
-            
-            managedListenerDelegate = ManagedListener;
-            CallbackListener.Create(
-                null,
-                new FunctionPointer<CallbackListenerDelegate>(
-                    Marshal.GetFunctionPointerForDelegate(managedListenerDelegate))
-            );
+            listeners.Data = new(0, Allocator.Persistent);
         }
         
         private static void ShutdownCallbacks() {
-            if (listeners.Data.IsCreated)
+            if (listeners.Data.IsCreated) {
+                foreach (CallbackListener listener in listeners.Data)
+                    listener.Dispose();
                 listeners.Data.Dispose();
+            }
+            
             listeners.Data = default;
         }
         
@@ -45,10 +41,6 @@ namespace Fivemid.FiveSteam {
                 
                 SteamAPI.ManualDispatch_FreeLastCallback(pipe);
             }
-        }
-        
-        private static void ManagedListener(ref Callback callback) {
-            Debug.Log($"callback: {callback.id}");
         }
         
         public delegate void CallbackListenerDelegate(ref Callback callback);
@@ -73,10 +65,16 @@ namespace Fivemid.FiveSteam {
         public readonly struct CallbackListener : IEquatable<CallbackListener>, IDisposable {
             private readonly void*                                     userData;
             private readonly FunctionPointer<CallbackListenerDelegate> functionPointer;
+            private readonly GCHandle                                  managedDelegateHandle;
             
-            private CallbackListener(void* userData, FunctionPointer<CallbackListenerDelegate> functionPointer) {
-                this.userData        = userData;
-                this.functionPointer = functionPointer;
+            private CallbackListener(
+                void*                                     userData,
+                FunctionPointer<CallbackListenerDelegate> functionPointer,
+                GCHandle                                  managedDelegateHandle
+            ) {
+                this.userData              = userData;
+                this.functionPointer       = functionPointer;
+                this.managedDelegateHandle = managedDelegateHandle;
             }
             
             public void Invoke(CallbackIdentifier id, byte* data, int dataSize) {
@@ -95,16 +93,29 @@ namespace Fivemid.FiveSteam {
             
             public static CallbackListener Create(
                 void*                                     userData,
-                FunctionPointer<CallbackListenerDelegate> functionPointer
+                FunctionPointer<CallbackListenerDelegate> functionPointer,
+                GCHandle                                  managedDelegateHandle = default
             ) {
-                CallbackListener callbackListener = new(userData, functionPointer);
+                CallbackListener callbackListener = new(userData, functionPointer, managedDelegateHandle);
                 listeners.Data.Add(callbackListener);
                 return callbackListener;
+            }
+            
+            public static CallbackListener Create(
+                CallbackListenerDelegate @delegate
+            ) {
+                return Create(
+                    null,
+                    new FunctionPointer<CallbackListenerDelegate>(Marshal.GetFunctionPointerForDelegate(@delegate)),
+                    GCHandle.Alloc(@delegate)
+                );
             }
             
             public void Dispose() {
                 if (listeners.Data.IsCreated)
                     listeners.Data.Remove(this);
+                if (managedDelegateHandle.IsAllocated)
+                    managedDelegateHandle.Free();
             }
         }
         
