@@ -31,7 +31,7 @@ namespace Fivemid.FiveSteam
         public UTF8StringPtr GetLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey);
         public bool SetLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
         public int GetLobbyDataCount(SteamId steamIDLobby);
-        public bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, char* pchKey, int cchKeyBufferSize, char* pchValue, int cchValueBufferSize);
+        public bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, byte* pchKey, int cchKeyBufferSize, byte* pchValue, int cchValueBufferSize);
         public bool DeleteLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey);
         public UTF8StringPtr GetLobbyMemberData(SteamId steamIDLobby, SteamId steamIDUser, UTF8StringPtr pchKey);
         public void SetLobbyMemberData(SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue);
@@ -92,7 +92,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataCount", CallingConvention = Platform.CC)]
         internal static extern int GetLobbyDataCount(void* self, SteamId steamIDLobby);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyDataByIndex", CallingConvention = Platform.CC)]
-        internal static extern bool GetLobbyDataByIndex(void* self, SteamId steamIDLobby, int iLobbyData, char* pchKey, int cchKeyBufferSize, char* pchValue, int cchValueBufferSize);
+        internal static extern bool GetLobbyDataByIndex(void* self, SteamId steamIDLobby, int iLobbyData, byte* pchKey, int cchKeyBufferSize, byte* pchValue, int cchValueBufferSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_DeleteLobbyData", CallingConvention = Platform.CC)]
         internal static extern bool DeleteLobbyData(void* self, SteamId steamIDLobby, UTF8StringPtr pchKey);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_GetLobbyMemberData", CallingConvention = Platform.CC)]
@@ -149,7 +149,7 @@ namespace Fivemid.FiveSteam
             public UTF8StringPtr GetLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey) => ISteamMatchmaking.GetLobbyData(self, steamIDLobby, pchKey);
             public bool SetLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue) => ISteamMatchmaking.SetLobbyData(self, steamIDLobby, pchKey, pchValue);
             public int GetLobbyDataCount(SteamId steamIDLobby) => ISteamMatchmaking.GetLobbyDataCount(self, steamIDLobby);
-            public bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, char* pchKey, int cchKeyBufferSize, char* pchValue, int cchValueBufferSize) => ISteamMatchmaking.GetLobbyDataByIndex(self, steamIDLobby, iLobbyData, pchKey, cchKeyBufferSize, pchValue, cchValueBufferSize);
+            public bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, byte* pchKey, int cchKeyBufferSize, byte* pchValue, int cchValueBufferSize) => ISteamMatchmaking.GetLobbyDataByIndex(self, steamIDLobby, iLobbyData, pchKey, cchKeyBufferSize, pchValue, cchValueBufferSize);
             public bool DeleteLobbyData(SteamId steamIDLobby, UTF8StringPtr pchKey) => ISteamMatchmaking.DeleteLobbyData(self, steamIDLobby, pchKey);
             public UTF8StringPtr GetLobbyMemberData(SteamId steamIDLobby, SteamId steamIDUser, UTF8StringPtr pchKey) => ISteamMatchmaking.GetLobbyMemberData(self, steamIDLobby, steamIDUser, pchKey);
             public void SetLobbyMemberData(SteamId steamIDLobby, UTF8StringPtr pchKey, UTF8StringPtr pchValue) => ISteamMatchmaking.SetLobbyMemberData(self, steamIDLobby, pchKey, pchValue);

@@ -67,7 +67,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_IsEqualTo", CallingConvention = Platform.CC)]
         internal static extern bool Equals(SteamNetworkingIdentity* self, ref SteamNetworkingIdentity x);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ToString", CallingConvention = Platform.CC)]
-        internal static extern void ToString(SteamNetworkingIdentity* self, char* buf, uint cbBuf);
+        internal static extern void ToString(SteamNetworkingIdentity* self, byte* buf, uint cbBuf);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIdentity_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool ParseString(SteamNetworkingIdentity* self, UTF8StringPtr pszStr);
         public void Clear()
@@ -220,7 +220,7 @@ namespace Fivemid.FiveSteam
                 return Equals(self, ref x);
         }
 
-        public void ToString(char* buf, uint cbBuf)
+        public void ToString(byte* buf, uint cbBuf)
         {
             fixed (SteamNetworkingIdentity* self = &this)
                 ToString(self, buf, cbBuf);

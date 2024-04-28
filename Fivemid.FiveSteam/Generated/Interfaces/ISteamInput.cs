@@ -41,7 +41,7 @@ namespace Fivemid.FiveSteam
         public InputMotionData GetMotionData(InputHandle inputHandle);
         public void TriggerVibration(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed);
         public void TriggerVibrationExtended(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed, ushort usLeftTriggerSpeed, ushort usRightTriggerSpeed);
-        public void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, char nGainDB, byte nOtherIntensity, char nOtherGainDB);
+        public void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, byte nGainDB, byte nOtherIntensity, byte nOtherGainDB);
         public void SetLEDColor(InputHandle inputHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags);
         public void Legacy_TriggerHapticPulse(InputHandle inputHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec);
         public void Legacy_TriggerRepeatedHapticPulse(InputHandle inputHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags);
@@ -122,7 +122,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInput_TriggerVibrationExtended", CallingConvention = Platform.CC)]
         internal static extern void TriggerVibrationExtended(void* self, InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed, ushort usLeftTriggerSpeed, ushort usRightTriggerSpeed);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInput_TriggerSimpleHapticEvent", CallingConvention = Platform.CC)]
-        internal static extern void TriggerSimpleHapticEvent(void* self, InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, char nGainDB, byte nOtherIntensity, char nOtherGainDB);
+        internal static extern void TriggerSimpleHapticEvent(void* self, InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, byte nGainDB, byte nOtherIntensity, byte nOtherGainDB);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInput_SetLEDColor", CallingConvention = Platform.CC)]
         internal static extern void SetLEDColor(void* self, InputHandle inputHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInput_Legacy_TriggerHapticPulse", CallingConvention = Platform.CC)]
@@ -189,7 +189,7 @@ namespace Fivemid.FiveSteam
             public InputMotionData GetMotionData(InputHandle inputHandle) => ISteamInput.GetMotionData(self, inputHandle);
             public void TriggerVibration(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed) => ISteamInput.TriggerVibration(self, inputHandle, usLeftSpeed, usRightSpeed);
             public void TriggerVibrationExtended(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed, ushort usLeftTriggerSpeed, ushort usRightTriggerSpeed) => ISteamInput.TriggerVibrationExtended(self, inputHandle, usLeftSpeed, usRightSpeed, usLeftTriggerSpeed, usRightTriggerSpeed);
-            public void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, char nGainDB, byte nOtherIntensity, char nOtherGainDB) => ISteamInput.TriggerSimpleHapticEvent(self, inputHandle, eHapticLocation, nIntensity, nGainDB, nOtherIntensity, nOtherGainDB);
+            public void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, byte nGainDB, byte nOtherIntensity, byte nOtherGainDB) => ISteamInput.TriggerSimpleHapticEvent(self, inputHandle, eHapticLocation, nIntensity, nGainDB, nOtherIntensity, nOtherGainDB);
             public void SetLEDColor(InputHandle inputHandle, byte nColorR, byte nColorG, byte nColorB, uint nFlags) => ISteamInput.SetLEDColor(self, inputHandle, nColorR, nColorG, nColorB, nFlags);
             public void Legacy_TriggerHapticPulse(InputHandle inputHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec) => ISteamInput.Legacy_TriggerHapticPulse(self, inputHandle, eTargetPad, usDurationMicroSec);
             public void Legacy_TriggerRepeatedHapticPulse(InputHandle inputHandle, SteamControllerPad eTargetPad, ushort usDurationMicroSec, ushort usOffMicroSec, ushort unRepeat, uint nFlags) => ISteamInput.Legacy_TriggerRepeatedHapticPulse(self, inputHandle, eTargetPad, usDurationMicroSec, usOffMicroSec, unRepeat, nFlags);

@@ -21,6 +21,7 @@ public static partial class Convert {
         ("intptr_t", "IntPtr"),
         ("size_t", "int"),
 
+        ("char", "byte"),
         ("signed char", "sbyte"),
         ("unsigned char", "byte"),
         ("short", "short"),

@@ -4,7 +4,7 @@ namespace Fivemid.FiveSteam {
     public static unsafe class UTF8StringPtrConversions {
         public static UTF8StringPtr AsUTF8StringPtr<T>(this T utf8Bytes) where T : unmanaged, IUTF8Bytes =>
             new() {
-                value = (char*)utf8Bytes.GetUnsafePtr()
+                value = utf8Bytes.GetUnsafePtr()
             };
         
         public static FixedString128Bytes AsFixedString32Bytes<T>(this T utf8Bytes)

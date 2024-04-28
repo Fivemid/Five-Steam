@@ -27,7 +27,7 @@ namespace Fivemid.FiveSteam
         public SteamAPICall CheckFileSignature(UTF8StringPtr szFileName);
         public bool ShowGamepadTextInput(GamepadTextInputMode eInputMode, GamepadTextInputLineMode eLineInputMode, UTF8StringPtr pchDescription, uint unCharMax, UTF8StringPtr pchExistingText);
         public uint GetEnteredGamepadTextLength();
-        public bool GetEnteredGamepadTextInput(char* pchText, uint cchText);
+        public bool GetEnteredGamepadTextInput(byte* pchText, uint cchText);
         public UTF8StringPtr GetSteamUILanguage();
         public bool IsSteamRunningInVR();
         public void SetOverlayNotificationInset(int nHorizontalInset, int nVerticalInset);
@@ -37,7 +37,7 @@ namespace Fivemid.FiveSteam
         public void SetVRHeadsetStreamingEnabled(bool bEnabled);
         public bool IsSteamChinaLauncher();
         public bool InitFilterText(uint unFilterOptions);
-        public int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, char* pchOutFilteredText, uint nByteSizeOutFilteredText);
+        public int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, byte* pchOutFilteredText, uint nByteSizeOutFilteredText);
         public SteamIPv6ConnectivityState GetIPv6ConnectivityState(SteamIPv6ConnectivityProtocol eProtocol);
         public bool IsSteamRunningOnSteamDeck();
         public bool ShowFloatingGamepadTextInput(FloatingGamepadTextInputMode eKeyboardMode, int nTextFieldXPosition, int nTextFieldYPosition, int nTextFieldWidth, int nTextFieldHeight);
@@ -85,7 +85,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_GetEnteredGamepadTextLength", CallingConvention = Platform.CC)]
         internal static extern uint GetEnteredGamepadTextLength(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_GetEnteredGamepadTextInput", CallingConvention = Platform.CC)]
-        internal static extern bool GetEnteredGamepadTextInput(void* self, char* pchText, uint cchText);
+        internal static extern bool GetEnteredGamepadTextInput(void* self, byte* pchText, uint cchText);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_GetSteamUILanguage", CallingConvention = Platform.CC)]
         internal static extern UTF8StringPtr GetSteamUILanguage(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_IsSteamRunningInVR", CallingConvention = Platform.CC)]
@@ -105,7 +105,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_InitFilterText", CallingConvention = Platform.CC)]
         internal static extern bool InitFilterText(void* self, uint unFilterOptions);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_FilterText", CallingConvention = Platform.CC)]
-        internal static extern int FilterText(void* self, TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, char* pchOutFilteredText, uint nByteSizeOutFilteredText);
+        internal static extern int FilterText(void* self, TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, byte* pchOutFilteredText, uint nByteSizeOutFilteredText);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_GetIPv6ConnectivityState", CallingConvention = Platform.CC)]
         internal static extern SteamIPv6ConnectivityState GetIPv6ConnectivityState(void* self, SteamIPv6ConnectivityProtocol eProtocol);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_IsSteamRunningOnSteamDeck", CallingConvention = Platform.CC)]
@@ -142,7 +142,7 @@ namespace Fivemid.FiveSteam
             public SteamAPICall CheckFileSignature(UTF8StringPtr szFileName) => ISteamUtils.CheckFileSignature(self, szFileName);
             public bool ShowGamepadTextInput(GamepadTextInputMode eInputMode, GamepadTextInputLineMode eLineInputMode, UTF8StringPtr pchDescription, uint unCharMax, UTF8StringPtr pchExistingText) => ISteamUtils.ShowGamepadTextInput(self, eInputMode, eLineInputMode, pchDescription, unCharMax, pchExistingText);
             public uint GetEnteredGamepadTextLength() => ISteamUtils.GetEnteredGamepadTextLength(self);
-            public bool GetEnteredGamepadTextInput(char* pchText, uint cchText) => ISteamUtils.GetEnteredGamepadTextInput(self, pchText, cchText);
+            public bool GetEnteredGamepadTextInput(byte* pchText, uint cchText) => ISteamUtils.GetEnteredGamepadTextInput(self, pchText, cchText);
             public UTF8StringPtr GetSteamUILanguage() => ISteamUtils.GetSteamUILanguage(self);
             public bool IsSteamRunningInVR() => ISteamUtils.IsSteamRunningInVR(self);
             public void SetOverlayNotificationInset(int nHorizontalInset, int nVerticalInset) => ISteamUtils.SetOverlayNotificationInset(self, nHorizontalInset, nVerticalInset);
@@ -152,7 +152,7 @@ namespace Fivemid.FiveSteam
             public void SetVRHeadsetStreamingEnabled(bool bEnabled) => ISteamUtils.SetVRHeadsetStreamingEnabled(self, bEnabled);
             public bool IsSteamChinaLauncher() => ISteamUtils.IsSteamChinaLauncher(self);
             public bool InitFilterText(uint unFilterOptions) => ISteamUtils.InitFilterText(self, unFilterOptions);
-            public int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, char* pchOutFilteredText, uint nByteSizeOutFilteredText) => ISteamUtils.FilterText(self, eContext, sourceSteamID, pchInputMessage, pchOutFilteredText, nByteSizeOutFilteredText);
+            public int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, byte* pchOutFilteredText, uint nByteSizeOutFilteredText) => ISteamUtils.FilterText(self, eContext, sourceSteamID, pchInputMessage, pchOutFilteredText, nByteSizeOutFilteredText);
             public SteamIPv6ConnectivityState GetIPv6ConnectivityState(SteamIPv6ConnectivityProtocol eProtocol) => ISteamUtils.GetIPv6ConnectivityState(self, eProtocol);
             public bool IsSteamRunningOnSteamDeck() => ISteamUtils.IsSteamRunningOnSteamDeck(self);
             public bool ShowFloatingGamepadTextInput(FloatingGamepadTextInputMode eKeyboardMode, int nTextFieldXPosition, int nTextFieldYPosition, int nTextFieldWidth, int nTextFieldHeight) => ISteamUtils.ShowFloatingGamepadTextInput(self, eKeyboardMode, nTextFieldXPosition, nTextFieldYPosition, nTextFieldWidth, nTextFieldHeight);

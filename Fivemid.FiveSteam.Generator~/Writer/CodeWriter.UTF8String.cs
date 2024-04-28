@@ -15,7 +15,7 @@ public partial class CodeWriter {
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .AddBaseListTypes(SimpleBaseType(ParseTypeName("global::Unity.Collections.IUTF8Bytes")))
               .AddMembers(FieldDeclaration(
-                                  VariableDeclaration(ParseTypeName("char"))
+                                  VariableDeclaration(ParseTypeName("byte"))
                                      .AddVariables(VariableDeclarator("values")
                                                       .AddArgumentListArguments(
                                                            Argument(LiteralExpression(
@@ -28,7 +28,7 @@ public partial class CodeWriter {
                       .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword))
                       .AddBodyStatements(
                            ParseStatement("""
-                                          fixed (char* ptr = values)
+                                          fixed (byte* ptr = values)
                                              return Marshal.PtrToStringUTF8((IntPtr)ptr);
                                           """)
                        )
@@ -48,8 +48,8 @@ public partial class CodeWriter {
                       .AddModifiers(Token(SyntaxKind.PublicKeyword))
                       .AddBodyStatements(
                            ParseStatement("""
-                                          fixed (char* ptr = values)
-                                             return (byte*)ptr;
+                                          fixed (byte* ptr = values)
+                                             return ptr;
                                           """)
                        )
                )

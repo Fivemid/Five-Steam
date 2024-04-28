@@ -42,8 +42,8 @@ namespace Fivemid.FiveSteam
         public SteamAPICall AttachLeaderboardUGC(SteamLeaderboard hSteamLeaderboard, UGCHandle hUGC);
         public SteamAPICall GetNumberOfCurrentPlayers();
         public SteamAPICall RequestGlobalAchievementPercentages();
-        public int GetMostAchievedAchievementInfo(char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
-        public int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
+        public int GetMostAchievedAchievementInfo(byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
+        public int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
         public bool GetAchievementAchievedPercent(UTF8StringPtr pchName, float* pflPercent);
         public SteamAPICall RequestGlobalStats(int nHistoryDays);
         public bool GetGlobalStat(UTF8StringPtr pchStatName, long* pData);
@@ -123,9 +123,9 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_RequestGlobalAchievementPercentages", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RequestGlobalAchievementPercentages(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_GetMostAchievedAchievementInfo", CallingConvention = Platform.CC)]
-        internal static extern int GetMostAchievedAchievementInfo(void* self, char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
+        internal static extern int GetMostAchievedAchievementInfo(void* self, byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_GetNextMostAchievedAchievementInfo", CallingConvention = Platform.CC)]
-        internal static extern int GetNextMostAchievedAchievementInfo(void* self, int iIteratorPrevious, char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
+        internal static extern int GetNextMostAchievedAchievementInfo(void* self, int iIteratorPrevious, byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_GetAchievementAchievedPercent", CallingConvention = Platform.CC)]
         internal static extern bool GetAchievementAchievedPercent(void* self, UTF8StringPtr pchName, float* pflPercent);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_RequestGlobalStats", CallingConvention = Platform.CC)]
@@ -181,8 +181,8 @@ namespace Fivemid.FiveSteam
             public SteamAPICall AttachLeaderboardUGC(SteamLeaderboard hSteamLeaderboard, UGCHandle hUGC) => ISteamUserStats.AttachLeaderboardUGC(self, hSteamLeaderboard, hUGC);
             public SteamAPICall GetNumberOfCurrentPlayers() => ISteamUserStats.GetNumberOfCurrentPlayers(self);
             public SteamAPICall RequestGlobalAchievementPercentages() => ISteamUserStats.RequestGlobalAchievementPercentages(self);
-            public int GetMostAchievedAchievementInfo(char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => ISteamUserStats.GetMostAchievedAchievementInfo(self, pchName, unNameBufLen, pflPercent, pbAchieved);
-            public int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => ISteamUserStats.GetNextMostAchievedAchievementInfo(self, iIteratorPrevious, pchName, unNameBufLen, pflPercent, pbAchieved);
+            public int GetMostAchievedAchievementInfo(byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => ISteamUserStats.GetMostAchievedAchievementInfo(self, pchName, unNameBufLen, pflPercent, pbAchieved);
+            public int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => ISteamUserStats.GetNextMostAchievedAchievementInfo(self, iIteratorPrevious, pchName, unNameBufLen, pflPercent, pbAchieved);
             public bool GetAchievementAchievedPercent(UTF8StringPtr pchName, float* pflPercent) => ISteamUserStats.GetAchievementAchievedPercent(self, pchName, pflPercent);
             public SteamAPICall RequestGlobalStats(int nHistoryDays) => ISteamUserStats.RequestGlobalStats(self, nHistoryDays);
             public bool GetGlobalStat(UTF8StringPtr pchStatName, long* pData) => ISteamUserStats.GetGlobalStat(self, pchStatName, pData);

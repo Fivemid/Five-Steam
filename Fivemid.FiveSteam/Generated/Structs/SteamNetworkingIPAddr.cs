@@ -32,7 +32,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsLocalHost", CallingConvention = Platform.CC)]
         internal static extern bool IsLocalHost(SteamNetworkingIPAddr* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_ToString", CallingConvention = Platform.CC)]
-        internal static extern void ToString(SteamNetworkingIPAddr* self, char* buf, uint cbBuf, bool bWithPort);
+        internal static extern void ToString(SteamNetworkingIPAddr* self, byte* buf, uint cbBuf, bool bWithPort);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool ParseString(SteamNetworkingIPAddr* self, UTF8StringPtr pszStr);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_SteamNetworkingIPAddr_IsEqualTo", CallingConvention = Platform.CC)]
@@ -89,7 +89,7 @@ namespace Fivemid.FiveSteam
                 return IsLocalHost(self);
         }
 
-        public void ToString(char* buf, uint cbBuf, bool bWithPort)
+        public void ToString(byte* buf, uint cbBuf, bool bWithPort)
         {
             fixed (SteamNetworkingIPAddr* self = &this)
                 ToString(self, buf, cbBuf, bWithPort);

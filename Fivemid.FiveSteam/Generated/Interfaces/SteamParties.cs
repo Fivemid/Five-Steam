@@ -32,7 +32,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pLocation"><a href="https://partner.steamgames.com/doc/api/ISteamParties#SteamPartyBeaconLocation_t" class="bb_apilink">SteamPartyBeaconLocation_t</a>*: Location the beacon has been posted.</param>
         /// <param name="pchMetadata">char*: Buffer to receive any additional metadata the game has set on this beacon (e.g. game mode). Will be NULL terminated on success</param>
         /// <param name="cchMetadata "><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: Size of the above buffer.</param>
-        public static bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, char* pchMetadata, int cchMetadata) => Instance.GetBeaconDetails(ulBeaconID, pSteamIDBeaconOwner, pLocation, pchMetadata, cchMetadata);
+        public static bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, byte* pchMetadata, int cchMetadata) => Instance.GetBeaconDetails(ulBeaconID, pSteamIDBeaconOwner, pLocation, pchMetadata, cchMetadata);
         /// <summary><code>SteamAPICall_t JoinParty( PartyBeaconID_t ulBeaconID );</code><br />
         /// When the user indicates they wish to join the party advertised by a given beacon, call this method. On success, Steam will reserve a slot for this user in the party and return the necessary "join game" string to use to complete the connection.<br />
         /// <br />
@@ -100,6 +100,6 @@ namespace Fivemid.FiveSteam
         /// <param name="eData"><a href="https://partner.steamgames.com/doc/api/steam_api#ESteamPartyBeaconLocationData%20" class="bb_apilink">ESteamPartyBeaconLocationData </a>: Type of location data you wish to get.</param>
         /// <param name="pchDataStringOut">char *: Output buffer for location data string. Will be NULL-terminated on success.</param>
         /// <param name="cchDataStringOut ">int: Size of buffer pointed to by pchDataStringOut.</param>
-        public static bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, char* pchDataStringOut, int cchDataStringOut) => Instance.GetBeaconLocationData(BeaconLocation, eData, pchDataStringOut, cchDataStringOut);
+        public static bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, byte* pchDataStringOut, int cchDataStringOut) => Instance.GetBeaconLocationData(BeaconLocation, eData, pchDataStringOut, cchDataStringOut);
     }
 }

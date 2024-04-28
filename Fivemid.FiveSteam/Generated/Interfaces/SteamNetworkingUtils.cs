@@ -57,7 +57,7 @@ namespace Fivemid.FiveSteam
         public static int EstimatePingTimeFromLocalHost(ref SteamNetworkPingLocation remoteLocation) => Instance.EstimatePingTimeFromLocalHost(ref remoteLocation);
         /// <summary><code>void ConvertPingLocationToString( const SteamNetworkPingLocation_t &amp;location, char *pszBuf, int cchBufSize );</code>Convert a ping location into a text format suitable for sending over the wire.  The format is a compact and human readable.  However, it is subject to change so please do not parse it yourself.  Your buffer must be at least k_cchMaxSteamNetworkingPingLocationString bytes.</summary>
         /// 
-        public static void ConvertPingLocationToString(ref SteamNetworkPingLocation location, char* pszBuf, int cchBufSize) => Instance.ConvertPingLocationToString(ref location, pszBuf, cchBufSize);
+        public static void ConvertPingLocationToString(ref SteamNetworkPingLocation location, byte* pszBuf, int cchBufSize) => Instance.ConvertPingLocationToString(ref location, pszBuf, cchBufSize);
         /// <summary><code>bool ParsePingLocationString( const char *pszString, SteamNetworkPingLocation_t &amp;result );</code>Parse back SteamNetworkPingLocation_t string.  Returns false if we couldn't understand the string.</summary>
         /// 
         public static bool ParsePingLocationString(UTF8StringPtr pszString, ref SteamNetworkPingLocation result) => Instance.ParsePingLocationString(pszString, ref result);
@@ -177,13 +177,13 @@ namespace Fivemid.FiveSteam
         /// 
         public static SteamNetworkingConfigValueType IterateGenericEditableConfigValues(SteamNetworkingConfigValueType eCurrent, bool bEnumerateDevVars) => Instance.IterateGenericEditableConfigValues(eCurrent, bEnumerateDevVars);
         /// missing documentation
-        public static void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, char* buf, uint cbBuf, bool bWithPort) => Instance.SteamNetworkingIPAddr_ToString(ref addr, buf, cbBuf, bWithPort);
+        public static void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, byte* buf, uint cbBuf, bool bWithPort) => Instance.SteamNetworkingIPAddr_ToString(ref addr, buf, cbBuf, bWithPort);
         /// missing documentation
         public static bool SteamNetworkingIPAddr_ParseString(SteamNetworkingIPAddr* pAddr, UTF8StringPtr pszStr) => Instance.SteamNetworkingIPAddr_ParseString(pAddr, pszStr);
         /// missing documentation
         public static SteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(ref SteamNetworkingIPAddr addr) => Instance.SteamNetworkingIPAddr_GetFakeIPType(ref addr);
         /// missing documentation
-        public static void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, char* buf, uint cbBuf) => Instance.SteamNetworkingIdentity_ToString(ref identity, buf, cbBuf);
+        public static void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, byte* buf, uint cbBuf) => Instance.SteamNetworkingIdentity_ToString(ref identity, buf, cbBuf);
         /// missing documentation
         public static bool SteamNetworkingIdentity_ParseString(SteamNetworkingIdentity* pIdentity, UTF8StringPtr pszStr) => Instance.SteamNetworkingIdentity_ParseString(pIdentity, pszStr);
     }

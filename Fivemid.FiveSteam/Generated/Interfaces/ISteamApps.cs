@@ -18,14 +18,14 @@ namespace Fivemid.FiveSteam
         public uint GetEarliestPurchaseUnixTime(AppId nAppID);
         public bool BIsSubscribedFromFreeWeekend();
         public int GetDLCCount();
-        public bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, char* pchName, int cchNameBufferSize);
+        public bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, byte* pchName, int cchNameBufferSize);
         public void InstallDLC(AppId nAppID);
         public void UninstallDLC(AppId nAppID);
         public void RequestAppProofOfPurchaseKey(AppId nAppID);
-        public bool GetCurrentBetaName(char* pchName, int cchNameBufferSize);
+        public bool GetCurrentBetaName(byte* pchName, int cchNameBufferSize);
         public bool MarkContentCorrupt(bool bMissingFilesOnly);
         public uint GetInstalledDepots(AppId appID, DepotId* pvecDepots, uint cMaxDepots);
-        public uint GetAppInstallDir(AppId appID, char* pchFolder, uint cchFolderBufferSize);
+        public uint GetAppInstallDir(AppId appID, byte* pchFolder, uint cchFolderBufferSize);
         public bool BIsAppInstalled(AppId appID);
         public SteamId GetAppOwner();
         public UTF8StringPtr GetLaunchQueryParam(UTF8StringPtr pchKey);
@@ -33,7 +33,7 @@ namespace Fivemid.FiveSteam
         public int GetAppBuildId();
         public void RequestAllProofOfPurchaseKeys();
         public SteamAPICall GetFileDetails(UTF8StringPtr pszFileName);
-        public int GetLaunchCommandLine(char* pszCommandLine, int cubCommandLine);
+        public int GetLaunchCommandLine(byte* pszCommandLine, int cubCommandLine);
         public bool BIsSubscribedFromFamilySharing();
         public bool BIsTimedTrial(uint* punSecondsAllowed, uint* punSecondsPlayed);
         public bool SetDlcContext(AppId nAppID);
@@ -60,7 +60,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetDLCCount", CallingConvention = Platform.CC)]
         internal static extern int GetDLCCount(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_BGetDLCDataByIndex", CallingConvention = Platform.CC)]
-        internal static extern bool BGetDLCDataByIndex(void* self, int iDLC, AppId* pAppID, bool* pbAvailable, char* pchName, int cchNameBufferSize);
+        internal static extern bool BGetDLCDataByIndex(void* self, int iDLC, AppId* pAppID, bool* pbAvailable, byte* pchName, int cchNameBufferSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_InstallDLC", CallingConvention = Platform.CC)]
         internal static extern void InstallDLC(void* self, AppId nAppID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_UninstallDLC", CallingConvention = Platform.CC)]
@@ -68,13 +68,13 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_RequestAppProofOfPurchaseKey", CallingConvention = Platform.CC)]
         internal static extern void RequestAppProofOfPurchaseKey(void* self, AppId nAppID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetCurrentBetaName", CallingConvention = Platform.CC)]
-        internal static extern bool GetCurrentBetaName(void* self, char* pchName, int cchNameBufferSize);
+        internal static extern bool GetCurrentBetaName(void* self, byte* pchName, int cchNameBufferSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_MarkContentCorrupt", CallingConvention = Platform.CC)]
         internal static extern bool MarkContentCorrupt(void* self, bool bMissingFilesOnly);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetInstalledDepots", CallingConvention = Platform.CC)]
         internal static extern uint GetInstalledDepots(void* self, AppId appID, DepotId* pvecDepots, uint cMaxDepots);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetAppInstallDir", CallingConvention = Platform.CC)]
-        internal static extern uint GetAppInstallDir(void* self, AppId appID, char* pchFolder, uint cchFolderBufferSize);
+        internal static extern uint GetAppInstallDir(void* self, AppId appID, byte* pchFolder, uint cchFolderBufferSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_BIsAppInstalled", CallingConvention = Platform.CC)]
         internal static extern bool BIsAppInstalled(void* self, AppId appID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetAppOwner", CallingConvention = Platform.CC)]
@@ -90,7 +90,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetFileDetails", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall GetFileDetails(void* self, UTF8StringPtr pszFileName);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_GetLaunchCommandLine", CallingConvention = Platform.CC)]
-        internal static extern int GetLaunchCommandLine(void* self, char* pszCommandLine, int cubCommandLine);
+        internal static extern int GetLaunchCommandLine(void* self, byte* pszCommandLine, int cubCommandLine);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_BIsSubscribedFromFamilySharing", CallingConvention = Platform.CC)]
         internal static extern bool BIsSubscribedFromFamilySharing(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_BIsTimedTrial", CallingConvention = Platform.CC)]
@@ -112,14 +112,14 @@ namespace Fivemid.FiveSteam
             public uint GetEarliestPurchaseUnixTime(AppId nAppID) => ISteamApps.GetEarliestPurchaseUnixTime(self, nAppID);
             public bool BIsSubscribedFromFreeWeekend() => ISteamApps.BIsSubscribedFromFreeWeekend(self);
             public int GetDLCCount() => ISteamApps.GetDLCCount(self);
-            public bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, char* pchName, int cchNameBufferSize) => ISteamApps.BGetDLCDataByIndex(self, iDLC, pAppID, pbAvailable, pchName, cchNameBufferSize);
+            public bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, byte* pchName, int cchNameBufferSize) => ISteamApps.BGetDLCDataByIndex(self, iDLC, pAppID, pbAvailable, pchName, cchNameBufferSize);
             public void InstallDLC(AppId nAppID) => ISteamApps.InstallDLC(self, nAppID);
             public void UninstallDLC(AppId nAppID) => ISteamApps.UninstallDLC(self, nAppID);
             public void RequestAppProofOfPurchaseKey(AppId nAppID) => ISteamApps.RequestAppProofOfPurchaseKey(self, nAppID);
-            public bool GetCurrentBetaName(char* pchName, int cchNameBufferSize) => ISteamApps.GetCurrentBetaName(self, pchName, cchNameBufferSize);
+            public bool GetCurrentBetaName(byte* pchName, int cchNameBufferSize) => ISteamApps.GetCurrentBetaName(self, pchName, cchNameBufferSize);
             public bool MarkContentCorrupt(bool bMissingFilesOnly) => ISteamApps.MarkContentCorrupt(self, bMissingFilesOnly);
             public uint GetInstalledDepots(AppId appID, DepotId* pvecDepots, uint cMaxDepots) => ISteamApps.GetInstalledDepots(self, appID, pvecDepots, cMaxDepots);
-            public uint GetAppInstallDir(AppId appID, char* pchFolder, uint cchFolderBufferSize) => ISteamApps.GetAppInstallDir(self, appID, pchFolder, cchFolderBufferSize);
+            public uint GetAppInstallDir(AppId appID, byte* pchFolder, uint cchFolderBufferSize) => ISteamApps.GetAppInstallDir(self, appID, pchFolder, cchFolderBufferSize);
             public bool BIsAppInstalled(AppId appID) => ISteamApps.BIsAppInstalled(self, appID);
             public SteamId GetAppOwner() => ISteamApps.GetAppOwner(self);
             public UTF8StringPtr GetLaunchQueryParam(UTF8StringPtr pchKey) => ISteamApps.GetLaunchQueryParam(self, pchKey);
@@ -127,7 +127,7 @@ namespace Fivemid.FiveSteam
             public int GetAppBuildId() => ISteamApps.GetAppBuildId(self);
             public void RequestAllProofOfPurchaseKeys() => ISteamApps.RequestAllProofOfPurchaseKeys(self);
             public SteamAPICall GetFileDetails(UTF8StringPtr pszFileName) => ISteamApps.GetFileDetails(self, pszFileName);
-            public int GetLaunchCommandLine(char* pszCommandLine, int cubCommandLine) => ISteamApps.GetLaunchCommandLine(self, pszCommandLine, cubCommandLine);
+            public int GetLaunchCommandLine(byte* pszCommandLine, int cubCommandLine) => ISteamApps.GetLaunchCommandLine(self, pszCommandLine, cubCommandLine);
             public bool BIsSubscribedFromFamilySharing() => ISteamApps.BIsSubscribedFromFamilySharing(self);
             public bool BIsTimedTrial(uint* punSecondsAllowed, uint* punSecondsPlayed) => ISteamApps.BIsTimedTrial(self, punSecondsAllowed, punSecondsPlayed);
             public bool SetDlcContext(AppId nAppID) => ISteamApps.SetDlcContext(self, nAppID);

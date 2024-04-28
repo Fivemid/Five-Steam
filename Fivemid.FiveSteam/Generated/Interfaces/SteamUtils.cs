@@ -307,7 +307,7 @@ namespace Fivemid.FiveSteam
         /// }</code></summary>
         /// <param name="pchText">char *: A preallocated buffer to copy the text input string into.</param>
         /// <param name="cchText"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of the <code class="bb_code bb_code_inline nohighlight">pchText</code> buffer.</param>
-        public static bool GetEnteredGamepadTextInput(char* pchText, uint cchText) => Instance.GetEnteredGamepadTextInput(pchText, cchText);
+        public static bool GetEnteredGamepadTextInput(byte* pchText, uint cchText) => Instance.GetEnteredGamepadTextInput(pchText, cchText);
         /// <summary><code>const char * GetSteamUILanguage();</code>Returns the language the steam client is running in.<br />
         /// <br />
         /// You probably want <a href="https://partner.steamgames.com/doc/api/ISteamApps#GetCurrentGameLanguage" class="bb_apilink">ISteamApps::GetCurrentGameLanguage</a> instead, this should only be used in very special cases.<br />
@@ -390,7 +390,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pchInputText">const char*: the input string that should be filtered, which can be ASCII or UTF-8</param>
         /// <param name="pchOutFilteredText">char*: where the output will be placed, even if no filtering is performed</param>
         /// <param name="nByteSizeOutFilteredText ">uint32: the size (in bytes) of pchOutFilteredText, should be at least strlen(pchInputText)+1</param>
-        public static int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, char* pchOutFilteredText, uint nByteSizeOutFilteredText) => Instance.FilterText(eContext, sourceSteamID, pchInputMessage, pchOutFilteredText, nByteSizeOutFilteredText);
+        public static int FilterText(TextFilteringContext eContext, SteamId sourceSteamID, UTF8StringPtr pchInputMessage, byte* pchOutFilteredText, uint nByteSizeOutFilteredText) => Instance.FilterText(eContext, sourceSteamID, pchInputMessage, pchOutFilteredText, nByteSizeOutFilteredText);
         /// missing documentation
         public static SteamIPv6ConnectivityState GetIPv6ConnectivityState(SteamIPv6ConnectivityProtocol eProtocol) => Instance.GetIPv6ConnectivityState(eProtocol);
         /// <summary><code>bool IsSteamRunningOnSteamDeck();</code>Checks if Steam is running on a Steam Deck device.<br />

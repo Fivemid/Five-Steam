@@ -35,7 +35,7 @@ namespace Fivemid.FiveSteam
         public void SetCloudEnabledForApp(bool bEnabled);
         public SteamAPICall UGCDownload(UGCHandle hContent, uint unPriority);
         public bool GetUGCDownloadProgress(UGCHandle hContent, int* pnBytesDownloaded, int* pnBytesExpected);
-        public bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner);
+        public bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, byte** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner);
         public int UGCRead(UGCHandle hContent, void* pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction);
         public int GetCachedUGCCount();
         public UGCHandle GetCachedUGCHandle(int iCachedContent);
@@ -121,7 +121,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDownloadProgress", CallingConvention = Platform.CC)]
         internal static extern bool GetUGCDownloadProgress(void* self, UGCHandle hContent, int* pnBytesDownloaded, int* pnBytesExpected);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetUGCDetails", CallingConvention = Platform.CC)]
-        internal static extern bool GetUGCDetails(void* self, UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner);
+        internal static extern bool GetUGCDetails(void* self, UGCHandle hContent, AppId* pnAppID, byte** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_UGCRead", CallingConvention = Platform.CC)]
         internal static extern int UGCRead(void* self, UGCHandle hContent, void* pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemoteStorage_GetCachedUGCCount", CallingConvention = Platform.CC)]
@@ -216,7 +216,7 @@ namespace Fivemid.FiveSteam
             public void SetCloudEnabledForApp(bool bEnabled) => ISteamRemoteStorage.SetCloudEnabledForApp(self, bEnabled);
             public SteamAPICall UGCDownload(UGCHandle hContent, uint unPriority) => ISteamRemoteStorage.UGCDownload(self, hContent, unPriority);
             public bool GetUGCDownloadProgress(UGCHandle hContent, int* pnBytesDownloaded, int* pnBytesExpected) => ISteamRemoteStorage.GetUGCDownloadProgress(self, hContent, pnBytesDownloaded, pnBytesExpected);
-            public bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner) => ISteamRemoteStorage.GetUGCDetails(self, hContent, pnAppID, ppchName, pnFileSizeInBytes, pSteamIDOwner);
+            public bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, byte** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner) => ISteamRemoteStorage.GetUGCDetails(self, hContent, pnAppID, ppchName, pnFileSizeInBytes, pSteamIDOwner);
             public int UGCRead(UGCHandle hContent, void* pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction) => ISteamRemoteStorage.UGCRead(self, hContent, pvData, cubDataToRead, cOffset, eAction);
             public int GetCachedUGCCount() => ISteamRemoteStorage.GetCachedUGCCount(self);
             public UGCHandle GetCachedUGCHandle(int iCachedContent) => ISteamRemoteStorage.GetCachedUGCHandle(self, iCachedContent);

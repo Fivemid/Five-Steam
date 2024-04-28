@@ -35,14 +35,14 @@ namespace Fivemid.FiveSteam
         public bool SetConnectionUserData(HSteamNetConnection hPeer, long nUserData);
         public long GetConnectionUserData(HSteamNetConnection hPeer);
         public void SetConnectionName(HSteamNetConnection hPeer, UTF8StringPtr pszName);
-        public bool GetConnectionName(HSteamNetConnection hPeer, char* pszName, int nMaxLen);
+        public bool GetConnectionName(HSteamNetConnection hPeer, byte* pszName, int nMaxLen);
         public Result SendMessageToConnection(HSteamNetConnection hConn, void* pData, uint cbData, int nSendFlags, long* pOutMessageNumber);
         public void SendMessages(int nMessages, SteamNetworkingMessage** pMessages, long* pOutMessageNumberOrResult);
         public Result FlushMessagesOnConnection(HSteamNetConnection hConn);
         public int ReceiveMessagesOnConnection(HSteamNetConnection hConn, SteamNetworkingMessage** ppOutMessages, int nMaxMessages);
         public bool GetConnectionInfo(HSteamNetConnection hConn, SteamNetConnectionInfo* pInfo);
         public Result GetConnectionRealTimeStatus(HSteamNetConnection hConn, SteamNetConnectionRealTimeStatus* pStatus, int nLanes, SteamNetConnectionRealTimeLaneStatus* pLanes);
-        public int GetDetailedConnectionStatus(HSteamNetConnection hConn, char* pszBuf, int cbBuf);
+        public int GetDetailedConnectionStatus(HSteamNetConnection hConn, byte* pszBuf, int cbBuf);
         public bool GetListenSocketAddress(HSteamListenSocket hSocket, SteamNetworkingIPAddr* address);
         public bool CreateSocketPair(HSteamNetConnection* pOutConnection1, HSteamNetConnection* pOutConnection2, bool bUseNetworkLoopback, SteamNetworkingIdentity* pIdentity1, SteamNetworkingIdentity* pIdentity2);
         public Result ConfigureConnectionLanes(HSteamNetConnection hConn, int nNumLanes, int* pLanePriorities, ushort* pLaneWeights);
@@ -93,7 +93,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_SetConnectionName", CallingConvention = Platform.CC)]
         internal static extern void SetConnectionName(void* self, HSteamNetConnection hPeer, UTF8StringPtr pszName);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_GetConnectionName", CallingConvention = Platform.CC)]
-        internal static extern bool GetConnectionName(void* self, HSteamNetConnection hPeer, char* pszName, int nMaxLen);
+        internal static extern bool GetConnectionName(void* self, HSteamNetConnection hPeer, byte* pszName, int nMaxLen);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_SendMessageToConnection", CallingConvention = Platform.CC)]
         internal static extern Result SendMessageToConnection(void* self, HSteamNetConnection hConn, void* pData, uint cbData, int nSendFlags, long* pOutMessageNumber);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_SendMessages", CallingConvention = Platform.CC)]
@@ -107,7 +107,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_GetConnectionRealTimeStatus", CallingConvention = Platform.CC)]
         internal static extern Result GetConnectionRealTimeStatus(void* self, HSteamNetConnection hConn, SteamNetConnectionRealTimeStatus* pStatus, int nLanes, SteamNetConnectionRealTimeLaneStatus* pLanes);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_GetDetailedConnectionStatus", CallingConvention = Platform.CC)]
-        internal static extern int GetDetailedConnectionStatus(void* self, HSteamNetConnection hConn, char* pszBuf, int cbBuf);
+        internal static extern int GetDetailedConnectionStatus(void* self, HSteamNetConnection hConn, byte* pszBuf, int cbBuf);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_GetListenSocketAddress", CallingConvention = Platform.CC)]
         internal static extern bool GetListenSocketAddress(void* self, HSteamListenSocket hSocket, SteamNetworkingIPAddr* address);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_CreateSocketPair", CallingConvention = Platform.CC)]
@@ -180,14 +180,14 @@ namespace Fivemid.FiveSteam
             public bool SetConnectionUserData(HSteamNetConnection hPeer, long nUserData) => ISteamNetworkingSockets.SetConnectionUserData(self, hPeer, nUserData);
             public long GetConnectionUserData(HSteamNetConnection hPeer) => ISteamNetworkingSockets.GetConnectionUserData(self, hPeer);
             public void SetConnectionName(HSteamNetConnection hPeer, UTF8StringPtr pszName) => ISteamNetworkingSockets.SetConnectionName(self, hPeer, pszName);
-            public bool GetConnectionName(HSteamNetConnection hPeer, char* pszName, int nMaxLen) => ISteamNetworkingSockets.GetConnectionName(self, hPeer, pszName, nMaxLen);
+            public bool GetConnectionName(HSteamNetConnection hPeer, byte* pszName, int nMaxLen) => ISteamNetworkingSockets.GetConnectionName(self, hPeer, pszName, nMaxLen);
             public Result SendMessageToConnection(HSteamNetConnection hConn, void* pData, uint cbData, int nSendFlags, long* pOutMessageNumber) => ISteamNetworkingSockets.SendMessageToConnection(self, hConn, pData, cbData, nSendFlags, pOutMessageNumber);
             public void SendMessages(int nMessages, SteamNetworkingMessage** pMessages, long* pOutMessageNumberOrResult) => ISteamNetworkingSockets.SendMessages(self, nMessages, pMessages, pOutMessageNumberOrResult);
             public Result FlushMessagesOnConnection(HSteamNetConnection hConn) => ISteamNetworkingSockets.FlushMessagesOnConnection(self, hConn);
             public int ReceiveMessagesOnConnection(HSteamNetConnection hConn, SteamNetworkingMessage** ppOutMessages, int nMaxMessages) => ISteamNetworkingSockets.ReceiveMessagesOnConnection(self, hConn, ppOutMessages, nMaxMessages);
             public bool GetConnectionInfo(HSteamNetConnection hConn, SteamNetConnectionInfo* pInfo) => ISteamNetworkingSockets.GetConnectionInfo(self, hConn, pInfo);
             public Result GetConnectionRealTimeStatus(HSteamNetConnection hConn, SteamNetConnectionRealTimeStatus* pStatus, int nLanes, SteamNetConnectionRealTimeLaneStatus* pLanes) => ISteamNetworkingSockets.GetConnectionRealTimeStatus(self, hConn, pStatus, nLanes, pLanes);
-            public int GetDetailedConnectionStatus(HSteamNetConnection hConn, char* pszBuf, int cbBuf) => ISteamNetworkingSockets.GetDetailedConnectionStatus(self, hConn, pszBuf, cbBuf);
+            public int GetDetailedConnectionStatus(HSteamNetConnection hConn, byte* pszBuf, int cbBuf) => ISteamNetworkingSockets.GetDetailedConnectionStatus(self, hConn, pszBuf, cbBuf);
             public bool GetListenSocketAddress(HSteamListenSocket hSocket, SteamNetworkingIPAddr* address) => ISteamNetworkingSockets.GetListenSocketAddress(self, hSocket, address);
             public bool CreateSocketPair(HSteamNetConnection* pOutConnection1, HSteamNetConnection* pOutConnection2, bool bUseNetworkLoopback, SteamNetworkingIdentity* pIdentity1, SteamNetworkingIdentity* pIdentity2) => ISteamNetworkingSockets.CreateSocketPair(self, pOutConnection1, pOutConnection2, bUseNetworkLoopback, pIdentity1, pIdentity2);
             public Result ConfigureConnectionLanes(HSteamNetConnection hConn, int nNumLanes, int* pLanePriorities, ushort* pLaneWeights) => ISteamNetworkingSockets.ConfigureConnectionLanes(self, hConn, nNumLanes, pLanePriorities, pLaneWeights);

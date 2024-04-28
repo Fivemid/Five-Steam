@@ -140,7 +140,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pbAvailable">bool *: Returns whether the DLC is currently available on the Steam store. Will be false if the DLC does not have a visible store page</param>
         /// <param name="pchName">char *: Returns the name of the DLC by copying it into this buffer.</param>
         /// <param name="cchNameBufferSize">int: The length of the <code class="bb_code bb_code_inline nohighlight">pchName</code> buffer.</param>
-        public static bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, char* pchName, int cchNameBufferSize) => Instance.BGetDLCDataByIndex(iDLC, pAppID, pbAvailable, pchName, cchNameBufferSize);
+        public static bool BGetDLCDataByIndex(int iDLC, AppId* pAppID, bool* pbAvailable, byte* pchName, int cchNameBufferSize) => Instance.BGetDLCDataByIndex(iDLC, pAppID, pbAvailable, pchName, cchNameBufferSize);
         /// <summary><code>void InstallDLC( AppId_t nAppID );</code><br />
         /// Allows you to install an optional DLC.<br />
         /// <br />
@@ -164,7 +164,7 @@ namespace Fivemid.FiveSteam
         /// <b>true</b> if the user is on a beta branch; otherwise, <b>false</b>.</summary>
         /// <param name="pchName">char *: The buffer where the beta name will be copied in to.</param>
         /// <param name="cchNameBufferSize">int: The total size of the pchName buffer.</param>
-        public static bool GetCurrentBetaName(char* pchName, int cchNameBufferSize) => Instance.GetCurrentBetaName(pchName, cchNameBufferSize);
+        public static bool GetCurrentBetaName(byte* pchName, int cchNameBufferSize) => Instance.GetCurrentBetaName(pchName, cchNameBufferSize);
         /// <summary><code>bool MarkContentCorrupt( bool bMissingFilesOnly );</code><br />
         /// Allows you to force verify game content on next launch.<br />
         /// <br />
@@ -193,7 +193,7 @@ namespace Fivemid.FiveSteam
         /// <param name="appID"><a href="https://partner.steamgames.com/doc/api/steam_api#AppId_t" class="bb_apilink">AppId_t</a>: The App ID to get the install dir for.</param>
         /// <param name="pchFolder">char *: The string buffer that the folder path will be copied into.</param>
         /// <param name="cchFolderBufferSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size in bytes of the <code class="bb_code bb_code_inline nohighlight">pchFolder</code> buffer.</param>
-        public static uint GetAppInstallDir(AppId appID, char* pchFolder, uint cchFolderBufferSize) => Instance.GetAppInstallDir(appID, pchFolder, cchFolderBufferSize);
+        public static uint GetAppInstallDir(AppId appID, byte* pchFolder, uint cchFolderBufferSize) => Instance.GetAppInstallDir(appID, pchFolder, cchFolderBufferSize);
         /// <summary><code>bool BIsAppInstalled( AppId_t appID );</code><br />
         /// Checks if a specific app is installed.<br />
         /// <br />
@@ -261,7 +261,7 @@ namespace Fivemid.FiveSteam
         /// <b>See Also:</b> <a href="https://partner.steamgames.com/doc/api/ISteamApps#NewUrlLaunchParameters_t" class="bb_apilink">ISteamApps::NewUrlLaunchParameters_t</a></summary>
         /// <param name="pszCommandLine">char *: The string buffer that the command line will be copied into.</param>
         /// <param name="cubCommandLine ">int: The size in bytes of the <code class="bb_code bb_code_inline nohighlight">pszCommandLine</code> buffer.</param>
-        public static int GetLaunchCommandLine(char* pszCommandLine, int cubCommandLine) => Instance.GetLaunchCommandLine(pszCommandLine, cubCommandLine);
+        public static int GetLaunchCommandLine(byte* pszCommandLine, int cubCommandLine) => Instance.GetLaunchCommandLine(pszCommandLine, cubCommandLine);
         /// <summary><code>bool BIsSubscribedFromFamilySharing();</code><br />
         /// Checks if the active user is accessing the current appID via a temporary Family Shared license owned by another user. <br />
         /// <br />

@@ -311,7 +311,7 @@ namespace Fivemid.FiveSteam
         /// <param name="usRightTriggerSpeed">unsigned short: The intensity value of the right Xbox Impulse Trigger motor.</param>
         public static void TriggerVibrationExtended(InputHandle inputHandle, ushort usLeftSpeed, ushort usRightSpeed, ushort usLeftTriggerSpeed, ushort usRightTriggerSpeed) => Instance.TriggerVibrationExtended(inputHandle, usLeftSpeed, usRightSpeed, usLeftTriggerSpeed, usRightTriggerSpeed);
         /// missing documentation
-        public static void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, char nGainDB, byte nOtherIntensity, char nOtherGainDB) => Instance.TriggerSimpleHapticEvent(inputHandle, eHapticLocation, nIntensity, nGainDB, nOtherIntensity, nOtherGainDB);
+        public static void TriggerSimpleHapticEvent(InputHandle inputHandle, ControllerHapticLocation eHapticLocation, byte nIntensity, byte nGainDB, byte nOtherIntensity, byte nOtherGainDB) => Instance.TriggerSimpleHapticEvent(inputHandle, eHapticLocation, nIntensity, nGainDB, nOtherIntensity, nOtherGainDB);
         /// <summary><code>void SetLEDColor( InputHandle_t inputHandle, uint8 nColorR, uint8 nColorG, uint8 nColorB, unsigned int nFlags );</code><br />
         /// Set the controller LED color on supported controllers.<br />
         /// <br />

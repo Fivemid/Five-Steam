@@ -283,7 +283,7 @@ namespace Fivemid.FiveSteam
         /// <param name="ppchName">char **: </param>
         /// <param name="pnFileSizeInBytes"><a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a> *: </param>
         /// <param name="pSteamIDOwner"><a href="https://partner.steamgames.com/doc/api/steam_api#CSteamID" class="bb_apilink">CSteamID</a> *: </param>
-        public static bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, char** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner) => Instance.GetUGCDetails(hContent, pnAppID, ppchName, pnFileSizeInBytes, pSteamIDOwner);
+        public static bool GetUGCDetails(UGCHandle hContent, AppId* pnAppID, byte** ppchName, int* pnFileSizeInBytes, SteamId* pSteamIDOwner) => Instance.GetUGCDetails(hContent, pnAppID, ppchName, pnFileSizeInBytes, pSteamIDOwner);
         /// <summary><code>int32 UGCRead( UGCHandle_t hContent, void *pvData, int32 cubDataToRead, uint32 cOffset, EUGCReadAction eAction );</code><br />
         /// <b>Returns:</b> <a href="https://partner.steamgames.com/doc/api/steam_api#int32" class="bb_apilink">int32</a></summary>
         /// <param name="hContent"><a href="https://partner.steamgames.com/doc/api/ISteamRemoteStorage#UGCHandle_t" class="bb_apilink">UGCHandle_t</a>: </param>

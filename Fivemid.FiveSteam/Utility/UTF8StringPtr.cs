@@ -4,7 +4,7 @@ using Unity.Collections;
 
 namespace Fivemid.FiveSteam {
     public unsafe struct UTF8StringPtr : IUTF8Bytes {
-        public char* value;
+        public byte* value;
         
         public override string ToString() =>
             Marshal.PtrToStringUTF8((IntPtr)value);

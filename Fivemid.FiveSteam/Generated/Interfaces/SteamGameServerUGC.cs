@@ -166,7 +166,7 @@ namespace Fivemid.FiveSteam
         /// <param name="tagIndex"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The index of the tag.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
         /// <param name="cchValueSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes (allocate at least 64 bytes).</param>
-        public static bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCTag(handle, index, indexTag, pchValue, cchValueSize);
+        public static bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize) => Instance.GetQueryUGCTag(handle, index, indexTag, pchValue, cchValueSize);
         /// <summary><code>bool GetQueryUGCTagDisplayName( UGCQueryHandle_t handle, uint32 index, uint32 tagIndex, char *pchValue, uint32 cchValueSize );</code><br />
         /// Available in SDK v1.51.<br />
         /// <br />
@@ -182,7 +182,7 @@ namespace Fivemid.FiveSteam
         /// <param name="tagIndex"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The index of the tag.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
         /// <param name="cchValueSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes (allocate at least 256 bytes).</param>
-        public static bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCTagDisplayName(handle, index, indexTag, pchValue, cchValueSize);
+        public static bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize) => Instance.GetQueryUGCTagDisplayName(handle, index, indexTag, pchValue, cchValueSize);
         /// <summary><code>bool GetQueryUGCPreviewURL( UGCQueryHandle_t handle, uint32 index, char *pchURL, uint32 cchURLSize );</code><br />
         /// Retrieve the URL to the preview image of an individual workshop item after receiving a querying UGC call result.<br />
         /// <br />
@@ -199,7 +199,7 @@ namespace Fivemid.FiveSteam
         /// <param name="index"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The index of the item to get the details of.</param>
         /// <param name="pchURL">char *: Returns the Metadata by copying it into this string.</param>
         /// <param name="cchURLSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchURL</code> in bytes.</param>
-        public static bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize) => Instance.GetQueryUGCPreviewURL(handle, index, pchURL, cchURLSize);
+        public static bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, byte* pchURL, uint cchURLSize) => Instance.GetQueryUGCPreviewURL(handle, index, pchURL, cchURLSize);
         /// <summary><code>bool GetQueryUGCMetadata( UGCQueryHandle_t handle, uint32 index, char *pchMetadata, uint32 cchMetadatasize );</code><br />
         /// Retrieve the developer set metadata of an individual workshop item after receiving a querying UGC call result.<br />
         /// <br />
@@ -216,7 +216,7 @@ namespace Fivemid.FiveSteam
         /// <param name="index"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The index of the item to get the details of.</param>
         /// <param name="pchMetadata">char *: Returns the url by copying it into this string.</param>
         /// <param name="cchMetadatasize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchMetadata</code> in bytes.</param>
-        public static bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, char* pchMetadata, uint cchMetadatasize) => Instance.GetQueryUGCMetadata(handle, index, pchMetadata, cchMetadatasize);
+        public static bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, byte* pchMetadata, uint cchMetadatasize) => Instance.GetQueryUGCMetadata(handle, index, pchMetadata, cchMetadatasize);
         /// <summary><code>bool GetQueryUGCChildren( UGCQueryHandle_t handle, uint32 index, PublishedFileId_t*pvecPublishedFileID, uint32 cMaxEntries );</code><br />
         /// Retrieve the ids of any child items of an individual workshop item after receiving a querying UGC call result.  These items can either be a part of a collection or some other dependency (see <a href="https://partner.steamgames.com/doc/api/ISteamUGC#AddDependency" class="bb_apilink">ISteamUGC::AddDependency</a>).<br />
         /// <br />
@@ -284,7 +284,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pchOriginalFileName">char *: Returns the original file name. May be set to <b>NULL</b> to not receive this.</param>
         /// <param name="cchOriginalFileNameSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchOriginalFileName</code> in bytes.</param>
         /// <param name="pPreviewType"><a href="https://partner.steamgames.com/doc/api/ISteamUGC#EItemPreviewType" class="bb_apilink">EItemPreviewType</a> *: The type of preview that was returned.</param>
-        public static bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType) => Instance.GetQueryUGCAdditionalPreview(handle, index, previewIndex, pchURLOrVideoID, cchURLSize, pchOriginalFileName, cchOriginalFileNameSize, pPreviewType);
+        public static bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, byte* pchURLOrVideoID, uint cchURLSize, byte* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType) => Instance.GetQueryUGCAdditionalPreview(handle, index, previewIndex, pchURLOrVideoID, cchURLSize, pchOriginalFileName, cchOriginalFileNameSize, pPreviewType);
         /// <summary><code>uint32 GetQueryUGCNumKeyValueTags( UGCQueryHandle_t handle, uint32 index );</code><br />
         /// Retrieve the number of key-value tags of an individual workshop item after receiving a querying UGC call result.<br />
         /// <br />
@@ -319,7 +319,7 @@ namespace Fivemid.FiveSteam
         /// <param name="cchKeySize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchKey</code> in bytes.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
         /// <param name="cchValueSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes.</param>
-        public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, keyValueTagIndex, pchKey, cchKeySize, pchValue, cchValueSize);
+        public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, byte* pchKey, uint cchKeySize, byte* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, keyValueTagIndex, pchKey, cchKeySize, pchValue, cchValueSize);
         /// <summary><code>bool GetQueryUGCKeyValueTag( UGCQueryHandle_t handle, uint32 index, uint32 keyValueTagIndex, char *pchKey, uint32 cchKeySize, char *pchValue, uint32 cchValueSize );</code><br />
         /// Retrieve the details of a key-value tag associated with an individual workshop item after receiving a querying UGC call result.<br />
         /// <br />
@@ -339,7 +339,7 @@ namespace Fivemid.FiveSteam
         /// <param name="cchKeySize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchKey</code> in bytes.</param>
         /// <param name="pchValue">char *: Returns the value by copying it into this string.</param>
         /// <param name="cchValueSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchValue</code> in bytes.</param>
-        public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, pchKey, pchValue, cchValueSize);
+        public static bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, byte* pchValue, uint cchValueSize) => Instance.GetQueryUGCKeyValueTag(handle, index, pchKey, pchValue, cchValueSize);
         /// <summary><code>uint32 GetQueryUGCContentDescriptors( UGCQueryHandle_t handle, uint32 index, EUGCContentDescriptorID *pvecDescriptors, uint32 cMaxEntries );</code><br />
         /// Retrieve an array of <a href="https://partner.steamgames.com/doc/api/ISteamUGC#EUGCContentDescriptorID" class="bb_apilink">EUGCContentDescriptorID</a> set on the item.  <br />
         /// <br />
@@ -998,7 +998,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pchFolder">char *: Returns the absolute path to the folder containing the content by copying it.</param>
         /// <param name="cchFolderSize"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size of <code class="bb_code bb_code_inline nohighlight">pchFolder</code> in bytes.</param>
         /// <param name="punTimeStamp"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a> *: Returns the time when the workshop item was last updated.</param>
-        public static bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp) => Instance.GetItemInstallInfo(nPublishedFileID, punSizeOnDisk, pchFolder, cchFolderSize, punTimeStamp);
+        public static bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, byte* pchFolder, uint cchFolderSize, uint* punTimeStamp) => Instance.GetItemInstallInfo(nPublishedFileID, punSizeOnDisk, pchFolder, cchFolderSize, punTimeStamp);
         /// <summary><code>bool GetItemDownloadInfo( PublishedFileId_t nPublishedFileID, uint64 *punBytesDownloaded, uint64 *punBytesTotal );</code><br />
         /// Get info about a pending download of a workshop item that has <code class="bb_code bb_code_inline nohighlight">k_EItemStateNeedsUpdate</code> set.<br />
         /// <br />

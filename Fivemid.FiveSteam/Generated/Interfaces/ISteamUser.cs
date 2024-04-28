@@ -15,7 +15,7 @@ namespace Fivemid.FiveSteam
         public int InitiateGameConnection_DEPRECATED(void* pAuthBlob, int cbMaxAuthBlob, SteamId steamIDGameServer, uint unIPServer, ushort usPortServer, bool bSecure);
         public void TerminateGameConnection_DEPRECATED(uint unIPServer, ushort usPortServer);
         public void TrackAppUsageEvent(GameId gameID, int eAppUsageEvent, UTF8StringPtr pchExtraInfo);
-        public bool GetUserDataFolder(char* pchBuffer, int cubBuffer);
+        public bool GetUserDataFolder(byte* pchBuffer, int cubBuffer);
         public void StartVoiceRecording();
         public void StopVoiceRecording();
         public VoiceResult GetAvailableVoice(uint* pcbCompressed, uint* pcbUncompressed_Deprecated, uint nUncompressedVoiceDesiredSampleRate_Deprecated);
@@ -55,7 +55,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUser_TrackAppUsageEvent", CallingConvention = Platform.CC)]
         internal static extern void TrackAppUsageEvent(void* self, GameId gameID, int eAppUsageEvent, UTF8StringPtr pchExtraInfo);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUser_GetUserDataFolder", CallingConvention = Platform.CC)]
-        internal static extern bool GetUserDataFolder(void* self, char* pchBuffer, int cubBuffer);
+        internal static extern bool GetUserDataFolder(void* self, byte* pchBuffer, int cubBuffer);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUser_StartVoiceRecording", CallingConvention = Platform.CC)]
         internal static extern void StartVoiceRecording(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUser_StopVoiceRecording", CallingConvention = Platform.CC)]
@@ -118,7 +118,7 @@ namespace Fivemid.FiveSteam
             public int InitiateGameConnection_DEPRECATED(void* pAuthBlob, int cbMaxAuthBlob, SteamId steamIDGameServer, uint unIPServer, ushort usPortServer, bool bSecure) => ISteamUser.InitiateGameConnection_DEPRECATED(self, pAuthBlob, cbMaxAuthBlob, steamIDGameServer, unIPServer, usPortServer, bSecure);
             public void TerminateGameConnection_DEPRECATED(uint unIPServer, ushort usPortServer) => ISteamUser.TerminateGameConnection_DEPRECATED(self, unIPServer, usPortServer);
             public void TrackAppUsageEvent(GameId gameID, int eAppUsageEvent, UTF8StringPtr pchExtraInfo) => ISteamUser.TrackAppUsageEvent(self, gameID, eAppUsageEvent, pchExtraInfo);
-            public bool GetUserDataFolder(char* pchBuffer, int cubBuffer) => ISteamUser.GetUserDataFolder(self, pchBuffer, cubBuffer);
+            public bool GetUserDataFolder(byte* pchBuffer, int cubBuffer) => ISteamUser.GetUserDataFolder(self, pchBuffer, cubBuffer);
             public void StartVoiceRecording() => ISteamUser.StartVoiceRecording(self);
             public void StopVoiceRecording() => ISteamUser.StopVoiceRecording(self);
             public VoiceResult GetAvailableVoice(uint* pcbCompressed, uint* pcbUncompressed_Deprecated, uint nUncompressedVoiceDesiredSampleRate_Deprecated) => ISteamUser.GetAvailableVoice(self, pcbCompressed, pcbUncompressed_Deprecated, nUncompressedVoiceDesiredSampleRate_Deprecated);

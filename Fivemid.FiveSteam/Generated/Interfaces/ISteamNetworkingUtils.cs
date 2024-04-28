@@ -19,7 +19,7 @@ namespace Fivemid.FiveSteam
         public float GetLocalPingLocation(ref SteamNetworkPingLocation result);
         public int EstimatePingTimeBetweenTwoLocations(ref SteamNetworkPingLocation location1, ref SteamNetworkPingLocation location2);
         public int EstimatePingTimeFromLocalHost(ref SteamNetworkPingLocation remoteLocation);
-        public void ConvertPingLocationToString(ref SteamNetworkPingLocation location, char* pszBuf, int cchBufSize);
+        public void ConvertPingLocationToString(ref SteamNetworkPingLocation location, byte* pszBuf, int cchBufSize);
         public bool ParsePingLocationString(UTF8StringPtr pszString, ref SteamNetworkPingLocation result);
         public bool CheckPingDataUpToDate(float flMaxAgeSeconds);
         public int GetPingToDataCenter(SteamNetworkingPOPID popID, SteamNetworkingPOPID* pViaRelayPoP);
@@ -49,10 +49,10 @@ namespace Fivemid.FiveSteam
         public SteamNetworkingGetConfigValueResult GetConfigValue(SteamNetworkingConfigValueType eValue, SteamNetworkingConfigScope eScopeType, IntPtr scopeObj, SteamNetworkingConfigDataType* pOutDataType, void* pResult, int* cbResult);
         public UTF8StringPtr GetConfigValueInfo(SteamNetworkingConfigValueType eValue, SteamNetworkingConfigDataType* pOutDataType, SteamNetworkingConfigScope* pOutScope);
         public SteamNetworkingConfigValueType IterateGenericEditableConfigValues(SteamNetworkingConfigValueType eCurrent, bool bEnumerateDevVars);
-        public void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, char* buf, uint cbBuf, bool bWithPort);
+        public void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, byte* buf, uint cbBuf, bool bWithPort);
         public bool SteamNetworkingIPAddr_ParseString(SteamNetworkingIPAddr* pAddr, UTF8StringPtr pszStr);
         public SteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(ref SteamNetworkingIPAddr addr);
-        public void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, char* buf, uint cbBuf);
+        public void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, byte* buf, uint cbBuf);
         public bool SteamNetworkingIdentity_ParseString(SteamNetworkingIdentity* pIdentity, UTF8StringPtr pszStr);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_AllocateMessage", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingMessage* AllocateMessage(void* self, int cbAllocateBuffer);
@@ -67,7 +67,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_EstimatePingTimeFromLocalHost", CallingConvention = Platform.CC)]
         internal static extern int EstimatePingTimeFromLocalHost(void* self, ref SteamNetworkPingLocation remoteLocation);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_ConvertPingLocationToString", CallingConvention = Platform.CC)]
-        internal static extern void ConvertPingLocationToString(void* self, ref SteamNetworkPingLocation location, char* pszBuf, int cchBufSize);
+        internal static extern void ConvertPingLocationToString(void* self, ref SteamNetworkPingLocation location, byte* pszBuf, int cchBufSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_ParsePingLocationString", CallingConvention = Platform.CC)]
         internal static extern bool ParsePingLocationString(void* self, UTF8StringPtr pszString, ref SteamNetworkPingLocation result);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_CheckPingDataUpToDate", CallingConvention = Platform.CC)]
@@ -127,13 +127,13 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_IterateGenericEditableConfigValues", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingConfigValueType IterateGenericEditableConfigValues(void* self, SteamNetworkingConfigValueType eCurrent, bool bEnumerateDevVars);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIPAddr_ToString", CallingConvention = Platform.CC)]
-        internal static extern void SteamNetworkingIPAddr_ToString(void* self, ref SteamNetworkingIPAddr addr, char* buf, uint cbBuf, bool bWithPort);
+        internal static extern void SteamNetworkingIPAddr_ToString(void* self, ref SteamNetworkingIPAddr addr, byte* buf, uint cbBuf, bool bWithPort);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIPAddr_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool SteamNetworkingIPAddr_ParseString(void* self, SteamNetworkingIPAddr* pAddr, UTF8StringPtr pszStr);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIPAddr_GetFakeIPType", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(void* self, ref SteamNetworkingIPAddr addr);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIdentity_ToString", CallingConvention = Platform.CC)]
-        internal static extern void SteamNetworkingIdentity_ToString(void* self, ref SteamNetworkingIdentity identity, char* buf, uint cbBuf);
+        internal static extern void SteamNetworkingIdentity_ToString(void* self, ref SteamNetworkingIdentity identity, byte* buf, uint cbBuf);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIdentity_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool SteamNetworkingIdentity_ParseString(void* self, SteamNetworkingIdentity* pIdentity, UTF8StringPtr pszStr);
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
@@ -146,7 +146,7 @@ namespace Fivemid.FiveSteam
             public float GetLocalPingLocation(ref SteamNetworkPingLocation result) => ISteamNetworkingUtils.GetLocalPingLocation(self, ref result);
             public int EstimatePingTimeBetweenTwoLocations(ref SteamNetworkPingLocation location1, ref SteamNetworkPingLocation location2) => ISteamNetworkingUtils.EstimatePingTimeBetweenTwoLocations(self, ref location1, ref location2);
             public int EstimatePingTimeFromLocalHost(ref SteamNetworkPingLocation remoteLocation) => ISteamNetworkingUtils.EstimatePingTimeFromLocalHost(self, ref remoteLocation);
-            public void ConvertPingLocationToString(ref SteamNetworkPingLocation location, char* pszBuf, int cchBufSize) => ISteamNetworkingUtils.ConvertPingLocationToString(self, ref location, pszBuf, cchBufSize);
+            public void ConvertPingLocationToString(ref SteamNetworkPingLocation location, byte* pszBuf, int cchBufSize) => ISteamNetworkingUtils.ConvertPingLocationToString(self, ref location, pszBuf, cchBufSize);
             public bool ParsePingLocationString(UTF8StringPtr pszString, ref SteamNetworkPingLocation result) => ISteamNetworkingUtils.ParsePingLocationString(self, pszString, ref result);
             public bool CheckPingDataUpToDate(float flMaxAgeSeconds) => ISteamNetworkingUtils.CheckPingDataUpToDate(self, flMaxAgeSeconds);
             public int GetPingToDataCenter(SteamNetworkingPOPID popID, SteamNetworkingPOPID* pViaRelayPoP) => ISteamNetworkingUtils.GetPingToDataCenter(self, popID, pViaRelayPoP);
@@ -176,10 +176,10 @@ namespace Fivemid.FiveSteam
             public SteamNetworkingGetConfigValueResult GetConfigValue(SteamNetworkingConfigValueType eValue, SteamNetworkingConfigScope eScopeType, IntPtr scopeObj, SteamNetworkingConfigDataType* pOutDataType, void* pResult, int* cbResult) => ISteamNetworkingUtils.GetConfigValue(self, eValue, eScopeType, scopeObj, pOutDataType, pResult, cbResult);
             public UTF8StringPtr GetConfigValueInfo(SteamNetworkingConfigValueType eValue, SteamNetworkingConfigDataType* pOutDataType, SteamNetworkingConfigScope* pOutScope) => ISteamNetworkingUtils.GetConfigValueInfo(self, eValue, pOutDataType, pOutScope);
             public SteamNetworkingConfigValueType IterateGenericEditableConfigValues(SteamNetworkingConfigValueType eCurrent, bool bEnumerateDevVars) => ISteamNetworkingUtils.IterateGenericEditableConfigValues(self, eCurrent, bEnumerateDevVars);
-            public void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, char* buf, uint cbBuf, bool bWithPort) => ISteamNetworkingUtils.SteamNetworkingIPAddr_ToString(self, ref addr, buf, cbBuf, bWithPort);
+            public void SteamNetworkingIPAddr_ToString(ref SteamNetworkingIPAddr addr, byte* buf, uint cbBuf, bool bWithPort) => ISteamNetworkingUtils.SteamNetworkingIPAddr_ToString(self, ref addr, buf, cbBuf, bWithPort);
             public bool SteamNetworkingIPAddr_ParseString(SteamNetworkingIPAddr* pAddr, UTF8StringPtr pszStr) => ISteamNetworkingUtils.SteamNetworkingIPAddr_ParseString(self, pAddr, pszStr);
             public SteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(ref SteamNetworkingIPAddr addr) => ISteamNetworkingUtils.SteamNetworkingIPAddr_GetFakeIPType(self, ref addr);
-            public void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, char* buf, uint cbBuf) => ISteamNetworkingUtils.SteamNetworkingIdentity_ToString(self, ref identity, buf, cbBuf);
+            public void SteamNetworkingIdentity_ToString(ref SteamNetworkingIdentity identity, byte* buf, uint cbBuf) => ISteamNetworkingUtils.SteamNetworkingIdentity_ToString(self, ref identity, buf, cbBuf);
             public bool SteamNetworkingIdentity_ParseString(SteamNetworkingIdentity* pIdentity, UTF8StringPtr pszStr) => ISteamNetworkingUtils.SteamNetworkingIdentity_ParseString(self, pIdentity, pszStr);
         }
     }

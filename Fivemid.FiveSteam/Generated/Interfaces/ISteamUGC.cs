@@ -14,17 +14,17 @@ namespace Fivemid.FiveSteam
         public SteamAPICall SendQueryUGCRequest(UGCQueryHandle handle);
         public bool GetQueryUGCResult(UGCQueryHandle handle, uint index, SteamUGCDetails* pDetails);
         public uint GetQueryUGCNumTags(UGCQueryHandle handle, uint index);
-        public bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
-        public bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
-        public bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize);
-        public bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, char* pchMetadata, uint cchMetadatasize);
+        public bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize);
+        public bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize);
+        public bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, byte* pchURL, uint cchURLSize);
+        public bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, byte* pchMetadata, uint cchMetadatasize);
         public bool GetQueryUGCChildren(UGCQueryHandle handle, uint index, PublishedFileId* pvecPublishedFileID, uint cMaxEntries);
         public bool GetQueryUGCStatistic(UGCQueryHandle handle, uint index, ItemStatistic eStatType, ulong* pStatValue);
         public uint GetQueryUGCNumAdditionalPreviews(UGCQueryHandle handle, uint index);
-        public bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType);
+        public bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, byte* pchURLOrVideoID, uint cchURLSize, byte* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType);
         public uint GetQueryUGCNumKeyValueTags(UGCQueryHandle handle, uint index);
-        public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize);
-        public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize);
+        public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, byte* pchKey, uint cchKeySize, byte* pchValue, uint cchValueSize);
+        public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, byte* pchValue, uint cchValueSize);
         public uint GetQueryUGCContentDescriptors(UGCQueryHandle handle, uint index, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
         public bool ReleaseQueryUGCRequest(UGCQueryHandle handle);
         public bool AddRequiredTag(UGCQueryHandle handle, UTF8StringPtr pTagName);
@@ -80,7 +80,7 @@ namespace Fivemid.FiveSteam
         public uint GetNumSubscribedItems();
         public uint GetSubscribedItems(PublishedFileId* pvecPublishedFileID, uint cMaxEntries);
         public uint GetItemState(PublishedFileId nPublishedFileID);
-        public bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp);
+        public bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, byte* pchFolder, uint cchFolderSize, uint* punTimeStamp);
         public bool GetItemDownloadInfo(PublishedFileId nPublishedFileID, ulong* punBytesDownloaded, ulong* punBytesTotal);
         public bool DownloadItem(PublishedFileId nPublishedFileID, bool bHighPriority);
         public bool BInitWorkshopForGameServer(DepotId unWorkshopDepotID, UTF8StringPtr pszFolder);
@@ -112,13 +112,13 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumTags", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumTags(void* self, UGCQueryHandle handle, uint index);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTag", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCTag(void* self, UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
+        internal static extern bool GetQueryUGCTag(void* self, UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCTagDisplayName", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCTagDisplayName(void* self, UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize);
+        internal static extern bool GetQueryUGCTagDisplayName(void* self, UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCPreviewURL", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCPreviewURL(void* self, UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize);
+        internal static extern bool GetQueryUGCPreviewURL(void* self, UGCQueryHandle handle, uint index, byte* pchURL, uint cchURLSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCMetadata", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCMetadata(void* self, UGCQueryHandle handle, uint index, char* pchMetadata, uint cchMetadatasize);
+        internal static extern bool GetQueryUGCMetadata(void* self, UGCQueryHandle handle, uint index, byte* pchMetadata, uint cchMetadatasize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCChildren", CallingConvention = Platform.CC)]
         internal static extern bool GetQueryUGCChildren(void* self, UGCQueryHandle handle, uint index, PublishedFileId* pvecPublishedFileID, uint cMaxEntries);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCStatistic", CallingConvention = Platform.CC)]
@@ -126,13 +126,13 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumAdditionalPreviews(void* self, UGCQueryHandle handle, uint index);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCAdditionalPreview", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCAdditionalPreview(void* self, UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType);
+        internal static extern bool GetQueryUGCAdditionalPreview(void* self, UGCQueryHandle handle, uint index, uint previewIndex, byte* pchURLOrVideoID, uint cchURLSize, byte* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCNumKeyValueTags(void* self, UGCQueryHandle handle, uint index);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCKeyValueTag", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize);
+        internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, uint keyValueTagIndex, byte* pchKey, uint cchKeySize, byte* pchValue, uint cchValueSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryFirstUGCKeyValueTag", CallingConvention = Platform.CC)]
-        internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize);
+        internal static extern bool GetQueryUGCKeyValueTag(void* self, UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, byte* pchValue, uint cchValueSize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetQueryUGCContentDescriptors", CallingConvention = Platform.CC)]
         internal static extern uint GetQueryUGCContentDescriptors(void* self, UGCQueryHandle handle, uint index, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_ReleaseQueryUGCRequest", CallingConvention = Platform.CC)]
@@ -244,7 +244,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemState", CallingConvention = Platform.CC)]
         internal static extern uint GetItemState(void* self, PublishedFileId nPublishedFileID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemInstallInfo", CallingConvention = Platform.CC)]
-        internal static extern bool GetItemInstallInfo(void* self, PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp);
+        internal static extern bool GetItemInstallInfo(void* self, PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, byte* pchFolder, uint cchFolderSize, uint* punTimeStamp);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetItemDownloadInfo", CallingConvention = Platform.CC)]
         internal static extern bool GetItemDownloadInfo(void* self, PublishedFileId nPublishedFileID, ulong* punBytesDownloaded, ulong* punBytesTotal);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_DownloadItem", CallingConvention = Platform.CC)]
@@ -288,17 +288,17 @@ namespace Fivemid.FiveSteam
             public SteamAPICall SendQueryUGCRequest(UGCQueryHandle handle) => ISteamUGC.SendQueryUGCRequest(self, handle);
             public bool GetQueryUGCResult(UGCQueryHandle handle, uint index, SteamUGCDetails* pDetails) => ISteamUGC.GetQueryUGCResult(self, handle, index, pDetails);
             public uint GetQueryUGCNumTags(UGCQueryHandle handle, uint index) => ISteamUGC.GetQueryUGCNumTags(self, handle, index);
-            public bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCTag(self, handle, index, indexTag, pchValue, cchValueSize);
-            public bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, char* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCTagDisplayName(self, handle, index, indexTag, pchValue, cchValueSize);
-            public bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, char* pchURL, uint cchURLSize) => ISteamUGC.GetQueryUGCPreviewURL(self, handle, index, pchURL, cchURLSize);
-            public bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, char* pchMetadata, uint cchMetadatasize) => ISteamUGC.GetQueryUGCMetadata(self, handle, index, pchMetadata, cchMetadatasize);
+            public bool GetQueryUGCTag(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCTag(self, handle, index, indexTag, pchValue, cchValueSize);
+            public bool GetQueryUGCTagDisplayName(UGCQueryHandle handle, uint index, uint indexTag, byte* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCTagDisplayName(self, handle, index, indexTag, pchValue, cchValueSize);
+            public bool GetQueryUGCPreviewURL(UGCQueryHandle handle, uint index, byte* pchURL, uint cchURLSize) => ISteamUGC.GetQueryUGCPreviewURL(self, handle, index, pchURL, cchURLSize);
+            public bool GetQueryUGCMetadata(UGCQueryHandle handle, uint index, byte* pchMetadata, uint cchMetadatasize) => ISteamUGC.GetQueryUGCMetadata(self, handle, index, pchMetadata, cchMetadatasize);
             public bool GetQueryUGCChildren(UGCQueryHandle handle, uint index, PublishedFileId* pvecPublishedFileID, uint cMaxEntries) => ISteamUGC.GetQueryUGCChildren(self, handle, index, pvecPublishedFileID, cMaxEntries);
             public bool GetQueryUGCStatistic(UGCQueryHandle handle, uint index, ItemStatistic eStatType, ulong* pStatValue) => ISteamUGC.GetQueryUGCStatistic(self, handle, index, eStatType, pStatValue);
             public uint GetQueryUGCNumAdditionalPreviews(UGCQueryHandle handle, uint index) => ISteamUGC.GetQueryUGCNumAdditionalPreviews(self, handle, index);
-            public bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, char* pchURLOrVideoID, uint cchURLSize, char* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType) => ISteamUGC.GetQueryUGCAdditionalPreview(self, handle, index, previewIndex, pchURLOrVideoID, cchURLSize, pchOriginalFileName, cchOriginalFileNameSize, pPreviewType);
+            public bool GetQueryUGCAdditionalPreview(UGCQueryHandle handle, uint index, uint previewIndex, byte* pchURLOrVideoID, uint cchURLSize, byte* pchOriginalFileName, uint cchOriginalFileNameSize, ItemPreviewType* pPreviewType) => ISteamUGC.GetQueryUGCAdditionalPreview(self, handle, index, previewIndex, pchURLOrVideoID, cchURLSize, pchOriginalFileName, cchOriginalFileNameSize, pPreviewType);
             public uint GetQueryUGCNumKeyValueTags(UGCQueryHandle handle, uint index) => ISteamUGC.GetQueryUGCNumKeyValueTags(self, handle, index);
-            public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, char* pchKey, uint cchKeySize, char* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCKeyValueTag(self, handle, index, keyValueTagIndex, pchKey, cchKeySize, pchValue, cchValueSize);
-            public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, char* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCKeyValueTag(self, handle, index, pchKey, pchValue, cchValueSize);
+            public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, uint keyValueTagIndex, byte* pchKey, uint cchKeySize, byte* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCKeyValueTag(self, handle, index, keyValueTagIndex, pchKey, cchKeySize, pchValue, cchValueSize);
+            public bool GetQueryUGCKeyValueTag(UGCQueryHandle handle, uint index, UTF8StringPtr pchKey, byte* pchValue, uint cchValueSize) => ISteamUGC.GetQueryUGCKeyValueTag(self, handle, index, pchKey, pchValue, cchValueSize);
             public uint GetQueryUGCContentDescriptors(UGCQueryHandle handle, uint index, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries) => ISteamUGC.GetQueryUGCContentDescriptors(self, handle, index, pvecDescriptors, cMaxEntries);
             public bool ReleaseQueryUGCRequest(UGCQueryHandle handle) => ISteamUGC.ReleaseQueryUGCRequest(self, handle);
             public bool AddRequiredTag(UGCQueryHandle handle, UTF8StringPtr pTagName) => ISteamUGC.AddRequiredTag(self, handle, pTagName);
@@ -354,7 +354,7 @@ namespace Fivemid.FiveSteam
             public uint GetNumSubscribedItems() => ISteamUGC.GetNumSubscribedItems(self);
             public uint GetSubscribedItems(PublishedFileId* pvecPublishedFileID, uint cMaxEntries) => ISteamUGC.GetSubscribedItems(self, pvecPublishedFileID, cMaxEntries);
             public uint GetItemState(PublishedFileId nPublishedFileID) => ISteamUGC.GetItemState(self, nPublishedFileID);
-            public bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, char* pchFolder, uint cchFolderSize, uint* punTimeStamp) => ISteamUGC.GetItemInstallInfo(self, nPublishedFileID, punSizeOnDisk, pchFolder, cchFolderSize, punTimeStamp);
+            public bool GetItemInstallInfo(PublishedFileId nPublishedFileID, ulong* punSizeOnDisk, byte* pchFolder, uint cchFolderSize, uint* punTimeStamp) => ISteamUGC.GetItemInstallInfo(self, nPublishedFileID, punSizeOnDisk, pchFolder, cchFolderSize, punTimeStamp);
             public bool GetItemDownloadInfo(PublishedFileId nPublishedFileID, ulong* punBytesDownloaded, ulong* punBytesTotal) => ISteamUGC.GetItemDownloadInfo(self, nPublishedFileID, punBytesDownloaded, punBytesTotal);
             public bool DownloadItem(PublishedFileId nPublishedFileID, bool bHighPriority) => ISteamUGC.DownloadItem(self, nPublishedFileID, bHighPriority);
             public bool BInitWorkshopForGameServer(DepotId unWorkshopDepotID, UTF8StringPtr pszFolder) => ISteamUGC.BInitWorkshopForGameServer(self, unWorkshopDepotID, pszFolder);

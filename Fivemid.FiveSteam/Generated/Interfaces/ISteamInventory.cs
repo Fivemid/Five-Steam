@@ -11,7 +11,7 @@ namespace Fivemid.FiveSteam
     {
         public Result GetResultStatus(SteamInventoryResult resultHandle);
         public bool GetResultItems(SteamInventoryResult resultHandle, SteamItemDetails* pOutItemsArray, uint* punOutItemsArraySize);
-        public bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut);
+        public bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut);
         public uint GetResultTimestamp(SteamInventoryResult resultHandle);
         public bool CheckResultSteamID(SteamInventoryResult resultHandle, SteamId steamIDExpected);
         public void DestroyResult(SteamInventoryResult resultHandle);
@@ -31,7 +31,7 @@ namespace Fivemid.FiveSteam
         public bool TradeItems(SteamInventoryResult* pResultHandle, SteamId steamIDTradePartner, SteamItemInstanceID* pArrayGive, uint* pArrayGiveQuantity, uint nArrayGiveLength, SteamItemInstanceID* pArrayGet, uint* pArrayGetQuantity, uint nArrayGetLength);
         public bool LoadItemDefinitions();
         public bool GetItemDefinitionIDs(SteamItemDef* pItemDefIDs, uint* punItemDefIDsArraySize);
-        public bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut);
+        public bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut);
         public SteamAPICall RequestEligiblePromoItemDefinitionsIDs(SteamId steamID);
         public bool GetEligiblePromoItemDefinitionIDs(SteamId steamID, SteamItemDef* pItemDefIDs, uint* punItemDefIDsArraySize);
         public SteamAPICall StartPurchase(SteamItemDef* pArrayItemDefs, uint* punArrayQuantity, uint unArrayLength);
@@ -52,7 +52,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetResultItems", CallingConvention = Platform.CC)]
         internal static extern bool GetResultItems(void* self, SteamInventoryResult resultHandle, SteamItemDetails* pOutItemsArray, uint* punOutItemsArraySize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetResultItemProperty", CallingConvention = Platform.CC)]
-        internal static extern bool GetResultItemProperty(void* self, SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut);
+        internal static extern bool GetResultItemProperty(void* self, SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetResultTimestamp", CallingConvention = Platform.CC)]
         internal static extern uint GetResultTimestamp(void* self, SteamInventoryResult resultHandle);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_CheckResultSteamID", CallingConvention = Platform.CC)]
@@ -92,7 +92,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetItemDefinitionIDs", CallingConvention = Platform.CC)]
         internal static extern bool GetItemDefinitionIDs(void* self, SteamItemDef* pItemDefIDs, uint* punItemDefIDsArraySize);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetItemDefinitionProperty", CallingConvention = Platform.CC)]
-        internal static extern bool GetItemDefinitionProperty(void* self, SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut);
+        internal static extern bool GetItemDefinitionProperty(void* self, SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_RequestEligiblePromoItemDefinitionsIDs", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall RequestEligiblePromoItemDefinitionsIDs(void* self, SteamId steamID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_GetEligiblePromoItemDefinitionIDs", CallingConvention = Platform.CC)]
@@ -129,7 +129,7 @@ namespace Fivemid.FiveSteam
             public void* self;
             public Result GetResultStatus(SteamInventoryResult resultHandle) => ISteamInventory.GetResultStatus(self, resultHandle);
             public bool GetResultItems(SteamInventoryResult resultHandle, SteamItemDetails* pOutItemsArray, uint* punOutItemsArraySize) => ISteamInventory.GetResultItems(self, resultHandle, pOutItemsArray, punOutItemsArraySize);
-            public bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut) => ISteamInventory.GetResultItemProperty(self, resultHandle, unItemIndex, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
+            public bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut) => ISteamInventory.GetResultItemProperty(self, resultHandle, unItemIndex, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
             public uint GetResultTimestamp(SteamInventoryResult resultHandle) => ISteamInventory.GetResultTimestamp(self, resultHandle);
             public bool CheckResultSteamID(SteamInventoryResult resultHandle, SteamId steamIDExpected) => ISteamInventory.CheckResultSteamID(self, resultHandle, steamIDExpected);
             public void DestroyResult(SteamInventoryResult resultHandle) => ISteamInventory.DestroyResult(self, resultHandle);
@@ -149,7 +149,7 @@ namespace Fivemid.FiveSteam
             public bool TradeItems(SteamInventoryResult* pResultHandle, SteamId steamIDTradePartner, SteamItemInstanceID* pArrayGive, uint* pArrayGiveQuantity, uint nArrayGiveLength, SteamItemInstanceID* pArrayGet, uint* pArrayGetQuantity, uint nArrayGetLength) => ISteamInventory.TradeItems(self, pResultHandle, steamIDTradePartner, pArrayGive, pArrayGiveQuantity, nArrayGiveLength, pArrayGet, pArrayGetQuantity, nArrayGetLength);
             public bool LoadItemDefinitions() => ISteamInventory.LoadItemDefinitions(self);
             public bool GetItemDefinitionIDs(SteamItemDef* pItemDefIDs, uint* punItemDefIDsArraySize) => ISteamInventory.GetItemDefinitionIDs(self, pItemDefIDs, punItemDefIDsArraySize);
-            public bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut) => ISteamInventory.GetItemDefinitionProperty(self, iDefinition, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
+            public bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut) => ISteamInventory.GetItemDefinitionProperty(self, iDefinition, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
             public SteamAPICall RequestEligiblePromoItemDefinitionsIDs(SteamId steamID) => ISteamInventory.RequestEligiblePromoItemDefinitionsIDs(self, steamID);
             public bool GetEligiblePromoItemDefinitionIDs(SteamId steamID, SteamItemDef* pItemDefIDs, uint* punItemDefIDsArraySize) => ISteamInventory.GetEligiblePromoItemDefinitionIDs(self, steamID, pItemDefIDs, punItemDefIDsArraySize);
             public SteamAPICall StartPurchase(SteamItemDef* pArrayItemDefs, uint* punArrayQuantity, uint unArrayLength) => ISteamInventory.StartPurchase(self, pArrayItemDefs, punArrayQuantity, unArrayLength);

@@ -11,7 +11,7 @@ namespace Fivemid.FiveSteam
         public GameSearchErrorCode SearchForGameSolo(int nPlayerMin, int nPlayerMax);
         public GameSearchErrorCode AcceptGame();
         public GameSearchErrorCode DeclineGame();
-        public GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, char* pchConnectionDetails, int cubConnectionDetails);
+        public GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, byte* pchConnectionDetails, int cubConnectionDetails);
         public GameSearchErrorCode EndGameSearch();
         public GameSearchErrorCode SetGameHostParams(UTF8StringPtr pchKey, UTF8StringPtr pchValue);
         public GameSearchErrorCode SetConnectionDetails(UTF8StringPtr pchConnectionDetails, int cubConnectionDetails);
@@ -31,7 +31,7 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_DeclineGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode DeclineGame(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_RetrieveConnectionDetails", CallingConvention = Platform.CC)]
-        internal static extern GameSearchErrorCode RetrieveConnectionDetails(void* self, SteamId steamIDHost, char* pchConnectionDetails, int cubConnectionDetails);
+        internal static extern GameSearchErrorCode RetrieveConnectionDetails(void* self, SteamId steamIDHost, byte* pchConnectionDetails, int cubConnectionDetails);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_EndGameSearch", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode EndGameSearch(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_SetGameHostParams", CallingConvention = Platform.CC)]
@@ -57,7 +57,7 @@ namespace Fivemid.FiveSteam
             public GameSearchErrorCode SearchForGameSolo(int nPlayerMin, int nPlayerMax) => ISteamGameSearch.SearchForGameSolo(self, nPlayerMin, nPlayerMax);
             public GameSearchErrorCode AcceptGame() => ISteamGameSearch.AcceptGame(self);
             public GameSearchErrorCode DeclineGame() => ISteamGameSearch.DeclineGame(self);
-            public GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, char* pchConnectionDetails, int cubConnectionDetails) => ISteamGameSearch.RetrieveConnectionDetails(self, steamIDHost, pchConnectionDetails, cubConnectionDetails);
+            public GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, byte* pchConnectionDetails, int cubConnectionDetails) => ISteamGameSearch.RetrieveConnectionDetails(self, steamIDHost, pchConnectionDetails, cubConnectionDetails);
             public GameSearchErrorCode EndGameSearch() => ISteamGameSearch.EndGameSearch(self);
             public GameSearchErrorCode SetGameHostParams(UTF8StringPtr pchKey, UTF8StringPtr pchValue) => ISteamGameSearch.SetGameHostParams(self, pchKey, pchValue);
             public GameSearchErrorCode SetConnectionDetails(UTF8StringPtr pchConnectionDetails, int cubConnectionDetails) => ISteamGameSearch.SetConnectionDetails(self, pchConnectionDetails, cubConnectionDetails);

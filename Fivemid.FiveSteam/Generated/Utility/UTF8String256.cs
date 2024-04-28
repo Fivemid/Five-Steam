@@ -7,10 +7,10 @@ namespace Fivemid.FiveSteam
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
     public unsafe struct UTF8String256 : global::Unity.Collections.IUTF8Bytes
     {
-        public fixed char values[256];
+        public fixed byte values[256];
         public override string ToString()
         {
-            fixed (char* ptr = values)
+            fixed (byte* ptr = values)
                 return Marshal.PtrToStringUTF8((IntPtr)ptr);
         }
 
@@ -18,8 +18,8 @@ namespace Fivemid.FiveSteam
 
         public byte* GetUnsafePtr()
         {
-            fixed (char* ptr = values)
-                return (byte*)ptr;
+            fixed (byte* ptr = values)
+                return ptr;
         }
 
         public bool TryResize(int newLength, global::Unity.Collections.NativeArrayOptions clearOptions = global::Unity.Collections.NativeArrayOptions.ClearMemory) => false;

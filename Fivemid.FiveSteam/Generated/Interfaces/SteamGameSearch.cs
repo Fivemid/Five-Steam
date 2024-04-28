@@ -20,7 +20,7 @@ namespace Fivemid.FiveSteam
         /// missing documentation
         public static GameSearchErrorCode DeclineGame() => Instance.DeclineGame();
         /// missing documentation
-        public static GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, char* pchConnectionDetails, int cubConnectionDetails) => Instance.RetrieveConnectionDetails(steamIDHost, pchConnectionDetails, cubConnectionDetails);
+        public static GameSearchErrorCode RetrieveConnectionDetails(SteamId steamIDHost, byte* pchConnectionDetails, int cubConnectionDetails) => Instance.RetrieveConnectionDetails(steamIDHost, pchConnectionDetails, cubConnectionDetails);
         /// missing documentation
         public static GameSearchErrorCode EndGameSearch() => Instance.EndGameSearch();
         /// missing documentation

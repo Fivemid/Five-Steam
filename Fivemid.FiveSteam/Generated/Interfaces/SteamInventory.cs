@@ -77,7 +77,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pchPropertyName">const char *: The property name to get the value for. If you pass in <b>NULL</b> then <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code> will contain a comma-separated list of all the available names.</param>
         /// <param name="pchValueBuffer">char *: Returns the value associated with <code class="bb_code bb_code_inline nohighlight">pchPropertyName</code>.</param>
         /// <param name="punValueBufferSizeOut"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a> *: This should be set to the size of <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code>, and returns the number of bytes required to hold the value.</param>
-        public static bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut) => Instance.GetResultItemProperty(resultHandle, unItemIndex, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
+        public static bool GetResultItemProperty(SteamInventoryResult resultHandle, uint unItemIndex, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut) => Instance.GetResultItemProperty(resultHandle, unItemIndex, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
         /// <summary><code>uint32 GetResultTimestamp( SteamInventoryResult_t resultHandle );</code><br />
         /// Gets the server time at which the result was generated.<br />
         /// <br />
@@ -478,7 +478,7 @@ namespace Fivemid.FiveSteam
         /// <param name="pchPropertyName">const char *: The property name to get the value for. If you pass in <b>NULL</b> then <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code> will contain a comma-separated list of all the available names.</param>
         /// <param name="pchValueBuffer">char *: Returns the value associated with <code class="bb_code bb_code_inline nohighlight">pchPropertyName</code>.</param>
         /// <param name="punValueBufferSizeOut"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a> *: This should be set to the size of <code class="bb_code bb_code_inline nohighlight">pchValueBuffer</code>, and returns the number of bytes required to hold the value.</param>
-        public static bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, char* pchValueBuffer, uint* punValueBufferSizeOut) => Instance.GetItemDefinitionProperty(iDefinition, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
+        public static bool GetItemDefinitionProperty(SteamItemDef iDefinition, UTF8StringPtr pchPropertyName, byte* pchValueBuffer, uint* punValueBufferSizeOut) => Instance.GetItemDefinitionProperty(iDefinition, pchPropertyName, pchValueBuffer, punValueBufferSizeOut);
         /// <summary><code>SteamAPICall_t RequestEligiblePromoItemDefinitionsIDs( CSteamID steamID );</code><br />
         /// Request the list of "eligible" promo items that can be manually granted to the given user.<br />
         /// <br />

@@ -261,7 +261,7 @@ namespace Fivemid.FiveSteam
         /// <param name="cchKeyBufferSize">int: The size of the buffer allocated for <code class="bb_code bb_code_inline nohighlight">pchKey</code>. This typically should be <a href="https://partner.steamgames.com/doc/api/ISteamMatchmaking#k_nMaxLobbyKeyLength" class="bb_apilink">k_nMaxLobbyKeyLength</a>.</param>
         /// <param name="pchValue">char *: Returns the value associated with the key at the specified index by copying it into this buffer.</param>
         /// <param name="cchValueBufferSize">int: The size of the buffer allocated for <code class="bb_code bb_code_inline nohighlight">pchValue</code>. This typically should be <a href="https://partner.steamgames.com/doc/api/ISteamFriends#k_cubChatMetadataMax" class="bb_apilink">k_cubChatMetadataMax</a>.</param>
-        public static bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, char* pchKey, int cchKeyBufferSize, char* pchValue, int cchValueBufferSize) => Instance.GetLobbyDataByIndex(steamIDLobby, iLobbyData, pchKey, cchKeyBufferSize, pchValue, cchValueBufferSize);
+        public static bool GetLobbyDataByIndex(SteamId steamIDLobby, int iLobbyData, byte* pchKey, int cchKeyBufferSize, byte* pchValue, int cchValueBufferSize) => Instance.GetLobbyDataByIndex(steamIDLobby, iLobbyData, pchKey, cchKeyBufferSize, pchValue, cchValueBufferSize);
         /// <summary><code>bool DeleteLobbyData( CSteamID steamIDLobby, const char *pchKey );</code><br />
         /// Removes a metadata key from the lobby.<br />
         /// <br />

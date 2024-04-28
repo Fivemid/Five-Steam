@@ -607,7 +607,7 @@ namespace Fivemid.FiveSteam
         /// <param name="unNameBufLen"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size in bytes of pchName, should be at least as long as your longest achievement 'API Name'.</param>
         /// <param name="pflPercent">float *: Variable to return the percentage of people that have unlocked this achievement from 0 to 100.</param>
         /// <param name="pbAchieved">bool *: Variable to return whether the current user has unlocked this achievement.</param>
-        public static int GetMostAchievedAchievementInfo(char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => Instance.GetMostAchievedAchievementInfo(pchName, unNameBufLen, pflPercent, pbAchieved);
+        public static int GetMostAchievedAchievementInfo(byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => Instance.GetMostAchievedAchievementInfo(pchName, unNameBufLen, pflPercent, pbAchieved);
         /// <summary><code>int GetNextMostAchievedAchievementInfo( int iIteratorPrevious, char *pchName, uint32 unNameBufLen, float *pflPercent, bool *pbAchieved );</code><br />
         /// Gets the info on the next most achieved achievement for the game.<br />
         /// <br />
@@ -637,7 +637,7 @@ namespace Fivemid.FiveSteam
         /// <param name="unNameBufLen"><a href="https://partner.steamgames.com/doc/api/steam_api#uint32" class="bb_apilink">uint32</a>: The size in bytes of pchName, should be at least as long as your longest achievement 'API Name'.</param>
         /// <param name="pflPercent">float *: Variable to return the percentage of people that have unlocked this achievement from 0 to 100.</param>
         /// <param name="pbAchieved">bool *: Variable to return whether the current user has unlocked this achievement.</param>
-        public static int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, char* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => Instance.GetNextMostAchievedAchievementInfo(iIteratorPrevious, pchName, unNameBufLen, pflPercent, pbAchieved);
+        public static int GetNextMostAchievedAchievementInfo(int iIteratorPrevious, byte* pchName, uint unNameBufLen, float* pflPercent, bool* pbAchieved) => Instance.GetNextMostAchievedAchievementInfo(iIteratorPrevious, pchName, unNameBufLen, pflPercent, pbAchieved);
         /// <summary><code>bool GetAchievementAchievedPercent( const char *pchName, float *pflPercent );</code><br />
         /// Returns the percentage of users who have unlocked the specified achievement.<br />
         /// <br />

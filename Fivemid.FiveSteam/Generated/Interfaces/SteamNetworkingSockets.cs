@@ -107,7 +107,7 @@ namespace Fivemid.FiveSteam
         public static void SetConnectionName(HSteamNetConnection hPeer, UTF8StringPtr pszName) => Instance.SetConnectionName(hPeer, pszName);
         /// <summary><code>bool GetConnectionName( HSteamNetConnection hPeer, char *pszName, int nMaxLen );</code>Fetch connection name into your buffer, which is at least nMaxLen bytes.  Returns false if handle is invalid.</summary>
         /// 
-        public static bool GetConnectionName(HSteamNetConnection hPeer, char* pszName, int nMaxLen) => Instance.GetConnectionName(hPeer, pszName, nMaxLen);
+        public static bool GetConnectionName(HSteamNetConnection hPeer, byte* pszName, int nMaxLen) => Instance.GetConnectionName(hPeer, pszName, nMaxLen);
         /// <summary><code>EResult SendMessageToConnection( HSteamNetConnection hConn, const void *pData, uint32 cbData, int nSendFlags, int64 *pOutMessageNumber );</code>Send a message to the remote host on the specified connection.<br />
         /// <br />
         /// nSendFlags determines the delivery guarantees that will be provided, when data should be buffered, etc.  E.g.:<br />
@@ -187,7 +187,7 @@ namespace Fivemid.FiveSteam
         /// </li><li><b>0</b>: OK, your buffer was filled in and '\0'-terminated<br />
         /// </li><li><b>&gt;0</b>: Your buffer was either nullptr, or it was too small and the text got truncated.  Try again with a buffer of at least N bytes.</li></ul></summary>
         /// 
-        public static int GetDetailedConnectionStatus(HSteamNetConnection hConn, char* pszBuf, int cbBuf) => Instance.GetDetailedConnectionStatus(hConn, pszBuf, cbBuf);
+        public static int GetDetailedConnectionStatus(HSteamNetConnection hConn, byte* pszBuf, int cbBuf) => Instance.GetDetailedConnectionStatus(hConn, pszBuf, cbBuf);
         /// <summary><code>bool GetListenSocketAddress( HSteamListenSocket hSocket, SteamNetworkingIPAddr *address );</code><br />
         /// Returns local IP and port that a listen socket created using CreateListenSocketIP is bound to.<br />
         /// <br />

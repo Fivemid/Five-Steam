@@ -53,7 +53,7 @@ namespace Fivemid.FiveSteam
         /// <b>Returns:</b> bool</summary>
         /// <param name="pchBuffer">char *: </param>
         /// <param name="cubBuffer">int: </param>
-        public static bool GetUserDataFolder(char* pchBuffer, int cubBuffer) => Instance.GetUserDataFolder(pchBuffer, cubBuffer);
+        public static bool GetUserDataFolder(byte* pchBuffer, int cubBuffer) => Instance.GetUserDataFolder(pchBuffer, cubBuffer);
         /// <summary><code>void StartVoiceRecording();</code>Starts voice recording.<br />
         /// <br />
         /// Once started, use <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetAvailableVoice" class="bb_apilink">ISteamUser::GetAvailableVoice</a> and <a href="https://partner.steamgames.com/doc/api/ISteamUser#GetVoice" class="bb_apilink">ISteamUser::GetVoice</a> to get the data, and then call <a href="https://partner.steamgames.com/doc/api/ISteamUser#StopVoiceRecording" class="bb_apilink">ISteamUser::StopVoiceRecording</a> when the user has released their push-to-talk hotkey or the game session has completed.<br />

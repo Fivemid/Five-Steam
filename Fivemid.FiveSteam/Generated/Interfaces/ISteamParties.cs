@@ -21,7 +21,7 @@ namespace Fivemid.FiveSteam
     {
         public uint GetNumActiveBeacons();
         public PartyBeaconID GetBeaconByIndex(uint unIndex);
-        public bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, char* pchMetadata, int cchMetadata);
+        public bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, byte* pchMetadata, int cchMetadata);
         public SteamAPICall JoinParty(PartyBeaconID ulBeaconID);
         public bool GetNumAvailableBeaconLocations(uint* puNumLocations);
         public bool GetAvailableBeaconLocations(SteamPartyBeaconLocation* pLocationList, uint uMaxNumLocations);
@@ -30,13 +30,13 @@ namespace Fivemid.FiveSteam
         public void CancelReservation(PartyBeaconID ulBeacon, SteamId steamIDUser);
         public SteamAPICall ChangeNumOpenSlots(PartyBeaconID ulBeacon, uint unOpenSlots);
         public bool DestroyBeacon(PartyBeaconID ulBeacon);
-        public bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, char* pchDataStringOut, int cchDataStringOut);
+        public bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, byte* pchDataStringOut, int cchDataStringOut);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetNumActiveBeacons", CallingConvention = Platform.CC)]
         internal static extern uint GetNumActiveBeacons(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetBeaconByIndex", CallingConvention = Platform.CC)]
         internal static extern PartyBeaconID GetBeaconByIndex(void* self, uint unIndex);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetBeaconDetails", CallingConvention = Platform.CC)]
-        internal static extern bool GetBeaconDetails(void* self, PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, char* pchMetadata, int cchMetadata);
+        internal static extern bool GetBeaconDetails(void* self, PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, byte* pchMetadata, int cchMetadata);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_JoinParty", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall JoinParty(void* self, PartyBeaconID ulBeaconID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetNumAvailableBeaconLocations", CallingConvention = Platform.CC)]
@@ -54,14 +54,14 @@ namespace Fivemid.FiveSteam
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_DestroyBeacon", CallingConvention = Platform.CC)]
         internal static extern bool DestroyBeacon(void* self, PartyBeaconID ulBeacon);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetBeaconLocationData", CallingConvention = Platform.CC)]
-        internal static extern bool GetBeaconLocationData(void* self, SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, char* pchDataStringOut, int cchDataStringOut);
+        internal static extern bool GetBeaconLocationData(void* self, SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, byte* pchDataStringOut, int cchDataStringOut);
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
         public struct Instance : ISteamParties
         {
             public void* self;
             public uint GetNumActiveBeacons() => ISteamParties.GetNumActiveBeacons(self);
             public PartyBeaconID GetBeaconByIndex(uint unIndex) => ISteamParties.GetBeaconByIndex(self, unIndex);
-            public bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, char* pchMetadata, int cchMetadata) => ISteamParties.GetBeaconDetails(self, ulBeaconID, pSteamIDBeaconOwner, pLocation, pchMetadata, cchMetadata);
+            public bool GetBeaconDetails(PartyBeaconID ulBeaconID, SteamId* pSteamIDBeaconOwner, SteamPartyBeaconLocation* pLocation, byte* pchMetadata, int cchMetadata) => ISteamParties.GetBeaconDetails(self, ulBeaconID, pSteamIDBeaconOwner, pLocation, pchMetadata, cchMetadata);
             public SteamAPICall JoinParty(PartyBeaconID ulBeaconID) => ISteamParties.JoinParty(self, ulBeaconID);
             public bool GetNumAvailableBeaconLocations(uint* puNumLocations) => ISteamParties.GetNumAvailableBeaconLocations(self, puNumLocations);
             public bool GetAvailableBeaconLocations(SteamPartyBeaconLocation* pLocationList, uint uMaxNumLocations) => ISteamParties.GetAvailableBeaconLocations(self, pLocationList, uMaxNumLocations);
@@ -70,7 +70,7 @@ namespace Fivemid.FiveSteam
             public void CancelReservation(PartyBeaconID ulBeacon, SteamId steamIDUser) => ISteamParties.CancelReservation(self, ulBeacon, steamIDUser);
             public SteamAPICall ChangeNumOpenSlots(PartyBeaconID ulBeacon, uint unOpenSlots) => ISteamParties.ChangeNumOpenSlots(self, ulBeacon, unOpenSlots);
             public bool DestroyBeacon(PartyBeaconID ulBeacon) => ISteamParties.DestroyBeacon(self, ulBeacon);
-            public bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, char* pchDataStringOut, int cchDataStringOut) => ISteamParties.GetBeaconLocationData(self, BeaconLocation, eData, pchDataStringOut, cchDataStringOut);
+            public bool GetBeaconLocationData(SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, byte* pchDataStringOut, int cchDataStringOut) => ISteamParties.GetBeaconLocationData(self, BeaconLocation, eData, pchDataStringOut, cchDataStringOut);
         }
     }
 }
