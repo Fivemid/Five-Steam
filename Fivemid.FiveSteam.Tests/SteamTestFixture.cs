@@ -12,5 +12,9 @@ namespace Fivemid.FiveSteam.Tests {
         public void SteamTearDown() {
             FiveSteamAPI.Shutdown();
         }
+        
+        public virtual void Update() {
+            FiveSteamAPI.RunCallbacks();
+        }
     }
 }
