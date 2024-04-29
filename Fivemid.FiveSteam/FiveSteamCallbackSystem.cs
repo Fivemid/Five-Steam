@@ -46,7 +46,6 @@ namespace Fivemid.FiveSteam {
                 SystemAPI.GetSingletonEntity<FiveSteamCallbacks>(), anyCallback);
         }
         
-        [BurstCompile]
         public void OnDestroy(ref SystemState state) {
             callbackListener.Dispose();
             callbackBuffer->Dispose();
