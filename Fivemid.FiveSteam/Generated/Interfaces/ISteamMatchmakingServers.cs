@@ -60,7 +60,7 @@ namespace Fivemid.FiveSteam
         internal static extern HServerQuery ServerRules(void* self, uint unIP, ushort usPort, ISteamMatchmakingRulesResponse.Instance* pRequestServersResponse);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServers_CancelServerQuery", CallingConvention = Platform.CC)]
         internal static extern void CancelServerQuery(void* self, HServerQuery hServerQuery);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMatchmakingServers
         {
             public void* self;

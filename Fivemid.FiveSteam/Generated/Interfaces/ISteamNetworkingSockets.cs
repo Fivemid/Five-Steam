@@ -166,7 +166,7 @@ namespace Fivemid.FiveSteam
         internal static extern Result GetRemoteFakeIPForConnection(void* self, HSteamNetConnection hConn, SteamNetworkingIPAddr* pOutAddr);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingSockets_CreateFakeUDPPort", CallingConvention = Platform.CC)]
         internal static extern ISteamNetworkingFakeUDPPort.Instance* CreateFakeUDPPort(void* self, int idxFakeServerPort);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamNetworkingSockets
         {
             public void* self;

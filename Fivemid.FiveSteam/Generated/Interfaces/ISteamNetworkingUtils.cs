@@ -136,7 +136,7 @@ namespace Fivemid.FiveSteam
         internal static extern void SteamNetworkingIdentity_ToString(void* self, ref SteamNetworkingIdentity identity, byte* buf, uint cbBuf);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingUtils_SteamNetworkingIdentity_ParseString", CallingConvention = Platform.CC)]
         internal static extern bool SteamNetworkingIdentity_ParseString(void* self, SteamNetworkingIdentity* pIdentity, UTF8StringPtr pszStr);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamNetworkingUtils
         {
             public void* self;

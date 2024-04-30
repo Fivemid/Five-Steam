@@ -108,7 +108,7 @@ namespace Fivemid.FiveSteam
         internal static extern SteamAPICall GetDurationControl(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUser_BSetDurationControlOnlineState", CallingConvention = Platform.CC)]
         internal static extern bool BSetDurationControlOnlineState(void* self, DurationControlOnlineState eNewState);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamUser
         {
             public void* self;

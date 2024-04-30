@@ -48,7 +48,7 @@ namespace Fivemid.FiveSteam
         internal static extern GameSearchErrorCode SubmitPlayerResult(void* self, ulong ullUniqueGameID, SteamId steamIDPlayer, PlayerResult EPlayerResult);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameSearch_EndGame", CallingConvention = Platform.CC)]
         internal static extern GameSearchErrorCode EndGame(void* self, ulong ullUniqueGameID);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamGameSearch
         {
             public void* self;

@@ -11,7 +11,7 @@ namespace Fivemid.FiveSteam
     /// Also, if a session times out due to inactivity, no callbacks will be posted.  The only way to detect that this is happening is that querying the session state may return none, connecting, and findingroute again.<br />
     /// 
     /// </summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 1)]
     public unsafe struct SteamNetworkingMessagesSessionFailed
     {
         public static readonly CallbackIdentifier IDENTIFIER = CallbackIdentifier.SteamNetworkingMessagesSessionFailed;

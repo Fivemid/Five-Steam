@@ -22,7 +22,14 @@ public partial class CodeWriter {
         string name = StructName(definition.Name);
         
         return StructDeclaration(name)
-              .AddAttributeLists(StructLayoutAttribute())
+              .AddAttributeLists(
+                   StructLayoutAttribute(
+                       emptyStruct: definition.Fields.Length == 0,
+                       pack: pack1Structs.Contains(definition.Name)
+                                         ? ParseExpression("1")
+                                         : ParseExpression("Platform.PACK_SIZE")
+                   )
+               )
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .AddMembers(
                    definition.Fields.Where(f => !excludeFieldType.Contains(f.Type)).Select(
@@ -81,16 +88,22 @@ public partial class CodeWriter {
               .WithLeadingTrivia(SimpleDescriptionDocumentation(definition.Name));
     }
     
-    private AttributeListSyntax StructLayoutAttribute(bool emptyStruct = false) =>
+    private AttributeListSyntax StructLayoutAttribute(
+        bool              emptyStruct = false,
+        ExpressionSyntax? pack        = null
+    ) =>
         AttributeList()
            .AddAttributes(
                 Attribute(IdentifierName("StructLayout"))
                    .AddArgumentListArguments(
                         AttributeArgument(ParseExpression("LayoutKind.Sequential")),
                         AttributeArgument(ParseExpression("CharSet.Unicode"))
-                           .WithNameEquals(NameEquals("CharSet")),
-                        AttributeArgument(ParseExpression("Platform.PACK_SIZE"))
-                           .WithNameEquals(NameEquals("Pack"))
+                           .WithNameEquals(NameEquals("CharSet"))
+                    )
+                   .AddArgumentListArguments(
+                        pack is not null
+                            ? [AttributeArgument(pack).WithNameEquals(NameEquals("Pack"))]
+                            : []
                     )
                    .AddArgumentListArguments(
                         emptyStruct
@@ -103,6 +116,19 @@ public partial class CodeWriter {
             );
     
     private static HashSet<string> excludeFieldType = ["SteamInputActionEvent_t::AnalogAction_t"];
+    private static HashSet<string> pack1Structs     = [
+        "SteamNetworkingMessagesSessionRequest_t",
+        "SteamNetworkingMessagesSessionFailed_t",
+        "ControllerAnalogActionData_t",
+        "ControllerDigitalActionData_t",
+        "ControllerMotionData_t",
+        "InputAnalogActionData_t",
+        "InputDigitalActionData_t",
+        "InputMotionData_t",
+        "SteamInputActionEvent_t",
+        "ScePadTriggerEffectParam",
+        "SteamIPAddress_t"
+    ];
     
     private string StructName(string name) => name.StripSuffix("_t");
 }

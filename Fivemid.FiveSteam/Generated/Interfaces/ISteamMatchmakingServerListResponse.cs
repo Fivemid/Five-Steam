@@ -15,7 +15,7 @@ namespace Fivemid.FiveSteam
         internal static extern void ServerFailedToRespond(void* self, HServerListRequest hRequest, int iServer);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingServerListResponse_RefreshComplete", CallingConvention = Platform.CC)]
         internal static extern void RefreshComplete(void* self, HServerListRequest hRequest, MatchMakingServerResponse response);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMatchmakingServerListResponse
         {
             public void* self;

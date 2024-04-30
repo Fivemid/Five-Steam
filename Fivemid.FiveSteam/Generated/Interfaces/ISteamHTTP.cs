@@ -82,7 +82,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool SetHTTPRequestAbsoluteTimeoutMS(void* self, HTTPRequestHandle hRequest, uint unMilliseconds);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTTP_GetHTTPRequestWasTimedOut", CallingConvention = Platform.CC)]
         internal static extern bool GetHTTPRequestWasTimedOut(void* self, HTTPRequestHandle hRequest, bool* pbWasTimedOut);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamHTTP
         {
             public void* self;

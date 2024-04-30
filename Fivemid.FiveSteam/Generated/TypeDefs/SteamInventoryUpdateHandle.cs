@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>Returned from the call <a href="https://partner.steamgames.com/doc/api/ISteamInventory#StartUpdateProperties" class="bb_apilink">ISteamInventory::StartUpdateProperties</a>, which starts a transaction request to modify dynamic properties on items for the current user.</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct SteamInventoryUpdateHandle : IEquatable<SteamInventoryUpdateHandle>, IComparable<SteamInventoryUpdateHandle>
     {
         public ulong value;

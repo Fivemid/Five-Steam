@@ -142,7 +142,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool GetAchievementProgressLimits(void* self, UTF8StringPtr pchName, int* pnMinProgress, int* pnMaxProgress);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUserStats_GetAchievementProgressLimitsFloat", CallingConvention = Platform.CC)]
         internal static extern bool GetAchievementProgressLimits(void* self, UTF8StringPtr pchName, float* pfMinProgress, float* pfMaxProgress);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamUserStats
         {
             public void* self;

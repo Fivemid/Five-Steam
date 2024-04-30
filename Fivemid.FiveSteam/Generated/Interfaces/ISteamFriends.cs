@@ -247,7 +247,7 @@ namespace Fivemid.FiveSteam
         internal static extern UTF8StringPtr GetProfileItemPropertyString(void* self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamFriends_GetProfileItemPropertyUint", CallingConvention = Platform.CC)]
         internal static extern uint GetProfileItemPropertyUint(void* self, SteamId steamID, CommunityProfileItemType itemType, CommunityProfileItemProperty prop);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamFriends
         {
             public void* self;

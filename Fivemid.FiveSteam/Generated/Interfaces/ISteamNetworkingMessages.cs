@@ -34,7 +34,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool CloseChannelWithUser(void* self, ref SteamNetworkingIdentity identityRemote, int nLocalChannel);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingMessages_GetSessionConnectionInfo", CallingConvention = Platform.CC)]
         internal static extern SteamNetworkingConnectionState GetSessionConnectionInfo(void* self, ref SteamNetworkingIdentity identityRemote, SteamNetConnectionInfo* pConnectionInfo, SteamNetConnectionRealTimeStatus* pQuickStatus);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamNetworkingMessages
         {
             public void* self;

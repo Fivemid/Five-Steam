@@ -75,7 +75,7 @@ namespace Fivemid.FiveSteam
         internal static extern SNetSocketConnectionType GetSocketConnectionType(void* self, SNetSocket hSocket);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworking_GetMaxPacketSize", CallingConvention = Platform.CC)]
         internal static extern int GetMaxPacketSize(void* self, SNetSocket hSocket);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamNetworking
         {
             public void* self;

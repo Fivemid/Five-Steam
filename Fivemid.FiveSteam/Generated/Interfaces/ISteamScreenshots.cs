@@ -36,7 +36,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool IsScreenshotsHooked(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamScreenshots_AddVRScreenshotToLibrary", CallingConvention = Platform.CC)]
         internal static extern ScreenshotHandle AddVRScreenshotToLibrary(void* self, VRScreenshotType eType, UTF8StringPtr pchFilename, UTF8StringPtr pchVRFilename);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamScreenshots
         {
             public void* self;

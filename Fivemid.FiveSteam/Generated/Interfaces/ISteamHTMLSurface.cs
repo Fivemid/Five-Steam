@@ -124,7 +124,7 @@ namespace Fivemid.FiveSteam
         internal static extern void JSDialogResponse(void* self, HHTMLBrowser unBrowserHandle, bool bResult);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamHTMLSurface_FileLoadDialogResponse", CallingConvention = Platform.CC)]
         internal static extern void FileLoadDialogResponse(void* self, HHTMLBrowser unBrowserHandle, UTF8StringPtr* pchSelectedFiles);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamHTMLSurface
         {
             public void* self;

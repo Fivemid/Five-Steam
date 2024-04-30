@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// missing documentation for FnSteamNetConnectionStatusChanged
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct FnSteamNetConnectionStatusChanged
     {
         public global::Unity.Burst.FunctionPointer<FunctionPointerDelegates.SteamNetConnectionStatusChangedCallbackPtr> value;

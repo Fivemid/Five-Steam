@@ -37,7 +37,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool ClearUserAchievement(void* self, SteamId steamIDUser, UTF8StringPtr pchName);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServerStats_StoreUserStats", CallingConvention = Platform.CC)]
         internal static extern SteamAPICall StoreUserStats(void* self, SteamId steamIDUser);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamGameServerStats
         {
             public void* self;

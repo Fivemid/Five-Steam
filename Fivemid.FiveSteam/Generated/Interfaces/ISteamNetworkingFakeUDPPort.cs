@@ -18,7 +18,7 @@ namespace Fivemid.FiveSteam
         internal static extern int ReceiveMessages(void* self, SteamNetworkingMessage** ppOutMessages, int nMaxMessages);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamNetworkingFakeUDPPort_ScheduleCleanup", CallingConvention = Platform.CC)]
         internal static extern void ScheduleCleanup(void* self, ref SteamNetworkingIPAddr remoteAddress);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamNetworkingFakeUDPPort
         {
             public void* self;

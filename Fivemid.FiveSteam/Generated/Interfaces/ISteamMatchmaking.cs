@@ -123,7 +123,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool SetLobbyOwner(void* self, SteamId steamIDLobby, SteamId steamIDNewOwner);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmaking_SetLinkedLobby", CallingConvention = Platform.CC)]
         internal static extern bool SetLinkedLobby(void* self, SteamId steamIDLobby, SteamId steamIDLobbyDependent);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMatchmaking
         {
             public void* self;

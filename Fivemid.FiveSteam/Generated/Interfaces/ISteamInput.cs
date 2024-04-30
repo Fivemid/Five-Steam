@@ -153,7 +153,7 @@ namespace Fivemid.FiveSteam
         internal static extern ushort GetSessionInputConfigurationSettings(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInput_SetDualSenseTriggerEffect", CallingConvention = Platform.CC)]
         internal static extern void SetDualSenseTriggerEffect(void* self, InputHandle inputHandle, Unknown* pParam);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamInput
         {
             public void* self;

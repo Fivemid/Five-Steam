@@ -112,7 +112,7 @@ namespace Fivemid.FiveSteam
         internal static extern ISteamParties.Instance* GetISteamParties(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamClient_GetISteamRemotePlay", CallingConvention = Platform.CC)]
         internal static extern ISteamRemotePlay.Instance* GetISteamRemotePlay(void* self, HSteamUser hSteamUser, HSteamPipe hSteamPipe, UTF8StringPtr pchVersion);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamClient
         {
             public void* self;

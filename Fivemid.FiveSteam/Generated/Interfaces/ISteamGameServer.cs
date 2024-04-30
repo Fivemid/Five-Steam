@@ -130,7 +130,7 @@ namespace Fivemid.FiveSteam
         internal static extern void SendUserDisconnect_DEPRECATED(void* self, SteamId steamIDUser);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamGameServer_BUpdateUserData", CallingConvention = Platform.CC)]
         internal static extern bool BUpdateUserData(void* self, SteamId steamIDUser, UTF8StringPtr pchPlayerName, uint uScore);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamGameServer
         {
             public void* self;

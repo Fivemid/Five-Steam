@@ -103,13 +103,19 @@ namespace Fivemid.FiveSteam {
             
             public static CallbackListener Create(
                 CallbackListenerDelegate @delegate
-            ) {
-                return Create(
+            ) =>
+                Create(
                     null,
                     new FunctionPointer<CallbackListenerDelegate>(Marshal.GetFunctionPointerForDelegate(@delegate)),
                     GCHandle.Alloc(@delegate)
                 );
-            }
+            
+            public static CallbackListener Create<T>(CallbackIdentifier identifier, Action<T> action)
+                where T : unmanaged =>
+                Create((ref Callback callback) => {
+                    if (callback.id == identifier)
+                        action(callback.Data<T>());
+                });
             
             public void Dispose() {
                 if (listeners.Data.IsCreated)

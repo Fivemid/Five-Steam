@@ -123,7 +123,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool SubmitUpdateProperties(void* self, SteamInventoryUpdateHandle handle, SteamInventoryResult* pResultHandle);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamInventory_InspectItem", CallingConvention = Platform.CC)]
         internal static extern bool InspectItem(void* self, SteamInventoryResult* pResultHandle, UTF8StringPtr pchItemToken);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamInventory
         {
             public void* self;

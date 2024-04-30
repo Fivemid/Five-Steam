@@ -30,7 +30,14 @@ public partial class CodeWriter {
         string name = CallbackStructName(definition.Name);
         
         return StructDeclaration(name)
-              .AddAttributeLists(StructLayoutAttribute(definition.Fields.Length == 0))
+              .AddAttributeLists(
+                   StructLayoutAttribute(
+                       emptyStruct: definition.Fields.Length == 0,
+                       pack: pack1Structs.Contains(definition.Name)
+                                 ? ParseExpression("1")
+                                 : ParseExpression("Platform.PACK_SIZE")
+                   )
+               )
               .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
               .AddMembers(
                    FieldDeclaration(VariableDeclaration(IdentifierName("CallbackIdentifier"))

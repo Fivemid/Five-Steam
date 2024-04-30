@@ -97,7 +97,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool BIsTimedTrial(void* self, uint* punSecondsAllowed, uint* punSecondsPlayed);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamApps_SetDlcContext", CallingConvention = Platform.CC)]
         internal static extern bool SetDlcContext(void* self, AppId nAppID);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamApps
         {
             public void* self;

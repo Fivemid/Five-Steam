@@ -15,7 +15,7 @@ namespace Fivemid.FiveSteam
         internal static extern void RulesFailedToRespond(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete", CallingConvention = Platform.CC)]
         internal static extern void RulesRefreshComplete(void* self);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMatchmakingRulesResponse
         {
             public void* self;

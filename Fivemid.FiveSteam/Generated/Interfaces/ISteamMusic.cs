@@ -38,7 +38,7 @@ namespace Fivemid.FiveSteam
         internal static extern void SetVolume(void* self, float flVolume);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMusic_GetVolume", CallingConvention = Platform.CC)]
         internal static extern float GetVolume(void* self);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMusic
         {
             public void* self;

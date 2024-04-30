@@ -15,7 +15,7 @@ namespace Fivemid.FiveSteam
         internal static extern void PlayersFailedToRespond(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMatchmakingPlayersResponse_PlayersRefreshComplete", CallingConvention = Platform.CC)]
         internal static extern void PlayersRefreshComplete(void* self);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMatchmakingPlayersResponse
         {
             public void* self;

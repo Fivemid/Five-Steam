@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace Fivemid.FiveSteam
 {
     /// <summary>A handle to a digital action. This can be obtained from <a href="https://partner.steamgames.com/doc/api/ISteamInput#GetDigitalActionHandle" class="bb_apilink">ISteamInput::GetDigitalActionHandle</a>.</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct InputDigitalActionHandle : IEquatable<InputDigitalActionHandle>, IComparable<InputDigitalActionHandle>
     {
         public ulong value;

@@ -277,7 +277,7 @@ namespace Fivemid.FiveSteam
         internal static extern SteamAPICall GetWorkshopEULAStatus(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUGC_GetUserContentDescriptorPreferences", CallingConvention = Platform.CC)]
         internal static extern uint GetUserContentDescriptorPreferences(void* self, UGCContentDescriptorID* pvecDescriptors, uint cMaxEntries);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamUGC
         {
             public void* self;

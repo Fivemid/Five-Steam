@@ -55,7 +55,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool DestroyBeacon(void* self, PartyBeaconID ulBeacon);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamParties_GetBeaconLocationData", CallingConvention = Platform.CC)]
         internal static extern bool GetBeaconLocationData(void* self, SteamPartyBeaconLocation BeaconLocation, SteamPartyBeaconLocationData eData, byte* pchDataStringOut, int cchDataStringOut);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamParties
         {
             public void* self;

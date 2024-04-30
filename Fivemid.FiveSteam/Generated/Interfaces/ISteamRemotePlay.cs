@@ -33,7 +33,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool BStartRemotePlayTogether(void* self, bool bShowOverlay);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamRemotePlay_BSendRemotePlayTogetherInvite", CallingConvention = Platform.CC)]
         internal static extern bool BSendRemotePlayTogetherInvite(void* self, SteamId steamIDFriend);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamRemotePlay
         {
             public void* self;

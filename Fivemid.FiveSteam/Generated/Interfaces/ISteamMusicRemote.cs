@@ -105,7 +105,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool SetCurrentPlaylistEntry(void* self, int nID);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamMusicRemote_PlaylistDidChange", CallingConvention = Platform.CC)]
         internal static extern bool PlaylistDidChange(void* self);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamMusicRemote
         {
             public void* self;

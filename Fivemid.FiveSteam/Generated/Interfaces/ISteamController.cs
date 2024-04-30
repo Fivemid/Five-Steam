@@ -108,7 +108,7 @@ namespace Fivemid.FiveSteam
         internal static extern ControllerActionOrigin TranslateActionOrigin(void* self, SteamInputType eDestinationInputType, ControllerActionOrigin eSourceOrigin);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamController_GetControllerBindingRevision", CallingConvention = Platform.CC)]
         internal static extern bool GetControllerBindingRevision(void* self, ControllerHandle controllerHandle, int* pMajor, int* pMinor);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamController
         {
             public void* self;

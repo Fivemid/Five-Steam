@@ -118,7 +118,7 @@ namespace Fivemid.FiveSteam
         internal static extern bool DismissFloatingGamepadTextInput(void* self);
         [DllImport(Platform.LIBRARY_NAME, EntryPoint = "SteamAPI_ISteamUtils_DismissGamepadTextInput", CallingConvention = Platform.CC)]
         internal static extern bool DismissGamepadTextInput(void* self);
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = Platform.PACK_SIZE)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct Instance : ISteamUtils
         {
             public void* self;

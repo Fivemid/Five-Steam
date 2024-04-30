@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using Unity.Collections;
 
 namespace Fivemid.FiveSteam {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 1)]
     public struct SteamId : IEquatable<SteamId>, IComparable<SteamId> {
         public ulong value;
         
@@ -75,6 +77,9 @@ namespace Fivemid.FiveSteam {
             
             return $"[{accountTypeLetter}:{(uint)Universe}:{AccountId.value}]";
         }
+        
+        public override string ToString() =>
+            ToFixedString().ToString();
         
         public          bool Equals(SteamId other)                    => value == other.value;
         public override int  GetHashCode()                            => value.GetHashCode();
