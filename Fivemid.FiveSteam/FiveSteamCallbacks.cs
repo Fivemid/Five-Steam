@@ -82,6 +82,6 @@ namespace Fivemid.FiveSteam {
             }
         }
         
-        public struct AnyCallback : IComponentData, IEnableableComponent { }
+        public struct AnyCallback : IComponentData { }
     }
 }

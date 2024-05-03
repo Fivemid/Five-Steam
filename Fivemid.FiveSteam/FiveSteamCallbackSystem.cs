@@ -11,6 +11,7 @@ namespace Fivemid.FiveSteam {
         
         [BurstCompile]
         public void OnCreate(ref SystemState state) {
+            state.RequireForUpdate<FiveSteamCallbacks>();
             callbackBuffer  = AllocatorManager.Allocate<UnsafeAppendBuffer>(Allocator.Persistent);
             *callbackBuffer = new UnsafeAppendBuffer(0, sizeof(int), Allocator.Persistent);
             callbackListener = FiveSteamAPI.CallbackListener.Create(
@@ -42,8 +43,16 @@ namespace Fivemid.FiveSteam {
             
             callbackBuffer->Reset();
             
-            SystemAPI.SetComponentEnabled<FiveSteamCallbacks.AnyCallback>(
-                SystemAPI.GetSingletonEntity<FiveSteamCallbacks>(), anyCallback);
+            {
+                Entity entity = SystemAPI.GetSingletonEntity<FiveSteamCallbacks>();
+                if (SystemAPI.HasComponent<FiveSteamCallbacks.AnyCallback>(entity) != anyCallback) {
+                    if (anyCallback) {
+                        state.EntityManager.AddComponent<FiveSteamCallbacks.AnyCallback>(entity);
+                    } else {
+                        state.EntityManager.RemoveComponent<FiveSteamCallbacks.AnyCallback>(entity);
+                    }
+                }
+            }
         }
         
         public void OnDestroy(ref SystemState state) {
