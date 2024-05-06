@@ -96,6 +96,8 @@ namespace Fivemid.FiveSteam {
                 FunctionPointer<CallbackListenerDelegate> functionPointer,
                 GCHandle                                  managedDelegateHandle = default
             ) {
+                if (!Initialized)
+                    throw new Exception("FiveSteamAPI is not initialized.");
                 CallbackListener callbackListener = new(userData, functionPointer, managedDelegateHandle);
                 listeners.Data.Add(callbackListener);
                 return callbackListener;
